@@ -1,0 +1,19 @@
+# data
+data/raw/
+data/processed/
+*.fastq
+*.fastq.gz
+*.bam
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# notebooks
+.ipynb_checkpoints/
+
+# secrets
+.env
+*.key

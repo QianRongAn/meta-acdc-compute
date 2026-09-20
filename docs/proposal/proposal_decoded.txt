@@ -1,0 +1,1647 @@
+PhD Research Proposal: Meta
+-
+ACDC: Deciphering the Proteome
+-
+wide TCR 
+Cross
+-
+reactivity Landscape via Active Meta
+-
+learning and Synthetic Immune Cells
+Applicant:
+Nan Wang (
+王楠
+)
+Prospective Supervisor:
+Prof. Sai T. Reddy
+Affiliation:
+Department of Biosystems Science and Engineering (D
+-
+BSSE), ETH Zurich
+I. Research Background and Scientific Questions
+1. Research Background
+The Laboratory for Systems and Synthetic Immunology has recently pioneered the 
+ACDC (Artificial 
+Cell Display of pMHC)
+platform (Hong et al., 2025), which utilizes CRISPR
+-
+engineered HEK293 
+reporter cells to map TCR specificity. While ACDC significantly reduces experimental noise 
+compared to primary T cells, mapping a single TCR against the entire human proteome (
+>10
+7
+HLA
+-
+restricted peptides) remains a computational and physical bottleneck. Current methods rely on brute
+-
+force screening, which is cost
+-
+prohibitive for "Many
+-
+vs
+-
+Many" (
+pool of TCR
+vs
+pool of peptide
+) 
+scenarios.
+S
+everal "bottlenecks" remain in the quest to build a universal "Immune Encyclopedia":
+1.
+The 
+c
+ombinatorial
+b
+ottleneck:
+The human proteome contains 
+>10
+7
+peptides, and the potential 
+TCR space is even larger (
+>10
+15
+). Even with ACDC, physical 
+Many
+-
+vs
+-
+Many
+(
+pool of TCR
+vs
+pool of peptide
+)
+screening is constrained by signal deconvolution and 
+prohibitive
+sequencing 
+costs.
+2.
+The 
+g
+eneralization 
+g
+ap:
+Existing ML models trained on ACDC data struggle with "non
+-
+homologous off
+-
+targets"
+—
+peptides that share low sequence identity but high structural similarity 
+with the target antigen.
+3.
+The 
+s
+ignal
+-
+to
+-
+n
+oise 
+p
+aradox
+:
+High
+-
+throughput synthetic cell data, while cleaner than primary T
+-
+cell data, still contains inherent stochastic noise from viral transduction and FACS gating, 
+requiring advanced denoising architectures.
+2. Scientific Questions
+1.
+To what extent are off
+-
+target recognition of TCRs determined by the "physical similarity" of 3D 
+structures rather than the "homology" of amino acid sequences? Can Geometric Graph Neural 
+Networks (GNNs) extract these low
+-
+level features to achieve 
+few
+-
+shot prediction?
+2.
+Faced with a vast space of 100 million antigen combinations, can active learning strategies 
+accurately reconstruct the complete immune recognition landscape even in the presence of noise, 
+using only 0.
+05
+% of the key physical experiments
+?
+3.
+Can activation signals measured in the ACDC synthetic cell platform be accurately and 
+quantitatively mapped to the killing capacity of real primary T cells? Can this mapping define 
+clear safety boundaries for clinical drugs
+?
+II. Research Objectives and Significance
+1. Research Objectives
+Objective 1:
+Develop 
+Meta
+-
+TCR
+-
+GNN
+, a geometric deep learning framework that integrates 
+AlphaFold 3
+-
+predicted structures with ACDC experimental data.
+Objective 2:
+Implement an 
+AI
+-
+driven "Dry
+-
+Wet" Loop (Active Learning)
+to 
+guide intelligently
+the 
+synthesis of ACDC peptide libraries, optimizing the Information Gain per experiment.
+Objective 3:
+Construct a 
+Proteome
+-
+wide Cross
+-
+reactivity Risk Dashboard
+to provide clinical
+-
+grade 
+safety assessments for therapeutic TCRs (e.g., Kimmtrak
+-
+like candidates).
+These three research goals collectively serve 
+the
+ultimate scientific vision: to establish a digital 
+"immune navigation system" that can predict all possible interactions between any TCR drug and the 
+body's 20,000 proteins before the drug even enters the body. This would 
+transition the field
+from the 
+era of "unpredictable and lethal off
+-
+target effects" in TCR
+-
+T therapy and usher in a truly safe, efficient, 
+and customizable "programming era" for immunotherapy.
+2. Significance
+Clinical Safety:
+Provides a high
+-
+fidelity "Safety Clearance" for TCR
+-
+T therapies, preventing fatal 
+off
+-
+target events in organs like the heart or brain.
+Economic Efficiency:
+Reduces the cost of "Library
+-
+vs
+-
+Library" screening 
+from millions of dollars 
+to approximately $140,000 per cycle (a >95% reduction in cost
+-
+per
+-
+data
+-
+point)
+by replacing brute
+-
+force screening with "
+Intelligent Sampling
+."
+III. Strategic Rationale: Why AI
+-
+Driven "Dry
+-
+Wet" Loop?
+In the quest to construct a "Global Immune Encyclopedia," the primary challenge is not the lack of 
+screening tools
+—
+such as the ACDC platform
+—
+but rather the overwhelming 
+"
+Combinatorial 
+Explosion
+."
+This research rejects the conventional brute
+-
+force approach in favor of an AI
+-
+driven 
+"Dry
+-
+Wet" loop, based on the following strategic logic:
+1. Physical Screening Limits and the "Engineering Dead End"
+Consider the requirement for a comprehensive Library
+-
+vs
+-
+Library scan (e.g., 
+10
+4
+TCRs against 
+10
+4
+antigens):
+Exhaustive Scanning (100%):
+This corresponds to 
+10
+x
+Genomics
+(100 million) 
+combinations. Even after structural filtering to remove 95% of non
+-
+viable candidates, the remaining 
+5% (5 million combinations)
+remains physically inaccessible.
+Cost Reality Check:
+Route A (Brute
+-
+force ACDC):
+Requires 10,000 independent experiments, costing approximately 
+8 
+Million
+and taking several years
+—
+a prohibitive timeline for academic research.
+Route B (Droplet scRNA
+-
+seq/10x Genomics):
+While offering higher throughput, capturing 5 million 
+pairings would require hundreds of chips, costing 
+1.5
+–
+3 Million
+.
+Brute
+-
+force physical screening is not only ineffici
+ent but economically unviable.
+2. ROI and Success Probability Assessment of Technical Pathways
+A comparative analysis demonstrates the overwhelming advantages of an AI
+-
+driven closed
+-
+loop system
+.
+Pathway
+Core Mechanism
+Resource 
+Input
+Data 
+Throughput
+Success 
+Probability
+Critical Bottleneck
+Physical 
+Linkage 
+(
+Bulk 
+Display
+)
+Uses DNA barcodes to label TCRs and 
+pMHCs. Physical binding occurs in bulk, 
+followed by barcode ligation and NGS 
+readout.
+Medium
+-
+High
+Extremely 
+High 
+(Millions)
+Moderate/
+High
+Signal
+-
+to
+-
+Noise Ratio:
+High false
+-
+positive rates 
+due to non
+-
+specific collisions in bulk reactions; 
+data "dehydration" is computationally painful.
+Droplet 
+scRNA
+-
+seq
+Encapsulates single T
+-
+cells and APCs in 
+microfluidic droplets to capture TCR 
+sequences and activation signals via 
+single
+-
+cell sequencing.
+Prohibitively 
+High
+Low 
+(Thousands)
+Very Low
+Cost Scaling:
+10x Genomics reagent costs are 
+astronomical. Screening 
+10
+8
+combinations is 
+financially impossible.
+AI
+-
+driven 
+Dry
+-
+Wet 
+Loop
+Active Learning Strategy:
+AI models first 
+perform broad
+-
+spectrum predictions to 
+identify high
+-
+information
+-
+gain pairs; the 
+ACDC platform provides targeted 
+validation (Sampling Calibration); results 
+are fed back for incremental training.
+Minimal/
+Moderate
+Theoretically 
+Infinite
+Highest
+Cold
+-
+start Data:
+Requires an initial high
+-
+quality, 
+diverse dataset (already established via the ACDC 
+platform).
+¶µàR
+~V§þúÓpÌÏläG?y.	ÿ`ÂËÅë^OáVç½êHÍÏÀ;Ç2Ó,û`¬\ÄA]y5®iBú,@ä¼®ovÙ'a^4©¯
+Ä¼r}s06o_-OkÛvAcUëª2÷°
+Ý8>í}3HW ãÞÜ7tv4¨¨ööÚ­>Ía@økÔîú)3¸	ÞùuÃ+>QoÁÉ?CÒù'uDÎÓb~~
+åk«ó>êQåËÕCÉJ°J¹ÒîOà¥lÉ­2V5p¾6X£$ncwL½Í|Q²³0#>Mw@½qµ¸Èäûªîo;A
+
+3. Dimensionality Reduction: From "Blind Screening" to "Intelligent Sampling"
+The core value of this proposal lies in the "Dimensionality Reduction" of physical experiments via 
+Active Learning
+and 
+Meta
+-
+Learning
+:
+Dimension Reduction via Active Learning:
+Rather than random screening, we employ 
+Intelligent Sampling
+to select the most informative 0.05% (50,000) of candidates from a 
+filtered pool of 5 million peptides, prioritized by Expected Information Gain (EIG). Through 
+3
+–
+5 iterative dry
+–
+wet
+cycles, the cumulative validated dataset will reach 200,000
+–
+300,000 
+interactions (~5% coverage), sufficient to construct a statistically robust extrapolation model 
+of the entire proteome landscape.
+Budget Optimization:
+This strategy reduces the experimental budget from millions to 
+approximately $140,000
+–
+$150,000 per iteration cycle
+.
+Meta
+-
+Learning
+:
+Addressing Prof. Reddy’s focus on novel antigens, Meta
+-
+Learning extracts 
+Meta
+-
+features
+of biophysical interactions, enabling 
+Few
+-
+shot 
+prediction
+for unseen 
+TCR/antigen pairs.
+4. Conclusion: 
+A Data
+-
+Efficient Paradigm for
+Immunology
+Modern biology has 
+transcended
+the era of brute
+-
+force exhaustion; computational power is now 
+significantly more cost
+-
+effective than chemical reagents. The proposed AI
+-
+driven loop utilizes 
+c
+omputational 
+e
+xtrapolation
+supported by "Sampling Calibration" via the ACDC platform. This 
+represents not only the fastest path to answering Prof. Reddy’s scientific questions but the only viable 
+solution for building a digital "Immune Encyclopedia."
+I
+V
+. Research Contents and Methodology
+Module 1: Meta
+-
+TCR
+-
+GNN Algorithmic Architecture Development
+(
+Objective 1)
+Core Scientific Question:
+How can we transcend the limitations of one
+-
+dimensional amino acid 
+sequences and leverage three
+-
+dimensional spatial features coupled with meta
+-
+learning to address the 
+generalization challenge in TCR recognition?
+1.
+Dataset
+Construction
+and
+Structural
+Preprocessing
+We integrate publicly available databases (VDJdb, IEDB, 10x Genomics) with high
+-
+quality TCR
+-
+pMHC pairing data historically accumulated from the Reddy Lab's ACDC platform. An
+Ensemble
+Modeling
+strategy will be employed, combining the all
+-
+atom prediction capabilities of AlphaFold 3 
+(or efficient localized variants such as ColabFold) with the CDR3 loop
+-
+optimized energy functions 
+of TCRmodel2 for large
+-
+scale structural prediction of TCR
+-
+pMHC comple
+xes. This 'multi
+-
+template 
+fusion' approach effectively hedges against prediction errors at the immunological synapse 
+that are
+inherent to single
+-
+algorithm dependency
+. We focus on extracting atomic coordinates (x, y, z) within 
+a 10Å radius of the binding interface. The extracted 3D structures are transformed into graph data
+þ
+=
+(
+,
+ℰ)
+.
+Nodes
+(
+):
+Represent amino acid residues, with node features encoding physicochemical properties 
+(charge, hydrophobicity, side
+-
+chain volume) and AlphaFold
+-
+derived confidence scores (pLDDT).
+Edges
+(ℰ):
+Spatial con
+nections established based on Euclidean distance between residues (e.g., < 8Å), 
+capturing
+spatial
+proximity
+effects
+of non
+-
+contiguous sequences.
+2.
+Equivariant
+Feature
+Extraction
+via
+EGNN
+We adopt
+Equivariant
+Graph
+Neural
+Networks
+(EGNN)
+.
+Proteins possess 
+SE
+(3) equivariance
+—
+rotations and translations in three
+-
+dimensional space must not alter their fundamental binding physics. 
+EGNN updates node features while maintaining strict physical constraints on spatial coordinates, 
+enabling precise detection of
+Structural
+Mimicry
+:
+antigens that share negligible sequence identity yet 
+present nearly identical spatial charge distributions, a primary mechanism of off
+-
+target recognition.
+3.
+Meta
+-
+Learning
+Framework
+Design
+Within the meta
+-
+learning framework (e.g., MAML or Prototypical Networks), "predicting the binding 
+affinity of a specific TCR against diverse peptides" is defined as a
+Task
+. The quality of the Support 
+Set
+—
+particularly the "difficulty" of negative samples
+—
+directly determines the model's capacity to 
+recognize structural mimicry.
+Support
+Set
+Construction:
+Hard
+Negative
+Mining
+(HNM)
+Positive
+samples:
+50 strong
+-
+binding peptides validated through ACDC experiments.
+Hard
+Negatives:
+200 "difficult negative" samples dynamically selected through triple
+-
+criterion 
+filtering:
+Screening 
+Dimension
+Quantitative Criterion
+Biological Rationale
+Sequence 
+Similarity
+Levenshtein distance ≤3, or identical anchor 
+residues
+Eliminates reliance on simple 
+sequence alignment shortcuts
+Structural 
+Mimicry
+Pearson correlation coefficient >0.8 for AF3
+-
+predicted pMHC surface electrostatic 
+potential
+Captures antigens with physical 
+similarity but functional 
+divergence
+Model 
+Uncertainty
+Prediction probability 0.4
+–
+0.6 with 
+maximum mutual information
+Identifies ambiguous samples 
+near the decision boundary
+Sample Sources:
+Identification via 
+BLOSUM62/physicochemical property vector clustering to identify neighbor 
+sequences from the proteome with model scores marginally below threshold.
+Peptides exhibiting high 
+NGS frequency yet background fluorescence levels (indicating physical contact without functional 
+activation).
+Positive :
+Hard Negative = 1:4, compelling EGNN to extract high
+-
+order geometric 
+features rather than relying on sequence similarity shortcuts.
+Query Set:
+Unknown samples requiring prediction, utilized for evaluating model Few
+-
+shot 
+generalization capability.
+Anticipated Outcome:
+Forces the model to extract 
+universal physical meta
+-
+features
+of TCR
+-
+pMHC 
+binding, enabling robust 
+Few
+-
+shot inference
+when confronted with novel TCRs or previously unseen 
+tumor neoantigens.
+Module 2: AI
+-
+Driven "Dry
+-
+Wet" Closed
+-
+Loop and Active Learning (Objective 2)
+Core Scientific Question:
+How can maximal information content be extracted from an antigen search 
+space of 10⁸ combinations at minimal experimental cost?
+1. Virtual Candidate Library Construction and Constraints (In Silico Filtering)
+For specific HLA alleles (e.g., HLA
+-
+A
+02:01), NetMHCpan
+-
+4.1 is employed to pre
+-
+filter the human 
+proteome (~20,000 proteins, digested into millions of 9
+-
+11mer peptides), eliminating non
+-
+presentable 
+sequences incapable of cell
+-
+surface display. This compresses the search space to approximately 
+5 
+million candidates
+.
+2. Active Learning Sampling Strategy
+Acquisition Function:
+Rather than random selection, the model computes 
+Expected Information Gain 
+(EIG)
+for each candidate peptide.
+ε
+-
+Greedy Strategy:
+Exploitation (80
+–
+90%):
+Selects samples at the decision boundary (ambiguous 
+prediction probability) or predicted high
+-
+risk off
+-
+target candidates.
+Exploration (10
+–
+20%):
+Randomly 
+samples from structurally uncharted "blind spots" to prevent local optima entrapment.
+3. High
+-
+Throughput Wet
+-
+Lab Validation via ACDC Platform
+50,000 AI
+-
+selected high
+-
+value peptides (including positive and negative controls) are synthesized as 
+DNA oligonucleotide pools and cloned into lentiviral vectors.
+Engineered antigen
+-
+presenting cells 
+(APCs) bearing specific HLA alleles and endogenous antigen knockout are transduced.
+Reporter cells 
+expressing target TCRs (e.g., CD69/CD137 fluorescent reporter Jurkat cells) are co
+-
+cultured with the 
+APC library.
+Cell populations are sorted by activation intensity (high, medium, low, no signal) via 
+fluorescence
+-
+activated cell sorting.
+Genomic DNA is extracted from each bin, antigen barcodes are 
+amplified, and deep sequencing is performed. Quantitative binding intensities are derived from 
+enrichment analysis of antigen frequencies in high
+-
+activation bins.
+4. Closed
+-
+Loop Model Update
+NGS
+-
+processed high
+-
+quality experimental data serve as 
+Ground Truth
+to update Meta
+-
+TCR
+-
+GNN 
+network weights. 
+2
+–
+3 complete dry
+-
+wet iterations
+are planned until model predictive accuracy 
+(AUPRC) plateaus on independent test sets.
+Module 3: Clinical Translation of Proteome
+-
+Wide Safety Assessment System (Objective 3)
+Core Scientific Question:
+How can the algorithm and platform be transformed into clinically 
+actionable TCR drug safety evaluation tools?
+1. In Silico Assessment of Clinical
+-
+Grade TCR Therapeutics (In Silico Scanning)
+Select TCR drugs that have entered clinical trials or received regulatory approval (e.g., 
+Tebentafusp/Kimmtrak targeting gp100, or TCR candidates against MAGE
+-
+A4/NY
+-
+ESO
+-
+1). Deploy 
+the finalized Meta
+-
+TCR
+-
+GNN to perform exhaustive prediction across the entir
+e human proteome
+-
+derived MHC
+-
+presented peptide repertoire, outputting ranked 
+c
+ross
+-
+reactivity 
+r
+isk
+scores.
+2. Gold
+-
+Standard In Vitro Validation
+Physicochemical synthesis of the Top 50
+–
+100 high
+-
+risk "off
+-
+target peptides" predicted by the model.
+Transduce target TCRs into human primary T cells.
+Utilize 
+IncuCyte
+real
+-
+time live
+-
+cell analysis 
+systems or cytokine release assays (ELISPOT/CBA for IFN
+-
+γ
+, IL
+-
+2) to verify whether these off
+-
+target 
+peptides trigger genuine T cell cytotoxicity or aberrant activation under physiological conditions.
+3. Gold
+-
+Standard In Vivo Validation
+For AI
+-
+predicted 
+high
+-
+risk
+off
+-
+target peptides exhibiting cytotoxicity in primary T cell assays, further 
+validation is conducted in 
+NSG mice
+expressing specific HLA alleles to assess tissue infiltration and 
+cellular toxicity
+—
+serving as the ultimate safety threshold prior to clinical entry.
+4. Interactive Safety Dashboard Development
+Construct a 
+Web
+-
+based interactive interface
+where input of a target TCR sequence generates a one
+-
+click 
+Safety Heatmap
+("traffic
+-
+light" visualization). The system provides not only off
+-
+target peptide 
+sequences but also 
+Feature Attribution
+via EGNN to highlight 
+core hotspot residues
+driving off
+-
+target 
+recognition in 3D structural context
+—
+offering structural guidance for rational TCR engineering (e.g., 
+affinity attenuation of off
+-
+target interactions).
+V. Comprehensive Budget Estimation
+Item
+Specification
+Estimated Cost (USD)
+DNA Synthesis
+Custom Oligo Pool (50
+K variants)
+30
+,
+0
+00
+Viral Vectors
+Lentiviral Packaging & Concentration
+18
+,
+0
+00
+Cell Engineering
+HEK293 Reporters & Media
+5
+,
+0
+00
+FACS Analysis
+High
+-
+speed sorting (BD Aria III, ~30
+-
+40 hrs)
+8
+,000
+NGS Attribution
+Illumina PE150 (200M reads)
+1
+2
+,
+0
+00
+Computation
+A100/H100 GPU nodes (~1,000 node
+-
+hours)
+12
+,
+5
+00
+Functional Assay
+IncuCyte & Primary T
+-
+cell Validation
+20
+,000
+Animal Validation
+In vivo efficacy & 
+toxicity (NSG mice cohort)
+25,000
+Contingency
+10% allowance for experimental variance
+10% buffer for reagent price fluctuation
+13,050
+Total
+Per complete iteration cycle
+143
+,
+55
+0
+Complete AI
+-
+Driven "Dry
+-
+Wet" Loop and subsequent preclinical validation.
+V
+I
+. Feasibility and Innovation
+1. Sensitivity Assessment and Experimental Coverage Efficiency
+Active Learning has established mature applications in protein
+-
+protein interaction (PPI) space 
+exploration. Following 3
+–
+5 iterative dry
+–
+wet
+cycles, the model is expected to achieve 
+80
+–
+90% 
+Sensitivity
+in identifying "known
+-
+category" high
+-
+risk off
+-
+targets, particularly cross
+-
+reactivities 
+driven by structural mimicry. The classic 
+MAGE
+-
+A3/Titin cross
+-
+reactivity
+serves as the gold
+-
+standard 
+validation case. For "novel
+-
+mechanism" off
+-
+targets (i.e., rare cross
+-
+reactivities outside the training 
+data distribution), model Sensitivity may drop below 
+50
+%
+; such cases mandate 
+primary T cell 
+validation
+as the ultimate safety barrier.
+Compared to random screening, Active Learning achieves 
+>90% coverage of biochemical diversity
+with merely 
+5
+–
+10% experimental throughput
+, realizing dimensional compression in data acquisition.
+Enhanced Safety Margin for Critical Organs
+For highly expressed proteins in vital organs (heart, brain), we implement 
+Enhanced Safety Margin
+strategies: lowering classification thresholds (e.g., from standard 0.5 to 0.3) to increase positive 
+trigger sensitivity. This elevates 
+Sensitivity to >95%
+, accepting elevated 
+False Positive Rate
+as 
+intentional safety redundancy.
+2. Critical Risk Factors
+Risk A: Cold
+-
+start Bias in Initial Sampling
+If the first batch of 10,000 randomly selected pairings yields exclusively non
+-
+binding negatives, the 
+model lacks positive signals and enters "blind zones," failing to learn true binding physics. 
+Mitigation:
+Structural pre
+-
+filtering replaces pure random sampling
+—
+NetMHCpan or AlphaFold 3 enrichment 
+ensures proportional "potential positive" sequences in the initial library. Diversity enforcement 
+further mandates coverage of multiple HLA alleles and physicochemical properties (charge, 
+hydrophobicity) in Round 1.
+Risk B: Noise Propagation via Positive Feedback
+Despite ACDC's cleaner signals versus primary T cells, background fluorescence and non
+-
+specific 
+binding persist. If the model treats false positives as ground truth, subsequent rounds amplify errors. 
+Mitigation:
+Implement noise
+-
+robust loss functions (e.g., 
+Generalized Cross Entropy
+) and designate 
+small
+-
+scale wet
+-
+lab replicate validation of "high
+-
+confidence" predictions as 
+calibration anchors
+.
+Risk C: Local Optima in Exploitation
+-
+Exploration Trade
+-
+off
+Models may exhibit "greedy" behavior, directing experiments only toward sequence
+-
+similar 
+candidates (Exploitation) while neglecting structurally divergent regions with unexpected cross
+-
+reactivity potential (Exploration). 
+Mitigation:
+Reserve 
+10
+–
+20% per
+-
+round sampling quota
+for pure 
+random exploration, ensuring continuous coverage of uncharted novelty regions (
+ε
+-
+greedy strategy
+).
+3.
+Innovation
+The proposed approach i
+nitiating with 
+0.05% (
+50
+,000) seed set
+for intelligent probing, achieving 
+100
+-
+fold efficiency gain
+over brute
+-
+force approaches.
+Extracts 
+meta
+-
+features
+of biophysical interactions, 
+enabling 
+Few
+-
+shot prediction
+for novel antigens
+—
+addressing the cold
+-
+start challenge that cripples 
+traditional models.
+Identifies 
+Structural Mimicry
+(sequence
+-
+divergent yet geometrically congruent 
+antigens), preempting off
+-
+target risks from fundamental physicochemical principles.
+V
+I
+I
+. Timeline and Anticipated Outcomes
+Year 1: Foundation & Cold
+-
+Start
+Core Objective:
+Familiarization with laboratory platforms, construction of AI model prototypes, and 
+completion of data preprocessing.
+Q1 (Months 1
+–
+3): Integration & Literature Review
+Master wet
+-
+lab operations of the ACDC platform (cell culture, lentiviral transduction, FACS sorting).
+Systematic review of literature on TCR specificity prediction and geometric deep learning.
+Curate 
+existing ACDC raw data from the Reddy Lab and establish unified data cleaning pipelines.
+Q2 (Months 4
+–
+6): Meta
+-
+TCR
+-
+GNN Algorithm Prototyping (Goal 1)
+Construct the foundational framework of Meta
+-
+TCR
+-
+GNN, implementing EGNN
+-
+based atomic 
+coordinate encoding.
+Batch
+-
+generate TCR
+-
+pMHC complex structures using AlphaFold 3 and 
+establish local structural databases.
+Perform proteome
+-
+wide preliminary screening with the initial 
+model to identify the first 50,000 candidates with maximal information gain.
+Select 3 known clinical 
+off
+-
+target cases for parallel ACDC screening and primary T cell cytotoxicity assays to establish an 
+ACDC
+-
+Primary T Cell correlation baseline
+, ensuring clinical relevance of subsequent AI training data.
+Q3 (Months 7
+–
+9): Model Benchmarking
+Submit order for first 50,000
+-
+oligo library (estimated synthesis + QC: 3
+–
+4 months).
+Evaluate model 
+performance on public datasets (e.g., VDJdb) against traditional tools such as NetMHCpan.
+Analyze 
+deficiencies in non
+-
+homologous antigen recognition to inform Year 2 Active Learning design.
+Q4 (Months 10
+–
+12): Annual Review & Thesis Proposal
+Submit formal research proposal to D
+-
+BSSE examination committee.
+Utilize preliminary model to 
+predict first batch of "maximal information gain" antigen libraries.
+Receive DNA libraries and initiate 
+lentiviral plasmid construction.
+Year 2: Iteration & Data Generation
+Core Objective:
+Execute first "dry
+-
+wet" 
+cycles
+and validate Active Learning strategy.
+Q1 (Months 13
+–
+15): First Wet
+-
+Lab 
+C
+ycles
+(Goal 2)
+Complete large
+-
+scale lentiviral packaging, concentration, and titer optimization (MOI < 0.1 
+validation).
+Execute ACDC cell transduction, co
+-
+culture, and FACS sorting.
+Q2 (Months 16
+–
+18): Data Mining & Model Upgrade
+Process raw NGS data and extract binding features.
+Feed experimental results back into meta
+-
+learning 
+framework for parameter updates.
+Q3 (Months 19
+–
+21): Second Closed
+-
+Loop Iteration
+AI
+-
+guided selection of second
+-
+batch candidates targeting blind spots identified in Round 1.
+Repeat 
+ACDC validation to enhance predictive capability in underexplored regions.
+Q4 (Months 22
+–
+24): First Manuscript Preparation
+Compile Meta
+-
+TCR
+-
+GNN algorithm and initial experimental results.
+Target interdisciplinary top
+-
+tier 
+journals (e.g., 
+Nature Machine Intelligence
+) or domain
+-
+authoritative venues (e.g., 
+Bioinformatics
+/ 
+Briefings in Bioinformatics
+).
+Year 3: Scaling & Applications
+Core Objective:
+Expansion to clinically relevant TCRs and development of interactive safety 
+dashboard.
+Q1 (Months 25
+–
+27): Clinical TCR Deep Scanning (Goal 3)
+Select 5
+–
+10 clinical
+-
+grade TCR therapeutics (e.g., Kimmtrak analogs) for proteome
+-
+wide off
+-
+target 
+scanning.
+Perform primary T cell cytotoxicity assays (IncuCyte) on AI
+-
+predicted high
+-
+risk off
+-
+target 
+sites.
+Q2 (Months 28
+–
+30): Systems Engineering
+Develop Web
+-
+based 
+Cross
+-
+reactivity Risk Dashboard
+for data visualization.
+Curate generated "Digital 
+Immune Encyclopedia" and establish internal laboratory database.
+Q3 (Months 31
+–
+33): International Academic Exchange
+Present findings at premier conferences (AAI for Immunology; ISMB for Computational Biology).
+Pursue collaborative validation with external pharmaceutical partners or clinical departments.
+(
+Assuming September enrollment, Months 31
+–
+33 correspond to April
+–
+June of Year 3. AAI (May) and 
+ISMB (July) submission deadlines align with this window, with Months 25
+–
+30 dedicated to clinical 
+TCR deep scanning
+—
+this "preliminary data" is highly favored for oral presentations at top
+-
+tier 
+conferences.
+)
+Q4 (Months 34
+–
+36): Second Core Manuscript Preparation
+Report "AI
+-
+driven proteome
+-
+wide off
+-
+target safety assessment system."
+Target journals: 
+Nature 
+Methods
+or 
+Science Immunology
+.
+Year 4: Synthesis & Defense
+Core Objective:
+Integration of research outcomes and completion of doctoral thesis.
+Q1 (Months 37
+–
+39): Supplementary Experiments & Data Patching
+Address reviewer comments with necessary supplementary experiments (ACDC validation or 
+biochemical assays).
+Package algorithms as Docker images to ensure portability and open 
+accessibility.
+Q2 (Months 40
+–
+42): Doctoral Thesis Composition
+Synthesize three years of data, algorithms, and publications into formal doctoral thesis.
+Ensure logical 
+coherence across three Objectives
+.
+Q3 (Months 43
+–
+45): Thesis Pre
+-
+examination & Defense Preparation
+Submit thesis to supervisor and examination committee.
+Conduct multiple internal practice defenses.
+Q4 (Months 46
+–
+48): Doctoral Defense & Handover
+Execute doctoral thesis defense.
+Complete laboratory data transfer and code repository hosting.
+VIII. Summary of Deliverables
+1. Core Peer
+-
+Reviewed Publications
+Deliverable 1 (Methodology):
+"Meta
+-
+TCR
+-
+GNN: A Geometric Meta
+-
+learning Framework for Few
+-
+shot TCR Specificity Prediction." Reports Meta
+-
+TCR
+-
+GNN architecture and first
+-
+round ACDC 
+validation. Target: 
+Nature Machine Intelligence
+or 
+Bioinformatics
+.
+Deliverable 2 (Systematic Application):
+"An AI
+-
+driven 'Dry
+-
+Wet' Loop for Proteome
+-
+wide Safety 
+Assessment of Therapeutic TCRs." Reports Active Learning
+-
+based off
+-
+target scanning system and 
+validation of clinical
+-
+grade therapeutics (e.g., Kimmtrak). Target: 
+Nature Methods
+or 
+Science 
+Immunology
+.
+2. Open
+-
+Source Software & Computational Tools
+Deliverable 3 (Software Suite):
+Meta
+-
+TCR
+package.
+Integrates AlphaFold 3 interface, EGNN encoder, and Active Learning sampling modules. Open
+-
+sourced on GitHub with complete Docker images and API documentation for portability and 
+reproducibility.
+Deliverable 4 (Interactive Dashboard):
+TCR
+-
+Safety
+-
+Radar
+interactive visualization dashboard.
+Provides intuitive off
+-
+target risk heatmaps, structural mimicry analysis, and cross
+-
+reactivity risk 
+scoring for researchers and clinicians.
+3. Bio
+-
+assets & Databases
+Deliverable 5 (Curated Dataset):
+Digital Immune Encyclopedia (ACDC
+-
+Gold
+-
+Standard Dataset).
+Millions of ACDC
+-
+validated TCR
+-
+pMHC interaction entries spanning thousands of human self
+-
+antigens and tumor antigens
+—
+among the world's largest and highest
+-
+quality real
+-
+world TCR 
+interaction datasets.
+Deliverable 6 (Validated Peptide Libraries):
+High
+-
+risk off
+-
+target antigen physical libraries.
+Inventory and plasmid libraries of high
+-
+risk off
+-
+target peptides validated against specific high
+-
+interest 
+TCR targets.
+4. Technical Standards
+Deliverable 7 (SOPs):
+AI
+-
+driven Active Learning screening Standard Operating Procedures.
+Defines AI
+-
+guided ACDC library design, experimental scale calculation, and model calibration 
+workflows. This SOP will serve as lasting technical heritage for the laboratory, supporting subsequent 
+research projects.
+
+o3oBz2K¸ÿÀ³4K¸ÿÀ@,4
+{+@:;0%þÙ   TþJ|  K°+X@#§
+	   
+	¨"PT^+ö]íý<<< ?í?í10 ]]³	 ??01Y&'&5 7|e2ö{N!J}þo%LfÔ6ÿn*DìþÅÖ¯§   .þJV  J°+X@$
+ÐMM Ò"33Ò]L:Ð*
+#=%%ÓCC,Õª5"Õ#,×]@,/7GG]}½ý!6]-=M]­½$6
+DPCDPDIP!"$%./13!%./3CDP!%()+DO
+H-z
+-z\-\/L
+-
+/.4/VMGA.CBCC*:7%=;.?BHHHHHH8$Õ$Õõ*;$Ï+\\/LMvRST@CQSO31$@SQC?24PSî
+  À à @ `       0 P   p   \X^+ö]]]]q<íü]]]q<<< /]qíýýííí.+}Ä.+}ÄY10] r± //01Y55YûÌüa4þ.V[þ*  \ÿå;k " .°+Xµ	0¸ÿà@8054/0?0O0_0|		¥¥£	&!
+!&,¸¶µ
+F ¸R@#@
+#8;PWLLAAv,8>-8>P!HA?
+55	
+&3/13#&3413'
+/¸@7%d6		
+°/+º+Æ+ÙÓ+éé
+ûû
+	pp
+	*!¸&@!"!¸&@
+
+'
+	¸ÿú´U¸ÿô´U¸ÿô@!U"		0@¯¿ßÿU¸ÿê@UU%ßà$%¸1³!à¢++Nä]ö+++]q<Mý+++< ?íí]q?<999++10Cy@
+;
+; +<+qr] ]q´¸ëµl	 ¸â²l ?+2?+9/01Y5!#"#"&54763232654'&'&#ÌE1S&C¤t^l!, 3'$/
+ +0'%%1 zýi¾]<1*[6BTg!  "  ØL Cî°+X@¸{¾l  u{v0y5z6¿
+ºm E.d66Ue@@³´º3ºCÕ×22 2 ¬ Ñ2  	* %/	?	O	 Æ4Ù ò4	053@B@PE¦£¥@¶¶
+°BÍ Ü ÐÔÖë ëðõ
+ðò344204T 24	±CTX@!/"<ED 00 '
+'=::
+4B\1
+
+0[  /."  ! !°!À!Ð!à!!@22¸É@ U1aÜ+Nô+<Mý<M]ö]<Mý<<9/þ ?<<<<<?<<<99.+}Ä.+}Ä++++++10]]qqqq q]C\X@/??999 9¸ÿÐµ909+++ +++ ++Y] ]@/	 ¸â@	l%
+'%ûÛ%%4 rü}*%%4 rû ÿåÿêªL '÷°+X@K@O5'-8xßÿ""
+!"!!"	!#!#""""¸¢@'¬
+			¸É@S 0@¸ÿà´U¸ÿô´U¸ÿô¶U
+	
+KDDKKã9
+3$/777777K]\KK¼Ýí I#0r),r)*r?+-+,+*+JÕ>HkHHjHHjzju ÖCJv\\-.Vz/VVHN`]A&
+<+@<9@BA1AG
+ 
+&,	3 
+:Ly%#%'2#2'E#E'¥'
+	*
+"!#!%'%$ - &%- ++<+<+++*]q ] q+++µ ¸âµl%¸ô²l	 ?+?3+201Y5!#"#"&'&54&##5!#"326654'&#Ñà3P+QíÌÞæ0 EM3J4T$LhÒM'M'%%CqýÚÌá¡Yõ}N%%5$rý±OÌrJtµØ% ,   ÿá®L 7°+X´
+±CTX´¸â· /?9?ýÐÐÀ/10@!9©!¸ÿÀ²5!¸ÿÀ³354!¸ÿÀ³,/4!¸ÿÀ@ #4óûð!º¹»°!ù©¬¼¶¹ª§©ª§!idty
+!ZWP!ei[Y[
+^Y@!P TWS !48F I%
+9¸ÿØ±9+++++++YY]·¸âµl	 ??3+2901Y#&'&&'5!654&'&'5®H%5
+
+K/YW/Q0PPZ 
+/*
+/
+ 
+?¸ÿè²9¸ÿè²9'¸ÿè±9 ++++++Y]·'.!¸â¶l ¸â²l ?+2?3+2901Y!#"33!532765&&'&#5!#"654&&#ÐÙdR<þ¹&R,ýÀ0V$þB/J&D/O=
+<66L%.Vaýýþ¬}*%%4 rA8d2#
+%%,,$^þK¢^.,    ªL /°+X´@¸ÿÀ@b488DJ·	¹¹	%N ENdb`trp© ©
+¥¿ ¸¿
+¸ "	
+		
+	
+ 		¸@@3
+# #	 0@/?O2 y!k]++NôMô]äN]æ]< ?<Mý<?<ý<æ999.+}Ä 999ÉÉ10] ]+rC\X´ 9 ¸ÿð²9
+¸ÿø±9+++Y·¸ñ´l¸ò²l ?+?+9/9/01Y!267!5!"#ü,5!@û°fþNla3&Lûp«þ%Ö/YzS   Iÿí¯ 2 =°+X±CTX@ ?@U?@U.%U%U% 3¸ÿð@U3U3¸ÿÞ´U3¸ÿô@U3U39U-.¸ÿÀ@ 	U.3 
+VÕÝ7R))]m} )))))5]
+VHHHHHHHHvÒ5;Q$Ò)M-$Ñ;M
+.4¸ÿÀ·G5C.C+Nô++Míýr]<ý<<<<< ?<ír?í?9õíüõ õíüõ10Cy@&+'%&
+#ÏVÕÝ8%ÏVÕÝ'%ÏVÕÝ&%]&266.*.HHHHHHHHvvÒ$.$Ò2(8$Ñ.(Õ<(5HHVH/LN04PS4#?R/O2>DC?÷¤¢<çÂ·"6S X1þ$ÇuU "ÍHÎq]J-J,J*8++
+ '$++++rq] rq]YY±$¸ì@	l  ¸ë¶l
+=M]½í"ÕÝ9)x¬cc-#c=3333]-3.3-#3]¶N  m   Ð: Ð) Ñ0rÕ, w×>'¦HHH
+Hz
+-HHHHHz
+\-z\
+-HzHHH`Ñ>>zHzH`ÑBBzYY/V/V//VVN`]hWA94COPQ ^lKGsqX9hj=Z\J9oq59rttW99XiggS=[YL9p
+â ' 4â@5@	U56 ', ?í//?Ý+íííìì99/++++++Ý++ÀÄÆ2Ä+/+++++Í+ÄÄ10+±CTX@X4U5U '456 ,'
+U
+U
+U
+UUU87!U!U!U!-¸ÿð´U-¸ÿò´U-¸ÿü·U--879/+++Ý+++À9/+++Í+++ //?í?ÝÍ9910++@/8@*58`]6%&88°8À8Ð8+P8`8p88@8 
+.Õÿ'5HOH\NSP33.432ROTRQC?$132RTS.C@$Bjk8+M2O aNgVZ1,7L"s]t5AD-³Ll9KA0U º7@Y$«(?¢u`u]*/%*r>->,>5&Ñ0rÕý*&Ñ,rÕë-&5Ñ0rÕÿ*5Ñ,rÕó-5Õÿ4>>>>}],rÕÝ0##\Hzzú
+LHHLHH-ãHHN8#`u*/-r/-rÕÝh##Ñ^rÕÝ6Tr#½##>$ Õ9-r&@-r,r)*r5Ñ-rÕ,#5Ô*r5@/LHêH.VH\êêHHMH86A}­½"AA]mÕÝOQÕÝUQÕÝJQÕÝ@QÕÝK75
+;**<<**;þ!ý V9$$<Ua, $p ÿcþF  ]-r<&Ñ/rÕ*&Ñ,rÕõ0-r***,*Õ/<Ñ*rÕù,<]-<#
+D@U	* 
+þç.Mþ.F# *üqÔD  .;Ùþ×{!/
+$$3gþÐY8$$!QBG#p  =   ¬°+X±CTX¹ ÿö@UUUU¸ÿò´U¸ÿê´U¸ÿâ´U¸ÿÖ´U¸ÿÞµU½â â  â@@	U  /?Ý+2ííí/+++++Í+++ÄÄÆ10+±CTX@'UU   UUU¸ÿð´U¸ÿô´U¸ÿð·U9/+++Í+++ /??ÝÍ10++·Àð¸ÿÀ³?F4¸ÿÀ@:9;4²d6P@P`p ð
+ûAV8$$<U@G#p    0¯ W°+X±CTX@Y@UY@UUUL0¸ÿô´U0¸ÿê´U0¸ÿô@U0+U+17F¸ÿô´UF¸ÿê´UF¸ÿô@!UFAGAUAUAUALUL¸ÿô´UL¸ÿö´UL¸ÿê´UL¸ÿú@UL
+UL+U+U+7¸ÿð@U7U7¸ÿÔ@U7U7¸ÿê@U7U7U7UU ¸ÿè@U 0U ¸ÿÂ@U *U ¸ÿÚ@U U ¸ÿü@U /2EH¸â@ GTU@U/UOUoUUUVG1%,<, ?í?í///?Ý]]+ÍýÀÀÀÀÀ/+++++++Í++/+++++++Í++/++++++Í+++ÄÄ+++Ä+Ä+++Æ+Ä10++±CTX@<%,<,TUV1GU U +U+U+7AUAUAL ¸ÿê·U  X7¸ÿø´U7¸ÿø´U7¸ÿò·U77XL¸ÿî´UL¸ÿð´UL¸ÿø·ULLYX9/+++9/+++9/+Í++Í+++Í+ ///?ÝÍ??íí10°KTX¿ Fÿè Eÿè /ÿè 0ÿèµ8888888Y@4ÐYïYY`]6+Y  
+ %GVW<,%,
+GF10
+Y$!0 p °  ¸5@7
+hmw)f<fwÚ)Ý!Ý<ÝUvu  Ù7O!1O-v\\N`]/+9'#.1=31$=0- =24"=HHHHHHHHu.#'+/359zzzy]9.8.2ÎVHHv8Õ$4$Ï%\\MvO31#?CQS?#1PSQCp¼~ »ÌÂÊ^»åûà©  ÍHÎq]+ºâ â@.%6Y'¸â@	 @	U  ?Ý+í?í/í//íí9/++++Ý+ÀÀÆÄÄ/++Í10+±CTX¹ 2ÿüµU2
+¸ÿð@U
+;:
+29Kþ 7'#%4	mSd>Q\@X0/$9rÖyalÔí-þé^3%%1dbY0þªo#:XNf¹ÒqN  DþJ ¯  +°+X±CTX@&U&UU¸ÿè@UUU¸ÿà´U¸ÿøµUºâ â@#%
+À-S"
+&  %# '
+o			UU¸ÿú´U¸ÿê´U¸ÿê·U*
+ ?3+?+201Y632#"&#"3!52767654&&#"'%Lsy7H4$#W-0B>þ+F"
+#'
+¯ÎÎC,'6E
+,J,O3_3x
+!>'#D.X*7s-
+U ¸ÿü@U U ¸ÿä@U UU¸ÿø´U¸ÿú´U¸ÿôµU$ºâ â@% ,¸ÿÀµ	U
+ /Ý+Í?í?99?íì/++++Í+/++++ÀÝ+Ä10+±CTX@W@`p
+ $%%,U
+UU UU
+U& U U  &¸ÿò´U¸ÿö´U¸ÿö·U'&9/+++9/++9/Í+++Í+++À ?í??ÍÍ99?Ý]Í10@5'`]6 '`'p'°'47: HH O'#!O%'#'AD %¸E@
+ %%,
+
+! ¸g@ °pÏ¸½@%$P°  °ÀÐ`&Â+Nô]qr<Mý<ý]q<ý<<< ?<í?<<<í99õíüõ++10Cy@  +<+ ]]+YY²$¸â·l%
+¸²l ?+??3+201Y327#5#"&&54&&5!32674&'5c!'þî-v|EMq,7HAY?+mK9ZýÕG#qÂBYA2%ýP6LN7%  ÿäí  ê°+X±CTX¶		 ¾â â  â â±  ?ííìì?/9/10±CTX@1
+			"!	 U*UU U   ?Í+?Í+?Í+?Í+?99/ÝÍÝÍ10@	SX[¸ÿØ²5"¸ÿÀ@a5#	"
+! $  :	9
+:95:JI	DEEIi	"© ¨¥	¢¢¨¾µ	¶
+¶·º»À"Õö
+öû-	"¸ÿÀ³2`4"¸ÿÀ³+14"¸ÿÀ³
+KÏRÕÝå<>K
+M
+
+' ¸ÿ}@@%$ 	$&'&%'0		$
+%
+%#$$0
+=,'ÕÎÝ
+$]m ?3?33+2901Y!'&'&'5!654&'5!##&&'5!ÄÅ4'<´HÐÁ'9!WK4@:VV%P:u§»&,,
+09
+;A,64 B:bO&*B5+¢aG3[¼ÐK))
+ ýNiKþç$*#2Jþ%üÔ#, g  ?¦  °+X@
+
+<WXZC<,&J9]ÈçÈ j¢u+    Ð   Ï×W+5-
+\
+MzÐ( 5\N@vÄ»6Z«]¢u#`uÏ
+:%=Õÿ'5HOPOH.VMv>T.32RTRQC@.44P2ROR@PSP32#?DD@##IzU9'Jü&IG)cÎ©J?VBG7±A;z,59A¡qÔv?@L,RÑ!"ÍHÕOÎqÒG5+Ï#Õ8+#G%$CÑ-rÕ)*r7-#7],#7*#7SQ)*r,r-r.Õ	*#*Ñ,rÕ-#*S.VHHúHÝ/LHúH.VYê\\\/N8QLS½S?*;£C
+9Cþ9B# %.t:"%Hý¯lC&$$@XLÉ¿rJJûFZ7$$
+6\À*%©8*ÀZ   <  ¯ ;°+X±CTX@1UUUUUU¸ÿð´U¸ÿö´U¸ÿð·U9/+++Í+++ /3+3?ÝÍ10++³¸ÿÀ@224p¯ð P@P`¸ÿÀ³8:4¸ÿÀ³-04¸ÿÀ³#%4¸ÿÀ@%4
++Çy5"3	
+ó*dV9A%ZN;A  ]5$"!C)M.K$=M73  ] !!! Ï#êOz\ëzP.VzVOê.VNBST>[T Q?$[P;2+$dKxGI>>mqH$Ch\>S?
+\Li3T!Z<4D4lVxQD&
+'B{%B\êLPP
+ááá\PáLú-á.VLz-éLzáá.L/LPê/N;2#?K@+$#2OT.;4>O.DC@1P>P[R>12R[R@P[P;4S?!?2QTÞ@<6B,>6RA+V.(WH>>cü=S@P,@I>Z/ 
+\{¤0[{
+??K¥­% ½Nk06
+D)_QB,XHC ,XP` %4=8Vm>%??K¥uSLI :fsf*BC^´g(BHdq¶gK?gI7tl_G
+C8Õ!'
+,Hl&'
+&
+%3 ¸í ?íí?í9/í99//í99///ýÄÞÄ9/]3/Í23/Í2/Í210#.##32>'3#.##332>73!52>54.#52
+$0CM"ÑÂ:@%%!B9·-
+>*   ÿä`× / *@' $-' -/¸íµ"Î ?í2/?ýÄ/ÎýÎÞÍ10"#".54>3232>54.#5!`499BI#92#	
+	!?5Ó´1B$þ !BA=0G0+
+#/>"%.E.#  '  z× D  @GDD :		:		08:8	8::		$	
+ýã'C2$$!7I
+ $  A 0
+DfHBaE,	ýh¶NO¾pl½P1Qw¢[Uio[;;[ohT"`geP2*H]gi  
+  s× $ 7 K¹ 2@#/ ///9%$#%*%4
+74%# ¸í ?íí2?ýÄ9/3í2/ÞÄýÄÌ9/]í102#"&'7!52>54.#532>54.#"¹TbfS4=^r5?b0	#E<ýý">/
+"D:V&++I3'=J"%G×#?bGHgAþû%<
+#bB;Õ
+'N*,'\-OOVPzOLáé/LVzzP-/¤HNz#C.;P>O.K@>;431! 23ST Q?$9²00;N
+M.5CËxH
+ *ôTABJA6\3\
+
+0>>4 FD0H240H 4"
+34EDD"
+e4u44T4I4D044"  
+G10H0!"
+"0{0
+u
+f
+0
+"
+$H0HH0&& """DOMMHHD@@0DDD@4="&0
+*AOI:4weC 6EIH  y®Ó  2@
+ 
+ ¸X± ?ü]ÝÄÍ22/ý2ÌÎ2/31033!52>54&#"'H%&þ²
+F_7;dH
+
+MCtQ_,[<
+F_7;dH
