@@ -1,0 +1,380 @@
+% references-ml.bib — Meta-ACDC 文献综述参考（02-ml-tcr-prediction.md）
+% 说明：所有条目经 2026-09-20 网络检索核对；字段前有 % UNVERIFIED 注释的条目/字段未能在检索中直接核实，使用时请复核。
+
+%% ===== 1. TCR–pMHC 结合预测模型 =====
+
+@article{springer2020ergo,
+  title     = {Prediction of Specific {TCR}-Peptide Binding From Large Dictionaries of {TCR}-Peptide Pairs},
+  author    = {Springer, Ido and Besser, Hanan and Tickotsky-Moskovitz, Nili and Dvorkin, Shirit and Louzoun, Yoram},
+  journal   = {Frontiers in Immunology},
+  volume    = {11},
+  pages     = {1803},
+  year      = {2020},
+  doi       = {10.3389/fimmu.2020.01803}
+}
+
+@article{springer2021ergo2,
+  title     = {Contribution of {T} Cell Receptor Alpha and Beta {CDR3}, {MHC} Typing, {V} and {J} Genes to Peptide Binding Prediction},
+  author    = {Springer, Ido and Tickotsky, Nili and Louzoun, Yoram},
+  journal   = {Frontiers in Immunology},
+  volume    = {12},
+  pages     = {664514},
+  year      = {2021},
+  doi       = {10.3389/fimmu.2021.664514}
+}
+
+@article{jurtz2018nettcr,
+  title     = {{NetTCR}: sequence-based prediction of {TCR} binding to peptide-{MHC} complexes using convolutional neural networks},
+  author    = {Jurtz, Vanessa Isabell and Jessen, Leon Eyrich and Bentzen, Amalie Kai and Jespersen, Martin Closter and Mahajan, Swapnil and Vita, Randi and Jensen, Kamilla Kj{\ae}rgaard and Marcatili, Paolo and Hadrup, Sine Reker and Peters, Bjoern and Nielsen, Morten},
+  journal   = {bioRxiv},
+  year      = {2018},
+  doi       = {10.1101/433706},
+  note      = {Preprint (未正式发表)}
+}
+
+@article{montemurro2021nettcr2,
+  title     = {{NetTCR}-2.0 enables accurate prediction of {TCR}-peptide binding by using paired {TCR}$\alpha$ and $\beta$ sequence data},
+  author    = {Montemurro, Alessandro and Schuster, Viktoria and Povlsen, Helle Rus and Bentzen, Amalie Kai and Jurtz, Vanessa and Chronister, William D. and Crinklaw, Austin and Hadrup, Sine Reker and Winther, Ole and Peters, Bjoern and Jessen, Leon Eyrich and Nielsen, Morten},
+  journal   = {Communications Biology},
+  volume    = {4},
+  year      = {2021},
+  doi       = {10.1038/s42003-021-02610-3},
+  % UNVERIFIED: volume=4 为常见引用；具体文章号（如 900）未核实，已省略 pages
+  note      = {article number 未核实}
+}
+
+@article{jensen2023nettcr22,
+  title     = {{NetTCR} 2.2 - Improved {TCR} specificity predictions by combining pan- and peptide-specific training strategies, loss-scaling and integration of sequence similarity},
+  author    = {Jensen, Mathias Fynbo and Nielsen, Morten},
+  journal   = {eLife},
+  volume    = {12},
+  pages     = {RP93934},
+  year      = {2024},
+  doi       = {10.7554/eLife.93934},
+  note      = {bioRxiv 2023.10.12.562001 (2023); eLife reviewed preprint}
+}
+
+@article{lu2021pmtnet,
+  title     = {Deep learning-based prediction of the {T} cell receptor-antigen binding specificity},
+  author    = {Lu, Tianshi and Zhang, Ze and Zhu, James and Wang, Yunguan and Jiang, Peixin and Xiao, Xiangjun and Bernatchez, Chantale and Heymach, John V. and Gibbons, Don L. and Wang, Jun and Xu, Lin and Reuben, Alexandre and Wang, Tao},
+  journal   = {Nature Machine Intelligence},
+  volume    = {3},
+  number    = {10},
+  pages     = {864--875},
+  year      = {2021},
+  doi       = {10.1038/s42256-021-00383-2}
+}
+
+@article{han2023pmtnetomni,
+  title     = {pan-{MHC} and cross-Species Prediction of {T} Cell Receptor-Antigen Binding},
+  author    = {Han, Yi and Yang, Yuqiu and Tian, Yanhua and Fattah, Farjana J. and von Itzstein, Mitchell S. and Zhang, Minying and Kang, Xiongbin and Yang, Donghan M. and Liu, Jialiang and Xue, Yaming and Liang, Chaoying and Raman, Indu and Zhu, Chengsong and Xiao, Olivia and Hu, Yifei and Dowell, Jonathan E. and Homsi, Jade and Rashdan, Sawsan and Yang, Shengjie and Gwin, Mary E. and Hsiehchen, David and Gloria-McCutchen, Yvonne and Pan, Ke and Wu, Fangjiang and Gibbons, Don and Wang, Xinlei and Yee, Cassian and Huang, Junzhou and Reuben, Alexandre and Cheng, Chao and Zhang, Jianjun and Gerber, David E. and Wang, Tao},
+  journal   = {bioRxiv},
+  year      = {2023},
+  doi       = {10.1101/2023.12.01.569599},
+  note      = {Preprint; 正式版: Nature Communications (2026), title "Deciphering small sequence differences in T cell receptor-antigen pairing", DOI 10.1038/s41467-026-73396-3, 卷页未核实}
+}
+
+@article{weber2021titan,
+  title     = {{TITAN}: {T}-cell receptor specificity prediction with bimodal attention networks},
+  author    = {Weber, Anna and Born, Jannis and Rodr{\'i}guez Mart{\'i}nez, Mar{\'i}a},
+  journal   = {Bioinformatics},
+  volume    = {37},
+  number    = {Supplement\_1},
+  pages     = {i237--i244},
+  year      = {2021},
+  doi       = {10.1093/bioinformatics/btab294},
+  note      = {ISMB/ECCB 2021; arXiv:2105.03323}
+}
+
+@article{cai2022atmtcr,
+  title     = {{ATM}-{TCR}: {TCR}-Epitope Binding Affinity Prediction Using a Multi-Head Self-Attention Model},
+  author    = {Cai, Michael and Bang, Seojin and Zhang, Pengfei and Lee, Heewook},
+  journal   = {Frontiers in Immunology},
+  volume    = {13},
+  pages     = {893247},
+  year      = {2022},
+  doi       = {10.3389/fimmu.2022.893247}
+}
+
+@article{gao2023panpep,
+  title     = {Pan-Peptide Meta Learning for {T}-cell receptor--antigen binding recognition},
+  author    = {Gao, Yicheng and Gao, Yuli and Fan, Yuxiao and Zhu, Chengyu and Wei, Zhiting and Zhou, Chi and Chuai, Guohui and Chen, Qinchang and Zhang, He and Liu, Qi},
+  journal   = {Nature Machine Intelligence},
+  volume    = {5},
+  pages     = {236--249},
+  year      = {2023},
+  doi       = {10.1038/s42256-023-00619-3}
+}
+
+@article{meynard2024tulip,
+  title     = {{TULIP}: a transformer-based unsupervised language model for interacting peptides and {T} cell receptors that generalizes to unseen epitopes},
+  author    = {Meynard-Piganeau, Barthelemy and Feinauer, Christoph and Weigt, Martin and Walczak, Aleksandra M. and Mora, Thierry},
+  journal   = {Proceedings of the National Academy of Sciences},
+  volume    = {121},
+  number    = {24},
+  pages     = {e2316401121},
+  year      = {2024},
+  doi       = {10.1073/pnas.2316401121}
+}
+
+@article{gao2024unitcr,
+  title     = {Unified cross-modality integration and analysis of {T} cell receptors and {T} cell transcriptomes by low-resource-aware representation learning},
+  author    = {Gao, Yicheng and Dong, Kejing and Gao, Yuli and Jin, Xuan and Liu, Qi},
+  journal   = {Cell Genomics},
+  volume    = {4},
+  pages     = {100553},
+  year      = {2024},
+  doi       = {10.1016/j.xgen.2024.100553},
+  % UNVERIFIED: DOI 未直接核实（来源为期刊 PII S2666979X24001198）
+}
+
+@article{nagano2025sceptr,
+  title     = {Contrastive learning of {T} cell receptor representations},
+  author    = {Nagano, Yuta and Pyo, Andrew and Milighetti, Martina and Henderson, James and Shawe-Taylor, John and Chain, Benny and Tiffeau-Mayer, Andreas},
+  journal   = {Cell Systems},
+  year      = {2025},
+  doi       = {10.1016/j.cels.2024.12.008},
+  note      = {arXiv:2406.06397 (2024); Cell Systems 2025, 卷页与 DOI 未核实},
+  % UNVERIFIED: 正式版卷页与 DOI
+}
+
+@article{zhang2024epact,
+  title     = {Epitope-anchored contrastive transfer learning for paired {CD8+} {T} cell receptor--antigen recognition},
+  author    = {Zhang, Yumeng and Wang, Zhikang and Jiang, Yunzhe and Littler, Dene R. and Gerstein, Mark and Purcell, Anthony W. and Rossjohn, Jamie and Ou, Hong-Yu and Song, Jiangning},
+  journal   = {Nature Machine Intelligence},
+  volume    = {6},
+  number    = {11},
+  pages     = {1344--1358},
+  year      = {2024},
+  doi       = {10.1038/s42256-024-00913-8}
+  % UNVERIFIED: 作者列表后几位（Rossjohn, Littler 等）来自非正式来源，请核对
+}
+
+@article{peng2023teim,
+  title     = {Characterizing the interaction conformation between {T} cell receptors and epitopes with deep learning},
+  author    = {Peng, Xingang and Lei, Yipin and Feng, Pengcheng and Jia, Lemei and Ma, Jianzhu and Zhao, Dan and Zeng, Jianyang},
+  journal   = {Nature Machine Intelligence},
+  volume    = {5},
+  pages     = {395--407},
+  year      = {2023},
+  doi       = {10.1038/s42256-023-00634-4}
+  % UNVERIFIED: 作者列表中间成员未完全核实
+}
+
+@article{yang2025tcross,
+  title     = {Disrupting explicit encoding paradigms: property-interactive transformers decode {T}-cell receptor specificity beyond dataset biases},
+  author    = {Yang, Luming and Liu, Haoxian and Calanche, Alec and Gokcek, Sohret M. and Singh, Vishal and Sansoterra, Nicholas and Akkaya, Munir and Akkaya, Billur and Yilmaz, Alper},
+  journal   = {Briefings in Bioinformatics},
+  volume    = {26},
+  number    = {6},
+  pages     = {bbaf609},
+  year      = {2025},
+  doi       = {10.1093/bib/bbaf609}
+}
+
+@article{tan2024predictcr,
+  title     = {Prediction of tumor-reactive {T} cell receptors from sc{RNA}-seq data for personalized {T} cell therapy},
+  author    = {Tan, Chin Leng and Lindner, Katharina and Boschert, Tamara and others},
+  journal   = {Nature Biotechnology},
+  volume    = {42},
+  pages     = {134--142},
+  year      = {2024},
+  doi       = {10.1038/s41587-024-02161-y},
+  % UNVERIFIED: 完整作者列表省略（"and others"）
+}
+
+@article{meysman2023immrep22,
+  title     = {Benchmarking solutions to the {T}-cell receptor epitope prediction problem: {IMMREP22} workshop report},
+  author    = {Meysman, Pieter and Barton, Justin and Bravi, Barbara and Nielsen, Morten and Mora, Thierry and Walczak, Aleksandra M. and Eugster, Anne and Sharma, Virag and others},
+  journal   = {ImmunoInformatics},
+  volume    = {9},
+  pages     = {100024},
+  year      = {2023},
+  doi       = {10.1016/j.immuno.2023.100024},
+  % UNVERIFIED: 部分作者省略
+}
+
+%% ===== 2. 几何深度学习 =====
+
+@inproceedings{satorras2021egnn,
+  title     = {E(n) Equivariant Graph Neural Networks},
+  author    = {Satorras, Victor Garcia and Hoogeboom, Emiel and Welling, Max},
+  booktitle = {Proceedings of the 38th International Conference on Machine Learning (ICML)},
+  series    = {PMLR},
+  volume    = {139},
+  pages     = {9323--9332},
+  year      = {2021},
+  eprint    = {2102.09844},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{jing2021gvp,
+  title     = {Learning from Protein Structure with Geometric Vector Perceptrons},
+  author    = {Jing, Bowen and Eismann, Stephan and Suriana, Patricia and Townshend, Raphael J. L. and Dror, Ron},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2021},
+  note      = {Spotlight; arXiv:2009.01411}
+}
+
+@inproceedings{zhang2023gearnet,
+  title     = {Protein Representation Learning by Geometric Structure Pretraining},
+  author    = {Zhang, Zuobai and Xu, Minghao and Jamasb, Arian and Chenthamarakshan, Vijil and Lozano, Aurelie and Das, Payel and Tang, Jian},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  eprint    = {2203.06125},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{ganea2022equidock,
+  title     = {Independent {SE(3)}-Equivariant Models for End-to-End Rigid Protein Docking},
+  author    = {Ganea, Octavian-Eugen and Huang, Xinyuan and Bunne, Charlotte and Bian, Yatao and Barzilay, Regina and Jaakkola, Tommi S. and Krause, Andreas},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  note      = {Spotlight; arXiv:2111.07786}
+}
+
+@inproceedings{corso2023diffdock,
+  title     = {{DiffDock}: Diffusion Steps, Twists, and Turns for Molecular Docking},
+  author    = {Corso, Gabriele and St{\"a}rk, Hannes and Jing, Bowen and Barzilay, Regina and Jaakkola, Tommi},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  eprint    = {2210.01776},
+  archivePrefix = {arXiv}
+}
+
+@article{atz2021geometric,
+  title     = {Geometric deep learning on molecular representations},
+  author    = {Atz, Kenneth and Grisoni, Francesca and Schneider, Gisbert},
+  journal   = {Nature Machine Intelligence},
+  volume    = {3},
+  number    = {12},
+  pages     = {1023--1032},
+  year      = {2021},
+  note      = {DOI 未核实}
+}
+
+%% ===== 3. 结构预测 =====
+
+@article{abramson2024af3,
+  title     = {Accurate structure prediction of biomolecular interactions with {AlphaFold} 3},
+  author    = {Abramson, Josh and Adler, Jonas and Dunger, Jack and Evans, Richard and Green, Tim and Pritzel, Alexander and Ronneberger, Olaf and Willmore, Lindsay and Ballard, Andrew J. and Bambrick, Joshua and others},
+  journal   = {Nature},
+  volume    = {630},
+  pages     = {493--500},
+  year      = {2024},
+  doi       = {10.1038/s41586-024-07487-w},
+  % UNVERIFIED: 完整作者列表省略
+}
+
+@article{evans2021afmultimer,
+  title     = {Protein complex prediction with {AlphaFold}-Multimer},
+  author    = {Evans, Richard and O'Neill, Michael and Pritzel, Alexander and Antropova, Natasha and Senior, Andrew and Green, Tim and {\v{Z}}{\'i}dek, Augustin and Bates, Russ and Blackwell, Sam and Yim, Jason and others},
+  journal   = {bioRxiv},
+  year      = {2021},
+  doi       = {10.1101/2021.10.04.463034},
+  note      = {Preprint (未正式发表)}
+}
+
+@article{mirdita2022colabfold,
+  title     = {{ColabFold}: making protein folding accessible to all},
+  author    = {Mirdita, Milot and Sch{\"u}tze, Konstantin and Moriwaki, Yoshitaka and Heo, Lim and Ovchinnikov, Sergey and Steinegger, Martin},
+  journal   = {Nature Methods},
+  volume    = {19},
+  number    = {6},
+  pages     = {679--682},
+  year      = {2022},
+  doi       = {10.1038/s41592-022-01488-1}
+}
+
+@article{yin2023tcrmodel2,
+  title     = {{TCRmodel2}: high-resolution modeling of {T} cell receptor recognition using deep learning},
+  author    = {Yin, Rui and Ribeiro-Filho, Helder V. and Lin, Valerie and Gowthaman, Ragul and Cheung, Melyssa and Pierce, Brian G.},
+  journal   = {Nucleic Acids Research},
+  volume    = {51},
+  number    = {W1},
+  pages     = {W569--W576},
+  year      = {2023},
+  doi       = {10.1093/nar/gkad356}
+}
+
+@article{abanades2023immunebuilder,
+  title     = {{ImmuneBuilder}: Deep-Learning models for predicting the structures of immune proteins},
+  author    = {Abanades, Brennan and Wong, Wing Ki and Boyles, Fergus and Georges, Guy and Bujotzek, Alexander and Deane, Charlotte M.},
+  journal   = {Communications Biology},
+  volume    = {6},
+  pages     = {575},
+  year      = {2023},
+  doi       = {10.1038/s42003-023-04927-7}
+}
+
+@article{bradley2023tcrdock,
+  title     = {Structure-based prediction of {T} cell receptor:peptide-{MHC} interactions},
+  author    = {Bradley, Philip},
+  journal   = {eLife},
+  volume    = {12},
+  pages     = {e82813},
+  year      = {2023},
+  doi       = {10.7554/eLife.82813}
+}
+
+%% ===== 4. 临床交叉反应案例 =====
+
+@article{morgan2013magea3,
+  title     = {Cancer regression and neurological toxicity following anti-{MAGE-A3} {TCR} gene therapy},
+  author    = {Morgan, Richard A. and Chinnasamy, Nachimuthu and Abate-Daga, Daniel and Gros, Alena and Robbins, Paul F. and Zheng, Zhili and Feldman, Steven A. and Yang, James C. and Sherry, Richard M. and Phan, Giao Q. and others},
+  journal   = {Journal of Immunotherapy},
+  volume    = {36},
+  number    = {2},
+  pages     = {133--151},
+  year      = {2013},
+  doi       = {10.1097/CJI.0b013e3182829903},
+  % UNVERIFIED: 完整作者列表省略
+}
+
+@article{cameron2013titin,
+  title     = {Identification of a Titin-derived {HLA-A1}-presented peptide as a cross-reactive target for engineered {MAGE A3}-directed {T} cells},
+  author    = {Cameron, Brian J. and Gerry, Andrew B. and Dukes, Joseph and Harper, Jane V. and Kannan, Vivekanandan and Bianchi, Frayne C. and Grand, Francis and Brewer, Joanna E. and Gupta, Minnal and Plesa, Gabriela and others},
+  journal   = {Science Translational Medicine},
+  volume    = {5},
+  number    = {197},
+  pages     = {197ra103},
+  year      = {2013},
+  doi       = {10.1126/scitranslmed.3006034}
+}
+
+@article{linette2013cardiac,
+  title     = {Cardiovascular toxicity and titin cross-reactivity of affinity-enhanced {T} cells in myeloma and melanoma},
+  author    = {Linette, Gerald P. and Stadtmauer, Edward A. and Maus, Marcela V. and Rapoport, Aaron P. and Levine, Bruce L. and Emery, Lyndsey and Litzky, Leslie and Bagg, Adam and Carreno, Beatriz M. and Cimino, Patrick J. and others},
+  journal   = {Blood},
+  volume    = {122},
+  number    = {6},
+  pages     = {863--871},
+  year      = {2013},
+  doi       = {10.1182/blood-2013-03-490565}
+}
+
+@article{raman2016mimicry,
+  title     = {Direct molecular mimicry enables off-target cardiovascular toxicity by an enhanced affinity {TCR} designed for cancer immunotherapy},
+  author    = {Raman, Marine C. C. and Rizkallah, Pierre J. and Simmons, Ruth and Donnellan, Zoe and Dukes, Joseph and Bossi, Giovanna and Le Provost, Gabrielle S. and Todorov, Penio and Baston, Emma and Hickman, Emma and others},
+  journal   = {Scientific Reports},
+  volume    = {6},
+  pages     = {18851},
+  year      = {2016},
+  doi       = {10.1038/srep18851},
+  % UNVERIFIED: 完整作者列表省略
+}
+
+@article{nathan2021tebentafusp,
+  title     = {Overall Survival Benefit with Tebentafusp in Metastatic Uveal Melanoma},
+  author    = {Nathan, Paul and Hassel, Jessica C. and Rutkowski, Piotr and Baurain, Jean-Francois and Butler, Marcus O. and Schlaak, Max and Sullivan, Ryan J. and Ochsenreither, Sebastian and Dummer, Reinhard and Kirkwood, John M. and others},
+  journal   = {New England Journal of Medicine},
+  volume    = {385},
+  number    = {13},
+  pages     = {1196--1206},
+  year      = {2021},
+  doi       = {10.1056/NEJMoa2103485},
+  % UNVERIFIED: DOI 未直接核实；5 年随访数据见 AACR 2026 (Hassel 等) 与 Lancet 2024 (Nathan 等, 3 年数据)
+}
+
+%% ===== 补充：未在正文中定位的条目 =====
+% SCORPIO：多轮检索未定位到该名称的 TCR 特异性预测模型（2026-09-20），暂不收录。
