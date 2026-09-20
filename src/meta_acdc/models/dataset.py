@@ -72,19 +72,60 @@ def make_decoy(
     return out
 
 
+def make_displaced_peptide_decoy(
+    residues: list[Residue],
+    shift: float = 15.0,
+) -> list[Residue]:
+    """Negative decoy: the native peptide chain rigidly translated out of the
+    groove (along +z). Real interface geometry destroyed — a strong structural
+    signal for pipeline validation. (The graft decoy is the weak-signal variant
+    we aim to learn later with better readouts.)
+    """
+    chain_sizes: dict[str, int] = {}
+    for r in residues:
+        chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
+    peptide_chains = {
+        c for c, n in chain_sizes.items()
+        if not is_tcr_chain(c) and PEPTIDE_LEN[0] <= n <= PEPTIDE_LEN[1]
+    }
+    out = []
+    for r in residues:
+        if r.chain in peptide_chains:
+            out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift, r.plddt))
+        else:
+            out.append(r)
+    return out
+
+
 def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
     rng = random.Random(seed)
     with open(struct_dir / "complexes.tsv") as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
 
     complexes: dict[str, list[Residue]] = {}
+    skipped = 0
     for row in rows:
         pdb = row["pdb"]
         path = struct_dir / f"{pdb.lower()}.pdb"
         try:
-            complexes[pdb] = parse_pdb(path)
+            residues = parse_pdb(path)
         except Exception:
             continue
+        # keep only clean single complexes: exactly 2 TCR chains (A,B),
+        # exactly one peptide chain (5-20 res) and >=1 MHC-like chain (>100 res)
+        chain_sizes: dict[str, int] = {}
+        for r in residues:
+            chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
+        tcr_chains = [c for c in ("A", "B") if c in chain_sizes]
+        other = {c: n for c, n in chain_sizes.items() if c not in ("A", "B")}
+        n_peptide = sum(1 for n in other.values() if 5 <= n <= 20)
+        n_mhc = sum(1 for n in other.values() if n > 100)
+        if len(tcr_chains) < 2 or n_peptide != 1 or n_mhc < 1:
+            skipped += 1
+            continue
+        complexes[pdb] = residues
+    if skipped:
+        print(f"skipped {skipped} multi-complex / ambiguous entries", flush=True)
 
     graphs = []
     labels = []
@@ -107,8 +148,15 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         add(residues, 1, pdb)
         n_pos += 1
 
-    # negatives: graft decoys (foreign peptide into each complex)
+    # negatives: displaced-peptide decoys (strong signal, pipeline validation)
     n_neg = 0
+    for pdb, residues in complexes.items():
+        decoy = make_displaced_peptide_decoy(residues)
+        add(decoy, 0, f"{pdb}-disp")
+        n_neg += 1
+
+    # extra negatives: graft decoys (foreign peptide, weak signal — hard task)
+    n_graft = 0
     pdb_list = list(complexes.keys())
     for pdb, residues in complexes.items():
         peptides = _peptide_chains(residues)
@@ -121,7 +169,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         graft = rng.choice(list(donor_peptides.values()))
         decoy = make_decoy(residues, graft)
         add(decoy, 0, f"{pdb}<-{donor}")
-        n_neg += 1
+        n_graft += 1
 
     import torch  # lazy: graph logic above is torch-free
 
@@ -129,7 +177,8 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         {"graphs": graphs, "labels": labels, "pdbs": pdbs},
         out_path,
     )
-    return {"positives": n_pos, "negatives": n_neg, "total": len(labels)}
+    return {"positives": n_pos, "negatives": n_neg + n_graft,
+            "displaced": n_neg, "graft": n_graft, "total": len(labels)}
 
 
 def main() -> int:

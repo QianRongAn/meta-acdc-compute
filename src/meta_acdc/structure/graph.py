@@ -184,7 +184,19 @@ def build_interface_graph_from_residues(
     graph = InterfaceGraph(n_nodes=len(idx))
     graph.residue_info = [(residues[i].chain, residues[i].resname, residues[i].resid)
                           for i in idx]
-    graph.node_features = [_node_features(residues[i]) for i in idx]
+    # peptide-chain flag: pMHC-side chains with 5-20 residues
+    chain_sizes: dict[str, int] = {}
+    for r in residues:
+        chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
+    peptide_chains = {
+        c for c, n in chain_sizes.items()
+        if not is_tcr_chain(c) and 5 <= n <= 20
+    }
+    graph.node_features = [
+        [*_node_features(residues[i]),
+         1.0 if residues[i].chain in peptide_chains else 0.0]
+        for i in idx
+    ]
     graph.node_coords = [(residues[i].x, residues[i].y, residues[i].z) for i in idx]
 
     for new_i, old_i in enumerate(idx):

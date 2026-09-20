@@ -86,7 +86,7 @@ class EGNN(nn.Module):
         )
         self.dropout = nn.Dropout(dropout)
         self.readout = nn.Sequential(
-            nn.Linear(hidden + 1, hidden),  # +1: invariant coord-norm feature
+            nn.Linear(2 * hidden + 1, hidden),  # mean_h | max_h | coord-norm
             nn.SiLU(),
             nn.Linear(hidden, 1),
         )
@@ -112,11 +112,17 @@ class EGNN(nn.Module):
             h, x = layer(h, x, edge_index, edge_attr)
             h = self.dropout(h)
 
-        # invariant pooling: mean node features + mean coordinate norm
+        # invariant pooling: mean + max node features + mean coordinate norm
         n_graphs = batch.max().item() + 1
         node_feat = torch.zeros(n_graphs, h.shape[1], device=h.device)
         node_feat.index_add_(0, batch, h)
         coord_feat = torch.zeros(n_graphs, 1, device=x.device)
         coord_feat.index_add_(0, batch, x.norm(dim=-1, keepdim=True))
-        pooled = torch.cat([node_feat / counts, coord_feat / counts], dim=-1)
+        # max pooling via scatter (fill with -inf so padding never wins)
+        max_feat = torch.full((n_graphs, h.shape[1]), -1e9, device=h.device)
+        max_feat.scatter_reduce_(0, batch.unsqueeze(1).expand_as(h), h,
+                                 reduce="amax", include_self=True)
+        pooled = torch.cat(
+            [node_feat / counts, max_feat, coord_feat / counts], dim=-1
+        )
         return self.readout(pooled)

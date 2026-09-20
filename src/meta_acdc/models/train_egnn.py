@@ -22,7 +22,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 
 from meta_acdc.models.egnn import EGNN
 
-NODE_DIM = 4   # charge, hydrophobicity, side-chain volume, pLDDT
+NODE_DIM = 5   # charge, hydrophobicity, side-chain volume, pLDDT, is-peptide
 EDGE_DIM = 12  # RBF distance encoding
 
 
@@ -38,8 +38,11 @@ def collate(graphs: list[tuple]) -> dict:
         eas.append(torch.tensor(ef, dtype=torch.float32))
         batch.append(torch.full((n,), len(batch), dtype=torch.long))
         offset += n
+    h = torch.cat(hs)
+    # batch-level z-score normalization (mixed physical scales)
+    h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
     return {
-        "h": torch.cat(hs),
+        "h": h,
         "x": torch.cat(xs),
         "edge_index": torch.cat(eis, dim=1),
         "edge_attr": torch.cat(eas),
@@ -64,41 +67,69 @@ def main() -> int:
 
     data = torch.load(args.data, weights_only=False)
     graphs, labels = data["graphs"], torch.tensor(data["labels"], dtype=torch.float32)
-    print(f"dataset: {len(graphs)} graphs ({int(labels.sum())} pos / {len(labels) - int(labels.sum())} neg)")
+    pdbs = data["pdbs"]
+    print(f"dataset: {len(graphs)} graphs ({int(labels.sum())} pos / {len(labels) - int(labels.sum())} neg)",
+          flush=True)
 
-    tr_idx, va_idx = train_val_split(len(graphs))
-    tr_batch = collate([graphs[i] for i in tr_idx])
+    # PDB-grouped split: all variants (native + decoys) of one PDB share a fold
+    def pdb_group(name: str) -> str:
+        return name.split("-disp")[0].split("<-")[0]
+
+    groups: dict[str, list[int]] = {}
+    for i, p in enumerate(pdbs):
+        groups.setdefault(pdb_group(p), []).append(i)
+    rng = random.Random(42)
+    gids = list(groups.keys())
+    rng.shuffle(gids)
+    n_val_groups = max(1, int(0.2 * len(gids)))
+    val_groups = set(gids[:n_val_groups])
+    tr_idx = [i for g in gids if g not in val_groups for i in groups[g]]
+    va_idx = [i for g in gids if g in val_groups for i in groups[g]]
+    print(f"split: {len(gids)} PDB groups -> train={len(tr_idx)} val={len(va_idx)}", flush=True)
+
     va_batch = collate([graphs[i] for i in va_idx])
-    tr_batch = {k: v.to(args.device) for k, v in tr_batch.items()}
     va_batch = {k: v.to(args.device) for k, v in va_batch.items()}
-    y_tr = labels[tr_idx].to(args.device)
     y_va = labels[va_idx].to(args.device)
 
     torch.manual_seed(0)
-    net = EGNN(node_dim=NODE_DIM, edge_dim=EDGE_DIM, depth=4, hidden=64).to(args.device)
-    opt = torch.optim.Adam(net.parameters(), lr=1e-3, weight_decay=1e-4)
+    net = EGNN(node_dim=NODE_DIM, edge_dim=EDGE_DIM, depth=6, hidden=128).to(args.device)
+    opt = torch.optim.Adam(net.parameters(), lr=3e-4, weight_decay=1e-4)
     loss_fn = nn.BCEWithLogitsLoss()
-    # class imbalance 1:0.94 — mild; use plain BCE for the prototype
 
+    batch_size = 32
+    rng = random.Random(42)
     for epoch in range(args.epochs):
         net.train()
-        opt.zero_grad()
-        logits = net(**tr_batch).squeeze()
-        loss = loss_fn(logits, y_tr)
-        loss.backward()
-        opt.step()
+        order = tr_idx[:]
+        rng.shuffle(order)
+        total_loss = 0.0
+        for start in range(0, len(order), batch_size):
+            idx = order[start : start + batch_size]
+            batch = collate([graphs[i] for i in idx])
+            batch = {k: v.to(args.device) for k, v in batch.items()}
+            y = labels[idx].to(args.device)
+            opt.zero_grad()
+            logits = net(**batch).squeeze(-1)
+            loss = loss_fn(logits, y)
+            loss.backward()
+            opt.step()
+            total_loss += loss.item()
         if epoch % 5 == 0 or epoch == args.epochs - 1:
             net.eval()
             with torch.no_grad():
-                prob = torch.sigmoid(net(**va_batch).squeeze()).cpu().numpy()
+                prob = torch.sigmoid(net(**va_batch).squeeze(-1)).cpu().numpy()
                 y = y_va.cpu().numpy()
-            print(f"epoch {epoch:3d}  loss={loss.item():.4f}  "
-                  f"val AUROC={roc_auc_score(y, prob):.3f} AUPRC={average_precision_score(y, prob):.3f}")
+            print(f"epoch {epoch:3d}  loss={total_loss / max(1, len(order) // batch_size):.4f}  "
+                  f"val AUROC={roc_auc_score(y, prob):.3f} AUPRC={average_precision_score(y, prob):.3f}",
+                  flush=True)
 
     net.eval()
     with torch.no_grad():
-        prob_tr = torch.sigmoid(net(**tr_batch).squeeze()).cpu().numpy()
-    print(f"train AUROC={roc_auc_score(y_tr.cpu().numpy(), prob_tr):.3f}")
+        tr_batch = collate([graphs[i] for i in tr_idx[:100]])
+        tr_batch = {k: v.to(args.device) for k, v in tr_batch.items()}
+        prob_tr = torch.sigmoid(net(**tr_batch).squeeze(-1)).cpu().numpy()
+    print(f"train(subset) AUROC={roc_auc_score(labels[tr_idx[:100]].numpy(), prob_tr):.3f}",
+          flush=True)
     return 0
 
 
