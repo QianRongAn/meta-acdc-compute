@@ -6,9 +6,17 @@
 ## 当前状态
 
 - [x] KN-0:任务范围确认(执行研究计划)+ 起点确认(从零开始)— 2026-09-20 ✅
-- [ ] KN-1:计算环境搭建(见下)
-- [ ] KN-2:文献综述 v0(3 个调研 agent 进行中)
+- [~] KN-1:计算环境搭建(venv + pip 引导完成,torch 2.9.1+cu126 安装中)
+- [~] KN-2:文献综述 v0(3 篇综述 + 3 个 bib 已入库,待用户审阅 = 🔴 节点)
+- [~] KN-3:VDJdb 管线 ✅(199,289 条);IEDB 下载中
 - 项目仓库:`/home/administrator/docs/meta-acdc/`
+
+### 文献综述关键发现(2026-09-20)
+1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人,Reddy 通讯)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对
+2. NetMHCpan 最新是 **4.2**(2025,Front Immunol),计划书引用的 4.1 已过时 → 预筛管线改用 4.2
+3. 直接方法学基线:**MCGLPPI++**(JCIM 2025,几何 GNN 少样本 PPI,含 TCR-pMHC 簇验证)、**ZeroBind**(MAML++)
+4. vanilla MAML 有任务冲突/过度记忆陷阱 → 实现 MAML++ / ProtoNet
+5. 主动学习文献规则"批数多、每批少、收敛快" → 模拟器需做批大小消融
 
 ## 关键节点总表
 
