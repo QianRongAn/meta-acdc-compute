@@ -22,11 +22,13 @@ echo "==> 2/4 下载 torch/torchvision 轮子(本地安装,断点续传)"
 mkdir -p .cache
 TORCH_WHL="torch-2.9.1%2Bcu126-cp314-cp314-manylinux_2_28_x86_64.whl"
 TV_WHL="torchvision-0.24.1%2Bcu126-cp314-cp314-manylinux_2_28_x86_64.whl"
-[ -f .cache/torch.whl ] || curl -sSL --retry 5 -C - -o .cache/torch.whl "$PT_MIRROR/$TORCH_WHL"
-[ -f .cache/torchvision.whl ] || curl -sSL --retry 5 -C - -o .cache/torchvision.whl "$PT_MIRROR/$TV_WHL"
+TORCH_LOCAL="torch-2.9.1+cu126-cp314-cp314-manylinux_2_28_x86_64.whl"
+TV_LOCAL="torchvision-0.24.1+cu126-cp314-cp314-manylinux_2_28_x86_64.whl"
+[ -f ".cache/$TORCH_LOCAL" ] || curl -sSL --retry 5 -C - -o ".cache/$TORCH_LOCAL" "$PT_MIRROR/$TORCH_WHL"
+[ -f ".cache/$TV_LOCAL" ] || curl -sSL --retry 5 -C - -o ".cache/$TV_LOCAL" "$PT_MIRROR/$TV_WHL"
 
 echo "==> 3/4 安装 torch + torchvision(本地轮子)"
-.venv/bin/pip install --no-index .cache/torch.whl .cache/torchvision.whl
+.venv/bin/pip install --no-index ".cache/$TORCH_LOCAL" ".cache/$TV_LOCAL"
 
 echo "==> 4/4 安装科学计算栈"
 .venv/bin/pip install \
