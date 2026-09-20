@@ -6,10 +6,14 @@
 ## 当前状态
 
 - [x] KN-0:任务范围确认(执行研究计划)+ 起点确认(从零开始)— 2026-09-20 ✅
-- [~] KN-1:计算环境搭建(venv + pip 引导完成,torch 2.9.1+cu126 安装中)
-- [~] KN-2:文献综述 v0(3 篇综述 + 3 个 bib 已入库,待用户审阅 = 🔴 节点)
+- [x] KN-1:计算环境搭建 ✅ 2026-09-21 — torch 2.9.1+cu126 GPU 冒烟通过(GTX 1050 Ti)
+- [x] KN-2:文献综述 v0 ✅(3 篇综述 + 3 个 bib;🔴 待用户审阅)
 - [x] KN-3:VDJdb ✅(199,289 条)+ IEDB ✅(2,302,095 条,1,394,080 肽,544 等位基因)— 2026-09-21
-- 项目仓库:`/home/administrator/docs/meta-acdc/`
+- [x] KN-4:EGNN 原型首训 ✅ 2026-09-21 — 诱饵判别 AUROC 0.771 / AUPRC 0.556(PDB 分组切分,无泄漏)
+- [ ] KN-5:AlphaFold Server API(🔴 需用户提供)+ 首批结构批量预测
+- [ ] KN-6:硬负样本挖掘模块 + 元学习基线
+- [ ] KN-7:主动学习模拟器
+- 项目仓库:`/home/administrator/docs/meta-acdc/`(18 commits)
 
 ### 文献综述关键发现(2026-09-20)
 1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人,Reddy 通讯)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对
