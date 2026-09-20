@@ -138,14 +138,30 @@ def build_interface_graph(
 ) -> InterfaceGraph:
     """Build an interface graph from a TCR-pMHC PDB file."""
     residues = parse_pdb(pdb_path)
+    return build_interface_graph_from_residues(
+        residues, pdb_path, interface_radius, edge_cutoff
+    )
+
+
+def build_interface_graph_from_residues(
+    residues: list[Residue],
+    pdb_path: Path | None = None,
+    interface_radius: float = INTERFACE_RADIUS,
+    edge_cutoff: float = EDGE_CUTOFF,
+) -> InterfaceGraph:
+    """Build an interface graph from an explicit residue list.
+
+    Chain labels drive the side split (A/B = TCR, rest = pMHC). Allows
+    grafting chains (e.g., decoy peptides) before building the graph.
+    """
     if len(residues) < 10:
-        raise ValueError(f"{pdb_path}: too few residues parsed ({len(residues)})")
+        raise ValueError(f"{pdb_path or '<residues>'}: too few residues ({len(residues)})")
 
     # split complex sides by chain
     tcr = [r for r in residues if is_tcr_chain(r.chain)]
     pmhc = [r for r in residues if is_pmhc_chain(r.chain)]
     if not tcr or not pmhc:
-        raise ValueError(f"{pdb_path}: cannot split TCR/pMHC chains "
+        raise ValueError(f"{pdb_path or '<residues>'}: cannot split TCR/pMHC chains "
                          f"(tcr={len(tcr)}, pmhc={len(pmhc)})")
 
     def dist(a: Residue, b: Residue) -> float:
