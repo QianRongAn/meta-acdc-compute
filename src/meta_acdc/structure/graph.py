@@ -56,6 +56,7 @@ class InterfaceGraph:
 
     n_nodes: int = 0
     node_features: list[list[float]] = field(default_factory=list)  # phys + pLDDT
+    node_coords: list[tuple[float, float, float]] = field(default_factory=list)
     edge_index: list[tuple[int, int]] = field(default_factory=list)
     edge_features: list[list[float]] = field(default_factory=list)  # RBF distances
     residue_info: list[tuple[str, str, int]] = field(default_factory=list)
@@ -184,6 +185,7 @@ def build_interface_graph_from_residues(
     graph.residue_info = [(residues[i].chain, residues[i].resname, residues[i].resid)
                           for i in idx]
     graph.node_features = [_node_features(residues[i]) for i in idx]
+    graph.node_coords = [(residues[i].x, residues[i].y, residues[i].z) for i in idx]
 
     for new_i, old_i in enumerate(idx):
         for new_j, old_j in enumerate(idx):

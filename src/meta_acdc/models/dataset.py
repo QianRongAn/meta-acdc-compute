@@ -97,7 +97,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
             return
         if g.n_nodes < 20:
             return
-        graphs.append((g.node_features, g.edge_index, g.edge_features))
+        graphs.append((g.node_features, g.node_coords, g.edge_index, g.edge_features))
         labels.append(label)
         pdbs.append(pdb)
 
