@@ -1,16 +1,16 @@
 """Normalize IEDB mhc_ligand_full CSV into the unified schema.
 
-The IEDB export is a single CSV with columns including:
-    object_type, epitope name, mhc allele names, mhc class, assay group,
-    qualitative_measure, quantitative_measurement, host organism name,
-    pubMed id, references, ...
+The current IEDB export uses a TWO-ROW header (group row + column-name row),
+e.g. groups: Assay, Epitope, Host, MHC Restriction, Reference, ...
 
-We keep MHC ligand/binding assays on human data as presentation-level
-records (used for NetMHCpan-style pre-filtering benchmarks). T cell assay
-rows are excluded — activation data comes from VDJdb/ACDC.
+Rows kept: MHC ligand / binding assays (Method contains mhc/binding/mass
+spectrometry/elution, NOT T cell assays) on human data. T cell assay rows are
+excluded — activation data comes from VDJdb/ACDC (see schema.py rationale).
 
-Labels: qualitative_measure Positive -> 1, Negative -> 0.
-Score: -log10(IC50 nM) from quantitative_measurement when parseable.
+Labels: Qualitative Measurement Positive -> 1, Negative -> 0.
+Score: -log10(IC50 nM) from Quantitative measurement when parseable.
+Streaming: the CSV is ~9 GB; rows are deduplicated on (peptide, allele) with a
+seen-set and written incrementally (memory-safe).
 
 Usage:
     python ingest_iedb.py --in mhc_ligand_full.csv --out processed/iedb.clean.tsv
@@ -26,7 +26,8 @@ from pathlib import Path
 
 from schema import DataSource, DatasetStats, InteractionRecord, SCHEMA_TSV
 
-ASSAY_GROUPS = {"binding", "mhc ligand", "ligand", "mhc ligand assay"}
+METHOD_KEEP = ("mhc", "mass spectr", "binding", "elution")
+METHOD_DROP = ("t cell",)
 
 
 def parse_ic50(raw: str) -> float | None:
@@ -40,42 +41,58 @@ def parse_ic50(raw: str) -> float | None:
 def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetStats:
     stats = DatasetStats()
     seen: set[tuple[str, str]] = set()
-    rows: list[list[str]] = []
 
-    with open(path, newline="", encoding="utf-8", errors="replace") as fh:
-        reader = csv.DictReader(fh)
-        fieldnames = {f.lower(): f for f in (reader.fieldnames or [])}
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, newline="", encoding="utf-8", errors="replace") as fh, \
+         open(out_path, "w", newline="") as out:
+        raw = csv.reader(fh)
+        h1 = next(raw)
+        h2 = next(raw)
+        fieldnames = [f"{g}|{n}" for g, n in zip(h1, h2)]
 
-        def get(line: dict, key: str) -> str:
-            return (line.get(fieldnames[key]) or "").strip()
+        # positionally index the fields we need (faster than DictReader on 9GB)
+        def idx(group: str, name: str) -> int:
+            return fieldnames.index(f"{group}|{name}")
 
-        for line in reader:
-            if max_rows is not None and len(rows) >= max_rows:
-                break
-            assay_group = get(line, "assay group").lower()
-            if assay_group and assay_group not in ASSAY_GROUPS:
+        i_method = idx("Assay", "Method")
+        i_epitope = idx("Epitope", "Name")
+        i_allele = idx("MHC Restriction", "Name")
+        i_qual = idx("Assay", "Qualitative Measurement")
+        i_quant = idx("Assay", "Quantitative measurement")
+        i_host = idx("Host", "Name")
+        i_pmid = idx("Reference", "PMID")
+
+        out.write(SCHEMA_TSV + "\n")
+        n_written = 0
+        n_labeled = 0
+        for line in raw:
+            if len(line) <= i_method:
                 continue
-            host = get(line, "host organism name").lower()
+            method = line[i_method].strip().lower()
+            if not method:
+                continue
+            if any(k in method for k in METHOD_DROP):
+                continue
+            if not any(k in method for k in METHOD_KEEP):
+                continue
+            host = line[i_host].strip().lower()
             if host and "homo sapiens" not in host and "human" not in host:
                 continue
-
-            peptide = get(line, "epitope name")
-            allele_raw = get(line, "mhc allele names")
+            peptide = line[i_epitope].strip()
+            allele_raw = line[i_allele].strip()
             if not peptide or not allele_raw:
                 continue
             allele = allele_raw.split(",")[0].strip()
 
-            qualitative = get(line, "qualitative_measure").lower()
+            qualitative = line[i_qual].strip().lower()
             label: int | None = None
             if qualitative.startswith("positive"):
                 label = 1
             elif qualitative.startswith("negative"):
                 label = 0
-
-            score = parse_ic50(get(line, "quantitative_measurement"))
+            score = parse_ic50(line[i_quant].strip())
             if label is None and score is None:
                 continue
-
             key = (peptide, allele)
             if key in seen:
                 continue
@@ -87,26 +104,23 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
                 mhc_allele=allele,
                 label=label,
                 score=score,
-                reference_id=get(line, "pubMed id") or None,
+                reference_id=(line[i_pmid].strip() or None),
                 organism="HomoSapiens",
-                method=f"iedb:{assay_group}" if assay_group else "iedb",
+                method=f"iedb:{method}" if method else "iedb",
             )
-            rows.append(rec.to_row())
+            out.write("\t".join(rec.to_row()) + "\n")
+            n_written += 1
+            n_labeled += 1 if label is not None else 0
+            if max_rows is not None and n_written >= max_rows:
+                break
 
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", newline="") as fh:
-        fh.write(SCHEMA_TSV + "\n")
-        for row in rows:
-            fh.write("\t".join(row) + "\n")
-
-    stats.n_records = len(rows)
-    stats.n_unique_tcr_beta = 0  # IEDB ligand data has no TCR
-    stats.n_unique_peptides = len({r[7] for r in rows})
-    stats.n_alleles = len({r[8] for r in rows if r[8]})
-    stats.n_labeled = sum(1 for r in rows if r[9])
-    stats.n_unlabeled = stats.n_records - stats.n_labeled
-    if stats.n_records == 0:
-        stats.warnings.append("no records ingested — check input columns")
+    stats.n_records = n_written
+    stats.n_unique_peptides = len({k[0] for k in seen})
+    stats.n_alleles = len({k[1] for k in seen if k[1]})
+    stats.n_labeled = n_labeled
+    stats.n_unlabeled = n_written - n_labeled
+    if n_written == 0:
+        stats.warnings.append("no records ingested — check column layout")
     return stats
 
 
