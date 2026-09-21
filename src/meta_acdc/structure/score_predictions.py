@@ -50,18 +50,24 @@ def score_graph(net: EGNN, g, device: str) -> float:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cifs", type=Path, default=Path("data/raw/af3_predictions"))
-    ap.add_argument("--model", type=Path,
-                    default=Path("data/processed/egnn_dataset.model.pt"))
+    ap.add_argument("--model", type=Path, action="append", default=[],
+                    help="model checkpoint; repeat for ensemble")
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/prediction_scores.tsv"))
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
+    if not args.model:
+        args.model = [Path("data/processed/egnn_dataset.model.pt")]
 
-    ckpt = torch.load(args.model, weights_only=False)
-    net = EGNN(node_dim=ckpt["n_node_dim"], edge_dim=ckpt["n_edge_dim"],
-               depth=6, hidden=128).to(args.device)
-    net.load_state_dict(ckpt["model"])
-    net.eval()
+    nets = []
+    for mp in args.model:
+        ckpt = torch.load(mp, weights_only=False)
+        net = EGNN(node_dim=ckpt["n_node_dim"], edge_dim=ckpt["n_edge_dim"],
+                   depth=6, hidden=128).to(args.device)
+        net.load_state_dict(ckpt["model"])
+        net.eval()
+        nets.append(net)
+    print(f"ensemble: {len(nets)} models", flush=True)
 
     rows = []
     for cif in sorted(args.cifs.glob("*.cif")):
@@ -70,18 +76,21 @@ def main() -> int:
             g = build_interface_graph_from_residues(residues)
         except Exception as e:
             rows.append({"job_id": cif.stem, "n_nodes": 0, "n_edges": 0,
-                         "score": "", "error": str(e)})
+                         "score": "", "std": "", "error": str(e)})
             continue
-        score = score_graph(net, g, args.device)
+        ss = [score_graph(net, g, args.device) for net in nets]
+        mean = sum(ss) / len(ss)
+        std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5
         rows.append({"job_id": cif.stem, "n_nodes": g.n_nodes,
-                     "n_edges": len(g.edge_index), "score": f"{score:.4f}",
-                     "error": ""})
-        print(f"{cif.stem}: score={score:.4f} "
-              f"(nodes={g.n_nodes}, edges={len(g.edge_index)})", flush=True)
+                     "n_edges": len(g.edge_index), "score": f"{mean:.4f}",
+                     "std": f"{std:.4f}", "error": ""})
+        print(f"{cif.stem}: score={mean:.4f} +/- {std:.4f} "
+              f"(nodes={g.n_nodes})", flush=True)
 
     with open(args.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_nodes", "n_edges",
-                                           "score", "error"], delimiter="\t")
+                                           "score", "std", "error"],
+                           delimiter="\t")
         w.writeheader()
         for r in rows:
             w.writerow(r)
