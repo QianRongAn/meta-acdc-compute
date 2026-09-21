@@ -332,7 +332,13 @@ def build_interface_graph_from_residues(
             if d <= edge_cutoff:
                 contact = _contact_hist(residues[old_i].atoms,
                                         residues[old_j].atoms)
-                feats = [*_rbf(d), *contact]  # 12 RBF + 4 contact = 16
+                # residue-level Coulomb energy (kcal/mol-ish units, scaled)
+                qi = AA_PHYSICOCHEM.get(residues[old_i].resname[:1].upper(),
+                                        AA_PHYSICOCHEM["X"])[0]
+                qj = AA_PHYSICOCHEM.get(residues[old_j].resname[:1].upper(),
+                                        AA_PHYSICOCHEM["X"])[0]
+                coulomb = 0.0 if d < 1e-6 else qi * qj / d
+                feats = [*_rbf(d), *contact, coulomb]  # 12+4+1 = 17
                 graph.edge_index.append((new_i, new_j))
                 graph.edge_index.append((new_j, new_i))  # undirected
                 graph.edge_features.append(feats)
