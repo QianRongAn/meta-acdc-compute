@@ -71,18 +71,27 @@ def main() -> int:
         peptide = seqs[0]
         alpha = next((s for s in seqs if s != peptide and ("YFC" in s or "YLC" in s)),
                      None)
-        # match manifest: same peptide + same TCR alpha
-        candidates = by_peptide.get(peptide, [])
-        match = None
-        for c in candidates:
-            if alpha and c["tcr_a"] and alpha == c["tcr_a"]:
-                match = c
-                break
-        if match is None and candidates:
-            match = candidates[0]
-        if match is None:
-            unmatched.append((job_dir.name, peptide))
-            continue
+        # clinical gold-standard set (MAG-IC3/5brz TCR): detect FIRST by the
+        # exact alpha-chain sequence, before manifest matching
+        CLINICAL_ALPHA = (
+            "AQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLYVRPYQREQTSGRLNASLDKS"
+            "SGRSTLYIAASQPGDSATYLCAVRPGGAGPFFVVFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCL"
+            "FTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIP")
+        if alpha == CLINICAL_ALPHA:
+            match = {"pdb": "5brz", "evidence": "clinical"}
+        else:
+            # match manifest: same peptide + same TCR alpha
+            candidates = by_peptide.get(peptide, [])
+            match = None
+            for c in candidates:
+                if alpha and c["tcr_a"] and alpha == c["tcr_a"]:
+                    match = c
+                    break
+            if match is None and candidates:
+                match = candidates[0]
+            if match is None:
+                unmatched.append((job_dir.name, peptide))
+                continue
         job_id = f"{match['pdb']}_{peptide}"
         cif_srcs = sorted(job_dir.glob("*_model_0.cif"))
         conf_srcs = sorted(job_dir.glob("*_summary_confidences_0.json"))
