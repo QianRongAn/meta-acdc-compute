@@ -45,17 +45,28 @@ def allele_db() -> list[dict]:
 
 
 def infer_allele(mhc_seq: str) -> str | None:
-    """Match the MHC sequence against the server's allele reference set."""
+    """Match the MHC sequence against the server's allele reference set.
+
+    Tolerates N-terminal artifacts (leading M, missing GS) by trying offsets
+    0-2. Searches the human list first, then the mouse list.
+    """
+    seq = mhc_seq
+    if seq.startswith("M"):
+        seq = seq[1:]
     best = None
     best_score = 0
-    for entry in allele_db():
-        ref = entry["fullseq"]
-        n = min(len(ref), len(mhc_seq))
-        score = sum(1 for i in range(n) if ref[i] == mhc_seq[i])
-        if score > best_score:
-            best_score = score
-            best = entry["ref_name1"]
-    return best if best_score >= max(30, int(0.6 * min(len(mhc_seq), 180))) else None
+    for offset in (0, 1, 2):
+        for entry in allele_db():
+            ref = entry["fullseq"]
+            n = min(len(ref), len(seq) - offset)
+            if n < 30:
+                continue
+            score = sum(1 for i in range(n)
+                        if ref[i] == seq[i + offset])
+            if score > best_score:
+                best_score = score
+                best = entry["ref_name1"]
+    return best if best_score >= max(30, int(0.6 * min(len(seq), 180))) else None
 
 
 def extract_components(pdb_path: Path):
