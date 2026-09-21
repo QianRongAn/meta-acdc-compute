@@ -99,8 +99,10 @@ class EGNN(nn.Module):
         edge_index: Tensor,
         edge_attr: Tensor,
         batch: Tensor,
+        embed_only: bool = False,
     ) -> Tensor:
-        """Return graph-level logits, shape (num_graphs, 1)."""
+        """Return graph-level logits (num_graphs, 1); with embed_only=True
+        return the pooled graph features (num_graphs, 3*hidden+1) instead."""
         # peptide mask lives in input node-feature dim 4 (is-peptide flag)
         self.peptide_mask = h[:, 4] > 0.5 if h.shape[1] > 4 else None
 
@@ -143,4 +145,6 @@ class EGNN(nn.Module):
              coord_feat / counts],
             dim=-1,
         )
+        if embed_only:
+            return pooled
         return self.readout(pooled)

@@ -50,14 +50,15 @@ class HybridModel(nn.Module):
         self.egnn = EGNN(node_dim=node_dim, edge_dim=edge_dim,
                          depth=egnn_depth, hidden=hidden)
         self.seq_enc = PeptideSeqEncoder(hidden=hidden)
+        # fusion input: seq embedding (hidden) + EGNN pooled (3*hidden+1)
         self.head = nn.Sequential(
-            nn.Linear(2 * hidden, hidden),
+            nn.Linear(hidden + 3 * hidden + 1, hidden),
             nn.SiLU(),
             nn.Linear(hidden, 1),
         )
 
     def forward(self, h: Tensor, x: Tensor, edge_index: Tensor,
                 edge_attr: Tensor, batch: Tensor, seq: Tensor) -> Tensor:
-        g = self.egnn(h, x, edge_index, edge_attr, batch)  # (B, 1)
-        s = self.seq_enc(seq)                               # (B, hidden)
+        g = self.egnn(h, x, edge_index, edge_attr, batch, embed_only=True)
+        s = self.seq_enc(seq)
         return self.head(torch.cat([s, g], dim=-1))
