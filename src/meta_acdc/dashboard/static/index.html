@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCR-Safety-Radar — 交叉反应风险看板</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --fg:#e2e8f0; --muted:#94a3b8;
+          --ok:#22c55e; --warn:#eab308; --bad:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, sans-serif; background:var(--bg);
+         color:var(--fg); padding: 1.5rem; }
+  h1 { font-size:1.4rem; margin:.2rem 0; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+  .card { background:var(--card); border-radius:10px; padding:1.2rem;
+          margin-bottom:1.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  th, td { padding:.45rem .6rem; text-align:left; border-bottom:1px solid #334155; }
+  th { color:var(--muted); font-weight:500; font-size:.8rem; text-transform:uppercase; }
+  .dot { display:inline-block; width:10px; height:10px; border-radius:50%;
+         margin-right:.5rem; }
+  .ok { background:var(--ok); } .warn { background:var(--warn); } .bad { background:var(--bad); }
+  .bar { height:8px; border-radius:4px; background:#334155; width:120px;
+         display:inline-block; vertical-align:middle; margin-left:.6rem; }
+  .bar > div { height:100%; border-radius:4px; }
+  .tag { font-size:.75rem; padding:.15rem .5rem; border-radius:999px;
+         background:#334155; color:var(--muted); margin-left:.5rem; }
+  .tag.native { background:#1d4ed8; color:#dbeafe; }
+  .fatal { color:var(--bad); font-weight:600; }
+  .grid { display:flex; flex-wrap:wrap; gap:1.5rem; }
+  .grid .card { flex:1 1 420px; }
+</style>
+</head>
+<body>
+<h1>🛡️ TCR-Safety-Radar</h1>
+<div class="sub">Meta-ACDC · 交叉反应风险看板 v0 · EGNN 相容性打分(AF3 预测结构)</div>
+<div id="app">加载中…</div>
+<script>
+async function main() {
+  const d = await (await fetch('/api/data')).json();
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  // heatmap: TCR x peptide scores
+  const tcrs = Object.keys(d.groups);
+  const peps = [...new Set(tcrs.flatMap(t => d.groups[t].rows.map(r => r.peptide)))];
+  let hm = '<div class="card"><h3>热度图(TCR × 肽)</h3><table><tr><th>TCR</th>';
+  for (const p of peps) hm += `<th>${p}</th>`;
+  hm += '</tr>';
+  for (const t of tcrs) {
+    hm += `<tr><td><b>${t}</b></td>`;
+    for (const p of peps) {
+      const row = d.groups[t].rows.find(r => r.peptide === p);
+      const s = row ? row.score : null;
+      const col = s === null ? 'transparent'
+        : s >= 0.75 ? 'var(--ok)' : s >= 0.5 ? 'var(--warn)' : 'var(--bad)';
+      hm += `<td style="background:${col};color:#0f172a;text-align:center;font-size:.75rem">
+        ${s === null ? '·' : s.toFixed(2)}</td>`;
+    }
+    hm += '</tr>';
+  }
+  hm += '</table></div>';
+  app.insertAdjacentHTML('beforeend', hm);
+
+  // per-TCR ranking tables
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  for (const t of tcrs) {
+    const g = d.groups[t];
+    let html = `<div class="card"><h3>${t} <span class="tag">天然肽 ${g.native || '?'}</span></h3>
+      <table><tr><th>#</th><th>肽</th><th>相容性得分</th></tr>`;
+    g.rows.forEach((r, i) => {
+      const cls = r.score >= 0.75 ? 'ok' : r.score >= 0.5 ? 'warn' : 'bad';
+      const pct = Math.round(r.score * 100);
+      const nat = r.peptide === g.native ? '<span class="tag native">天然</span>' : '';
+      html += `<tr><td>${i + 1}</td><td>${r.peptide}${nat}</td>
+        <td><span class="dot ${cls}"></span>${r.score.toFixed(3)}
+        <span class="bar"><div style="width:${pct}%;background:var(--${cls})"></div></span>
+        ${r.std != null ? `<span class="tag">±${r.std.toFixed(3)}</span>` : ''}</td></tr>`;
+    });
+    html += '</table></div>';
+    grid.insertAdjacentHTML('beforeend', html);
+  }
+  app.appendChild(grid);
+
+  // clinical gold standard
+  let cl = '<div class="card"><h3>金标准临床案例</h3><table><tr><th>TCR</th><th>靶肽</th><th>脱靶肽</th><th>致死</th><th>证据</th></tr>';
+  for (const c of d.clinical) {
+    cl += `<tr><td>${c.tcr}</td><td>${c.target}</td>
+      <td>${c.off_targets.join('; ')}</td>
+      <td>${c.fatal === 'yes' ? '<span class="fatal">致死</span>' : '否'}</td>
+      <td><span class="tag">${c.evidence}</span></td></tr>`;
+  }
+  cl += '</table></div>';
+  app.insertAdjacentHTML('beforeend', cl);
+}
+main();
+</script>
+</body>
+</html>
