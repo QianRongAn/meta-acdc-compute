@@ -93,7 +93,7 @@ def main() -> int:
     y_va = labels[va_idx].to(args.device)
 
     torch.manual_seed(0)
-    net = HybridModel(node_dim=NODE_DIM).to(args.device)
+    net = HybridModel(node_dim=NODE_DIM, edge_dim=EDGE_DIM).to(args.device)
     opt = torch.optim.Adam(net.parameters(), lr=3e-4, weight_decay=1e-4)
     loss_fn = nn.BCEWithLogitsLoss()
 

@@ -163,6 +163,32 @@ ERGO TPP-III 0.669 一致)。更大模型/更多回合无法突破;结构特征�
 - 熵采样在弱模型上无增益:均值预测的熵不含模型不确定性的差异信息
 - 与 v0 一致:EIG 在低采样区增益最大(6% 处 1.76× vs 随机)
 
+## 2026-09-21:AF3 预测结构上的交叉反应排名(首批真实数据)
+
+**A6 TCR(1ao7,天然肽 LLFGYPVYV,AF3 预测结构 × EGNN 打分):**
+
+| 排名 | 肽 | 分数 | 备注 |
+|---|---|---|---|
+| 1 | LLFGFPVYV | 0.993 | VDJdb 验证(score=1) |
+| 2 | MLWGYLQYV | 0.988 | VDJdb 验证 |
+| 3 | LGYGFVNYI | 0.986 | VDJdb 验证 |
+| 4 | LLFGYAVYV | 0.984 | VDJdb 验证 |
+| 5 | LLFGYPVAV | 0.960 | VDJdb 验证 |
+| 6 | LLFGKPVYV | 0.782 | VDJdb 验证 |
+| 7 | LLFGYPRYV | 0.049 | VDJdb score=1(弱) |
+| 8 | LLFGPVYV | 0.002 | VDJdb score=1(弱) |
+
+**B7 TCR(1qrn,天然肽 LLFGYAVYV)**:Tax 同源肽 LLFGYPVYV 得分 **0.999** ✓
+
+- 管线全通:AF3 网页预测 → mmCIF → 界面图(侧链接触)→ EGNN 打分
+- 5/8 个 VDJdb 验证的交叉反应肽得高分;两个低分肽的 AF3 置信度正常
+  (ipTM 0.85-0.87),说明低分是模型的结构判别而非预测伪影
+- 局限性:全部 8 个候选在 VDJdb 中均为 score=1 弱阳性,现有证据无法
+  仲裁模型排序的真伪;待天然肽对照(1ao7_LLFGYPVYV)与更多 TCR 系列
+  (1g6r/1mwa/1oga)到达后做统计评估
+- 混合模型消融(同数据集):位移 0.963 / 嫁接 0.905——序列分支无增益,
+  结构接触特征自足(纯 EGNN 0.980/0.933 更优)
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
