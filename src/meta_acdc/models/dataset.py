@@ -26,26 +26,31 @@ from pathlib import Path
 from meta_acdc.structure.graph import (
     Residue,
     build_interface_graph_from_residues,
+    classify_chains,
     parse_pdb,
-    is_tcr_chain,
+    TCR,
+    MHC,
+    PEPTIDE,
 )
 
 PEPTIDE_LEN = (5, 20)
 
 
 def _split_sides(residues: list[Residue]) -> tuple[list[Residue], list[Residue]]:
-    tcr = [r for r in residues if is_tcr_chain(r.chain)]
-    pmhc = [r for r in residues if not is_tcr_chain(r.chain)]
+    roles = classify_chains(residues)
+    tcr = [r for r in residues if roles[r.chain] == TCR]
+    pmhc = [r for r in residues if roles[r.chain] != TCR]
     return tcr, pmhc
 
 
 def _peptide_chains(residues: list[Residue]) -> dict[str, list[Residue]]:
-    """Group pMHC-side residues by chain; peptide chains have 5-20 residues."""
+    """Group residues by peptide-role chain."""
+    roles = classify_chains(residues)
     chains: dict[str, list[Residue]] = {}
     for r in residues:
-        if not is_tcr_chain(r.chain):
+        if roles[r.chain] == PEPTIDE:
             chains.setdefault(r.chain, []).append(r)
-    return {c: rs for c, rs in chains.items() if PEPTIDE_LEN[0] <= len(rs) <= PEPTIDE_LEN[1]}
+    return chains
 
 
 def make_decoy(
@@ -54,44 +59,42 @@ def make_decoy(
 ) -> list[Residue]:
     """Graft a foreign peptide chain in place of the native one.
 
-    Keeps the peptide's own chain label ('P') but its coordinates/identity
-    come from the foreign complex; geometry near the groove is approximate —
-    acceptable for decoy negatives at v0.
+    The foreign peptide keeps its own residues but is re-chained under the
+    native peptide's chain label; coordinates are translated near the native
+    groove (B2M/MHC centroid). Geometry approximate — acceptable at v0.
     """
-    out = [r for r in residues if r.chain != "P"]  # drop native peptide chain
-    # translate foreign peptide to sit near the native groove (use native B2M/MHC centroid)
-    mhc = [r for r in out if not is_tcr_chain(r.chain)]
+    roles = classify_chains(residues)
+    native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
+    native_pep_chain = native_pep_chains[0] if native_pep_chains else "P"
+    out = [r for r in residues if r.chain not in native_pep_chains]
+    mhc = [r for r in out if roles[r.chain] != TCR]
     if not mhc:
         return out + peptide
     cx = sum(r.x for r in mhc) / len(mhc)
     cy = sum(r.y for r in mhc) / len(mhc)
     cz = sum(r.z for r in mhc) / len(mhc)
     for r in peptide:
-        out.append(Residue("P", r.resname, r.resid, r.x - cx, r.y - cy, r.z - cz + 2.0,
-                           r.plddt))
+        out.append(Residue(native_pep_chain, r.resname, r.resid,
+                           r.x - cx, r.y - cy, r.z - cz + 2.0, r.plddt))
     return out
 
 
 def make_displaced_peptide_decoy(
     residues: list[Residue],
-    shift: float = 15.0,
+    shift: float = 6.0,
 ) -> list[Residue]:
     """Negative decoy: the native peptide chain rigidly translated out of the
-    groove (along +z). Real interface geometry destroyed — a strong structural
-    signal for pipeline validation. (The graft decoy is the weak-signal variant
-    we aim to learn later with better readouts.)
+    groove (along +z). Shift is 6A: the peptide leaves the binding groove but
+    STAYS WITHIN the 10A interface selection, so peptide nodes remain in the
+    graph — the is-peptide flag does not leak the label. Geometry is disrupted,
+    not removed. (The graft decoy is the weaker-signal variant.)
     """
-    chain_sizes: dict[str, int] = {}
-    for r in residues:
-        chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
-    peptide_chains = {
-        c for c, n in chain_sizes.items()
-        if not is_tcr_chain(c) and PEPTIDE_LEN[0] <= n <= PEPTIDE_LEN[1]
-    }
+    roles = classify_chains(residues)
     out = []
     for r in residues:
-        if r.chain in peptide_chains:
-            out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift, r.plddt))
+        if roles[r.chain] == PEPTIDE:
+            out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift,
+                               r.plddt, r.icode))
         else:
             out.append(r)
     return out
@@ -109,18 +112,15 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         path = struct_dir / f"{pdb.lower()}.pdb"
         try:
             residues = parse_pdb(path)
+            roles = classify_chains(residues)
         except Exception:
             continue
-        # keep only clean single complexes: exactly 2 TCR chains (A,B),
-        # exactly one peptide chain (5-20 res) and >=1 MHC-like chain (>100 res)
-        chain_sizes: dict[str, int] = {}
-        for r in residues:
-            chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
-        tcr_chains = [c for c in ("A", "B") if c in chain_sizes]
-        other = {c: n for c, n in chain_sizes.items() if c not in ("A", "B")}
-        n_peptide = sum(1 for n in other.values() if 5 <= n <= 20)
-        n_mhc = sum(1 for n in other.values() if n > 100)
-        if len(tcr_chains) < 2 or n_peptide != 1 or n_mhc < 1:
+        # keep only clean single complexes: exactly 2 TCR chains,
+        # exactly one peptide chain, >=1 MHC chain
+        n_tcr = sum(1 for v in roles.values() if v == TCR)
+        n_peptide = sum(1 for v in roles.values() if v == PEPTIDE)
+        n_mhc = sum(1 for v in roles.values() if v == MHC)
+        if n_tcr != 2 or n_peptide != 1 or n_mhc < 1:
             skipped += 1
             continue
         complexes[pdb] = residues
@@ -131,9 +131,11 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
     labels = []
     pdbs = []
 
-    def add(residues: list[Residue], label: int, pdb: str):
+    def add(residues: list[Residue], label: int, pdb: str,
+            forced_nodes: set | None = None):
         try:
-            g = build_interface_graph_from_residues(residues)
+            g = build_interface_graph_from_residues(residues,
+                                                     forced_nodes=forced_nodes)
         except ValueError:
             return
         if g.n_nodes < 20:
@@ -141,24 +143,33 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         graphs.append((g.node_features, g.node_coords, g.edge_index, g.edge_features))
         labels.append(label)
         pdbs.append(pdb)
+        return g
 
-    # positives: native complexes
+    # positives: native complexes (capture node sets for decoy pinning)
     n_pos = 0
+    native_keys: dict[str, set] = {}
     for pdb, residues in complexes.items():
-        add(residues, 1, pdb)
-        n_pos += 1
+        g = add(residues, 1, pdb)
+        if g is not None:
+            native_keys[pdb] = set(g.node_keys)
+            n_pos += 1
 
-    # negatives: displaced-peptide decoys (strong signal, pipeline validation)
+    # negatives: displaced-peptide decoys — SAME node set as native,
+    # only peptide coordinates move; no node-set/flag leakage possible
     n_neg = 0
     for pdb, residues in complexes.items():
+        if pdb not in native_keys:
+            continue
         decoy = make_displaced_peptide_decoy(residues)
-        add(decoy, 0, f"{pdb}-disp")
+        add(decoy, 0, f"{pdb}-disp", forced_nodes=native_keys[pdb])
         n_neg += 1
 
     # extra negatives: graft decoys (foreign peptide, weak signal — hard task)
     n_graft = 0
     pdb_list = list(complexes.keys())
     for pdb, residues in complexes.items():
+        if pdb not in native_keys:
+            continue
         peptides = _peptide_chains(residues)
         if not peptides:
             continue
@@ -168,7 +179,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
             continue
         graft = rng.choice(list(donor_peptides.values()))
         decoy = make_decoy(residues, graft)
-        add(decoy, 0, f"{pdb}<-{donor}")
+        add(decoy, 0, f"{pdb}<-{donor}", forced_nodes=native_keys[pdb])
         n_graft += 1
 
     import torch  # lazy: graph logic above is torch-free

@@ -48,6 +48,7 @@ class Residue:
     y: float
     z: float
     plddt: float | None = None  # from B-factor column when available
+    icode: str = ""  # insertion code (CDR3 regions: resid 100A/100B...)
 
 
 @dataclass
@@ -60,6 +61,7 @@ class InterfaceGraph:
     edge_index: list[tuple[int, int]] = field(default_factory=list)
     edge_features: list[list[float]] = field(default_factory=list)  # RBF distances
     residue_info: list[tuple[str, str, int]] = field(default_factory=list)
+    node_keys: list[tuple[str, int, str]] = field(default_factory=list)  # (chain, resid, icode)
 
     def summary(self) -> str:
         n_tcr = sum(1 for c, _, _ in self.residue_info if is_tcr_chain(c))
@@ -68,53 +70,112 @@ class InterfaceGraph:
 
 
 # --- chain classification -------------------------------------------------
+# Chain LETTERS are unreliable across PDB entries (1AO7: TCR on D/E, MHC on A;
+# 1BD2: TCR on A/B). Classify by sequence content instead:
+#   - TCR chains carry the conserved "YFC" motif immediately before CDR3
+#     (beta: YFCAS/YLCAS..., alpha: YFCAV/YFCAL...)
+#   - MHC class I heavy chain ~275 residues; class II ~180-230
+#   - beta-2 microglobulin ~99-100 residues
+#   - peptide 5-20 residues
 
-TCR_CHAIN_HINTS = {"A", "B"}  # PDB convention: TCR alpha/beta chains are A, B
-PEPTIDE_CHAIN_HINTS = {"C", "P"}
-MHC_CHAIN_HINTS = {"A", "B", "C", "D", "E", "F", "G", "H"}
+AA3TO1 = {
+    "ALA": "A", "ARG": "R", "ASN": "N", "ASP": "D", "CYS": "C", "GLN": "Q",
+    "GLU": "E", "GLY": "G", "HIS": "H", "ILE": "I", "LEU": "L", "LYS": "K",
+    "MET": "M", "PHE": "F", "PRO": "P", "SER": "S", "THR": "T", "TRP": "W",
+    "TYR": "Y", "VAL": "V", "SEC": "U", "PYL": "O", "MSE": "M",
+}
+
+# roles
+TCR = "tcr"
+MHC = "mhc"
+B2M = "b2m"
+PEPTIDE = "peptide"
+OTHER = "other"
 
 
 def is_tcr_chain(chain: str) -> bool:
-    return chain in TCR_CHAIN_HINTS
+    """Legacy chain-letter heuristic (kept for backward compat; prefer
+    classify_chains for correctness)."""
+    return chain in {"A", "B"}
 
 
 def is_pmhc_chain(chain: str) -> bool:
-    return chain not in TCR_CHAIN_HINTS
+    return not is_tcr_chain(chain)
+
+
+def classify_chains(residues: list[Residue]) -> dict[str, str]:
+    """Content-based chain role classification."""
+    # per-chain sequence in file order (insertions included)
+    last: dict[str, tuple[int, str]] = {}
+    seqs: dict[str, list[str]] = {}
+    for r in residues:
+        key = (r.resid, r.icode)
+        if last.get(r.chain) == key:
+            continue
+        last[r.chain] = key
+        seqs.setdefault(r.chain, []).append(AA3TO1.get(r.resname[:3].upper(), "X"))
+    seqs = {c: "".join(s) for c, s in seqs.items()}
+
+    roles: dict[str, str] = {}
+    for chain, seq in seqs.items():
+        n = len(seq)
+        if "YFC" in seq or "YLC" in seq:
+            roles[chain] = TCR
+        elif n > 250:
+            roles[chain] = MHC
+        elif 90 <= n <= 105:
+            roles[chain] = B2M
+        elif 5 <= n <= 20:
+            roles[chain] = PEPTIDE
+        elif 150 <= n <= 250:
+            roles[chain] = MHC  # class II
+        else:
+            roles[chain] = OTHER
+    return roles
 
 
 # --- PDB parsing (minimal, stdlib) ----------------------------------------
 
 def parse_pdb(path: Path) -> list[Residue]:
     """Extract one record per residue (centroid of ATOM lines; CA preferred)."""
-    atoms: dict[tuple[str, int], list[tuple[float, float, float]]] = {}
-    plddt: dict[tuple[str, int], float | None] = {}
-    resname: dict[tuple[str, int], str] = {}
+    atoms: dict[tuple[str, int, str], list[tuple[float, float, float]]] = {}
+    plddt: dict[tuple[str, int, str], float | None] = {}
+    resname: dict[tuple[str, int, str], str] = {}
     with open(path) as fh:
         for line in fh:
             if not line.startswith(("ATOM", "HETATM")):
                 continue
+            resn = line[17:20].strip()
+            if resn in ("HOH", "WAT"):  # skip water (HETATM pollution)
+                continue
+            if line.startswith("HETATM"):  # skip ligands/sugars entirely
+                continue
+            altloc = line[16].strip()
+            if altloc not in ("", "A"):  # take only the A alternate conformation
+                continue
             chain = line[21].strip() or line[72:76].strip()
             resid = int(line[22:26])
+            icode = line[26].strip()
             name = line[12:16].strip()
             try:
                 x, y, z = float(line[30:38]), float(line[38:46]), float(line[46:54])
             except ValueError:
                 continue
             bfac = float(line[60:66]) if len(line) > 66 else 0.0
-            key = (chain, resid)
+            key = (chain, resid, icode)
             atoms.setdefault(key, []).append((x, y, z))
-            resname.setdefault(key, line[17:20].strip())
+            resname.setdefault(key, resn)
             # treat B-factor as pLDDT when it looks like a confidence score
             if bfac > 0:
                 plddt[key] = min(bfac, 100.0)
 
     residues = []
-    for (chain, resid), coords in atoms.items():
+    for (chain, resid, icode), coords in atoms.items():
         cx = sum(c[0] for c in coords) / len(coords)
         cy = sum(c[1] for c in coords) / len(coords)
         cz = sum(c[2] for c in coords) / len(coords)
-        residues.append(Residue(chain, resname[(chain, resid)], resid, cx, cy, cz,
-                                plddt.get((chain, resid))))
+        residues.append(Residue(chain, resname[(chain, resid, icode)], resid, cx, cy, cz,
+                                plddt.get((chain, resid, icode)), icode))
     return residues
 
 
@@ -149,49 +210,55 @@ def build_interface_graph_from_residues(
     pdb_path: Path | None = None,
     interface_radius: float = INTERFACE_RADIUS,
     edge_cutoff: float = EDGE_CUTOFF,
+    forced_nodes: set[tuple[str, int, str]] | None = None,
 ) -> InterfaceGraph:
     """Build an interface graph from an explicit residue list.
 
-    Chain labels drive the side split (A/B = TCR, rest = pMHC). Allows
-    grafting chains (e.g., decoy peptides) before building the graph.
+    Chain roles drive the side split (content-based classification). If
+    forced_nodes is given (decoy generation), the node set is pinned to those
+    (chain, resid, icode) keys — only coordinates/edges change, so node
+    features cannot leak the label via node-set differences.
     """
     if len(residues) < 10:
         raise ValueError(f"{pdb_path or '<residues>'}: too few residues ({len(residues)})")
 
-    # split complex sides by chain
-    tcr = [r for r in residues if is_tcr_chain(r.chain)]
-    pmhc = [r for r in residues if is_pmhc_chain(r.chain)]
+    # split complex sides by CONTENT-based chain roles
+    roles = classify_chains(residues)
+    tcr = [r for r in residues if roles[r.chain] == TCR]
+    pmhc = [r for r in residues if roles[r.chain] != TCR]
     if not tcr or not pmhc:
         raise ValueError(f"{pdb_path or '<residues>'}: cannot split TCR/pMHC chains "
-                         f"(tcr={len(tcr)}, pmhc={len(pmhc)})")
+                         f"(tcr={len(tcr)}, pmhc={len(pmhc)}); roles={roles}")
 
     def dist(a: Residue, b: Residue) -> float:
         return math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2)
 
-    # interface selection: within interface_radius of the opposite side
-    keep: set[int] = set()
-    for i, r in enumerate(residues):
-        side = tcr if is_tcr_chain(r.chain) else pmhc
-        other = pmhc if is_tcr_chain(r.chain) else tcr
-        if any(dist(r, o) <= interface_radius for o in other):
-            keep.add(i)
-    if len(keep) < 5:
-        # fall back to the full complex if the interface is too small
-        keep = set(range(len(residues)))
+    if forced_nodes is not None:
+        by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
+        keep = {by_key[k] for k in forced_nodes if k in by_key}
+        if len(keep) < 5:
+            keep = set(range(len(residues)))
+    else:
+        # interface selection: within interface_radius of the opposite side
+        keep = set()
+        for i, r in enumerate(residues):
+            is_t = roles[r.chain] == TCR
+            other = pmhc if is_t else tcr
+            if any(dist(r, o) <= interface_radius for o in other):
+                keep.add(i)
+        if len(keep) < 5:
+            # fall back to the full complex if the interface is too small
+            keep = set(range(len(residues)))
 
     idx = sorted(keep)
     pos = {old: new for new, old in enumerate(idx)}
     graph = InterfaceGraph(n_nodes=len(idx))
     graph.residue_info = [(residues[i].chain, residues[i].resname, residues[i].resid)
                           for i in idx]
-    # peptide-chain flag: pMHC-side chains with 5-20 residues
-    chain_sizes: dict[str, int] = {}
-    for r in residues:
-        chain_sizes[r.chain] = chain_sizes.get(r.chain, 0) + 1
-    peptide_chains = {
-        c for c, n in chain_sizes.items()
-        if not is_tcr_chain(c) and 5 <= n <= 20
-    }
+    graph.node_keys = [(residues[i].chain, residues[i].resid, residues[i].icode)
+                       for i in idx]
+    # peptide-chain flag from role classification
+    peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
     graph.node_features = [
         [*_node_features(residues[i]),
          1.0 if residues[i].chain in peptide_chains else 0.0]

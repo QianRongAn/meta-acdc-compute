@@ -130,6 +130,25 @@ def main() -> int:
         prob_tr = torch.sigmoid(net(**tr_batch).squeeze(-1)).cpu().numpy()
     print(f"train(subset) AUROC={roc_auc_score(labels[tr_idx[:100]].numpy(), prob_tr):.3f}",
           flush=True)
+
+    # per-decoy-type val breakdown (displaced = geometry, graft = hard)
+    for dtype in ("disp", "<-"):
+        sel = [i for i in va_idx if dtype in pdbs[i]] + [i for i in va_idx if labels[i] == 1]
+        if not sel:
+            continue
+        b = collate([graphs[i] for i in sel])
+        b = {k: v.to(args.device) for k, v in b.items()}
+        with torch.no_grad():
+            p = torch.sigmoid(net(**b).squeeze(-1)).cpu().numpy()
+        y = labels[sel].numpy()
+        name = "displaced" if dtype == "disp" else "graft"
+        print(f"val [{name}] AUROC={roc_auc_score(y, p):.3f} "
+              f"AUPRC={average_precision_score(y, p):.3f} (n={len(sel)})", flush=True)
+
+    out = Path(args.data).with_suffix(".model.pt")
+    torch.save({"model": net.state_dict(),
+                "n_node_dim": NODE_DIM, "n_edge_dim": EDGE_DIM}, out)
+    print(f"saved model to {out}", flush=True)
     return 0
 
 

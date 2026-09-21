@@ -62,13 +62,20 @@ def chain_sizes(pdb_path: Path) -> dict[str, int]:
 
 
 def is_tcr_pmhc(pdb_path: Path) -> tuple[bool, dict[str, int]]:
-    """Classify: TCR chains A/B + pMHC side with MHC-like (>100) + peptide (5-20)."""
-    sizes = chain_sizes(pdb_path)
-    tcr_chains = [c for c in ("A", "B") if c in sizes]
-    other = {c: n for c, n in sizes.items() if c not in ("A", "B")}
-    has_mhc = any(n > 100 for n in other.values())
-    has_peptide = any(5 <= n <= 20 for n in other.values())
-    return len(tcr_chains) >= 1 and has_mhc and has_peptide, sizes
+    """Classify by chain CONTENT: >=1 TCR (YFC motif), >=1 MHC-like (>100 res
+    or class-II 150-250), exactly-peptide chain (5-20)."""
+    from meta_acdc.structure.graph import classify_chains, parse_pdb, TCR, MHC, PEPTIDE
+
+    try:
+        residues = parse_pdb(pdb_path)
+        roles = classify_chains(residues)
+    except Exception:
+        return False, {}
+    sizes = {r.chain: roles[r.chain] for r in residues}
+    n_tcr = sum(1 for v in sizes.values() if v == TCR)
+    n_mhc = sum(1 for v in sizes.values() if v == MHC)
+    n_pep = sum(1 for v in sizes.values() if v == PEPTIDE)
+    return n_tcr >= 1 and n_mhc >= 1 and n_pep >= 1, sizes
 
 
 def main() -> int:
@@ -102,8 +109,8 @@ def main() -> int:
     with open(args.out / "complexes.tsv", "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
         w.writerow(["pdb", "chains"])
-        for pdb, sizes in complexes:
-            w.writerow([pdb, ";".join(f"{c}:{n}" for c, n in sorted(sizes.items()))])
+        for pdb, roles in complexes:
+            w.writerow([pdb, ";".join(f"{c}:{r}" for c, r in sorted(roles.items()))])
     return 0
 
 
