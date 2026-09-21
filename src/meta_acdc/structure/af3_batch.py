@@ -92,13 +92,17 @@ def main() -> int:
 
     manifest = []
     n_written = 0
+    seen_jobs: set[str] = set()
     for row in rows:
         if n_written >= args.n:
             break
+        job_id = f"{row['pdb']}_{row['peptide']}"
+        if job_id in seen_jobs:  # same (pdb, peptide) hit by multiple CDR3s
+            continue
         job = build_job(row["pdb"], args.struct_dir)
         if job is None:
             continue
-        job_id = f"{row['pdb']}_{row['peptide']}"
+        seen_jobs.add(job_id)
         block = fasta_block(job_id, job["alpha"], job["beta"],
                             row["peptide"], job["mhc"], job["b2m"])
         (args.out / f"{job_id}.fasta").write_text(block)

@@ -19,3 +19,8 @@ venv/
 *.key
 .cache/
 *.egg-info/
+
+# small submission/analysis files that SHOULD be on GitHub
+!data/processed/af3_batch1/
+!data/processed/kn5_submission_list.tsv
+!data/processed/structure_vdjdb_map.tsv
