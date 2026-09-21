@@ -45,8 +45,8 @@ def main() -> int:
             native.setdefault(row["pdb"], row["pdb_peptide"])
     # A6/B7 TCR family shares chains: 1qrn's scored LLFGYPVYV is 1ao7's
     # native Tax peptide (identical alpha/beta chains)
-    native.setdefault("1ao7", "LLFGYPVYV")
-    native.setdefault("1qrn", "LLFGYPVYV")
+    native["1ao7"] = "LLFGYPVYV"
+    native["1qrn"] = "LLFGYPVYV"
 
     by_pdb: dict[str, list[tuple[str, float]]] = defaultdict(list)
     for (pdb, pep), s in scores.items():
