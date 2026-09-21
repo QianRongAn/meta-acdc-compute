@@ -29,10 +29,33 @@ from pathlib import Path
 from meta_acdc.structure.graph import AA3TO1, classify_chains, parse_pdb
 
 SUBMIT_URL = "https://tcrmodel.ibbr.umd.edu/tcrpmhc_submitjob1/1"
-ALLELE_BY_MHC_PREFIX = {
-    "GSHSM": "HLA-A*02:01", "GSHSL": "HLA-C*07:02",
-    "GPHSLRYFVTAVSRP": "HLA-E*01:03",
-}
+ALLELE_DB_URL = "https://tcrmodel.ibbr.umd.edu/static/genemapdata/mhc1_human.json"
+
+_allele_db: list[dict] | None = None
+
+
+def allele_db() -> list[dict]:
+    global _allele_db
+    if _allele_db is None:
+        import json
+        import urllib.request
+        with urllib.request.urlopen(ALLELE_DB_URL, timeout=45) as r:
+            _allele_db = json.loads(r.read().decode("utf-8"))
+    return _allele_db
+
+
+def infer_allele(mhc_seq: str) -> str | None:
+    """Match the MHC sequence against the server's allele reference set."""
+    best = None
+    best_score = 0
+    for entry in allele_db():
+        ref = entry["fullseq"]
+        n = min(len(ref), len(mhc_seq))
+        score = sum(1 for i in range(n) if ref[i] == mhc_seq[i])
+        if score > best_score:
+            best_score = score
+            best = entry["ref_name1"]
+    return best if best_score >= max(30, int(0.6 * min(len(mhc_seq), 180))) else None
 
 
 def extract_components(pdb_path: Path):
@@ -45,16 +68,16 @@ def extract_components(pdb_path: Path):
         seqs.setdefault(r, []).append(seq)
     tcr = seqs.get("tcr", [])
     import re as _re
-    alpha = next((s for s in tcr if _re.search(r"Y[FL]C[AVILT]", s)), None)
-    beta = next((s for s in tcr if _re.search(r"Y[FL]C[ASTGPR]", s)), None)
+    # anchor the conserved A: alpha = Y[FL]CA followed by V/I/L/A/T;
+    # beta = Y[FL]CA followed by S/T/G/P/R (distinct char sets — no overlap)
+    alpha = next((s for s in tcr if _re.search(r"Y[FL]CA[AVILT]", s)), None)
+    beta = next((s for s in tcr if _re.search(r"Y[FL]CA[STGPR]", s)), None)
     if alpha is None and len(tcr) >= 2:
-        # fallback: the two TCR chains by CDR3-ish anchor
         cand = [s for s in tcr if _re.search(r"[FL]CA", s)]
         if len(cand) >= 2:
             cand.sort(key=len, reverse=True)
             alpha, beta = cand[1], cand[0]
     if alpha is None or beta is None:
-        # last resort: pair by length (alpha usually shorter in solved domains)
         if len(tcr) >= 2:
             t2 = sorted(tcr, key=len)
             alpha, beta = t2[0], t2[-1]
@@ -65,8 +88,9 @@ def extract_components(pdb_path: Path):
     mhc = mhc_seqs[0]
     if not all([alpha, beta, pep, mhc]):
         return None
-    allele = next((a for k, a in ALLELE_BY_MHC_PREFIX.items()
-                   if mhc.startswith(k)), "HLA-A*02:01")
+    allele = infer_allele(mhc)
+    if allele is None:
+        return None  # unsupported allele — skip
     return {"alpha": alpha, "beta": beta, "pep": pep, "mhc": mhc,
             "allele": allele}
 
