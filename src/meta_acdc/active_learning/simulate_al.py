@@ -68,6 +68,10 @@ def main() -> int:
     ap.add_argument("--rounds", type=int, default=4)
     ap.add_argument("--batch", type=int, default=3000)
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--mode", choices=["eig", "entropy", "variance", "random"],
+                    default="eig")
+    ap.add_argument("--seeds", type=int, default=1,
+                    help="repeats with different seeds (summary over seeds)")
     args = ap.parse_args()
 
     X, y = load(args.data)
@@ -86,44 +90,46 @@ def main() -> int:
     print(f"pool (unseen epitopes): {len(pool_idx)} pairs, {n_pos_pool} positives "
           f"({n_pos_pool / len(pool_idx) * 100:.1f}%)", flush=True)
 
-    # --- random sampling baseline ---
-    rng = np.random.RandomState(args.seed)
-    order = rng.permutation(len(pool_idx))
-    batch_total = args.batch * args.rounds
-    rand_recall = [y_pool[order[:b]].sum() / n_pos_pool
-                   for b in range(args.batch, batch_total + 1, args.batch)]
+    def run_one(seed: int) -> list[float]:
+        """One simulation; returns recall after each round."""
+        rng = np.random.RandomState(seed)
+        Xt, yt = X_tr.copy(), y_tr.copy()
+        unlabeled = np.arange(len(pool_idx))
+        labeled_extra: list[int] = []
+        recalls = []
+        for rnd in range(args.rounds):
+            if args.mode == "random":
+                n = min(args.batch, len(unlabeled))
+                chosen = rng.choice(unlabeled, size=n, replace=False)
+            else:
+                probs = fit_ensemble(Xt, yt, X_pool[unlabeled], seed=seed * 100 + rnd)
+                if args.mode == "eig":
+                    scores = expected_information_gain(probs)
+                elif args.mode == "entropy":
+                    from meta_acdc.active_learning.acquisition import predictive_entropy
+                    scores = predictive_entropy(probs)
+                else:
+                    from meta_acdc.active_learning.acquisition import predictive_uncertainty_mc
+                    scores = predictive_uncertainty_mc(probs)
+                sel = epsilon_greedy_batch(scores, min(args.batch, len(unlabeled)),
+                                           epsilon=0.15, rng=rng)
+                chosen = unlabeled[sel.indices]
+            labeled_extra.extend(chosen.tolist())
+            Xt = np.vstack([Xt, X_pool[chosen]])
+            yt = np.concatenate([yt, y_pool[chosen]])
+            unlabeled = np.setdiff1d(unlabeled, chosen)
+            recalls.append(y_pool[np.asarray(labeled_extra)].sum() / n_pos_pool)
+        return recalls
 
-    # --- active learning ---
-    unlabeled = np.arange(len(pool_idx))
-    labeled_extra: list[int] = []
-    recall_history = []
-    al_seed = 100 + args.seed
+    all_recalls = [run_one(args.seed + k) for k in range(args.seeds)]
+    rec = np.array(all_recalls)  # (seeds, rounds)
+    print(f"\nmode={args.mode}, seeds={args.seeds}, rounds={args.rounds}, "
+          f"batch={args.batch}", flush=True)
     for rnd in range(args.rounds):
-        probs = fit_ensemble(X_tr, y_tr, X_pool[unlabeled], seed=al_seed + rnd)
-        scores = expected_information_gain(probs)
-        sel = epsilon_greedy_batch(scores, min(args.batch, len(unlabeled)),
-                                   epsilon=0.15, rng=rng)
-        chosen = unlabeled[sel.indices]
-        labeled_extra.extend(chosen.tolist())
-        # oracle: reveal labels, add to training set
-        X_tr = np.vstack([X_tr, X_pool[chosen]])
-        y_tr = np.concatenate([y_tr, y_pool[chosen]])
-        unlabeled = np.setdiff1d(unlabeled, chosen)
-        recall = y_pool[np.asarray(labeled_extra)].sum() / n_pos_pool
-        frac = len(labeled_extra) / len(pool_idx)
-        recall_history.append((frac, recall))
-        print(f"round {rnd + 1}: sampled {len(labeled_extra)} ({frac * 100:.1f}%) "
-              f"-> positive recall {recall * 100:.1f}% "
-              f"[exploit={sel.n_exploit} explore={sel.n_explore}]", flush=True)
-
-    # --- report ---
-    print("\n=== recall vs sampling fraction ===")
-    for i, r in enumerate(rand_recall):
-        frac = (i + 1) * args.batch / len(pool_idx)
-        al_recall = recall_history[i][1]
-        print(f"  {frac * 100:5.1f}%:  random {r * 100:5.1f}%   "
-              f"active {al_recall * 100:5.1f}%   "
-              f"gain {al_recall / max(r, 1e-9):.2f}x", flush=True)
+        frac = (rnd + 1) * args.batch / len(pool_idx)
+        mean, std = rec[:, rnd].mean(), rec[:, rnd].std()
+        print(f"  {frac * 100:5.1f}% sampling: recall {mean * 100:5.1f}% "
+              f"(+/- {std * 100:.1f})", flush=True)
     return 0
 
 
