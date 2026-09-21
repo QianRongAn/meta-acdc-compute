@@ -93,21 +93,21 @@ def main() -> int:
                 unmatched.append((job_dir.name, peptide))
                 continue
         job_id = f"{match['pdb']}_{peptide}"
-        cif_srcs = sorted(job_dir.glob("*_model_0.cif"))
+        # copy ALL five ranked models (model_0..4) for structural ensembling
+        n_copied = 0
+        for cif_src in sorted(job_dir.glob("*_model_?.cif")):
+            model_tag = cif_src.name.split("_model_")[1].split(".")[0]
+            shutil.copy2(cif_src, args.out / f"{job_id}_model_{model_tag}.cif")
+            n_copied += 1
         conf_srcs = sorted(job_dir.glob("*_summary_confidences_0.json"))
-        cif_src = cif_srcs[0] if cif_srcs else None
-        conf_src = conf_srcs[0] if conf_srcs else None
-        cif_dst = args.out / f"{job_id}_model_0.cif"
-        conf_dst = args.out / f"{job_id}_conf.json"
-        if cif_src:
-            shutil.copy2(cif_src, cif_dst)
-        if conf_src:
-            shutil.copy2(conf_src, conf_dst)
-        imported.append((job_dir.name, job_id, peptide, match["evidence"]))
+        if conf_srcs:
+            shutil.copy2(conf_srcs[0], args.out / f"{job_id}_conf.json")
+        imported.append((job_dir.name, job_id, peptide,
+                         match["evidence"], n_copied))
 
     print(f"imported {len(imported)} jobs:")
-    for src, job_id, pep, ev in imported:
-        print(f"  {job_id:30s} <- {src}  [{ev}]")
+    for src, job_id, pep, ev, n in imported:
+        print(f"  {job_id:30s} <- {src}  [{ev}] {n} models")
     if unmatched:
         print(f"unmatched {len(unmatched)}: {unmatched}")
     return 0

@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]  # repo root
 STATIC = Path(__file__).resolve().parent / "static"
-DEFAULT_SCORES = ROOT / "data/processed/prediction_scores.tsv"
+DEFAULT_SCORES = ROOT / "data/processed/prediction_scores_ensemble.tsv"
 DEFAULT_MAP = ROOT / "data/processed/structure_vdjdb_map.tsv"
 DEFAULT_CLINICAL = ROOT / "data/processed/clinical_gold_standard.tsv"
 

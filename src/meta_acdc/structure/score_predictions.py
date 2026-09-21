@@ -87,6 +87,22 @@ def main() -> int:
         print(f"{cif.stem}: score={mean:.4f} +/- {std:.4f} "
               f"(nodes={g.n_nodes})", flush=True)
 
+    # aggregate per job across AF3 models (model_0..4): mean + spread
+    from collections import defaultdict
+    agg: dict[str, list[float]] = defaultdict(list)
+    for r in rows:
+        if r["score"]:
+            job = r["job_id"].rsplit("_model_", 1)[0]
+            agg[job].append(float(r["score"]))
+    agg_rows = []
+    for job, vals in sorted(agg.items()):
+        mean = sum(vals) / len(vals)
+        sd = (sum((v - mean) ** 2 for v in vals) / max(len(vals) - 1, 1)) ** 0.5
+        agg_rows.append({"job_id": job, "n_models": len(vals),
+                         "score": f"{mean:.4f}", "std": f"{sd:.4f}"})
+        print(f"{job}: ensemble mean={mean:.4f} +/- {sd:.4f} over "
+              f"{len(vals)} AF3 models", flush=True)
+
     with open(args.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_nodes", "n_edges",
                                            "score", "std", "error"],
@@ -94,7 +110,15 @@ def main() -> int:
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    print(f"saved {len(rows)} scores to {args.out}")
+    agg_out = Path(str(args.out).replace(".tsv", "_ensemble.tsv"))
+    with open(agg_out, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["job_id", "n_models", "score", "std"],
+                           delimiter="\t")
+        w.writeheader()
+        for r in agg_rows:
+            w.writerow(r)
+    print(f"saved {len(rows)} per-model scores to {args.out} and "
+          f"{len(agg_rows)} ensemble scores to {agg_out}")
     return 0
 
 
