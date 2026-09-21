@@ -49,6 +49,8 @@ class Residue:
     z: float
     plddt: float | None = None  # from B-factor column when available
     icode: str = ""  # insertion code (CDR3 regions: resid 100A/100B...)
+    atoms: list[tuple[str, float, float, float]] = field(default_factory=list)
+    # (atom name, x, y, z) — heavy atoms only, excluding backbone N/CA/C/O
 
 
 @dataclass
@@ -163,7 +165,7 @@ def parse_pdb(path: Path) -> list[Residue]:
                 continue
             bfac = float(line[60:66]) if len(line) > 66 else 0.0
             key = (chain, resid, icode)
-            atoms.setdefault(key, []).append((x, y, z))
+            atoms.setdefault(key, []).append((name, x, y, z))
             resname.setdefault(key, resn)
             # treat B-factor as pLDDT when it looks like a confidence score
             if bfac > 0:
@@ -174,8 +176,11 @@ def parse_pdb(path: Path) -> list[Residue]:
         cx = sum(c[0] for c in coords) / len(coords)
         cy = sum(c[1] for c in coords) / len(coords)
         cz = sum(c[2] for c in coords) / len(coords)
+        # side-chain heavy atoms (exclude backbone N/CA/C/O and H)
+        sc = [(n, x, y, z) for n, x, y, z in coords
+              if n not in ("N", "CA", "C", "O", "OXT") and not n.startswith("H")]
         residues.append(Residue(chain, resname[(chain, resid, icode)], resid, cx, cy, cz,
-                                plddt.get((chain, resid, icode)), icode))
+                                plddt.get((chain, resid, icode)), icode, sc))
     return residues
 
 
@@ -186,7 +191,46 @@ def _rbf(dist: float) -> list[float]:
             for i in range(RBF_CENTERS)]
 
 
+CONTACT_CUTOFF = 4.5  # A, van-der-Waals contact
+
+
+def _is_carbon(name: str) -> bool:
+    return name.upper().startswith("C")
+
+
+def _contact_hist(a_atoms: list[tuple], b_atoms: list[tuple]) -> list[float]:
+    """Atom-contact histogram between two residues' side chains.
+
+    Bins: [C-C, C-hetero, hetero-hetero, total] counts of atom pairs within
+    CONTACT_CUTOFF. Captures side-chain packing — the C-alpha-invisible
+    signal that graft decoys alter.
+    """
+    cc = ch = hh = 0
+    for na, ax, ay, az in a_atoms:
+        for nb, bx, by, bz in b_atoms:
+            if (ax - bx) ** 2 + (ay - by) ** 2 + (az - bz) ** 2 > CONTACT_CUTOFF ** 2:
+                continue
+            ca, cb = _is_carbon(na), _is_carbon(nb)
+            if ca and cb:
+                cc += 1
+            elif ca != cb:
+                ch += 1
+            else:
+                hh += 1
+    return [float(cc), float(ch), float(hh), float(cc + ch + hh)]
+
+
 AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"  # 20 canonical residues
+
+
+def _sidechain_extent(res: Residue) -> float:
+    """Distance from CA centroid to side-chain centroid (0 for GLY)."""
+    if not res.atoms:
+        return 0.0
+    cx = sum(a[1] for a in res.atoms) / len(res.atoms)
+    cy = sum(a[2] for a in res.atoms) / len(res.atoms)
+    cz = sum(a[3] for a in res.atoms) / len(res.atoms)
+    return math.sqrt((cx - res.x) ** 2 + (cy - res.y) ** 2 + (cz - res.z) ** 2)
 
 
 def _node_features(res: Residue) -> list[float]:
@@ -265,7 +309,8 @@ def build_interface_graph_from_residues(
     peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
     graph.node_features = [
         [*_node_features(residues[i]),
-         1.0 if residues[i].chain in peptide_chains else 0.0]
+         1.0 if residues[i].chain in peptide_chains else 0.0,
+         _sidechain_extent(residues[i])]
         for i in idx
     ]
     graph.node_coords = [(residues[i].x, residues[i].y, residues[i].z) for i in idx]
@@ -276,8 +321,11 @@ def build_interface_graph_from_residues(
                 continue
             d = dist(residues[old_i], residues[old_j])
             if d <= edge_cutoff:
+                contact = _contact_hist(residues[old_i].atoms,
+                                        residues[old_j].atoms)
+                feats = [*_rbf(d), *contact]  # 12 RBF + 4 contact = 16
                 graph.edge_index.append((new_i, new_j))
                 graph.edge_index.append((new_j, new_i))  # undirected
-                graph.edge_features.append(_rbf(d))
-                graph.edge_features.append(_rbf(d))
+                graph.edge_features.append(feats)
+                graph.edge_features.append(feats)
     return graph

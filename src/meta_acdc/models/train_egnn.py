@@ -22,8 +22,8 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 
 from meta_acdc.models.egnn import EGNN
 
-NODE_DIM = 25  # 3 phys + pLDDT + is-peptide + 20-dim residue identity
-EDGE_DIM = 12  # RBF distance encoding
+NODE_DIM = 26  # 3 phys + pLDDT + is-peptide + 20-dim identity + sidechain extent
+EDGE_DIM = 16  # RBF distance (12) + atom-contact histogram (4)
 
 
 def collate(graphs: list[tuple]) -> dict:

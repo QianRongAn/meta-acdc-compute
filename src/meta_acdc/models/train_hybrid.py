@@ -20,7 +20,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 from meta_acdc.models.hybrid import HybridModel, AA_IDX, PEPTIDE_MAXLEN, N_AA
 
 NODE_DIM = 25
-EDGE_DIM = 12
+EDGE_DIM = 16
 
 
 def collate(graphs: list[tuple]) -> tuple[dict, torch.Tensor]:
