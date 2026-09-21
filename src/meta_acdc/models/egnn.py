@@ -85,8 +85,9 @@ class EGNN(nn.Module):
             [EGCL(hidden, edge_dim, hidden) for _ in range(depth)]
         )
         self.dropout = nn.Dropout(dropout)
+        # pooled = global mean | global max | peptide mean | coord-norm
         self.readout = nn.Sequential(
-            nn.Linear(2 * hidden + 1, hidden),  # mean_h | max_h | coord-norm
+            nn.Linear(3 * hidden + 1, hidden),
             nn.SiLU(),
             nn.Linear(hidden, 1),
         )
@@ -100,6 +101,9 @@ class EGNN(nn.Module):
         batch: Tensor,
     ) -> Tensor:
         """Return graph-level logits, shape (num_graphs, 1)."""
+        # peptide mask lives in input node-feature dim 4 (is-peptide flag)
+        self.peptide_mask = h[:, 4] > 0.5 if h.shape[1] > 4 else None
+
         # center each graph's coordinates at its centroid (translation invariance)
         centroid = torch.zeros(batch.max().item() + 1, 3, device=x.device, dtype=x.dtype)
         centroid.index_add_(0, batch, x)
@@ -112,7 +116,9 @@ class EGNN(nn.Module):
             h, x = layer(h, x, edge_index, edge_attr)
             h = self.dropout(h)
 
-        # invariant pooling: mean + max node features + mean coordinate norm
+        # invariant pooling: global mean+max, peptide-node mean, coord norm.
+        # The peptide is the variable under test — pooling its nodes
+        # separately concentrates the signal (graft-decoy diagnosis).
         n_graphs = batch.max().item() + 1
         node_feat = torch.zeros(n_graphs, h.shape[1], device=h.device)
         node_feat.index_add_(0, batch, h)
@@ -122,7 +128,19 @@ class EGNN(nn.Module):
         max_feat = torch.full((n_graphs, h.shape[1]), -1e9, device=h.device)
         max_feat.scatter_reduce_(0, batch.unsqueeze(1).expand_as(h), h,
                                  reduce="amax", include_self=True)
+        # peptide-node mean pooling (peptide flag lives in input feature 4)
+        pep_mask = self.peptide_mask
+        pep_feat = torch.zeros(n_graphs, h.shape[1], device=h.device)
+        pep_counts = torch.zeros(n_graphs, device=h.device)
+        if pep_mask is not None:
+            pep_feat.index_add_(0, batch[pep_mask], h[pep_mask])
+            pep_counts.index_add_(
+                0, batch[pep_mask],
+                torch.ones(pep_mask.sum().item(), device=h.device))
         pooled = torch.cat(
-            [node_feat / counts, max_feat, coord_feat / counts], dim=-1
+            [node_feat / counts, max_feat,
+             pep_feat / pep_counts.clamp(min=1).unsqueeze(-1),
+             coord_feat / counts],
+            dim=-1,
         )
         return self.readout(pooled)
