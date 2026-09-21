@@ -19,8 +19,8 @@
 - [x] KN-6:v0 ✅ 2026-09-21 — 硬负样本三重筛选模块 + ProtoNet 少样本 AUROC 0.635(留出表位,超序列基线 0.609)
 - [x] KN-7:v0 ✅ 2026-09-21 — 主动学习模拟器:EIG+ε-greedy 在 6% 采样达 2.0× 阳性召回增益
 - [ ] KN-7+:AL 模拟器升级(EGNN 打分 + ACDC 预筛肽库分布)
-- [ ] KN-4+:VDJdb 标签 ↔ 结构映射(289 复合物 TCR 序列与 VDJdb 交叉匹配)
-- 项目仓库:`/home/administrator/docs/meta-acdc/`(18 commits)
+- [x] KN-4+:VDJdb 标签 ↔ 结构映射 ✅ 2026-09-22 — 281/289 复合物映射成功,2,309 条 CDR3 命中(791 同表位 / 1,517 异表位=交叉反应性证据);`structure_vdjdb_map.tsv`(含 1ao7 A6 TCR 的 8 肽交叉集,与 AF3 排名实验互证)
+- 项目仓库:`/home/administrator/docs/meta-acdc/`(2026-09-22 起由 opencode 接续推进)
 
 ### 文献综述关键发现(2026-09-20)
 1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对
