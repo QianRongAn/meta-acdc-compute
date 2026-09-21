@@ -59,16 +59,18 @@ def build_job(pdb: str, struct_dir: Path) -> dict[str, str] | None:
 
 def fasta_block(job_id: str, alpha: str, beta: str, peptide: str,
                 mhc: str, b2m: str) -> str:
+    # NOTE: AF3 web UI rejects non-letter characters in headers (|, digits);
+    # use plain chain labels only. The job identity lives in the filename.
     lines = [
-        f">{job_id}|alpha",
+        ">alpha",
         alpha,
-        f">{job_id}|beta",
+        ">beta",
         beta,
-        f">{job_id}|peptide",
+        ">peptide",
         peptide,
-        f">{job_id}|mhc",
+        ">mhc",
         mhc,
-        f">{job_id}|b2m",
+        ">b2m",
         b2m,
     ]
     return "\n".join(lines)
