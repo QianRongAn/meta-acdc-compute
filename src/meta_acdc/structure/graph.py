@@ -186,11 +186,15 @@ def _rbf(dist: float) -> list[float]:
             for i in range(RBF_CENTERS)]
 
 
+AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"  # 20 canonical residues
+
+
 def _node_features(res: Residue) -> list[float]:
     aa = res.resname[:1].upper()
     props = AA_PHYSICOCHEM.get(aa, AA_PHYSICOCHEM["X"])
     conf = res.plddt / 100.0 if res.plddt is not None else 0.5
-    return [*props, conf]
+    onehot = [1.0 if c == aa else 0.0 for c in AA_ORDER]
+    return [*props, conf, *onehot]  # 3 phys + pLDDT + 20-dim identity
 
 
 def build_interface_graph(

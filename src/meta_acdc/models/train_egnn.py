@@ -22,7 +22,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 
 from meta_acdc.models.egnn import EGNN
 
-NODE_DIM = 5   # charge, hydrophobicity, side-chain volume, pLDDT, is-peptide
+NODE_DIM = 25  # 3 phys + pLDDT + is-peptide + 20-dim residue identity
 EDGE_DIM = 12  # RBF distance encoding
 
 

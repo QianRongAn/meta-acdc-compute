@@ -59,23 +59,29 @@ def make_decoy(
 ) -> list[Residue]:
     """Graft a foreign peptide chain in place of the native one.
 
-    The foreign peptide keeps its own residues but is re-chained under the
-    native peptide's chain label; coordinates are translated near the native
-    groove (B2M/MHC centroid). Geometry approximate — acceptable at v0.
+    TRUE structural-mimicry decoy: the foreign peptide's CHEMISTRY is written
+    onto the NATIVE peptide's coordinates. Geometry, node set and chain labels
+    are untouched — only peptide node features change. The model must detect
+    chemical incompatibility from features + edge interactions, with no
+    geometric shortcut. (Peptide lengths may differ: swap the aligned prefix.)
     """
     roles = classify_chains(residues)
     native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
-    native_pep_chain = native_pep_chains[0] if native_pep_chains else "P"
-    out = [r for r in residues if r.chain not in native_pep_chains]
-    mhc = [r for r in out if roles[r.chain] != TCR]
-    if not mhc:
-        return out + peptide
-    cx = sum(r.x for r in mhc) / len(mhc)
-    cy = sum(r.y for r in mhc) / len(mhc)
-    cz = sum(r.z for r in mhc) / len(mhc)
-    for r in peptide:
-        out.append(Residue(native_pep_chain, r.resname, r.resid,
-                           r.x - cx, r.y - cy, r.z - cz + 2.0, r.plddt))
+    if not native_pep_chains:
+        return residues
+    native_pep_chain = native_pep_chains[0]
+    native_pep = [r for r in residues if r.chain == native_pep_chain]
+    # pair by position: foreign chemistry onto native coordinates
+    swap = {id(r): f for r, f in zip(native_pep, peptide)}
+    out = []
+    for r in residues:
+        f = swap.get(id(r))
+        if f is not None:
+            # keep native position/chain/resid, take foreign chemistry
+            out.append(Residue(r.chain, f.resname, r.resid, r.x, r.y, r.z,
+                               r.plddt, r.icode))
+        else:
+            out.append(r)
     return out
 
 
