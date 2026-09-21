@@ -59,7 +59,10 @@ def extract_components(pdb_path: Path):
             t2 = sorted(tcr, key=len)
             alpha, beta = t2[0], t2[-1]
     pep = (seqs.get("peptide") or [None])[0]
-    mhc = (seqs.get("mhc") or [None])[0]
+    mhc_seqs = seqs.get("mhc") or []
+    if len(mhc_seqs) != 1:  # MHC class II (2 chains) not supported by form 1
+        return None
+    mhc = mhc_seqs[0]
     if not all([alpha, beta, pep, mhc]):
         return None
     allele = next((a for k, a in ALLELE_BY_MHC_PREFIX.items()
