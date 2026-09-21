@@ -44,9 +44,20 @@ def extract_components(pdb_path: Path):
                       for x in res if x.chain == c)
         seqs.setdefault(r, []).append(seq)
     tcr = seqs.get("tcr", [])
-    alpha = next((s for s in tcr if any(m in s for m in
-                 ("YFCAV", "YFCAI", "YFCAL", "YLCAV", "YLCAI", "YLCAL"))), None)
-    beta = next((s for s in tcr if any(m in s for m in ("YFCAS", "YLCAS"))), None)
+    import re as _re
+    alpha = next((s for s in tcr if _re.search(r"Y[FL]C[AVILT]", s)), None)
+    beta = next((s for s in tcr if _re.search(r"Y[FL]C[ASTGPR]", s)), None)
+    if alpha is None and len(tcr) >= 2:
+        # fallback: the two TCR chains by CDR3-ish anchor
+        cand = [s for s in tcr if _re.search(r"[FL]CA", s)]
+        if len(cand) >= 2:
+            cand.sort(key=len, reverse=True)
+            alpha, beta = cand[1], cand[0]
+    if alpha is None or beta is None:
+        # last resort: pair by length (alpha usually shorter in solved domains)
+        if len(tcr) >= 2:
+            t2 = sorted(tcr, key=len)
+            alpha, beta = t2[0], t2[-1]
     pep = (seqs.get("peptide") or [None])[0]
     mhc = (seqs.get("mhc") or [None])[0]
     if not all([alpha, beta, pep, mhc]):
