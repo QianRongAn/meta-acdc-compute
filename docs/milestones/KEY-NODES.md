@@ -23,7 +23,7 @@
 - 项目仓库:`/home/administrator/docs/meta-acdc/`(18 commits)
 
 ### 文献综述关键发现(2026-09-20)
-1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人,Reddy 通讯)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对
+1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对
 2. NetMHCpan 最新是 **4.2**(2025,Front Immunol),计划书引用的 4.1 已过时 → 预筛管线改用 4.2
 3. 直接方法学基线:**MCGLPPI++**(JCIM 2025,几何 GNN 少样本 PPI,含 TCR-pMHC 簇验证)、**ZeroBind**(MAML++)
 4. vanilla MAML 有任务冲突/过度记忆陷阱 → 实现 MAML++ / ProtoNet

@@ -3,7 +3,7 @@
 **Deciphering the Proteome-wide TCR Cross-reactivity Landscape via Active
 Meta-learning and Synthetic Immune Cells**
 
-PhD research project — applicant Nan Wang, supervisor Prof. Sai T. Reddy,
+PhD research project — the applicant (anonymized),
 Department of Biosystems Science and Engineering (D-BSSE), ETH Zurich.
 
 > 本仓库为研究计划的**干实验(计算)执行仓库**。湿实验技术路线保留于

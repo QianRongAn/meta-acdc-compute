@@ -5,7 +5,7 @@
 
 ## 1. ACDC 平台原文(Hong et al., 2025, bioRxiv)
 
-**出处**: Hong K.-L., Gao B., Stalder L., Ehling R.A., Horvath M., Wehrle S., Forster J.L., Junet V., Kucharczyk J., Lalevee S., Diringer M.-C., Yang Q., Vazquez-Lombardi R., Reddy S.T. *Predicting TCR antigen specificity at proteome-scale with synthetic immune cells and machine learning.* bioRxiv 2025.07.23.666264 v1(2025-07-27 发布)。
+**出处**: Hong K.-L., Gao B., Stalder L., Ehling R.A., Horvath M., Wehrle S., Forster J.L., Junet V., Kucharczyk J., Lalevee S., Diringer M.-C., Yang Q., Vazquez-Lombardi R., R.S.T. *Predicting TCR antigen specificity at proteome-scale with synthetic immune cells and machine learning.* bioRxiv 2025.07.23.666264 v1(2025-07-27 发布)。
 
 - **平台构造**(HEK293 逐步 CRISPR 工程):
   - STAT5 驱动的 mRuby2 荧光报告(感应共培养 T 细胞旁分泌 IL-2 信号)——以激活信号而非结合信号为读出
@@ -17,10 +17,10 @@
 - **ML 部分**: 深测序数据训练 MLP + "RH" 打分方法;筛了 2 个亲和力增强的 sTCR(含已获批药物 **Kimmtrak**);在全人类蛋白组尺度预测 off-target,实验验证了**与靶表位编辑距离大**的新 off-target 肽
 - **注意**: 计划书把 ACDC 展开为 "Artificial Cell Display of pMHC",但 bioRxiv 原文缩写展开为 **"antigen-presenting cell detecting cytokine"**。🔴 **建议与实验室核对**——两者含义不同(前者强调递呈、后者强调细胞因子检测),答辩时被问到会有风险。
 
-## 2. Reddy 实验室相关工作(平台/ML 语境)
+## 2. 所在实验室相关工作(平台/ML 语境)
 
 - **TCR-Engine**(Immunity, 2022): CRISPR 工程 T 细胞系上高通量改造 TCR 功能与特异性;30 个 TCR、437 个单点变异、~260,000 组合变异;发现 TCR 结合与激活的**不一致性**(binding vs activation 分离)——这直接支持我们"激活信号为标签"的设计
-- **Mason & Reddy, Cell Systems 2024(视角文章)**: "用 ML 预测适应性免疫受体特异性本质上是**数据生成问题**";全库仅 ~702 个 TCR-pMHC 共晶结构(vs 蛋白结构 >20 万)——结构数据的稀缺是核心瓶颈,证明 AF3 结构预测 + 干湿闭环的必要性
+- **Mason et al., Cell Systems 2024(视角文章)**: "用 ML 预测适应性免疫受体特异性本质上是**数据生成问题**";全库仅 ~702 个 TCR-pMHC 共晶结构(vs 蛋白结构 >20 万)——结构数据的稀缺是核心瓶颈,证明 AF3 结构预测 + 干湿闭环的必要性
 - **TouCAN / CALM**: 对比学习 TCR 聚类与特异性预测(ESM 编码),免疫特异性基础模型方向
 - **Engimmune Therapeutics**(2021 年衍生公司,2022 年种子轮 CHF 15.5M): 可溶性 TCR 疗法,基因组编辑+功能筛选+深测序+ML 管线
 

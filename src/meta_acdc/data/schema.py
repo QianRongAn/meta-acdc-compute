@@ -21,7 +21,7 @@ class DataSource(str, Enum):
     VDJDB = "vdjdb"
     IEDB = "iedb"
     TENX = "10x"
-    ACDC = "acdc"  # in-house Reddy lab platform
+    ACDC = "acdc"  # in-house ACDC platform
     MCPAS = "mcpas"
 
 

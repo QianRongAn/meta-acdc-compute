@@ -3,7 +3,7 @@
 **Meta-ACDC: Deciphering the Proteome-wide TCR Cross-reactivity Landscape
 via Active Meta-learning and Synthetic Immune Cells**
 
-申请人: Nan Wang(王楠) | 导师: Prof. Sai T. Reddy
+申请人/导师: 匿名
 单位: D-BSSE, ETH Zurich
 > 状态:基于前期实证结果的工作底稿;提交 D-BSSE 委员会前需与导师修订。
 > 范围:本报告聚焦**干实验(计算)部分**;湿实验技术路线保留为研究背景与
