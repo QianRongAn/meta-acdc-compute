@@ -50,7 +50,7 @@ class Residue:
     plddt: float | None = None  # from B-factor column when available
     icode: str = ""  # insertion code (CDR3 regions: resid 100A/100B...)
     atoms: list[tuple[str, float, float, float]] = field(default_factory=list)
-    # (atom name, x, y, z) — heavy atoms only, excluding backbone N/CA/C/O
+    # (atom name, x, y, z) — ALL heavy atoms (backbone N/CA/C/O + side chains)
 
 
 @dataclass
@@ -176,11 +176,10 @@ def parse_pdb(path: Path) -> list[Residue]:
         cx = sum(c[1] for c in coords) / len(coords)
         cy = sum(c[2] for c in coords) / len(coords)
         cz = sum(c[3] for c in coords) / len(coords)
-        # side-chain heavy atoms (exclude backbone N/CA/C/O and H)
-        sc = [(n, x, y, z) for n, x, y, z in coords
-              if n not in ("N", "CA", "C", "O", "OXT") and not n.startswith("H")]
+        # all heavy atoms (H atoms filtered at collection time below)
+        heavy = [(n, x, y, z) for n, x, y, z in coords if not n.startswith("H")]
         residues.append(Residue(chain, resname[(chain, resid, icode)], resid, cx, cy, cz,
-                                plddt.get((chain, resid, icode)), icode, sc))
+                                plddt.get((chain, resid, icode)), icode, heavy))
     return residues
 
 
@@ -198,16 +197,25 @@ def _is_carbon(name: str) -> bool:
     return name.upper().startswith("C")
 
 
+BACKBONE_NAMES = ("N", "CA", "C", "O", "OXT")
+
+
+def _sidechain_atoms(atoms: list[tuple]) -> list[tuple]:
+    return [a for a in atoms if a[0] not in BACKBONE_NAMES]
+
+
 def _contact_hist(a_atoms: list[tuple], b_atoms: list[tuple]) -> list[float]:
-    """Atom-contact histogram between two residues' side chains.
+    """Atom-contact histogram between two residues' SIDE CHAINS.
 
     Bins: [C-C, C-hetero, hetero-hetero, total] counts of atom pairs within
     CONTACT_CUTOFF. Captures side-chain packing — the C-alpha-invisible
     signal that graft decoys alter.
     """
+    a_sc = _sidechain_atoms(a_atoms)
+    b_sc = _sidechain_atoms(b_atoms)
     cc = ch = hh = 0
-    for na, ax, ay, az in a_atoms:
-        for nb, bx, by, bz in b_atoms:
+    for na, ax, ay, az in a_sc:
+        for nb, bx, by, bz in b_sc:
             if (ax - bx) ** 2 + (ay - by) ** 2 + (az - bz) ** 2 > CONTACT_CUTOFF ** 2:
                 continue
             ca, cb = _is_carbon(na), _is_carbon(nb)
@@ -225,11 +233,12 @@ AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"  # 20 canonical residues
 
 def _sidechain_extent(res: Residue) -> float:
     """Distance from CA centroid to side-chain centroid (0 for GLY)."""
-    if not res.atoms:
+    sc = _sidechain_atoms(res.atoms)
+    if not sc:
         return 0.0
-    cx = sum(a[1] for a in res.atoms) / len(res.atoms)
-    cy = sum(a[2] for a in res.atoms) / len(res.atoms)
-    cz = sum(a[3] for a in res.atoms) / len(res.atoms)
+    cx = sum(a[1] for a in sc) / len(sc)
+    cy = sum(a[2] for a in sc) / len(sc)
+    cz = sum(a[3] for a in sc) / len(sc)
     return math.sqrt((cx - res.x) ** 2 + (cy - res.y) ** 2 + (cz - res.z) ** 2)
 
 

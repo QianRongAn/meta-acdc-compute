@@ -53,17 +53,62 @@ def _peptide_chains(residues: list[Residue]) -> dict[str, list[Residue]]:
     return chains
 
 
+import numpy as np
+
+
+def _kabsch(src: np.ndarray, dst: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Optimal rotation+translation mapping src onto dst (both (n,3))."""
+    c_src = src.mean(axis=0)
+    c_dst = dst.mean(axis=0)
+    h = (src - c_src).T @ (dst - c_dst)
+    u, _, vt = np.linalg.svd(h)
+    d = np.sign(np.linalg.det(vt.T @ u.T))
+    r = vt.T @ np.diag([1.0, 1.0, d]) @ u.T
+    t = c_dst - r @ c_src
+    return r, t
+
+
+def _backbone_coords(res: Residue) -> np.ndarray | None:
+    """N, CA, C coordinates as (3,3); None if any is missing."""
+    m = {a[0]: np.array([a[1], a[2], a[3]]) for a in res.atoms}
+    if all(k in m for k in ("N", "CA", "C")):
+        return np.vstack([m["N"], m["CA"], m["C"]])
+    return None
+
+
+def _transplanted_atoms(native: Residue, foreign: Residue) -> list[tuple]:
+    """Foreign side-chain atoms mapped into the native residue's backbone frame.
+
+    Returns native backbone atoms (kept verbatim) + transformed foreign
+    side-chain atoms — the residue's geometry is untouched at C-alpha level,
+    only the side-chain chemistry changes.
+    """
+    src = _backbone_coords(foreign)
+    dst = _backbone_coords(native)
+    if src is None or dst is None:
+        return list(native.atoms)  # fallback: keep native atoms
+    r, t = _kabsch(src, dst)
+    out = [a for a in native.atoms if a[0] in ("N", "CA", "C", "O", "OXT")]
+    for name, x, y, z in foreign.atoms:
+        if name in ("N", "CA", "C", "O", "OXT"):
+            continue
+        p = r @ np.array([x, y, z]) + t
+        out.append((name, float(p[0]), float(p[1]), float(p[2])))
+    return out
+
+
 def make_decoy(
     residues: list[Residue],
     peptide: list[Residue],
 ) -> list[Residue]:
     """Graft a foreign peptide chain in place of the native one.
 
-    TRUE structural-mimicry decoy: the foreign peptide's CHEMISTRY is written
-    onto the NATIVE peptide's coordinates. Geometry, node set and chain labels
-    are untouched — only peptide node features change. The model must detect
-    chemical incompatibility from features + edge interactions, with no
-    geometric shortcut. (Peptide lengths may differ: swap the aligned prefix.)
+    TRUE structural-mimicry decoy: the foreign peptide's side-chain chemistry
+    is transplanted onto the NATIVE peptide's backbone via Kabsch alignment.
+    Backbone coordinates, node set and chain labels are untouched; only the
+    side-chain atoms (and residue identities) change — the C-alpha-invisible
+    signal that real cross-reactivity (e.g., titin vs MAGE-A3) exhibits.
+    (Peptide lengths may differ: swap the aligned prefix.)
     """
     roles = classify_chains(residues)
     native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
@@ -71,15 +116,14 @@ def make_decoy(
         return residues
     native_pep_chain = native_pep_chains[0]
     native_pep = [r for r in residues if r.chain == native_pep_chain]
-    # pair by position: foreign chemistry onto native coordinates
     swap = {id(r): f for r, f in zip(native_pep, peptide)}
     out = []
     for r in residues:
         f = swap.get(id(r))
         if f is not None:
-            # keep native position/chain/resid, take foreign chemistry
+            atoms = _transplanted_atoms(r, f)
             out.append(Residue(r.chain, f.resname, r.resid, r.x, r.y, r.z,
-                               r.plddt, r.icode))
+                               r.plddt, r.icode, atoms))
         else:
             out.append(r)
     return out
@@ -99,8 +143,9 @@ def make_displaced_peptide_decoy(
     out = []
     for r in residues:
         if roles[r.chain] == PEPTIDE:
+            shifted_atoms = [(n, x, y, z + shift) for n, x, y, z in r.atoms]
             out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift,
-                               r.plddt, r.icode))
+                               r.plddt, r.icode, shifted_atoms))
         else:
             out.append(r)
     return out
@@ -194,13 +239,23 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
         peptides = _peptide_chains(residues)
         if not peptides:
             continue
-        donor = rng.choice(pdb_list)
-        donor_peptides = _peptide_chains(complexes[donor])
-        if not donor_peptides:
+        native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
+        # pick a donor peptide with a DIFFERENT sequence (else decoy == native)
+        graft = None
+        donor_pdb = None
+        for _ in range(20):
+            donor_pdb = rng.choice(pdb_list)
+            donor_peptides = _peptide_chains(complexes[donor_pdb])
+            if not donor_peptides:
+                continue
+            candidate = rng.choice(list(donor_peptides.values()))
+            if "".join(r.resname[:1] for r in candidate) != native_seq:
+                graft = candidate
+                break
+        if graft is None:
             continue
-        graft = rng.choice(list(donor_peptides.values()))
         decoy = make_decoy(residues, graft)
-        add(decoy, 0, f"{pdb}<-{donor}", forced_nodes=native_keys[pdb])
+        add(decoy, 0, f"{pdb}<-{donor_pdb}", forced_nodes=native_keys[pdb])
         n_graft += 1
 
     import torch  # lazy: graph logic above is torch-free
