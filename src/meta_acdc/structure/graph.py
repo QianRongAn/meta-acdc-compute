@@ -173,9 +173,9 @@ def parse_pdb(path: Path) -> list[Residue]:
 
     residues = []
     for (chain, resid, icode), coords in atoms.items():
-        cx = sum(c[0] for c in coords) / len(coords)
-        cy = sum(c[1] for c in coords) / len(coords)
-        cz = sum(c[2] for c in coords) / len(coords)
+        cx = sum(c[1] for c in coords) / len(coords)
+        cy = sum(c[2] for c in coords) / len(coords)
+        cz = sum(c[3] for c in coords) / len(coords)
         # side-chain heavy atoms (exclude backbone N/CA/C/O and H)
         sc = [(n, x, y, z) for n, x, y, z in coords
               if n not in ("N", "CA", "C", "O", "OXT") and not n.startswith("H")]
