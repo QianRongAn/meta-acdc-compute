@@ -113,6 +113,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
 
     complexes: dict[str, list[Residue]] = {}
     skipped = 0
+    n_split = 0
     for row in rows:
         pdb = row["pdb"]
         path = struct_dir / f"{pdb.lower()}.pdb"
@@ -121,17 +122,31 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
             roles = classify_chains(residues)
         except Exception:
             continue
-        # keep only clean single complexes: exactly 2 TCR chains,
-        # exactly one peptide chain, >=1 MHC chain
         n_tcr = sum(1 for v in roles.values() if v == TCR)
         n_peptide = sum(1 for v in roles.values() if v == PEPTIDE)
         n_mhc = sum(1 for v in roles.values() if v == MHC)
-        if n_tcr != 2 or n_peptide != 1 or n_mhc < 1:
+        if n_tcr >= 1 and n_peptide == 1 and n_mhc >= 1:
+            complexes[pdb] = residues
+        elif (n_tcr > 2 or n_peptide > 1) and n_mhc >= 1:
+            # multi-complex asymmetric unit: split into sub-complexes
+            try:
+                from meta_acdc.structure.split_complexes import split_complex
+                subs = split_complex(residues)
+            except Exception:
+                subs = []
+            for k, sub in enumerate(subs):
+                sub_roles = classify_chains(sub)
+                if (sum(1 for v in sub_roles.values() if v == TCR) >= 1
+                        and sum(1 for v in sub_roles.values() if v == PEPTIDE) == 1
+                        and sum(1 for v in sub_roles.values() if v == MHC) >= 1):
+                    complexes[f"{pdb}_{k}"] = sub
+                    n_split += 1
+        else:
             skipped += 1
-            continue
-        complexes[pdb] = residues
     if skipped:
-        print(f"skipped {skipped} multi-complex / ambiguous entries", flush=True)
+        print(f"skipped {skipped} ambiguous entries", flush=True)
+    if n_split:
+        print(f"split {n_split} sub-complexes from multi-complex files", flush=True)
 
     graphs = []
     labels = []

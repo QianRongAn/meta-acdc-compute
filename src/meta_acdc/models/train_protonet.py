@@ -49,7 +49,7 @@ def encode_cdr3(cdr3: str) -> np.ndarray:
 
 
 class CDR3Encoder(nn.Module):
-    def __init__(self, in_dim: int = CDR3_MAXLEN * FEAT_PER_AA, hidden: int = 128):
+    def __init__(self, in_dim: int = CDR3_MAXLEN * FEAT_PER_AA, hidden: int = 256):
         super().__init__()
         self.mlp = nn.Sequential(
             nn.Linear(in_dim, hidden), nn.SiLU(),
@@ -74,7 +74,7 @@ def task_tensors(task, device: str) -> tuple[torch.Tensor, torch.Tensor]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=Path("data/processed/vdjdb.clean.tsv"))
-    ap.add_argument("--episodes", type=int, default=3000)
+    ap.add_argument("--episodes", type=int, default=10000)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
