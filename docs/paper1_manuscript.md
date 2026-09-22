@@ -120,7 +120,9 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - Retraining an equivalent model (graft AUROC 0.918 vs 0.933) completely
   changes AF3-input scores: the A6 series collapses from 0.92-0.99 to
   0.001-0.065; pairwise peptide-ranking Spearman across instances:
-  0.17 / -0.24 / NaN — agreement is at chance.
+  0.17 / -0.24 / NaN — agreement is at chance. Independent replication
+  (v9.1 + three no-pLDDT seeds on 21 AF3 jobs): 0.61 / 0.11 / 0.33 /
+  3x NaN, where two instances collapse all scores to ~0 (Fig 5).
 - Interpretation: the decoy task lives inside the training distribution
   (interpolation → reproducible); AF3-predicted CIFs are out-of-distribution
   (pLDDT-as-B-factor ≈90 vs crystal 20-40; extrapolation → arbitrary).
