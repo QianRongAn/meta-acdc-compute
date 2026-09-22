@@ -210,6 +210,12 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
 - **DA 一键驱动 + pilot**:`scripts/run_da_af3.sh <folds_dir>` 打通
   导入→混训→打分→判决;代理 pilot(20 ep)在候选上 mean Spearman 0.447
   (基线 0.17/−0.24/NaN)——方向有效但未过门,真实判决待 native
+- **标签完整性修复(重要)**:发现 `kn5_submission_list.tsv` 的
+  `tcr_a/tcr_b` 两列写反,旧导入静默回退→**48/73 条 pdb 标签错**
+  (1ao7↔1qrn、1g6r/1mwa→1tcr、1oga→2vlj、2bnr→2f53);新增
+  `structure/relabel_instances_by_chains.py` 按晶体链指纹回贴,
+  导入代码改为链对匹配;撤回"324 Cα=AF3 截断缺陷"的误判(那是 1ao7
+  晶体天然构型)
 - 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
   `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述

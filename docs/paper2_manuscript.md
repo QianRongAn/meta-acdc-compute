@@ -180,18 +180,21 @@ interval. Two sources dominate here, and both are measurable.
 *Structure-prediction variance (corrected 2026-09-23).* An earlier claim that
 re-submitting a job to AF3 can swing a single-model score by 0.94
 (LLFGYPRYV 0.049 → 0.991, a first-pass fold failure) does not survive
-scrutiny: the scorer that produced those numbers was overwritten by a retrain
-and none of the six surviving checkpoints reproduces it. Across 31 jobs (17
-with >1 independent submission), re-scoring every AF3 submission with a *fixed*
-surviving instance gives a resubmission range of median 0.04 (max 0.51). AF3's
-own confidence is reproducible for high-confidence jobs (ipTM median Δ 0.046;
-≤0.01–0.07 for ipTM ≥ 0.88), as is the peptide Cα register (MHC/B2M-superposed
-RMSD median 0.20 Å, max 0.43 Å). Two detectable failure modes remain: a
-defective first submission with truncated TCR chains (324 vs 443 Cα), and
-genuinely low-confidence complexes (ipTM ≈ 0.5, e.g. JM22) where AF3 itself
-varies — ipTM range 0.21 and peptide RMSD up to 11 Å. **ipTM is therefore a
-usable reliability gate.** The large swings are *model-side* arbitrariness
-(the Rashomon effect, §[Meta-TCR-GNN] 2.6) amplified on such inputs, not AF3
+scrutiny: it was a compound artifact — the scorer that produced those numbers
+was overwritten by a retrain, and the compared structures were partly different
+TCR constructs mislabeled as resubmissions (`kn5_submission_list.tsv` had its
+tcr_a/tcr_b columns swapped; 48/73 structures were mislabeled, corrected by
+matching CIF chains to 291 crystal signatures). After relabeling, 14 jobs have
+>1 true same-construct submission: AF3 ipTM differs by a median of 0.004
+(max 0.21) and re-scoring with a *fixed* surviving instance gives a
+resubmission range of median 0.04. The peptide Cα register is likewise
+reproduced (MHC/B2M-superposed RMSD median 0.20 Å for true resubmissions). The
+one remaining failure mode is genuinely low-confidence complexes (ipTM ≈ 0.5,
+e.g. the JM22 family) where AF3 itself varies — ipTM range 0.21 and peptide
+RMSD up to 11 Å. **ipTM is therefore a usable reliability gate.** (An earlier
+"truncated TCR chains" flag is withdrawn: 324 Cα is the native 1ao7 crystal
+construct, not an AF3 defect.) The large swings are *model-side* arbitrariness
+(the Rashomon effect, §[Meta-TCR-GNN] 2.6), not AF3
 run-to-run variance. Across 5
 AF3 models within a single submission, ensemble standard deviations still
 range 0.01–0.43. The operational lesson stands but is relocated: a *single

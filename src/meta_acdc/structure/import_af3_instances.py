@@ -30,7 +30,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from meta_acdc.structure.import_af3 import load_manifest, read_job_sequences
+from meta_acdc.structure.import_af3 import (load_manifest, matches_chain_pair,
+                                            read_job_sequences, tcr_pair)
 
 CLINICAL_ALPHA = (
     "AQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLYVRPYQREQTSGRLNASLDKS"
@@ -47,16 +48,12 @@ def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None
     if not seqs:
         return None
     peptide = seqs[0]
-    alpha = next((s for s in seqs if s != peptide and ("YFC" in s or "YLC" in s)),
-                 None)
+    alpha, beta = tcr_pair(seqs, peptide)
     if alpha == CLINICAL_ALPHA:
         return {"pdb": "5brz", "peptide": peptide, "evidence": "clinical"}
     candidates = by_peptide.get(peptide, [])
-    match = None
-    for c in candidates:
-        if alpha and c["tcr_a"] and alpha == c["tcr_a"]:
-            match = c
-            break
+    match = next((c for c in candidates
+                  if matches_chain_pair(alpha, beta, c)), None)
     if match is None and candidates:
         match = candidates[0]
     if match is None:

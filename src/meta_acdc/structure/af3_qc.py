@@ -83,8 +83,9 @@ def main() -> int:
             flags = []
             if m is not None and m < IPMT_LOW:
                 flags.append("low_iptm")
-            if 0 <= tcr_ca < TCR_CA_MIN:
-                flags.append("truncated_tcr")
+            # NB: tcr_ca is reported but NOT flagged — some crystals (e.g.
+            # 1ao7, 324 CA) are legitimately truncated constructs, so a low
+            # CA count is not by itself an AF3 defect (corrected 2026-09-23).
             rows.append({
                 "instance": inst, "job_id": job, "n_conf": len(iptm),
                 "iptm_mean": "" if m is None else f"{m:.3f}",
@@ -105,11 +106,8 @@ def main() -> int:
     n = len(rows)
     bad = [r for r in rows if r["flag"]]
     n_low = sum(1 for r in rows if "low_iptm" in r["flag"])
-    n_trunc = sum(1 for r in rows if "truncated_tcr" in r["flag"])
     print(f"wrote {n} structure records to {args.out}")
-    print(f"  flagged: {len(bad)} "
-          f"(low_iptm={n_low}, truncated_tcr={n_trunc}); "
-          f"gate: ipTM<{IPMT_LOW} or TCR_CA<{TCR_CA_MIN}")
+    print(f"  flagged: {len(bad)} (low_iptm={n_low}); gate: ipTM<{IPMT_LOW}")
     for r in bad:
         print(f"  {r['instance']:3s} {r['job_id']:22s} "
               f"ipTM={r['iptm_mean']} tcr_ca={r['tcr_ca']} [{r['flag']}]")

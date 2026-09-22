@@ -149,6 +149,12 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
   **用 ipTM 做可靠性闸门**;旧的"重提方差 0.94"系打分模型侧假象
   (2026-09-23 修正);**不可信的是单实例 EGNN 打分,不是单次 AF3 提交**
 - 任何 OOD 打分结论必须过跨实例稳定性检验(Rashomon 效应)
+- **pdb 标签不可信**:`kn5_submission_list.tsv` 的 `tcr_a/tcr_b` 两列**写反**
+  (tcr_a=β、tcr_b=α)。导入务必按**链对**匹配(`import_af3.tcr_pair` +
+  `matches_chain_pair`),并在导入后跑
+  `relabel_instances_by_chains.py`(按 CIF 链指纹回贴真 pdb)核对;
+  2026-09-23 曾因此把 48/73 条结构标签弄错(1ao7↔1qrn、1g6r/1mwa→1tcr、
+  1oga→2vlj、2bnr→2f53)
 
 ## 湿实验接口(不在计算范围,技术路线保留)
 

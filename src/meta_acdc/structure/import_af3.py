@@ -37,6 +37,27 @@ def read_job_sequences(request_path: Path) -> list[str]:
     return sorted(seqs, key=len)  # peptide first
 
 
+def tcr_pair(seqs: list[str], peptide: str) -> tuple[str | None, str | None]:
+    """Alpha/beta by conserved pre-CDR3 motif (order-independent)."""
+    rest = [s for s in seqs if s != peptide]
+    beta = next((s for s in rest if "YFCAS" in s or "YLCAS" in s), None)
+    alpha = next((s for s in rest
+                  if any(m in s for m in ("YFCAV", "YFCAI", "YFCAL", "YLCAV"))),
+                 None)
+    return alpha, beta
+
+
+def matches_chain_pair(alpha, beta, cand: dict) -> bool:
+    """True iff the job's {alpha,beta} equals the candidate's {tcr_a,tcr_b}.
+
+    kn5_submission_list.tsv stores tcr_a = beta and tcr_b = alpha (columns
+    are swapped relative to the AF3 job FASTA), so an order-dependent
+    alpha == tcr_a test never fires — hence the set comparison."""
+    if not alpha or not beta:
+        return False
+    return {alpha, beta} == {cand.get("tcr_a"), cand.get("tcr_b")}
+
+
 def load_manifest(path: Path) -> list[dict]:
     with open(path, newline="", encoding="utf-8", errors="replace") as fh:
         return list(csv.DictReader(fh, delimiter="\t"))
@@ -69,8 +90,7 @@ def main() -> int:
         if not seqs:
             continue
         peptide = seqs[0]
-        alpha = next((s for s in seqs if s != peptide and ("YFC" in s or "YLC" in s)),
-                     None)
+        alpha, beta = tcr_pair(seqs, peptide)
         # clinical gold-standard set (MAG-IC3/5brz TCR): detect FIRST by the
         # exact alpha-chain sequence, before manifest matching
         CLINICAL_ALPHA = (
@@ -80,13 +100,10 @@ def main() -> int:
         if alpha == CLINICAL_ALPHA:
             match = {"pdb": "5brz", "evidence": "clinical"}
         else:
-            # match manifest: same peptide + same TCR alpha
+            # match manifest: same peptide + same {alpha,beta} chain pair
             candidates = by_peptide.get(peptide, [])
-            match = None
-            for c in candidates:
-                if alpha and c["tcr_a"] and alpha == c["tcr_a"]:
-                    match = c
-                    break
+            match = next((c for c in candidates
+                          if matches_chain_pair(alpha, beta, c)), None)
             if match is None and candidates:
                 match = candidates[0]
             if match is None:

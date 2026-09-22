@@ -113,6 +113,9 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
             "打分须报告固定多实例集成;单实例 EGNN 打分不可信(非 AF3 不稳)。"
             "重提分析(31 任务):高置信(ipTM≥0.88)跨重提稳,低 ipTM(~0.5)"
             " AF3 自身会飘——见 reliability 面板",
+            "pdb 标签可靠性警告(2026-09-23):kn5 提交清单 tcr_a/tcr_b 两列"
+            "写反,历史脚本曾把 48/73 条结构标签张冠李戴;下表的 TCR 分组名"
+            "请按链指纹家族理解,待结构映射修复",
         ],
     }
 

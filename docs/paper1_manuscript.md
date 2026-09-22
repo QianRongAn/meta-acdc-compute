@@ -95,6 +95,14 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 > Status: the numbers below were obtained with ONE trained instance. Section
 > 2.6 shows they do not survive instance resampling; they are retained as the
 > motivation for the stability analysis, not as claims.
+>
+> **Label correction (2026-09-23):** the pdb attributions below are unreliable.
+> `kn5_submission_list.tsv` had its tcr_a/tcr_b columns swapped, so the import
+> silently fell back to "first candidate row" and mislabeled 48/73 structures
+> (verified against 291 crystal TCR signatures). The "A6" entries are in fact
+> the B7/1qrn family, "1G6R/1MWA" are the 2C/1tcr family, and "JM22 (1OGA)" is
+> the 2vlj/2vlk family. Group identities below should be read as chain-signature
+> families until the structure map is repaired.
 
 - A6 TCR: 8 candidate peptides, 5/8 VDJdb-validated binders score
   0.92-0.99 (ensemble); native peptide ranks #3 (0.973). Weak/non-binders
@@ -112,19 +120,20 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 
 - Initial claim: resubmission variance — 1/9 jobs changed by 0.94 between two
   independent AF3 submissions (LLFGYPRYV 0.049 -> 0.991). **Retracted
-  (2026-09-23):** the scorer that produced those numbers was overwritten by a
-  retrain; none of the six surviving checkpoints reproduces it. Across 31
-  jobs (17 with >1 independent submission), re-scoring every submission with a
-  *fixed* instance gives a resubmission range of median 0.04 (max 0.51, and
-  that maximum is itself a low-confidence job). AF3's own confidence is
-  reproducible for high-confidence jobs (ipTM median Delta 0.046 overall;
-  <=0.01-0.07 for ipTM>=0.88) and the peptide C-alpha register likewise
-  (MHC/B2M-superposed RMSD median 0.20 A, max 0.43 A). Two detectable failure
-  modes remain: first submissions with truncated TCR chains (324 vs 443
-  C-alpha), and genuinely low-confidence complexes (ipTM ~0.5, e.g. JM22)
-  where AF3 itself varies (ipTM range 0.21; peptide RMSD up to 11 A). **ipTM
-  is therefore a usable reliability gate.** The original 0.94 swing was
-  EGNN-side arbitrariness (Section 2.6) amplified on such an input, not
+  (2026-09-23):** the numeric swing was a compound artifact — the scorer that
+  produced those numbers was overwritten by a retrain (none of six surviving
+  checkpoints reproduces it), and the structures compared were partly different
+  TCR constructs mislabeled as resubmissions. After coordinate-based relabeling,
+  14 jobs have >1 true same-construct submission: AF3 ipTM differs by a median
+  of 0.004 (max 0.21), and re-scoring with a *fixed* instance gives a
+  resubmission range of median 0.04. The peptide C-alpha register is likewise
+  reproduced (MHC/B2M-superposed RMSD median 0.20 A for true resubmissions).
+  The one remaining failure mode is genuinely low-confidence complexes
+  (ipTM ~0.5, e.g. the JM22 family) where AF3 itself varies (ipTM range 0.21;
+  peptide RMSD up to 11 A). **ipTM is therefore a usable reliability gate.**
+  (An earlier "truncated TCR chains" flag was withdrawn: 324 C-alpha is the
+  native 1ao7 crystal construct, not an AF3 defect.) The original 0.94 swing
+  was EGNN-side arbitrariness (Section 2.6), not
   intrinsic AF3 run variance.
 - 5-model ensemble stds range 0.01-0.43; borderline cases carry the largest
   std (usable as uncertainty).
