@@ -203,6 +203,9 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
 - **域适应关键路径解锁**:`af3_batch.py --evidence same` 生成 **174 个天然
   复合物**的 AF3 5 链提交 FASTA(`data/processed/af3_native/`);
   `train_domain_adapt.py` 已支持 `--af3` 直接吃 AF3 CIF 正样本(内容去重)
+- **可靠性闸门**:`structure/af3_qc.py` 按 ipTM(<0.75)/TCR 完整性(<400 Cα)
+  标记不可信结构(73 条记录中 16 条被标);待提交清单刷新为
+  `af3_upload_todo.txt`(365 交叉反应候选)+ `af3_native_todo.txt`(173 天然)
 - 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
   `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述

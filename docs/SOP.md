@@ -115,6 +115,8 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
     --out data/processed/af3_resubmission_variance.tsv
 .venv/bin/python src/meta_acdc/structure/af3_rmsd.py \
     --out data/processed/af3_resubmission_rmsd.tsv   # 模型无关肽 RMSD
+.venv/bin/python src/meta_acdc/structure/af3_qc.py \
+    --out data/processed/af3_qc.tsv                  # ipTM/链完整性可靠性闸门
 ```
 
 # 域适应正样本(AF3 预测风格的天然复合物),待用户网页提交:
