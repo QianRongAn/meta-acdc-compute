@@ -108,13 +108,21 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
   target's level under 5-model ensembling, matching its confirmed
   cross-reactive biology.
 
-### 2.5 Prediction variance is a dominant uncertainty (Fig 4)
+### 2.5 Prediction variance: model-side, not structure-side (Fig 3)
 
-- Resubmission variance: 1/9 jobs changed by 0.94 AUROC between two
-  independent AF3 submissions (fold failure); 5-model ensemble stds range
-  0.01-0.43; borderline cases carry the largest std (usable as uncertainty).
+- Initial claim: resubmission variance — 1/9 jobs changed by 0.94 between two
+  independent AF3 submissions (LLFGYPRYV 0.049 -> 0.991). **Retracted
+  (2026-09-23):** the scorer that produced those numbers was overwritten by a
+  retrain; none of the six surviving checkpoints reproduces it. Re-scoring
+  every submission with a *fixed* instance reduces the resubmission range to
+  median 0.017 / max 0.166. AF3's own confidence is itself highly
+  reproducible across submissions (ipTM median Delta 0.025, max 0.070; pure
+  resubmissions agree to <=0.01). The swing was therefore EGNN-side
+  arbitrariness (Section 2.6), not AF3 run variance.
+- 5-model ensemble stds range 0.01-0.43; borderline cases carry the largest
+  std (usable as uncertainty).
 - ipTM vs our score: Pearson r = 0.333 — the model carries information
-  beyond the predictor's own confidence.
+  beyond the predictor's own confidence (but see Section 2.6 for the caveat).
 
 ### 2.6 Cross-instance instability: the Rashomon crisis (decisive negative)
 
@@ -191,7 +199,8 @@ secondary; recall@0.5 for ranking; native-rank verdict.
 - Fig 2: feature-ablation bar chart (contacts decisive; phys second).
 - Fig 3: per-TCR ranking heatmap (6 TCR groups x peptides) — annotated as
   single-instance (see 2.6).
-- Fig 4: resubmission scatter + ensemble-std vs score.
+- Fig 3: AF3 resubmission variance (AF3 ipTM stable vs fixed-instance EGNN
+  range) — corrected: variance is model-side, not AF3-side (see 2.5/2.6).
 - Fig 5: cross-instance instability (score collapse scatter; Spearman
   matrix; pLDDT-ablation partial fix).
 - Table 1: dataset statistics (+ structure-VDJdb map: 281/291 complexes,

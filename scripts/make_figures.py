@@ -112,31 +112,61 @@ def fig2_heatmap() -> None:
 
 
 def fig3_resubmission() -> None:
-    """First vs resubmitted AF3 scores (identity scatter)."""
-    pairs = [
-        ("LGYGFVNYI", 0.9864, 0.992), ("LLFGFPVYV", 0.9927, 0.999),
-        ("LLFGKPVYV", 0.7821, 0.952), ("LLFGPVYV", 0.0018, 0.086),
-        ("LLFGYAVYV", 0.9841, 0.991), ("LLFGYPRYV", 0.0486, 0.991),
-        ("LLFGYPVAV", 0.9595, 0.887), ("MLWGYLQYV", 0.9884, 0.986),
-        ("LLFGYPVYV(1qrn)", 0.9991, 0.996),
+    """AF3 resubmission variance, corrected: structure stable, EGNN modest.
+
+    The legacy claim (docs/benchmarks.md 2026-09-22) that resubmission swings
+    the score by up to 0.94 came from a scorer instance that no longer exists.
+    With AF3's own confidence (model-independent) and a surviving fixed EGNN
+    instance, resubmission moves both metrics by far less.
+    """
+    import numpy as np
+
+    rows = list(csv.DictReader(
+        open(ROOT / "data/processed/af3_resubmission_variance.tsv"),
+        delimiter="\t"))
+
+    def mean_of(prefix: str, row: dict) -> float | None:
+        vals = [float(row[f"{prefix}_{k}"]) for k in ("B1", "B2", "B3")
+                if row.get(f"{prefix}_{k}", "")]
+        return float(np.mean(vals)) if vals else None
+
+    iptm_pairs, egnn_pairs = [], []
+    for r in rows:
+        if not r.get("iptm_A", ""):
+            continue
+        y = mean_of("iptm", r)
+        if y is not None:
+            iptm_pairs.append((r["job_id"], float(r["iptm_A"]), y))
+        y = mean_of("egnn_noplddt_s10", r)
+        if y is not None and r.get("egnn_noplddt_s10_A", ""):
+            egnn_pairs.append((r["job_id"], float(r["egnn_noplddt_s10_A"]), y))
+
+    fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.6))
+    specs = [
+        (axes[0], iptm_pairs, "AF3 self-confidence (ipTM)",
+         "A  AlphaFold3 agrees with itself", (-0.04, 1.04)),
+        (axes[1], egnn_pairs, "EGNN score (fixed no-pLDDT instance)",
+         "B  EGNN scorer barely moves", (-0.05, 0.30)),
     ]
-    fig, ax = plt.subplots(figsize=(3.8, 3.8))
-    ax.plot([0, 1], [0, 1], color="#d8d7d2", linewidth=1)
-    for name, v1, v2 in pairs:
-        ax.scatter(v1, v2, s=22, color=BLUE, zorder=3, edgecolor="white",
-                   linewidth=0.5)
-        if abs(v2 - v1) > 0.15:
-            ax.annotate(name.split("(")[0], (v1, v2),
-                        textcoords="offset points", xytext=(4, 4),
-                        fontsize=6.5, color=INK)
-    ax.set_xlim(-0.05, 1.05)
-    ax.set_ylim(-0.05, 1.05)
-    ax.set_xlabel("first AF3 submission (model 0)")
-    ax.set_ylabel("resubmission (model 0)")
-    ax.set_title("Resubmission variance", fontsize=9)
-    for spine in ("top", "right"):
-        ax.spines[spine].set_visible(False)
-    fig.tight_layout()
+    for ax, pairs, xlabel, title, lim in specs:
+        ax.plot(list(lim), list(lim), color="#d8d7d2", linewidth=1)
+        for name, v1, v2 in pairs:
+            ax.scatter(v1, v2, s=24, color=BLUE, zorder=3, edgecolor="white",
+                       linewidth=0.5)
+            if abs(v2 - v1) > 0.08:
+                ax.annotate(name.split("_", 1)[1], (v1, v2),
+                            textcoords="offset points", xytext=(4, 4),
+                            fontsize=6.5, color=INK)
+        ax.set_xlim(*lim)
+        ax.set_ylim(*lim)
+        ax.set_xlabel(f"first submission (A): {xlabel}")
+        ax.set_ylabel(f"resubmission (B): {xlabel}")
+        ax.set_title(title, fontsize=9, loc="left")
+        for spine in ("top", "right"):
+            ax.spines[spine].set_visible(False)
+    fig.suptitle("AF3 resubmission variance is small once the scorer is fixed",
+                 fontsize=10, x=0.02, ha="left")
+    fig.tight_layout(rect=(0, 0, 1, 0.94))
     fig.savefig(OUT / "fig3_resubmission.png", dpi=300)
     fig.savefig(OUT / "fig3_resubmission.svg")
     plt.close(fig)

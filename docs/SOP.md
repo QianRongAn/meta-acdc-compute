@@ -108,6 +108,11 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
     --model data/processed/da_seed0.model.pt --mask-plddt --out ...
 .venv/bin/python src/meta_acdc/structure/da_stability.py --scores \
     data/processed/da_scores_seed{0,1,2}_ensemble.tsv   # 跨实例稳定性判决
+# 重提感知导入 + AF3 vs EGNN 方差分解(2026-09-23):
+.venv/bin/python src/meta_acdc/structure/import_af3_instances.py \
+    --src "/mnt/c/.../folds_YYYY_MM_DD_HH_MM"      # -> data/raw/af3_instances/{A,B1,B2,B3}
+.venv/bin/python src/meta_acdc/structure/af3_variance.py \
+    --out data/processed/af3_resubmission_variance.tsv
 ```
 
 ## 9. 风险看板(KN-13)
@@ -125,7 +130,9 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
 - mhcflurry `Class1PresentationPredictor.predict` 的 alleles 是基因型语义
   (≤6),单等位基因传一元素列表
 - v9 首训 0.988 系诱饵 atoms 字段泄漏(已回退重做)——"看似突破先自查泄漏"
-- AF3 网页版五链任务必须用多链 FASTA;单次提交不可信(重提方差 0.94)
+- AF3 网页版五链任务必须用多链 FASTA;AF3 重跑本身很稳(ipTM Δ≤0.07,
+  纯重提 ≤0.01)——旧的"重提方差 0.94"系打分模型侧假象(2026-09-23 修正);
+  **不可信的是单实例 EGNN 打分,不是单次 AF3 提交**
 - 任何 OOD 打分结论必须过跨实例稳定性检验(Rashomon 效应)
 
 ## 湿实验接口(不在计算范围,技术路线保留)
