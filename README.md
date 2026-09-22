@@ -205,7 +205,11 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
   `train_domain_adapt.py` 已支持 `--af3` 直接吃 AF3 CIF 正样本(内容去重)
 - **可靠性闸门**:`structure/af3_qc.py` 按 ipTM(<0.75)/TCR 完整性(<400 Cα)
   标记不可信结构(73 条记录中 16 条被标);待提交清单刷新为
-  `af3_upload_todo.txt`(365 交叉反应候选)+ `af3_native_todo.txt`(173 天然)
+  `af3_upload_todo.txt`(365 交叉反应候选)+ `af3_native_todo.txt`(173 天然),
+  另有**优先批 30 个** `af3_native_priority/`
+- **DA 一键驱动 + pilot**:`scripts/run_da_af3.sh <folds_dir>` 打通
+  导入→混训→打分→判决;代理 pilot(20 ep)在候选上 mean Spearman 0.447
+  (基线 0.17/−0.24/NaN)——方向有效但未过门,真实判决待 native
 - 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
   `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述
