@@ -113,6 +113,8 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
     --src "/mnt/c/.../folds_YYYY_MM_DD_HH_MM"      # -> data/raw/af3_instances/{A,B1,B2,B3}
 .venv/bin/python src/meta_acdc/structure/af3_variance.py \
     --out data/processed/af3_resubmission_variance.tsv
+.venv/bin/python src/meta_acdc/structure/af3_rmsd.py \
+    --out data/processed/af3_resubmission_rmsd.tsv   # 模型无关肽 RMSD
 ```
 
 ## 9. 风险看板(KN-13)

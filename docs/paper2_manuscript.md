@@ -185,8 +185,12 @@ and none of the six surviving checkpoints reproduces it. Re-scoring every AF3
 submission with a *fixed* surviving instance bounds the resubmission range to
 median 0.017 / max 0.166, and AF3's own confidence is highly reproducible
 across submissions (ipTM median Δ 0.025, max 0.070; pure resubmissions agree
-to ≤0.01). The large swings are therefore *model-side* arbitrariness (the
-Rashomon effect, §[Meta-TCR-GNN] 2.6), not AF3 run-to-run variance. Across 5
+to ≤0.01), and the peptide Cα register is likewise reproduced (RMSD median
+0.20 Å, max 0.38 Å). A separate, detectable failure mode is a defective first
+submission with truncated TCR chains (324 vs 443 Cα; flagged by a lower ipTM
+of 0.86 vs 0.93). The large swings are therefore *model-side* arbitrariness
+(the Rashomon effect, §[Meta-TCR-GNN] 2.6) amplified on such defective inputs,
+not AF3 run-to-run variance. Across 5
 AF3 models within a single submission, ensemble standard deviations still
 range 0.01–0.43. The operational lesson stands but is relocated: a *single
 model instance* is not a defensible scorer; report a fixed multi-instance

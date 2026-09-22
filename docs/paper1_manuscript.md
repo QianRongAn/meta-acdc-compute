@@ -117,8 +117,13 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
   every submission with a *fixed* instance reduces the resubmission range to
   median 0.017 / max 0.166. AF3's own confidence is itself highly
   reproducible across submissions (ipTM median Delta 0.025, max 0.070; pure
-  resubmissions agree to <=0.01). The swing was therefore EGNN-side
-  arbitrariness (Section 2.6), not AF3 run variance.
+  resubmissions agree to <=0.01). Superposing on MHC/B2M, the peptide
+  C-alpha register is also reproduced across submissions (RMSD median
+  0.20 A, max 0.38 A). Some first submissions returned a *defective*
+  structure with truncated TCR chains (324 vs 443 C-alpha), flagged by a
+  lower ipTM (0.86 vs 0.93) — a separate, detectable failure mode. The
+  swing was therefore EGNN-side arbitrariness (Section 2.6) amplified on a
+  defective input, not AF3 run variance.
 - 5-model ensemble stds range 0.01-0.43; borderline cases carry the largest
   std (usable as uncertainty).
 - ipTM vs our score: Pearson r = 0.333 — the model carries information

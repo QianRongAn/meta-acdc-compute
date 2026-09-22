@@ -199,7 +199,11 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
   覆盖,现存 6 个 checkpoint 无一复现;用固定实例重跑,重提 range 中位
   0.017、最大 0.166——**Rashomon 在模型侧,不在 AF3 侧**
 - **新 2ak4 系列**:4 肽 ipTM 0.884-0.898(高置信),EGNN 分 ~0(单实例)
-- 产物:`structure/af3_variance.py`、`af3_resubmission_variance.tsv`、
+- **模型无关结构证据**:MHC+B2M 叠合后,肽 Cα RMSD 跨重提中位 0.20 Å、
+  最大 0.38 Å——肽 register 几乎不变;并发现个别首批 TCR 链截断的
+  "半成品"预测(324 vs 443 Cα,ipTM 偏低)——AF3 缺陷可被 ipTM 检出
+- 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
+  `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述
 
 ### 构造陷阱与诚实性记录(论文 Methods 的素材)
