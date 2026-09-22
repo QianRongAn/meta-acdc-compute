@@ -103,6 +103,10 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
 .venv/bin/python src/meta_acdc/structure/score_predictions.py \
     --model data/processed/egnn_dataset.model.pt \
     --out data/processed/prediction_scores.tsv
+# 域适应训练(AF3 天然正样本,提交后;--af3 直接吃 CIF,全诱饵协议):
+.venv/bin/python src/meta_acdc/models/train_domain_adapt.py \
+    --af3 data/raw/af3_native_predictions \
+    --af3-manifest data/processed/af3_native/manifest.tsv --epochs 150
 # 域适应模型(pLDDT 置零训练+打分一致):
 .venv/bin/python src/meta_acdc/structure/score_predictions.py \
     --model data/processed/da_seed0.model.pt --mask-plddt --out ...

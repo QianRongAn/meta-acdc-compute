@@ -178,6 +178,8 @@ def main() -> int:
                     default=Path("data/processed/af3_native/manifest.tsv"),
                     help="restrict AF3 positives to native job_ids listed here")
     ap.add_argument("--epochs", type=int, default=150)
+    ap.add_argument("--out-dir", type=Path, default=Path("data/processed"),
+                    help="where da_seed{0,1,2}.model.pt are written")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
@@ -249,7 +251,7 @@ def main() -> int:
         all_probs.append(p)
         torch.save({"model": net.state_dict(), "n_node_dim": 26,
                     "n_edge_dim": 16},
-                   f"data/processed/da_seed{seed}.model.pt")
+                   args.out_dir / f"da_seed{seed}.model.pt")
 
     # stability: pairwise Spearman of val scores across seeds
     from scipy.stats import spearmanr
