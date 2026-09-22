@@ -36,10 +36,15 @@ def graph_to_tensors(g):
     }
 
 
-def score_graph(net: EGNN, g, device: str) -> float:
+def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False) -> float:
     tensors = {k: v.to(device) for k, v in graph_to_tensors(g).items()}
     # normalize node features as in training (per-batch z-score)
     h = tensors["h"]
+    if mask_plddt:
+        # domain-adapted models are trained with pLDDT zeroed (col 3) —
+        # scoring must apply the same masking to avoid distribution mismatch
+        h = h.clone()
+        h[:, 3] = 0.0
     h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
     with torch.no_grad():
         logit = net(h, tensors["x"], tensors["edge_index"],
@@ -55,6 +60,9 @@ def main() -> int:
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/prediction_scores.tsv"))
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    ap.add_argument("--mask-plddt", action="store_true",
+                    help="zero the pLDDT node feature (domain-adapted "
+                         "models were trained this way)")
     args = ap.parse_args()
     if not args.model:
         args.model = [Path("data/processed/egnn_dataset.model.pt")]
@@ -78,7 +86,8 @@ def main() -> int:
             rows.append({"job_id": cif.stem, "n_nodes": 0, "n_edges": 0,
                          "score": "", "std": "", "error": str(e)})
             continue
-        ss = [score_graph(net, g, args.device) for net in nets]
+        ss = [score_graph(net, g, args.device, mask_plddt=args.mask_plddt)
+              for net in nets]
         mean = sum(ss) / len(ss)
         std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5
         rows.append({"job_id": cif.stem, "n_nodes": g.n_nodes,

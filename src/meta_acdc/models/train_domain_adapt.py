@@ -29,10 +29,15 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import roc_auc_score
 
-from meta_acdc.models.dataset import make_displaced_peptide_decoy
+from meta_acdc.models.dataset import (
+    _peptide_chains,
+    make_decoy,
+    make_displaced_peptide_decoy,
+)
 from meta_acdc.models.egnn import EGNN
 from meta_acdc.models.train_egnn import collate
-from meta_acdc.structure.graph import (build_interface_graph_from_residues,
+from meta_acdc.structure.graph import (MHC, PEPTIDE, TCR,
+                                       build_interface_graph_from_residues,
                                        classify_chains, parse_pdb)
 
 SEEDS = [0, 1, 2]
@@ -48,21 +53,77 @@ def mask_plddt(gs):
 
 
 def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
-    n_added = 0
+    """Add TCRmodel2 natives as positives AND apply the same decoy protocol
+    (displaced + graft, node-set pinned, donor-sequence dedup) — mirrors
+    build_dataset() so predicted-style structures enter with the same
+    positive:negative structure as crystals."""
+    rng = random.Random(43)
+    complexes: dict[str, list] = {}
     for p in sorted(tcr_dir.glob("*.pdb")):
         try:
             residues = parse_pdb(p)
-            g = build_interface_graph_from_residues(residues)
+            roles = classify_chains(residues)
         except Exception:
             continue
+        n_tcr = sum(1 for v in roles.values() if v == TCR)
+        n_pep = sum(1 for v in roles.values() if v == PEPTIDE)
+        n_mhc = sum(1 for v in roles.values() if v == MHC)
+        if n_tcr >= 1 and n_pep == 1 and n_mhc >= 1:
+            complexes[p.stem] = residues
+
+    def add(residues, label, pdb, forced_nodes=None):
+        try:
+            g = build_interface_graph_from_residues(residues,
+                                                    forced_nodes=forced_nodes)
+        except ValueError:
+            return None
         if g.n_nodes < 20:
-            continue
+            return None
         graphs.append((g.node_features, g.node_coords,
                        g.edge_index, g.edge_features))
-        labels.append(1)
-        pdbs.append(f"tcr-{p.stem}")
-        n_added += 1
-    print(f"added {n_added} TCRmodel2 natives as positives", flush=True)
+        labels.append(label)
+        pdbs.append(pdb)
+        return g
+
+    native_keys = {}
+    for stem, residues in complexes.items():
+        g = add(residues, 1, f"tcr-{stem}")
+        if g is not None:
+            native_keys[stem] = set(g.node_keys)
+
+    n_disp = n_graft = 0
+    stems = list(complexes.keys())
+    for stem, residues in complexes.items():
+        if stem not in native_keys:
+            continue
+        add(make_displaced_peptide_decoy(residues), 0,
+            f"tcr-{stem}-disp", forced_nodes=native_keys[stem])
+        n_disp += 1
+        peptides = _peptide_chains(residues)
+        if not peptides:
+            continue
+        native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
+        graft = None
+        for _ in range(20):
+            if len(stems) < 2:
+                break
+            donor = rng.choice(stems)
+            if donor == stem:
+                continue
+            donor_peps = _peptide_chains(complexes[donor])
+            if not donor_peps:
+                continue
+            cand = rng.choice(list(donor_peps.values()))
+            if "".join(r.resname[:1] for r in cand) != native_seq:
+                graft = cand
+                break
+        if graft is not None:
+            add(make_decoy(residues, graft), 0, f"tcr-{stem}<-{donor}",
+                forced_nodes=native_keys[stem])
+            n_graft += 1
+
+    print(f"tcrmodel2 complexes: {len(complexes)} natives, "
+          f"{n_disp} displaced, {n_graft} graft decoys", flush=True)
     return graphs, labels, pdbs
 
 
