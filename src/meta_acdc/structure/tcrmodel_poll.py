@@ -20,12 +20,13 @@ import re
 import sys
 import time
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 JOB_URL = "https://tcrmodel.ibbr.umd.edu/rtcr/{job_id}"
 
 
-def get_page(job_id: str, timeout: int = 45) -> str:
+def get_page(job_id: str, timeout: int = 15) -> str:
     req = urllib.request.Request(JOB_URL.format(job_id=job_id),
                                  headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -44,8 +45,34 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=Path("data/raw/tcrmodel"))
     ap.add_argument("--rounds", type=int, default=60)
     ap.add_argument("--interval", type=int, default=60)
+    ap.add_argument("--workers", type=int, default=8,
+                    help="concurrent poll threads")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+
+    def process(r):
+        pdb, job_id = r["pdb"], r["job_id"]
+        try:
+            html = get_page(job_id)
+        except Exception as e:
+            return pdb, None, f"poll error {e}"
+        links = find_download_links(html)
+        if links:
+            url = links[0] if links[0].startswith("http") \
+                else f"https://tcrmodel.ibbr.umd.edu{links[0]}"
+            try:
+                req = urllib.request.Request(
+                    url, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req, timeout=120) as resp:
+                    content = resp.read()
+                dest = args.out / f"{pdb}.pdb"
+                dest.write_bytes(content)
+                return pdb, "downloaded", f"DOWNLOADED ({len(content)} bytes)"
+            except Exception as e:
+                return pdb, None, f"download error {e}"
+        elif "failed" in html.lower() or "error" in html.lower():
+            return pdb, "failed", "job failed"
+        return pdb, None, ""
 
     for rnd in range(args.rounds):
         rows = []
@@ -54,33 +81,16 @@ def main() -> int:
         pending = [r for r in rows
                    if not r.get("downloaded") and not r.get("failed")]
         done_this_round = 0
-        for r in pending:
-            pdb, job_id = r["pdb"], r["job_id"]
-            try:
-                html = get_page(job_id)
-            except Exception as e:
-                print(f"{pdb}: poll error {e}", flush=True)
-                continue
-            links = find_download_links(html)
-            if links:
-                # download first PDB-ish link
-                url = links[0] if links[0].startswith("http") \
-                    else f"https://tcrmodel.ibbr.umd.edu{links[0]}"
-                try:
-                    req = urllib.request.Request(
-                        url, headers={"User-Agent": "Mozilla/5.0"})
-                    with urllib.request.urlopen(req, timeout=120) as resp:
-                        content = resp.read()
-                    dest = args.out / f"{pdb}.pdb"
-                    dest.write_bytes(content)
-                    r["downloaded"] = "1"
-                    print(f"{pdb}: DOWNLOADED ({len(content)} bytes)", flush=True)
+        with ThreadPoolExecutor(max_workers=args.workers) as ex:
+            futs = {ex.submit(process, r): r for r in pending}
+            for fut in as_completed(futs):
+                r = futs[fut]
+                pdb, flag, msg = fut.result()
+                if msg:
+                    print(f"{pdb}: {msg}", flush=True)
+                if flag:
+                    r[flag] = "1"
                     done_this_round += 1
-                except Exception as e:
-                    print(f"{pdb}: download error {e}", flush=True)
-            elif "failed" in html.lower() or "error" in html.lower():
-                r["failed"] = "1"
-                print(f"{pdb}: job failed", flush=True)
         if done_this_round:
             # rewrite state with updated flags
             with open(args.state, "w", newline="") as fh:
