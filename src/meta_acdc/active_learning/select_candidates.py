@@ -50,6 +50,18 @@ TCRS = {
     "CAVTTDSWGKLQF": "A6 TCR (Tax LLFGYPVYV), PDB 1ao7, VDJdb-validated",
 }
 
+# per-TCR sanity peptides (target + validated cross-reactives), labeled
+SANITY = {
+    "CASSLGRYNEQFF": [("target YLEPGPVTA", "YLEPGPVTA"),
+                      ("off-target YLEPGPVTV*", "YLEPGPVTV"),
+                      ("off-target YLEPGPVTL*", "YLEPGPVTL")],
+    # *not in Swiss-Prot canonical proteome (literature variants)
+    "CAVTTDSWGKLQF": [("target LLFGYPVYV (Tax)", "LLFGYPVYV"),
+                      ("cross LLFGYAVYV", "LLFGYAVYV"),
+                      ("cross LGYGFVNYI", "LGYGFVNYI"),
+                      ("cross LLFGPVYV", "LLFGPVYV")],
+}
+
 
 def iter_fasta(path: Path):
     acc, gene, seq = None, None, []
@@ -246,10 +258,10 @@ def stage_rank(pool_path: Path, tcr: str, out: Path,
                         len(src.get(p, [])), s])
     print(f"top {TOP_K} -> {out}", flush=True)
 
-    # ---- sanity: known gp100 peptides & VDJdb A2 epitope enrichment
-    for label, p in [("target YLEPGPVTA", "YLEPGPVTA"),
-                     ("off-target YLEPGPVTV", "YLEPGPVTV"),
-                     ("off-target YLEPGPVTL", "YLEPGPVTL")]:
+    # ---- sanity: known target/cross peptides & VDJdb A2 epitope enrichment
+    for label, p in SANITY.get(tcr, [("target", "")]):
+        if not p:
+            continue
         i = pool_index.get(p)
         if i is not None:
             print(f"  {label}: pool rank {rank_of[i]} / {len(peps)} "

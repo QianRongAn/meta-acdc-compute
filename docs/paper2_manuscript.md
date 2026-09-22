@@ -18,7 +18,12 @@ epsilon-greedy) selects which pairs to "validate." In a simulated closed
 loop on held-out epitopes, EIG sampling achieves 2.0x positive-recall gain
 over random sampling at 6% of the pool, outperforming MC-variance (1.6x) and
 entropy sampling (no gain — entropy of the mean prediction carries no
-model-uncertainty signal on weak models). An MHCflurry presentation
+model-uncertainty signal on weak models). A boundary result qualifies this
+headline: on MHC-presentation-pre-filtered pools — the regime the real
+platform always operates in — the weak surrogate's EIG gain vanishes
+(1.0x), showing the gain partly reflected presentation correlation rather
+than TCR-specific signal and making the structure-model EIG a necessary
+condition. An MHCflurry presentation
 pre-filter — mirroring how the ACDC display library is constructed —
 compresses the candidate pool ~50x at a top-2% threshold while retaining
 56% of known binders under a composition-shuffled (hard) decoy protocol.
@@ -69,19 +74,44 @@ to single-instance observation**: cross-instance Spearman 0.17/-0.24/NaN
   binders vs 50 composition-shuffled decoys (hard protocol).
 - Top-2% threshold: 56% binder recall at ~50x compression; top-10%: 72% at
   ~10x; mean rank binders 30 vs decoys 71/100.
-- VDJdb-pool emulation: presentation filtering at 0.5 keeps 81.7% of pairs
-  with positive density unchanged (7.0% -> 6.9%) — VDJdb negatives are
-  themselves presented peptides, so the density boost expected on a real
-  immunopeptidome pool cannot be emulated on VDJdb; strict-threshold and
-  batch-ablation simulations quantify the accessible regimes.
+- VDJdb-pool emulation: presentation filtering at 0.5 / 0.9 keeps 81.7% /
+  67.1% of pairs with positive density unchanged (7.0% -> 6.9% / 7.0%) —
+  VDJdb negatives are themselves presented peptides, so the density boost
+  expected on a real immunopeptidome pool cannot be emulated on VDJdb.
 
-### 2.5 (pending) Batch-size ablation & strict-prefilter pool
+### 2.5 Pre-filtered pools destroy weak-model EIG gains (boundary result)
+
+On the 0.9-presentation pool, EIG sampling converges to random
+(recall 27.0% vs 27.2% at 27% sampling; gain 1.0x across the curve),
+while the raw pool showed 2.0x at 6% sampling. Interpretation: part of the
+raw-pool gain was presentation-correlation (physicochemical features
+recognize low-presentation negatives), which vanishes once the pool is
+homogenized by pre-filtering — and the ACDC platform always runs on
+pre-filtered pools. **Consequence: intelligent sampling with the weak
+sequence surrogate is useless on the real platform; the structure-model
+EIG (post domain adaptation) is a necessary condition, not an
+optimization.** This boundary must be reported alongside the 2.0x
+headline number.
+
+### 2.6 Proteome-scale candidate list (KN-8 dry-run)
+
+Pipeline complete: 20,431 Swiss-Prot proteins -> 22.5M 9/10-mers ->
+MHCflurry -> 4.65M-peptide pool (threshold 0.0122) -> EIG -> top-50k
+list with UniProt mapping. Negative result: the weak-model EIG does not
+transfer to proteome scale — known A2 binders show zero enrichment in the
+top-50k (0/24 vs 0.3 expected, hypergeometric P=1.0) and the Kimmtrak
+target peptide ranks in the bottom third. The list is a pipeline
+deliverable; the scientifically meaningful ranking requires the
+domain-adapted EGNN re-rank.
+
+### 2.7 (pending) Batch-size ablation
 
 - Literature predicts many-small-batches beat few-large at fixed budget;
   simulation grid running (fixed 12% budget; batch 3600/1800/600/300).
-- [results pending]
+- First result: batch 3600 x 2 rounds -> 24.5% (+/- 2.3).
+- [full grid pending]
 
-### 2.6 (pending) Four-structure native-control test
+### 2.8 (pending) Four-structure native-control test
 
 With native controls for 1AO7/1QSE/1QSF (A6/B7 family), pooled test of
 native-rank significance. [data pending user submissions]
