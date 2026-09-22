@@ -117,6 +117,12 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
     --out data/processed/af3_resubmission_rmsd.tsv   # 模型无关肽 RMSD
 ```
 
+# 域适应正样本(AF3 预测风格的天然复合物),待用户网页提交:
+.venv/bin/python src/meta_acdc/structure/af3_batch.py \
+    --evidence same --n 1000 --out data/processed/af3_native
+# -> 174 个天然 5 链 FASTA,提交后按 §8 导入并混入 train_domain_adapt.py
+```
+
 ## 9. 风险看板(KN-13)
 
 ```bash

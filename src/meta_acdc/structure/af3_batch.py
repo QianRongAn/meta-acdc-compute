@@ -88,6 +88,11 @@ def main() -> int:
                     default=Path("data/processed/kn5_submission_list.tsv"))
     ap.add_argument("--struct-dir", type=Path, default=Path("data/raw/structures"))
     ap.add_argument("--n", type=int, default=50)
+    ap.add_argument("--evidence", default="different",
+                    choices=["different", "same", "any"],
+                    help="which VDJdb evidence class to submit: 'different' "
+                         "= cross-reactivity candidates (default), 'same' = "
+                         "native complexes (domain-adaptation positives)")
     ap.add_argument("--out", type=Path, default=Path("data/processed/af3_batch1"))
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
@@ -95,7 +100,7 @@ def main() -> int:
     rows = []
     with open(args.list, newline="", encoding="utf-8", errors="replace") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
-            if row["evidence"] == "different":  # cross-reactivity priority
+            if args.evidence == "any" or row["evidence"] == args.evidence:
                 rows.append(row)
 
     manifest = []

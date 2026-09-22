@@ -202,6 +202,9 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
 - **模型无关结构证据**:MHC+B2M 叠合后,肽 Cα RMSD 跨重提中位 0.20 Å、
   最大 0.38 Å——肽 register 几乎不变;并发现个别首批 TCR 链截断的
   "半成品"预测(324 vs 443 Cα,ipTM 偏低)——AF3 缺陷可被 ipTM 检出
+- **域适应关键路径解锁**:`af3_batch.py --evidence same` 生成 **174 个天然
+  复合物**的 AF3 5 链提交 FASTA(`data/processed/af3_native/`)——域适应需要
+  "预测风格的天然正样本",这是此前唯一缺口;🔴 待用户提交后可混训
 - 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
   `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述
