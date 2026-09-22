@@ -128,6 +128,20 @@ async function main() {
     ev += '</table></div>';
     app.insertAdjacentHTML('beforeend', ev);
   }
+  // AF3 structural reliability gate (ipTM + chain completeness)
+  if (d.reliability && d.reliability.n) {
+    const r = d.reliability;
+    let q = `<div class="card"><h3>结构可靠性闸门(AF3 QC)</h3>
+      <div class="sub" style="margin-bottom:.8rem">${r.n} 条结构记录,<b>${r.n_flagged}</b> 条被标记
+      (低 ipTM ${r.n_low_iptm} · TCR 截断 ${r.n_truncated});闸门:${r.gate}</div>
+      <table><tr><th>实例</th><th>任务</th><th>ipTM</th><th>TCR Cα</th><th>标记</th></tr>`;
+    for (const e of r.examples) {
+      q += `<tr><td>${e.instance}</td><td>${e.job}</td><td>${e.iptm || '·'}</td>
+        <td>${e.tcr_ca}</td><td><span class="tag">${e.flag}</span></td></tr>`;
+    }
+    q += '</table></div>';
+    app.insertAdjacentHTML('beforeend', q);
+  }
 }
 main();
 </script>
