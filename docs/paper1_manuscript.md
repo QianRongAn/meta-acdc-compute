@@ -23,12 +23,17 @@ invariant to a 2.8x increase in training data). Adding side-chain van der
 Waals contact histograms as edge features raises graft-decoy discrimination
 from chance to **AUROC 0.933** (ablation: 0.501 without contacts).
 Residue-level physicochemical scalars are the second pillar (0.606 without);
-sequence fusion adds nothing (0.905). On AlphaFold 3-predicted structures of
-a clinically lethal TCR (MAG-IC3), the model ranks the native MAGE-A3 target
-first and places the titin mimic — responsible for two patient deaths — at
-the target's own compatibility level under 5-model ensembling. Our results
-define a representational minimum for interface-compatibility learning and a
-reproducible decoy-construction protocol for the field.
+sequence fusion adds nothing (0.905). We further report a decisive negative
+result: on AlphaFold 3-predicted structures, cross-reactivity *rankings* are
+not reproducible across independently trained instances at the current data
+scale (423 complexes) — decoy discrimination is interpolation (reproducible),
+while AF3-input ranking is extrapolation, and multiple equally-performing
+models disagree (Rashomon effect). Removing the pLDDT feature eliminates
+score collapse but not ranking instability (Spearman r=0.267); a
+domain-adaptation route (mixing TCRmodel2-predicted structures into
+training) is underway. Our results define a representational minimum for
+interface-compatibility learning, a reproducible decoy-construction protocol,
+and a cross-instance stability test that any OOD-scoring claim must pass.
 
 ## 1. Introduction (skeleton)
 
@@ -42,9 +47,11 @@ reproducible decoy-construction protocol for the field.
 - Our contributions: (i) Cα inseparability diagnosis with data-size
   control; (ii) contact-histogram features that break the barrier;
   (iii) rigorous graft-decoy protocol (Kabsch side-chain transplant,
-  node-set pinning, donor-sequence diversity); (iv) first cross-reactivity
-  ranking results on AF3-predicted structures including a clinical
-  gold-standard TCR.
+  node-set pinning, donor-sequence diversity); (iv) a structure-to-specificity
+  resource linking 281/291 STCRDab complexes to VDJdb records (2,309 CDR3
+  hits; 1,517 cross-epitope); (v) a cross-instance stability test exposing
+  ranking non-reproducibility on AF3 inputs (Rashomon effect) and the
+  domain-adaptation route to fix it.
 
 ## 2. Results
 
@@ -82,7 +89,11 @@ reproducible decoy-construction protocol for the field.
   small-data regime; all reported numbers use the best of 3 seeds, and we
   recommend multi-seed reporting.
 
-### 2.4 Cross-reactivity ranking on AF3-predicted structures (Fig 3, Table 4)
+### 2.4 Cross-reactivity ranking on AF3-predicted structures — single-instance observations, later overturned (Fig 3, Table 4)
+
+> Status: the numbers below were obtained with ONE trained instance. Section
+> 2.6 shows they do not survive instance resampling; they are retained as the
+> motivation for the stability analysis, not as claims.
 
 - A6 TCR: 8 candidate peptides, 5/8 VDJdb-validated binders score
   0.92-0.99 (ensemble); native peptide ranks #3 (0.973). Weak/non-binders
@@ -91,18 +102,39 @@ reproducible decoy-construction protocol for the field.
 - 1G6R/1MWA mirror pair: cross-scores 0.73-0.86.
 - JM22 (1OGA): all candidates low (0.16-0.23) — consistent with score-1
   weak VDJdb evidence; interpreted as correct rejection (inconclusive).
-- **Clinical gold standard (MAG-IC3/5BRZ)**: native MAGE-A3 ranked #1
+- Clinical gold standard (MAG-IC3/5BRZ): native MAGE-A3 ranked #1
   (0.683 ± 0.257); the titin mimic ESDPIVAQY at 0.706 ± 0.147 — at the
   target's level under 5-model ensembling, matching its confirmed
   cross-reactive biology.
 
-### 2.5 Prediction variance is the dominant uncertainty (Fig 4)
+### 2.5 Prediction variance is a dominant uncertainty (Fig 4)
 
 - Resubmission variance: 1/9 jobs changed by 0.94 AUROC between two
   independent AF3 submissions (fold failure); 5-model ensemble stds range
   0.01-0.43; borderline cases carry the largest std (usable as uncertainty).
 - ipTM vs our score: Pearson r = 0.333 — the model carries information
   beyond the predictor's own confidence.
+
+### 2.6 Cross-instance instability: the Rashomon crisis (decisive negative)
+
+- Retraining an equivalent model (graft AUROC 0.918 vs 0.933) completely
+  changes AF3-input scores: the A6 series collapses from 0.92-0.99 to
+  0.001-0.065; pairwise peptide-ranking Spearman across instances:
+  0.17 / -0.24 / NaN — agreement is at chance.
+- Interpretation: the decoy task lives inside the training distribution
+  (interpolation → reproducible); AF3-predicted CIFs are out-of-distribution
+  (pLDDT-as-B-factor ≈90 vs crystal 20-40; extrapolation → arbitrary).
+- Fix 1 (partial): removing the pLDDT feature — task performance kept
+  (graft 0.923 / displaced 0.974), score collapse eliminated (0.29-0.93),
+  but rankings still unstable (Spearman r=0.267, P=0.49 vs original).
+- Fix 2 (underway): domain adaptation — 111 class-I complexes submitted to
+  TCRmodel2 (scriptable, terms-compliant AF3 alternative; DockQ 0.566 vs
+  AF3 0.499 on TCR-pMHC) to mix predicted structures into training;
+  re-evaluation with 3-seed Spearman on completion.
+- v10 Coulomb edge features (residue net-charge product): negative result
+  (graft 0.933 → 0.917); reverted — atom-level partial charges required.
+- **Methodological claim: any OOD-scoring claim must pass a cross-instance
+  stability test; single-instance rankings are anecdotes.**
 
 ## 3. Methods
 
@@ -151,9 +183,13 @@ secondary; recall@0.5 for ranking; native-rank verdict.
 - Fig 1: inseparability diagnosis (graft AUC vs data size; hypothesis
   elimination series).
 - Fig 2: feature-ablation bar chart (contacts decisive; phys second).
-- Fig 3: per-TCR ranking heatmap (6 TCR groups x peptides).
+- Fig 3: per-TCR ranking heatmap (6 TCR groups x peptides) — annotated as
+  single-instance (see 2.6).
 - Fig 4: resubmission scatter + ensemble-std vs score.
-- Table 1: dataset statistics.
+- Fig 5: cross-instance instability (score collapse scatter; Spearman
+  matrix; pLDDT-ablation partial fix).
+- Table 1: dataset statistics (+ structure-VDJdb map: 281/291 complexes,
+  2,309 CDR3 hits).
 - Table 2: hypothesis-elimination results.
-- Table 3: ablation suite.
-- Table 4: clinical gold-standard ranking.
+- Table 3: ablation suite (+ v10 Coulomb negative).
+- Table 4: clinical gold-standard ranking (single-instance caveat).
