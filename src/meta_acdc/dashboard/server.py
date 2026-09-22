@@ -17,6 +17,7 @@ import argparse
 import csv
 import json
 import sys
+from functools import partial
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
@@ -54,6 +55,15 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path) -> dict:
                 native.setdefault(row["pdb"], row["pdb_peptide"])
                 evidence.setdefault((row["pdb"], row["vdjdb_epitope"]), 0)
                 evidence[(row["pdb"], row["vdjdb_epitope"])] += 1
+    # cross-reactivity evidence per PDB: VDJdb-validated epitopes that differ
+    # from the crystallized peptide (KN-4+ map)
+    cross: dict[str, list[str]] = {}
+    same: dict[str, list[str]] = {}
+    for (pdb, epi), n in evidence.items():
+        if epi == native.get(pdb):
+            same.setdefault(pdb, []).append(epi)
+        else:
+            cross.setdefault(pdb, []).append(epi)
 
     clinical = []
     if clinical_path.exists():
@@ -70,6 +80,15 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path) -> dict:
         "groups": {pdb: {"native": native.get(pdb, ""), "rows": rows}
                    for pdb, rows in sorted(groups.items())},
         "clinical": clinical,
+        "cross_evidence": {pdb: sorted(set(v)) for pdb, v in cross.items()},
+        "same_evidence": {pdb: sorted(set(v)) for pdb, v in same.items()},
+        "caveats": [
+            "AF3 结构上的交叉反应排名目前为单实例观察(跨实例 Spearman "
+            "0.17/-0.24/NaN,Rashomon 效应)——域适应重训复检完成前,以下"
+            "排名不构成安全判决,详见 benchmarks.md 2026-09-22 危机记录",
+            "打分为 5 模型集成均值±标准差;重提方差最高达 0.94(单次 AF3 "
+            "提交不可信,1/9 任务折叠失败)",
+        ],
     }
 
 
@@ -100,9 +119,11 @@ def main() -> int:
     args = ap.parse_args()
 
     Handler.data = build_data(args.scores, args.map, args.clinical)
-    Handler.directory = str(STATIC)
 
-    server = HTTPServer(("127.0.0.1", args.port), Handler)
+    # Python 3.12+: SimpleHTTPRequestHandler.__init__ ignores the class
+    # attribute and defaults to os.getcwd() — must pass directory= here.
+    server = HTTPServer(("127.0.0.1", args.port),
+                        partial(Handler, directory=str(STATIC)))
     print(f"TCR-Safety-Radar: http://127.0.0.1:{args.port}")
     print(f"  scored TCRs: {len(Handler.data['groups'])}, "
           f"clinical cases: {len(Handler.data['clinical'])}")

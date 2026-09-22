@@ -29,17 +29,32 @@
   .fatal { color:var(--bad); font-weight:600; }
   .grid { display:flex; flex-wrap:wrap; gap:1.5rem; }
   .grid .card { flex:1 1 420px; }
+  .banner { background:#451a03; border:1px solid #92400e; color:#fde68a;
+            border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.5rem;
+            font-size:.9rem; }
+  .banner b { color:#fbbf24; }
+  .pill { display:inline-block; background:#334155; color:var(--muted);
+          border-radius:999px; padding:.1rem .55rem; font-size:.75rem;
+          margin:.1rem .15rem; }
 </style>
 </head>
 <body>
 <h1>🛡️ TCR-Safety-Radar</h1>
-<div class="sub">Meta-ACDC · 交叉反应风险看板 v0 · EGNN 相容性打分(AF3 预测结构)</div>
+<div class="sub">Meta-ACDC · 交叉反应风险看板 v1 · EGNN 相容性打分(AF3 预测结构)</div>
 <div id="app">加载中…</div>
 <script>
 async function main() {
   const d = await (await fetch('/api/data')).json();
   const app = document.getElementById('app');
   app.innerHTML = '';
+
+  // honesty banner (single-instance caveat, Rashomon crisis)
+  if (d.caveats && d.caveats.length) {
+    let b = '<div class="banner"><b>⚠ 结果状态说明</b><ul style="margin:.5rem 0 0; padding-left:1.2rem">';
+    for (const c of d.caveats) b += `<li>${c}</li>`;
+    b += '</ul></div>';
+    app.insertAdjacentHTML('beforeend', b);
+  }
 
   // heatmap: TCR x peptide scores
   const tcrs = Object.keys(d.groups);
@@ -93,6 +108,26 @@ async function main() {
   }
   cl += '</table></div>';
   app.insertAdjacentHTML('beforeend', cl);
+
+  // structure <-> VDJdb cross-reactivity evidence (KN-4+ map)
+  if (d.cross_evidence) {
+    const pepsOf = Object.values(d.cross_evidence).flat();
+    const pdbsWith = Object.keys(d.cross_evidence);
+    let ev = `<div class="card"><h3>结构 ↔ VDJdb 交叉反应证据(KN-4+ 映射)</h3>
+      <div class="sub" style="margin-bottom:.8rem">${pdbsWith.length} 个复合物的 TCR 在 VDJdb 中有
+      <b>${pepsOf.length}</b> 条异表位(非结晶肽)验证记录 —— 文献证实的潜在脱靶谱</div>
+      <table><tr><th>复合物 (PDB)</th><th>结晶肽(同表位验证)</th><th>VDJdb 异表位(交叉反应证据)</th></tr>`;
+    for (const pdb of pdbsWith) {
+      const same = (d.same_evidence[pdb] || []).join(', ') || '—';
+      const cross = d.cross_evidence[pdb];
+      ev += `<tr><td><b>${pdb}</b></td><td>${same}</td><td>`;
+      for (const p of cross.slice(0, 8)) ev += `<span class="pill">${p}</span>`;
+      if (cross.length > 8) ev += `<span class="pill">+${cross.length - 8}</span>`;
+      ev += `</td></tr>`;
+    }
+    ev += '</table></div>';
+    app.insertAdjacentHTML('beforeend', ev);
+  }
 }
 main();
 </script>
