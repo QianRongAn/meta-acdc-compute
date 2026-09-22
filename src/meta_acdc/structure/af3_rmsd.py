@@ -96,10 +96,14 @@ def rmsd_after_superpose(ref, coords, roles, ref_coords, ref_roles,
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", type=Path, default=Path("data/raw/af3_instances"))
-    ap.add_argument("--instances", nargs="+", default=["A", "B1", "B2", "B3"])
+    ap.add_argument("--instances", nargs="+", default=None)
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/af3_resubmission_rmsd.tsv"))
     args = ap.parse_args()
+    if args.instances is None:
+        args.instances = sorted(
+            (d.name for d in args.root.iterdir() if d.is_dir()),
+            key=lambda s: (s != "A", s))
 
     receptor = {TCR, MHC, B2M}
 

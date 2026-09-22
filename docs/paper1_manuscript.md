@@ -113,17 +113,19 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - Initial claim: resubmission variance — 1/9 jobs changed by 0.94 between two
   independent AF3 submissions (LLFGYPRYV 0.049 -> 0.991). **Retracted
   (2026-09-23):** the scorer that produced those numbers was overwritten by a
-  retrain; none of the six surviving checkpoints reproduces it. Re-scoring
-  every submission with a *fixed* instance reduces the resubmission range to
-  median 0.017 / max 0.166. AF3's own confidence is itself highly
-  reproducible across submissions (ipTM median Delta 0.025, max 0.070; pure
-  resubmissions agree to <=0.01). Superposing on MHC/B2M, the peptide
-  C-alpha register is also reproduced across submissions (RMSD median
-  0.20 A, max 0.38 A). Some first submissions returned a *defective*
-  structure with truncated TCR chains (324 vs 443 C-alpha), flagged by a
-  lower ipTM (0.86 vs 0.93) — a separate, detectable failure mode. The
-  swing was therefore EGNN-side arbitrariness (Section 2.6) amplified on a
-  defective input, not AF3 run variance.
+  retrain; none of the six surviving checkpoints reproduces it. Across 31
+  jobs (17 with >1 independent submission), re-scoring every submission with a
+  *fixed* instance gives a resubmission range of median 0.04 (max 0.51, and
+  that maximum is itself a low-confidence job). AF3's own confidence is
+  reproducible for high-confidence jobs (ipTM median Delta 0.046 overall;
+  <=0.01-0.07 for ipTM>=0.88) and the peptide C-alpha register likewise
+  (MHC/B2M-superposed RMSD median 0.20 A, max 0.43 A). Two detectable failure
+  modes remain: first submissions with truncated TCR chains (324 vs 443
+  C-alpha), and genuinely low-confidence complexes (ipTM ~0.5, e.g. JM22)
+  where AF3 itself varies (ipTM range 0.21; peptide RMSD up to 11 A). **ipTM
+  is therefore a usable reliability gate.** The original 0.94 swing was
+  EGNN-side arbitrariness (Section 2.6) amplified on such an input, not
+  intrinsic AF3 run variance.
 - 5-model ensemble stds range 0.01-0.43; borderline cases carry the largest
   std (usable as uncertainty).
 - ipTM vs our score: Pearson r = 0.333 — the model carries information

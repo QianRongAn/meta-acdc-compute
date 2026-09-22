@@ -36,6 +36,7 @@ from meta_acdc.models.dataset import (
 )
 from meta_acdc.models.egnn import EGNN
 from meta_acdc.models.train_egnn import collate
+from meta_acdc.structure.cif import parse_cif
 from meta_acdc.structure.graph import (MHC, PEPTIDE, TCR,
                                        build_interface_graph_from_residues,
                                        classify_chains, parse_pdb)
@@ -52,26 +53,22 @@ def mask_plddt(gs):
     return out
 
 
-def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
-    """Add TCRmodel2 natives as positives AND apply the same decoy protocol
-    (displaced + graft, node-set pinned, donor-sequence dedup) — mirrors
-    build_dataset() so predicted-style structures enter with the same
-    positive:negative structure as crystals."""
-    rng = random.Random(43)
-    complexes: dict[str, list] = {}
-    for p in sorted(tcr_dir.glob("*.pdb")):
-        try:
-            residues = parse_pdb(p)
-            roles = classify_chains(residues)
-        except Exception:
-            continue
-        n_tcr = sum(1 for v in roles.values() if v == TCR)
-        n_pep = sum(1 for v in roles.values() if v == PEPTIDE)
-        n_mhc = sum(1 for v in roles.values() if v == MHC)
-        if n_tcr >= 1 and n_pep == 1 and n_mhc >= 1:
-            complexes[p.stem] = residues
+def _roles_ok(roles: dict) -> bool:
+    return (sum(1 for v in roles.values() if v == TCR) >= 1
+            and sum(1 for v in roles.values() if v == PEPTIDE) == 1
+            and sum(1 for v in roles.values() if v == MHC) >= 1)
 
-    def add(residues, label, pdb, forced_nodes=None):
+
+def add_complex_set(graphs, labels, pdbs, complexes: dict, tag: str):
+    """Add predicted complexes as positives + displaced/graft decoys.
+
+    Node-set pinned (forced_nodes) and graft donors sequence-deduplicated —
+    the same leakage guard as build_dataset(). `complexes` maps stem ->
+    residue list (from PDB or CIF, both feed the same graph builder).
+    """
+    rng = random.Random(43)
+
+    def add(residues, label, name, forced_nodes=None):
         try:
             g = build_interface_graph_from_residues(residues,
                                                     forced_nodes=forced_nodes)
@@ -82,12 +79,12 @@ def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
         graphs.append((g.node_features, g.node_coords,
                        g.edge_index, g.edge_features))
         labels.append(label)
-        pdbs.append(pdb)
+        pdbs.append(name)
         return g
 
     native_keys = {}
     for stem, residues in complexes.items():
-        g = add(residues, 1, f"tcr-{stem}")
+        g = add(residues, 1, f"{tag}{stem}")
         if g is not None:
             native_keys[stem] = set(g.node_keys)
 
@@ -97,13 +94,14 @@ def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
         if stem not in native_keys:
             continue
         add(make_displaced_peptide_decoy(residues), 0,
-            f"tcr-{stem}-disp", forced_nodes=native_keys[stem])
+            f"{tag}{stem}-disp", forced_nodes=native_keys[stem])
         n_disp += 1
         peptides = _peptide_chains(residues)
         if not peptides:
             continue
         native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
         graft = None
+        donor = stem
         for _ in range(20):
             if len(stems) < 2:
                 break
@@ -118,13 +116,49 @@ def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
                 graft = cand
                 break
         if graft is not None:
-            add(make_decoy(residues, graft), 0, f"tcr-{stem}<-{donor}",
+            add(make_decoy(residues, graft), 0, f"{tag}{stem}<-{donor}",
                 forced_nodes=native_keys[stem])
             n_graft += 1
 
-    print(f"tcrmodel2 complexes: {len(complexes)} natives, "
-          f"{n_disp} displaced, {n_graft} graft decoys", flush=True)
+    print(f"{tag}: {len(native_keys)} natives, {n_disp} displaced, "
+          f"{n_graft} graft decoys", flush=True)
     return graphs, labels, pdbs
+
+
+def add_tcrmodel_graphs(graphs, labels, pdbs, tcr_dir: Path):
+    """TCRmodel2 PDBs as predicted-style positives (legacy route)."""
+    complexes = {}
+    for p in sorted(tcr_dir.glob("*.pdb")):
+        try:
+            residues = parse_pdb(p)
+            roles = classify_chains(residues)
+        except Exception:
+            continue
+        if _roles_ok(roles):
+            complexes[p.stem] = residues
+    return add_complex_set(graphs, labels, pdbs, complexes, "tcr-")
+
+
+def add_af3_graphs(graphs, labels, pdbs, af3_dir: Path,
+                   native_ids: set[str] | None = None):
+    """AF3-predicted CIFs as predicted-style positives (current route).
+
+    Only complexes whose job_id is in `native_ids` are used, so that
+    cross-reactivity candidates are never mislabeled as cognate binders.
+    """
+    complexes = {}
+    for cif in sorted(af3_dir.glob("*_model_0.cif")):
+        job = cif.name.rsplit("_model_0", 1)[0]
+        if native_ids is not None and job not in native_ids:
+            continue
+        try:
+            residues = parse_cif(cif)
+            roles = classify_chains(residues)
+        except Exception:
+            continue
+        if _roles_ok(roles):
+            complexes[job] = residues
+    return add_complex_set(graphs, labels, pdbs, complexes, "af3-")
 
 
 def pdb_group(name: str) -> str:
@@ -135,7 +169,14 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", type=Path,
                     default=Path("data/processed/egnn_dataset.pt"))
-    ap.add_argument("--tcrmodel", type=Path, default=Path("data/raw/tcrmodel"))
+    ap.add_argument("--tcrmodel", type=Path, default=Path("data/raw/tcrmodel"),
+                    help="legacy route: TCRmodel2 PDB positives")
+    ap.add_argument("--af3", type=Path, default=Path("data/raw/af3_native"),
+                    help="current route: AF3-predicted native CIFs "
+                         "(style-matched positives)")
+    ap.add_argument("--af3-manifest", type=Path,
+                    default=Path("data/processed/af3_native/manifest.tsv"),
+                    help="restrict AF3 positives to native job_ids listed here")
     ap.add_argument("--epochs", type=int, default=150)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
@@ -144,8 +185,21 @@ def main() -> int:
     graphs = list(d["graphs"])
     labels = list(d["labels"])
     pdbs = list(d["pdbs"])
-    graphs, labels, pdbs = add_tcrmodel_graphs(
-        graphs, labels, pdbs, args.tcrmodel)
+
+    native_ids = None
+    if args.af3_manifest.exists():
+        with open(args.af3_manifest) as fh:
+            next(fh, None)  # header
+            native_ids = {ln.split("\t")[0] for ln in fh if ln.strip()}
+    if args.af3.is_dir() and any(args.af3.glob("*_model_0.cif")):
+        print(f"adding AF3 predicted positives from {args.af3} "
+              f"(native filter: {len(native_ids) if native_ids else 'off'})",
+              flush=True)
+        graphs, labels, pdbs = add_af3_graphs(
+            graphs, labels, pdbs, args.af3, native_ids=native_ids)
+    elif args.tcrmodel.is_dir():
+        graphs, labels, pdbs = add_tcrmodel_graphs(
+            graphs, labels, pdbs, args.tcrmodel)
     labels_t = torch.tensor(labels, dtype=torch.float32)
     graphs_masked = mask_plddt(graphs)
     print(f"DA dataset: {len(graphs)} graphs "

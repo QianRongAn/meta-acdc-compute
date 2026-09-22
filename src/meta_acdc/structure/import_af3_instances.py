@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import shutil
 import sys
 from collections import defaultdict
@@ -62,6 +63,14 @@ def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None
         return None
     return {"pdb": match["pdb"], "peptide": peptide,
             "evidence": match["evidence"]}
+
+
+def file_md5(path: Path) -> str:
+    h = hashlib.md5()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def copy_instance_files(src: Path, dest: Path, job_id: str) -> int:
@@ -121,10 +130,33 @@ def main() -> int:
                              "src_folder": args.existing.name,
                              "n_models": n, "evidence": ""})
 
-    # 2. assign each new folder to B1, B2, B3 ... per job_id (chronological)
+    # 2. assign each new folder to B1, B2, B3 ... per job_id (chronological).
+    # Seed the per-job counter from existing B* instance dirs so successive
+    # import runs continue numbering (B4, B5, ...) instead of colliding.
     occ: dict[str, int] = defaultdict(int)
+    for inst_dir in sorted(args.out.iterdir()):
+        if not inst_dir.is_dir() or not inst_dir.name.startswith("B"):
+            continue
+        try:
+            idx = int(inst_dir.name[1:])
+        except ValueError:
+            continue
+        for f in inst_dir.glob("*_model_0.cif"):
+            job = f.name.rsplit("_model_0", 1)[0]
+            occ[job] = max(occ[job], idx)
+    # content signatures of everything already imported -> idempotent re-runs
+    existing_sigs: set[str] = set()
+    for d in args.out.iterdir():
+        if d.is_dir():
+            for c in d.glob("*_model_0.cif"):
+                existing_sigs.add(file_md5(c))
+
     for job_dir in sorted(args.src.iterdir()):
         if not job_dir.is_dir():
+            continue
+        m0 = sorted(job_dir.glob("*_model_0.cif"))
+        if m0 and file_md5(m0[0]) in existing_sigs:
+            print(f"  skip {job_dir.name} (already imported)", flush=True)
             continue
         info = resolve_job(job_dir, by_peptide)
         if info is None:
@@ -134,12 +166,26 @@ def main() -> int:
         occ[job_id] += 1
         instance = f"B{occ[job_id]}"
         n = copy_instance_files(job_dir, args.out / instance, job_id)
-        manifest.append({"instance": instance, "job_id": job_id,
-                         "src_folder": job_dir.name, "n_models": n,
-                         "evidence": info["evidence"]})
+        if m0:
+            existing_sigs.add(file_md5(m0[0]))
         print(f"  {instance:3s} {job_id:22s} <- {job_dir.name} "
               f"({n} models, {info['evidence']})", flush=True)
 
+    # rebuild the FULL manifest from disk so successive runs stay cumulative
+    # (not just this run's additions)
+    manifest = []
+    for inst_dir in sorted(args.out.iterdir()):
+        if not inst_dir.is_dir():
+            continue
+        inst = inst_dir.name
+        for cif in sorted(inst_dir.glob("*_model_0.cif")):
+            job_id = cif.name.rsplit("_model_0", 1)[0]
+            n = sum(1 for _ in inst_dir.glob(f"{job_id}_model_?.cif"))
+            peptide = job_id.split("_", 1)[1]
+            cands = by_peptide.get(peptide, [])
+            ev = cands[0]["evidence"] if cands else ""
+            manifest.append({"instance": inst, "job_id": job_id,
+                             "src_folder": "", "n_models": n, "evidence": ev})
     with open(args.manifest, "w", newline="") as fh:
         w = csv.DictWriter(fh, delimiter="\t", fieldnames=["instance", "job_id",
                          "src_folder", "n_models", "evidence"])

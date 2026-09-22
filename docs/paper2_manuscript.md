@@ -181,16 +181,18 @@ interval. Two sources dominate here, and both are measurable.
 re-submitting a job to AF3 can swing a single-model score by 0.94
 (LLFGYPRYV 0.049 → 0.991, a first-pass fold failure) does not survive
 scrutiny: the scorer that produced those numbers was overwritten by a retrain
-and none of the six surviving checkpoints reproduces it. Re-scoring every AF3
-submission with a *fixed* surviving instance bounds the resubmission range to
-median 0.017 / max 0.166, and AF3's own confidence is highly reproducible
-across submissions (ipTM median Δ 0.025, max 0.070; pure resubmissions agree
-to ≤0.01), and the peptide Cα register is likewise reproduced (RMSD median
-0.20 Å, max 0.38 Å). A separate, detectable failure mode is a defective first
-submission with truncated TCR chains (324 vs 443 Cα; flagged by a lower ipTM
-of 0.86 vs 0.93). The large swings are therefore *model-side* arbitrariness
-(the Rashomon effect, §[Meta-TCR-GNN] 2.6) amplified on such defective inputs,
-not AF3 run-to-run variance. Across 5
+and none of the six surviving checkpoints reproduces it. Across 31 jobs (17
+with >1 independent submission), re-scoring every AF3 submission with a *fixed*
+surviving instance gives a resubmission range of median 0.04 (max 0.51). AF3's
+own confidence is reproducible for high-confidence jobs (ipTM median Δ 0.046;
+≤0.01–0.07 for ipTM ≥ 0.88), as is the peptide Cα register (MHC/B2M-superposed
+RMSD median 0.20 Å, max 0.43 Å). Two detectable failure modes remain: a
+defective first submission with truncated TCR chains (324 vs 443 Cα), and
+genuinely low-confidence complexes (ipTM ≈ 0.5, e.g. JM22) where AF3 itself
+varies — ipTM range 0.21 and peptide RMSD up to 11 Å. **ipTM is therefore a
+usable reliability gate.** The large swings are *model-side* arbitrariness
+(the Rashomon effect, §[Meta-TCR-GNN] 2.6) amplified on such inputs, not AF3
+run-to-run variance. Across 5
 AF3 models within a single submission, ensemble standard deviations still
 range 0.01–0.43. The operational lesson stands but is relocated: a *single
 model instance* is not a defensible scorer; report a fixed multi-instance

@@ -67,13 +67,18 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--train-root", type=Path,
                     default=Path("data/raw/af3_instances"))
-    ap.add_argument("--instances", nargs="+", default=["A", "B1", "B2", "B3"])
+    ap.add_argument("--instances", nargs="+", default=None,
+                    help="instance dirs (default: auto-discover under --train-root)")
     ap.add_argument("--scorer", action="append", default=[],
                     help="name:template where template contains {i} for the "
                          "instance; repeat for multiple scorers")
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/af3_resubmission_variance.tsv"))
     args = ap.parse_args()
+    if args.instances is None:
+        args.instances = sorted(
+            (d.name for d in args.train_root.iterdir() if d.is_dir()),
+            key=lambda s: (s != "A", s))
     if not args.scorer:
         args.scorer = [
             "egnn_noplddt_s10:data/processed/af3_scores_s10_{i}_ensemble.tsv",

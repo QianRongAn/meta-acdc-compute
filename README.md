@@ -186,25 +186,23 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
   小批 300×20 = 21.6%;中等批 1800×3 最低 19.7%。**与文献"小批多轮
   更优"相反**,批量存在下界(每批样本须足以让弱模型学到区分信号)
 
-### 第 17 步:第 4 批 AF3 结果 + 重提方差修正(2026-09-23,opencode 会话)
+### 第 17 步:AF3 重提方差修正(第 4–5 批,2026-09-23,opencode 会话)
 
-用户提交第 4 批 25 个 AF3 任务(1ao7 A6 重提 + 2ak4 新系列),催生一次
-方法学自查,推翻了此前"单次 AF3 提交不可信"的表述:
+用户连续提交 AF3 重提/新系列(1ao7/2ak4/2bnq/1oga 等),催生一次方法学
+自查,推翻了此前"单次 AF3 提交不可信"的表述:
 
 - **重提感知导入**:`import_af3_instances.py` → `data/raw/af3_instances/`
-  (A 既有 21 / B1 13 / B2 9 / B3 3),不再互相覆盖,支持重提方差分析
-- **AF3 自身极稳**:同一 job 多次提交的 ipTM 中位差 0.025、最大 0.070,
-  且几乎全来自首批偏低(0.85-0.88→0.92-0.93);纯重提之间 ≤0.01
+  (A 21 / B1 25 / B2 14 / B3 11 / B4 2),不再互相覆盖;内容去重、可续编、幂等
 - **旧 0.94 摆动系模型侧假象**:`prediction_scores.tsv` 的打分器已被 v9.1
-  覆盖,现存 6 个 checkpoint 无一复现;用固定实例重跑,重提 range 中位
-  0.017、最大 0.166——**Rashomon 在模型侧,不在 AF3 侧**
-- **新 2ak4 系列**:4 肽 ipTM 0.884-0.898(高置信),EGNN 分 ~0(单实例)
-- **模型无关结构证据**:MHC+B2M 叠合后,肽 Cα RMSD 跨重提中位 0.20 Å、
-  最大 0.38 Å——肽 register 几乎不变;并发现个别首批 TCR 链截断的
-  "半成品"预测(324 vs 443 Cα,ipTM 偏低)——AF3 缺陷可被 ipTM 检出
+  覆盖,现存 6 个 checkpoint 无一复现;固定实例重跑,31 任务(17 个有重提)
+  重提 range 中位 0.04——**Rashomon 在模型侧,不在 AF3 侧**
+- **高置信任务 AF3 很稳**:ipTM 跨重提中位差 0.046;ipTM≥0.88 的组 ≤0.01–0.07;
+  肽 Cα RMSD(MHC+B2M 叠合)中位 0.20 Å、高置信最大 0.43 Å
+- **低置信任务真会飘**:JM22/1oga(ipTM~0.5)ipTM 摆动 0.21、肽 RMSD 达 11 Å;
+  ⇒ **ipTM 可作结构可靠性闸门**;并检出首批 TCR 链截断"半成品"(324 vs 443 Cα)
 - **域适应关键路径解锁**:`af3_batch.py --evidence same` 生成 **174 个天然
-  复合物**的 AF3 5 链提交 FASTA(`data/processed/af3_native/`)——域适应需要
-  "预测风格的天然正样本",这是此前唯一缺口;🔴 待用户提交后可混训
+  复合物**的 AF3 5 链提交 FASTA(`data/processed/af3_native/`);
+  `train_domain_adapt.py` 已支持 `--af3` 直接吃 AF3 CIF 正样本(内容去重)
 - 产物:`structure/af3_variance.py`、`structure/af3_rmsd.py`、
   `af3_resubmission_variance.tsv`、`af3_resubmission_rmsd.tsv`、
   重绘 `fig3_resubmission`、修正 benchmarks/paper1/paper2/SOP 叙述
