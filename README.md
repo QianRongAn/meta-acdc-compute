@@ -202,12 +202,16 @@ data/processed/af3_starter|af3_json|af3_plain/  AF3 提交任务(三种格式)
 
 ## 复现
 
+完整分步手册(含踩坑记录):**`docs/SOP.md`**;容器化:**`Dockerfile`**
+(CPU,mhcflurry 权重预载)。速览:
+
 ```bash
 bash scripts/setup_env.sh          # venv + torch 2.9.1+cu126 + 科学栈
 .venv/bin/pip install -e . --no-deps
 .venv/bin/python src/meta_acdc/models/dataset.py      # 构建界面图数据集(含诱饵)
 .venv/bin/python src/meta_acdc/models/train_egnn.py   # 训练 EGNN
-.venv/bin/python src/meta_acdc/structure/score_predictions.py  # 给 AF3 结构打分
+.venv/bin/python src/meta_acdc/active_learning/select_candidates.py --stage prefilter   # 蛋白组 500 万池
+.venv/bin/python src/meta_acdc/dashboard/server.py --port 8000                          # 风险看板
 ```
 
 ## 环境
