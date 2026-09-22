@@ -18,6 +18,10 @@ re-rank with the domain-adapted EGNN once TCRmodel2 structures land.
 Usage:
     .venv/bin/python src/meta_acdc/active_learning/select_candidates.py --stage prefilter
     .venv/bin/python src/meta_acdc/active_learning/select_candidates.py --stage rank --tcr CASSLGRYNEQFF
+
+Proteome source (data/raw/human_sprot.fasta, gitignored — fetch once):
+    curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism_id:9606)%20AND%20(reviewed:true)' \
+        -o data/raw/human_sprot.fasta   # Swiss-Prot human, ~20.4k canonical
 """
 
 from __future__ import annotations
