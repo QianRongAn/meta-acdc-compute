@@ -51,9 +51,15 @@ def build_job(pdb: str, struct_dir: Path) -> dict[str, str] | None:
     if alpha is None and beta is None:
         return None
     if alpha is None:
-        alpha = next(s for s in tcr_seqs if s != beta)
+        others = [s for s in tcr_seqs if s != beta]
+        if not others:
+            return None
+        alpha = others[0]
     if beta is None:
-        beta = next(s for s in tcr_seqs if s != alpha)
+        others = [s for s in tcr_seqs if s != alpha]
+        if not others:
+            return None
+        beta = others[0]
     return {"alpha": alpha, "beta": beta, "mhc": mhc[0], "b2m": b2m[0]}
 
 

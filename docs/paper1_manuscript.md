@@ -30,8 +30,9 @@ scale (423 complexes) — decoy discrimination is interpolation (reproducible),
 while AF3-input ranking is extrapolation, and multiple equally-performing
 models disagree (Rashomon effect). Removing the pLDDT feature eliminates
 score collapse but not ranking instability (Spearman r=0.267); a
-domain-adaptation route (mixing TCRmodel2-predicted structures into
-training) is underway. Our results define a representational minimum for
+domain-adaptation route (mixing predicted-style structures into training)
+is underway, using AlphaFold 3 predictions directly after the scriptable
+TCRmodel2 alternative stalled in queue. Our results define a representational minimum for
 interface-compatibility learning, a reproducible decoy-construction protocol,
 and a cross-instance stability test that any OOD-scoring claim must pass.
 
@@ -129,10 +130,13 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - Fix 1 (partial): removing the pLDDT feature — task performance kept
   (graft 0.923 / displaced 0.974), score collapse eliminated (0.29-0.93),
   but rankings still unstable (Spearman r=0.267, P=0.49 vs original).
-- Fix 2 (underway): domain adaptation — 111 class-I complexes submitted to
-  TCRmodel2 (scriptable, terms-compliant AF3 alternative; DockQ 0.566 vs
-  AF3 0.499 on TCR-pMHC) to mix predicted structures into training;
-  re-evaluation with 3-seed Spearman on completion.
+- Fix 2 (underway): domain adaptation — mix predicted-style structures into
+  training so the model sees OOD inputs during fit. Initially submitted 111
+  class-I complexes to TCRmodel2 (scriptable, terms-compliant AF3
+  alternative; DockQ 0.566 vs AF3 0.499 on TCR-pMHC), but the server queue
+  stalled (>100 jobs pending on a 2021-era template library); the DA route
+  now uses AF3-predicted structures directly as the positive source.
+  Re-evaluation with 3-seed Spearman on completion.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance

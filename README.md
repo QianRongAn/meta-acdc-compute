@@ -154,9 +154,26 @@ TCRmodel2 批量提交(等位基因序列推断、α/β 锚定正则、II 类过
 
 ### 第 15 步:域适应判决(等待 TCRmodel2 队列)
 
-服务器队列积压(111 任务;2026-09-23 探测:58 jobs ahead,PENDING/RUNNING,
-尚未出下载链接)。下载完成后自动:全诱饵协议混训 3 种子 → AF3 打分
-(pLDDT 置零)→ 跨实例 Spearman 判决门(mean r ≥ 0.5 才可报告排名)。
+服务器队列积压(111 任务;2026-09-23 探测:28~136 jobs ahead,全 PENDING/
+RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化极慢)。
+**决策(2026-09-23):废弃 TCRmodel2 路线**,域适应正样本改走 AF3 预测
+结构(用户手动上传,条款合规,且比 TCRmodel2 更贴合目标"预测风格")。
+下载完成后自动:全诱饵协议混训 3 种子 → AF3 打分(pLDDT 置零)→
+跨实例 Spearman 判决门(mean r ≥ 0.5 才可报告排名)。
+
+### 第 16 步:KN-5 候选全量生成 + 论文更新(2026-09-23,opencode 会话)
+
+- **AF3 提交候选全量生成**:`kn5_submission_list.tsv` 中 540 个交叉反应对
+  (different evidence),已生成全部 MHC-I 可提交的 **392 个 FASTA**
+  (batch1 50 个 + 新 batch2 342 个,`data/processed/af3_batch2/`)。
+  每个 job 5 链(alpha/beta/peptide/mhc/b2m),AF3 网页版可直接粘贴。
+  未生成:37 个 MHC-II(无 B2M,需另支持 α/β 异二聚体)+ 6 个特殊 TCR
+  (无保守 YFC 基序/序列重复)——列为后续。
+- **修复 `af3_batch.py` bug**:`build_job` 在 TCR 序列重复时 `next()` 抛
+  StopIteration(3kpr/3pqy),改为显式判空返回 None。
+- **论文更新**:paper1/paper2 的 DA 路线从 TCRmodel2 改为 AF3;paper2 补全
+  阈值依赖边界(0.5 池 1.76× vs 0.9 池 1.0×)+ 批大小消融完整表
+  (3600×2=24.5% 最优,反文献"小批多轮")。
 
 ### 第 15.5 步:KN-7+ 消融补测(2026-09-23,opencode 会话)
 
