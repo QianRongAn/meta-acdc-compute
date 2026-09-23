@@ -81,10 +81,9 @@ docker run --rm -v $PWD:/work meta-acdc python -c "import meta_acdc; print('OK')
 ## 6. MHC 预筛基准(计划书 Module 0 假设)
 
 ```bash
-# 本地(MHCflurry,无排队):top-2% 阈值 0.56 召回 / ~50× 压缩
+# 预筛基准:本地 MHCflurry(已采用;NetMHCpan 在线版因 DTU 服务器
+# 长期不可达已废弃,见 benchmarks §NetMHCpan 重试记录)
 .venv/bin/python src/meta_acdc/data/mhcflurry_bench.py --n 50
-# NetMHCpan-4.2(在线,受 DTU 队列影响):
-.venv/bin/python src/meta_acdc/data/netmhcpan_bench.py --n 50
 ```
 
 ## 7. 蛋白组 5 万候选清单(KN-8 计算侧交付物)

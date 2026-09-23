@@ -17,7 +17,7 @@ off-targets for therapeutic TCRs"
 1. **Motivation**:TCR-T 疗法的致死交叉反应(MAGE-A3/titin、MAGE-A12)在
    体外常规筛选不可预见;蛋白组尺度实验筛选不可能(10^7-10^15 组合)。
 2. **方法**:
-   - 递呈预筛(NetMHCpan-4.2):蛋白组 → ~5M 候选压缩
+   - 递呈预筛(MHCflurry 本地,NetMHCpan 在线版已废弃):蛋白组 → ~5M 候选压缩
    - 结构预测(AF3/TCRmodel2)+ EGNN 相容性打分(论文 1 的模型)
    - 主动学习:EIG/熵/方差采集函数 + ε-greedy,逐轮"验证"(以公开数据
      作 oracle 的模拟闭环)

@@ -11,10 +11,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # python deps (CPU torch; mhcflurry 2.2.1 is torch-backed)
-RUN pip install --no-cache-dir \
-        numpy pandas scipy scikit-learn matplotlib tqdm \
-        torch --index-url https://download.pytorch.org/whl/cpu \
-    && pip install --no-cache-dir mhcflurry
+# Split into separate layers so a slow/failed download only re-runs that step.
+# The science stack comes from a domestic PyPI mirror (override with
+# --build-arg PIP_INDEX_URL=...); torch CPU comes from the pytorch index.
+ARG PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --no-cache-dir --retries 10 --timeout 180 \
+        -i "$PIP_INDEX_URL" \
+        numpy pandas scipy scikit-learn matplotlib tqdm
+# torch deps from the reliable mirror, then the CPU wheel with --no-deps.
+# Use the SJTU pytorch-wheels mirror (PEP 503) for a fast, domestic download;
+# swap TORCH_INDEX_URL for https://download.pytorch.org/whl/cpu elsewhere.
+ARG TORCH_INDEX_URL=https://mirror.sjtu.edu.cn/pytorch-wheels/cpu
+RUN pip install --no-cache-dir --retries 10 --timeout 180 \
+        -i "$PIP_INDEX_URL" \
+        sympy networkx jinja2 filelock fsspec typing-extensions
+RUN pip install --no-cache-dir --retries 10 --timeout 600 --no-deps torch \
+        --index-url "$TORCH_INDEX_URL"
+RUN pip install --no-cache-dir --retries 10 --timeout 180 \
+        -i "$PIP_INDEX_URL" mhcflurry
 
 COPY pyproject.toml README.md ./
 COPY src ./src
