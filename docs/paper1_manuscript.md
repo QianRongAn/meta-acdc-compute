@@ -215,6 +215,10 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   structures from the A/B1-B4 batches) tightens this decisively — mean
   pairwise r = 0.847, bootstrap 95% CI [0.771, 0.893] — confirming the
   resolution is robust to candidate-set size as well as to model seed.
+  Importantly, the fix is not a trade-off: on the held-out *crystal* decoy
+  set the domain-adapted models match or beat the baseline (graft AUROC
+  0.918 → 0.976-0.984; displaced 0.979 → 0.991-0.995), so mixing AF3 natives
+  acts as beneficial augmentation rather than a domain sacrifice.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
