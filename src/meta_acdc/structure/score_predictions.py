@@ -36,7 +36,8 @@ def graph_to_tensors(g):
     }
 
 
-def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False) -> float:
+def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False,
+                temperature: float = 1.0) -> float:
     tensors = {k: v.to(device) for k, v in graph_to_tensors(g).items()}
     # normalize node features as in training (per-batch z-score)
     h = tensors["h"]
@@ -49,7 +50,7 @@ def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False) -> float:
     with torch.no_grad():
         logit = net(h, tensors["x"], tensors["edge_index"],
                     tensors["edge_attr"], tensors["batch"]).squeeze(-1)
-    return float(torch.sigmoid(logit).item())
+    return float(torch.sigmoid(logit / temperature).item())
 
 
 def main() -> int:
@@ -63,6 +64,9 @@ def main() -> int:
     ap.add_argument("--mask-plddt", action="store_true",
                     help="zero the pLDDT node feature (domain-adapted "
                          "models were trained this way)")
+    ap.add_argument("--temperature", type=float, default=1.0,
+                    help="divide logits by T before sigmoid (from "
+                         "models/calibrate.py) for calibrated probabilities")
     args = ap.parse_args()
     if not args.model:
         args.model = [Path("data/processed/egnn_dataset.model.pt")]
@@ -86,7 +90,8 @@ def main() -> int:
             rows.append({"job_id": cif.stem, "n_nodes": 0, "n_edges": 0,
                          "score": "", "std": "", "error": str(e)})
             continue
-        ss = [score_graph(net, g, args.device, mask_plddt=args.mask_plddt)
+        ss = [score_graph(net, g, args.device, mask_plddt=args.mask_plddt,
+                          temperature=args.temperature)
               for net in nets]
         mean = sum(ss) / len(ss)
         std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5

@@ -183,6 +183,18 @@ class TestImportUniqueFallback(unittest.TestCase):
         self.assertEqual(len(cifs), 1)
 
 
+class TestCalibration(unittest.TestCase):
+    def test_ece_bounds_and_improvement(self):
+        import numpy as np
+        from meta_acdc.models.calibrate import ece
+        # perfectly calibrated predictions -> ECE ~ 0
+        p = np.array([0.1, 0.2, 0.8, 0.9] * 25)
+        y = np.array([0, 0, 1, 1] * 25)
+        self.assertLess(ece(p, y), 0.02)
+        # systematically overconfident -> ECE > 0
+        self.assertGreater(ece(np.full(100, 0.99), np.zeros(100)), 0.5)
+
+
 class TestEnsembleMean(unittest.TestCase):
     def test_average_across_seeds(self):
         import csv
