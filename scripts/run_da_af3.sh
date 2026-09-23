@@ -39,10 +39,22 @@ for s in 0 1 2; do
       --out "data/processed/da_scores_seed${s}.tsv"
 done
 
-echo "== 4/4 cross-instance stability verdict"
+echo "== 4/6 cross-instance stability verdict"
 $PY src/meta_acdc/structure/da_stability.py \
     --scores data/processed/da_scores_seed0_ensemble.tsv \
               data/processed/da_scores_seed1_ensemble.tsv \
               data/processed/da_scores_seed2_ensemble.tsv
+
+echo "== 5/6 fixed 3-seed ensemble + clinical safety scan (KN-11)"
+$PY src/meta_acdc/structure/ensemble_mean.py \
+    --scores data/processed/da_scores_seed0_ensemble.tsv \
+              data/processed/da_scores_seed1_ensemble.tsv \
+              data/processed/da_scores_seed2_ensemble.tsv \
+    --out data/processed/prediction_scores_ensemble.tsv
+$PY src/meta_acdc/structure/clinical_scan.py \
+    --out data/processed/kn11_clinical_scan.tsv
+
+echo "== 6/6 refresh figures"
+$PY scripts/make_figures.py >/dev/null 2>&1 || echo "  (figures skipped)"
 
 echo "== done (verdict above; STABLE iff mean pairwise Spearman r >= 0.5)"

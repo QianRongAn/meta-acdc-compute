@@ -183,6 +183,31 @@ class TestImportUniqueFallback(unittest.TestCase):
         self.assertEqual(len(cifs), 1)
 
 
+class TestEnsembleMean(unittest.TestCase):
+    def test_average_across_seeds(self):
+        import csv
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            seeds = []
+            for s, val in enumerate([0.2, 0.4, 0.6]):
+                p = td / f"seed{s}.tsv"
+                with open(p, "w", newline="") as fh:
+                    w = csv.writer(fh, delimiter="\t")
+                    w.writerow(["job_id", "score", "std"])
+                    w.writerow(["x_PEP", str(val), "0.0"])
+                seeds.append(str(p))
+            out = td / "mean.tsv"
+            subprocess.run([sys.executable, "-m",
+                            "meta_acdc.structure.ensemble_mean",
+                            "--scores", *seeds, "--out", str(out)],
+                           check=True, cwd=str(ROOT), capture_output=True)
+            row = next(csv.DictReader(open(out), delimiter="\t"))
+            self.assertAlmostEqual(float(row["score"]), 0.4, places=3)
+
+
 class TestClinicalScan(unittest.TestCase):
     """KN-11: a fatal off-target scoring at/above the target must be flagged."""
 
