@@ -264,6 +264,47 @@ class TestEnsembleMean(unittest.TestCase):
             self.assertAlmostEqual(rows["b"], 0.75, places=3)
 
 
+class TestCandidateRouting(unittest.TestCase):
+    """native_manifest routes non-native jobs to the candidate dir."""
+
+    def test_candidate_routed_not_dropped(self):
+        import csv
+        import json
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            # submission list with one candidate row
+            lst = td / "list.tsv"
+            with open(lst, "w", newline="") as fh:
+                w = csv.writer(fh, delimiter="\t")
+                w.writerow(["pdb", "tcr_a", "tcr_b", "peptide", "mhc_hint",
+                            "evidence", "pdb_peptide", "cdr3"])
+                w.writerow(["9zzz", "B" * 200, "A" * 190, "LLFGPVYV",
+                            "HLA-A", "different", "LLFGYPVYV", "CXXX"])
+            job = td / "folds" / "j1"
+            job.mkdir(parents=True)
+            seqs = ["LLFGPVYV", "A" * 190, "B" * 200, "M" * 100, "H" * 274]
+            with open(job / "j1_job_request.json", "w") as fh:
+                json.dump([{"sequences": [{"proteinChain": {"sequence": s}}
+                                          for s in seqs]}], fh)
+            (job / "j1_model_0.cif").write_text("data\n")
+            out = td / "native"
+            cand = td / "cand"
+            subprocess.run([sys.executable, "-m",
+                            "meta_acdc.structure.native_manifest",
+                            "--src", str(td / "folds"), "--out", str(out),
+                            "--manifest", str(td / "m.tsv"),
+                            "--report", str(td / "r.tsv"),
+                            "--candidate-out", str(cand),
+                            "--list", str(lst)],
+                           check=True, cwd=str(ROOT), capture_output=True)
+            self.assertEqual(len(list(out.glob("*_model_0.cif"))), 0)
+            routed = [p.name for p in cand.glob("*_model_0.cif")]
+            self.assertEqual(routed, ["9zzz_LLFGPVYV_model_0.cif"])
+
+
 class TestClinicalScan(unittest.TestCase):
     """KN-11: a fatal off-target scoring at/above the target must be flagged."""
 

@@ -26,7 +26,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
-from meta_acdc.structure.import_af3 import read_job_sequences  # noqa: E402
+from meta_acdc.structure.import_af3 import (load_manifest,  # noqa: E402
+                                            matches_chain_pair,
+                                            read_job_sequences, tcr_pair)
 
 
 def read_fasta_seqs(path: Path) -> list[str]:
@@ -66,7 +68,19 @@ def main() -> int:
                     default=Path("data/processed/af3_native/manifest.tsv"))
     ap.add_argument("--report", type=Path,
                     default=Path("data/processed/af3_native/import_report.tsv"))
+    ap.add_argument("--candidate-out", type=Path, default=None,
+                    help="if given, route non-native jobs (cross-reactivity "
+                         "candidates) here via the submission list instead of "
+                         "discarding them")
+    ap.add_argument("--list", type=Path,
+                    default=Path("data/processed/kn5_submission_list.tsv"))
     args = ap.parse_args()
+
+    by_peptide: dict[str, list[dict]] = {}
+    if args.candidate_out is not None and args.list.exists():
+        for row in load_manifest(args.list):
+            by_peptide.setdefault(row["peptide"], []).append(row)
+        args.candidate_out.mkdir(parents=True, exist_ok=True)
 
     fasta_dirs = args.fasta_dirs or sorted(
         Path("data/processed").glob("af3_native*"))
@@ -102,6 +116,22 @@ def main() -> int:
             job = idx.get(frozenset(seqs)) if seqs else None
             if job is None:
                 unmatched += 1
+                # route cross-reactivity candidates to their own dir
+                if args.candidate_out is not None and seqs:
+                    peptide = seqs[0]
+                    alpha, beta = tcr_pair(seqs, peptide)
+                    cands = by_peptide.get(peptide, [])
+                    match = next((c for c in cands
+                                  if matches_chain_pair(alpha, beta, c)), None)
+                    if match is None and cands:
+                        match = cands[0]
+                    if match is not None:
+                        cid = f"{match['pdb']}_{peptide}"
+                        for cif in sorted(glob.glob(job_dir + "*_model_?.cif")):
+                            tag = os.path.basename(cif).split("_model_")[1] \
+                                .split(".")[0]
+                            shutil.copy2(
+                                cif, args.candidate_out / f"{cid}_model_{tag}.cif")
                 continue
             if job in seen:
                 continue
