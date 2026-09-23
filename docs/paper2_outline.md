@@ -25,11 +25,13 @@ off-targets for therapeutic TCRs"
    - 模拟闭环:6% 采样 2.0× 阳性召回增益(v0,序列模型)——待结构模型升级后
      重跑
    - 采集函数对比(进行中):EIG vs 熵 vs 方差 vs 随机
-4. **待补(AF3 数据到达后)**:
-   - 每 TCR × 多候选肽的结构预测 → EGNN 打分 → 排名
-   - 金标准检查:titin/MAGE-A12 类已知致死脱靶是否进入 Top-K
-   - 模拟闭环升级:oracle = EGNN 自身 vs 金标准标签的对比
-   - 阈值标定:风险分与临床安全边界的映射(计划书 Module 3 的
+4. **进展(AF3 数据到达后)**:
+   - [x] 每 TCR × 多候选肽的结构预测 → 稳定 DA EGNN 打分 → 排名
+     (144-native 域适应后跨实例 STABLE,mean Spearman 0.729)
+   - [x] 金标准检查:致死性 MAGE-A12 模拟肽 KVAKELVHFL 排到靶肽之上
+     (FATAL-mimicry flagged);titin ESDPIVAQY 与靶肽分差 0.02(§2.8)
+   - [ ] 模拟闭环升级:oracle = EGNN 自身 vs 金标准标签的对比
+   - [ ] 阈值标定:风险分与临床安全边界的映射(计划书 Module 3 的
      "Enhanced Safety Margin":高危器官表达蛋白阈值 0.5→0.3)
 5. **交付物**:TCR-Safety-Radar 看板(KN-13)、打分管线、排名报告
 
