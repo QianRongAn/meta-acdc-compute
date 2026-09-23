@@ -653,6 +653,28 @@ SHA1 生成唯一 id)+ `--report`(导出 job_id↔来源映射)后,**改用天�
   `da_scores_seed{0,1,2}(_ensemble).tsv`、`prediction_scores_ensemble.tsv`
   (3-seed 均值)、`af3_native/manifest.tsv`(144)
 
+### KN-11 临床金标准结构扫描(2026-09-23,稳定模型上的下游应用)
+
+用 144-native 稳定 DA 模型(3-seed 均值)对临床金标准案例打分。
+`structure/clinical_scan.py` → `kn11_clinical_scan.tsv`。当前有结构的
+只有 A3A/MAGE-A3 案例(5brz 家族):
+
+| 肽 | 角色 | 3-seed 均值 | 家族内排名 | 致命 | 判读 |
+|---|---|---|---|---|---|
+| **KVAKELVHFL** | off-target(MAGE-A12 模拟) | **0.9912** | **1** | 是 | **FATAL-mimicry flagged** |
+| EVDPIGHLY | 靶(MAGE-A3) | 0.9859 | 2 | 是 | cognate |
+| ESDPIVAQY | off-target(titin) | 0.9640 | 3 | 是 | 与靶接近 |
+| ILAKFLHWL | off-target | 0.7146 | 5 | 是 | 低 |
+
+- **关键结果**:模型把致死性 MAGE-A12 模拟肽 KVAKELVHFL 排到了**靶肽之上**
+  ——这正是安全筛选必须捕获的危险信号(该 off-target 曾致 3 例神经毒性/
+  2 例死亡)。titin ESDPIVAQY(实际致死元凶)与靶肽分差仅 0.02
+- **意义**:在**跨实例稳定**的模型上,临床金标准的致死交叉反应被正确
+  标记为高危——KN-11 结构空间扫描首个可报告结果(此前因 Rashomon 阻塞)
+- 待补结构:案例 2(A2/MAGE-A3 `KVAELVHFL`)与案例 3(Kimmtrak
+  `YLEPGPVTA`)尚无 AF3 结构 → 列为后续提交
+- 产物:`structure/clinical_scan.py`、`kn11_clinical_scan.tsv`
+
 ### 扩样日志与运维修复(2026-09-23)
 
 - **cron 覆盖事故**:新 `orchestrate_da.sh` 首次运行时扫描到全部历史
