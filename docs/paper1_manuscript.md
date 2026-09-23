@@ -94,31 +94,33 @@ stability test that any OOD-scoring claim must pass.
   small-data regime; all reported numbers use the best of 3 seeds, and we
   recommend multi-seed reporting.
 
-### 2.4 Cross-reactivity ranking on AF3-predicted structures — single-instance observations, later overturned (Fig 3, Table 4)
+### 2.4 Cross-reactivity ranking on AF3-predicted structures (Fig 2, Fig 6)
 
-> Status: the numbers below were obtained with ONE trained instance. Section
-> 2.6 shows they do not survive instance resampling; they are retained as the
-> motivation for the stability analysis, not as claims.
+> Status: with the scale-resolved domain-adapted model (144 native positives,
+> Section 2.6), the cross-instance ranking verdict is STABLE (mean pairwise
+> Spearman 0.729), so the numbers below are reportable. They use a fixed
+> 3-seed ensemble; single-instance scores remain unreliable.
 >
-> **Label correction (2026-09-23):** the pdb attributions below are unreliable.
-> `kn5_submission_list.tsv` had its tcr_a/tcr_b columns swapped, so the import
-> silently fell back to "first candidate row" and mislabeled 48/73 structures
-> (verified against 291 crystal TCR signatures). The "A6" entries are in fact
-> the B7/1qrn family, "1G6R/1MWA" are the 2C/1tcr family, and "JM22 (1OGA)" is
-> the 2vlj/2vlk family. Group identities below should be read as chain-signature
-> families until the structure map is repaired.
+> **Label correction (2026-09-23):** the pdb attributions are taken from the
+> chain-fingerprint-corrected map (the `kn5_submission_list.tsv` tcr_a/tcr_b
+> swap had mislabeled 48/73 structures). Group identities are chain-signature
+> families.
 
-- A6 TCR: 8 candidate peptides, 5/8 VDJdb-validated binders score
-  0.92-0.99 (ensemble); native peptide ranks #3 (0.973). Weak/non-binders
-  LLFGPVYV 0.029, LLFGKPVYV 0.659.
-- B7 TCR (mirror family): Tax homolog 0.973.
-- 1G6R/1MWA mirror pair: cross-scores 0.73-0.86.
-- JM22 (1OGA): all candidates low (0.16-0.23) — consistent with score-1
-  weak VDJdb evidence; interpreted as correct rejection (inconclusive).
-- Clinical gold standard (MAG-IC3/5BRZ): native MAGE-A3 ranked #1
-  (0.683 ± 0.257); the titin mimic ESDPIVAQY at 0.706 ± 0.147 — at the
-  target's level under 5-model ensembling, matching its confirmed
-  cross-reactive biology.
+- A6/1ao7 family: the eight LLFGY*V variants all score 0.96-1.00 — the A6
+  TCR is strongly cross-reactive, so the native peptide does not stand out
+  (rank #3/5); the model reproduces the family's promiscuity rather than
+  isolating the cognate ligand.
+- 1qrn family: LLFGPVYV is the clear outlier (0.762) vs 0.90-1.00 for the
+  rest — a within-family discrimination that is stable across seeds.
+- 1tcr family: EQYKFYSV 0.949 / SIYRYYGL 0.939 vs GGAPWNPAMMI 0.643 and
+  QLSPFPFDL 0.710.
+- 2vlj (JM22) family: GILGLVFTL 0.993 vs PKYVKQNTLKLAT 0.376 (lowest score
+  overall — correct rejection of a non-cognate long peptide).
+- Clinical gold standard (MAG-IC3/5BRZ, A3A/MAGE-A3): native EVDPIGHLY
+  0.986 (rank #2); the lethal MAGE-A12 mimic KVAKELVHFL scores **0.991
+  (rank #1, above the target)** and the titin mimic ESDPIVAQY 0.964 — both
+  fatal off-targets flagged at/above the cognate level, matching their
+  confirmed cross-reactive biology (Section 2.7 / KN-11).
 
 ### 2.5 Prediction variance: model-side, not structure-side (Fig 3)
 
@@ -178,6 +180,27 @@ stability test that any OOD-scoring claim must pass.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
   stability test; single-instance rankings are anecdotes.**
 
+### 2.7 Clinical safety scan with the stable model (KN-11, Fig 2)
+
+With the cross-instance-stable model, the clinical gold-standard case
+A3A/MAGE-A3 (5BRZ family) is scanned over its cognate target and documented
+off-targets:
+
+| peptide | role | score | family rank | fatal |
+|---|---|---|---|---|
+| **KVAKELVHFL** | off-target (MAGE-A12 mimic) | **0.991** | 1 | yes |
+| EVDPIGHLY | target (MAGE-A3) | 0.986 | 2 | yes |
+| ESDPIVAQY | off-target (titin) | 0.964 | 3 | yes |
+| ILAKFLHWL | off-target | 0.715 | 5 | yes |
+
+The lethal MAGE-A12 mimicry peptide (which caused 3 neurotoxicity events /
+2 deaths in the affinity-enhanced A3A trial) is ranked *above* the intended
+target — exactly the hazard a safety screen must surface. The titin mimic
+that caused the other two deaths sits within 0.02 of the target. On this
+gold-standard case the model correctly flags both documented lethal
+off-targets at/above the cognate level, while a non-cognate long peptide
+(PKYVKQNTLKLAT, Section 2.4) is correctly rejected at 0.376.
+
 ## 3. Methods
 
 ### 3.1 Datasets
@@ -232,8 +255,11 @@ secondary; recall@0.5 for ranking; native-rank verdict.
   range) — corrected: variance is model-side, not AF3-side (see 2.5/2.6).
 - Fig 5: cross-instance instability (score collapse scatter; Spearman
   matrix; pLDDT-ablation partial fix).
+- Fig 6: domain-adaptation resolution — per-seed candidate profiles (no
+  collapse) + Spearman matrix, mean pairwise r=0.729 (stable).
 - Table 1: dataset statistics (+ structure-VDJdb map: 281/291 complexes,
   2,309 CDR3 hits).
 - Table 2: hypothesis-elimination results.
 - Table 3: ablation suite (+ v10 Coulomb negative).
-- Table 4: clinical gold-standard ranking (single-instance caveat).
+- Table 4: clinical gold-standard ranking on the stable DA model (KN-11):
+  lethal off-targets flagged at/above the cognate target.

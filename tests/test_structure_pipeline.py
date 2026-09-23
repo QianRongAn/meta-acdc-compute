@@ -183,6 +183,43 @@ class TestImportUniqueFallback(unittest.TestCase):
         self.assertEqual(len(cifs), 1)
 
 
+class TestClinicalScan(unittest.TestCase):
+    """KN-11: a fatal off-target scoring at/above the target must be flagged."""
+
+    def test_fatal_mimicry_flagged(self):
+        import csv
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            scores = td / "scores.tsv"
+            with open(scores, "w", newline="") as fh:
+                w = csv.writer(fh, delimiter="\t")
+                w.writerow(["job_id", "score"])
+                w.writerow(["5brz_TARGETPEP", "0.9000"])
+                w.writerow(["5brz_FATALPEPT", "0.9500"])
+                w.writerow(["5brz_SAFEPEPXX", "0.1000"])
+            clinical = td / "clinical.tsv"
+            with open(clinical, "w", newline="") as fh:
+                w = csv.writer(fh, delimiter="\t")
+                w.writerow(["tcr", "target", "off_targets", "fatal",
+                            "evidence", "note"])
+                w.writerow(["X", "TARGETPEP", "FATALPEPT;SAFEPEPXX", "yes",
+                            "PMID", ""])
+            out = td / "scan.tsv"
+            subprocess.run([sys.executable, "-m",
+                            "meta_acdc.structure.clinical_scan",
+                            "--scores", str(scores), "--clinical", str(clinical),
+                            "--out", str(out)], check=True, cwd=str(ROOT),
+                           capture_output=True)
+            rows = list(csv.DictReader(open(out), delimiter="\t"))
+            by = {r["peptide"]: r for r in rows}
+            self.assertEqual(by["FATALPEPT"]["flag"], "FATAL-mimicry flagged")
+            self.assertEqual(by["TARGETPEP"]["flag"], "cognate")
+            self.assertEqual(by["SAFEPEPXX"]["flag"], "")
+
+
 class TestDashboard(unittest.TestCase):
     def test_build_data_serializable(self):
         from meta_acdc.dashboard.server import (DEFAULT_CLINICAL, DEFAULT_MAP,
