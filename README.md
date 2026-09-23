@@ -256,6 +256,31 @@ RUNNING,尚未出下载链接;服务器模板库最后更新 2021-03-10,消化�
   且旧 `native_manifest.py` 非累积 → 曾把 89-manifest 覆盖成 1 个。
   已改为**累积并集**(永不缩小)+ 预填 stamp;记为定时任务陷阱
 
+### 第 19 步:稳健性加固 + 下游应用(2026-09-23,opencode 会话续)
+
+第 18 步的 STABLE 是在 3 seed 上得到的;本步做稳健性检验并落地下游。
+
+- **退化种子陷阱(关键)**:扩到 5 seed 后发现 seed3(val AUROC 0.804、
+  晶体 graft 0.726)对候选输出**常数**→ 与其他 seed Spearman=NaN,把
+  5-seed 判决拖成 UNSTABLE。`da_stability.py`/`ensemble_mean.py` 增加
+  **退化检测与过滤**;稳健做法 = 多 seed + 过滤
+- **稳健头条**:seed 过滤后 × 73 个 AF3 实例 = mean r **0.802**
+  (CI 0.719–0.857);21 候选 = 0.756。**Rashomon 解除对候选规模稳健**
+- **临床扫描判读修正**(4-seed 稳健集成):靶肽 EVDPIGHLY 排 #1,两个
+  致死 off-target(MAGE-A12 模拟 0.962、titin 0.924)仅低 0.02/0.06
+  → 判"与靶同水平"(不 clear);种子级先后像抛硬币=分子模拟的体现
+- **模型非相似度代理**:同 identity 对 `GILGLVFTL` 0.938 vs
+  `GILEFVFTL` 0.475(vs GILGFVFTL 均 0.89)→ 模型按化学而非相似度判别
+- **DA 不损害核心任务**:晶体诱饵回归 graft 0.918→0.98(反而提升)
+- **温度标定**:ECE 0.02–0.06(分数已较可标定)
+- **KN-8 弱代理偏置**:EIG top-30 是 Q/E 低复杂度伪影(采集函数病态)
+  → 新增 `--max-aa-fraction` 复杂度过滤;结构重排仍是必需
+- **自动管线缺口修复**:`native_manifest --candidate-out` 把交叉反应
+  候选路由到 `af3_predictions/`(此前会被丢弃);`run_da_af3.sh` 改
+  5 seed + 退化过滤 + 候选路由
+- **新图**:fig7 交叉反应图谱(179/281 TCR 交叉反应,中位 2、最大 8)
+- **回归测试**:16 个全过;`scripts/verify.sh` 一键健康检查
+
 ### 主要结果速览
 
 | 实验 | 结果 | 意义 |
