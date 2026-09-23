@@ -31,6 +31,9 @@ DEFAULT_MAP = ROOT / "data/processed/structure_vdjdb_map.tsv"
 DEFAULT_CLINICAL = ROOT / "data/processed/clinical_gold_standard.tsv"
 DEFAULT_QC = ROOT / "data/processed/af3_qc.tsv"
 DEFAULT_CLINICAL_SCAN = ROOT / "data/processed/kn11_clinical_scan.tsv"
+NATIVE_TODO = ROOT / "data/processed/af3_native_todo.txt"
+UPLOAD_TODO = ROOT / "data/processed/af3_upload_todo.txt"
+NATIVE_MANIFEST = ROOT / "data/processed/af3_native/manifest.tsv"
 
 
 def load_reliability(qc_path: Path) -> dict:
@@ -71,6 +74,34 @@ def load_clinical_scan(path: Path) -> list[dict]:
                 "flag": r.get("flag", ""),
             })
     return rows
+
+
+def load_submission_status() -> dict:
+    """How many AF3 jobs the user still needs to submit (native / candidate)."""
+
+    def lines(p: Path) -> set[str]:
+        return {ln.strip() for ln in open(p)} if p.exists() else set()
+
+    native_todo = lines(NATIVE_TODO)
+    native_done = set()
+    if NATIVE_MANIFEST.exists():
+        with open(NATIVE_MANIFEST, newline="") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                native_done.add(r["job_id"])
+    upload_todo = lines(UPLOAD_TODO)
+    scored = set()
+    for p in (ROOT / "data/processed").glob("da_scores_seed0_ensemble.tsv"):
+        with open(p, newline="") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                scored.add(r["job_id"])
+    return {
+        "native_total": len(native_todo),
+        "native_done": len(native_done & native_todo),
+        "native_remaining": len(native_todo - native_done),
+        "candidate_total": len(upload_todo),
+        "candidate_done": len(scored),
+        "candidate_remaining": len(upload_todo - scored),
+    }
 
 
 def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
@@ -132,6 +163,7 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
         "reliability": load_reliability(qc_path) if qc_path else {},
         "clinical_scan": load_clinical_scan(clinical_scan_path)
         if clinical_scan_path else [],
+        "submission_status": load_submission_status(),
         "domain_adaptation": {
             "n_native_positives": 144,
             "val_auroc": [0.959, 0.952, 0.964],

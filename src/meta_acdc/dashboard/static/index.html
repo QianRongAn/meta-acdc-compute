@@ -56,6 +56,17 @@ async function main() {
     app.insertAdjacentHTML('beforeend', b);
   }
 
+  // AF3 submission progress
+  if (d.submission_status) {
+    const s = d.submission_status;
+    let sp = `<div class="card"><h3>AF3 提交进度</h3>
+      <div class="sub">天然(域适应正样本): ${s.native_done} / ${s.native_total} 已导入,
+      <b>剩 ${s.native_remaining}</b> 待提交 · 交叉反应候选(安全排名):
+      ${s.candidate_done} / ${s.candidate_total} 已打分,
+      <b>剩 ${s.candidate_remaining}</b></div></div>`;
+    app.insertAdjacentHTML('beforeend', sp);
+  }
+
   // domain adaptation status (native AF3 positives)
   if (d.domain_adaptation) {
     const da = d.domain_adaptation;
