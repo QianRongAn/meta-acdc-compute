@@ -170,11 +170,11 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
             "val_cross_seed_spearman": [0.943, 0.939, 0.947],
             "candidate_verdict": "STABLE",
             "candidate_mean_spearman": 0.729,
-            "candidate_mean_spearman_73": 0.847,
+            "candidate_mean_spearman_73": 0.802,
             "note": "144 个真实天然 AF3 正样本域适应;val AUROC 0.96;候选"
-                    "判决 mean r=0.729(21 候选)/ 0.847(73 实例,CI "
-                    "0.77-0.89)= STABLE,Rashomon 危机解除;扩样单调"
-                    "(0.447→0.479→0.729),见 benchmarks.md",
+                    "判决 mean r=0.729(21 候选)/ 0.802(73 实例,CI "
+                    "0.72-0.86)= STABLE,Rashomon 危机解除;扩样单调"
+                    "(0.447→0.479→0.729),弱 seed 须过滤,见 benchmarks.md",
         },
         "caveats": [
             "AF3 交叉反应排名已跨实例稳定(144 native 域适应,mean pairwise "
