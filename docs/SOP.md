@@ -116,6 +116,12 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
 .venv/bin/python src/meta_acdc/models/train_domain_adapt.py \
     --af3 data/raw/af3_native_predictions \
     --af3-manifest data/processed/af3_native/manifest.tsv --epochs 150
+# ⚠️ 规模要求:候选跨实例判决过 0.5 门需 ~144 个天然正样本(63→塌缩,
+#    89→0.479,144→0.729 STABLE);正样本越多越稳,务必先攒够再报告排名
+# 下游:临床金标准结构扫描(KN-11,稳定模型上)
+.venv/bin/python src/meta_acdc/structure/clinical_scan.py \
+    --scores data/processed/prediction_scores_ensemble.tsv \
+    --out data/processed/kn11_clinical_scan.tsv
 # 域适应模型(pLDDT 置零训练+打分一致):
 .venv/bin/python src/meta_acdc/structure/score_predictions.py \
     --model data/processed/da_seed0.model.pt --mask-plddt --out ...
