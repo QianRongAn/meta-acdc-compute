@@ -187,10 +187,10 @@ class TestCalibration(unittest.TestCase):
     def test_ece_bounds_and_improvement(self):
         import numpy as np
         from meta_acdc.models.calibrate import ece
-        # perfectly calibrated predictions -> ECE ~ 0
-        p = np.array([0.1, 0.2, 0.8, 0.9] * 25)
-        y = np.array([0, 0, 1, 1] * 25)
-        self.assertLess(ece(p, y), 0.02)
+        # bin-calibrated: confidence equals the positive rate in the bin
+        p = np.full(10, 0.5)
+        y = np.array([1, 0, 1, 0, 1, 0, 1, 0, 1, 0])
+        self.assertLess(ece(p, y), 1e-6)
         # systematically overconfident -> ECE > 0
         self.assertGreater(ece(np.full(100, 0.99), np.zeros(100)), 0.5)
 
