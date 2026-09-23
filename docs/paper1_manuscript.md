@@ -260,7 +260,11 @@ flip (seed0 KVA>target, seed1 target>KVA, seed2 KVA>target, seed4
 target>KVA), which is exactly what mimicry predicts and is not a model
 defect. A non-cognate long peptide (PKYVKQNTLKLAT, Section 2.4) is correctly
 rejected at 0.314. The `--margin 0.1` flag in `clinical_scan.py` encodes the
-"at target level" hazard criterion.
+"at target level" hazard criterion. We report this as a partial success: of
+three listed high-risk off-targets the model places two at the target's
+level and scores the third (ILAKFLHWL, 0.679) well below it — a miss that
+may reflect weaker cross-reactivity evidence or AF3 structure quality for
+that peptide, and is flagged for follow-up.
 
 ## 3. Methods
 
