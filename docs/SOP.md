@@ -124,6 +124,11 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
 .venv/bin/python src/meta_acdc/structure/clinical_scan.py \
     --scores data/processed/prediction_scores_ensemble.tsv \
     --out data/processed/kn11_clinical_scan.tsv
+# KN-8 结构重排:给定治疗 TCR 结构 + 候选肽表 -> AF3 5 链提交 FASTA
+.venv/bin/python src/meta_acdc/structure/af3_scan_batch.py \
+    --pdb 5brz --peptides data/processed/kn8_top50k_CAVTTDSW.tsv \
+    --n 200 --out data/processed/af3_scan_5brz
+# 提交后按上面流程导入/打分,用稳定 DA 模型对候选肽重排(替代弱序列代理)
 # 域适应模型(pLDDT 置零训练+打分一致):
 .venv/bin/python src/meta_acdc/structure/score_predictions.py \
     --model data/processed/da_seed0.model.pt --mask-plddt --out ...
