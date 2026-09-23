@@ -18,38 +18,43 @@ PY=.venv/bin/python
 NATIVE_DIR=data/raw/af3_native_predictions
 SCORE_CIFS="${SCORE_CIFS:-data/raw/af3_predictions}"
 
-echo "== 1/4 build native AF3 positives (chain-fingerprint matched)"
+echo "== 1/6 build native AF3 positives (chain-fingerprint matched)"
 $PY src/meta_acdc/structure/native_manifest.py \
     --src "$SRC" \
     --out "$NATIVE_DIR" \
     --manifest data/processed/af3_native/manifest.tsv \
     --report data/processed/af3_native/import_report.tsv
 
-echo "== 2/4 train domain-adapted EGNN (3 seeds)"
+echo "== 2/6 train domain-adapted EGNN (5 seeds; weak seeds filtered later)"
 $PY src/meta_acdc/models/train_domain_adapt.py \
     --af3 "$NATIVE_DIR" \
     --af3-manifest data/processed/af3_native/manifest.tsv \
+    --seeds 0 1 2 3 4 \
     --epochs "${EPOCHS:-150}"
 
-echo "== 3/4 score candidate AF3 structures with each DA seed"
-for s in 0 1 2; do
+echo "== 3/6 score candidate AF3 structures with each DA seed"
+for s in 0 1 2 3 4; do
   $PY src/meta_acdc/structure/score_predictions.py \
       --cifs "$SCORE_CIFS" \
       --model "data/processed/da_seed${s}.model.pt" --mask-plddt \
       --out "data/processed/da_scores_seed${s}.tsv"
 done
 
-echo "== 4/6 cross-instance stability verdict"
+echo "== 4/6 cross-instance stability verdict (degenerate seeds auto-excluded)"
 $PY src/meta_acdc/structure/da_stability.py \
     --scores data/processed/da_scores_seed0_ensemble.tsv \
               data/processed/da_scores_seed1_ensemble.tsv \
-              data/processed/da_scores_seed2_ensemble.tsv
+              data/processed/da_scores_seed2_ensemble.tsv \
+              data/processed/da_scores_seed3_ensemble.tsv \
+              data/processed/da_scores_seed4_ensemble.tsv
 
-echo "== 5/6 fixed 3-seed ensemble + clinical safety scan (KN-11)"
+echo "== 5/6 fixed seed-filtered ensemble + clinical safety scan (KN-11)"
 $PY src/meta_acdc/structure/ensemble_mean.py \
     --scores data/processed/da_scores_seed0_ensemble.tsv \
               data/processed/da_scores_seed1_ensemble.tsv \
               data/processed/da_scores_seed2_ensemble.tsv \
+              data/processed/da_scores_seed3_ensemble.tsv \
+              data/processed/da_scores_seed4_ensemble.tsv \
     --out data/processed/prediction_scores_ensemble.tsv
 $PY src/meta_acdc/structure/clinical_scan.py \
     --out data/processed/kn11_clinical_scan.tsv
