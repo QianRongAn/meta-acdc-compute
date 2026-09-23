@@ -264,6 +264,25 @@ class TestEnsembleMean(unittest.TestCase):
             self.assertAlmostEqual(rows["b"], 0.75, places=3)
 
 
+class TestAttribution(unittest.TestCase):
+    """Gradient attribution runs and reports peptide-involving contacts."""
+
+    def test_attribution_runs(self):
+        import subprocess
+        import sys
+        cif = ROOT / "data/raw/af3_predictions/5brz_ESDPIVAQY_model_0.cif"
+        model = ROOT / "data/processed/da_seed0.model.pt"
+        if not (cif.exists() and model.exists()):
+            self.skipTest("attribution fixtures missing")
+        r = subprocess.run(
+            [sys.executable, "-m", "meta_acdc.structure.attribute",
+             "--cif", str(cif), "--model", str(model), "--mask-plddt",
+             "--top", "5"],
+            check=True, cwd=str(ROOT), capture_output=True, text=True)
+        self.assertIn("peptide-involving contacts", r.stdout)
+        self.assertIn("score=", r.stdout)
+
+
 class TestCandidateRouting(unittest.TestCase):
     """native_manifest routes non-native jobs to the candidate dir."""
 
