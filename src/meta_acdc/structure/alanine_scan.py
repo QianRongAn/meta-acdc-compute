@@ -68,6 +68,10 @@ def main() -> int:
     ap.add_argument("--mutant", default="ALA",
                     help="mutant residue 3-letter code; ALA = permissive "
                          "control, TRP/ARG = clash probe")
+    ap.add_argument("--cumulative", action="store_true",
+                    help="greedily accumulate the most damaging mutations and "
+                         "report score vs number of mutations (distributed vs "
+                         "hotspot: gradual drop = distributed)")
     ap.add_argument("--device",
                     default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
@@ -90,6 +94,33 @@ def main() -> int:
     base = score(net, residues, args.device, args.mask_plddt)
     print(f"{args.cif.name}  baseline score={base:.3f}  "
           f"peptide={''.join(AA3TO1.get(r.resname[:3].upper(), 'X') for r in residues if r.chain == pep_chain)}")
+
+    if args.cumulative:
+        # greedily accumulate the most damaging mutations; a gradual drop
+        # means a distributed decision, a cliff means a hotspot
+        current = list(residues)
+        remaining = list(pep_positions)
+        print(f"  {'n_mut':>5s} {'added':>6s} {'score':>7s} {'Δscore':>8s}")
+        cur = base
+        k = 0
+        while remaining:
+            best = None
+            for i in remaining:
+                trial = list(current)
+                trial[i] = to_mutant(residues[i], args.mutant)
+                s = score(net, trial, args.device, args.mask_plddt)
+                if best is None or s < best[1]:
+                    best = (i, s)
+            i, s = best
+            current[i] = to_mutant(residues[i], args.mutant)
+            remaining.remove(i)
+            k += 1
+            wt = AA3TO1.get(residues[i].resname[:3].upper(), "X")
+            pos = pep_positions.index(i) + 1
+            print(f"  {k:>5d} {wt + str(pos):>6s} {s:7.3f} {cur - s:8.3f}")
+            cur = s
+        return 0
+
     print(f"  {'pos':>3s} {'wt':>4s} {'mut':>4s} {'score':>7s} {'Δscore':>8s}")
     drops = []
     for n, i in enumerate(pep_positions, start=1):

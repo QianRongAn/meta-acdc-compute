@@ -4,9 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "meta-acdc"
-version = "0.1.0"
-description = "Meta-ACDC: deciphering the proteome-wide TCR cross-reactivity landscape via active meta-learning and synthetic immune cells"
+version = "0.2.0"
+description = "Meta-ACDC: geometric deep learning + active learning for proteome-wide TCR cross-reactivity safety assessment"
+readme = "README.md"
 requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Meta-ACDC project" }]
+keywords = ["TCR", "pMHC", "cross-reactivity", "EGNN", "active-learning", "immunoinformatics"]
 dependencies = [
     "numpy",
     "pandas",
@@ -18,6 +22,24 @@ dependencies = [
 
 [project.optional-dependencies]
 ml = ["torch==2.9.1+cu126", "torchvision==0.24.1+cu126", "torch-geometric"]
+dev = ["ruff"]
+
+# CLI entry points (Deliverable 3: software suite)
+[project.scripts]
+meta-acdc-dashboard = "meta_acdc.dashboard.server:main"
+meta-acdc-score = "meta_acdc.structure.score_predictions:main"
+meta-acdc-stability = "meta_acdc.structure.da_stability:main"
+meta-acdc-clinical = "meta_acdc.structure.clinical_scan:main"
+meta-acdc-attribute = "meta_acdc.structure.attribute:main"
+meta-acdc-mutate = "meta_acdc.structure.alanine_scan:main"
+meta-acdc-native-manifest = "meta_acdc.structure.native_manifest:main"
+meta-acdc-ensemble = "meta_acdc.structure.ensemble_mean:main"
+meta-acdc-select = "meta_acdc.active_learning.select_candidates:main"
+meta-acdc-train-egnn = "meta_acdc.models.train_egnn:main"
+meta-acdc-train-da = "meta_acdc.models.train_domain_adapt:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 100

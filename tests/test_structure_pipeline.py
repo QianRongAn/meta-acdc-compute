@@ -372,6 +372,26 @@ class TestClinicalScan(unittest.TestCase):
             self.assertEqual(by["SAFEPEPXX"]["flag"], "")
 
 
+class TestPackaging(unittest.TestCase):
+    """Deliverable 3: console entry points resolve to importable callables."""
+
+    def test_entry_points_importable(self):
+        import importlib
+        try:
+            import tomllib
+        except ModuleNotFoundError:  # py<3.11
+            self.skipTest("tomllib unavailable")
+        root = Path(__file__).resolve().parents[1]
+        with open(root / "pyproject.toml", "rb") as fh:
+            cfg = tomllib.load(fh)
+        scripts = cfg.get("project", {}).get("scripts", {})
+        self.assertGreaterEqual(len(scripts), 8)
+        for name, target in scripts.items():
+            mod, _, func = target.partition(":")
+            m = importlib.import_module(mod)
+            self.assertTrue(callable(getattr(m, func)), f"{name}: {target}")
+
+
 class TestDashboard(unittest.TestCase):
     def test_build_data_serializable(self):
         from meta_acdc.dashboard.server import (DEFAULT_CLINICAL, DEFAULT_MAP,
