@@ -30,6 +30,11 @@ def main() -> int:
                     default=Path("data/processed/clinical_gold_standard.tsv"))
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/kn11_clinical_scan.tsv"))
+    ap.add_argument("--margin", type=float, default=0.1,
+                    help="a fatal off-target scoring within this margin of the "
+                         "cognate target is flagged 'at target level' (the "
+                         "model cannot separate a lethal mimicry peptide from "
+                         "the intended target — a conservative hazard signal)")
     args = ap.parse_args()
 
     # scores keyed by (pdb, peptide); also peptide -> list of scores
@@ -62,11 +67,11 @@ def main() -> int:
                 if pep not in d:
                     continue
                 role = "target" if pep == target else "off-target"
-                at_or_above = d[pep] >= d[target]
+                at_or_above = d[pep] >= d[target] - args.margin
                 flag = ""
                 if role == "off-target" and c["fatal"] == "yes" \
                         and at_or_above:
-                    flag = "FATAL-mimicry flagged"
+                    flag = "FATAL-mimicry at target level"
                 elif role == "target":
                     flag = "cognate"
                 rows.append({

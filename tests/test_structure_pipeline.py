@@ -284,7 +284,7 @@ class TestClinicalScan(unittest.TestCase):
                            capture_output=True)
             rows = list(csv.DictReader(open(out), delimiter="\t"))
             by = {r["peptide"]: r for r in rows}
-            self.assertEqual(by["FATALPEPT"]["flag"], "FATAL-mimicry flagged")
+            self.assertEqual(by["FATALPEPT"]["flag"], "FATAL-mimicry at target level")
             self.assertEqual(by["TARGETPEP"]["flag"], "cognate")
             self.assertEqual(by["SAFEPEPXX"]["flag"], "")
 
