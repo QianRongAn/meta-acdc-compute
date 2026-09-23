@@ -1,5 +1,9 @@
 # SOP — Meta-ACDC 计算管线复现手册(KN-16 交付物)
 
+> AI 驱动的 ACDC 文库设计 / 实验规模 / 标定 SOP 见
+> [`SOP_ACDC_LIBRARY.md`](SOP_ACDC_LIBRARY.md)(Deliverable 7);
+> API 见 [`API.md`](API.md);数据集卡片见 [`DATASET.md`](DATASET.md)。
+
 > 目标:从零复现本文档引用的全部计算结果(数字见 `docs/benchmarks.md`)。
 > 参考主机:Ubuntu + GTX 1050 Ti 4GB / 8GB RAM;CPU-only 亦可(训练慢 ~3-5×)。
 > 回归测试:`.venv/bin/python -m unittest discover -s tests -v`(无数据的用例自动跳过)。
