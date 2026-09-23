@@ -143,6 +143,23 @@ async function main() {
     ev += '</table></div>';
     app.insertAdjacentHTML('beforeend', ev);
   }
+  // KN-11 clinical structural safety scan (stable DA model)
+  if (d.clinical_scan && d.clinical_scan.length) {
+    let cs = `<div class="card"><h3>KN-11 临床结构安全扫描(稳定 DA 模型)</h3>
+      <div class="sub" style="margin-bottom:.6rem">按家族内兼容性得分排序;
+      <b>FATAL-mimicry flagged</b> = 致死性脱靶肽得分不低于靶肽(须警惕)</div>
+      <table><tr><th>家族</th><th>肽</th><th>角色</th><th>得分</th><th>排名</th><th>致命</th><th>标记</th></tr>`;
+    for (const r of d.clinical_scan) {
+      const cls = r.flag === 'FATAL-mimicry flagged' ? 'fatal' : '';
+      cs += `<tr><td>${r.family}</td><td>${r.peptide}</td><td>${r.role}</td>
+        <td>${r.score != null ? r.score.toFixed(3) : '·'}</td>
+        <td>${r.rank}</td><td>${r.fatal === 'yes' ? '<span class="fatal">是</span>' : '否'}</td>
+        <td>${r.flag ? `<span class="${cls}">${r.flag}</span>` : ''}</td></tr>`;
+    }
+    cs += '</table></div>';
+    app.insertAdjacentHTML('beforeend', cs);
+  }
+
   // AF3 structural reliability gate (ipTM + chain completeness)
   if (d.reliability && d.reliability.n) {
     const r = d.reliability;

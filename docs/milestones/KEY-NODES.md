@@ -39,7 +39,7 @@
 | KN-2 | 文献综述 + 参考文献库 | Month 1-3 | AI | 3 篇综述 + bibtex ✅ 已完成 |
 | KN-3 | 数据管线(VDJdb/IEDB/结构集) | Month 1-3 | AI | 标准数据集 + 统计报告 ✅ 已完成 |
 | KN-4 | EGNN 原型 + 基准 | Month 4-6 | AI | 诱饵任务 + 对照谱系 ✅ 已完成(v9 侧链特征进行中) |
-| KN-5 | 🔴 结构批量预测(TCRmodel2 为主,AF3 网页版辅助;候选清单 2,251 对已生成) | Month 4-6 | 用户协助提交 | 首批 ~100 条 TCR-pMHC 结构入库 |
+| KN-5 | 🔴 结构批量预测(AF3 网页版手动提交;TCRmodel2 路线已废弃) | Month 4-6 | 用户协助提交 | 首批 ~100 条 TCR-pMHC 结构入库 |
 | KN-6 | 硬负样本挖掘 + 元学习基线 | Month 4-6 | AI | ✅ 已完成(ProtoNet 0.635 / MAML++ 0.625,序列天花板 0.62-0.64) |
 | KN-7 | 主动学习模拟器 | Month 6-9 | AI | ✅ v0 完成(6% 采样 2× 增益);升级:结构打分 + 采集函数对比 |
 | KN-11 | in silico 临床 TCR 深扫描(Kimmtrak 等,公开数据) | Month 25-27 | AI | off-target 风险排序清单 |

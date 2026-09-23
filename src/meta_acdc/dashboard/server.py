@@ -30,6 +30,7 @@ if not DEFAULT_SCORES.exists():
 DEFAULT_MAP = ROOT / "data/processed/structure_vdjdb_map.tsv"
 DEFAULT_CLINICAL = ROOT / "data/processed/clinical_gold_standard.tsv"
 DEFAULT_QC = ROOT / "data/processed/af3_qc.tsv"
+DEFAULT_CLINICAL_SCAN = ROOT / "data/processed/kn11_clinical_scan.tsv"
 
 
 def load_reliability(qc_path: Path) -> dict:
@@ -53,8 +54,28 @@ def load_reliability(qc_path: Path) -> dict:
     }
 
 
+def load_clinical_scan(path: Path) -> list[dict]:
+    """KN-11 structural safety scan over clinical gold-standard cases."""
+    if not path.exists():
+        return []
+    rows = []
+    with open(path, newline="", encoding="utf-8", errors="replace") as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            if r.get("role") == "no structure":
+                continue
+            rows.append({
+                "case": r["case"], "family": r["family"],
+                "peptide": r["peptide"], "role": r["role"],
+                "score": float(r["score"]) if r.get("score") else None,
+                "rank": r.get("rank", ""), "fatal": r["fatal"],
+                "flag": r.get("flag", ""),
+            })
+    return rows
+
+
 def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
-               qc_path: Path | None = None) -> dict:
+               qc_path: Path | None = None,
+               clinical_scan_path: Path | None = None) -> dict:
     scores = []
     if scores_path.exists():
         with open(scores_path, newline="", encoding="utf-8", errors="replace") as fh:
@@ -109,6 +130,8 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
         "cross_evidence": {pdb: sorted(set(v)) for pdb, v in cross.items()},
         "same_evidence": {pdb: sorted(set(v)) for pdb, v in same.items()},
         "reliability": load_reliability(qc_path) if qc_path else {},
+        "clinical_scan": load_clinical_scan(clinical_scan_path)
+        if clinical_scan_path else [],
         "domain_adaptation": {
             "n_native_positives": 144,
             "val_auroc": [0.959, 0.952, 0.964],
@@ -158,9 +181,12 @@ def main() -> int:
     ap.add_argument("--map", type=Path, default=DEFAULT_MAP)
     ap.add_argument("--clinical", type=Path, default=DEFAULT_CLINICAL)
     ap.add_argument("--qc", type=Path, default=DEFAULT_QC)
+    ap.add_argument("--clinical-scan", type=Path,
+                    default=DEFAULT_CLINICAL_SCAN)
     args = ap.parse_args()
 
-    Handler.data = build_data(args.scores, args.map, args.clinical, args.qc)
+    Handler.data = build_data(args.scores, args.map, args.clinical, args.qc,
+                              args.clinical_scan)
 
     # Python 3.12+: SimpleHTTPRequestHandler.__init__ ignores the class
     # attribute and defaults to os.getcwd() — must pass directory= here.

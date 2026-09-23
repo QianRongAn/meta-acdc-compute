@@ -75,13 +75,14 @@ def fig1_ablation() -> None:
 def fig2_heatmap() -> None:
     """TCR x peptide ensemble-score heatmap (single-hue sequential).
 
-    Reads the relabeled score table so TCR family names reflect the
-    2026-09-23 chain-fingerprint correction (1ao7/1qrn/1tcr/2vlj).
+    Prefers the 3-seed domain-adapted ensemble (prediction_scores_ensemble.tsv,
+    written from da_scores_seed*_ensemble.tsv), which is cross-instance stable;
+    falls back to the legacy relabeled single-instance table.
     """
     scores = {}
-    src = ROOT / "data/processed/prediction_scores_ensemble.relabeled.tsv"
+    src = ROOT / "data/processed/prediction_scores_ensemble.tsv"
     if not src.exists():
-        src = ROOT / "data/processed/prediction_scores_ensemble.tsv"
+        src = ROOT / "data/processed/prediction_scores_ensemble.relabeled.tsv"
     with open(src) as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             pdb, pep = r["job_id"].split("_", 1)
@@ -111,7 +112,7 @@ def fig2_heatmap() -> None:
                         fontsize=6.5,
                         color="white" if v > 0.55 else INK)
     cb = fig.colorbar(im, ax=ax, shrink=0.8)
-    cb.set_label("compatibility score (5-model ensemble)")
+    cb.set_label("compatibility score (3-seed DA ensemble, cross-instance stable)")
     ax.set_xlabel("peptide")
     fig.tight_layout()
     fig.savefig(OUT / "fig2_heatmap.png", dpi=300)
