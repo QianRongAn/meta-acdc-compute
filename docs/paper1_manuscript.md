@@ -39,24 +39,58 @@ Our results define a representational minimum for interface-compatibility
 learning, a reproducible decoy-construction protocol, and a cross-instance
 stability test that any OOD-scoring claim must pass.
 
-## 1. Introduction (skeleton)
+## 1. Introduction
 
-- TCR-T safety failures: MAGE-A3/titin and MAGE-A12 [CIT Cameron 2013,
-  Linette 2013, Morgan 2013]; mechanism = direct molecular mimicry
-  (backbone RMSD 0.285 A) [CIT Raman 2016].
-- Sequence models plateau: [our Table 1] + literature TITAN 0.62 [CIT],
-  ERGO TPP-III 0.669 [CIT], PanPep [CIT].
-- Structural prediction insufficient: AF3 DockQ 0.499, TCRmodel2 0.566
-  [CIT STCRDab-22 benchmark].
-- Our contributions: (i) Cα inseparability diagnosis with data-size
-  control; (ii) contact-histogram features that break the barrier;
-  (iii) rigorous graft-decoy protocol (Kabsch side-chain transplant,
-  node-set pinning, donor-sequence diversity); (iv) a structure-to-specificity
-  resource linking 281/291 STCRDab complexes to VDJdb records (2,309 CDR3
-  hits; 1,517 cross-epitope); (v) a cross-instance stability test exposing
-  ranking non-reproducibility on AF3 inputs (Rashomon effect) and the
-  scale-monotone domain-adaptation route that resolves it (0.447→0.729 at
-  144 native positives, crossing the 0.5 gate).
+Adoptive T-cell therapies with engineered T-cell receptors (TCR-T) have
+produced durable responses in solid tumours, but their clinical development
+has been punctuated by fatal cross-reactivity. Affinity-enhanced TCRs
+directed at MAGE-A3 killed two patients through recognition of a titin
+peptide, and a MAGE-A3-targeted TCR caused neurotoxicity and death via the
+MAGE-A12 epitope [CIT Cameron 2013, Linette 2013, Morgan 2013]. Structurally,
+these failures are molecular mimicry: the off-target and the intended
+peptide present nearly identical backbones (RMSD 0.285 A between MAGE-A3 and
+titin) while differing in side-chain chemistry [CIT Raman 2016]. The safety
+problem is therefore not one of shape but of chemical complementarity, and
+it is invisible to methods that reason on backbone geometry alone.
+
+Sequence-based predictors of TCR-peptide binding have plateaued in exactly
+this regime. Our own physicochemical and 3-mer baselines, and the
+literature (TITAN AUROC ~0.62, ERGO TPP-III 0.669, PanPep) all cluster
+around 0.62-0.67 on held-out epitopes [CIT], leaving a generalisation gap
+that additional sequence features do not close. Structural prediction is
+necessary but not sufficient: state-of-the-art predictors reach only
+DockQ ~0.5-0.57 on TCR-pMHC complexes [CIT STCRDab-22 benchmark], so a
+predicted complex must still be scored for compatibility by a learned model.
+
+We ask a focused, falsifiable question: what representation is minimally
+sufficient for a graph network to learn TCR-pMHC interface compatibility?
+We answer it with a controlled decoy protocol — a displaced-peptide decoy
+that breaks geometry and a graft decoy that preserves geometry while
+swapping side-chain chemistry — evaluated with leakage-controlled,
+PDB-grouped splits. The result is a sharp representational diagnosis: at Cα
+resolution the chemistry-swapped graft is unlearnable (AUROC 0.500) and
+adding data does not help, whereas a compact side-chain contact histogram
+lifts the same task to 0.933.
+
+We then confront the harder problem of using such a model on real,
+predicted structures. We show that decoy performance does not transfer to
+out-of-distribution ranking: models with identical held-out decoy AUROC
+disagree almost completely on AF3-predicted inputs (the Rashomon effect),
+and we argue this must be treated as a reproducibility failure with a
+concrete stability gate. Finally we show the failure is one of scale:
+domain adaptation on AF3-predicted native complexes resolves it
+monotonically, and the resulting stable model correctly flags the
+documented lethal off-targets in the clinical gold standard.
+
+Our contributions are: (i) a Cα inseparability diagnosis with an explicit
+data-size control; (ii) side-chain contact-histogram features that break the
+barrier; (iii) a rigorous graft-decoy protocol (Kabsch side-chain
+transplant, node-set pinning, donor-sequence diversity) with PDB-grouped
+splits; (iv) a structure-to-specificity resource linking 281/291 STCRDab
+complexes to VDJdb records (2,309 CDR3 hits, 1,517 cross-epitope); and (v) a
+cross-instance stability test that exposes ranking non-reproducibility on
+AF3 inputs and a scale-monotone domain-adaptation route that resolves it
+(0.447 → 0.729 at 144 native positives, crossing the 0.5 gate).
 
 ## 2. Results
 
@@ -231,17 +265,61 @@ Five-chain submissions via the official web interface; mmCIF parsing
 AUPRC primary (class imbalance 1:0.9-1:13 depending on task); AUROC
 secondary; recall@0.5 for ranking; native-rank verdict.
 
-## 4. Discussion (skeleton)
+## 4. Discussion
 
-- Representational minimum for interface compatibility: side-chain-level
-  contact information is necessary; Cα-only protein graphs are blind to
-  chemistry-swapped interfaces.
-- Implications for geometric-DL protein design: default Cα pipelines may
-  silently fail on tasks where chemistry differs under identical geometry.
-- Ranking vs absolute scoring; calibration across complexes remains open.
-- Limits: 423 complexes; AF3 variance; seed variance; VDJdb label noise.
-- Clinical relevance: MAG-IC3/titin verdict as a step toward in silico
-  safety screening for TCR therapeutics.
+**A representational minimum for interface compatibility.** The central
+finding is negative in form but constructive in content: a graph network
+that sees only Cα geometry cannot distinguish a native interface from a
+chemistry-swapped graft (AUROC 0.500), and three-fold more data does not
+help. The discriminative information is carried by side-chain contact
+chemistry, and a 4-dimensional vdW contact histogram recovers it almost
+completely (0.500 → 0.933). This is a statement about representation, not
+capacity: the same architecture, the same data and the same splits cross the
+barrier only when the edge features carry side-chain contacts. For
+geometric deep learning on protein interfaces more broadly, the implication
+is that default Cα or backbone-only pipelines may fail silently on any task
+where two complexes share geometry but differ in chemistry — precisely the
+regime of molecular mimicry in TCR cross-reactivity.
+
+**Interpolation versus extrapolation in OOD scoring.** Decoy discrimination
+is an interpolation task and is reproducible; ranking real, predicted
+structures is extrapolation and was not, at crystal-data scale. The Rashomon
+crisis (Section 2.6) is the clearest lesson of this work: two models with
+indistinguishable held-out decoy AUROC can produce unrelated rankings on
+AF3-predicted inputs. We therefore treat the cross-instance stability test
+as a first-class methodological requirement, not a diagnostic afterthought.
+Its resolution is equally instructive — the instability is a function of the
+size of the domain-adaptation set, and vanishes monotonically (0.447 → 0.479
+→ 0.729) as native positives grow from 25 to 144. Scale, not architecture or
+feature engineering, was the binding constraint.
+
+**Ranking versus absolute scoring.** Even with a stable model, the absolute
+score is not a calibrated binding probability; only relative ordering within
+a family is currently trustworthy. The clinical scan (Section 2.7) shows the
+ordering is already useful — both documented lethal MAGE-A3 off-targets rank
+at or above the cognate peptide — but turning scores into decision
+thresholds requires calibrated labels the field does not yet have. We report
+ranks and family-relative verdicts, not cutoffs.
+
+**Limitations.** The crystal set is small (423 complexes) and the STCRDab
+coverage is biased toward well-studied TCRs; VDJdb labels are noisy
+(score=0 entries are often untested rather than verified non-binders); AF3
+structures carry their own confidence spread (ipTM is a usable gate but not
+a guarantee); and the domain-adaptation result, while monotone, rests on a
+21-candidate evaluation set dominated by the A6 family, so the exact 0.729
+figure should be read as a lower bound that will firm up as the remaining
+cross-reactivity candidates are scored. Seed variance in the small-data
+regime remains substantial and all headline numbers use multi-seed
+ensembles.
+
+**Clinical relevance.** The MAG-IC3/titin and MAGE-A12 mimicry cases are the
+motivating failures, and they are exactly the cases where geometry alone is
+insufficient. On the A3A/MAGE-A3 gold standard the stable model flags the
+lethal MAGE-A12 mimic above the intended target — the behaviour a
+pre-clinical safety screen must exhibit — while correctly rejecting a
+non-cognate long peptide. This positions structural compatibility scoring,
+with an explicit stability gate, as a tractable complement to
+sequence-level off-target screening.
 
 ## Figures & Tables (to generate)
 
