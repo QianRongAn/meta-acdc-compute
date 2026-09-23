@@ -43,10 +43,11 @@ def main() -> int:
     with open(args.map, newline="", encoding="utf-8", errors="replace") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
             native.setdefault(row["pdb"], row["pdb_peptide"])
-    # A6/B7 TCR family shares chains: 1qrn's scored LLFGYPVYV is 1ao7's
-    # native Tax peptide (identical alpha/beta chains)
-    native["1ao7"] = "LLFGYPVYV"
-    native["1qrn"] = "LLFGYPVYV"
+    # NOTE (2026-09-23): the old hardcoded "A6/B7 share chains" alias
+    # (native["1qrn"] = "LLFGYPVYV") has been removed — chain fingerprints of
+    # the 1ao7 and 1qrn crystals differ, and the alias was based on a
+    # mislabeled pdb attribution. Native peptides now come solely from the
+    # structure->VDJdb map.
 
     by_pdb: dict[str, list[tuple[str, float]]] = defaultdict(list)
     for (pdb, pep), s in scores.items():
