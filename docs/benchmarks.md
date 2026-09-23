@@ -751,6 +751,10 @@ AF3 任务实例,含同候选肽的重提结构)全部用 3 个 DA seed 打分,�
      **候选输出的方差**
   3. 之前 3-seed 的 STABLE 有运气成分(0,1,2 恰好都非退化);稳健做法
      是训练 ≥5 seed + 退化过滤
+- **seed 3 是全局弱模型**(不只是 OOD 塌缩):晶体诱饵回归
+  (`eval_da_crystal.py`)显示 seed3 graft AUROC **0.726**(其余 0.973–0.985,
+  基线 0.918)、overall 0.816——即 val AUROC(0.804)本身就能识别它;
+  可用 **val AUROC ≥ 0.85** 作为 seed 预筛,再用候选方差做退化兜底
 - 产物:`da_seed3/4.model.pt`、`da_scores_seed3/4_ensemble.tsv`、
   退化过滤的 `da_stability.py`/`ensemble_mean.py`
 

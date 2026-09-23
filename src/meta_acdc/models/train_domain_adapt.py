@@ -255,7 +255,8 @@ def main() -> int:
         print(f"seed {seed}: val AUROC {auc:.3f}", flush=True)
         all_probs.append(p)
         torch.save({"model": net.state_dict(), "n_node_dim": 26,
-                    "n_edge_dim": 16},
+                    "n_edge_dim": 16, "val_auroc": float(auc),
+                    "seed": seed},
                    args.out_dir / f"da_seed{seed}.model.pt")
 
     # stability: pairwise Spearman of val scores across seeds
