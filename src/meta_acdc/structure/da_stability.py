@@ -58,6 +58,25 @@ def main() -> int:
               flush=True)
     print(f"mean pairwise r = {np.mean(rs):.3f}", flush=True)
 
+    # bootstrap CI over jobs: how firmly is the gate passed/failed?
+    rng = np.random.default_rng(0)
+    boot = []
+    n = len(common)
+    for _ in range(2000):
+        idx = rng.integers(0, n, n)
+        pair_rs = []
+        for i, j in combinations(range(len(per_seed)), 2):
+            a, b = M[i][idx], M[j][idx]
+            if np.std(a) == 0 or np.std(b) == 0:
+                continue
+            pair_rs.append(spearmanr(a, b)[0])
+        if pair_rs:
+            boot.append(np.mean(pair_rs))
+    if boot:
+        lo, hi = np.percentile(boot, [2.5, 97.5])
+        print(f"bootstrap 95% CI on mean r: [{lo:.3f}, {hi:.3f}] "
+              f"(n={n} jobs, {len(boot)} resamples)", flush=True)
+
     # verdict gate: mean r >= 0.5 = rankings reproducible enough to report
     verdict = "STABLE (report rankings)" if np.mean(rs) >= 0.5 else \
         "UNSTABLE (single-instance anecdotes only)"

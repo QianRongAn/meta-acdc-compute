@@ -208,7 +208,11 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   on AF3-predicted structures are reproducible across independently trained
   instances once a fixed multi-instance ensemble is used. Rankings are
   upgraded from single-instance anecdotes back to reportable results
-  (conditional on >=~144 native positives + 3-seed ensembling).
+  (conditional on >=~144 native positives + 3-seed ensembling). We note the
+  gate is passed *provisionally*: a job-level bootstrap gives a 95% CI of
+  [0.495, 0.854] on the mean pairwise r at n=21 candidates, so the lower
+  bound sits at the threshold and the verdict must be re-confirmed as the
+  remaining cross-reactivity candidates are scored.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
