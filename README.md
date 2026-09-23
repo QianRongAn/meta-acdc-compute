@@ -488,6 +488,8 @@ docs/             基准记录、SOP、论文草稿、图、里程碑
 
 - 计划书与文献综述见 [`docs/proposal/`](docs/proposal/) 与
   [`docs/literature/`](docs/literature/)。
+- **数据集卡片**(Deliverable 5)见 [`docs/DATASET.md`](docs/DATASET.md)。
+- **API 文档**(Deliverable 3)见 [`docs/API.md`](docs/API.md)。
 - 里程碑与技术路线见 [`docs/milestones/KEY-NODES.md`](docs/milestones/KEY-NODES.md)。
 - 论文 1(方法学)/ 论文 2(安全评估)草稿见 [`docs/paper1_manuscript.md`](docs/paper1_manuscript.md)
   与 [`docs/paper2_manuscript.md`](docs/paper2_manuscript.md)。
