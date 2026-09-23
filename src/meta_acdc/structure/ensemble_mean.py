@@ -22,6 +22,15 @@ import sys
 from pathlib import Path
 
 
+def load_seed(path: Path) -> dict[str, float]:
+    d = {}
+    with open(path, newline="") as fh:
+        for r in csv.DictReader(fh, delimiter="\t"):
+            if r.get("score"):
+                d[r["job_id"]] = float(r["score"])
+    return d
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--scores", type=Path, nargs="+", required=True)
@@ -29,12 +38,24 @@ def main() -> int:
                     default=Path("data/processed/prediction_scores_ensemble.tsv"))
     args = ap.parse_args()
 
+    seeds = [load_seed(p) for p in args.scores]
+    # degenerate-seed guard: a seed whose candidate scores are constant
+    # carries no ranking signal and must not enter the reported ensemble
+    good = []
+    for p, d in zip(args.scores, seeds):
+        vals = list(d.values())
+        if len(vals) >= 2 and statistics.pstdev(vals) < 1e-6:
+            print(f"excluding degenerate seed {p.name} (constant output)")
+            continue
+        good.append(d)
+    if not good:
+        print("all seeds degenerate", file=sys.stderr)
+        return 1
+
     agg: dict[str, list[float]] = {}
-    for p in args.scores:
-        with open(p, newline="") as fh:
-            for r in csv.DictReader(fh, delimiter="\t"):
-                if r.get("score"):
-                    agg.setdefault(r["job_id"], []).append(float(r["score"]))
+    for d in good:
+        for job, v in d.items():
+            agg.setdefault(job, []).append(v)
 
     with open(args.out, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
@@ -43,7 +64,7 @@ def main() -> int:
             v = agg[job]
             w.writerow([job, f"{statistics.mean(v):.4f}",
                         f"{statistics.pstdev(v):.4f}"])
-    print(f"averaged {len(args.scores)} seeds over {len(agg)} jobs "
+    print(f"averaged {len(good)}/{len(seeds)} seeds over {len(agg)} jobs "
           f"-> {args.out}")
     return 0
 

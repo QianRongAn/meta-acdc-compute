@@ -729,6 +729,27 @@ AF3 任务实例,含同候选肽的重提结构)全部用 3 个 DA seed 打分,�
 - 注意:诱饵任务标定 ≠ AF3 候选标定;绝对阈值仍需真实标签验证
 - 产物:`models/calibrate.py`、`da_seed{0,1,2}.temperature.json`
 
+### 2026-09-23 关键稳健性发现:退化种子必须过滤(5-seed 检验)
+
+把 DA 训练从 3 seed 扩到 5 seed(0–4,同 144 native)后暴露一个陷阱:
+
+- seed 3 val AUROC **0.804**(其余 0.95+),对 21 个候选输出**常数**
+  (全 0)→ 与其他 seed 的 Spearman **NaN**;若不处理,5-seed 判决被
+  拖成 UNSTABLE
+- **修复**:`da_stability.py` 与 `ensemble_mean.py` 增加**退化实例检测**
+  (候选分标准差 < 1e-6 判为退化,排除并告警)
+- 过滤后 5 seed:**mean pairwise r = 0.756**,CI [0.536, 0.870],
+  **STABLE**(非退化对 0.70–0.84)
+- **含义(方法学)**:
+  1. 稳定性不仅是"多跑几个 seed",还要**剔除退化种子**——否则一个
+     塌缩 seed 就能毁掉集成
+  2. val AUROC 高不等于候选可排序(seed 3 的 0.804 仍塌缩);需同时看
+     **候选输出的方差**
+  3. 之前 3-seed 的 STABLE 有运气成分(0,1,2 恰好都非退化);稳健做法
+     是训练 ≥5 seed + 退化过滤
+- 产物:`da_seed3/4.model.pt`、`da_scores_seed3/4_ensemble.tsv`、
+  退化过滤的 `da_stability.py`/`ensemble_mean.py`
+
 ### 扩样日志与运维修复(2026-09-23)
 
 - **cron 覆盖事故**:新 `orchestrate_da.sh` 首次运行时扫描到全部历史

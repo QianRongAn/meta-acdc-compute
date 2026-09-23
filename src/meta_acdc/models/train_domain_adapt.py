@@ -179,10 +179,14 @@ def main() -> int:
                          "listed here (use only when --af3 mixes natives with "
                          "cross-reactivity candidates)")
     ap.add_argument("--epochs", type=int, default=150)
+    ap.add_argument("--seeds", type=int, nargs="+", default=SEEDS,
+                    help="random seeds to train (default 0 1 2); the stability "
+                         "gate is a function of the ensemble size")
     ap.add_argument("--out-dir", type=Path, default=Path("data/processed"),
                     help="where da_seed{0,1,2}.model.pt are written")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
+    seeds = list(args.seeds)
 
     d = torch.load(args.base, weights_only=False)
     graphs = list(d["graphs"])
@@ -222,7 +226,7 @@ def main() -> int:
     device = args.device
     bs = 32
     all_probs = []
-    for seed in SEEDS:
+    for seed in seeds:
         torch.manual_seed(seed)
         net = EGNN(node_dim=26, edge_dim=16, depth=6, hidden=128).to(device)
         opt = torch.optim.Adam(net.parameters(), lr=3e-4, weight_decay=1e-4)
@@ -257,8 +261,8 @@ def main() -> int:
     # stability: pairwise Spearman of val scores across seeds
     from scipy.stats import spearmanr
     print("\npairwise Spearman (val set) across seeds:")
-    for i in range(len(SEEDS)):
-        for j in range(i + 1, len(SEEDS)):
+    for i in range(len(seeds)):
+        for j in range(i + 1, len(seeds)):
             r, _ = spearmanr(all_probs[i], all_probs[j])
             print(f"  seed{i} vs seed{j}: r={r:.3f}")
     print("DA training complete")

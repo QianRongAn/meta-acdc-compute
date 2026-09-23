@@ -219,6 +219,38 @@ class TestEnsembleMean(unittest.TestCase):
             row = next(csv.DictReader(open(out), delimiter="\t"))
             self.assertAlmostEqual(float(row["score"]), 0.4, places=3)
 
+    def test_degenerate_seed_excluded(self):
+        import csv
+        import subprocess
+        import sys
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            paths = []
+            for name, rows in (
+                ("good1", [("a", 0.2), ("b", 0.8)]),
+                ("good2", [("a", 0.3), ("b", 0.7)]),
+                ("bad", [("a", 0.0), ("b", 0.0)]),   # constant -> degenerate
+            ):
+                p = td / f"{name}.tsv"
+                with open(p, "w", newline="") as fh:
+                    w = csv.writer(fh, delimiter="\t")
+                    w.writerow(["job_id", "score", "std"])
+                    for j, v in rows:
+                        w.writerow([j, str(v), "0.0"])
+                paths.append(str(p))
+            out = td / "mean.tsv"
+            r = subprocess.run([sys.executable, "-m",
+                                "meta_acdc.structure.ensemble_mean",
+                                "--scores", *paths, "--out", str(out)],
+                               check=True, cwd=str(ROOT),
+                               capture_output=True, text=True)
+            self.assertIn("degenerate", r.stdout)
+            rows = {x["job_id"]: float(x["score"])
+                    for x in csv.DictReader(open(out), delimiter="\t")}
+            self.assertAlmostEqual(rows["a"], 0.25, places=3)
+            self.assertAlmostEqual(rows["b"], 0.75, places=3)
+
 
 class TestClinicalScan(unittest.TestCase):
     """KN-11: a fatal off-target scoring at/above the target must be flagged."""
