@@ -678,6 +678,21 @@ SHA1 生成唯一 id)+ `--report`(导出 job_id↔来源映射)后,**改用天�
   `YLEPGPVTA`)尚无 AF3 结构 → 列为后续提交
 - 产物:`structure/clinical_scan.py`、`kn11_clinical_scan.tsv`
 
+### 2026-09-23 稳健性加强:全部 73 个 AF3 实例 → mean r=0.847(CI 稳健过门)
+
+把 `af3_instances/`(A 21 / B1 25 / B2 14 / B3 11 / B4 2,共 73 个
+AF3 任务实例,含同候选肽的重提结构)全部用 3 个 DA seed 打分,做稳定性
+判决:
+
+- **mean pairwise r = 0.847**;bootstrap 95% CI **[0.771, 0.893]**
+  (n=73,2000 重采样)——**下界远高于 0.5 门**,STABLE 稳健
+- 组内:2vlj 0.883 / 1qrn 0.826 / 1qse 0.815 / 1tcr 0.690;
+  低值组(1ao7 0.290 / 5brz 0.433 / 2ak4 0.119)均为**候选同质**
+  (同家族突变肽,排序本身意义弱),不影响跨实例可复现性结论
+- 意义:把"候选肽多样性"(21→73)也纳入后,判决不仅保持 STABLE,且
+  置信区间收紧——**Rashomon 解除在候选规模上同样成立**
+- 产物:`inst_da_scores_seed{0,1,2}(_ensemble).tsv`
+
 ### 扩样日志与运维修复(2026-09-23)
 
 - **cron 覆盖事故**:新 `orchestrate_da.sh` 首次运行时扫描到全部历史

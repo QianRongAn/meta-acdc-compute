@@ -77,7 +77,8 @@ async function main() {
       val 跨 seed Spearman ${da.val_cross_seed_spearman.map(x => x.toFixed(2)).join(' / ')}</div>
       <div style="margin-top:.5rem">候选跨实例判决:
       <span class="dot ${verdictCls}"></span><b>${da.candidate_verdict}</b>
-      ${da.candidate_mean_spearman != null ? `<span class="tag">mean r=${da.candidate_mean_spearman.toFixed(3)}</span>` : ''}</div>
+      ${da.candidate_mean_spearman != null ? `<span class="tag">mean r=${da.candidate_mean_spearman.toFixed(3)}</span>` : ''}
+      ${da.candidate_mean_spearman_73 != null ? `<span class="tag">73 实例 r=${da.candidate_mean_spearman_73.toFixed(3)}</span>` : ''}</div>
       <div class="sub" style="margin-top:.4rem">${da.note}</div></div>`;
     app.insertAdjacentHTML('beforeend', daHtml);
   }
