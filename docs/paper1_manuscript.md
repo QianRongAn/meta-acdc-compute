@@ -154,13 +154,20 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - Fix 1 (partial): removing the pLDDT feature — task performance kept
   (graft 0.923 / displaced 0.974), score collapse eliminated (0.29-0.93),
   but rankings still unstable (Spearman r=0.267, P=0.49 vs original).
-- Fix 2 (underway): domain adaptation — mix predicted-style structures into
-  training so the model sees OOD inputs during fit. Initially submitted 111
-  class-I complexes to TCRmodel2 (scriptable, terms-compliant AF3
-  alternative; DockQ 0.566 vs AF3 0.499 on TCR-pMHC), but the server queue
-  stalled (>100 jobs pending on a 2021-era template library); the DA route
-  now uses AF3-predicted structures directly as the positive source.
-  Re-evaluation with 3-seed Spearman on completion.
+- Fix 2 (evaluated, negative): domain adaptation — mix predicted-style
+  structures into training so the model sees OOD inputs during fit. The DA
+  route uses 63 AF3-predicted *native* structures (5-chain, cognate positives;
+  chain-set-fingerprint matched to the native submission FASTAs) with the full
+  decoy protocol. Domain adaptation clearly raises *model-side* reproducibility
+  (3-seed val AUROC 0.856-0.928; val cross-seed Spearman 0.73-0.92 vs the
+  proxy pilot 0.74-0.80 / 0.83-0.95). **However the cross-instance candidate
+  verdict stays UNSTABLE**: one seed saturates to all-zero on every candidate,
+  another is near-constant, and the only non-degenerate pair correlates at
+  r=0.301 (P=0.18). The bottleneck is therefore *task identifiability /
+  dataset scale*, not the domain of the positives — 21 candidates dominated
+  by A6 LLFGY*V variants give the model no ranking signal. Rankings remain
+  single-instance observations; a real ACDC re-ranking needs hundreds to
+  thousands of complexes plus temperature calibration.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance

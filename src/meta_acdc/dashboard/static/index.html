@@ -56,6 +56,21 @@ async function main() {
     app.insertAdjacentHTML('beforeend', b);
   }
 
+  // domain adaptation status (native AF3 positives)
+  if (d.domain_adaptation) {
+    const da = d.domain_adaptation;
+    const verdictCls = da.candidate_verdict === 'STABLE' ? 'ok' : 'warn';
+    let daHtml = `<div class="card"><h3>域适应状态(真实 native AF3 正样本)</h3>
+      <div class="sub">天然正样本 ${da.n_native_positives} 个 ·
+      3-seed val AUROC ${da.val_auroc.map(x => x.toFixed(3)).join(' / ')} ·
+      val 跨 seed Spearman ${da.val_cross_seed_spearman.map(x => x.toFixed(2)).join(' / ')}</div>
+      <div style="margin-top:.5rem">候选跨实例判决:
+      <span class="dot ${verdictCls}"></span><b>${da.candidate_verdict}</b>
+      ${da.candidate_mean_spearman != null ? `<span class="tag">mean r=${da.candidate_mean_spearman.toFixed(3)}</span>` : ''}</div>
+      <div class="sub" style="margin-top:.4rem">${da.note}</div></div>`;
+    app.insertAdjacentHTML('beforeend', daHtml);
+  }
+
   // heatmap: TCR x peptide scores
   const tcrs = Object.keys(d.groups);
   const peps = [...new Set(tcrs.flatMap(t => d.groups[t].rows.map(r => r.peptide)))];

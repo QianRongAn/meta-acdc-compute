@@ -18,11 +18,12 @@ PY=.venv/bin/python
 NATIVE_DIR=data/raw/af3_native_predictions
 SCORE_CIFS="${SCORE_CIFS:-data/raw/af3_predictions}"
 
-echo "== 1/4 import native AF3 results from: $SRC"
-$PY src/meta_acdc/structure/import_af3.py \
+echo "== 1/4 build native AF3 positives (chain-fingerprint matched)"
+$PY src/meta_acdc/structure/native_manifest.py \
     --src "$SRC" \
-    --list data/processed/kn5_submission_list.tsv \
-    --out "$NATIVE_DIR"
+    --out "$NATIVE_DIR" \
+    --manifest data/processed/af3_native/manifest.tsv \
+    --report data/processed/af3_native/import_report.tsv
 
 echo "== 2/4 train domain-adapted EGNN (3 seeds)"
 $PY src/meta_acdc/models/train_domain_adapt.py \

@@ -105,6 +105,14 @@ curl -sL 'https://rest.uniprot.org/uniprotkb/stream?format=fasta&query=(organism
     --model data/processed/egnn_dataset.model.pt \
     --out data/processed/prediction_scores.tsv
 # 域适应训练(AF3 天然正样本,提交后;--af3 直接吃 CIF,全诱饵协议):
+# ⚠️ 天然提交务必带 --unique-fallback:否则无精确链对匹配的 job 会退化为
+#    candidates[0],造成不同 job 塌缩到同一 pdb + 把天然误标成交叉反应
+.venv/bin/python src/meta_acdc/structure/import_af3.py \
+    --src "$FOLDS_DIR" --list data/processed/kn5_submission_list.tsv \
+    --out data/raw/af3_native_predictions --unique-fallback \
+    --report data/processed/af3_native/import_report.tsv
+# 权威做法:用 af3_native*/ 的天然 FASTA 链指纹回贴真实 job_id(见
+# docs/benchmarks.md §2026-09-23 真实 native DA),再重建 manifest.tsv
 .venv/bin/python src/meta_acdc/models/train_domain_adapt.py \
     --af3 data/raw/af3_native_predictions \
     --af3-manifest data/processed/af3_native/manifest.tsv --epochs 150

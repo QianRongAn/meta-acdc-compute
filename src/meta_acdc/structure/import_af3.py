@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import shutil
 import sys
@@ -69,6 +70,13 @@ def main() -> int:
     ap.add_argument("--list", type=Path,
                     default=Path("data/processed/kn5_submission_list.tsv"))
     ap.add_argument("--out", type=Path, default=Path("data/raw/af3_predictions"))
+    ap.add_argument("--unique-fallback", action="store_true",
+                    help="when no exact chain-pair match exists, assign a "
+                         "unique sequence-derived id instead of collapsing "
+                         "onto candidates[0] (use for native submissions)")
+    ap.add_argument("--report", type=Path, default=None,
+                    help="write a TSV mapping job_id -> source folder, peptide, "
+                         "evidence (for building a native manifest)")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
@@ -104,11 +112,20 @@ def main() -> int:
             candidates = by_peptide.get(peptide, [])
             match = next((c for c in candidates
                           if matches_chain_pair(alpha, beta, c)), None)
-            if match is None and candidates:
-                match = candidates[0]
             if match is None:
-                unmatched.append((job_dir.name, peptide))
-                continue
+                # no exact chain pair in the list. Two behaviors:
+                #  - candidate route (default): fall back to candidates[0]
+                #    (legacy, may collapse distinct jobs; keep for compat)
+                #  - native route (--unique-fallback): derive a unique,
+                #    sequence-stable id so distinct natives never collide
+                if args.unique_fallback or not candidates:
+                    key = "|".join(sorted(seqs))  # full chain set: collision-safe
+                    stem = "_".join([peptide,
+                                     hashlib.sha1(key.encode()
+                                                  ).hexdigest()[:8]])
+                    match = {"pdb": f"nativetcr-{stem}", "evidence": "native"}
+                else:
+                    match = candidates[0]
         job_id = f"{match['pdb']}_{peptide}"
         # copy ALL five ranked models (model_0..4) for structural ensembling
         n_copied = 0
@@ -127,6 +144,13 @@ def main() -> int:
         print(f"  {job_id:30s} <- {src}  [{ev}] {n} models")
     if unmatched:
         print(f"unmatched {len(unmatched)}: {unmatched}")
+    if args.report is not None:
+        with open(args.report, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["job_id", "source", "peptide", "evidence"])
+            for src, job_id, pep, ev, _ in imported:
+                w.writerow([job_id, src, pep, ev])
+        print(f"wrote report to {args.report}")
     return 0
 
 

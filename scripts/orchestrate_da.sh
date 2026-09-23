@@ -1,14 +1,25 @@
 #!/usr/bin/env bash
-# Domain-adaptation orchestration: poll TCRmodel2 queue -> when all resolved,
-# trigger DA retrain -> score AF3 -> stability verdict.
+# Domain-adaptation orchestration (AF3-native route).
 #
-# Idempotent: safe to run every cron tick. Only advances stages when their
-# inputs are ready. Designed to be called by crontab every 3h.
+# Polls the AF3 web-downloads folder for *new* folds_* directories; when one
+# appears it runs the full native DA flow via scripts/run_da_af3.sh
+# (chain-fingerprint import -> 3-seed train -> score candidates -> verdict).
+#
+# Idempotent: processed source dirs are recorded in a stamp file, so a cron
+# tick never re-runs the same download.
+#
+# NOTE: the legacy TCRmodel2 queue route is retired (server stalled >100
+# jobs); the positive source is now AF3-predicted native structures that the
+# user submits via the AlphaFold web UI (terms-compliant, manual).
+#
+# Usage: call every few hours from cron, or run manually with a folds dir:
+#   scripts/orchestrate_da.sh [folds_dir ...]
 set -u
 cd "$(dirname "$0")/.." || exit 1
 PY=.venv/bin/python
-STAMP=data/processed/.da_orchestrated
+STAMP=data/processed/.da_af3_processed
 LOCK=/tmp/da_orchestrate.lock
+DOWNLOADS="${AF3_DOWNLOADS:-/mnt/c/Users/Administrator/Downloads}"
 
 log() { echo "[$(date '+%F %T')] $*"; }
 
@@ -22,49 +33,31 @@ if [ -e "$LOCK" ]; then
 fi
 echo $$ > "$LOCK"
 trap 'rm -f "$LOCK"' EXIT
-
-# -- stage 0: poll TCRmodel2 (download any finished jobs) --
-log "polling TCRmodel2 queue"
-$PY src/meta_acdc/structure/tcrmodel_poll.py \
-    --state data/processed/tcrmodel_jobs.tsv \
-    --out data/raw/tcrmodel \
-    --rounds 1 --interval 1 --workers 8
-
-n_done=$(awk -F'\t' 'NR>1 && $3=="1"{c++} END{print c+0}' data/processed/tcrmodel_jobs.tsv)
-n_pend=$(awk -F'\t' 'NR>1 && $3!="1" && $3!="failed"{c++} END{print c+0}' data/processed/tcrmodel_jobs.tsv)
-n_fail=$(awk -F'\t' 'NR>1 && $3=="failed"{c++} END{print c+0}' data/processed/tcrmodel_jobs.tsv)
-log "downloaded=$n_done pending=$n_pend failed=$n_fail"
-
-if [ "$n_pend" -gt 0 ]; then
-  log "queue still has $n_pend pending; nothing else to do this tick"
-  exit 0
-fi
-
-# -- stage 1: domain-adaptation retrain (once all resolved) --
-if [ -e "$STAMP" ]; then
-  log "DA already orchestrated ($STAMP exists); skipping retrain"
-  exit 0
-fi
-log "all TCRmodel2 jobs resolved -> starting domain-adaptation retrain"
-$PY src/meta_acdc/models/train_domain_adapt.py \
-    --base data/processed/egnn_dataset.pt \
-    --tcrmodel data/raw/tcrmodel \
-    --epochs 150
-
-# -- stage 2: score AF3 predictions with each DA seed (pLDDT masked) --
-# (AF3 CIFs are expected in data/raw/af3_predictions/; skip if absent)
-if [ -d data/raw/af3_predictions ]; then
-  for s in 0 1 2; do
-    $PY src/meta_acdc/structure/score_predictions.py \
-        --model data/processed/da_seed${s}.model.pt --mask-plddt \
-        --out data/processed/da_scores_seed${s}_ensemble.tsv
-  done
-  # -- stage 3: cross-instance stability verdict --
-  $PY src/meta_acdc/structure/da_stability.py \
-      --scores data/processed/da_scores_seed0_ensemble.tsv \
-                data/processed/da_scores_seed1_ensemble.tsv \
-                data/processed/da_scores_seed2_ensemble.tsv
-fi
-
 touch "$STAMP"
-log "DA orchestration complete"
+
+# -- collect candidate folds dirs (explicit args or scan downloads) --
+candidates=("$@")
+if [ "${#candidates[@]}" -eq 0 ]; then
+  while IFS= read -r d; do candidates+=("$d"); done \
+    < <(ls -d "$DOWNLOADS"/folds_* 2>/dev/null | grep -v '\.zip$')
+fi
+
+ran=0
+for d in "${candidates[@]}"; do
+  [ -d "$d" ] || continue
+  if grep -qxF "$d" "$STAMP"; then
+    continue
+  fi
+  log "new AF3 download detected: $d -> running native DA flow"
+  if scripts/run_da_af3.sh "$d"; then
+    echo "$d" >> "$STAMP"
+    log "completed DA flow for $d"
+    ran=$((ran + 1))
+  else
+    log "DA flow failed for $d (will retry next tick)"
+  fi
+done
+
+if [ "$ran" -eq 0 ]; then
+  log "no new AF3 downloads; nothing to do this tick"
+fi

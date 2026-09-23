@@ -174,9 +174,10 @@ def main() -> int:
     ap.add_argument("--af3", type=Path, default=Path("data/raw/af3_native"),
                     help="current route: AF3-predicted native CIFs "
                          "(style-matched positives)")
-    ap.add_argument("--af3-manifest", type=Path,
-                    default=Path("data/processed/af3_native/manifest.tsv"),
-                    help="restrict AF3 positives to native job_ids listed here")
+    ap.add_argument("--af3-manifest", type=Path, default=None,
+                    help="optional: restrict AF3 positives to native job_ids "
+                         "listed here (use only when --af3 mixes natives with "
+                         "cross-reactivity candidates)")
     ap.add_argument("--epochs", type=int, default=150)
     ap.add_argument("--out-dir", type=Path, default=Path("data/processed"),
                     help="where da_seed{0,1,2}.model.pt are written")
@@ -189,7 +190,7 @@ def main() -> int:
     pdbs = list(d["pdbs"])
 
     native_ids = None
-    if args.af3_manifest.exists():
+    if args.af3_manifest is not None and args.af3_manifest.exists():
         with open(args.af3_manifest) as fh:
             next(fh, None)  # header
             native_ids = {ln.split("\t")[0] for ln in fh if ln.strip()}

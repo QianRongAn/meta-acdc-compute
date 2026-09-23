@@ -118,6 +118,71 @@ class TestDataFixtures(unittest.TestCase):
                         "truncated construct, not an AF3 defect)")
 
 
+class TestImportUniqueFallback(unittest.TestCase):
+    """Guards the job-collapse / mislabel bug in import_af3 (2026-09-23).
+
+    Distinct native jobs sharing a peptide but with different TCRs must not
+    collapse onto one pdb via the legacy candidates[0] fallback.
+    """
+
+    def setUp(self):
+        import csv
+        import json
+        import tempfile
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        self.src = root / "folds"
+        self.out = root / "out"
+        self.list = root / "list.tsv"
+        # two TCRs, same peptide; NEITHER chain pair matches the list
+        self.pep = "SIYRYYGL"
+        self.alpha1 = "Q" * 150 + "YFCAV" + "T" * 40
+        self.alpha2 = "R" * 150 + "YFCAV" + "S" * 40
+        self.beta = "G" * 190 + "YFCAS" + "V" * 48
+        with open(self.list, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["pdb", "tcr_a", "tcr_b", "peptide", "mhc_hint",
+                        "evidence", "pdb_peptide", "cdr3"])
+            w.writerow(["9zzz", "OTHER" * 20, "ALSO" * 20, self.pep, "HLA-A",
+                        "same", self.pep, "CXXX"])
+        for tag, alpha in (("j1", self.alpha1), ("j2", self.alpha2)):
+            d = self.src / tag
+            d.mkdir(parents=True)
+            with open(d / f"{tag}_job_request.json", "w") as fh:
+                json.dump([{"sequences": [{"proteinChain": {"sequence": s}}
+                                          for s in (self.pep, alpha,
+                                                    self.beta,
+                                                    "M" * 100, "H" * 274)]}],
+                          fh)
+            (d / f"{tag}_model_0.cif").write_text("data\n")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _run(self, *extra):
+        import subprocess
+        import sys
+        cmd = [sys.executable, "-m", "meta_acdc.structure.import_af3",
+               "--src", str(self.src), "--list", str(self.list),
+               "--out", str(self.out), *extra]
+        subprocess.run(cmd, check=True, capture_output=True,
+                       cwd=str(ROOT))
+
+    def test_unique_fallback_no_collapse(self):
+        self._run("--unique-fallback", "--report",
+                  str(Path(self.tmp.name) / "rep.tsv"))
+        cifs = sorted(p.name for p in self.out.glob("*_model_0.cif"))
+        self.assertEqual(len(cifs), 2, f"jobs collapsed: {cifs}")
+        self.assertTrue(all(c.startswith("nativetcr-") for c in cifs))
+
+    def test_legacy_fallback_still_collapses_for_candidate_route(self):
+        # default (no flag) keeps legacy behaviour (candidates[0]) — only
+        # used for the cross-reactivity candidate route
+        self._run()
+        cifs = sorted(p.name for p in self.out.glob("*_model_0.cif"))
+        self.assertEqual(len(cifs), 1)
+
+
 class TestDashboard(unittest.TestCase):
     def test_build_data_serializable(self):
         from meta_acdc.dashboard.server import (DEFAULT_CLINICAL, DEFAULT_MAP,
