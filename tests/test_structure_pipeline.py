@@ -267,6 +267,17 @@ class TestEnsembleMean(unittest.TestCase):
 class TestAttribution(unittest.TestCase):
     """Gradient attribution runs and reports peptide-involving contacts."""
 
+    def test_to_mutant_keeps_backbone(self):
+        from meta_acdc.structure.alanine_scan import to_mutant
+        from meta_acdc.structure.graph import Residue
+        r = Residue("C", "ILE", 5, 0.0, 0.0, 0.0, None, "",
+                    [("N", 0, 0, 0), ("CA", 1, 0, 0), ("CB", 2, 0, 0),
+                     ("CG1", 3, 0, 0), ("CD1", 4, 0, 0)])
+        m = to_mutant(r, "TRP")
+        self.assertEqual(m.resname, "TRP")
+        names = [a[0] for a in m.atoms]
+        self.assertEqual(names, ["N", "CA", "CB"])  # side chain stripped
+
     def test_attribution_runs(self):
         import subprocess
         import sys
