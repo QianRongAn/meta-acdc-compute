@@ -73,14 +73,23 @@ def fig1_ablation() -> None:
 
 
 def fig2_heatmap() -> None:
-    """TCR x peptide ensemble-score heatmap (single-hue sequential)."""
+    """TCR x peptide ensemble-score heatmap (single-hue sequential).
+
+    Reads the relabeled score table so TCR family names reflect the
+    2026-09-23 chain-fingerprint correction (1ao7/1qrn/1tcr/2vlj).
+    """
     scores = {}
-    with open(ROOT / "data/processed/prediction_scores_ensemble.tsv") as fh:
+    src = ROOT / "data/processed/prediction_scores_ensemble.relabeled.tsv"
+    if not src.exists():
+        src = ROOT / "data/processed/prediction_scores_ensemble.tsv"
+    with open(src) as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             pdb, pep = r["job_id"].split("_", 1)
             scores.setdefault(pdb, {})[pep] = float(r["score"])
 
-    tcrs = ["1ao7", "1qrn", "1g6r", "1mwa", "1oga", "5brz"]
+    prefer = ["1ao7", "1qrn", "1tcr", "2vlj", "5brz"]
+    tcrs = [t for t in prefer if t in scores] + \
+        [t for t in sorted(scores) if t not in prefer]
     peps = sorted({p for d in scores.values() for p in d})
     import numpy as np
     mat = np.full((len(tcrs), len(peps)), np.nan)

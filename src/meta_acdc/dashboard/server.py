@@ -23,7 +23,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]  # repo root
 STATIC = Path(__file__).resolve().parent / "static"
-DEFAULT_SCORES = ROOT / "data/processed/prediction_scores_ensemble.tsv"
+# prefer the relabeled table (2026-09-23 chain-fingerprint correction)
+DEFAULT_SCORES = ROOT / "data/processed/prediction_scores_ensemble.relabeled.tsv"
+if not DEFAULT_SCORES.exists():
+    DEFAULT_SCORES = ROOT / "data/processed/prediction_scores_ensemble.tsv"
 DEFAULT_MAP = ROOT / "data/processed/structure_vdjdb_map.tsv"
 DEFAULT_CLINICAL = ROOT / "data/processed/clinical_gold_standard.tsv"
 DEFAULT_QC = ROOT / "data/processed/af3_qc.tsv"

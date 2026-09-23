@@ -213,7 +213,8 @@ secondary; recall@0.5 for ranking; native-rank verdict.
 - Fig 1: inseparability diagnosis (graft AUC vs data size; hypothesis
   elimination series).
 - Fig 2: feature-ablation bar chart (contacts decisive; phys second).
-- Fig 3: per-TCR ranking heatmap (6 TCR groups x peptides) — annotated as
+- Fig 3: per-TCR ranking heatmap (5 chain-fingerprint families x peptides;
+  family labels corrected 2026-09-23) — annotated as
   single-instance (see 2.6).
 - Fig 3: AF3 resubmission variance (AF3 ipTM stable vs fixed-instance EGNN
   range) — corrected: variance is model-side, not AF3-side (see 2.5/2.6).

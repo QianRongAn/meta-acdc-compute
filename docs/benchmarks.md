@@ -312,6 +312,9 @@ ERGO TPP-III 0.669 一致)。更大模型/更多回合无法突破;结构特征�
   天然截断构型(A6 构建体),不是 AF3 半成品;af3_qc 已去除该 flag
 - 注:部分同名肽在不同批次提交了**不同 TCR 构建体**(如 LLFGYPRYV 在 B1=1qrn、
   B2=1qse),修复后按真实 (pdb, 肽) 分组,不再把不同构建体当"重提"
+- 下游同步:`relabel_scores.py` 把旧分数表改标签 →
+  `prediction_scores_ensemble.relabeled.tsv`;fig2 热图与看板改用纠正后的
+  家族名(1ao7 / 1qrn / 1tcr / 2vlj / 5brz),`rank_stats` 去掉错误别名
 
 ### ① 真·重提:AF3 ipTM 高度稳定(模型无关)
 
