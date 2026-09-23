@@ -785,6 +785,19 @@ AF3 任务实例,含同候选肽的重提结构)全部用 DA seed 打分,做稳�
   侧链化学才是关键;稳定 DA 模型学到了化学特异性,不是相似度捷径
 - 产物:`structure/score_vs_identity.py`
 
+### 2026-09-23 交叉反应图谱(结构 ↔ VDJdb,TCR 级)
+
+从 `structure_vdjdb_map.tsv` 汇总(每个复合物 = 一个 TCR 晶体):
+
+- **179/281 个复合物有交叉反应证据**(TCR 被 VDJdb 验证结合其结晶肽
+  **之外**的肽)
+- 每 TCR 异表位中位 **2**、最大 **8**;570 个 (TCR, 异表位) 对
+- **最广谱**:A6/1ao7 与 1qrn/1qse/1qsf 家族(各 8 异表位,均为
+  LLFGY*V 突变系)、2ak4/3kxf(LPEPLPQGQLTAY,8 异表位)
+- 图:`docs/figures/fig7_crossreactivity.png`(广度分布 + Top-10 广谱 TCR)
+- 意义:交叉反应是**普遍而非例外**(64% 复合物),且集中在少数广谱 TCR
+  家族——支持"结构 + 化学相容性"筛查的必要性
+
 ### 扩样日志与运维修复(2026-09-23)
 
 - **cron 覆盖事故**:新 `orchestrate_da.sh` 首次运行时扫描到全部历史
