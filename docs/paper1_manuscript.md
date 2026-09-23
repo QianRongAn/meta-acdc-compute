@@ -156,6 +156,13 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   (rank #2) and the titin mimic ESDPIVAQY 0.924 (rank #3) — both fatal
   off-targets within 0.02-0.06 of the cognate level, so neither is cleared,
   matching their confirmed cross-reactive biology (Section 2.7 / KN-11).
+- **The score is not a similarity proxy** (Section 2.7b): across same-length
+  candidate/cognate pairs the score correlates only weakly with sequence
+  identity (Spearman 0.377, P=0.18, n=14). Decisively, two peptides at the
+  *same* identity to the cognate receive opposite scores — 2vlj GILGLVFTL
+  0.938 vs GILEFVFTL 0.475 (both 0.89 identity to GILGFVFTL) — so the model
+  discriminates on side-chain chemistry, not backbone or sequence
+  resemblance.
 
 ### 2.5 Prediction variance: model-side, not structure-side (Fig 3)
 

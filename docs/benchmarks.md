@@ -768,6 +768,23 @@ AF3 任务实例,含同候选肽的重提结构)全部用 DA seed 打分,做稳�
 - 产物:`da_seed3/4.model.pt`、`da_scores_seed3/4_ensemble.tsv`、
   退化过滤的 `da_stability.py`/`ensemble_mean.py`
 
+### 2026-09-23 模型不是"肽相似度"代理(化学特异性证据)
+
+关键对照:候选肽与同源结晶肽的**序列同一性** vs 模型分(等长对,n=14):
+
+- Spearman(identity, score) = **0.377(P=0.18,不显著)**——模型分**不是**
+  序列相似度的单调函数
+- **最干净的证据(同 identity 反向分)**:2vlj 家族
+  - `GILGLVFTL`(vs GILGFVFTL,ident 0.89)→ **0.938**
+  - `GILEFVFTL`(vs GILGFVFTL,ident 0.89)→ **0.475**
+  - 两者与同源肽同一性相同,分数相差 0.46——模型按**侧链化学**区分,
+    而非骨架/序列相似
+- 其他反例:`1qrn_LGYGFVNYI`(ident 0.33)→ 0.991(高);
+  `1ao7_MLWGYLQYV`(ident 0.56)→ 0.989(高于部分 ident 0.89 的肽)
+- **意义**:呼应论文 1 核心论点——Cα/序列相似不足以判定交叉反应,
+  侧链化学才是关键;稳定 DA 模型学到了化学特异性,不是相似度捷径
+- 产物:`structure/score_vs_identity.py`
+
 ### 扩样日志与运维修复(2026-09-23)
 
 - **cron 覆盖事故**:新 `orchestrate_da.sh` 首次运行时扫描到全部历史
