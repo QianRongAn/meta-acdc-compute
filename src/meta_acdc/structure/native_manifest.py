@@ -79,6 +79,17 @@ def main() -> int:
               f"(shared by >1 native id); first id kept", flush=True)
 
     args.out.mkdir(parents=True, exist_ok=True)
+    # CUMMULATIVE: union the accepted jobs with the existing manifest so a
+    # re-run over a single old folds dir can never shrink the native set
+    # (the 2026-09-23 cron clobber: orchestrate_da.sh reprocessed old dirs
+    # and native_manifest overwrote the 89-native manifest with 1 job).
+    existing: dict[str, tuple[str, str, str, str]] = {}
+    if args.manifest.exists():
+        with open(args.manifest, newline="") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                existing[r["job_id"]] = (r["pdb"], r["peptide"],
+                                         r.get("cdr3", ""), r.get("mhc_hint", ""))
+
     seen: set[str] = set()
     report = []
     unmatched = 0
@@ -104,18 +115,23 @@ def main() -> int:
             report.append((job, os.path.basename(job_dir.rstrip("/")),
                            seqs[0] if seqs else ""))
 
+    # every native CIF currently on disk belongs in the manifest
+    on_disk = {p.name.rsplit("_model_0", 1)[0]
+               for p in args.out.glob("*_model_0.cif")}
+    all_ids = sorted(set(existing) | {r[0] for r in report} | on_disk)
     with open(args.manifest, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
         w.writerow(["job_id", "pdb", "peptide", "cdr3", "mhc_hint"])
-        for job, _src, pep in report:
-            pdb = job.split("_", 1)[0]
-            w.writerow([job, pdb, pep, "", ""])
+        for job in all_ids:
+            pdb, pep, cdr3, mhc = existing.get(
+                job, (job.split("_", 1)[0], job.split("_", 1)[1], "", ""))
+            w.writerow([job, pdb, pep, cdr3, mhc])
     with open(args.report, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
         w.writerow(["job_id", "source", "peptide"])
         w.writerows(report)
-    print(f"accepted {len(seen)} native complexes; "
-          f"excluded {unmatched} non-native jobs")
+    print(f"matched {len(seen)} in this run; manifest now {len(all_ids)} "
+          f"natives ({len(on_disk)} CIFs on disk); excluded {unmatched}")
     print(f"-> {args.out}, {args.manifest}, {args.report}")
     return 0
 

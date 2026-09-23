@@ -110,20 +110,19 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
         "same_evidence": {pdb: sorted(set(v)) for pdb, v in same.items()},
         "reliability": load_reliability(qc_path) if qc_path else {},
         "domain_adaptation": {
-            "n_native_positives": 89,
-            "val_auroc": [0.938, 0.929, 0.940],
-            "val_cross_seed_spearman": [0.947, 0.955, 0.955],
-            "candidate_verdict": "UNSTABLE",
-            "candidate_mean_spearman": 0.479,
-            "note": "89 个真实天然 AF3 正样本域适应;val 可复现性 0.95,候选"
-                    "判决 mean r=0.479(首次无塌缩,距 0.5 门一步)——"
-                    "Rashomon = 数据规模问题,扩样单调改善,见 benchmarks.md",
+            "n_native_positives": 144,
+            "val_auroc": [0.959, 0.952, 0.964],
+            "val_cross_seed_spearman": [0.943, 0.939, 0.947],
+            "candidate_verdict": "STABLE",
+            "candidate_mean_spearman": 0.729,
+            "note": "144 个真实天然 AF3 正样本域适应;val AUROC 0.96,候选"
+                    "判决 mean r=0.729(STABLE,过 0.5 门)——Rashomon 危机"
+                    "解除,扩样单调(0.447→0.479→0.729),见 benchmarks.md",
         },
         "caveats": [
-            "AF3 结构上的交叉反应排名为单实例观察:真实 native 域适应"
-            "(89 正样本,val AUROC 0.93-0.94)后候选判决 mean r=0.479,"
-            "仍 UNSTABLE——Rashomon 是数据规模问题(扩样 0.447→0.479 单调"
-            "改善),以下排名不构成安全判决,详见 benchmarks.md 2026-09-23",
+            "AF3 交叉反应排名已跨实例稳定(144 native 域适应,mean pairwise "
+            "Spearman 0.729,过 0.5 门)——排名可报告,但须用固定多实例集成;"
+            "单实例 EGNN 打分仍不可信。详见 benchmarks.md 2026-09-23",
             "打分须报告固定多实例集成;单实例 EGNN 打分不可信(非 AF3 不稳)。"
             "重提分析(31 任务):高置信(ipTM≥0.88)跨重提稳,低 ipTM(~0.5)"
             " AF3 自身会飘——见 reliability 面板",

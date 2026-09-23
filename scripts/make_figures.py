@@ -256,6 +256,79 @@ def fig5_instability() -> None:
     print("fig5_instability done")
 
 
+def fig6_domain_adapt() -> None:
+    """Domain adaptation on real native AF3 positives (89-native models).
+
+    Panel A: per-seed candidate score profiles (3 independently trained DA
+    seeds) — the seed1 all-zero collapse seen at 63 natives is gone.
+    Panel B: pairwise Spearman matrix. Mean pairwise r=0.479 (just under the
+    0.5 stability gate); trajectory proxy 0.447 -> 63-native NaN -> 0.479.
+    """
+    import numpy as np
+    from scipy.stats import spearmanr
+
+    seeds = [0, 1, 2]
+    per = []
+    for s in seeds:
+        d = {}
+        with open(ROOT / f"data/processed/da_scores_seed{s}_ensemble.tsv") as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                if r["score"]:
+                    d[r["job_id"]] = float(r["score"])
+        per.append(d)
+    jobs = sorted(per[0])
+
+    fig, axes = plt.subplots(1, 2, figsize=(9.2, 3.4),
+                             gridspec_kw={"width_ratios": [2.1, 1]})
+    ax = axes[0]
+    x = np.arange(len(jobs))
+    for k, s in enumerate(seeds):
+        vals = np.array([per[k].get(j, np.nan) for j in jobs])
+        ax.plot(x, vals, marker="o", markersize=3, linewidth=1.2,
+                color=BLUE if k == 0 else GRAY, alpha=1.0 if k == 0 else 0.85,
+                label=f"DA seed {s}")
+    ax.set_xlabel("AF3 cross-reactivity candidates")
+    ax.set_ylabel("compatibility score")
+    ax.set_ylim(-0.04, 1.04)
+    ax.legend(frameon=False, fontsize=7.5, loc="upper right")
+    ax.set_title("A  Three DA instances, same 21 AF3 inputs", fontsize=9,
+                 loc="left")
+    ax.set_xticks(x, [j.split("_", 1)[0] for j in jobs], rotation=60,
+                  ha="right", fontsize=6.5)
+    for spine in ("top", "right"):
+        ax.spines[spine].set_visible(False)
+
+    ax = axes[1]
+    M = np.array([[per[k].get(j, np.nan) for j in jobs] for k in range(len(seeds))])
+    n = len(seeds)
+    R = np.full((n, n), np.nan)
+    for i in range(n):
+        for j in range(n):
+            R[i, j] = 1.0 if i == j else spearmanr(M[i], M[j])[0]
+    cmap = plt.cm.Blues.copy()
+    cmap.set_bad("#ececea")
+    im = ax.imshow(R, cmap=cmap, vmin=-0.5, vmax=1.0)
+    ax.set_xticks(range(n), [f"S{k+1}" for k in range(n)], fontsize=8)
+    ax.set_yticks(range(n), [f"S{k+1}" for k in range(n)], fontsize=8)
+    for i in range(n):
+        for j in range(n):
+            v = R[i, j]
+            ax.text(j, i, "n/d" if np.isnan(v) else f"{v:.2f}", ha="center",
+                    va="center", fontsize=7, color="white" if v > 0.55 else INK)
+    cb = fig.colorbar(im, ax=ax, shrink=0.8)
+    cb.set_label("Spearman r", fontsize=8)
+    ax.set_title("B  Ranking agreement", fontsize=9, loc="left")
+    mean_r = np.nanmean(R[np.triu_indices(n, 1)])
+    fig.suptitle(
+        f"Native domain adaptation: no collapse, mean pairwise r="
+        f"{mean_r:.3f} (gate 0.5)", fontsize=10, x=0.02, ha="left")
+    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    fig.savefig(OUT / "fig6_domain_adapt.png", dpi=300)
+    fig.savefig(OUT / "fig6_domain_adapt.svg")
+    plt.close(fig)
+    print(f"fig6_domain_adapt done (mean pairwise r={mean_r:.3f})")
+
+
 def figp2_recall() -> None:
     """Paper-2 Fig 1: recall vs sampling fraction, 4 acquisition functions."""
     data = {
@@ -322,6 +395,7 @@ def main() -> int:
     fig2_heatmap()
     fig3_resubmission()
     fig5_instability()
+    fig6_domain_adapt()
     figp2_recall()
     figp2_prefilter()
     return 0

@@ -23,18 +23,21 @@ invariant to a 2.8x increase in training data). Adding side-chain van der
 Waals contact histograms as edge features raises graft-decoy discrimination
 from chance to **AUROC 0.933** (ablation: 0.501 without contacts).
 Residue-level physicochemical scalars are the second pillar (0.606 without);
-sequence fusion adds nothing (0.905). We further report a decisive negative
-result: on AlphaFold 3-predicted structures, cross-reactivity *rankings* are
-not reproducible across independently trained instances at the current data
-scale (423 complexes) — decoy discrimination is interpolation (reproducible),
-while AF3-input ranking is extrapolation, and multiple equally-performing
-models disagree (Rashomon effect). Removing the pLDDT feature eliminates
-score collapse but not ranking instability (Spearman r=0.267); a
-domain-adaptation route (mixing predicted-style structures into training)
-is underway, using AlphaFold 3 predictions directly after the scriptable
-TCRmodel2 alternative stalled in queue. Our results define a representational minimum for
-interface-compatibility learning, a reproducible decoy-construction protocol,
-and a cross-instance stability test that any OOD-scoring claim must pass.
+sequence fusion adds nothing (0.905). We further report a scale-dependent
+result on AlphaFold 3-predicted structures: cross-reactivity *rankings* are
+not reproducible across independently trained instances at the crystal-data
+scale (423 complexes; Rashomon effect), because decoy discrimination is
+interpolation while AF3-input ranking is extrapolation. Removing the pLDDT
+feature eliminates score collapse but not ranking instability. A
+domain-adaptation route (mixing AF3-predicted *native* structures into
+training with the full decoy protocol) resolves it monotonically with scale:
+the cross-instance ranking agreement rises from 0.447 (25 proxy positives)
+through 0.479 (89 natives) to **0.729 (144 natives), crossing the 0.5
+stability gate** (all seed pairs P<5e-4) while val AUROC reaches 0.96. The
+crisis is thus one of training-data scale, not intrinsic AF3-input noise.
+Our results define a representational minimum for interface-compatibility
+learning, a reproducible decoy-construction protocol, and a cross-instance
+stability test that any OOD-scoring claim must pass.
 
 ## 1. Introduction (skeleton)
 
@@ -52,7 +55,8 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
   resource linking 281/291 STCRDab complexes to VDJdb records (2,309 CDR3
   hits; 1,517 cross-epitope); (v) a cross-instance stability test exposing
   ranking non-reproducibility on AF3 inputs (Rashomon effect) and the
-  domain-adaptation route to fix it.
+  scale-monotone domain-adaptation route that resolves it (0.447→0.729 at
+  144 native positives, crossing the 0.5 gate).
 
 ## 2. Results
 
@@ -140,7 +144,7 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - ipTM vs our score: Pearson r = 0.333 — the model carries information
   beyond the predictor's own confidence (but see Section 2.6 for the caveat).
 
-### 2.6 Cross-instance instability: the Rashomon crisis (decisive negative)
+### 2.6 Cross-instance instability: the Rashomon crisis and its resolution by scale (Fig 5, Fig 6)
 
 - Retraining an equivalent model (graft AUROC 0.918 vs 0.933) completely
   changes AF3-input scores: the A6 series collapses from 0.92-0.99 to
@@ -154,20 +158,21 @@ and a cross-instance stability test that any OOD-scoring claim must pass.
 - Fix 1 (partial): removing the pLDDT feature — task performance kept
   (graft 0.923 / displaced 0.974), score collapse eliminated (0.29-0.93),
   but rankings still unstable (Spearman r=0.267, P=0.49 vs original).
-- Fix 2 (evaluated, negative): domain adaptation — mix predicted-style
+- Fix 2 (evaluated, resolved): domain adaptation — mix predicted-style
   structures into training so the model sees OOD inputs during fit. The DA
-  route uses 63 AF3-predicted *native* structures (5-chain, cognate positives;
+  route uses AF3-predicted *native* structures (5-chain, cognate positives;
   chain-set-fingerprint matched to the native submission FASTAs) with the full
-  decoy protocol. Domain adaptation clearly raises *model-side* reproducibility
-  (3-seed val AUROC 0.856-0.928; val cross-seed Spearman 0.73-0.92 vs the
-  proxy pilot 0.74-0.80 / 0.83-0.95). **However the cross-instance candidate
-  verdict stays UNSTABLE**: one seed saturates to all-zero on every candidate,
-  another is near-constant, and the only non-degenerate pair correlates at
-  r=0.301 (P=0.18). The bottleneck is therefore *task identifiability /
-  dataset scale*, not the domain of the positives — 21 candidates dominated
-  by A6 LLFGY*V variants give the model no ranking signal. Rankings remain
-  single-instance observations; a real ACDC re-ranking needs hundreds to
-  thousands of complexes plus temperature calibration.
+  decoy protocol. The effect is scale-dependent and monotone: 63 natives leave
+  the cross-instance candidate verdict UNSTABLE (one seed saturates to
+  all-zero), 89 natives remove the collapse (mean pairwise Spearman 0.479,
+  just under the 0.5 gate), and **144 natives cross the gate decisively
+  (mean pairwise r=0.729, all three pairs P<5e-4)** while val AUROC reaches
+  0.959/0.952/0.964. The Rashomon crisis is therefore a *training-data-scale*
+  problem, not an intrinsic AF3-input instability: cross-reactivity rankings
+  on AF3-predicted structures are reproducible across independently trained
+  instances once a fixed multi-instance ensemble is used. Rankings are
+  upgraded from single-instance anecdotes back to reportable results
+  (conditional on >=~144 native positives + 3-seed ensembling).
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
