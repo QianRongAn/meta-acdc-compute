@@ -419,6 +419,10 @@ docker run --rm -v $PWD:/work meta-acdc \
 > Dockerfile 已修正 `--index-url` 会隐藏 pandas 等依赖的 bug,并默认使用
 > 国内镜像(清华 PyPI + 上交 torch);海外构建可覆盖
 > `--build-arg PIP_INDEX_URL=... TORCH_INDEX_URL=...`。
+> 若基础镜像拉取慢,可先用镜像站拉取并打标签:
+> `docker pull docker.m.daocloud.io/library/python:3.12-slim &&
+>  docker tag docker.m.daocloud.io/library/python:3.12-slim python:3.12-slim`。
+> 首次运行 mhcflurry 若离线会提示缺失权重(联网时自动下载)。
 
 ### 7.2 一键健康检查
 
