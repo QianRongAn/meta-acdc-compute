@@ -20,6 +20,7 @@ COPY pyproject.toml README.md ./
 COPY src ./src
 COPY scripts ./scripts
 COPY docs ./docs
+COPY tests ./tests
 RUN pip install --no-cache-dir -e . --no-deps
 
 # pre-fetch MHCflurry weights into the image (so runs are offline-capable);
@@ -34,6 +35,9 @@ from mhcflurry.downloads_command import run; run()" || \
 RUN python -c "import meta_acdc, meta_acdc.models.egnn, \
 meta_acdc.active_learning.simulate_al, meta_acdc.structure.graph; \
 print('meta-acdc smoke OK')"
+
+# regression tests (data-dependent cases skip without the local fixtures)
+RUN python -m unittest discover -s tests 2>&1 | tail -3
 
 WORKDIR /work
 # usage examples (see docs/SOP.md):

@@ -2,6 +2,7 @@
 
 > 目标:从零复现本文档引用的全部计算结果(数字见 `docs/benchmarks.md`)。
 > 参考主机:Ubuntu + GTX 1050 Ti 4GB / 8GB RAM;CPU-only 亦可(训练慢 ~3-5×)。
+> 回归测试:`.venv/bin/python -m unittest discover -s tests -v`(无数据的用例自动跳过)。
 
 ## 0. 环境两条路径
 
