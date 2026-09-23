@@ -144,17 +144,18 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   TCR is strongly cross-reactive, so the native peptide does not stand out
   (rank #3/5); the model reproduces the family's promiscuity rather than
   isolating the cognate ligand.
-- 1qrn family: LLFGPVYV is the clear outlier (0.762) vs 0.90-1.00 for the
+- 1qrn family: LLFGPVYV is the clear outlier (0.80) vs 0.91-0.99 for the
   rest — a within-family discrimination that is stable across seeds.
-- 1tcr family: EQYKFYSV 0.949 / SIYRYYGL 0.939 vs GGAPWNPAMMI 0.643 and
-  QLSPFPFDL 0.710.
-- 2vlj (JM22) family: GILGLVFTL 0.993 vs PKYVKQNTLKLAT 0.376 (lowest score
-  overall — correct rejection of a non-cognate long peptide).
+- 1tcr family: EQYKFYSV 0.941 / SIYRYYGL 0.863 vs GGAPWNPAMMI 0.523 and
+  QLSPFPFDL 0.597.
+- 2vlj (JM22) family: GILGLVFTL 0.938 vs GILEFVFTL 0.475 and
+  PKYVKQNTLKLAT 0.314 (lowest score overall — correct rejection of a
+  non-cognate long peptide).
 - Clinical gold standard (MAG-IC3/5BRZ, A3A/MAGE-A3): native EVDPIGHLY
-  0.986 (rank #2); the lethal MAGE-A12 mimic KVAKELVHFL scores **0.991
-  (rank #1, above the target)** and the titin mimic ESDPIVAQY 0.964 — both
-  fatal off-targets flagged at/above the cognate level, matching their
-  confirmed cross-reactive biology (Section 2.7 / KN-11).
+  0.984 (rank #1); the lethal MAGE-A12 mimic KVAKELVHFL scores 0.962
+  (rank #2) and the titin mimic ESDPIVAQY 0.924 (rank #3) — both fatal
+  off-targets within 0.02-0.06 of the cognate level, so neither is cleared,
+  matching their confirmed cross-reactive biology (Section 2.7 / KN-11).
 
 ### 2.5 Prediction variance: model-side, not structure-side (Fig 3)
 
@@ -251,7 +252,7 @@ off-target. At the per-seed level the target-vs-MAGE-A12 ordering is a coin
 flip (seed0 KVA>target, seed1 target>KVA, seed2 KVA>target, seed4
 target>KVA), which is exactly what mimicry predicts and is not a model
 defect. A non-cognate long peptide (PKYVKQNTLKLAT, Section 2.4) is correctly
-rejected at 0.376. The `--margin 0.1` flag in `clinical_scan.py` encodes the
+rejected at 0.314. The `--margin 0.1` flag in `clinical_scan.py` encodes the
 "at target level" hazard criterion.
 
 ## 3. Methods

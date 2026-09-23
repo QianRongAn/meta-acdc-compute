@@ -15,13 +15,13 @@
 - [x] KN-2:文献综述 v0 ✅(3 篇综述 + 3 个 bib;🔴 待用户审阅)
 - [x] KN-3:VDJdb ✅(199,289 条)+ IEDB ✅(2,302,095 条,1,394,080 肽,544 等位基因)— 2026-09-21
 - [x] KN-4:EGNN 原型首训 ✅ 2026-09-21 — 诱饵判别 AUROC 0.771 / AUPRC 0.556(PDB 分组切分,无泄漏);同任务对照谱系:纯序列 0.556 < 序列+图统计 0.649 < EGNN 0.771
-- [ ] KN-5:AlphaFold Server API(🔴 需用户提供)+ 结构批量预测 — 进行中:AF3 网页版已收 6 批;重提感知导入(链对匹配)+ 晶体链指纹回贴(`relabel_instances_by_chains.py`)+ 固定实例集成打分 + 可靠性闸门(ipTM)就位;⚠️ 2026-09-23 修复 pdb 标签错误(48/73,kn5 tcr_a/tcr_b 列写反);**2026-09-23 真实 native DA:危机解除**——天然 AF3 正样本 63→89→**144**(`af3_native/manifest.tsv`),`native_manifest.py` 链指纹累积匹配;3-seed val AUROC **0.959/0.952/0.964**;候选判决 mean pairwise Spearman **0.447(代理)→ 0.479(89)→ 0.729(144)=STABLE**、全 73 实例 **0.847**(CI 0.77-0.89);——Rashomon 根因 = 训练数据规模,已确认;排名声明可升级回可报告。剩余天然 29 + 交叉反应候选 358,🔴 待用户提交
+- [ ] KN-5:AlphaFold Server API(🔴 需用户提供)+ 结构批量预测 — 进行中:AF3 网页版已收 6 批;重提感知导入(链对匹配)+ 晶体链指纹回贴(`relabel_instances_by_chains.py`)+ 固定实例集成打分 + 可靠性闸门(ipTM)就位;⚠️ 2026-09-23 修复 pdb 标签错误(48/73,kn5 tcr_a/tcr_b 列写反);**2026-09-23 真实 native DA:危机解除**——天然 AF3 正样本 63→89→**144**(`af3_native/manifest.tsv`),`native_manifest.py` 链指纹累积匹配;3-seed val AUROC **0.959/0.952/0.964**;候选判决 mean pairwise Spearman **0.447(代理)→ 0.479(89)→ 0.729(144)=STABLE**、seed 过滤后全 73 实例 **0.802**(CI 0.72-0.86);——Rashomon 根因 = 训练数据规模(弱 seed 须过滤),已确认;排名声明可升级回可报告。剩余天然 29 + 交叉反应候选 358,🔴 待用户提交
 - [x] KN-6:v0 ✅ 2026-09-21 — 硬负样本三重筛选模块 + ProtoNet 少样本 AUROC 0.635(留出表位,超序列基线 0.609)
 - [x] KN-7:v0 ✅ 2026-09-21 — 主动学习模拟器:EIG+ε-greedy 在 6% 采样达 2.0× 阳性召回增益
 - [x] KN-7+:AL 模拟器升级 ✅ 2026-09-23 — 预筛肽池模式 + 批大小消融框架上线;原理性发现:①VDJdb 无法模拟预筛密度增益(阴性=已呈递肽,密度恒 7.0%)②EIG 增益阈值依赖:0.9 严格预筛下增益消失(1.0×)、0.5 宽松预筛下增益仍在(7.4% 处 1.76×)→ 增益是预筛阈值的函数,结构模型 EIG 是必要条件;③批消融:大批(3600×2)24.5% > 小批(300×20)21.6%,与文献"小批多轮"相反,批量存在下界
 - [x] KN-4+:VDJdb 标签 ↔ 结构映射 ✅ 2026-09-22 — 281/291 复合物映射成功,2,309 条 CDR3 命中(791 同表位 / 1,517 异表位=交叉反应性证据);`structure_vdjdb_map.tsv`(含 1ao7 A6 TCR 的 8 肽交叉集,与 AF3 排名实验互证)
 - [x] KN-8 计算侧:500 万池 EIG 排序 → 前 5 万候选清单 ✅ 2026-09-22(干跑)— 管线全通(4,654,973 唯一肽池 + Kimmtrak/A6 两份清单 + Uniprot 定位);诚实负面:弱模型 EIG 零富集(0/24),真实订购需域适应 EGNN 重排;🔴 实际订购(湿实验)仍由用户决定
-- [ ] KN-11:in silico 临床 TCR 深扫描 — 序列空间部分已完成(= KN-8 清单,阴性结果);**结构空间首个可报告结果(2026-09-23)**:144-native 稳定 DA 模型把致死性 MAGE-A12 模拟肽 KVAKELVHFL 排到靶肽之上(FATAL-mimicry flagged),`clinical_scan.py` → `kn11_clinical_scan.tsv`;案例 2/3 待 AF3 结构
+- [ ] KN-11:in silico 临床 TCR 深扫描 — 序列空间部分已完成(= KN-8 清单,阴性结果);**结构空间首个可报告结果(2026-09-23)**:144-native 稳定 DA 模型下,两个致死性 off-target(MAGE-A12 模拟 KVAKELVHFL、titin ESDPIVAQY)仅比靶肽低 0.02/0.06(判为"与靶同水平",不 clear),`clinical_scan.py` → `kn11_clinical_scan.tsv`;案例 3(Kimmtrak)提交批已备(`af3_scan_kimmtrak/`),案例 2 无晶体结构
 - 项目仓库:`/home/administrator/docs/meta-acdc/`(2026-09-22 起由 opencode 接续推进)
 
 ### 文献综述关键发现(2026-09-20)

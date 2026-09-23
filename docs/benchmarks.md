@@ -678,9 +678,12 @@ SHA1 生成唯一 id)+ `--report`(导出 job_id↔来源映射)后,**改用天�
   两者统计上不可分;这正是"分子模拟"的模型侧体现,**不是**模型缺陷
 - **意义**:在**跨实例稳定**的模型上,临床金标准的致死交叉反应被正确
   标记为"与靶同水平"——KN-11 结构空间扫描首个可报告结果
-- 待补结构:案例 2(A2/MAGE-A3 `KVAELVHFL`)与案例 3(Kimmtrak
-  `YLEPGPVTA`)尚无 AF3 结构 → 列为后续提交
-- 产物:`structure/clinical_scan.py`、`kn11_clinical_scan.tsv`
+- 待补结构:案例 2(A2/MAGE-A3 `KVAELVHFL`)无对应晶体结构;
+  **案例 3(Kimmtrak/gp100)已生成提交批**:`af3_scan_kimmtrak/`
+  (基于 5eu6 gp100 TCR,6 肽:YLEPGPVTA 靶 + YLEPGPVTV/TL 脱靶 +
+  3 对照),🔴 待用户提交后纳入扫描
+- 产物:`structure/clinical_scan.py`、`af3_scan_batch.py`、
+  `kn11_clinical_scan.tsv`、`af3_scan_kimmtrak/`(6 FASTA)
 
 ### 2026-09-23 稳健性加强:全部 73 个 AF3 实例(seed 集敏感)
 
