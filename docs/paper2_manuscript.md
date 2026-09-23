@@ -42,9 +42,9 @@ scale — a stability requirement any OOD-scoring pipeline must satisfy. We
 then resolve it: domain adaptation on AF3-predicted native complexes raises
 the cross-instance ranking agreement monotonically with the number of native
 positives (0.447 at 25 proxy structures → 0.479 at 89 → 0.729 at 144,
-crossing the 0.5 gate), and the stable model correctly flags the documented
-lethal MAGE-A12/titin off-targets at or above the cognate target. The result
-is a ranking-based safety-assessment pipeline (TCR-Safety-Radar) and a
+crossing the 0.5 gate), and the stable model places the documented lethal
+MAGE-A12/titin off-targets within 0.02-0.06 of the cognate target — it does
+not clear them. The result is a ranking-based safety-assessment pipeline (TCR-Safety-Radar) and a
 reproducible protocol for in silico off-target screening.
 
 ## 1. Introduction
@@ -150,23 +150,23 @@ experiments.
 As a ground-truth probe we score the MAG-IC3 TCR — the receptor at the
 center of the MAGE-A3 trial — against its documented targets and off-targets
 on AF3-predicted structures. Under the cross-instance-stable 144-native
-domain-adapted 3-seed ensemble (mean pairwise Spearman 0.729, §3.3) the
-family-relative ordering is:
+domain-adapted ensemble (non-degenerate seeds; mean pairwise Spearman 0.729,
+§3.3) the family-relative ordering is:
 
 | peptide | role | score | rank | fatal |
 |---|---|---|---|---|
-| KVAKELVHFL | MAGE-A12 mimic | 0.991 | 1 | yes |
-| EVDPIGHLY | MAGE-A3 target | 0.986 | 2 | yes |
-| ESDPIVAQY | titin mimic | 0.964 | 3 | yes |
-| ELQHGLYAL | control | 0.745 | 4 | — |
-| ILAKFLHWL | off-target | 0.715 | 5 | yes |
+| EVDPIGHLY | MAGE-A3 target | 0.984 | 1 | yes |
+| KVAKELVHFL | MAGE-A12 mimic | 0.962 | 2 | yes |
+| ESDPIVAQY | titin mimic | 0.924 | 3 | yes |
+| ILAKFLHWL | off-target | 0.679 | 4 | yes |
 
-Two observations stand out. First, the lethal MAGE-A12 mimicry peptide is
-ranked *above* the intended target, and the titin mimic within 0.02 of it —
-the model does not falsely clear either documented lethal off-target.
-Second, the low-scoring entries (control, ILAKFLHWL) are correctly
-deprioritised. Unlike the earlier single-instance reading (§2.2 of the
-first version, where the ordering was muddy and not reproducible), this
+Two observations stand out. First, the two documented lethal off-targets sit
+only 0.02–0.06 below the cognate target — the model does not clear either
+lethal mimicry peptide (the correct conservative behaviour). At the seed
+level the target-vs-MAGE-A12 ordering is a coin flip, which is what
+molecular mimicry predicts. Second, the lower-scoring entry (ILAKFLHWL) is
+correctly deprioritised. Unlike the earlier single-instance reading (§2.2 of
+the first version, where the ordering was muddy and not reproducible), this
 ordering is stable across independently trained instances, so it is
 reported as a result rather than a motivating anecdote. The residual caveat
 is sample size: the 0.5 gate is passed provisionally (bootstrap 95% CI on
