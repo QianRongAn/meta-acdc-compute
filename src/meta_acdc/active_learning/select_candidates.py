@@ -181,8 +181,24 @@ def stage_prefilter(fasta: Path, out: Path) -> int:
     return 0
 
 
+def peptide_complexity_ok(pep: str, max_aa_fraction: float) -> bool:
+    """Reject low-complexity peptides (EIG favours them as OOD artefacts).
+
+    A peptide whose most frequent residue exceeds `max_aa_fraction` of its
+    length (e.g. >0.5) is a low-complexity artefact: the weak surrogate's
+    uncertainty — and hence EIG — is inflated on distribution tails rather
+    than on genuine binding signal.
+    """
+    if not pep:
+        return False
+    from collections import Counter
+    top = Counter(pep).most_common(1)[0][1]
+    return top / len(pep) <= max_aa_fraction
+
+
 def stage_rank(pool_path: Path, tcr: str, out: Path,
-               vdjdb: Path, fasta: Path) -> int:
+               vdjdb: Path, fasta: Path,
+               max_aa_fraction: float = 0.5) -> int:
     from sklearn.linear_model import LogisticRegression
     from meta_acdc.active_learning.acquisition import expected_information_gain
     from meta_acdc.data.splits import group_split
@@ -197,6 +213,15 @@ def stage_rank(pool_path: Path, tcr: str, out: Path,
     pres = np.asarray(pres)
     pool_index = {p: i for i, p in enumerate(peps)}
     print(f"pool: {len(peps)} peptides", flush=True)
+
+    # complexity filter: drop low-complexity peptides that inflate EIG
+    if max_aa_fraction < 1.0:
+        keep = np.array([peptide_complexity_ok(p, max_aa_fraction)
+                         for p in peps])
+        print(f"complexity filter (max AA fraction {max_aa_fraction}): "
+              f"kept {int(keep.sum())}/{len(peps)}", flush=True)
+    else:
+        keep = np.ones(len(peps), dtype=bool)
 
     # ---- train 20x bootstrap LR ensemble on the epitope-split train fold
     rows = []
@@ -234,7 +259,8 @@ def stage_rank(pool_path: Path, tcr: str, out: Path,
                   flush=True)
 
     rank_of = np.argsort(np.argsort(-eig)) + 1  # 1-based rank per pool entry
-    top = np.argsort(-eig)[:TOP_K]
+    eig_eff = np.where(keep, eig, -np.inf)  # excluded peptides never selected
+    top = np.argsort(-eig_eff)[:TOP_K]
     top_set = {peps[i] for i in top}
 
     # ---- map top peptides back to source proteins
@@ -299,6 +325,10 @@ def main() -> int:
                     default=Path("data/processed/vdjdb.clean.tsv"))
     ap.add_argument("--tcr", default="CASSLGRYNEQFF",
                     help=f"TCR beta CDR3; known: {list(TCRS)}")
+    ap.add_argument("--max-aa-fraction", type=float, default=0.5,
+                    help="reject peptides whose most frequent residue exceeds "
+                         "this fraction (low-complexity EIG artefacts); "
+                         "1.0 disables the filter")
     args = ap.parse_args()
 
     if args.stage == "prefilter":
@@ -306,7 +336,8 @@ def main() -> int:
     name = args.tcr[:8]
     out = Path(f"data/processed/kn8_top50k_{name}.tsv")
     print(f"TCR: {args.tcr} ({TCRS.get(args.tcr, 'custom')})", flush=True)
-    return stage_rank(args.pool, args.tcr, out, args.vdjdb, args.fasta)
+    return stage_rank(args.pool, args.tcr, out, args.vdjdb, args.fasta,
+                      args.max_aa_fraction)
 
 
 if __name__ == "__main__":

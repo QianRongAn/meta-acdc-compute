@@ -183,6 +183,18 @@ class TestImportUniqueFallback(unittest.TestCase):
         self.assertEqual(len(cifs), 1)
 
 
+class TestComplexityFilter(unittest.TestCase):
+    def test_low_complexity_rejected(self):
+        from meta_acdc.active_learning.select_candidates import (
+            peptide_complexity_ok)
+        self.assertFalse(peptide_complexity_ok("QQQEQQHQAW", 0.5))
+        self.assertFalse(peptide_complexity_ok("AAAAAAAAA", 0.5))
+        self.assertTrue(peptide_complexity_ok("GILGFVFTL", 0.5))
+        self.assertTrue(peptide_complexity_ok("LLFGYPVYV", 0.5))
+        # filter disabled
+        self.assertTrue(peptide_complexity_ok("QQQEQQHQAW", 1.0))
+
+
 class TestCalibration(unittest.TestCase):
     def test_ece_bounds_and_improvement(self):
         import numpy as np
