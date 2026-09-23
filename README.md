@@ -486,6 +486,7 @@ docs/             基准记录、SOP、论文草稿、图、里程碑
 
 ## 引用与联系
 
+- **计划书交付物对照表**见 [`docs/DELIVERABLES.md`](docs/DELIVERABLES.md)。
 - 计划书与文献综述见 [`docs/proposal/`](docs/proposal/) 与
   [`docs/literature/`](docs/literature/)。
 - **数据集卡片**(Deliverable 5)见 [`docs/DATASET.md`](docs/DATASET.md)。

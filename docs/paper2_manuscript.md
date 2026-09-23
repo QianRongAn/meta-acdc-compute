@@ -2,13 +2,17 @@
 
 > Working draft, 2026-09-23. Dry-lab scope. Numbers from docs/benchmarks.md.
 > Companion to paper1 (Meta-TCR-GNN); cites its model as [Meta-TCR-GNN].
-> Intro/Results/Methods/Discussion expanded from v0.1 skeleton; §2.8 and
-> domain-adaptation results remain pending AF3 submissions.
+> Domain adaptation is now resolved (144 native positives → cross-instance
+> verdict STABLE), and the clinical safety scan is reported (§2.2/§2.8).
 
 ## Title (candidate)
 
-**How few experiments suffice? An active-learning digital twin for
-proteome-wide safety assessment of therapeutic TCRs**
+**An AI-driven "Dry-Wet" Loop for Proteome-wide Safety Assessment of
+Therapeutic TCRs** (deliverable title)
+
+> Alternative (question-forward): *How few experiments suffice? An
+> active-learning digital twin for proteome-wide safety assessment of
+> therapeutic TCRs*
 
 ## Abstract
 

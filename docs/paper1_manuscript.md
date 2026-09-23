@@ -6,8 +6,12 @@
 
 ## Title (candidate)
 
-**Side-chain contact information unlocks chemical-compatibility learning in
-TCR-pMHC interfaces: geometric deep learning beyond Cα resolution**
+**Meta-TCR-GNN: A Geometric Meta-learning Framework for Few-shot TCR
+Specificity Prediction** (deliverable title)
+
+> Alternative (finding-forward): *Side-chain contact information unlocks
+> chemical-compatibility learning in TCR-pMHC interfaces: geometric deep
+> learning beyond Cα resolution*
 
 ## Abstract
 
