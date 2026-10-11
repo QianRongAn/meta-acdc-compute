@@ -1,5 +1,10 @@
 # af3_pending_upload —— 待提交 AlphaFold3 的结构任务
 
+> **进展（2026-10-12）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
+> （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务）。
+> 当前剩余待传 **179 个**（其中内容唯一 177 个）；`data/processed/af3_next60/`
+> 是下一批 60 个的提交包。判重口径见该目录 README。
+
 来源仓库：`https://github.com/QianRongAn/meta-acdc-compute`（分支 `main`，commit `1b7f129`）
 生成时间：2026-10-07
 
