@@ -66,15 +66,17 @@
 - [ ] ACDC 原始数据盘点:向实验室要历史数据清单(🔴 需用户对接实验室)
 
 ### Year 1 Q2(Months 4-6):Meta-TCR-GNN 原型
-- [ ] EGNN 骨架实现 + 接口图构建(10Å 截断)
-- [ ] AlphaFold 3 结构预测管线(KN-5)
-- [ ] 硬负样本三重筛选(Levenshtein ≤3 / 静电势 Pearson >0.8 / 不确定性 0.4-0.6)
-- [ ] 元学习框架(MAML / Prototypical)
-- [ ] 基准评测(VDJdb、IEDB;对照 NetMHCpan、ERGO、NetTCR)
+- [x] EGNN 骨架实现 + 接口图构建(10Å 截断)
+- [x] AlphaFold 3 结构预测管线(KN-5)— 进行中(用户提交)
+- [x] 硬负样本三重筛选(Levenshtein ≤3 / 静电势 Pearson >0.8 / 不确定性 0.4-0.6)
+- [x] 元学习框架(MAML / Prototypical)
+- [x] 基准评测(VDJdb、IEDB;对照 NetMHCpan、ERGO、NetTCR)— 见
+  [`benchmark-report.md`](../benchmark-report.md)(文献数字跨数据集引用)
 
 ### Year 1 Q3(Months 7-9):基准测试 + 首批文库下单
-- [ ] 公开数据基准评测报告
-- [ ] 首批 50,000 候选的 EIG 排序(全蛋白组 500 万池)
+- [x] 公开数据基准评测报告 — [`benchmark-report.md`](../benchmark-report.md)
+- [x] 首批 50,000 候选的 EIG 排序(全蛋白组 500 万池)— 干跑完成
+  (诚实负面:弱代理零富集,待结构重排)
 - [ ] 🔴 KN-8:下单 50k 寡核苷酸池(用户)
 
 ### Year 1 Q4(Months 10-12):年度答辩 + 文库接收

@@ -44,6 +44,37 @@ from meta_acdc.structure.graph import (MHC, PEPTIDE, TCR,
 SEEDS = [0, 1, 2]
 
 
+def collate_per_graph(graphs: list[tuple]) -> dict:
+    """Collate with PER-GRAPH z-score node normalization.
+
+    The shared `collate` (train_egnn.py) z-scores node features across the
+    whole batch; scoring (score_predictions.py) z-scores per graph. That
+    train/inference mismatch made models overfit batch-level statistics —
+    after the 144->170 native intake the re-trained seeds scored their own
+    training positives at ~0 under per-graph normalization. Fix: normalize
+    per graph in training too, so training and scoring see the same
+    distribution. (2026-10-12)
+    """
+    hs, xs, eis, eas, batch = [], [], [], [], []
+    offset = 0
+    for nf, coords, ei, ef in graphs:
+        h = torch.tensor(nf, dtype=torch.float32)
+        h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
+        hs.append(h)
+        xs.append(torch.tensor(coords, dtype=torch.float32))
+        eis.append(torch.tensor(ei, dtype=torch.long).t() + offset)
+        eas.append(torch.tensor(ef, dtype=torch.float32))
+        batch.append(torch.full((h.shape[0],), len(batch), dtype=torch.long))
+        offset += h.shape[0]
+    return {
+        "h": torch.cat(hs),
+        "x": torch.cat(xs),
+        "edge_index": torch.cat(eis, dim=1),
+        "edge_attr": torch.cat(eas),
+        "batch": torch.cat(batch),
+    }
+
+
 def mask_plddt(gs):
     out = []
     for nf, coords, ei, ef in gs:
@@ -239,7 +270,7 @@ def main() -> int:
             for start in range(0, len(order), bs):
                 idx = order[start:start + bs]
                 b = {k: v.to(device) for k, v in
-                     collate([graphs_masked[i] for i in idx]).items()}
+                     collate_per_graph([graphs_masked[i] for i in idx]).items()}
                 y = labels_t[idx].to(device)
                 opt.zero_grad()
                 loss = loss_fn(net(**b).squeeze(-1), y)
@@ -247,7 +278,7 @@ def main() -> int:
                 opt.step()
         net.eval()
         vb = {k: v.to(device) for k, v in
-              collate([graphs_masked[i] for i in va]).items()}
+              collate_per_graph([graphs_masked[i] for i in va]).items()}
         with torch.no_grad():
             p = torch.sigmoid(net(**vb).squeeze(-1)).cpu().numpy()
         y = labels_t[va].numpy()

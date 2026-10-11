@@ -28,7 +28,7 @@ TCR Specificity Prediction"
 
 **产物**:[`docs/paper1_manuscript.md`](paper1_manuscript.md);
 图 `docs/figures/fig1–7`;数据 [`DATASET.md`](DATASET.md);
-数字 [`benchmarks.md`](benchmarks.md)。
+数字 [`benchmarks.md`](benchmarks.md) / [`benchmark-report.md`](benchmark-report.md)。
 
 ## D2 — 论文 2(Systematic Application)
 
