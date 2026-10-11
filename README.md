@@ -11,8 +11,6 @@
 > [`docs/benchmarks.md`](docs/benchmarks.md)**;从零复现见
 > [`docs/SOP.md`](docs/SOP.md)。
 
-PhD research project — D-BSSE, ETH Zurich.
-
 ---
 
 ## 目录
