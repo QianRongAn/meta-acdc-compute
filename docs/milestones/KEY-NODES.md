@@ -22,6 +22,7 @@
 - [x] KN-4+:VDJdb 标签 ↔ 结构映射 ✅ 2026-09-22 — 281/291 复合物映射成功,2,309 条 CDR3 命中(791 同表位 / 1,517 异表位=交叉反应性证据);`structure_vdjdb_map.tsv`(含 1ao7 A6 TCR 的 8 肽交叉集,与 AF3 排名实验互证)
 - [x] KN-8 计算侧:500 万池 EIG 排序 → 前 5 万候选清单 ✅ 2026-09-22(干跑)— 管线全通(4,654,973 唯一肽池 + Kimmtrak/A6 两份清单 + Uniprot 定位);诚实负面:弱模型 EIG 零富集(0/24),真实订购需域适应 EGNN 重排;🔴 实际订购(湿实验)仍由用户决定
 - [ ] KN-11:in silico 临床 TCR 深扫描 — 序列空间部分已完成(= KN-8 清单,阴性结果);**结构空间首个可报告结果(2026-09-23)**:144-native 稳定 DA 模型下,两个致死性 off-target(MAGE-A12 模拟 KVAKELVHFL、titin ESDPIVAQY)仅比靶肽低 0.02/0.06(判为"与靶同水平",不 clear),`clinical_scan.py` → `kn11_clinical_scan.tsv`;案例 3(Kimmtrak)提交批已备(`af3_scan_kimmtrak/`),案例 2 无晶体结构
+- [x] **2026-10-12 会话**:①AF3 next60 batch1 全部提交完毕,归档 `af3_next60_batch1/`;复盘发现**按 job_id 判重漏判**:60 个中 24 个的 5 链 FASTA 与更早任务逐字节相同(AF3 只看序列,提交即重复);②判重口径改为**内容哈希**,`already_uploaded.tsv` 升级为三列内容判重台账(168 条 done / 179 待传);③新提交包 `af3_next60/`(batch2,60 个):6 个临床表位家族变体矩阵补全 32 + MAGE/p53/EBV 等临床单点 28,md5 级唯一;④AutoDL 3080 Ti 跑通 KN-4 重训管线(STCRDab 625/634 PDB,1269 graphs,30ep:val displaced AUROC 0.937/AUPRC 0.924,graft 0.731/0.691),实例随后关机停费;⑤**训练/打分归一化对齐修复**(`collate_per_graph`):batch 级 z-score 过拟合根因,171-native 5-seed 重训已在本地后台启动(`scripts/da_retrain_collatefix.sh`)
 - 项目仓库:`/home/administrator/docs/meta-acdc/`(2026-09-22 起由 opencode 接续推进)
 
 ### 文献综述关键发现(2026-09-20)
