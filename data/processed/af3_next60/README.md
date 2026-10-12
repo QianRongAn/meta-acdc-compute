@@ -1,7 +1,13 @@
-# af3_next60 — 下一批 AF3 网页版提交（60 个，batch 2）
+# af3_next60 — 下一批 AF3 网页版提交（batch 2，待传 49 个）
 
-按优先级挑选的 60 个**尚未提交**（且 5 链 FASTA 内容与任何已提交任务都不同）的
-job，供手动复制到 [alphafoldserver.com](https://alphafoldserver.com) 提交。
+> **本文件夹现在只放「待提交」的文件**：初始 60 个中已有 11 个提交并回收结果，
+> 那 11 个已移出到 `af3_next60_submitted/`。所以本文件夹里 49 个 `.fasta`
+> **全部都是没提交过的**，按 `SUBMIT_NOW.tsv` 的顺序挨个传即可，不用担心重复。
+> 每提交完一批，把新下载的 `folds_*` 放进 Downloads，我会把对应文件再移出去，
+> 文件夹里永远只留待传的。
+
+按优先级挑选、**尚未提交**（且 5 链 FASTA 内容与任何已提交任务都不同）的 job，
+供手动复制到 [alphafoldserver.com](https://alphafoldserver.com) 提交。
 每个 `.fasta` 内含 `>alpha / >beta / >peptide / >mhc / >b2m` 五条链，
 直接整体粘贴进 AF3 网页版即可。
 
