@@ -2,8 +2,9 @@
 
 > **进展（2026-10-12）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
 > （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务）。
-> 当前剩余待传 **179 个**（其中内容唯一 177 个）；`data/processed/af3_next60/`
-> 是下一批 60 个的提交包。判重口径见该目录 README。
+> 347 个待传已消耗：next60 batch1(60, 已传完) + batch2(60: 11 已有结果, 49 待传)
+> + batch3(60, 预建待传)。剩余未入批约 47 个（内容唯一）。
+> 提交包位置：`data/processed/af3_next60/`(batch2 待传)、`af3_next60_batch3/`(batch3)。
 
 来源仓库：`https://github.com/QianRongAn/meta-acdc-compute`（分支 `main`，commit `1b7f129`）
 生成时间：2026-10-07
