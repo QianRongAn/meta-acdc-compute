@@ -1,9 +1,14 @@
 # af3_pending_upload —— 待提交 AlphaFold3 的结构任务
 
-> **进展（2026-10-12）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
-> （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务）。
-> 347 个待传已消耗：next60 batch1(60, 已传完) + batch2(60: 11 已有结果, 49 待传)
-> + batch3(60, 预建待传)。剩余未入批约 47 个（内容唯一）。
+> **进展（2026-10-12 晚）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
+> （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务；现 393 条）。
+> 347 个待传**已全部分配完毕**：next60 batch1(60, 已传完) + batch2(60: 11 已有
+> 结果, 49 待传) + batch3(60, 预建待传) + **batch4(47, 收尾批,内容唯一)**。
+> **队列清空**——batch4 之后 `pending_upload_manifest.tsv` 里不再有未入批且
+> 内容唯一的 job（其余均已在台账/磁盘结果/作废清单内）。
+> 判重与建包已固化为脚本 `scripts/build_af3_next_batch.py`（台账 ∪ 磁盘结果
+> ∪ 已入批 ∪ 5 链 FASTA md5 四道闸）；本次还补登 2 个此前被漏查的内容重复
+> （`3qdj_SMLGIGIVPV`=3qdg 系、`6vmc_ITDQVPFSV`=6vm9 系）。
 > 提交包位置：`data/processed/af3_next60/`(batch2 待传)、`af3_next60_batch3/`(batch3)。
 
 来源仓库：`https://github.com/QianRongAn/meta-acdc-compute`（分支 `main`，commit `1b7f129`）

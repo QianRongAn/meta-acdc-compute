@@ -869,6 +869,103 @@ top-30 组成:
 - 提交清单动态更新:天然 `af3_native_remaining/` 随导入递减
   (173 → 已导入 144 → 剩余 29)
 
+## 2026-10-12:GPU 会话(AutoDL 3080 Ti)——归一化修复 + 172-native DA + 154 候选面板判决 + KN-11 FATAL 复扫
+
+> 日志:`data/processed/da_flow_gpu.log`、`da_rescore.log`
+> (2026-10-12 15:14–16:15);脚本:`scripts/da_flow_gpu_20261012.sh`、
+> `scripts/da_rescore_gpu_20261012.sh`、`da_retrain_collatefix.sh` 已入库。
+
+### ⓪ 数据事故(上一会话写入):21 个候选 CIF 被覆盖成同一内容
+
+- **现象**:1ao7/1qrn/1tcr/2vlj/5brz 系 21 个 job 的 `af3_predictions/` CIF
+  被写成**同一内容**,导致打分全部撞车——5brz 四条肽**同分 0.8328**,
+  KN-11 扫描一度丧失区分度。
+- **修复**:从 git 历史 + 隔离区(`af3_predictions_quarantine_20261012/`)
+  逐文件恢复;全库 md5 级复查干净:**af3_predictions 574 个 CIF 全部唯一**、
+  native 856 个(172×5 模型)唯一、instances(73 model_0,48 job)无重复。
+- **教训**:自动化写入必须带"单文件内容散列"校验;同一分数撞车是
+  **数据事故的信号**,不是模型噪声。
+
+### ① 训练/打分归一化对齐修复(collate_per_graph)
+
+- **Bug**:DA 训练用 `train_egnn.py` 的共享 `collate`(跨**整个 batch**
+  z-score 节点特征),而打分 `score_predictions.py` 按**单图** z-score。
+  训练/推理不一致 → 144→170 native 扩样后重训的 seed 在按图归一化下
+  **给自己的训练正样本打 ~0 分**(分布外推塌缩)。
+- **修复**:`train_domain_adapt.py::collate_per_graph`——训练与打分统一为
+  **按图归一化**;修复后 5 seed 训练/打分全链路一致。
+- **意义**:这是"扩样反而变坏"类问题的标准排查点——**先查 train/serve
+  skew,再怪数据**。
+
+### ② 172-native 5-seed 域适应(AutoDL 3080 Ti,150ep)
+
+- native 台账 144 → **172**(manifest 172,172 CIF 在盘);
+  DA 数据集 **1785 图(595 正 / 1190 负)**
+- val AUROC:**0.949 / 0.952 / 0.959 / 0.947 / 0.954**(5 seed 全部健康,
+  无退化种子;val 集两两 Spearman **0.943–0.970**)
+- 同会话 KN-4 全量重训(STCRDab 625 PDB / 634 文件 → 1269 图,30ep):
+  val displaced AUROC **0.937** / AUPRC 0.924,graft 0.731 / 0.691
+  (与本地 GTX 1050 基线同量级,3080 Ti 上仅缩短训练时间)
+
+### ③ 154 候选面板的稳定性判决(面板扩大:21 → 154)
+
+候选模型文件 73 → **154**(`af3_predictions` 与 `af3_instances/` 的并集,
+含同候选肽的重提实例)。5 seed 各自打分后两两 Spearman:
+
+| 项 | 值 |
+|---|---|
+| 两两 seed Spearman | 0.427 – 0.781(全部显著) |
+| mean pairwise r | **0.609**(bootstrap 95% CI **0.529–0.677**,n=154) |
+| 判决 | **STABLE(report rankings)**——过 0.5 门,置信区间下界也过门 |
+
+- **与旧口径的关系**:09-23 的 0.802 是 **73 实例 × 3-seed 过滤**;本批是
+  **154 候选 × 5 seed 全量**——面板更大更难,数字更诚实,**判决不变**。
+- **组级分化(17 个 ≥4-job 组,重要)**:
+
+  | 组 r≥0.6(组内可报告) | 组 r 0.5–0.6(边缘) | 组 r<0.5(组内不可报告) |
+  |---|---|---|
+  | 4jff 0.920、3uts 0.814、2gj6 0.812、4jfd 0.760、1qrn 0.720、3hg1 0.680、1ao7 0.680、4jfe 0.680、2ak4 0.629、3kxf 0.629、5brz 0.600 | 3d39 0.581 | 4jrx 0.496、1qsf 0.495、3h9s 0.429、4ftv 0.426、1tcr 0.400 |
+
+  → **0.5 门下/附近 5/17 组**:这些组内的候选排名**不可跨实例复现**
+  (候选同质或 AF3 结构质量低),组级声明必须带组内 r;**全面板级**
+  排名(如 KN-11)不受影响,因为组间区分度足够。
+
+### ④ KN-11 临床金标准复扫(5-seed 稳健集成 × 154 面板)
+
+`kn11_clinical_scan.tsv`(ensemble):5brz/MAGE-A3 案例 + 5eu6/Kimmtrak 对照:
+
+| 肽 | 角色 | 分数 | 家族内排名 | 判读 |
+|---|---|---|---|---|
+| ESDPIVAQY | off-target(titin 模拟) | **0.948** | 1 | **FATAL-mimicry at target level** |
+| EVDPIGHLY | target(MAGE-A3) | 0.892 | 2 | cognate |
+| KVAKELVHFL | off-target(MAGE-A12 模拟) | 0.842 | 3 | **FATAL-mimicry at target level** |
+| ILAKFLHWL | off-target | 0.676 | 4 | 部分漏检(与 09-23 一致) |
+| YLEPGPVTA | target(Kimmtrak/gp100) | 0.283 | 1 | 安全(非结合,正确低分) |
+
+- **与 09-23 结论一致且更强**:两个致死模拟肽(MAGE-A12 0.842、titin
+  0.948)在稳定 DA 集成上**与靶同水平**——即"**不会放过**"致死交叉反应;
+  靶肽被 titin 模拟**反超**(0.948 > 0.892)恰是保守安全筛选应有的行为。
+- **诚实缺口不变**:ILAKFLHWL 仍只有 0.676(3 个高危中 1 个部分漏检),
+  需 ipTM 闸门复核其结构质量(4mnq/5men 天然肽)。
+- **案例 2**(KVAELVHFL,异源 MHC)仍无结构;案例 3 Kimmtrak 提交批
+  (`af3_scan_kimmtrak/`)已回收本轮标的 YLEPGPVTA 正确低分。
+
+### ⑤ AF3 待传队列全部入批(内容级判重,347 → 0)
+
+- batch1(60)已提交归档;batch2(60,其中 11 个已有结果→49 待传);
+  batch3(60)预建;**batch4(47)收尾**——`pending_upload_manifest.tsv` 中
+  内容唯一的 job 至此全部有归宿(batch1–4 = 216,其余为已提交/内容重复/作废)。
+- batch4 = 1E6 TCR(NY-ESO-1 特异)× HLA-A*02:01 的 ALWGPDPAAA 家族
+  **9 变体 × 9 结构**矩阵剩余:5c08 7 + 5c09/5c0a/5c0b/5c0c/5hyj 各 8;
+  连同已有结果,batch3,1E6 家族 **81/81 job 全覆盖**(9×9 闭合)。
+- 判重建包固化为 `scripts/build_af3_next_batch.py`(台账 ∪ 磁盘结果 ∪
+  已入批 ∪ 5 链 FASTA md5 四道闸);运行中补登 **2 个此前被漏查的内容重复**
+  (`3qdj_SMLGIGIVPV` = 3qdg 系、`6vmc_ITDQVPFSV` = 6vm9 系),
+  台账 `already_uploaded.tsv` 扩至 **393 条**。
+- **教训沉淀**:判重必须做到**内容哈希 + 全家族覆盖**,job_id 判重会系统性
+  漏掉"同一复合物不同 PDB 别名/AF3 只认序列"的重复(batch1 曾因此废掉
+  24/60 个提交)。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
