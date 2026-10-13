@@ -70,8 +70,9 @@ docker run --rm -v $PWD:/work meta-acdc python -c "import meta_acdc; print('OK')
 # ff14SB united-atom 部分电荷特征:节点 26→28(esp/burial)、边 16→18(coul/mag)
 .venv/bin/python src/meta_acdc/models/dataset.py \
     --out data/processed/egnn_dataset_v11.pt --with-electrostatics
-# 四配置切片消融 × 3 seed(切分固定;对照结论见 benchmarks.md 2026-10-13 节)
+# 四配置切片消融 × 3 seed(30ep)+ 150ep 复核(切分固定;结论见 benchmarks.md 2026-10-13 节)
 bash scripts/train_v11_ablation.sh 30 0,1,2
+bash scripts/train_v11_ablation.sh 150 0
 ```
 特征语义:esp = 残基质心静电势(全原子 10 Å,eps=4r);burial = 带电原子
 (|q|>0.3 e)被对侧重原子 5 Å 包围程度(去溶剂化代理);coul/coul_mag =

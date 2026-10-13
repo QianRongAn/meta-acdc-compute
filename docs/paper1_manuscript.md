@@ -244,11 +244,15 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   (node 26→28, edge 16→18; sliced ablations on one shared dataset).
   30-epoch × 3-seed results: edge Coulomb degrades graft discrimination in
   3/3 seeds (mean −0.076 vs baseline); node potential/burial show no
-  consistent gain (mean −0.013; per-seed −0.128…+0.091). Two generations of
-  electrostatic representations (v10/v11) therefore fail to improve graft
-  discrimination: the discriminating information lives in contact geometry,
-  not in electrostatic energy terms. Direction re-routed to conformational
-  ensembles and larger domain adaptation.
+  consistent gain (mean −0.013; per-seed −0.128…+0.091). At the converged
+  150-epoch budget the verdict is the same or sharper: baseline graft 0.926
+  (recovering the historical 0.933 on the current structure snapshot), node
+  0.898, edge 0.902, and the full v11 model collapses to chance (graft
+  0.515). Two generations of electrostatic representations (v10/v11)
+  therefore fail to improve graft discrimination: the discriminating
+  information lives in contact geometry, not in electrostatic energy terms.
+  Direction re-routed to conformational ensembles and larger domain
+  adaptation.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
   stability test; single-instance rankings are anecdotes.**
 
