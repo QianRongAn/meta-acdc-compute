@@ -238,6 +238,17 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   acts as beneficial augmentation rather than a domain sacrifice.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
+- v11 atom-level electrostatics (ff14SB united-atom partial charges,
+  2026-10-13): node electrostatic potential / charge burial and edge pair
+  Coulomb + magnitude, tanh-squashed, appended to the v9.1 feature blocks
+  (node 26→28, edge 16→18; sliced ablations on one shared dataset).
+  30-epoch × 3-seed results: edge Coulomb degrades graft discrimination in
+  3/3 seeds (mean −0.076 vs baseline); node potential/burial show no
+  consistent gain (mean −0.013; per-seed −0.128…+0.091). Two generations of
+  electrostatic representations (v10/v11) therefore fail to improve graft
+  discrimination: the discriminating information lives in contact geometry,
+  not in electrostatic energy terms. Direction re-routed to conformational
+  ensembles and larger domain adaptation.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
   stability test; single-instance rankings are anecdotes.**
 

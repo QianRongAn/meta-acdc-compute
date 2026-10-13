@@ -372,6 +372,77 @@ class TestClinicalScan(unittest.TestCase):
             self.assertEqual(by["SAFEPEPXX"]["flag"], "")
 
 
+class TestElectrostatics(unittest.TestCase):
+    """v11 atom-level electrostatics features (ff14SB united-atom charges)."""
+
+    def test_charge_tables_net_charge(self):
+        from meta_acdc.structure.charges import unified_charges
+        self.assertAlmostEqual(sum(unified_charges("LYS").values()), 1.0)
+        self.assertAlmostEqual(sum(unified_charges("ARG").values()), 1.0)
+        self.assertAlmostEqual(sum(unified_charges("ASP").values()), -1.0)
+        self.assertAlmostEqual(sum(unified_charges("GLU").values()), -1.0)
+        for aa in ("ALA", "HIS", "PRO", "SER", "TRP"):
+            self.assertAlmostEqual(sum(unified_charges(aa).values()), 0.0)
+        # HIS averages HID/HIE tautomers; ASH is protonated ASP alias
+        self.assertEqual(unified_charges("ASH"), unified_charges("ASP"))
+        # terminal variants carry the +1/-1 terminus
+        self.assertAlmostEqual(
+            sum(unified_charges("LYS", first_in_chain=True).values()), 2.0)
+        self.assertAlmostEqual(
+            sum(unified_charges("ASP", has_oxt=True).values()), -2.0)
+
+    def test_coulomb_symmetry(self):
+        import numpy as np
+        from meta_acdc.structure.electrostatics import edge_coulomb
+        a = np.array([[0., 0., 0., 0.5], [1., 0., 0., -0.5]])
+        b = np.array([[0., 2., 0., -0.8]])
+        c1, m1 = edge_coulomb(a, b)
+        c2, m2 = edge_coulomb(b, a)
+        self.assertAlmostEqual(c1, c2)
+        self.assertAlmostEqual(m1, m2)
+        # empty side -> zero
+        c3, m3 = edge_coulomb(np.empty((0, 4)), b)
+        self.assertEqual((c3, m3), (0.0, 0.0))
+
+    def test_features_appended_and_respond(self):
+        from pathlib import Path
+        from meta_acdc.models.dataset import (_peptide_chains, make_decoy,
+                                              make_displaced_peptide_decoy)
+        from meta_acdc.structure.graph import (
+            build_interface_graph_from_residues, parse_pdb)
+        import numpy as np
+        root = Path(__file__).resolve().parents[1]
+        p1 = root / "data/raw/structures/1ao7.pdb"
+        p2 = root / "data/raw/structures/5brz.pdb"
+        if not (p1.exists() and p2.exists()):
+            self.skipTest("structure fixtures missing")
+        res = parse_pdb(p1)
+        donor = next(iter(_peptide_chains(parse_pdb(p2)).values()))
+        g0 = build_interface_graph_from_residues(res, electrostatics=False)
+        g1 = build_interface_graph_from_residues(res, electrostatics=True)
+        # dims: 26->28 node, 16->18 edge; base indices untouched
+        self.assertEqual(len(g0.node_features[0]), 26)
+        self.assertEqual(len(g0.edge_features[0]), 16)
+        self.assertEqual(len(g1.node_features[0]), 28)
+        self.assertEqual(len(g1.edge_features[0]), 18)
+        for f0, f1 in zip(g0.node_features, g1.node_features):
+            self.assertEqual(f0, f1[:26])
+        for f0, f1 in zip(g0.edge_features, g1.edge_features):
+            self.assertEqual(f0, f1[:16])
+        # graft (chemistry swap) and displacement must move the new features
+        keys = set(g1.node_keys)
+        graft = build_interface_graph_from_residues(
+            make_decoy(res, donor), electrostatics=True, forced_nodes=keys)
+        disp = build_interface_graph_from_residues(
+            make_displaced_peptide_decoy(res), electrostatics=True,
+            forced_nodes=keys)
+        nat_n = np.array(g1.node_features)[:, 26:]
+        gr_n = np.array(graft.node_features)[:, 26:]
+        di_n = np.array(disp.node_features)[:, 26:]
+        self.assertGreater(np.abs(nat_n - gr_n).sum(), 1e-3)
+        self.assertGreater(np.abs(nat_n - di_n).sum(), 1e-3)
+
+
 class TestPackaging(unittest.TestCase):
     """Deliverable 3: console entry points resolve to importable callables."""
 

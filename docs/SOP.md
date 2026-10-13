@@ -64,6 +64,20 @@ docker run --rm -v $PWD:/work meta-acdc python -c "import meta_acdc; print('OK')
 (骨架/节点集/肽标志不变);节点集 pin;供体序列去重;PDB 分组切分。
 消融与对照谱系见 `docs/benchmarks.md`。
 
+### 3.1 v11 原子级静电特征消融(2026-10-13,阴性收束)
+
+```bash
+# ff14SB united-atom 部分电荷特征:节点 26→28(esp/burial)、边 16→18(coul/mag)
+.venv/bin/python src/meta_acdc/models/dataset.py \
+    --out data/processed/egnn_dataset_v11.pt --with-electrostatics
+# 四配置切片消融 × 3 seed(切分固定;对照结论见 benchmarks.md 2026-10-13 节)
+bash scripts/train_v11_ablation.sh 30 0,1,2
+```
+特征语义:esp = 残基质心静电势(全原子 10 Å,eps=4r);burial = 带电原子
+(|q|>0.3 e)被对侧重原子 5 Å 包围程度(去溶剂化代理);coul/coul_mag =
+残基对原子级成对库仑能(eps=4r)及其无符号幅度;均 tanh 压缩。
+电荷表提取自 OpenMM ff14SB.xml(成键拓扑折叠氢电荷),净电荷精确。
+
 ## 4. 元学习基线(KN-6)
 
 ```bash

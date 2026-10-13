@@ -151,7 +151,8 @@ def make_displaced_peptide_decoy(
     return out
 
 
-def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
+def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
+                  with_electrostatics: bool = False) -> dict:
     rng = random.Random(seed)
     with open(struct_dir / "complexes.tsv") as fh:
         rows = list(csv.DictReader(fh, delimiter="\t"))
@@ -200,8 +201,9 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42) -> dict:
     def add(residues: list[Residue], label: int, pdb: str,
             forced_nodes: set | None = None):
         try:
-            g = build_interface_graph_from_residues(residues,
-                                                     forced_nodes=forced_nodes)
+            g = build_interface_graph_from_residues(
+                residues, forced_nodes=forced_nodes,
+                electrostatics=with_electrostatics)
         except ValueError:
             return
         if g.n_nodes < 20:
@@ -273,8 +275,12 @@ def main() -> int:
     ap.add_argument("--struct-dir", type=Path, default=Path("data/raw/structures"))
     ap.add_argument("--out", type=Path, default=Path("data/processed/egnn_dataset.pt"))
     ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--with-electrostatics", action="store_true",
+                    help="append v11 atom-level electrostatics/desolvation "
+                         "features (node 26->28, edge 16->18)")
     args = ap.parse_args()
-    stats = build_dataset(args.struct_dir, args.out, args.seed)
+    stats = build_dataset(args.struct_dir, args.out, args.seed,
+                          with_electrostatics=args.with_electrostatics)
     print(f"dataset saved to {args.out}: {stats}")
     return 0
 

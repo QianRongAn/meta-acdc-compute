@@ -22,6 +22,8 @@ import math
 from dataclasses import dataclass, field
 from pathlib import Path
 
+import numpy as np
+
 # Physicochemical features per standard amino acid (indexed by 1-letter code)
 # order: [charge, hydrophobicity (Kyte-Doolittle), side-chain volume (A^3)]
 AA_PHYSICOCHEM = {
@@ -254,11 +256,13 @@ def build_interface_graph(
     pdb_path: Path,
     interface_radius: float = INTERFACE_RADIUS,
     edge_cutoff: float = EDGE_CUTOFF,
+    electrostatics: bool = False,
 ) -> InterfaceGraph:
     """Build an interface graph from a TCR-pMHC PDB file."""
     residues = parse_pdb(pdb_path)
     return build_interface_graph_from_residues(
-        residues, pdb_path, interface_radius, edge_cutoff
+        residues, pdb_path, interface_radius, edge_cutoff,
+        electrostatics=electrostatics,
     )
 
 
@@ -268,6 +272,7 @@ def build_interface_graph_from_residues(
     interface_radius: float = INTERFACE_RADIUS,
     edge_cutoff: float = EDGE_CUTOFF,
     forced_nodes: set[tuple[str, int, str]] | None = None,
+    electrostatics: bool = False,
 ) -> InterfaceGraph:
     """Build an interface graph from an explicit residue list.
 
@@ -275,6 +280,9 @@ def build_interface_graph_from_residues(
     forced_nodes is given (decoy generation), the node set is pinned to those
     (chain, resid, icode) keys — only coordinates/edges change, so node
     features cannot leak the label via node-set differences.
+
+    electrostatics=True appends the v11 atom-level features (see
+    electrostatics.py): node += [esp, burial], edge += [coul, coul_mag].
     """
     if len(residues) < 10:
         raise ValueError(f"{pdb_path or '<residues>'}: too few residues ({len(residues)})")
@@ -324,6 +332,44 @@ def build_interface_graph_from_residues(
     ]
     graph.node_coords = [(residues[i].x, residues[i].y, residues[i].z) for i in idx]
 
+    # --- v11 atom-level electrostatics (opt-in, appended features) --------
+    es = None
+    if electrostatics:
+        from meta_acdc.structure.electrostatics import (
+            burial_feature, edge_coulomb, esp_feature, residue_charged_atoms)
+        # first residue of each chain (file order) -> N-terminal charges
+        seen_chains: set[str] = set()
+        first_keys: set[tuple[str, int, str]] = set()
+        for r in residues:
+            if r.chain not in seen_chains:
+                seen_chains.add(r.chain)
+                first_keys.add((r.chain, r.resid, r.icode))
+        charge_rows = residue_charged_atoms(residues, first_keys)
+        # stacked source atoms + per-residue slices (for self-exclusion)
+        slices, offset = [], 0
+        for rows in charge_rows:
+            slices.append((offset, offset + rows.shape[0]))
+            offset += rows.shape[0]
+        sources = (np.vstack(charge_rows)
+                   if charge_rows and offset else
+                   np.empty((0, 4)))
+        # opposite-side atom pools for the desolvation proxy
+        tcr_idx = [i for i, r in enumerate(residues) if roles[r.chain] == TCR]
+        pmhc_idx = [i for i, r in enumerate(residues) if roles[r.chain] != TCR]
+        tcr_atoms = np.vstack([charge_rows[i] for i in tcr_idx]) \
+            if tcr_idx else np.empty((0, 4))
+        pmhc_atoms = np.vstack([charge_rows[i] for i in pmhc_idx]) \
+            if pmhc_idx else np.empty((0, 4))
+        es = {"sources": sources, "slices": slices,
+              "tcr_atoms": tcr_atoms, "pmhc_atoms": pmhc_atoms,
+              "charge_rows": charge_rows}
+        for new_i, old_i in enumerate(idx):
+            is_t = roles[residues[old_i].chain] == TCR
+            opposite = pmhc_atoms if is_t else tcr_atoms
+            esp = esp_feature(graph.node_coords[new_i], sources, slices[old_i])
+            bur = burial_feature(charge_rows[old_i], opposite)
+            graph.node_features[new_i].extend([esp, bur])
+
     for new_i, old_i in enumerate(idx):
         for new_j, old_j in enumerate(idx):
             if new_j <= new_i:
@@ -333,6 +379,10 @@ def build_interface_graph_from_residues(
                 contact = _contact_hist(residues[old_i].atoms,
                                         residues[old_j].atoms)
                 feats = [*_rbf(d), *contact]  # 12 RBF + 4 contact = 16
+                if es is not None:
+                    coul, mag = edge_coulomb(es["charge_rows"][old_i],
+                                             es["charge_rows"][old_j])
+                    feats.extend([coul, mag])  # + 2 electrostatics = 18
                 graph.edge_index.append((new_i, new_j))
                 graph.edge_index.append((new_j, new_i))  # undirected
                 graph.edge_features.append(feats)
