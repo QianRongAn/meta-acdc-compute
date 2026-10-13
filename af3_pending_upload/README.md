@@ -1,5 +1,14 @@
 # af3_pending_upload —— 待提交 AlphaFold3 的结构任务
 
+> **进展（2026-10-13 晚）**：347 待传中，105 已传 AF3 网页版；剩余 172 个改走
+> **本地 ColabFold**（AutoDL 3080 Ti，AF2-multimer，单模型）。**run1 87 个已
+> 回收并打分**（`data/raw/colabfold_run1/` → `colabfold_predictions/` →
+> `colabfold_scores_ensemble.tsv`）；run2 85 个预计 2026-10-14 02:30 出。
+> ⚠️ 跨方法一致性（n=8）：AF3 vs ColabFold DA 分 Pearson r=0.35、均值
+> 0.712 vs 0.315 —— **ColabFold 结构不可互换用于 DA 打分**，只作结构 QC/粗筛层，
+> 不进主风险面板（详见 `docs/benchmarks.md` 2026-10-13 节）。
+> 台账 `already_uploaded.tsv` 已更新（466 行，CRLF→LF 归一化）。
+
 > **进展（2026-10-12 晚）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
 > （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务；现 393 条）。
 > 347 个待传**已全部分配完毕**：next60 batch1(60, 已传完) + batch2(60: 11 已有

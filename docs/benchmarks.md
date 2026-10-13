@@ -966,6 +966,58 @@ top-30 组成:
   漏掉"同一复合物不同 PDB 别名/AF3 只认序列"的重复(batch1 曾因此废掉
   24/60 个提交)。
 
+## 2026-10-13:ColabFold 本地批量结构 run1 回收(87 个)——打分 + 跨方法一致性(诚实负面)
+
+**背景**:AF3 网页版配额有限,待传队列剩余 172 个改走本地 ColabFold
+(AutoDL 3080 Ti,AF2-multimer,5 链复合物,单模型,`mmseqs2_uniref_env_envpair`,
+max-msa 128:256,3 recycle)。run1 = 87 个(2026-10-12 21:03–23:57 完成);
+run2 = 85 个(预计 2026-10-14 02:30)。
+
+**结构质量(run1,n=87)**:pLDDT 平均 88.1(80.6–91.1),pTM 0.70,ipTM 0.65,
+max pAE 31.2,0 个 pLDDT<70。全部肽在 MHC 沟内(肽–MHC 最小质心距
+1.08–4.68 Å,无一 >6 Å)——**低分不是肽掉出沟槽造成的**。
+
+**管线新增**(已入库):`structure/colabfold_import.py`(PDB→mmCIF 转换,
+链角色按内容判定;A/B/C/D/E = TCRα/β/肽/MHC/β2m 全部正确识别)、
+`scripts/score_colabfold.sh`(5-seed DA 打分,与 da_rescore 完全同口径:
+`--mask-plddt`、T=1.0)、`scripts/update_pending_ledger.py`(台账批量更新,
+顺带把台账 CRLF 归一化为 LF)。
+
+**打分**:87/87 成功,分数呈**双峰**(0.00–0.15 与 0.5–1.0 两簇)。
+
+**跨方法一致性检查(重要)**:14 个 job 因选批基线只排除"AF3 服务器已传
+清单"而漏掉"磁盘已有 AF3 结果/已传"记录被重跑;其中 8 个有两套结构
+(AF3 + ColabFold),同口径打分对比:
+
+| job | AF3 | ColabFold | 差值 |
+|---|---|---|---|
+| 5nme_SLYNTIATL | 0.987 | 0.946 | −0.04 |
+| 5nme_SLFNTIAVL | 0.995 | 0.602 | −0.39 |
+| 5eu6_YLEPGPVTA | 0.283 | 0.347 | +0.06 |
+| 5euo_GLCTLVAML | 0.515 | 0.107 | −0.41 |
+| 5jzi_KLVALVINAV | 0.640 | 0.049 | −0.59 |
+| 5m00_KAPANFATM | 0.365 | 0.222 | −0.14 |
+| 5m00_KAPFNFATM | 0.986 | 0.007 | −0.98 |
+| 5men_PKYVKQNTLKLAT | 0.923 | 0.239 | −0.68 |
+
+- Pearson r = **0.35**(n=8,弱);均值 AF3 **0.712** vs ColabFold **0.315**
+  (**系统性下移 ~0.4**);两例方向一致(高-高 / 低-低),其余大幅漂移。
+
+**结论(诚实负面,处置已定)**:AF2-multimer(ColabFold)结构与 AF3 结构
+**不可互换**用于 DA 打分——同一 TCR-肽对分数漂移大、总体偏低。原因与
+文献一致:AF2-multimer 对 TCR-pMHC 界面置信度低(ipSAE TCRα-肽 ≈
+0.05–0.08),界面几何系统偏离 AF3,而 DA 模型是 AF3 几何上训练的
+(训练/推理域不匹配)。
+**处置**:ColabFold 打分只作"结构 QC + 粗筛"层,**不进主风险面板**;
+风险排名继续以 AF3 结构为准。run2(85 个)完成后同样只进粗筛层。
+此负面结果同时是"结构生成器选择影响下游模型"的量化证据,写入论文 1
+的局限讨论。
+
+**家族排名(run1 87 个,供粗筛参考)**:5hyj 组 MVWGPDPLYV 0.995 /
+RQWGPDPAAV 0.989 最高;5hhm 组 3 个全 ≤0.005;5m00 组 KAPFNFATM 0.007
+(其 AF3 打分 0.986,再次印证不可跨方法比较)。全表见
+`data/processed/colabfold_scores_ensemble.tsv`。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
