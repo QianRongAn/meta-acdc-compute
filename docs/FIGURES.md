@@ -24,8 +24,24 @@
 - **Legacy numbering**: `fig5`/`fig6` filenames predate the current paper1 figure list
   (paper1 lists them as Fig 5/Fig 6 with the content above); the numbering in the
   manuscript captions is authoritative, filenames are stable identifiers.
-- **Column fit**: sizes 4.4–4.6 in are single-column; 6.5+ in should be scaled to
-  7.2 in (double) on import — SVG scales without loss.
+- **Column fit / print widths (Nature-style: 180 mm full width = 7.09 in;
+  88 mm single column = 3.46 in)**: import every figure at exactly one of the
+  widths below. The SVG is vector and scales losslessly (Word 2016+ imports SVG
+  directly; the 300-dpi PNG alternative is already print-ready at 7-9 in
+  native size, i.e. 2100+ px, so scaling to 88-180 mm is a document-side
+  setting, not a re-render).
+
+| Figure | import width | LaTeX |
+|---|---|---|
+| fig1_ablation | 88 mm | `\includegraphics[width=0.48\textwidth]` |
+| fig2_heatmap | 180 mm | `\includegraphics[width=\textwidth]` |
+| fig3_resubmission | 88 mm | `\includegraphics[width=0.48\textwidth]` |
+| fig5_instability | 180 mm | `\includegraphics[width=\textwidth]` |
+| fig6_domain_adapt | 180 mm | `\includegraphics[width=\textwidth]` |
+| fig7_crossreactivity | 88 mm | `\includegraphics[width=0.48\textwidth]` |
+| fig8_cross_method | 88 mm | `\includegraphics[width=0.48\textwidth]` |
+| figp2_recall | 88 mm | `\includegraphics[width=0.48\textwidth]` |
+| figp2_prefilter | 88 mm | `\includegraphics[width=0.48\textwidth]` |
 - **Do not re-crop**: the 2026-10-14 repair changed panel contents (154→188) and
   all scores; figures regenerated from the repaired data supersede the Sept-23
   versions (kept only `figp2_*` unchanged: paper-2 AL numbers are unaffected).
