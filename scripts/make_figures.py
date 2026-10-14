@@ -75,7 +75,7 @@ def fig1_ablation() -> None:
 def fig2_heatmap() -> None:
     """TCR x peptide ensemble-score heatmap (single-hue sequential).
 
-    Prefers the 3-seed domain-adapted ensemble (prediction_scores_ensemble.tsv,
+    Prefers the 5-seed domain-adapted ensemble (prediction_scores_ensemble.tsv,
     written from da_scores_seed*_ensemble.tsv), which is cross-instance stable;
     falls back to the legacy relabeled single-instance table.
     """
@@ -109,10 +109,10 @@ def fig2_heatmap() -> None:
             v = mat[i, j]
             if not np.isnan(v):
                 ax.text(j, i, f"{v:.2f}", ha="center", va="center",
-                        fontsize=6.5,
+                        fontsize=7.0,
                         color="white" if v > 0.55 else INK)
     cb = fig.colorbar(im, ax=ax, shrink=0.8)
-    cb.set_label("compatibility score (3-seed DA ensemble, cross-instance stable)")
+    cb.set_label("compatibility score (5-seed DA ensemble, cross-instance stable)")
     ax.set_xlabel("peptide")
     fig.tight_layout()
     fig.savefig(OUT / "fig2_heatmap.png", dpi=300)
@@ -166,7 +166,7 @@ def fig3_resubmission() -> None:
             if abs(v2 - v1) > 0.08:
                 ax.annotate(name.split("_", 1)[1], (v1, v2),
                             textcoords="offset points", xytext=(4, 4),
-                            fontsize=6.5, color=INK)
+                            fontsize=7.0, color=INK)
         ax.set_xlim(*lim)
         ax.set_ylim(*lim)
         ax.set_xlabel(f"first submission (A): {xlabel}")
@@ -296,7 +296,7 @@ def fig6_domain_adapt() -> None:
     ax.set_title(f"A  Five DA instances, {len(jobs)} AF3 candidates",
                  fontsize=9, loc="left")
     ax.set_xticks(x, [j.split("_", 1)[0] for j in jobs], rotation=60,
-                  ha="right", fontsize=6.5)
+                  ha="right", fontsize=7.0)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
 
@@ -481,7 +481,7 @@ def fig8_cross_method() -> None:
                linewidth=0.6)
     for xi, yi, j in zip(x, y, jobs):
         ax.annotate(j, (xi, yi), textcoords="offset points", xytext=(6, -10),
-                    fontsize=6.2, color=INK)
+                    fontsize=6.8, color=INK)
     ax.set_xlabel("AF3 structure — DA score", fontsize=9)
     ax.set_ylabel("ColabFold (AF2-multimer) — DA score", fontsize=9)
     ax.set_xlim(-0.03, 1.03)
