@@ -1187,6 +1187,44 @@ RQWGPDPAAV 0.989 最高;5hhm 组 3 个全 ≤0.005;5m00 组 KAPFNFATM 0.007
 - 该报告收尾"待传队列"线:277 个结构的**两个下游产物**(AF3 风险面板 188 +
   ColabFold 粗筛 172)均已归档。
 
+## 2026-10-15:234 正样本(172 AF3 + 62 晶体)3-seed 域适应——阴性结果,风格匹配 > 规模
+
+**问题**:172-native 稳定性停在 0.644,规模(463 = 172 AF3 + 291 晶体理论值)与
+风格匹配哪个是约束?实测可用增量 = 62 个与 AF3 同名晶体(其余 116 个与
+native 同名,内容重复于已有正样本),故实验 = **234 混合正样本 vs 172 纯
+预测风正样本**。
+
+**执行**:实例 03:57 启动后被关机打断(会话此前误判"GPU 不需要了",零
+checkpoint 损失);05:00–06:37 本机 750 Ti 补完 3 seed × 150 ep
+(seed 2 因 Windows 侧占满显存 OOM 一次,同配置重试成功)。训练集 1968 图
+(656 正 / 1312 负;233 个 native 过审——`6uk2_KQWLVWLLL` 晶体界面仅
+19 节点 < 20 守卫,自动排除)。
+
+**结果**:
+
+| 项 | 234-mix(本次) | 172-native(基线) |
+|---|---|---|
+| val AUROC | 0.958 / 0.891 / 0.957 | 0.947–0.959(5/5 健康) |
+| 候选面板退化 seed | **1/3(seed1 恒定输出)** | 0/5 |
+| 两两 Spearman(非退化) | 0.733(bootstrap 95% CI [0.644, 0.801]) | mean 0.644(5 seed) |
+| 与基线集成分歧 | Spearman **0.669** | — |
+| 集成均值±std | 0.941 ± 0.131 | 0.824 ± 0.205 |
+| 临床金标准 | 5brz 两条 FATAL-mimicry 仍在靶水平(ESDPIVAQY rank1、KVAKELVHFL rank3);Kimmtrak YLEPGPVTL rank1 | 同左(判读不变) |
+
+**结论(诚实阴性)**:
+- **加晶体正样本没有提升稳定性**——+36% 规模下 mean r 0.733 的 CI 下界恰
+  好压在基线 0.644 上,且出现 1/3 退化 seed(172-native 是 0/5)。方向
+  指向"**风格匹配比规模更关键**":预测风正样本(AF3)训练保持全 seed 健康,
+  掺入晶体风正样本引入了退化模式(与既往"val 健康但候选恒定输出"的
+  塌缩型一致)。
+- 集成排名与基线中度一致(r=0.669),临床判读不变——**主风险面板维持
+  172-native 5-seed 口径(0.644),234-mix 只作消融记录,不替换**。
+- 全部产物:`data/processed/da_v2_crystals/{da_seed0..2.model.pt,train.log}`、
+  `data/processed/da234_gate/{stability.txt,comparison.txt,da234_ensemble.tsv,
+  da234_clinical_scan.tsv}`;复现:`scripts/run_da234_gate.sh`。
+- 顺带:`train_domain_adapt.py` 增加 `--batch-size`(默认 32 不变),小显存
+  机器可降档续训。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
