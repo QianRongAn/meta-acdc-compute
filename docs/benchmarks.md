@@ -1118,6 +1118,55 @@ RQWGPDPAAV 0.989 最高;5hhm 组 3 个全 ≤0.005;5m00 组 KAPFNFATM 0.007
 - 明细:`data/processed/colabfold_scores_ensemble.tsv`、
   `colabfold_run2_import_report.tsv`。
 
+## 2026-10-14:AF3 候选集归因修复(错挂/伪造条目)+ 全面重打分 —— 重要诚实性事件
+
+**根因(两层)**:
+1. AF3 网页端粘贴的若干 job 的链序列发生 1–2 个**末端残基漂移**(观测到
+   头部多 1 / 尾部多 1 / 尾部丢 1),精确链指纹匹配不上;
+2. 旧导入脚本(`native_manifest.py`)对匹配失败采取"**盲选该肽第一行候选**"
+   回退 → 把这些 job 的结果挂到**错误的 job_id** 下(如 3utt 的内容挂 3uts
+   名下),另有 4 个名字**从未真实提交**却因回退被"造"出了结果文件。
+
+**修复方法**(全部可复现):
+- 提交顺序铁证:三个上传日志(`upload_log_pending_92xx.txt`,逐条 LAUNCHED
+  名字)按时间戳与 folds 下载目录里的 job 目录一一对齐,142 个 fold job 全
+  部映射到真实 job_id(肽段精确相等 + 顺序约束);
+- `import_af3.py` 修复:①`tcr_pair` 增加长度兜底(罕见 TRAJ 等位基因无
+  YFCAx motif,如 3utt α 链);②新增 `matches_chain_pair_tol` /
+  `_eq_upto_termini`(最多一头一尾各一次修剪、肽段必须精确相等——初版
+  实现允许两端同时修剪,把肽段中段差异也当末端差异,已修正并用单测锁定);
+- 3hg1_AAGIGILTV 真实内容从 9 月 folds 目录找回;4 个伪造条目
+  (3qdj_ELAGIGILTV、5m00_KAPFNFATM、2ak4_LPEPLPQGGLTAY、2xn9_GILGFVFTL)
+  删除并在台账标 VOID;
+- 12 对内容重复(4jrx↔3kxf、4pri↔3mv9、2bnq↔6q3s 等)为提交时粘贴内容
+  趋同 + AF3 服务器对相同输入返回缓存所致,记 content-duplicate。
+
+**重打分(5-seed DA,同口径 mask-plddt / T=1.0,修正后 188 job 面板)**:
+
+| 指标 | 修复前(154) | 修复后(188) |
+|---|---|---|
+| 两两 seed mean pairwise r | 0.609 (CI 0.529–0.677) | **0.644 (CI 0.572–0.706)** |
+| 判决 | STABLE | **STABLE** |
+
+- 修复**提升**了跨 seed 稳定性(错挂内容在放大 seed 间方差);
+- 新家族组内 r:3utt **0.805**、5c07 **0.851**、3uts 0.814→0.571(其内容
+  现为自身真实 folds)、4jfd 0.100(候选同质,组内不可报告)。
+
+**临床扫描变化(重要,修正了此前结论)**:
+- 5brz(MAGE-A3 A3A)不变:ESDPIVAQY 0.948、KVAKELVHFL 0.842 仍
+  FATAL-mimicry ✓;5bs0_EVDPIGHLY(另一 MAGE-A3 结构上同一靶肽)0.883,
+  与 5brz 的 0.892 **跨结构一致**;
+- ⚠️ **Kimmtrak 对照结论被修正**:修复前 YLEPGPVTA 0.283 家族内第 1
+  ("正确低分")是**错挂结构的假象**;修正后 0.548 家族内第 4,而 off-target
+  模拟 YLEPGPVTL **0.911 家族内第 1**、YLEPGPITA 0.817 第 2。即 Kimmtrak
+  靶肽在该面板上**不再表现为明确低分**,"安全"判读撤销,改为"家族内
+  中低、低于两个 off-target 模拟"。
+
+**教训**:①"匹配不上就盲选第一行"的回退是不可接受的——归因必须要么
+证据确凿、要么留空并报警;②打分结果与结构内容强耦合,任何批量重写 CIF
+后必须全面重打分 + 重跑判决门;③内容 md5 唯一性审计查不出"名字错、内容
+对"的错挂,必须加"名字↔内容指纹一致"的归因审计。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)

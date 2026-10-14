@@ -27,6 +27,7 @@
 - [x] **2026-10-13 会话**:①待传队列 172 个走本地 ColabFold 的 **run1(87 个)回收完成**(Windows results_run1 → 仓库 `data/raw/colabfold_run1/` 45MB);新增 `colabfold_import.py`(PDB→mmCIF,链角色内容判定全对)+ `score_colabfold.sh`(5-seed DA,与 da_rescore 同口径)+ `update_pending_ledger.py`(台账→466 行,CRLF 归一化);②87 个全部打分成功(双峰分布),**跨方法一致性检查(n=8 双结构 job)**:AF3 vs ColabFold Pearson r=**0.35**、均值 0.712 vs 0.315(系统性下移)——**AF2-multimer 结构与 AF3 不可互换用于 DA 打分**,ColabFold 分只作结构 QC/粗筛层,**不进主风险面板**(benchmarks.md 有完整记录);③run2(85 个)在 GPU 远端跑(预计 2026-10-14 02:30 出),处理脚本已备好(`process_colabfold_run.sh`)
 - [x] **2026-10-14 会话**:待传队列本地 ColabFold **run2(85/85 个)回收完成**——自动拉取+导入+5-seed DA 打分(均值 0.286);沿用 run1 结论:AF2-multimer 结构与 AF3 不可互换用于 DA 打分,只作 QC/粗筛层,不进主风险面板
 - 项目仓库:`/home/administrator/docs/meta-acdc/`(2026-09-22 起由 opencode 接续推进)
+- [x] **2026-10-14 AF3 候选集归因修复会话**:①发现旧导入"盲选第一行候选"回退导致**错挂**(3utt 内容挂 3uts 名下等)+ **伪造条目**(4 个名字从未提交却有结果文件)+ 16 个漏导入;②用上传日志提交顺序与 folds 时间戳对齐,142 个 fold job 全部映射到真实 job_id;`import_af3.py` 修复 tcr_pair 长度兜底 + 末端容忍匹配(单测锁定);③修正后 **188 job 面板重打分**:稳定性 **0.644 (CI 0.572–0.706) STABLE**(修复前 0.609);④**临床结论修正**:Kimmtrak 靶肽 YLEPGPVTA 0.548 家族第 4(修复前 0.283 第 1 是错挂假象),off-target YLEPGPVTL 0.911 第 1——"安全低分"判读撤销;5bs0_EVDPIGHLY 0.883 与 5brz 跨结构一致 ✓;5brz 两 FATAL 不变;⑤台账 554 行(4 条 VOID + 17 新 + 117 补注);benchmarks.md 完整记录(含教训)
 
 ### 文献综述关键发现(2026-09-20)
 1. ACDC 原文确认:bioRxiv 2025.07.23.666264(Hong K.-L. 等 14 人)。**缩写展开与计划书不一致**:原文是 "antigen-presenting cell detecting cytokine",计划书写 "Artificial Cell Display of pMHC" → 需与实验室核对

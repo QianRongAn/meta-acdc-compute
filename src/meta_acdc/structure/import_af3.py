@@ -39,12 +39,24 @@ def read_job_sequences(request_path: Path) -> list[str]:
 
 
 def tcr_pair(seqs: list[str], peptide: str) -> tuple[str | None, str | None]:
-    """Alpha/beta by conserved pre-CDR3 motif (order-independent)."""
+    """Alpha/beta by conserved pre-CDR3 motif (order-independent).
+
+    Fallback: unusual TRAJ/TRBJ alleles miss the hardcoded motifs entirely
+    (e.g. 3utt alpha has no YFCAx); then assign by chain length windows
+    (class I: alpha ~170-225, beta ~225-265, MHC ~270+, b2m ~100).
+    Motif path is tried first, so previously matched jobs are unchanged.
+    """
     rest = [s for s in seqs if s != peptide]
     beta = next((s for s in rest if "YFCAS" in s or "YLCAS" in s), None)
     alpha = next((s for s in rest
                   if any(m in s for m in ("YFCAV", "YFCAI", "YFCAL", "YLCAV"))),
                  None)
+    if alpha is None or beta is None:
+        cands = [s for s in rest if s not in (alpha, beta)]
+        if beta is None:
+            beta = next((s for s in cands if 225 <= len(s) <= 265), None)
+        if alpha is None:
+            alpha = next((s for s in cands if 170 <= len(s) <= 225), None)
     return alpha, beta
 
 
@@ -57,6 +69,50 @@ def matches_chain_pair(alpha, beta, cand: dict) -> bool:
     if not alpha or not beta:
         return False
     return {alpha, beta} == {cand.get("tcr_a"), cand.get("tcr_b")}
+
+
+def _eq_upto_termini(s1: str, s2: str, max_trim: int = 2) -> bool:
+    """Terminal-tolerant equality for AF3 pasted chains.
+
+    AF3 web pastes sometimes shift chains by 1-2 terminal residues
+    (observed: prepend 1 / append 1 / drop last residue), which breaks exact
+    fingerprint matching. True iff s1/s2 agree on an identical core with at
+    most one head-side trim and at most one tail-side trim TOTAL (max_trim
+    residues combined) — so mid-sequence differences can never be masked.
+    Peptides must still be compared exactly by the caller.
+    """
+    if s1 == s2:
+        return True
+    if abs(len(s1) - len(s2)) > max_trim:
+        return False
+    for h1 in range(max_trim + 1):              # head trim on s1
+        for t1 in range(max_trim - h1 + 1):     # tail trim on s1
+            core = s1[h1:len(s1) - t1 if t1 else None]
+            h2max = max_trim - h1 - t1
+            if h1 > 0:
+                h2max = 0                       # head trim on one side only
+            for h2 in range(h2max + 1):         # head trim on s2
+                t2 = len(s2) - len(core) - h2   # tail trim on s2
+                if t2 < 0 or t2 > max_trim - h1 - t1 - h2:
+                    continue
+                if t1 > 0 and t2 > 0:
+                    continue                    # tail trim on one side only
+                if core == s2[h2:len(s2) - t2 if t2 else None]:
+                    return True
+    return False
+
+
+def matches_chain_pair_tol(alpha, beta, cand: dict, max_trim: int = 2) -> bool:
+    """Tolerant version of matches_chain_pair (terminal edits allowed)."""
+    if not alpha or not beta:
+        return False
+    a2, b2 = cand.get("tcr_a"), cand.get("tcr_b")
+    if not a2 or not b2:
+        return False
+    return ((_eq_upto_termini(alpha, a2, max_trim)
+             and _eq_upto_termini(beta, b2, max_trim))
+            or (_eq_upto_termini(alpha, b2, max_trim)
+                and _eq_upto_termini(beta, a2, max_trim)))
 
 
 def load_manifest(path: Path) -> list[dict]:
