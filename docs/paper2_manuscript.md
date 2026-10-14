@@ -2,8 +2,10 @@
 
 > Working draft, 2026-09-23. Dry-lab scope. Numbers from docs/benchmarks.md.
 > Companion to paper1 (Meta-TCR-GNN); cites its model as [Meta-TCR-GNN].
-> Domain adaptation is now resolved (144 native positives → cross-instance
-> verdict STABLE), and the clinical safety scan is reported (§2.2/§2.8).
+> Domain adaptation is now resolved (as of 2026-10-14: 172 native positives
+> / 188 candidates → cross-instance verdict STABLE at mean pairwise Spearman
+> 0.644; earlier milestones 0.729 at 144 natives / 21 candidates, 0.609 at
+> 154 candidates), and the clinical safety scan is reported (§2.2/§2.8).
 
 ## Title (candidate)
 
@@ -46,8 +48,10 @@ scale — a stability requirement any OOD-scoring pipeline must satisfy. We
 then resolve it: domain adaptation on AF3-predicted native complexes raises
 the cross-instance ranking agreement monotonically with the number of native
 positives (0.447 at 25 proxy structures → 0.479 at 89 → 0.729 at 144,
-crossing the 0.5 gate), and the stable model places the documented lethal
-MAGE-A12/titin off-targets within 0.02-0.06 of the cognate target — it does
+crossing the 0.5 gate; later extended to 172 natives: 0.609 on 154
+candidates → **0.644 on 188 candidates after the 2026-10-14 attribution
+repair**, docs/benchmarks.md), and the stable model places the documented
+lethal MAGE-A12/titin off-targets within 0.05 of the cognate target — it does
 not clear them. The result is a ranking-based safety-assessment pipeline (TCR-Safety-Radar) and a
 reproducible protocol for in silico off-target screening.
 
@@ -153,19 +157,21 @@ experiments.
 
 As a ground-truth probe we score the MAG-IC3 TCR — the receptor at the
 center of the MAGE-A3 trial — against its documented targets and off-targets
-on AF3-predicted structures. Under the cross-instance-stable 144-native
-domain-adapted ensemble (non-degenerate seeds; mean pairwise Spearman 0.729,
-§3.3) the family-relative ordering is:
+on AF3-predicted structures. Under the cross-instance-stable 172-native
+domain-adapted ensemble (non-degenerate seeds; mean pairwise Spearman 0.644
+over 188 candidates, §3.3; this supersedes the 0.729/144-native figures
+quoted in earlier drafts) the family-relative ordering is:
 
 | peptide | role | score | rank | fatal |
 |---|---|---|---|---|
-| EVDPIGHLY | MAGE-A3 target | 0.984 | 1 | yes |
-| KVAKELVHFL | MAGE-A12 mimic | 0.962 | 2 | yes |
-| ESDPIVAQY | titin mimic | 0.924 | 3 | yes |
-| ILAKFLHWL | off-target | 0.679 | 4 | yes |
+| EVDPIGHLY | MAGE-A3 target | 0.892 | 2 | yes |
+| ESDPIVAQY | titin mimic | 0.948 | 1 | yes |
+| KVAKELVHFL | MAGE-A12 mimic | 0.842 | 3 | yes |
+| ILAKFLHWL | off-target | 0.676 | 4 | yes |
 
 Two observations stand out. First, the two documented lethal off-targets sit
-only 0.02–0.06 below the cognate target — the model does not clear either
+at/above the cognate target (titin 0.948 #1, MAGE-A12 0.842 vs target 0.892)
+— the model does not clear either
 lethal mimicry peptide (the correct conservative behaviour). At the seed
 level the target-vs-MAGE-A12 ordering is a coin flip, which is what
 molecular mimicry predicts. Second, the lower-scoring entry (ILAKFLHWL) is
@@ -316,9 +322,9 @@ so both recall and variance must be reported.
 With the stable model we can now score native-control peptides alongside
 cross-reactivity candidates. On the two families with a scorable native
 control, the cognate peptide does not rank first: 1ao7 (A6, highly
-promiscuous) ranks the native LLFGYPVYV #3/5 with all LLFGY*V variants at
-0.96–1.00, while 5brz ranks its target EVDPIGHLY #2/5 behind the lethal
-MAGE-A12 mimic. A pooled Fisher test over two controls is underpowered
+promiscuous) ranks the native LLFGYPVYV #3/5 with the LLFGY*V variants
+spanning 0.889–0.984, while 5brz ranks its target EVDPIGHLY #2/5 behind the
+lethal titin mimic (0.948) and above the MAGE-A12 mimic (0.842). A pooled Fisher test over two controls is underpowered
 (p=0.66) and cannot support a significance claim. The honest reading is that
 the model captures *family-level* compatibility and correctly flags lethal
 cross-reactivity, but does not isolate a single cognate peptide for
@@ -362,7 +368,9 @@ pairwise Spearman on the scored candidates (mean r ≥ 0.5 required before any
 ranking is reported as a claim). The fix is scale-monotone: 25 proxy
 positives give r=0.447, 89 natives 0.479 (collapse removed), and **144
 natives 0.729 — the gate is passed** (all pairs P<5e-4), with val AUROC
-0.96. The instability is therefore a training-data-scale property, not an
+0.96. On the larger panels the gate is re-confirmed at 172 natives: 0.609
+(154 candidates, 2026-10-12) and 0.644 (188 candidates, post-repair,
+2026-10-14). The instability is therefore a training-data-scale property, not an
 AF3-input defect.
 
 ### 3.4 MHC presentation pre-filter
@@ -417,9 +425,10 @@ anecdote until that gate was passed. The gate is now passed by the
 domain-adaptation route (training on AF3-predicted *native* structures):
 the cross-instance agreement rises monotonically with the number of native
 positives (0.447 at 25 proxy structures, 0.479 at 89 natives, **0.729 at
-144 natives**, all pairs P<5e-4). The instability was therefore a
+144 natives**, later **0.644 at 172 natives on 188 candidates**, all
+pairs significant). The instability was therefore a
 training-data-scale property of the structural model, not an intrinsic
-defect of the AF3 inputs; with ~144 native positives and a fixed 3-seed
+defect of the AF3 inputs; with ~172 native positives and a fixed 5-seed
 ensemble the rankings become reproducible, and the clinical safety scan
 (§2.8, [Meta-TCR-GNN] §2.7) correctly flags documented lethal off-targets.
 

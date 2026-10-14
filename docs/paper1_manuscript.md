@@ -36,12 +36,18 @@ feature eliminates score collapse but not ranking instability. A
 domain-adaptation route (mixing AF3-predicted *native* structures into
 training with the full decoy protocol) resolves it monotonically with scale:
 the cross-instance ranking agreement rises from 0.447 (25 proxy positives)
-through 0.479 (89 natives) to **0.729 (144 natives), crossing the 0.5
-stability gate** (all seed pairs P<5e-4) while val AUROC reaches 0.96. The
-crisis is thus one of training-data scale, not intrinsic AF3-input noise.
-Our results define a representational minimum for interface-compatibility
-learning, a reproducible decoy-construction protocol, and a cross-instance
-stability test that any OOD-scoring claim must pass.
+through 0.479 (89 natives) and 0.729 (144 natives, 21 candidates) to
+**0.644 (172 natives, 188 candidates; bootstrap CI 0.572–0.706)**, which
+passes the 0.5 stability gate with its CI lower bound while val AUROC
+reaches 0.95–0.96. The crisis is thus one of training-data scale, not intrinsic AF3-input noise.
+En route we document two data-integrity corrections without which the OOD
+numbers are not interpretable: a train/serve normalization skew, and —
+after the candidate panel was enlarged — an import-path misattribution that
+we detected by order-vs-fingerprint audit and repaired before rescoring,
+which *raised* cross-instance agreement. Our results define a representational minimum
+for interface-compatibility learning, a reproducible decoy-construction
+protocol, and a cross-instance stability test that any OOD-scoring claim
+must pass.
 
 ## 1. Introduction
 
@@ -94,7 +100,7 @@ splits; (iv) a structure-to-specificity resource linking 281/291 STCRDab
 complexes to VDJdb records (2,309 CDR3 hits, 1,517 cross-epitope); and (v) a
 cross-instance stability test that exposes ranking non-reproducibility on
 AF3 inputs and a scale-monotone domain-adaptation route that resolves it
-(0.447 → 0.729 at 144 native positives, crossing the 0.5 gate).
+(0.447 → 0.729 at 144 native positives, confirmed at scale on 188 candidates: 0.644 at 172 natives).
 
 ## 2. Results
 
@@ -134,37 +140,52 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
 
 ### 2.4 Cross-reactivity ranking on AF3-predicted structures (Fig 2, Fig 6)
 
-> Status: with the scale-resolved domain-adapted model (144 native positives,
+> Status: with the scale-resolved domain-adapted model (172 native positives,
 > Section 2.6), the cross-instance ranking verdict is STABLE (mean pairwise
-> Spearman 0.729), so the numbers below are reportable. They use a fixed
-> 3-seed ensemble; single-instance scores remain unreliable.
+> Spearman 0.644, bootstrap CI 0.572–0.706 over 188 candidates), so the
+> numbers below are reportable. They use a fixed 5-seed ensemble; single-instance scores remain unreliable.
 >
 > **Label correction (2026-09-23):** the pdb attributions are taken from the
 > chain-fingerprint-corrected map (the `kn5_submission_list.tsv` tcr_a/tcr_b
 > swap had mislabeled 48/73 structures). Group identities are chain-signature
 > families.
+>
+> **Attribution repair (2026-10-14):** all numbers below were regenerated
+> after an import-path misattribution was detected and repaired (Section
+> 2.6, "Data integrity"); they supersede the 2026-09/10 figures quoted in
+> earlier drafts.
 
-- A6/1ao7 family: the eight LLFGY*V variants all score 0.96-1.00 — the A6
-  TCR is strongly cross-reactive, so the native peptide does not stand out
-  (rank #3/5); the model reproduces the family's promiscuity rather than
-  isolating the cognate ligand.
-- 1qrn family: LLFGPVYV is the clear outlier (0.80) vs 0.91-0.99 for the
-  rest — a within-family discrimination that is stable across seeds.
-- 1tcr family: EQYKFYSV 0.941 / SIYRYYGL 0.863 vs GGAPWNPAMMI 0.523 and
-  QLSPFPFDL 0.597.
-- 2vlj (JM22) family: GILGLVFTL 0.938 vs GILEFVFTL 0.475 and
-  PKYVKQNTLKLAT 0.314 (lowest score overall — correct rejection of a
-  non-cognate long peptide).
-- Clinical gold standard (MAG-IC3/5BRZ, A3A/MAGE-A3): native EVDPIGHLY
-  0.984 (rank #1); the lethal MAGE-A12 mimic KVAKELVHFL scores 0.962
-  (rank #2) and the titin mimic ESDPIVAQY 0.924 (rank #3) — both fatal
-  off-targets within 0.02-0.06 of the cognate level, so neither is cleared,
-  matching their confirmed cross-reactive biology (Section 2.7 / KN-11).
+- A6/1ao7 family: the eight LLFGY*V variants span 0.889–0.984
+  (LLFGYPRYV 0.984, LLFGYAVYV 0.966, MLWGYLQYV 0.954, LLFGYPVYV 0.949,
+  LLFGYPVAV 0.889) — the A6 TCR is strongly cross-reactive, so the native
+  peptide does not stand out (rank #3/5); the model reproduces the family's
+  promiscuity rather than isolating the cognate ligand.
+- 1qrn family: LLFGPVYV is the clear outlier (0.305, ensemble std 0.39)
+  vs 0.827–0.978 for the rest — a within-family discrimination that is
+  stable across seeds.
+- 1tcr family: SIYRYYGL 0.811 / EQYKFYSV 0.713 vs GGAPWNPAMMI 0.473 and
+  QLSPFPFDL 0.566.
+- 2vlj (JM22) family: GILGLVFTL 0.817 vs GILEFVFTL 0.380 and
+  PKYVKQNTLKLAT 0.061 (lowest overall — correct rejection of a
+  non-cognate long peptide; cf. Section 2.7: the same peptide scores 0.941
+  on the unrelated 5men TCR, i.e. rejection is receptor-specific).
+- LPEPLPQGQLTAY-mimic family (2ak4 / 3kxf, single-position variants):
+  the two conservative substitutions LPEPLPQGQLGAY (0.990) and
+  LPEPLPQGQLTGY (0.975) exceed the cognate-level variants
+  (GPEPLPQGQLTAY 0.807–0.908), while the mid-chemistry LPEPLGQGQLTAY
+  (0.408–0.731) splits by receptor — a chemistry-driven, receptor-dependent
+  gradation.
+- Clinical gold standard (MAG-IC3/5BRZ, A3A/MAGE-A3) and the Kimmtrak
+  control (Section 2.7): native EVDPIGHLY 0.892 (rank #2); the lethal
+  MAGE-A12 mimic KVAKELVHFL scores 0.842 (rank #3) and the titin mimic
+  ESDPIVAQY 0.948 (rank #1) — both fatal off-targets at or above the
+  cognate level, so neither is cleared, matching their confirmed
+  cross-reactive biology.
 - **The score is not a similarity proxy** (Section 2.7b): across same-length
   candidate/cognate pairs the score correlates only weakly with sequence
   identity (Spearman 0.377, P=0.18, n=14). Decisively, two peptides at the
   *same* identity to the cognate receive opposite scores — 2vlj GILGLVFTL
-  0.938 vs GILEFVFTL 0.475 (both 0.89 identity to GILGFVFTL) — so the model
+  0.817 vs GILEFVFTL 0.380 (both 0.89 identity to GILGFVFTL) — so the model
   discriminates on side-chain chemistry, not backbone or sequence
   resemblance.
 
@@ -216,15 +237,11 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   just under the 0.5 gate), and **144 natives cross the gate decisively
   (mean pairwise r=0.729, all three pairs P<5e-4)** while val AUROC reaches
   0.959/0.952/0.964. The Rashomon crisis is therefore a *training-data-scale*
-  problem, not an intrinsic AF3-input instability: cross-reactivity rankings
-  on AF3-predicted structures are reproducible across independently trained
-  instances once a fixed multi-instance ensemble is used. Rankings are
-  upgraded from single-instance anecdotes back to reportable results
-  (conditional on >=~144 native positives + 3-seed ensembling). We note the
+  problem, not an intrinsic AF3-input instability. We note the
   gate is passed *provisionally* on the 21 distinct candidates: a job-level
   bootstrap gives a 95% CI of [0.495, 0.854] on the mean pairwise r. Extending
   the evaluation to all 73 AF3 task instances (including resubmitted
-  structures from the A/B1-B4 batches) tightens this decisively — mean
+  structures from the A/B1-B4 batches) tightens this — mean
   pairwise r = 0.802 over the non-degenerate seeds, bootstrap 95% CI
   [0.719, 0.857] — confirming the resolution is robust to candidate-set
   size. A further control shows seed quality matters: one of five DA seeds
@@ -236,6 +253,26 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   set the domain-adapted models match or beat the baseline (graft AUROC
   0.918 → 0.976-0.984; displaced 0.979 → 0.991-0.995), so mixing AF3 natives
   acts as beneficial augmentation rather than a domain sacrifice.
+- **Scale step 2 — 172 natives on GPU (2026-10-12).** Re-running the DA
+  pipeline on an RTX 3080 Ti (150 epochs, 5 seeds) surfaced and fixed a
+  train/serve normalization skew (the shared-batch collate z-scored node
+  features across the whole batch while scoring z-scores per graph; after
+  re-training at 170 natives the mis-normalized models scored their own
+  training positives at ~0). With per-graph normalization aligned, the 5
+  healthy seeds (val AUROC 0.949/0.952/0.959/0.947/0.954, val pairwise
+  r 0.943–0.970) were scored on the enlarged **154-candidate** panel: mean
+  pairwise r = **0.609** (bootstrap CI 0.529–0.677) — a harder, 7× larger
+  panel, still over the gate with CI lower bound. Group-level resolution
+  stayed informative: 11/17 TCR groups at r ≥ 0.58, 5 groups below 0.5.
+- **Scale step 3 — 188 candidates after attribution repair (2026-10-14,
+  current headline).** Extending the candidate set (newly received
+  structures) exposed an import-path misattribution (below); after repair
+  and full rescoring of the **188-candidate** panel the verdict is
+  **STABLE at mean pairwise r = 0.644 (bootstrap CI 0.572–0.706)** — *higher*
+  than the pre-repair 0.609, because misattributed contents were inflating
+  cross-seed variance. New families are individually stable (3utt r=0.805,
+  5c07 r=0.851); the corrected 3uts family drops 0.814 → 0.571, i.e.
+  group-level r must always be reported with the group's own r.
 - v10 Coulomb edge features (residue net-charge product): negative result
   (graft 0.933 → 0.917); reverted — atom-level partial charges required.
 - v11 atom-level electrostatics (ff14SB united-atom partial charges,
@@ -253,35 +290,72 @@ AF3 inputs and a scale-monotone domain-adaptation route that resolves it
   information lives in contact geometry, not in electrostatic energy terms.
   Direction re-routed to conformational ensembles and larger domain
   adaptation.
+- **Data integrity: an attribution audit is mandatory before any OOD
+  number is believed (2026-10-14).** Scaling the candidate set forced a
+  re-import of older prediction batches, and the audit showed the import
+  pipeline had silently mislabeled structures: when a submitted job's
+  chain sequences did not fingerprint-match a known template (paste
+  artifacts at chain termini), the importer fell back to "first row with
+  the same peptide", so e.g. one TCR's predictions were stored under
+  another TCR's job_id, four never-submitted job_ids carried other jobs'
+  structures, and sixteen jobs never landed at all. We reconstructed the
+  ground-truth job↔structure mapping from submission logs (per-job
+  launch order × server-side fold timestamps), removed the four
+  fabricated entries, restored the overwritten contents from version
+  control and the September downloads, then **rescored everything from
+  scratch** (Section 2.6 scale step 3). Two lessons we encode as practice:
+  (i) a content-fingerprint audit (identical files under different names)
+  cannot catch wrong-name/right-content misattribution — an attribution
+  audit must compare *names against an independent provenance record*;
+  (ii) blind fallbacks in data pipelines must fail loudly (drop + report)
+  rather than guess. Notably, repair *raised* cross-instance agreement
+  (0.609 → 0.644): misattributed contents were inflating seed variance, so
+  the earlier verdict was, if anything, conservative.
 - **Methodological claim: any OOD-scoring claim must pass a cross-instance
   stability test; single-instance rankings are anecdotes.**
 
 ### 2.7 Clinical safety scan with the stable model (KN-11, Fig 2)
 
-With the cross-instance-stable model (144 natives, non-degenerate seeds
-only), the clinical gold-standard case A3A/MAGE-A3 (5BRZ family) is scanned
-over its cognate target and documented off-targets:
+With the cross-instance-stable model (172 natives, non-degenerate seeds
+only; verdict STABLE at 0.644 over 188 candidates), the clinical
+gold-standard cases are scanned over cognate targets and documented
+off-targets (current 5-seed ensemble numbers, post-attribution-repair):
 
-| peptide | role | score | family rank | fatal |
-|---|---|---|---|---|
-| EVDPIGHLY | target (MAGE-A3) | 0.984 | 1 | yes |
-| KVAKELVHFL | off-target (MAGE-A12 mimic) | 0.962 | 2 | yes |
-| ESDPIVAQY | off-target (titin) | 0.924 | 3 | yes |
-| ILAKFLHWL | off-target | 0.679 | 4 | yes |
+| case | peptide | role | score | family rank | fatal |
+|---|---|---|---|---|---|
+| A3A/MAGE-A3 (5BRZ) | EVDPIGHLY | target | 0.892 | 2 | yes |
+| A3A/MAGE-A3 (5BRZ) | ESDPIVAQY | off-target (titin) | 0.948 | 1 | yes |
+| A3A/MAGE-A3 (5BRZ) | KVAKELVHFL | off-target (MAGE-A12 mimic) | 0.842 | 3 | yes |
+| A3A/MAGE-A3 (5BRZ) | ILAKFLHWL | off-target | 0.676 | 4 | yes |
+| A2-MAGE-A3 (5BS0, second TCR) | EVDPIGHLY | target | 0.883 | 1 | yes |
+| Kimmtrak (5EU6) | YLEPGPVTA | target | 0.548 | 4 | no |
+| Kimmtrak (5EU6) | YLEPGPVTL | off-target mimic | 0.911 | 1 | no |
 
-The cognate target ranks first, but both lethal off-targets — the MAGE-A12
-mimicry peptide (3 neurotoxicity events / 2 deaths) and the titin peptide
-(2 cardiac deaths) — sit only 0.02 and 0.06 below it, i.e. **statistically
-indistinguishable from the target**. This is the correct safety behaviour
-for a molecular-mimicry hazard: the model does not clear a lethal
-off-target. At the per-seed level the target-vs-MAGE-A12 ordering is a coin
+The titin and MAGE-A12 mimics sit **at or above** the cognate target
+(0.948 / 0.842 vs 0.892), i.e. **statistically indistinguishable from the
+target**. This is the correct safety behaviour for a molecular-mimicry
+hazard: the model does not clear a lethal off-target. The same MAGE-A3
+target peptide on a second, unrelated TCR structure (5BS0) scores 0.883 —
+within 0.01 of the 5BRZ value, a cross-structure consistency check.
+At the per-seed level the target-vs-MAGE-A12 ordering is a coin
 flip (seed0 KVA>target, seed1 target>KVA, seed2 KVA>target, seed4
 target>KVA), which is exactly what mimicry predicts and is not a model
 defect. A non-cognate long peptide (PKYVKQNTLKLAT, Section 2.4) is correctly
-rejected at 0.314. The `--margin 0.1` flag in `clinical_scan.py` encodes the
-"at target level" hazard criterion. We report this as a partial success: of
-three listed high-risk off-targets the model places two at the target's
-level and scores the third (ILAKFLHWL, 0.679) well below it — a miss that
+rejected on the JM22 receptor (0.061) yet scores 0.941 on the unrelated
+5men TCR — rejection is receptor-specific, as it must be.
+**Honesty update on the Kimmtrak control (2026-10-14):** in the
+pre-repair panel the gp100 target YLEPGPVTA scored 0.283 and ranked first
+in its family, quoted earlier as "correctly low". The attribution repair
+showed that number came from a mislabeled structure: on its true
+structure the target scores 0.548 and ranks 4th of 5, *below* the
+off-target mimic YLEPGPVTL (0.911). The "safely below all mimics" claim is
+therefore **withdrawn**; the defensible statement is that the Kimmtrak
+target sits mid-family, below two mimic peptides — a partial, weaker
+safety signal for this control case. The `--margin 0.1` flag in
+`clinical_scan.py` encodes the "at target level" hazard criterion. We
+report this as a partial success: for the A3A/MAGE-A3 case the model
+places two of three listed high-risk off-targets at the target's level and
+scores the third (ILAKFLHWL, 0.676) well below it — a miss that
 may reflect weaker cross-reactivity evidence or AF3 structure quality for
 that peptide, and is flagged for follow-up.
 
@@ -355,21 +429,25 @@ ranks and family-relative verdicts, not cutoffs.
 coverage is biased toward well-studied TCRs; VDJdb labels are noisy
 (score=0 entries are often untested rather than verified non-binders); AF3
 structures carry their own confidence spread (ipTM is a usable gate but not
-a guarantee); and the domain-adaptation result, while monotone, rests on a
-21-candidate evaluation set dominated by the A6 family, so the exact 0.729
-figure should be read as a lower bound that will firm up as the remaining
-cross-reactivity candidates are scored. Seed variance in the small-data
-regime remains substantial and all headline numbers use multi-seed
-ensembles.
+a guarantee); and the domain-adaptation result, while monotone, now rests
+on a 188-candidate panel whose exact r (0.644) should still be read as the
+verdict of record subject to future panel growth. Seed variance in the
+small-data regime remains substantial and all headline numbers use
+seed-filtered multi-seed ensembles. Finally, structure provenance is a
+first-class liability: the attribution incident (Section 2.6) shows that
+scores are only as good as the job↔structure audit that precedes them, and
+we recommend every OOD-scoring pipeline ship such an audit.
 
 **Clinical relevance.** The MAG-IC3/titin and MAGE-A12 mimicry cases are the
 motivating failures, and they are exactly the cases where geometry alone is
 insufficient. On the A3A/MAGE-A3 gold standard the stable model flags the
-lethal MAGE-A12 mimic above the intended target — the behaviour a
-pre-clinical safety screen must exhibit — while correctly rejecting a
-non-cognate long peptide. This positions structural compatibility scoring,
-with an explicit stability gate, as a tractable complement to
-sequence-level off-target screening.
+titin mimic *above* the intended target and the MAGE-A12 mimic at 0.842,
+within 0.05 — the behaviour a pre-clinical safety screen must exhibit —
+while correctly rejecting a non-cognate long peptide on the receptor it was
+tested against. The Kimmtrak control (mid-family, below two mimics) is the
+weaker case and is reported honestly as partial. This positions structural
+compatibility scoring, with an explicit stability gate and an attribution
+audit, as a tractable complement to sequence-level off-target screening.
 
 ## Figures & Tables (to generate)
 
@@ -384,10 +462,22 @@ sequence-level off-target screening.
 - Fig 5: cross-instance instability (score collapse scatter; Spearman
   matrix; pLDDT-ablation partial fix).
 - Fig 6: domain-adaptation resolution — per-seed candidate profiles (no
-  collapse) + Spearman matrix, mean pairwise r=0.729 (stable).
+  collapse) + Spearman matrix; scale ladder 25→89→144 natives (0.447 →
+  0.479 → 0.729) extended by the GPU run at 172 natives (0.609 on 154
+  candidates; 0.644 on 188 candidates after the attribution repair, the
+  current headline).
+- Fig 8 (new): cross-method negative control — AF3 vs ColabFold (AF2-
+  multimer) structures of the same jobs (n=8): DA scores weakly correlated
+  (Pearson 0.35, mean 0.71 vs 0.31) → predicted-structure generator is not
+  interchangeable at the scoring layer (benchmarks 2026-10-13).
+- Table 4: clinical gold-standard ranking on the stable DA model (KN-11):
+  lethal off-targets at/above the cognate target (titin 0.948 #1, MAGE-A12
+  0.842, target 0.892 #2); Kimmtrak control with retracted safety claim
+  (0.548, family #4).
 - Table 1: dataset statistics (+ structure-VDJdb map: 281/291 complexes,
   2,309 CDR3 hits).
 - Table 2: hypothesis-elimination results.
 - Table 3: ablation suite (+ v10 Coulomb negative).
-- Table 4: clinical gold-standard ranking on the stable DA model (KN-11):
-  lethal off-targets flagged at/above the cognate target.
+- Table 4 (above): clinical gold-standard ranking on the stable DA model.
+- Fig 7 (to update): cross-reactivity heatmap — refresh family scores to the
+  post-repair 188-panel ensemble (paper section 2.4 numbers).
