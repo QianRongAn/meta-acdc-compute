@@ -467,9 +467,12 @@ audit, as a tractable complement to sequence-level off-target screening.
   candidates; 0.644 on 188 candidates after the attribution repair, the
   current headline).
 - Fig 8 (new): cross-method negative control — AF3 vs ColabFold (AF2-
-  multimer) structures of the same jobs (n=8): DA scores weakly correlated
-  (Pearson 0.35, mean 0.71 vs 0.31) → predicted-structure generator is not
-  interchangeable at the scoring layer (benchmarks 2026-10-13).
+  multimer) structures of the same jobs scored by the same ensemble:
+  overlap n=28 (the 172 local ColabFold jobs vs the 188 AF3 candidates) →
+  Pearson r = 0.184, mean 0.52 (AF3) vs 0.45 (ColabFold), systematic
+  per-family divergence → the predicted-structure generator is not
+  interchangeable at the scoring layer; the first 8-job comparison agreed
+  only weakly as well (r = 0.35; benchmarks 2026-10-13/14).
 - Table 4: clinical gold-standard ranking on the stable DA model (KN-11):
   lethal off-targets at/above the cognate target (titin 0.948 #1, MAGE-A12
   0.842, target 0.892 #2); Kimmtrak control with retracted safety claim

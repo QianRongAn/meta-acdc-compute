@@ -258,17 +258,18 @@ def fig5_instability() -> None:
 
 
 def fig6_domain_adapt() -> None:
-    """Domain adaptation on real native AF3 positives (non-degenerate seeds).
+    """Domain adaptation on real native AF3 positives (172-native DA seeds).
 
-    Panel A: per-seed candidate score profiles (DA seeds) — the all-zero
-    collapse of weak seeds is excluded by the degeneracy guard.
-    Panel B: pairwise Spearman matrix over the kept seeds; the reported
-    mean pairwise r crosses the 0.5 stability gate.
+    Panel A: per-seed candidate score profiles over the 188-candidate panel
+    repaired 2026-10-14 (no seed collapses at this scale; the degeneracy
+    guard is retained for smaller runs).
+    Panel B: pairwise Spearman matrix over all five seeds; the reported
+    mean pairwise r (0.644) crosses the 0.5 stability gate.
     """
     import numpy as np
     from scipy.stats import spearmanr
 
-    seeds = [0, 1, 2, 4]  # non-degenerate DA seeds (seed 3 collapses)
+    seeds = [0, 1, 2, 3, 4]  # 172-native DA run: all five seeds healthy
     per = []
     for s in seeds:
         d = {}
@@ -288,12 +289,12 @@ def fig6_domain_adapt() -> None:
         ax.plot(x, vals, marker="o", markersize=3, linewidth=1.2,
                 color=BLUE if k == 0 else GRAY, alpha=1.0 if k == 0 else 0.85,
                 label=f"DA seed {s}")
-    ax.set_xlabel("AF3 cross-reactivity candidates")
+    ax.set_xlabel("AF3 cross-reactivity candidates (188, repaired panel)")
     ax.set_ylabel("compatibility score")
     ax.set_ylim(-0.04, 1.04)
     ax.legend(frameon=False, fontsize=7.5, loc="upper right")
-    ax.set_title("A  Three DA instances, same 21 AF3 inputs", fontsize=9,
-                 loc="left")
+    ax.set_title(f"A  Five DA instances, {len(jobs)} AF3 candidates",
+                 fontsize=9, loc="left")
     ax.set_xticks(x, [j.split("_", 1)[0] for j in jobs], rotation=60,
                   ha="right", fontsize=6.5)
     for spine in ("top", "right"):
@@ -309,8 +310,8 @@ def fig6_domain_adapt() -> None:
     cmap = plt.cm.Blues.copy()
     cmap.set_bad("#ececea")
     im = ax.imshow(R, cmap=cmap, vmin=-0.5, vmax=1.0)
-    ax.set_xticks(range(n), [f"S{k+1}" for k in range(n)], fontsize=8)
-    ax.set_yticks(range(n), [f"S{k+1}" for k in range(n)], fontsize=8)
+    ax.set_xticks(range(n), [f"S{s}" for s in seeds], fontsize=8)
+    ax.set_yticks(range(n), [f"S{s}" for s in seeds], fontsize=8)
     for i in range(n):
         for j in range(n):
             v = R[i, j]
@@ -445,6 +446,61 @@ def figp2_prefilter() -> None:
     print("figp2_prefilter done")
 
 
+
+def fig8_cross_method() -> None:
+    """Cross-method negative control: AF3 vs ColabFold (AF2-multimer) structures
+    of the same 8 jobs scored by the same DA ensemble (2026-10-14).
+
+    Reading: near-identical peptide/TCR chains submitted to two structure
+    generators yield only weakly correlated DA scores (Pearson ~0.35) with a
+    systematic downward shift — the generator is not interchangeable at the
+    scoring layer. ColabFold scores are therefore QC-tier only.
+    """
+    import numpy as np
+    from scipy.stats import pearsonr
+
+    def load(name: str) -> dict[str, float]:
+        d: dict[str, float] = {}
+        src = ROOT / "data/processed" / name
+        with open(src) as fh:
+            for r in csv.DictReader(fh, delimiter="\t"):
+                if r.get("score"):
+                    d[r["job_id"]] = float(r["score"])
+        return d
+
+    af3 = load("prediction_scores_ensemble.tsv")
+    cf = load("colabfold_scores_ensemble.tsv")
+    jobs = sorted(set(af3) & set(cf))
+    x = np.array([af3[j] for j in jobs])
+    y = np.array([cf[j] for j in jobs])
+    r = pearsonr(x, y)[0]
+
+    fig, ax = plt.subplots(figsize=(4.6, 4.2))
+    ax.plot([0, 1], [0, 1], ls="--", lw=1, color="#c9c9c7", zorder=1)
+    ax.scatter(x, y, s=42, color=BLUE, alpha=0.85, zorder=3, edgecolor="white",
+               linewidth=0.6)
+    for xi, yi, j in zip(x, y, jobs):
+        ax.annotate(j, (xi, yi), textcoords="offset points", xytext=(6, -10),
+                    fontsize=6.2, color=INK)
+    ax.set_xlabel("AF3 structure — DA score", fontsize=9)
+    ax.set_ylabel("ColabFold (AF2-multimer) — DA score", fontsize=9)
+    ax.set_xlim(-0.03, 1.03)
+    ax.set_ylim(-0.03, 1.03)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.text(0.04, 0.96,
+            f"n = {len(jobs)}   Pearson r = {r:.2f}\n"
+            f"mean  AF3 {x.mean():.2f}  vs  ColabFold {y.mean():.2f}",
+            transform=ax.transAxes, va="top", fontsize=8.5, color=INK)
+    ax.set_title("Structure generator is not interchangeable\n"
+                 "at the scoring layer", fontsize=10, loc="left")
+    fig.tight_layout()
+    fig.savefig(OUT / "fig8_cross_method.png", dpi=300)
+    fig.savefig(OUT / "fig8_cross_method.svg")
+    plt.close(fig)
+    print(f"fig8_cross_method done (r={r:.3f}, n={len(jobs)})")
+
+
 def main() -> int:
     fig1_ablation()
     fig2_heatmap()
@@ -452,6 +508,7 @@ def main() -> int:
     fig5_instability()
     fig6_domain_adapt()
     fig7_crossreactivity()
+    fig8_cross_method()
     figp2_recall()
     figp2_prefilter()
     return 0
