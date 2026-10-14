@@ -194,6 +194,8 @@ class Handler(SimpleHTTPRequestHandler):
     data: dict = {}
 
     def do_GET(self):  # noqa: N802
+        if self.path in ("/", ""):
+            self.path = "/index.html"
         if self.path.startswith("/api/data"):
             body = json.dumps(self.data).encode()
             self.send_response(200)
