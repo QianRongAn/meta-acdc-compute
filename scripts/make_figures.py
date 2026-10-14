@@ -98,12 +98,14 @@ def fig2_heatmap() -> None:
         for j, p in enumerate(peps):
             mat[i, j] = scores.get(t, {}).get(p, np.nan)
 
-    fig, ax = plt.subplots(figsize=(8.5, 3.0))
+    n_rows = len(tcrs)
+    fig_h = max(3.0, 0.12 * n_rows)  # 72 行 → ~8.6 in；纵轴标签不再叠
+    fig, ax = plt.subplots(figsize=(8.5, fig_h))
     cmap = plt.cm.Blues.copy()
     cmap.set_bad("#ececea")
     im = ax.imshow(mat, cmap=cmap, vmin=0, vmax=1, aspect="auto")
     ax.set_xticks(range(len(peps)), peps, rotation=60, ha="right", fontsize=7)
-    ax.set_yticks(range(len(tcrs)), tcrs)
+    ax.set_yticks(range(len(tcrs)), tcrs, fontsize=6.5)
     for i in range(len(tcrs)):
         for j in range(len(peps)):
             v = mat[i, j]
@@ -280,7 +282,7 @@ def fig6_domain_adapt() -> None:
         per.append(d)
     jobs = sorted(per[0])
 
-    fig, axes = plt.subplots(1, 2, figsize=(9.2, 3.4),
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 3.5),
                              gridspec_kw={"width_ratios": [2.1, 1]})
     ax = axes[0]
     x = np.arange(len(jobs))
@@ -295,8 +297,15 @@ def fig6_domain_adapt() -> None:
     ax.legend(frameon=False, fontsize=7.5, loc="upper right")
     ax.set_title(f"A  Five DA instances, {len(jobs)} AF3 candidates",
                  fontsize=9, loc="left")
-    ax.set_xticks(x, [j.split("_", 1)[0] for j in jobs], rotation=60,
-                  ha="right", fontsize=7.0)
+    # 横轴 188 个候选不逐一标注（标签必然重叠）：按 PDB 前缀分组，每组在
+    # 组中心标一个标签
+    from collections import defaultdict
+    groups: dict[str, list[int]] = defaultdict(list)
+    for i, j in enumerate(jobs):
+        groups[j.split("_", 1)[0]].append(i)
+    order = sorted(groups, key=lambda p: groups[p][0])
+    ax.set_xticks([sum(groups[p]) / len(groups[p]) for p in order], order,
+                  rotation=60, ha="right", fontsize=7.5)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
 
@@ -475,13 +484,18 @@ def fig8_cross_method() -> None:
     y = np.array([cf[j] for j in jobs])
     r = pearsonr(x, y)[0]
 
-    fig, ax = plt.subplots(figsize=(4.6, 4.2))
+    fig, ax = plt.subplots(figsize=(5.2, 4.6))
     ax.plot([0, 1], [0, 1], ls="--", lw=1, color="#c9c9c7", zorder=1)
-    ax.scatter(x, y, s=42, color=BLUE, alpha=0.85, zorder=3, edgecolor="white",
+    # 28 个点的分数高度聚簇、直接重叠：显示坐标加固定种子微抖（±0.008，
+    # 相对 0-1 轴可忽略），Pearson 与均值仍用未抖动的 x/y 计算
+    rng = np.random.default_rng(42)
+    jx = x + rng.uniform(-0.008, 0.008, len(x))
+    jy = y + rng.uniform(-0.008, 0.008, len(y))
+    ax.scatter(jx, jy, s=30, color=BLUE, alpha=0.8, zorder=3, edgecolor="white",
                linewidth=0.6)
-    for xi, yi, j in zip(x, y, jobs):
-        ax.annotate(j, (xi, yi), textcoords="offset points", xytext=(6, -10),
-                    fontsize=6.8, color=INK)
+    for xi, yi, j in zip(jx, jy, jobs):
+        ax.annotate(j, (xi, yi), textcoords="offset points", xytext=(5, -9),
+                    fontsize=6.5, color=INK)
     ax.set_xlabel("AF3 structure — DA score", fontsize=9)
     ax.set_ylabel("ColabFold (AF2-multimer) — DA score", fontsize=9)
     ax.set_xlim(-0.03, 1.03)
