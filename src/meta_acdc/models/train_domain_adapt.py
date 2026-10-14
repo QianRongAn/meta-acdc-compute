@@ -216,6 +216,8 @@ def main() -> int:
     ap.add_argument("--out-dir", type=Path, default=Path("data/processed"),
                     help="where da_seed{0,1,2}.model.pt are written")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    ap.add_argument("--batch-size", type=int, default=32,
+                    help="per-step graph count (lower for small-GPU machines)")
     args = ap.parse_args()
     seeds = list(args.seeds)
 
@@ -255,7 +257,7 @@ def main() -> int:
     va = [i for g in gids if g in val_g for i in groups[g]]
 
     device = args.device
-    bs = 32
+    bs = args.batch_size
     all_probs = []
     for seed in seeds:
         torch.manual_seed(seed)
