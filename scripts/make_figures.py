@@ -98,20 +98,32 @@ def fig2_heatmap() -> None:
         for j, p in enumerate(peps):
             mat[i, j] = scores.get(t, {}).get(p, np.nan)
 
-    n_rows = len(tcrs)
-    fig_h = max(3.0, 0.12 * n_rows)  # 72 行 → ~8.6 in；纵轴标签不再叠
-    fig, ax = plt.subplots(figsize=(8.5, fig_h))
+    n_rows, n_cols = len(tcrs), len(peps)
+    # Keep the canvas narrow enough that a column-width view still has
+    # ~40 px per TCR row. 0.12 in/row stacked the PDB labels.
+    fig_h = max(12.0, 0.50 * n_rows)
+    fig_w = max(10.5, 0.16 * n_cols + 1.8)
+    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
     cmap = plt.cm.Blues.copy()
     cmap.set_bad("#ececea")
     im = ax.imshow(mat, cmap=cmap, vmin=0, vmax=1, aspect="auto")
-    ax.set_xticks(range(len(peps)), peps, rotation=60, ha="right", fontsize=7)
-    ax.set_yticks(range(len(tcrs)), tcrs, fontsize=6.5)
+    ax.set_xticks(range(n_cols), peps, rotation=90, ha="center", va="top",
+                  fontsize=6.5)
+    ax.set_yticks(range(n_rows), tcrs, fontsize=8)
+    ax.tick_params(axis="y", pad=4, length=0)
+    ax.tick_params(axis="x", pad=2, length=0)
     for i in range(len(tcrs)):
         for j in range(len(peps)):
             v = mat[i, j]
-            if not np.isnan(v):
+            # Adjacent scored cells are narrower than a 4-char label; colour
+            # carries the value there. Annotate only isolated cells.
+            if np.isnan(v):
+                continue
+            left = mat[i, j - 1] if j else np.nan
+            right = mat[i, j + 1] if j + 1 < n_cols else np.nan
+            if np.isnan(left) and np.isnan(right):
                 ax.text(j, i, f"{v:.2f}", ha="center", va="center",
-                        fontsize=7.0,
+                        fontsize=6.5,
                         color="white" if v > 0.55 else INK)
     cb = fig.colorbar(im, ax=ax, shrink=0.8)
     cb.set_label("compatibility score (5-seed DA ensemble, cross-instance stable)")
@@ -281,9 +293,17 @@ def fig6_domain_adapt() -> None:
                     d[r["job_id"]] = float(r["score"])
         per.append(d)
     jobs = sorted(per[0])
-
-    fig, axes = plt.subplots(1, 2, figsize=(10.8, 3.5),
-                             gridspec_kw={"width_ratios": [2.1, 1]})
+    from collections import defaultdict
+    groups: dict[str, list[int]] = defaultdict(list)
+    for i, j in enumerate(jobs):
+        groups[j.split("_", 1)[0]].append(i)
+    order = sorted(groups, key=lambda p: groups[p][0])
+    # Labels sit on the job-span centre, so adjacent singleton PDBs are one
+    # job apart. Size panel A by jobs, not by group count, or those labels
+    # still collide (5m00/5m01/5m02).
+    panel_a = max(36.0, 0.26 * len(jobs))
+    fig, axes = plt.subplots(1, 2, figsize=(panel_a + 5.4, 5.0),
+                             gridspec_kw={"width_ratios": [panel_a, 4.4]})
     ax = axes[0]
     x = np.arange(len(jobs))
     for k, s in enumerate(seeds):
@@ -297,15 +317,9 @@ def fig6_domain_adapt() -> None:
     ax.legend(frameon=False, fontsize=7.5, loc="upper right")
     ax.set_title(f"A  Five DA instances, {len(jobs)} AF3 candidates",
                  fontsize=9, loc="left")
-    # 横轴 188 个候选不逐一标注（标签必然重叠）：按 PDB 前缀分组，每组在
-    # 组中心标一个标签
-    from collections import defaultdict
-    groups: dict[str, list[int]] = defaultdict(list)
-    for i, j in enumerate(jobs):
-        groups[j.split("_", 1)[0]].append(i)
-    order = sorted(groups, key=lambda p: groups[p][0])
     ax.set_xticks([sum(groups[p]) / len(groups[p]) for p in order], order,
-                  rotation=60, ha="right", fontsize=7.5)
+                  rotation=90, ha="center", va="top", fontsize=7)
+    ax.tick_params(axis="x", pad=2, length=0)
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
 
@@ -456,6 +470,99 @@ def figp2_prefilter() -> None:
 
 
 
+def _layout_scatter_labels(ax, fig, anchors, labels, fontsize=6.8,
+                           n_iter=220, seed=0):
+    """Decollide scatter annotations via greedy spiral placement.
+
+    Labels are placed in order of local crowding (hardest first). Each label
+    searches outward from its anchor on expanding rings for the closest
+    position that does not overlap any already-placed label and does not cover
+    a foreign data point; if the ring sweep finds no free slot, the
+    least-overlapping slot is used. Positions are clamped inside the axes.
+    Labels displaced far from their anchor get a faint leader line.
+    Returns the list of Text artists.
+    """
+    import numpy as np
+
+    rng = np.random.default_rng(seed)
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    ax_bbox = ax.get_window_extent(renderer)
+    trans = ax.transData
+    inv = trans.inverted()
+
+    P = np.array([trans.transform((x, y)) for x, y in anchors], float)
+    texts = [
+        ax.text(x, y, lab, transform=trans, ha="center", va="center",
+                fontsize=fontsize, color=INK, zorder=4, clip_on=False)
+        for (x, y), lab in zip(anchors, labels)
+    ]
+    sizes = [t.get_window_extent(renderer) for t in texts]
+    sizes = [(b.width, b.height) for b in sizes]
+
+    order = sorted(range(len(P)),
+                   key=lambda i: -sum(1 for p in P
+                                      if np.hypot(*(p - P[i])) < 70.0))
+
+    def placed_overlap(b, placed):
+        total = 0.0
+        for q in placed:
+            ox = min(b[0] + b[2], q[0] + q[2]) - max(b[0], q[0])
+            oy = min(b[1] + b[3], q[1] + q[3]) - max(b[1], q[1])
+            if ox > 0 and oy > 0:
+                total += ox * oy
+        return total
+
+    def covers_foreign_dot(b, skip):
+        for k, p in enumerate(P):
+            if k == skip:
+                continue
+            if b[0] < p[0] < b[0] + b[2] and b[1] < p[1] < b[1] + b[3]:
+                return True
+        return False
+
+    placed = []  # (x0, y0, w, h) in px
+    centers = {}  # label idx -> center px
+    for i in order:
+        w, h = sizes[i]
+        rot = rng.uniform(0, 2 * np.pi)
+        best, best_cost, best_r = None, None, None
+        for r in np.arange(4.0, 92.0, 4.0):
+            n_ang = max(8, int(np.pi * r / 10.0))
+            for k in range(n_ang):
+                ang = rot + 2 * np.pi * k / n_ang
+                c = P[i] + r * np.array([np.cos(ang), np.sin(ang)])
+                x0, y0 = c - np.array([w / 2, h / 2])
+                if (x0 < ax_bbox.x0 + 1.5 or x0 + w > ax_bbox.x1 - 1.5
+                        or y0 < ax_bbox.y0 + 1.5 or y0 + h > ax_bbox.y1 - 1.5):
+                    continue
+                b = (x0, y0, w, h)
+                cost = placed_overlap(b, placed)
+                if covers_foreign_dot(b, i):
+                    cost += 1000.0
+                if cost <= 0.0:
+                    best, best_cost, best_r = b, 0.0, r
+                    break
+                if best_cost is None or cost < best_cost:
+                    best, best_cost, best_r = b, cost, r
+            if best_cost == 0.0:
+                break
+        placed.append(best)
+        centers[i] = (best[0] + w / 2, best[1] + h / 2)
+
+    for i, t in enumerate(texts):
+        t.set_position(inv.transform(centers[i]))
+
+    for i, (x, y) in enumerate(anchors):
+        anchor = P[i]
+        center = np.array(centers[i])
+        if np.hypot(*(center - anchor)) > 10.0:
+            cx, cy = inv.transform(center)
+            ax.plot([x, cx], [y, cy], color=GRAY, lw=0.5, alpha=0.8,
+                    zorder=2.5)
+    return texts
+
+
 def fig8_cross_method() -> None:
     """Cross-method negative control: AF3 vs ColabFold (AF2-multimer) structures
     of the same 8 jobs scored by the same DA ensemble (2026-10-14).
@@ -484,18 +591,18 @@ def fig8_cross_method() -> None:
     y = np.array([cf[j] for j in jobs])
     r = pearsonr(x, y)[0]
 
-    fig, ax = plt.subplots(figsize=(5.2, 4.6))
+    fig, ax = plt.subplots(figsize=(6.4, 5.0))
     ax.plot([0, 1], [0, 1], ls="--", lw=1, color="#c9c9c7", zorder=1)
     # 28 个点的分数高度聚簇、直接重叠：显示坐标加固定种子微抖（±0.008，
-    # 相对 0-1 轴可忽略），Pearson 与均值仍用未抖动的 x/y 计算
+    # 相对 0-1 轴可忽略），Pearson 与均值仍用未抖动的 x/y 计算。
+    # 样本名标签用力导向布局去重（_layout_scatter_labels），离锚点较远
+    # 的标签画浅色指引线；图幅加宽以便双栏排版时标签仍可读。
     rng = np.random.default_rng(42)
     jx = x + rng.uniform(-0.008, 0.008, len(x))
     jy = y + rng.uniform(-0.008, 0.008, len(y))
     ax.scatter(jx, jy, s=30, color=BLUE, alpha=0.8, zorder=3, edgecolor="white",
                linewidth=0.6)
-    for xi, yi, j in zip(jx, jy, jobs):
-        ax.annotate(j, (xi, yi), textcoords="offset points", xytext=(5, -9),
-                    fontsize=6.5, color=INK)
+    _layout_scatter_labels(ax, fig, list(zip(jx, jy)), jobs, fontsize=6.8)
     ax.set_xlabel("AF3 structure — DA score", fontsize=9)
     ax.set_ylabel("ColabFold (AF2-multimer) — DA score", fontsize=9)
     ax.set_xlim(-0.03, 1.03)
