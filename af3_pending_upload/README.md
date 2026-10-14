@@ -1,13 +1,13 @@
 # af3_pending_upload —— 待提交 AlphaFold3 的结构任务
 
-> **进展（2026-10-13 晚）**：347 待传中，105 已传 AF3 网页版；剩余 172 个改走
-> **本地 ColabFold**（AutoDL 3080 Ti，AF2-multimer，单模型）。**run1 87 个已
-> 回收并打分**（`data/raw/colabfold_run1/` → `colabfold_predictions/` →
-> `colabfold_scores_ensemble.tsv`）；run2 85 个预计 2026-10-14 02:30 出。
-> ⚠️ 跨方法一致性（n=8）：AF3 vs ColabFold DA 分 Pearson r=0.35、均值
-> 0.712 vs 0.315 —— **ColabFold 结构不可互换用于 DA 打分**，只作结构 QC/粗筛层，
-> 不进主风险面板（详见 `docs/benchmarks.md` 2026-10-13 节）。
-> 台账 `already_uploaded.tsv` 已更新（466 行，CRLF→LF 归一化）。
+> **进展（2026-10-14 凌晨）**：277 个待传**全部有着落**：105 走 AF3 网页版
+> (结果已全部回收、2026-10-14 归因修复后导入打分)，172 走本地 ColabFold
+> (run1 87 + run2 85，均已回收打分)。2026-10-14 修复批量归因事故
+> (错挂/伪造/漏导,见 benchmarks.md 2026-10-14 节)：台账
+> `already_uploaded.tsv` 已更新(**554 行**,含 4 条 VOID +17 新 +117 补注)，
+> 候选面板 154→188,5-seed 稳定性 **0.644 STABLE**(修复前 0.609)。
+> ColabFold 两批沿用 run1 结论:AF2-multimer 结构与 AF3 不可互换用于
+> DA 打分,只作结构 QC/粗筛层,不进主风险面板。
 
 > **进展（2026-10-12 晚）**：`already_uploaded.tsv` 已升级为**内容级判重**台账
 > （新增 `status` 列：已提交 / 本地有结果 / 内容重复于某已提交任务；现 393 条）。
