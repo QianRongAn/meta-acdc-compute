@@ -14,14 +14,17 @@ SRC="$1"; RUN="$2"; STATUS="$3"; NOTE="${4:-}"
 PY=.venv/bin/python
 
 echo "== 1/4 import $SRC -> data/raw/colabfold_predictions $(date +%F\ %T)"
+CIFDIR=data/raw/colabfold_predictions
+ls "$CIFDIR"/*_model_1.cif 2>/dev/null | sort > /tmp/colabfold_cifs_before.txt
 $PY src/meta_acdc/structure/colabfold_import.py \
-    --src "$SRC" --out data/raw/colabfold_predictions \
+    --src "$SRC" --out "$CIFDIR" \
     --report "data/processed/colabfold_${RUN}_import_report.tsv" || exit 1
+ls "$CIFDIR"/*_model_1.cif 2>/dev/null | sort > /tmp/colabfold_cifs_after.txt
 
 JOBS="/tmp/colabfold_${RUN}_jobs.txt"
-ls data/raw/colabfold_predictions/*_model_1.cif \
+comm -13 /tmp/colabfold_cifs_before.txt /tmp/colabfold_cifs_after.txt \
     | xargs -n1 basename | sed 's/_model_1.cif//' | sort > "$JOBS"
-echo "jobs: $(wc -l < "$JOBS")"
+echo "new jobs this run: $(wc -l < "$JOBS")"
 
 echo "== 2/4 ledger $(date +%F\ %T)"
 ARGS=(--jobs "$JOBS" --status "$STATUS")
