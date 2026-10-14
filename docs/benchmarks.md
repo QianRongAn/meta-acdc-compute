@@ -1105,6 +1105,19 @@ RQWGPDPAAV 0.989 最高;5hhm 组 3 个全 ≤0.005;5m00 组 KAPFNFATM 0.007
    噪声 ±0.13 可淹没 0.03 级信号);③跨时间对比需固定结构快照 +
    相同训练预算。
 
+
+## 2026-10-14:ColabFold 本地批量结构 run2 回收(85/85)
+
+- 与 run1 同参数(AF2-multimer,单模型,max-msa 128:256,3 recycle);
+  `scripts/fetch_colabfold_run2.py` 自动轮询 → 远端打包(单 tar,tar -tzf 校验)
+  → SFTP 下载 → 导入打分(5-seed DA,mask-plddt,T=1.0,与 da_rescore 同口径)。
+- 打分:85/85 成功,均值 **0.286**,范围 0.0000–0.9820,
+  其中 <0.1 的 37 个。
+- 沿用 run1 结论:ColabFold(AF2-multimer)结构与 AF3 不可互换用于 DA 打分,
+  本批分数仍只作结构 QC/粗筛层,**不进主风险面板**。
+- 明细:`data/processed/colabfold_scores_ensemble.tsv`、
+  `colabfold_run2_import_report.tsv`。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
