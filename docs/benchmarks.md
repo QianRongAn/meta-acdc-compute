@@ -1176,6 +1176,17 @@ RQWGPDPAAV 0.989 最高;5hhm 组 3 个全 ≤0.005;5m00 组 KAPFNFATM 0.007
 - `scripts/make_figures.py` 全量重建 10 张图:fig6 更新为 5-seed×188
   面板(r=0.644),fig2 热图刷新为修复后集成分,新增 **fig8** 跨方法散点图。
 
+## 2026-10-15:ColabFold 172 家族排名粗筛报告完成
+
+- 65 个家族逐条排名(`colabfold_rank_analysis.log`),汇总表
+  [colabfold_family_report.md](../colabfold_family_report.md):头名候选/次名/
+  家族分差;定位 **QC/粗筛层**(跨方法 r=0.184 的警示下不作为风险判读)。
+- 观察:两批分数分布双峰(大量 0.0–0.15 与 0.5–1.0),WGPDPAAA/KAP 矩阵家族内
+  部离散度最大(分差 0.85–0.98),流感 A11 家族(5nmg/5nme/5nmf)整体偏高
+  (0.6–0.99);原生肽基本不在 ColabFold 批次,不报原生排名。
+- 该报告收尾"待传队列"线:277 个结构的**两个下游产物**(AF3 风险面板 188 +
+  ColabFold 粗筛 172)均已归档。
+
 ## 待做基准
 
 - [x] EGNN 原型首训(AUROC 0.771 / AUPRC 0.556,PDB 分组切分)
