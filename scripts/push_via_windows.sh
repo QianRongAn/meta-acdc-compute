@@ -11,6 +11,12 @@ BUNDLE_WIN='C:\Users\Administrator\AppData\Local\Temp\meta-acdc-push.bundle'
 DEST_WIN='C:\Users\Administrator\AppData\Local\Temp\meta-acdc-push-repo'
 BUNDLE_WSL='/mnt/c/Users/Administrator/AppData/Local/Temp/meta-acdc-push.bundle'
 
+echo "== direct push attempt (WSL -> github.com, flaky but sometimes works)"
+if git push origin main 2>&1 | tail -2; then
+    echo "== direct push OK"
+    exit 0
+fi
+
 echo "== bundle $(date +%F\ %T)"
 git bundle create "$BUNDLE_WSL" main || exit 1
 
