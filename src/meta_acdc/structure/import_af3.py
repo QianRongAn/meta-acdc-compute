@@ -162,12 +162,18 @@ def main() -> int:
         peptide = seqs[0]
         alpha, beta = tcr_pair(seqs, peptide)
         # clinical gold-standard set (MAG-IC3/5brz TCR): detect FIRST by the
-        # exact alpha-chain sequence, before manifest matching
+        # exact BOTH-chain sequences, before manifest matching. Alpha-only
+        # matching let a wrong beta chain ride into 5brz (AUDIT.md #14).
         CLINICAL_ALPHA = (
             "AQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLYVRPYQREQTSGRLNASLDKS"
             "SGRSTLYIAASQPGDSATYLCAVRPGGAGPFFVVFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCL"
             "FTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIP")
-        if alpha == CLINICAL_ALPHA:
+        CLINICAL_BETA = (
+            "AGVTQTPRYLIKTRGQQVTLSCSPISGHRSVSWYQQTPGQGLQFLFEYFSETQRNKGNFPGRFSGRQ"
+            "FSNSRSEMNVSTLELGDSALYLCASSFNMATGQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHT"
+            "QKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPR"
+            "NHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD")
+        if alpha == CLINICAL_ALPHA and beta == CLINICAL_BETA:
             match = {"pdb": "5brz", "evidence": "clinical"}
         else:
             # match manifest: same peptide + same {alpha,beta} chain pair

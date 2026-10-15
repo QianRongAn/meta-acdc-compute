@@ -140,14 +140,24 @@ def split_complex(residues: list[Residue],
             out = [c for c in out if not _uses_chain(c, pep)]
         assigned_peptides[pep] = (f"{a}/{b}", best_score)
 
-        # every MHC-role chain contacted by this peptide (heavy chain + B2M)
+        # pMHC = heavy chain(s) contacted by the peptide + B2M chains
+        # contacted by those heavy chains. B2M usually contacts the heavy
+        # chain, NOT the peptide directly, so peptide-B2M contact is the
+        # wrong test; and an incomplete pMHC (missing heavy or B2M) must be
+        # dropped, not emitted with a warning (AUDIT.md #27).
         pep_res = chain_res(pep)
-        mhc_unit = [c for c in mhc_chains
-                    if _res_contact(pep_res, chain_res(c)) > 0]
-        if len(mhc_unit) < 2:
+        heavy = [c for c in mhc_chains if roles[c] == MHC
+                 and _res_contact(pep_res, chain_res(c)) > 0]
+        b2m = [c for c in mhc_chains if roles[c] == B2M
+               and any(_res_contact(chain_res(c), chain_res(h)) > 0
+                       for h in heavy)]
+        mhc_unit = heavy + b2m
+        if not heavy or not b2m:
             warnings.append(
-                f"peptide {pep}: only MHC-role chains {mhc_unit} contact it; a "
-                f"pMHC needs the heavy chain and beta-2 microglobulin")
+                f"peptide {pep}: incomplete pMHC (heavy={heavy}, b2m={b2m}); "
+                f"a pMHC needs the heavy chain and beta-2 microglobulin — "
+                f"no complex emitted")
+            continue
         keep = {a, b, pep} | set(mhc_unit)
         out.append([r for r in residues if r.chain in keep])
 

@@ -286,3 +286,32 @@ bootstrap 按任务逐条重采样，同受体候选、重复结构并不独立�
    与 `import`，重跑 QC，再冻结家族隔离的测试集。
 4. 诱饵有效性：嫁接诱饵没有实验依据证明不结合；在缺少真实负样本前，0.933 只能读作
    “区分天然结构与按该规则构造的诱饵”。
+
+---
+
+## 2026-10-15 独立复核后的第二轮修复（本表上方各行状态以此为准）
+
+外部复核对本仓库 98773bd 的结论：**10 项核心改动通过最小验证、10 项只修
+一部分、8 项未通过**（报告原话见会话记录）。本轮的逐项复核结果：
+
+| 项 | 复核前 | 本轮修复 | 提交 |
+|---|---|---|---|
+| #3 训练/打分归一化 + 肽标记 | 部分（共享 collate 仍整批 z-score，肽标记被归一化破坏） | 统一 `normalize_node_features`（按图归一 + 肽标记列保护），train_egnn / train_domain_adapt / score_predictions 三处同源；同图单批/混批特征一致（已验证） | f59dd45（含 a3b8715） |
+| #4 家族键只含 αβ 受体链 + csv 导入 | 部分（family key 含肽/MHC 链名） | `family_map.receptor_sequences` 只取 TCR 链；`train_egnn` 补 `import csv` | 同上 |
+| #5 图几何一致性 | 部分（边距离/RBF、侧链 extent 仍用旧质心） | `residue_centroid/residue_dist` 统一当前重原子坐标用于选点与边距离；`_sidechain_extent` 以 CA 原子为基准 | 同上 |
+| #8 ProtoNet query 标签 | 部分（loss 仍按前一半正/后一半负重造） | `task.query_labels` 直传 loss；单类 query 重采样/跳过；评估侧单类跳过 | 同上 |
+| #13 聚类映射 + unseen-both | 未通过（聚类 ID 当字典键→全部 hash 回退；unseen-both 按肽分配漏约束） | 聚类映射修正；unseen-both 改肽×TCR 连通分量闭包 + 不可分即报错（全连通时不再产出泄漏切分） | f59dd45 |
+| #22 IEDB 单位/终点语义 | 未通过（koff/kon 归 IC50；非 nM 单位仍取 -log10；同分记录先到先得） | 动力学终点单列 `other:kinetics`；单位白名单（nM 直收、µM 换算、其余拒收只留原文）；并列按 PMID 最小决胜（行序无关） | a3b8715 |
+| #26 结构 QC 闸门 | 未通过（job 键覆盖实例；n_conf=0 空 flag 当通过） | QC 表改 `(instance, job)` 联合键 + `no_confidence` 显式标记 + 双根生成（instances+predictions，261 行）；评分侧严格按 (instance,job) 查找、缺记录拒收。实测：188 面板 93 通过 / 95 带标记被闸（0.644/188 为闸前口径，须重算） | 21926a9、f59dd45 |
+| #6/#23 临床受体身份与证据 | 部分（A118T 仍挂 5brz；unverified 仍可出 lethal-mimic） | A118T 两行 pdb 置空（无该受体结构，不评分）；hazard 仅在证据不含 unverified 时输出；无结构行显式报告 | a3b8715 |
+| #21 MHC 缓存溯源 | 部分（旧缓存无 allele_used 仍采信） | 旧格式缓存（无 `allele_used` 列）直接弃用重建 | 60fb071 |
+| #19 温度标定独立性 | 部分（T 与 ECE 同集） | T 在 20% 校准组上拟合，ECE/AUROC 在 80% 留出组报告（in-sample 单独标注） | 60fb071 |
+| #14 导入器临床旁路 | 部分（只匹配 α 链） | `import_af3` / `import_af3_instances` 临床特例改为 α+β 双链全序列匹配（β 序列取自 5BRZ 晶体 E 链） | 待提交 |
+| #27 缺链/歧义闸门 | 未通过（B2M 须直接接触肽，缺 B2M 仍发出复合物） | B2M 改经重链接触归属；重链或 B2M 缺失 → 不发出复合物（显式警告） | 待提交 |
+| #9/#10 撤回口径一致性 | 部分（README/paper2 仍正面声称） | README 序列上限/单调改善措辞条件化；paper2 增补 SECOND NOTICE（结构排名与临床扫描均标 provisional，0.644 为 QC 闸前口径） | 60fb071 |
+
+**仍待办（须数据/重算，非代码）**：
+1. QC 闸后的面板稳定性重算（93 候选 × 5 seed），0.644/188 一律标注"闸前口径"；
+2. 真实结合标签重评（VDJdb 路线）；
+3. graph.py 变更后全量重 build_dataset + 重训才能引用任何结构数字；
+4. 诱饵有效性：嫁接诱饵无实验依据证明不结合（0.933 只能读作"区分天然与规则构造的诱饵"）。

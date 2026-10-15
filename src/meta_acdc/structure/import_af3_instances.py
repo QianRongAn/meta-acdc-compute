@@ -39,6 +39,13 @@ CLINICAL_ALPHA = (
     "FTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIP"
 )
 
+CLINICAL_BETA = (
+    "AGVTQTPRYLIKTRGQQVTLSCSPISGHRSVSWYQQTPGQGLQFLFEYFSETQRNKGNFPGRFSGRQ"
+    "FSNSRSEMNVSTLELGDSALYLCASSFNMATGQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHT"
+    "QKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPR"
+    "NHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+)
+
 
 def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None:
     reqs = sorted(job_dir.glob("*_job_request.json"))
@@ -49,7 +56,9 @@ def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None
         return None
     peptide = seqs[0]
     alpha, beta = tcr_pair(seqs, peptide)
-    if alpha == CLINICAL_ALPHA:
+    # both chains must match the clinical receptor: alpha-only matching let a
+    # wrong beta chain ride into 5brz (AUDIT.md #14)
+    if alpha == CLINICAL_ALPHA and beta == CLINICAL_BETA:
         return {"pdb": "5brz", "peptide": peptide, "evidence": "clinical"}
     candidates = by_peptide.get(peptide, [])
     match = next((c for c in candidates
