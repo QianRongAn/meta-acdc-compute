@@ -196,9 +196,15 @@ def group_split(
             test_peps |= comp
         if not test_peps:
             test_peps = set(comp_list[0])
-        if len(test_peps) == len(by_pep) and len(comp_list) > 1:
-            # everything landed in test: move the smallest component back
-            test_peps -= min(comp_list, key=len)
+        if len(test_peps) == len(by_pep):
+            # one connected component: no train/test separation exists that
+            # keeps TCR clusters and epitopes disjoint — fail loudly instead
+            # of emitting a train side that leaks the test entities
+            raise ValueError(
+                "unseen-both split impossible: the peptide×TCR incidence "
+                "graph is fully connected at the clustering threshold — "
+                "every TCR cluster and epitope is mutually reachable, so no "
+                "leakage-free split exists")
         groups = {"__test__": [], "__train__": []}
         for i, p in enumerate(peptides):
             groups["__test__" if p in test_peps else "__train__"].append(i)
