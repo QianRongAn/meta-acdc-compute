@@ -66,13 +66,28 @@ def main() -> int:
         if len(set(xs)) > 1 and len(set(ys)) > 1:
             r, p = spearmanr(xs, ys)
             print(f"\nSpearman(identity, score) = {r:.3f} (P={p:.3g})")
-            print("Reading: no association with THIS identity metric was "
-                  "detected. That is a screening result only. It does not "
-                  "show the model captures side-chain chemistry, and it does "
-                  "not exclude other sequence shortcuts or structure "
-                  "artefacts. Do not quote it as evidence of chemical "
-                  "specificity without controlled experiments and "
-                  "independent binding labels.")
+            # The reading depends on the statistic, not on the null we hoped
+            # for. An unconditional "no association detected" is no better
+            # than the unconditional "captures chemistry" it replaced.
+            if r > 0.5 and p < 0.05:
+                print("Reading: a POSITIVE association with this identity "
+                      "metric was detected. The score tracks similarity to "
+                      "the cognate peptide on this metric.")
+            elif r < -0.5 and p < 0.05:
+                print("Reading: a NEGATIVE association with this identity "
+                      "metric was detected.")
+            elif p < 0.05:
+                print("Reading: a weak association with this identity metric "
+                      "was detected.")
+            else:
+                print("Reading: no association with THIS identity metric was "
+                      "detected.")
+            print("Either way this is a SCREENING result on one crude "
+                  "similarity proxy. It does not show the model captures "
+                  "side-chain chemistry, and it does not exclude other "
+                  "sequence shortcuts, structure artefacts or noise. Do not "
+                  "quote it as evidence of chemical specificity without "
+                  "controlled experiments and independent binding labels.")
     return 0
 
 

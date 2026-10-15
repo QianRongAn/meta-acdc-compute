@@ -5,9 +5,13 @@ VDJdb 2026 file format (vdjdb.txt): TSV with header
     antigen.epitope  antigen.gene  antigen.species  reference.id  vdjdb.score
     TCR_hash  method  meta  cdr3fix  ...
 
-We import rows with CDR3 + antigen.epitope present, keep vdjdb.score
-(0-3: 0 no response .. 3 strong response) as the activation signal.
-Deduplication key: (cdr3, antigen.epitope, mhc.a), keeping the max-score row.
+We import rows with CDR3 + antigen.epitope present and keep vdjdb.score as
+**evidence confidence** (0 = no evidence .. 3 = strong evidence). It is NOT a
+binding label. The `score` column holds that confidence value unchanged, and
+a duplicate `confidence` column is written so that no downstream reader has to
+assume `score` means affinity. The `label` column is deliberately always
+empty (AUDIT.md #1). Deduplication key: (cdr3, gene, epitope, mhc.a), keeping
+the max-confidence row.
 
 Usage:
     python ingest_vdjdb.py --in vdjdb.txt --out processed/vdjdb.clean.tsv
@@ -32,8 +36,11 @@ COLUMN_MAP = {
     "cdr3": "cdr3",
     "cdr3.alpha": "cdr3",
     "cdr3.beta": "cdr3",
-    "v.segm": "trb_v",
-    "j.segm": "trb_j",
+    # v.segm / j.segm land in a staging field and are routed to tra_* or
+    # trb_* by `gene` below. Writing them straight into trb_v/trb_j labelled
+    # an alpha-chain row as beta (AUDIT.md #7).
+    "v.segm": "v_segm",
+    "j.segm": "j_segm",
     "species": "organism",
     "mhc.a": "mhc_allele",
     "mhc.b": None,
@@ -42,7 +49,7 @@ COLUMN_MAP = {
     "antigen.gene": None,
     "antigen.species": None,
     "reference.id": "reference_id",
-    "vdjdb.score": "score",
+    "vdjdb.score": "score",  # evidence confidence, NOT a binding label
     "tcr_hash": None,
     "method": "method",
     "meta": None,
@@ -86,8 +93,12 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
             gene = (rec.gene or "").upper()
             if gene in ("TRA", "A"):
                 rec.cdr3_alpha, rec.cdr3_beta = rec.cdr3, None
+                rec.tra_v, rec.tra_j = rec.v_segm, rec.j_segm
+                rec.trb_v = rec.trb_j = None
             elif gene in ("TRB", "B"):
                 rec.cdr3_beta, rec.cdr3_alpha = rec.cdr3, None
+                rec.trb_v, rec.trb_j = rec.v_segm, rec.j_segm
+                rec.tra_v = rec.tra_j = None
             else:
                 stats.n_skipped_no_gene += 1
                 continue
@@ -101,8 +112,12 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
             # label and score==0 into a negative, which manufactured 185,117
             # "non-binders" (92.9% of the set) and every number derived from
             # them (AUDIT.md #1). The label column is now left empty on
-            # purpose; only `confidence` is written.
+            # purpose; the value is written twice, as `score` (for the
+            # existing consumers) and as `confidence` (so the meaning is
+            # explicit at the point of use).
             rec.score = parse_score(rec.score)
+            rec.confidence = rec.score
+            rec.v_segm = rec.j_segm = None
             rec.label = None
             chain = rec.cdr3_beta or rec.cdr3_alpha or ""
             key = (chain, gene, rec.peptide, rec.mhc_allele or "")

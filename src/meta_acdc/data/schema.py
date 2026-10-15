@@ -36,6 +36,9 @@ class InteractionRecord:
     # raw VDJdb fields kept for provenance (gene selects the chain column)
     gene: Optional[str] = None
     cdr3: Optional[str] = None
+    # staging for V/J segment before `gene` decides which chain column gets it
+    v_segm: Optional[str] = None
+    j_segm: Optional[str] = None
     tra_v: Optional[str] = None
     tra_j: Optional[str] = None
     trb_v: Optional[str] = None
@@ -46,6 +49,7 @@ class InteractionRecord:
     # labels
     label: Optional[float] = None  # 1/0 binding; None = unlabeled
     score: Optional[float] = None  # continuous signal (enrichment, intensity)
+    confidence: Optional[float] = None  # DB evidence confidence (VDJdb); NOT affinity
     # provenance
     reference_id: Optional[str] = None  # original DB id / paper PMID
     organism: Optional[str] = None
@@ -65,6 +69,7 @@ class InteractionRecord:
             self.mhc_allele or "",
             "" if self.label is None else str(int(self.label)),
             "" if self.score is None else f"{self.score:.6g}",
+            "" if self.confidence is None else f"{self.confidence:.6g}",
             self.reference_id or "",
             self.organism or "",
             self.method or "",
@@ -84,6 +89,7 @@ SCHEMA_HEADER = [
     "mhc_allele",
     "label",
     "score",
+    "confidence",
     "reference_id",
     "organism",
     "method",

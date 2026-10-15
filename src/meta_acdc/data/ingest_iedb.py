@@ -99,7 +99,10 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, newline="", encoding="utf-8", errors="replace") as fh, \
          open(out_path, "w", newline="") as out:
-        raw = csv.reader(fh)
+        # IEDB dumps are TSV with a two-row header (group, field). Without
+        # delimiter=\"\t\" every row collapses into a single comma-less field
+        # and idx() raises on the first lookup.
+        raw = csv.reader(fh, delimiter="\t")
         h1 = next(raw)
         h2 = next(raw)
         fieldnames = [f"{g}|{n}" for g, n in zip(h1, h2)]

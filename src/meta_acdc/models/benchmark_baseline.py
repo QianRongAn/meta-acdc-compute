@@ -75,7 +75,7 @@ def featurize(cdr3: str, peptide: str) -> np.ndarray:
     else:
         f += [0.0, 0.0, 0.0]
 
-    # amino-acid composition of the peptide (20-dim). NOTE: the previous
+    # amino-acid COMPOSITION of the peptide (20-dim), not 3-mers. NOTE: the previous
     # implementation counted 3-letter windows ("GIL") but then looked up
     # single letters ("G"), so all 20 values were always 0 and the baseline
     # was silently feature-starved. Keep the lookup and the count on the same
