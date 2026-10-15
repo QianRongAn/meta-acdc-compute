@@ -1,74 +1,262 @@
-instance	job_id	n_conf	iptm_mean	iptm_std	ptm_mean	tcr_ca	pep_ca	flag
-A	1ao7_LLFGYAVYV	1	0.860		0.860	324	9	
-A	1ao7_LLFGYPRYV	1	0.880		0.870	324	9	
-A	1ao7_LLFGYPVAV	1	0.880		0.870	324	9	
-A	1ao7_LLFGYPVYV	0				324	9	
-A	1ao7_MLWGYLQYV	1	0.850		0.850	324	9	
-A	1qrn_LGYGFVNYI	0				443	9	
-A	1qrn_LLFGFPVYV	0				443	9	
-A	1qrn_LLFGKPVYV	0				443	9	
-A	1qrn_LLFGPVYV	0				443	8	
-A	1tcr_EQYKFYSV	0				439	8	
-A	1tcr_GGAPWNPAMMI	0				439	11	
-A	1tcr_QLSPFPFDL	0				439	9	
-A	1tcr_SIYRYYGL	0				439	8	
-A	2vlj_GILEFVFTL	0				439	9	
-A	2vlj_GILGLVFTL	0				439	9	
-A	2vlj_PKYVKQNTLKLAT	0				439	13	
-A	5brz_ELQHGLYAL	1	0.870		0.890	438	9	
-A	5brz_ESDPIVAQY	1	0.900		0.910	438	9	
-A	5brz_EVDPIGHLY	1	0.910		0.910	438	9	
-A	5brz_ILAKFLHWL	1	0.540		0.640	438	9	low_iptm
-A	5brz_KVAKELVHFL	1	0.870		0.880	438	10	
-B1	1qrn_LGYGFVNYI	5	0.922	0.004	0.930	443	9	
-B1	1qrn_LLFGFPVYV	5	0.924	0.005	0.930	443	9	
-B1	1qrn_LLFGKPVYV	5	0.928	0.004	0.934	443	9	
-B1	1qrn_LLFGPVYV	5	0.916	0.005	0.920	443	8	
-B1	1qrn_LLFGYAVYV	5	0.920	0.000	0.930	443	9	
-B1	1qrn_LLFGYPRYV	5	0.926	0.005	0.930	443	9	
-B1	1qrn_LLFGYPVAV	5	0.922	0.004	0.926	443	9	
-B1	1qrn_LLFGYPVYV	5	0.920	0.000	0.926	443	9	
-B1	1qrn_MLWGYLQYV	5	0.920	0.006	0.928	443	9	
-B1	1tcr_GGAPWNPAMMI	5	0.764	0.005	0.804	439	11	
-B1	1tcr_QLSPFPFDL	5	0.640	0.006	0.706	439	9	low_iptm
-B1	1tcr_SIYRYYGL	5	0.864	0.008	0.888	439	8	
-B1	2ak4_GPEPLPQGQLTAY	5	0.884	0.005	0.898	442	13	
-B1	2ak4_LPEGLPQGQLTAY	5	0.898	0.004	0.910	442	13	
-B1	2ak4_LPEPLGQGQLTAY	5	0.894	0.005	0.906	442	13	
-B1	2ak4_LPEPLPQAQLTAY	5	0.888	0.004	0.906	442	13	
-B1	2ak4_LPEPLPQGQGTAY	5	0.886	0.008	0.902	442	13	
-B1	2ak4_LPEPLPQGQLGAY	5	0.890	0.000	0.906	442	13	
-B1	2ak4_LPEPLPQGQLTGY	5	0.894	0.005	0.910	442	13	
-B1	2bnq_SLLMWITQC	5	0.902	0.004	0.912	444	9	
-B1	2bnq_SLLMWITQV	5	0.906	0.005	0.916	444	9	
-B1	2nx5_GPQQSFPEQEA	5	0.814	0.016	0.846	431	11	
-B1	2vlj_GILEFVFTL	5	0.496	0.016	0.590	439	9	low_iptm
-B1	2vlj_GILGLVFTL	5	0.894	0.005	0.906	439	9	
-B1	2vlj_PKYVKQNTLKLAT	5	0.574	0.029	0.660	439	13	low_iptm
-B2	1qrn_LGYGFVNYI	5	0.924	0.005	0.932	443	9	
-B2	1qrn_LLFGFPVYV	5	0.924	0.005	0.932	443	9	
-B2	1qrn_LLFGKPVYV	5	0.930	0.000	0.938	443	9	
-B2	1qrn_LLFGPVYV	5	0.912	0.004	0.918	443	8	
-B2	1qrn_LLFGYAVYV	5	0.924	0.005	0.930	443	9	
-B2	1qrn_LLFGYPVAV	5	0.918	0.004	0.926	443	9	
-B2	1qrn_LLFGYPVYV	5	0.922	0.004	0.930	443	9	
-B2	1qrn_MLWGYLQYV	5	0.920	0.000	0.928	443	9	
-B2	1qse_LLFGYPRYV	5	0.924	0.005	0.930	443	9	
-B2	2ak4_LPEPLPQAQLTAY	5	0.892	0.007	0.908	442	13	
-B2	2f53_SLLMWITQV	5	0.910	0.000	0.920	436	9	
-B2	2vlj_GILEFVFTL	5	0.706	0.008	0.746	439	9	low_iptm
-B2	2vlj_GILGLVFTL	5	0.892	0.004	0.904	439	9	
-B2	2vlj_PKYVKQNTLKLAT	5	0.496	0.008	0.604	439	13	low_iptm
-B3	1oga_GILEFVFTL	5	0.522	0.025	0.612	439	9	low_iptm
-B3	1oga_GILGLVFTL	5	0.890	0.006	0.906	439	9	
-B3	1qrn_LGYGFVNYI	5	0.926	0.005	0.930	443	9	
-B3	1qrn_LLFGKPVYV	5	0.928	0.004	0.934	443	9	
-B3	1qrn_LLFGYAVYV	5	0.922	0.004	0.930	443	9	
-B3	1qse_LLFGFPVYV	5	0.924	0.005	0.928	443	9	
-B3	1qse_LLFGPVYV	5	0.908	0.004	0.918	443	8	
-B3	1qse_LLFGYPVAV	5	0.926	0.008	0.934	443	9	
-B3	1qse_LLFGYPVYV	5	0.922	0.004	0.930	443	9	
-B3	1qse_MLWGYLQYV	5	0.922	0.007	0.930	443	9	
-B3	2bnr_SLLMWITQV	5	0.906	0.005	0.916	447	9	
-B4	1qse_LGYGFVNYI	5	0.924	0.005	0.932	443	9	
-B4	1qse_LLFGYAVYV	5	0.920	0.006	0.928	443	9	
+instance	job_id	n_conf	iptm_mean	iptm_std	ptm_mean	tcr_ca	pep_ca	flag	basis
+A	1ao7_LLFGYAVYV	1	0.860		0.860	324	9		conf-file
+A	1ao7_LLFGYPRYV	1	0.880		0.870	324	9		conf-file
+A	1ao7_LLFGYPVAV	1	0.880		0.870	324	9		conf-file
+A	1ao7_LLFGYPVYV	0				324	9	no_confidence	none
+A	1ao7_MLWGYLQYV	1	0.850		0.850	324	9		conf-file
+A	1qrn_LGYGFVNYI	0				443	9	no_confidence	none
+A	1qrn_LLFGFPVYV	0				443	9	no_confidence	none
+A	1qrn_LLFGKPVYV	0				443	9	no_confidence	none
+A	1qrn_LLFGPVYV	0				443	8	no_confidence	none
+A	1tcr_EQYKFYSV	0				439	8	no_confidence	none
+A	1tcr_GGAPWNPAMMI	0				439	11	no_confidence	none
+A	1tcr_QLSPFPFDL	0				439	9	no_confidence	none
+A	1tcr_SIYRYYGL	0				439	8	no_confidence	none
+A	2vlj_GILEFVFTL	0				439	9	no_confidence	none
+A	2vlj_GILGLVFTL	0				439	9	no_confidence	none
+A	2vlj_PKYVKQNTLKLAT	0				439	13	no_confidence	none
+A	5brz_ELQHGLYAL	1	0.870		0.890	438	9		conf-file
+A	5brz_ESDPIVAQY	1	0.900		0.910	438	9		conf-file
+A	5brz_EVDPIGHLY	1	0.910		0.910	438	9		conf-file
+A	5brz_ILAKFLHWL	1	0.540		0.640	438	9	low_iptm	conf-file
+A	5brz_KVAKELVHFL	1	0.870		0.880	438	10		conf-file
+B1	1qrn_LGYGFVNYI	5	0.922	0.004	0.930	443	9		conf-file
+B1	1qrn_LLFGFPVYV	5	0.924	0.005	0.930	443	9		conf-file
+B1	1qrn_LLFGKPVYV	5	0.928	0.004	0.934	443	9		conf-file
+B1	1qrn_LLFGPVYV	5	0.916	0.005	0.920	443	8		conf-file
+B1	1qrn_LLFGYAVYV	5	0.920	0.000	0.930	443	9		conf-file
+B1	1qrn_LLFGYPRYV	5	0.926	0.005	0.930	443	9		conf-file
+B1	1qrn_LLFGYPVAV	5	0.922	0.004	0.926	443	9		conf-file
+B1	1qrn_LLFGYPVYV	5	0.920	0.000	0.926	443	9		conf-file
+B1	1qrn_MLWGYLQYV	5	0.920	0.006	0.928	443	9		conf-file
+B1	1tcr_GGAPWNPAMMI	5	0.764	0.005	0.804	439	11		conf-file
+B1	1tcr_QLSPFPFDL	5	0.640	0.006	0.706	439	9	low_iptm	conf-file
+B1	1tcr_SIYRYYGL	5	0.864	0.008	0.888	439	8		conf-file
+B1	2ak4_GPEPLPQGQLTAY	5	0.884	0.005	0.898	442	13		conf-file
+B1	2ak4_LPEGLPQGQLTAY	5	0.898	0.004	0.910	442	13		conf-file
+B1	2ak4_LPEPLGQGQLTAY	5	0.894	0.005	0.906	442	13		conf-file
+B1	2ak4_LPEPLPQAQLTAY	5	0.888	0.004	0.906	442	13		conf-file
+B1	2ak4_LPEPLPQGQGTAY	5	0.886	0.008	0.902	442	13		conf-file
+B1	2ak4_LPEPLPQGQLGAY	5	0.890	0.000	0.906	442	13		conf-file
+B1	2ak4_LPEPLPQGQLTGY	5	0.894	0.005	0.910	442	13		conf-file
+B1	2bnq_SLLMWITQC	5	0.902	0.004	0.912	444	9		conf-file
+B1	2bnq_SLLMWITQV	5	0.906	0.005	0.916	444	9		conf-file
+B1	2nx5_GPQQSFPEQEA	5	0.814	0.016	0.846	431	11		conf-file
+B1	2vlj_GILEFVFTL	5	0.496	0.016	0.590	439	9	low_iptm	conf-file
+B1	2vlj_GILGLVFTL	5	0.894	0.005	0.906	439	9		conf-file
+B1	2vlj_PKYVKQNTLKLAT	5	0.574	0.029	0.660	439	13	low_iptm	conf-file
+B2	1qrn_LGYGFVNYI	5	0.924	0.005	0.932	443	9		conf-file
+B2	1qrn_LLFGFPVYV	5	0.924	0.005	0.932	443	9		conf-file
+B2	1qrn_LLFGKPVYV	5	0.930	0.000	0.938	443	9		conf-file
+B2	1qrn_LLFGPVYV	5	0.912	0.004	0.918	443	8		conf-file
+B2	1qrn_LLFGYAVYV	5	0.924	0.005	0.930	443	9		conf-file
+B2	1qrn_LLFGYPVAV	5	0.918	0.004	0.926	443	9		conf-file
+B2	1qrn_LLFGYPVYV	5	0.922	0.004	0.930	443	9		conf-file
+B2	1qrn_MLWGYLQYV	5	0.920	0.000	0.928	443	9		conf-file
+B2	1qse_LLFGYPRYV	5	0.924	0.005	0.930	443	9		conf-file
+B2	2ak4_LPEPLPQAQLTAY	5	0.892	0.007	0.908	442	13		conf-file
+B2	2f53_SLLMWITQV	5	0.910	0.000	0.920	436	9		conf-file
+B2	2vlj_GILEFVFTL	5	0.706	0.008	0.746	439	9	low_iptm	conf-file
+B2	2vlj_GILGLVFTL	5	0.892	0.004	0.904	439	9		conf-file
+B2	2vlj_PKYVKQNTLKLAT	5	0.496	0.008	0.604	439	13	low_iptm	conf-file
+B3	1oga_GILEFVFTL	5	0.522	0.025	0.612	439	9	low_iptm	conf-file
+B3	1oga_GILGLVFTL	5	0.890	0.006	0.906	439	9		conf-file
+B3	1qrn_LGYGFVNYI	5	0.926	0.005	0.930	443	9		conf-file
+B3	1qrn_LLFGKPVYV	5	0.928	0.004	0.934	443	9		conf-file
+B3	1qrn_LLFGYAVYV	5	0.922	0.004	0.930	443	9		conf-file
+B3	1qse_LLFGFPVYV	5	0.924	0.005	0.928	443	9		conf-file
+B3	1qse_LLFGPVYV	5	0.908	0.004	0.918	443	8		conf-file
+B3	1qse_LLFGYPVAV	5	0.926	0.008	0.934	443	9		conf-file
+B3	1qse_LLFGYPVYV	5	0.922	0.004	0.930	443	9		conf-file
+B3	1qse_MLWGYLQYV	5	0.922	0.007	0.930	443	9		conf-file
+B3	2bnr_SLLMWITQV	5	0.906	0.005	0.916	447	9		conf-file
+B4	1qse_LGYGFVNYI	5	0.924	0.005	0.932	443	9		conf-file
+B4	1qse_LLFGYAVYV	5	0.920	0.006	0.928	443	9		conf-file
+af3_predictions	1ao7_LLFGYAVYV	1	0.860		0.860	324	9		conf-file
+af3_predictions	1ao7_LLFGYPRYV	1	0.880		0.870	324	9		conf-file
+af3_predictions	1ao7_LLFGYPVAV	1	0.880		0.870	324	9		conf-file
+af3_predictions	1ao7_LLFGYPVYV	1	0.870		0.860	324	9		conf-file
+af3_predictions	1ao7_MLWGYLQYV	1	0.850		0.850	324	9		conf-file
+af3_predictions	1g6r_GGAPWNPAMMI	0				439	11	no_confidence	none
+af3_predictions	1g6r_QLSPFPFDL	0				439	9	no_confidence	none
+af3_predictions	1mwa_GGAPWNPAMMI	1	0.640		0.710	439	11	low_iptm	conf-file
+af3_predictions	1mwa_QLSPFPFDL	1	0.620		0.690	439	9	low_iptm	conf-file
+af3_predictions	1qrn_LGYGFVNYI	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qrn_LLFGFPVYV	1	0.930		0.930	443	9		conf-file
+af3_predictions	1qrn_LLFGKPVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qrn_LLFGPVYV	1	0.910		0.920	443	8		conf-file
+af3_predictions	1qse_LLFGKPVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qsf_LGYGFVNYI	1	0.930		0.930	443	9		conf-file
+af3_predictions	1qsf_LLFGFPVYV	1	0.930		0.930	443	9		conf-file
+af3_predictions	1qsf_LLFGKPVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qsf_LLFGPVYV	1	0.920		0.920	443	8		conf-file
+af3_predictions	1qsf_LLFGYAVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qsf_LLFGYPRYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qsf_LLFGYPVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	1qsf_MLWGYLQYV	1	0.930		0.930	443	9		conf-file
+af3_predictions	1tcr_EQYKFYSV	1	0.880		0.900	439	8		conf-file
+af3_predictions	1tcr_GGAPWNPAMMI	1	0.680		0.740	439	11	low_iptm	conf-file
+af3_predictions	1tcr_QLSPFPFDL	1	0.710		0.760	439	9	low_iptm	conf-file
+af3_predictions	1tcr_SIYRYYGL	1	0.890		0.910	439	8		conf-file
+af3_predictions	2ak4_GPEPLPQGQLTAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEGLPQGQLTAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEPLGQGQLTAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEPLPQAQLTAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEPLPQGQGTAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEPLPQGQLGAY	0				445	13	no_confidence	none
+af3_predictions	2ak4_LPEPLPQGQLTGY	0				445	13	no_confidence	none
+af3_predictions	2bnq_SLLMWITQC	0				444	9	no_confidence	none
+af3_predictions	2f54_SLLMWITQV	1	0.890		0.900	447	9		conf-file
+af3_predictions	2gj6_LGYGFVNYI	1	0.930		0.930	443	9		conf-file
+af3_predictions	2gj6_LLFGFPVYV	1	0.930		0.940	443	9		conf-file
+af3_predictions	2gj6_LLFGPVYV	1	0.920		0.920	443	8		conf-file
+af3_predictions	2gj6_LLFGYAVYV	1	0.920		0.930	443	9		conf-file
+af3_predictions	2gj6_LLFGYPRYV	1	0.930		0.930	443	9		conf-file
+af3_predictions	2gj6_LLFGYPVAV	1	0.930		0.940	443	9		conf-file
+af3_predictions	2gj6_LLFGYPVYV	1	0.930		0.930	443	9		conf-file
+af3_predictions	2gj6_MLWGYLQYV	1	0.920		0.930	443	9		conf-file
+af3_predictions	2vlj_GILEFVFTL	1	0.640		0.700	439	9	low_iptm	conf-file
+af3_predictions	2vlj_GILGLVFTL	1	0.900		0.910	439	9		conf-file
+af3_predictions	2vlj_PKYVKQNTLKLAT	1	0.490		0.600	439	13	low_iptm	conf-file
+af3_predictions	2vlk_GILEFVFTL	1	0.750		0.790	439	9		conf-file
+af3_predictions	2vlk_GILGLVFTL	1	0.860		0.880	439	9		conf-file
+af3_predictions	2vlr_GILEFVFTL	1	0.700		0.740	439	9	low_iptm	conf-file
+af3_predictions	2vlr_GILGLVFTL	1	0.890		0.910	439	9		conf-file
+af3_predictions	2vlr_PKYVKQNTLKLAT	1	0.540		0.640	439	13	low_iptm	conf-file
+af3_predictions	3d39_LGYGFVNYI	1	0.930		0.940	445	9		conf-file
+af3_predictions	3d39_LLFGFPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3d39_LLFGKPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3d39_LLFGYAVYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	3d39_LLFGYPRYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3d39_LLFGYPVAV	1	0.920		0.930	445	9		conf-file
+af3_predictions	3d39_LLFGYPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3d39_MLWGYLQYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	3d3v_LLFGYPVYV	0				445	9	no_confidence	none
+af3_predictions	3gsn_GILGFVFTL	1	0.660		0.730	442	9	low_iptm	conf-file
+af3_predictions	3h9s_LLFGKPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3h9s_LLFGPVYV	1	0.920		0.920	445	8		conf-file
+af3_predictions	3h9s_LLFGYAVYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	3h9s_LLFGYPRYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	3h9s_LLFGYPVAV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3h9s_LLFGYPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	3hg1_AAGIGILTV	0				438	9	no_confidence	none
+af3_predictions	3hg1_EAAGIGILTV	0				441	10	no_confidence	none
+af3_predictions	3hg1_LLLGIGILVL	1	0.860		0.880	438	10		conf-file
+af3_predictions	3hg1_NLSALGIFST	1	0.850		0.860	438	10		conf-file
+af3_predictions	3kxf_GPEPLPQGQLTAY	1	0.900		0.910	442	13		conf-file
+af3_predictions	3kxf_LPEGLPQGQLTAY	1	0.900		0.910	445	13		conf-file
+af3_predictions	3kxf_LPEPLGQGQLTAY	1	0.890		0.900	445	13		conf-file
+af3_predictions	3kxf_LPEPLPQAQLTAY	1	0.900		0.910	442	13		conf-file
+af3_predictions	3kxf_LPEPLPQGGLTAY	1	0.840		0.870	445	13		conf-file
+af3_predictions	3kxf_LPEPLPQGQGTAY	1	0.900		0.910	442	13		conf-file
+af3_predictions	3kxf_LPEPLPQGQLGAY	1	0.890		0.910	445	13		conf-file
+af3_predictions	3kxf_LPEPLPQGQLTGY	1	0.900		0.910	445	13		conf-file
+af3_predictions	3mv7_HPVGDADYFEY	1	0.900		0.910	441	11		conf-file
+af3_predictions	3mv8_HPVGDADYFEY	1	0.890		0.900	441	11		conf-file
+af3_predictions	3mv8_HPVGQADYFEY	1	0.890		0.900	442	11		conf-file
+af3_predictions	3mv9_HPVGDADYFEY	0				442	11	no_confidence	none
+af3_predictions	3mv9_HPVGQADYFEY	0				442	11	no_confidence	none
+af3_predictions	3pwp_LLFGYPVYV	0				445	9	no_confidence	none
+af3_predictions	3qdg_MMWDRGLGMM	0				441	10	no_confidence	none
+af3_predictions	3qdg_SMLGIGIVPV	0				441	10	no_confidence	none
+af3_predictions	3qdj_MMWDRGLGMM	0				441	10	no_confidence	none
+af3_predictions	3qdm_AAGIGILTV	0				437	9	no_confidence	none
+af3_predictions	3qeq_ELAGIGILTV	0				437	10	no_confidence	none
+af3_predictions	3uts_AQWGPDPAAA	0				446	10	no_confidence	none
+af3_predictions	3uts_MVWGPDPLYV	0				446	10	no_confidence	none
+af3_predictions	3uts_RQFGPDFPTI	0				446	10	no_confidence	none
+af3_predictions	3uts_RQFGPDWIVA	0				446	10	no_confidence	none
+af3_predictions	3uts_RQWGPDPAAV	0				446	10	no_confidence	none
+af3_predictions	3uts_WGPDPAAA	0				446	8	no_confidence	none
+af3_predictions	3uts_YLGGPDFPTI	0				446	10	no_confidence	none
+af3_predictions	3uts_YQFGPDFPIA	0				446	10	no_confidence	none
+af3_predictions	3utt_AQWGPDPAAA	0				444	10	no_confidence	none
+af3_predictions	3utt_MVWGPDPLYV	0				444	10	no_confidence	none
+af3_predictions	3utt_RQFGPDFPTI	0				444	10	no_confidence	none
+af3_predictions	3utt_RQFGPDWIVA	0				444	10	no_confidence	none
+af3_predictions	3utt_RQWGPDPAAV	0				444	10	no_confidence	none
+af3_predictions	3utt_WGPDPAAA	0				444	8	no_confidence	none
+af3_predictions	3utt_YLGGPDFPTI	0				444	10	no_confidence	none
+af3_predictions	3utt_YQFGPDFPIA	0				444	10	no_confidence	none
+af3_predictions	3vxr_RYPLTLGWCF	0				436	10	no_confidence	none
+af3_predictions	3vxs_RYPLTFGWCF	1	0.890		0.910	446	10		conf-file
+af3_predictions	4eup_EAAGIGILTV	1	0.910		0.910	441	10		conf-file
+af3_predictions	4ftv_LGYGFVNYI	1	0.930		0.940	445	9		conf-file
+af3_predictions	4ftv_LLFGFPVYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	4ftv_LLFGKPVYV	1	0.930		0.940	445	9		conf-file
+af3_predictions	4ftv_LLFGPVYV	1	0.920		0.930	445	8		conf-file
+af3_predictions	4ftv_LLFGYAVYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	4ftv_LLFGYPRYV	1	0.930		0.930	445	9		conf-file
+af3_predictions	4ftv_LLFGYPVAV	1	0.920		0.930	445	9		conf-file
+af3_predictions	4ftv_MLWGYLQYV	1	0.910		0.920	445	9		conf-file
+af3_predictions	4g8g_KRWIIMGLNK	1	0.760		0.800	452	10		conf-file
+af3_predictions	4g9f_KRWIILGLNK	1	0.550		0.620	454	10	low_iptm	conf-file
+af3_predictions	4jfd_AAGIGILTV	1	0.930		0.930	441	9		conf-file
+af3_predictions	4jfd_EAAGIGILTV	1	0.930		0.930	441	10		conf-file
+af3_predictions	4jfd_ELAGIGALTV	1	0.920		0.930	441	10		conf-file
+af3_predictions	4jfd_ELAGIGILTV	1	0.930		0.930	442	10		conf-file
+af3_predictions	4jfe_AAGIGILTV	1	0.920		0.930	442	9		conf-file
+af3_predictions	4jfe_EAAGIGILTV	1	0.930		0.940	442	10		conf-file
+af3_predictions	4jfe_ELAAIGILTV	1	0.930		0.930	442	10		conf-file
+af3_predictions	4jfe_ELAGIGILTV	1	0.930		0.930	441	10		conf-file
+af3_predictions	4jff_AAGIGILTV	1	0.920		0.930	442	9		conf-file
+af3_predictions	4jff_EAAGIGILTV	1	0.930		0.930	442	10		conf-file
+af3_predictions	4jff_ELAAIGILTV	1	0.930		0.930	442	10		conf-file
+af3_predictions	4jff_ELAGIGALTV	1	0.930		0.930	442	10		conf-file
+af3_predictions	4jrx_GPEPLPQGQLTAY	1	0.910		0.920	442	13		conf-file
+af3_predictions	4jrx_LPEGLPQGQLTAY	1	0.910		0.920	442	13		conf-file
+af3_predictions	4jrx_LPEPLGQGQLTAY	1	0.900		0.910	442	13		conf-file
+af3_predictions	4jrx_LPEPLPQAQLTAY	1	0.920		0.930	442	13		conf-file
+af3_predictions	4jrx_LPEPLPQGGLTAY	1	0.920		0.930	442	13		conf-file
+af3_predictions	4jrx_LPEPLPQGQGTAY	1	0.910		0.920	442	13		conf-file
+af3_predictions	4jrx_LPEPLPQGQLGAY	0				442	13	no_confidence	none
+af3_predictions	4jrx_LPEPLPQGQLTGY	0				442	13	no_confidence	none
+af3_predictions	4l3e_AAGIGILTV	0				441	9	no_confidence	none
+af3_predictions	4l3e_MMWDRGLGMM	0				441	10	no_confidence	none
+af3_predictions	4l3e_SMLGIGIVPV	0				441	10	no_confidence	none
+af3_predictions	4pri_HPVGDADYFEY	0				442	11	no_confidence	none
+af3_predictions	4pri_HPVGQADYFEY	0				442	11	no_confidence	none
+af3_predictions	5brz_ELQHGLYAL	1	0.870		0.890	438	9		conf-file
+af3_predictions	5brz_ESDPIVAQY	1	0.900		0.910	438	9		conf-file
+af3_predictions	5brz_EVDPIGHLY	1	0.910		0.910	438	9		conf-file
+af3_predictions	5brz_ILAKFLHWL	1	0.540		0.640	438	9	low_iptm	conf-file
+af3_predictions	5brz_KVAKELVHFL	1	0.870		0.880	438	10		conf-file
+af3_predictions	5bs0_EVDPIGHLY	0				438	9	no_confidence	none
+af3_predictions	5c07_ALWGPDPAAA	0				445	10	no_confidence	none
+af3_predictions	5c07_AQWGPDPAAA	0				445	10	no_confidence	none
+af3_predictions	5c07_MVWGPDPLYV	0				445	10	no_confidence	none
+af3_predictions	5c07_RQFGPDFPTI	0				445	10	no_confidence	none
+af3_predictions	5c07_RQFGPDWIVA	0				445	10	no_confidence	none
+af3_predictions	5c07_RQWGPDPAAV	0				445	10	no_confidence	none
+af3_predictions	5eu6_ELAGIGILTV	0				448	10	no_confidence	none
+af3_predictions	5eu6_YLEPGPITA	0				448	9	no_confidence	none
+af3_predictions	5eu6_YLEPGPVAA	0				448	9	no_confidence	none
+af3_predictions	5eu6_YLEPGPVTA	0				448	9	no_confidence	none
+af3_predictions	5eu6_YLEPGPVTL	0				448	9	no_confidence	none
+af3_predictions	5euo_GLCTLVAML	0				427	9	no_confidence	none
+af3_predictions	5hhm_GILGFVFTL	0				434	9	no_confidence	none
+af3_predictions	5hho_GILGFVFTL	0				435	9	no_confidence	none
+af3_predictions	5jzi_KLVALVINAV	0				448	10	no_confidence	none
+af3_predictions	5m00_KAPANFATM	0				424	9	no_confidence	none
+af3_predictions	5m01_KAPFNFATM	0				425	9	no_confidence	none
+af3_predictions	5m02_KAPANFATM	0				424	9	no_confidence	none
+af3_predictions	5men_PKYVKQNTLKLAT	0				440	13	no_confidence	none
+af3_predictions	5nme_SLFNTIAVL	0				441	9	no_confidence	none
+af3_predictions	5nme_SLYNTIATL	0				441	9	no_confidence	none
+af3_predictions	5nmf_SLFNTIAVL	0				441	9	no_confidence	none
+af3_predictions	5nmg_SLYNTIATL	0				441	9	no_confidence	none
+af3_predictions	5til_KAPANFATM	0				350	9	no_confidence	none
+af3_predictions	5tje_KAPANFATM	0				349	9	no_confidence	none
+af3_predictions	6am5_ELAGIGILTV	0				431	10	no_confidence	none
+af3_predictions	6amu_ELAGIGILTV	0				440	10	no_confidence	none
+af3_predictions	6d78_ELAGIGILTV	0				425	10	no_confidence	none
+af3_predictions	6eqb_ELAGIGILTV	0				436	10	no_confidence	none
+af3_predictions	6p64_GILGFVFTL	0				433	9	no_confidence	none
+af3_predictions	6q3s_SLLMWITQC	0				444	9	no_confidence	none
+af3_predictions	6tmo_ELAGIGILTV	0				443	10	no_confidence	none
+af3_predictions	6uk2_GILGFVFTL	0				446	9	no_confidence	none
+af3_predictions	7n1f_GILGFVFTL	0				436	9	no_confidence	none
+af3_predictions	7q99_ELAGIGILTV	0				437	10	no_confidence	none
+af3_predictions	7q9a_ELAGIGILTV	0				441	10	no_confidence	none
+af3_predictions	7rtr_GILGFVFTL	0				442	9	no_confidence	none
+af3_predictions	8f5a_NLVPMVATV	0				441	9	no_confidence	none
