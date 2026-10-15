@@ -234,14 +234,27 @@ AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"  # 20 canonical residues
 
 
 def _sidechain_extent(res: Residue) -> float:
-    """Distance from CA centroid to side-chain centroid (0 for GLY)."""
+    """Distance from the CA atom to the side-chain centroid (0 for GLY).
+
+    The CA reference is taken from the residue's CURRENT atoms: grafted
+    residues keep the receiver's backbone but gain foreign side chains, so
+    the stored (x, y, z) centroid from parse_pdb no longer matches the atoms
+    and would put the extent on a stale coordinate frame (AUDIT.md #5).
+    """
     sc = _sidechain_atoms(res.atoms)
     if not sc:
         return 0.0
+    ca = [a for a in res.atoms if a[0].upper() == "CA"]
+    if ca:
+        bx = sum(a[1] for a in ca) / len(ca)
+        by = sum(a[2] for a in ca) / len(ca)
+        bz = sum(a[3] for a in ca) / len(ca)
+    else:
+        bx, by, bz = res.x, res.y, res.z
     cx = sum(a[1] for a in sc) / len(sc)
     cy = sum(a[2] for a in sc) / len(sc)
     cz = sum(a[3] for a in sc) / len(sc)
-    return math.sqrt((cx - res.x) ** 2 + (cy - res.y) ** 2 + (cz - res.z) ** 2)
+    return math.sqrt((cx - bx) ** 2 + (cy - by) ** 2 + (cz - bz) ** 2)
 
 
 def _node_features(res: Residue) -> list[float]:
@@ -269,6 +282,32 @@ def build_interface_graph(
         residues, pdb_path, interface_radius, edge_cutoff,
         electrostatics=electrostatics,
     )
+
+
+def residue_centroid(res: Residue) -> tuple[float, float, float]:
+    """Centroid of the residue's CURRENT heavy atoms.
+
+    parse_pdb stores the full-atom centroid as (x, y, z), but a grafted
+    residue keeps the receiver's backbone and gains foreign side chains, so
+    its stored coordinates no longer match its atoms. Keeping the stale
+    centroid meant a "side-chain-only" change also moved the node by up to
+    several Å, which invalidates the claim that geometry is pinned, and the
+    edge distances disagreed with the reported node coordinates.
+    (AUDIT.md #5.)
+    """
+    heavy = [a for a in res.atoms if not a[0].startswith("H")]
+    if not heavy:
+        return (res.x, res.y, res.z)
+    n = len(heavy)
+    return (sum(a[1] for a in heavy) / n,
+            sum(a[2] for a in heavy) / n,
+            sum(a[3] for a in heavy) / n)
+
+
+def residue_dist(a: Residue, b: Residue) -> float:
+    ca = residue_centroid(a)
+    cb = residue_centroid(b)
+    return math.sqrt(sum((x - y) ** 2 for x, y in zip(ca, cb)))
 
 
 def build_interface_graph_from_residues(
@@ -301,7 +340,9 @@ def build_interface_graph_from_residues(
                          f"(tcr={len(tcr)}, pmhc={len(pmhc)}); roles={roles}")
 
     def dist(a: Residue, b: Residue) -> float:
-        return math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2)
+        # current-atom centroids: stale stored coords would disagree with
+        # the node coordinates reported in the output graph (AUDIT.md #5)
+        return residue_dist(a, b)
 
     if forced_nodes is not None:
         by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
@@ -331,22 +372,8 @@ def build_interface_graph_from_residues(
     peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
 
     def _centroid(res: Residue) -> tuple[float, float, float]:
-        """Centroid of the residue's CURRENT heavy atoms.
-
-        parse_pdb stores the full-atom centroid as (x, y, z), but a grafted
-        residue keeps the donor's backbone and gains foreign side chains, so
-        its stored coordinates no longer match its atoms. Keeping the stale
-        centroid meant a "side-chain-only" change also moved the node by up to
-        several Å, which invalidates the claim that geometry is pinned.
-        (AUDIT.md #5.)
-        """
-        heavy = [a for a in res.atoms if not a[0].startswith("H")]
-        if not heavy:
-            return (res.x, res.y, res.z)
-        n = len(heavy)
-        return (sum(a[1] for a in heavy) / n,
-                sum(a[2] for a in heavy) / n,
-                sum(a[3] for a in heavy) / n)
+        """Centroid of the residue's CURRENT heavy atoms (see residue_centroid)."""
+        return residue_centroid(res)
 
     graph.node_features = [
         [*_node_features(residues[i]),

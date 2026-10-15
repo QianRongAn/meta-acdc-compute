@@ -61,14 +61,20 @@ class CDR3Encoder(nn.Module):
         return self.mlp(x)
 
 
-def task_tensors(task, device: str) -> tuple[torch.Tensor, torch.Tensor]:
+def task_tensors(task, device: str) -> tuple[torch.Tensor, torch.Tensor,
+                                              torch.Tensor, torch.Tensor]:
     sup = torch.tensor(np.vstack([encode_cdr3(t) for t in task.support_pos + task.support_neg]),
                        dtype=torch.float32, device=device)
     qry = torch.tensor(np.vstack([encode_cdr3(t) for t in task.query]),
                        dtype=torch.float32, device=device)
     sup_labels = torch.tensor([1] * len(task.support_pos) + [0] * len(task.support_neg),
                               dtype=torch.long, device=device)
-    return sup, qry, sup_labels
+    # the SAMPLER's labels: the negative pool can run dry, so the query is
+    # not guaranteed balanced and must not be re-derived as [1]*half+[0]*half
+    # (AUDIT.md #8)
+    qry_labels = torch.tensor(task.query_labels, dtype=torch.long,
+                              device=device)
+    return sup, qry, sup_labels, qry_labels
 
 
 def main() -> int:
@@ -91,7 +97,7 @@ def main() -> int:
         e = sampler.rng.choice(sorted(eps))
         return sampler.sample_task(epitope=e)
 
-    def proto_loss(sup, qry, sup_labels, device):
+    def proto_loss(sup, qry, sup_labels, qry_labels, device):
         emb_s = encoder(sup)
         emb_q = encoder(qry)
         pos_mask = sup_labels == 1
@@ -101,17 +107,22 @@ def main() -> int:
         d_neg = (emb_q - proto_neg).pow(2).sum(-1)
         # class 0 = non-binder (-d_neg), class 1 = binder (-d_pos)
         logits = torch.stack([-d_neg, -d_pos], dim=1)  # (Q, 2)
-        # query labels: [1]*n_pos + [0]*n_neg
-        n_q = qry.shape[0] // 2
-        ql = torch.tensor([1] * n_q + [0] * n_q, dtype=torch.long, device=device)
-        return F.cross_entropy(logits, ql), (d_neg - d_pos)  # score: >0 = binder
+        return F.cross_entropy(logits, qry_labels), (d_neg - d_pos)  # >0 = binder
 
     print("training ...", flush=True)
     for ep in range(args.episodes):
-        task = sample_task(train_eps)
-        sup, qry, sup_labels = task_tensors(task, args.device)
+        # degenerate guard: a single-class query carries no contrastive
+        # signal for BCE/AUROC — resample instead of fabricating balanced
+        # labels (AUDIT.md #8)
+        for _ in range(20):
+            task = sample_task(train_eps)
+            if len(set(task.query_labels)) >= 2:
+                break
+        else:
+            continue
+        sup, qry, sup_labels, qry_labels = task_tensors(task, args.device)
         opt.zero_grad()
-        loss, _ = proto_loss(sup, qry, sup_labels, args.device)
+        loss, _ = proto_loss(sup, qry, sup_labels, qry_labels, args.device)
         loss.backward()
         opt.step()
         if ep % 500 == 0 or ep == args.episodes - 1:
@@ -122,10 +133,15 @@ def main() -> int:
     aurocs, auprcs = [], []
     for e in sorted(val_eps):
         task = sampler.sample_task(epitope=e)
-        sup, qry, sup_labels = task_tensors(task, args.device)
+        sup, qry, sup_labels, qry_labels = task_tensors(task, args.device)
         with torch.no_grad():
-            _, scores = proto_loss(sup, qry, sup_labels, args.device)
+            _, scores = proto_loss(sup, qry, sup_labels, qry_labels,
+                                   args.device)
         y = np.array(task.query_labels)
+        if len(set(y.tolist())) < 2:
+            # single-class query: AUROC/AUPRC undefined — report as skip
+            print(f"  skip {e}: single-class query ({len(y)} rows)")
+            continue
         s = scores.cpu().numpy()
         aurocs.append(roc_auc_score(y, s))
         auprcs.append(average_precision_score(y, s))

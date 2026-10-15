@@ -187,8 +187,11 @@ def main() -> int:
                 elif args.allow_first_candidate_fallback:
                     match = candidates[0]
                 else:
-                    quarantined.append((job_dir.name, peptide, alpha[:12],
-                                        beta[:12]))
+                    # alpha/beta may be None when no TCR chain is recognizable
+                    # (motif and length-window fallbacks both failed); the job
+                    # is quarantined either way, just without a prefix.
+                    quarantined.append((job_dir.name, peptide,
+                                        (alpha or "")[:12], (beta or "")[:12]))
                     continue
         job_id = f"{match['pdb']}_{peptide}"
         # copy ALL five ranked models (model_0..4) for structural ensembling

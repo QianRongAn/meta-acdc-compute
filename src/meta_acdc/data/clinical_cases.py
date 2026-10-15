@@ -64,16 +64,22 @@ CASES = [
               "(structure_vdjdb_map: 5bs0 -> ESDPIVAQY); the MAGE-A3 target "
               "is a PREDICTED complex on this receptor, not a second case"),
     # --- A118T / MAGE-A12, HLA-A*02:01 ------------------------------------
+    # NOTE: no crystal structure of the A118T receptor exists; 5BRZ is the
+    # A3A receptor in HLA-A*01 (RCSB-confirmed). Scoring the A118T case with
+    # 5BRZ structures would compare peptides against the WRONG receptor and
+    # MHC, so pdb is left empty — clinical_scan reports "no structure" and
+    # does not score it (AUDIT.md #6/#23).
     dict(case="A118T-MAGEA12", tcr="A118T affinity-enhanced MAGE-A3 TCR",
-         pdb="5brz", restriction="HLA-A*02:01", peptide="KVAELVHFL",
+         pdb="", restriction="HLA-A*02:01", peptide="KVAELVHFL",
          role="target", severity="not-documented",
-         evidence="unverified - do not cite a PMID",
-         note="MAGE-A3 112-120"),
+         evidence="unverified - cite as Linette 2013 (MAGE-A12 neurotoxicity)",
+         note="MAGE-A3 112-120; no structure of this receptor available"),
     dict(case="A118T-MAGEA12", tcr="A118T affinity-enhanced MAGE-A3 TCR",
-         pdb="5brz", restriction="HLA-A*02:01", peptide="KMVELVHFL",
+         pdb="", restriction="HLA-A*02:01", peptide="KMVELVHFL",
          role="off-target", severity="fatal-neurotoxicity",
          evidence="unverified - cite as Linette 2013 (MAGE-A12 neurotoxicity)",
-         note="3 neurotoxicity / 2 deaths reported"),
+         note="3 neurotoxicity / 2 deaths reported; no structure of this "
+              "receptor available"),
     # --- Tebentafusp / Kimmtrak, gp100, HLA-A*02:01 -----------------------
     dict(case="KIMMTRAK-GP100", tcr="gp100 TCR (tebentafusp)",
          pdb="5eu6", restriction="HLA-A*02:01", peptide="YLEPGPVTA",

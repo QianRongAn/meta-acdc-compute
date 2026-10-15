@@ -38,11 +38,18 @@ ASSAY_PRESENTATION = "presentation-eluted"
 
 
 def assay_family(method: str) -> str:
-    """Classify an IEDB assay method string into an endpoint family."""
+    """Classify an IEDB assay method string into an endpoint family.
+
+    Kinetic constants (koff/kon/KD/half-life) are NOT affinities: folding
+    them into "-log10 IC50" compared incomparable numbers (AUDIT.md #22).
+    """
     m = method.lower()
+    if ("koff" in m or "kon" in m or "kd " in m or "dissociat" in m
+            or "half-life" in m or "t1/2" in m or "stability" in m):
+        return "other:kinetics"
     if "elut" in m or "mass spectr" in m:
         return ASSAY_PRESENTATION
-    if "binding" in m or "ic50" in m or "koff" in m or "kon" in m:
+    if "binding" in m or "ic50" in m:
         return ASSAY_IC50
     return f"other:{m[:24]}"
 
@@ -53,6 +60,28 @@ def parse_ic50(raw: str) -> float | None:
         return -math.log10(max(v, 1e-12))
     except (TypeError, ValueError):
         return None
+
+
+def ic50_score(raw: str, units: str) -> tuple[float | None, str]:
+    """-log10 nM affinity for the numeric score column, unit-whitelisted.
+
+    Only nM enters as-is; µM is converted (×1000) with an explicit note;
+    any other or missing unit gets NO numeric score — the value is kept in
+    `notes` verbatim instead of being silently transformed (AUDIT.md #22).
+    """
+    v = None
+    try:
+        v = float(raw)
+    except (TypeError, ValueError):
+        return None, f"non-numeric quant={raw!r}"
+    u = units.strip().lower()
+    if "nm" in u:
+        return -math.log10(max(v, 1e-12)), ""
+    if u in ("um", "µm", "μм", "um", "µ") or "um" in u:
+        return -math.log10(max(v * 1000.0, 1e-12)), (
+            f"unit={units} (µM converted to nM ×1000 for -log10)")
+    return None, (f"unit={units or 'missing'} not accepted for numeric score; "
+                  f"raw quant kept verbatim")
 
 
 def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetStats:
@@ -127,13 +156,14 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
             score = None
             notes = ""
             if family == ASSAY_IC50 and raw_quant:
-                if units and "nm" not in units.lower():
-                    notes = (f"unit={units} (not nM; -log10 transform assumes "
-                             f"nM, value not converted)")
-                score = parse_ic50(raw_quant)
+                score, notes = ic50_score(raw_quant, units)
             elif family == ASSAY_PRESENTATION:
                 notes = (f"presentation evidence ({method}) "
                          f"quant={raw_quant or 'n/a'}; not an affinity")
+            elif family == "other:kinetics":
+                notes = (f"kinetic constant ({method}) "
+                         f"quant={raw_quant or 'n/a'} {units or ''}; "
+                         f"not an affinity, excluded from score")
             if label is None and score is None and not notes:
                 continue
 
@@ -150,9 +180,15 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
             )
             key = (peptide, allele, family)
             rank = (evidence_rank(label), score if score is not None else -1e9)
+            pmid = (line[i_pmid].strip() or "")
             if key in best:
                 n_conflicts += 1
-                if rank > best[key][0]:
+                prev_rank, prev = best[key]
+                # deterministic on ties: evidence > score, then smallest
+                # PMID — the kept row no longer depends on input row order
+                if rank > prev_rank or (rank == prev_rank and pmid
+                                        and (not prev.reference_id
+                                             or pmid < prev.reference_id)):
                     best[key] = (rank, rec)
             else:
                 best[key] = (rank, rec)

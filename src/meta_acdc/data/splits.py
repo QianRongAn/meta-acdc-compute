@@ -129,13 +129,22 @@ def group_split(
     """
     rng = random.Random(seed)
     n = len(cdr3s)
+    # cluster map: {cdr3 -> cluster id} built from the SORTED unique set so
+    # the ids line up with cluster_sequences()'s return order. The previous
+    # `{c: i for i, c in enumerate(cluster_sequences(...))}` iterated the
+    # CLUSTER ID list, produced an identity map on ints, and every CDR3 then
+    # fell back to a random hash bucket — similar sequences were split again
+    # (AUDIT.md #4/#13).
+    def build_clusters() -> dict[str, int]:
+        uniq = sorted(set(cdr3s))
+        return {c: cid for c, cid in zip(uniq, cluster_sequences(uniq))}
+
     if group_by == "epitope":
         groups: dict[str, list[int]] = {}
         for i, p in enumerate(peptides):
             groups.setdefault(p, []).append(i)
     elif group_by == "tcr":
-        clusters = {c: i for i, c in
-                    enumerate(cluster_sequences(sorted(set(cdr3s))))}
+        clusters = build_clusters()
         groups = {}
         for i, c in enumerate(cdr3s):
             groups.setdefault(_cluster_key(c, clusters), []).append(i)
@@ -144,43 +153,68 @@ def group_split(
         for i, (c, p) in enumerate(zip(cdr3s, peptides)):
             groups.setdefault(f"{c}|{p}", []).append(i)
     elif group_by == "unseen-both":
-        # Build the split from the epitope/TCR-cluster incidence, so the same
-        # entity never appears on both sides. The old 'pair' split only
-        # isolated the exact pair: train and test still shared every TCR and
-        # every epitope.
-        clusters = {c: i for i, c in
-                    enumerate(cluster_sequences(sorted(set(cdr3s))))}
+        # Test peptides are chosen as whole connected components of the
+        # peptide × TCR-cluster incidence graph: neither a TCR cluster nor an
+        # epitope then appears on both sides. The old greedy-by-peptide
+        # version left the exclusion set empty, so one TCR still appeared in
+        # both train and test (AUDIT.md #13).
+        clusters = build_clusters()
         by_pep: dict[str, set[str]] = {}
         by_tcr: dict[str, set[str]] = {}
         for c, p in zip(cdr3s, peptides):
             tp = _cluster_key(c, clusters)
             by_pep.setdefault(p, set()).add(tp)
             by_tcr.setdefault(tp, set()).add(p)
-        pep_ids = sorted(by_pep)
-        rng.shuffle(pep_ids)
+        parent: dict[str, str] = {}
+
+        def find(x: str) -> str:
+            parent.setdefault(x, x)
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(a: str, b: str) -> None:
+            ra, rb = find(a), find(b)
+            if ra != rb:
+                parent[rb] = ra
+
+        for p, ts in by_pep.items():
+            for t in ts:
+                for q in by_tcr[t]:
+                    union(("p", p), ("p", q))
+        comps: dict[str, set[str]] = {}
+        for p in by_pep:
+            comps.setdefault(find(("p", p)), set()).add(p)
+        comp_list = sorted(comps.values(), key=len)
+        rng.shuffle(comp_list)
+        target = max(1, int(test_frac * len(by_pep)))
         test_peps: set[str] = set()
-        train_tcr: set[str] = set()
-        target = int(test_frac * len(pep_ids))
-        for p in pep_ids:
-            tcrs = by_pep[p]
-            if len(test_peps) < target and not (tcrs & train_tcr):
-                test_peps.add(p)
-                train_tcr |= {
-                    t for t in by_tcr if p in by_tcr[t] and t not in tcrs}
-            else:
-                for t in tcrs:
-                    train_tcr.add(t)
+        for comp in comp_list:
+            if len(test_peps) >= target:
+                break
+            test_peps |= comp
+        if not test_peps:
+            test_peps = set(comp_list[0])
+        if len(test_peps) == len(by_pep) and len(comp_list) > 1:
+            # everything landed in test: move the smallest component back
+            test_peps -= min(comp_list, key=len)
         groups = {"__test__": [], "__train__": []}
-        for i, (c, p) in enumerate(zip(cdr3s, peptides)):
-            side = "__test__" if p in test_peps else "__train__"
-            groups[side].append(i)
+        for i, p in enumerate(peptides):
+            groups["__test__" if p in test_peps else "__train__"].append(i)
+        test_tcrs = sorted({t for p in test_peps for t in by_pep[p]})
+        train_tcrs = sorted({t for p in by_pep if p not in test_peps
+                             for t in by_pep[p]})
+        overlap = set(test_tcrs) & set(train_tcrs)
+        if overlap:
+            raise RuntimeError(
+                f"unseen-both split: {len(overlap)} TCR clusters on both "
+                f"sides — incidence closure failed")
         meta = {
             "n_groups": len(test_peps),
             "test_groups": len(test_peps),
-            "test_tcr_clusters": sorted({_cluster_key(c, clusters)
-                                         for c, p in zip(cdr3s, peptides)
-                                         if p in test_peps}),
-            "train_tcr_clusters": sorted(train_tcr),
+            "test_tcr_clusters": test_tcrs,
+            "train_tcr_clusters": train_tcrs,
         }
         return Split(
             train_idx=groups["__train__"], test_idx=groups["__test__"],

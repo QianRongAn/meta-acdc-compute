@@ -35,7 +35,7 @@ from meta_acdc.models.dataset import (
     make_displaced_peptide_decoy,
 )
 from meta_acdc.models.egnn import EGNN
-from meta_acdc.models.train_egnn import collate
+from meta_acdc.models.train_egnn import collate, normalize_node_features
 from meta_acdc.structure.cif import parse_cif
 from meta_acdc.structure.graph import (MHC, PEPTIDE, TCR,
                                        build_interface_graph_from_residues,
@@ -58,8 +58,7 @@ def collate_per_graph(graphs: list[tuple]) -> dict:
     hs, xs, eis, eas, batch = [], [], [], [], []
     offset = 0
     for nf, coords, ei, ef in graphs:
-        h = torch.tensor(nf, dtype=torch.float32)
-        h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
+        h = normalize_node_features(torch.tensor(nf, dtype=torch.float32))
         hs.append(h)
         xs.append(torch.tensor(coords, dtype=torch.float32))
         eis.append(torch.tensor(ei, dtype=torch.long).t() + offset)

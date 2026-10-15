@@ -16,6 +16,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import csv
 import random
 import sys
 from pathlib import Path
@@ -25,7 +26,7 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import average_precision_score, roc_auc_score
 
-from meta_acdc.models.egnn import EGNN
+from meta_acdc.models.egnn import EGNN, PEPTIDE_FLAG_INDEX
 
 NODE_DIM = 26  # 3 phys + pLDDT + is-peptide + 20-dim identity + sidechain extent
 EDGE_DIM = 16  # RBF distance (12) + atom-contact histogram (4)
@@ -44,24 +45,45 @@ def collate(graphs: list[tuple], node_dim: int = NODE_DIM,
     offset = 0
     for nf, coords, ei, ef in graphs:
         n = len(nf)
-        hs.append(torch.tensor([row[:node_dim] for row in nf],
-                               dtype=torch.float32))
+        h = torch.tensor([row[:node_dim] for row in nf],
+                         dtype=torch.float32)
+        h = normalize_node_features(h)
+        hs.append(h)
         xs.append(torch.tensor(coords, dtype=torch.float32))
         eis.append(torch.tensor(ei, dtype=torch.long).t() + offset)
         eas.append(torch.tensor([row[:edge_dim] for row in ef],
                                 dtype=torch.float32))
         batch.append(torch.full((n,), len(batch), dtype=torch.long))
         offset += n
-    h = torch.cat(hs)
-    # batch-level z-score normalization (mixed physical scales)
-    h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
     return {
-        "h": h,
+        "h": torch.cat(hs),
         "x": torch.cat(xs),
         "edge_index": torch.cat(eis, dim=1),
         "edge_attr": torch.cat(eas),
         "batch": torch.cat(batch),
     }
+
+
+def normalize_node_features(h: torch.Tensor) -> torch.Tensor:
+    """Per-graph z-score of node features, protecting the peptide flag.
+
+    Batch-level z-scoring made the same graph's features (and therefore its
+    prediction) depend on which other graphs share the batch, and z-scored
+    the binary is-peptide flag into non-binary values so the `> 0.5` peptide
+    mask silently stopped matching peptide nodes. Normalize PER GRAPH and
+    restore protected columns verbatim — the same transform is applied by
+    score_predictions.score_graph, so train/val/scoring stay consistent.
+    (AUDIT.md #3.)
+    """
+    h = h.clone()
+    protected = [c for c in (PEPTIDE_FLAG_INDEX,) if c < h.shape[1]]
+    saved = [h[:, c].clone() for c in protected]
+    m = h.mean(0, keepdim=True)
+    s = h.std(0, keepdim=True)
+    h = (h - m) / (s + 1e-6)
+    for c, v in zip(protected, saved):
+        h[:, c] = v
+    return h
 
 
 def train_val_split(n: int, val_frac: float = 0.2, seed: int = 42) -> tuple[list, list]:

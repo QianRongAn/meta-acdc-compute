@@ -60,6 +60,12 @@ def main() -> int:
         cases = list(csv.DictReader(fh, delimiter="\t"))
 
     for c in cases:
+        # no structure for this case (identity unconfirmed): report, do not
+        # score — scoring against the wrong receptor would fabricate a
+        # comparison (AUDIT.md #6/#23)
+        if not (c.get("pdb") or "").strip():
+            missing.append((c["case"], "(no structure)", c["peptide"]))
+            continue
         key = (c["pdb"], c["peptide"])
         target_key = (c["pdb"],
                       next((r["peptide"] for r in cases
@@ -77,14 +83,18 @@ def main() -> int:
         if t is not None and key != target_key:
             proximity = ("at-or-above-target" if s >= t else "below-target")
         severity = c["severity"]
+        evidence = (c.get("evidence") or "").strip()
         hazard = ""
         if (severity.startswith("fatal") and t is not None
-                and key != target_key and s >= t):
+                and key != target_key and s >= t
+                and "unverified" not in evidence):
+            # a hazard interpretation is only emitted when the case's
+            # evidence and receptor identity are confirmed (AUDIT.md #23)
             hazard = "lethal-mimic scores at/above the intended target"
         rows.append({
             "case": c["case"], "tcr": c["tcr"], "pdb": c["pdb"],
             "restriction": c["restriction"], "peptide": c["peptide"],
-            "role": c["role"], "severity": severity, "evidence": c["evidence"],
+            "role": c["role"], "severity": severity, "evidence": evidence,
             "score": f"{s:.4f}", "target_score": "" if t is None else f"{t:.4f}",
             "delta_vs_target": delta, "proximity": proximity,
             "hazard_flag": hazard,
@@ -103,9 +113,12 @@ def main() -> int:
         print(f"  {r['case']:26s} {r['peptide']:12s} {r['role']:22s} "
               f"{r['score']}  {r['proximity']}")
     if missing:
-        print("not scored (no AF3 job for this pdb/peptide):")
+        print("not scored (no structure, or no AF3 job for this pdb/peptide):")
         for case, pdb, pep in missing:
-            print(f"  {case} {pdb}_{pep}")
+            if pdb == "(no structure)":
+                print(f"  {case} {pep} [no structure — identity unconfirmed]")
+            else:
+                print(f"  {case} {pdb}_{pep}")
     return 0
 
 

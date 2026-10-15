@@ -127,9 +127,11 @@ def main() -> int:
                     if match is None:
                         # A guessed name is the misattribution bug that forced
                         # the 2026-10-14 repair. Quarantine instead of writing.
+                        # alpha/beta may be None (no recognizable TCR chain),
+                        # e.g. a truncated or all-other-chain job.
                         quarantined.append(
                             (os.path.basename(job_dir.rstrip("/")),
-                             peptide, alpha[:12], beta[:12]))
+                             peptide, (alpha or "")[:12], (beta or "")[:12]))
                         continue
                     if match is not None:
                         cid = f"{match['pdb']}_{peptide}"

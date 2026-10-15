@@ -22,6 +22,7 @@ from pathlib import Path
 import torch
 
 from meta_acdc.models.egnn import EGNN
+from meta_acdc.models.train_egnn import normalize_node_features
 from meta_acdc.structure.cif import parse_cif, parse_all_models
 from meta_acdc.structure.graph import build_interface_graph_from_residues
 
@@ -39,14 +40,16 @@ def graph_to_tensors(g):
 def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False,
                 temperature: float = 1.0) -> float:
     tensors = {k: v.to(device) for k, v in graph_to_tensors(g).items()}
-    # normalize node features as in training (per-batch z-score)
     h = tensors["h"]
     if mask_plddt:
         # domain-adapted models are trained with pLDDT zeroed (col 3) —
         # scoring must apply the same masking to avoid distribution mismatch
         h = h.clone()
         h[:, 3] = 0.0
-    h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
+    # per-graph normalization, peptide flag protected — same transform as
+    # training (train_egnn.normalize_node_features), so a scored graph gets
+    # identical features regardless of what else is in the batch (AUDIT.md #3)
+    h = normalize_node_features(h)
     with torch.no_grad():
         logit = net(h, tensors["x"], tensors["edge_index"],
                     tensors["edge_attr"], tensors["batch"]).squeeze(-1)
@@ -92,7 +95,7 @@ def main() -> int:
     print(f"ensemble: {len(nets)} models", flush=True)
 
     # --- structure-quality gate -------------------------------------------
-    qc_status: dict[str, tuple[str, str]] = {}   # job_id -> (flag, basis)
+    qc_status: dict[tuple[str, str], tuple[str, str]] = {}
     if not args.no_qc_gate:
         if not args.qc.exists():
             print(f"QC gate: {args.qc} not found. Either run "
@@ -104,10 +107,15 @@ def main() -> int:
             for r in _csv.DictReader(fh, delimiter="\t"):
                 job = r.get("job_id") or ""
                 job = job.rsplit("_model_", 1)[0]
+                inst = (r.get("instance") or "").strip()
+                if not job or not inst:
+                    continue
                 flag = (r.get("flag") or "").strip()
                 basis = "qc-pass" if not flag else f"qc-flag:{flag}"
-                qc_status[job] = (flag, basis)
-        print(f"QC gate: {len(qc_status)} jobs with a QC record")
+                # (instance, job) joint key: instance B's QC row must never
+                # shadow instance A's for the same job (AUDIT.md #26)
+                qc_status[(inst, job)] = (flag, basis)
+        print(f"QC gate: {len(qc_status)} (instance, job) records")
     else:
         print("QC gate: DISABLED (--no-qc-gate); scores carry no "
               "structure-quality basis")
@@ -117,13 +125,13 @@ def main() -> int:
         job_id = cif.stem
         job = job_id.rsplit("_model_", 1)[0]
         if not args.no_qc_gate:
-            flag, basis = qc_status.get((cif.parent.name, job),
-                                        qc_status.get(job, ("", "")))
-            if not qc_status.get((cif.parent.name, job)) and job not in qc_status:
+            key = (cif.parent.name, job)
+            if key not in qc_status:
                 rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
                              "score": "", "std": "",
                              "qc": "missing", "error": "no QC record"})
                 continue
+            flag, basis = qc_status[key]
             if flag:
                 rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
                              "score": "", "std": "",

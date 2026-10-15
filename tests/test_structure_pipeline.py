@@ -175,12 +175,19 @@ class TestImportUniqueFallback(unittest.TestCase):
         self.assertEqual(len(cifs), 2, f"jobs collapsed: {cifs}")
         self.assertTrue(all(c.startswith("nativetcr-") for c in cifs))
 
-    def test_legacy_fallback_still_collapses_for_candidate_route(self):
-        # default (no flag) keeps legacy behaviour (candidates[0]) — only
-        # used for the cross-reactivity candidate route
+    def test_legacy_fallback_removed_quarantines_by_default(self):
+        # The old default silently named an unmatched job after candidates[0]
+        # (the 2026-10-14 misattribution). Since the audit, the default
+        # QUARANTINES the job: nothing is written, a quarantine list is.
+        import csv
         self._run()
         cifs = sorted(p.name for p in self.out.glob("*_model_0.cif"))
-        self.assertEqual(len(cifs), 1)
+        self.assertEqual(len(cifs), 0, f"unmatched jobs must not be named: {cifs}")
+        qpath = Path(self.tmp.name) / "af3_import_quarantine.tsv"
+        self.assertTrue(qpath.exists(), "quarantine list missing")
+        with open(qpath) as fh:
+            rows = list(csv.DictReader(fh, delimiter="\t"))
+        self.assertEqual(len(rows), 2, "both unmatched jobs quarantined")
 
 
 class TestComplexityFilter(unittest.TestCase):
@@ -267,16 +274,26 @@ class TestEnsembleMean(unittest.TestCase):
 class TestAttribution(unittest.TestCase):
     """Gradient attribution runs and reports peptide-involving contacts."""
 
-    def test_to_mutant_keeps_backbone(self):
+    def test_to_mutant_truncation_only(self):
+        # AUDIT.md #15: only backbone-truncating mutants are real. TRP/ARG
+        # "mutants" used to keep N/CA/C/O/CB under a renamed residue — a
+        # relabelling, not a mutation. They must now raise.
         from meta_acdc.structure.alanine_scan import to_mutant
         from meta_acdc.structure.graph import Residue
         r = Residue("C", "ILE", 5, 0.0, 0.0, 0.0, None, "",
                     [("N", 0, 0, 0), ("CA", 1, 0, 0), ("CB", 2, 0, 0),
                      ("CG1", 3, 0, 0), ("CD1", 4, 0, 0)])
-        m = to_mutant(r, "TRP")
-        self.assertEqual(m.resname, "TRP")
-        names = [a[0] for a in m.atoms]
-        self.assertEqual(names, ["N", "CA", "CB"])  # side chain stripped
+        ala = to_mutant(r, "ALA")
+        self.assertEqual(ala.resname, "ALA")
+        self.assertEqual([a[0] for a in ala.atoms],
+                         ["N", "CA", "CB"])  # backbone + CB kept
+        gly = to_mutant(r, "GLY")
+        self.assertEqual(gly.resname, "GLY")
+        self.assertEqual([a[0] for a in gly.atoms], ["N", "CA"])  # no CB
+        with self.assertRaises(ValueError):
+            to_mutant(r, "TRP")
+        with self.assertRaises(ValueError):
+            to_mutant(r, "ARG")
 
     def test_attribution_runs(self):
         import subprocess
@@ -297,42 +314,60 @@ class TestAttribution(unittest.TestCase):
 class TestCandidateRouting(unittest.TestCase):
     """native_manifest routes non-native jobs to the candidate dir."""
 
-    def test_candidate_routed_not_dropped(self):
+    def _run_manifest(self, td: Path, seqs: list[str], pdb: str = "9zzz"):
         import csv
         import json
         import subprocess
         import sys
+        lst = td / "list.tsv"
+        # the real submission list stores tcr_a = beta, tcr_b = alpha
+        with open(lst, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["pdb", "tcr_a", "tcr_b", "peptide", "mhc_hint",
+                        "evidence", "pdb_peptide", "cdr3"])
+            w.writerow([pdb, seqs[2], seqs[1], seqs[0], "HLA-A",
+                        "different", "LLFGYPVYV", "CXXX"])
+        job = td / "folds" / "j1"
+        job.mkdir(parents=True, exist_ok=True)
+        with open(job / "j1_job_request.json", "w") as fh:
+            json.dump([{"sequences": [{"proteinChain": {"sequence": s}}
+                                      for s in seqs]}], fh)
+        (job / "j1_model_0.cif").write_text("data\n")
+        subprocess.run([sys.executable, "-m",
+                        "meta_acdc.structure.native_manifest",
+                        "--src", str(td / "folds"), "--out", str(td / "native"),
+                        "--manifest", str(td / "m.tsv"),
+                        "--report", str(td / "r.tsv"),
+                        "--candidate-out", str(td / "cand"),
+                        "--list", str(lst)],
+                       check=True, cwd=str(ROOT), capture_output=True)
+
+    def test_candidate_routed_not_dropped(self):
+        # a cross-reactivity candidate whose chain pair matches the list is
+        # routed to the candidate dir (peptide-role TCR chains present)
         import tempfile
-        with tempfile.TemporaryDirectory() as td:
-            td = Path(td)
-            # submission list with one candidate row
-            lst = td / "list.tsv"
-            with open(lst, "w", newline="") as fh:
-                w = csv.writer(fh, delimiter="\t")
-                w.writerow(["pdb", "tcr_a", "tcr_b", "peptide", "mhc_hint",
-                            "evidence", "pdb_peptide", "cdr3"])
-                w.writerow(["9zzz", "B" * 200, "A" * 190, "LLFGPVYV",
-                            "HLA-A", "different", "LLFGYPVYV", "CXXX"])
-            job = td / "folds" / "j1"
-            job.mkdir(parents=True)
-            seqs = ["LLFGPVYV", "A" * 190, "B" * 200, "M" * 100, "H" * 274]
-            with open(job / "j1_job_request.json", "w") as fh:
-                json.dump([{"sequences": [{"proteinChain": {"sequence": s}}
-                                          for s in seqs]}], fh)
-            (job / "j1_model_0.cif").write_text("data\n")
-            out = td / "native"
-            cand = td / "cand"
-            subprocess.run([sys.executable, "-m",
-                            "meta_acdc.structure.native_manifest",
-                            "--src", str(td / "folds"), "--out", str(out),
-                            "--manifest", str(td / "m.tsv"),
-                            "--report", str(td / "r.tsv"),
-                            "--candidate-out", str(cand),
-                            "--list", str(lst)],
-                           check=True, cwd=str(ROOT), capture_output=True)
-            self.assertEqual(len(list(out.glob("*_model_0.cif"))), 0)
-            routed = [p.name for p in cand.glob("*_model_0.cif")]
+        with tempfile.TemporaryDirectory() as td2:
+            td = Path(td2)
+            seqs = ["LLFGPVYV",                          # peptide
+                    "Q" * 150 + "YFCAV" + "T" * 40,      # alpha (motif)
+                    "G" * 190 + "YFCAS" + "V" * 48,      # beta (motif)
+                    "M" * 100, "H" * 274]
+            self._run_manifest(td, seqs)
+            self.assertEqual(len(list((td / "native").glob("*_model_0.cif"))), 0)
+            routed = [p.name for p in (td / "cand").glob("*_model_0.cif")]
             self.assertEqual(routed, ["9zzz_LLFGPVYV_model_0.cif"])
+
+    def test_unrecognizable_tcr_quarantined_not_crash(self):
+        # a job with no recognizable TCR chain must be quarantined loudly,
+        # not crash on a None chain prefix (regression for the 2026-10-15
+        # quarantine-path fix)
+        import tempfile
+        with tempfile.TemporaryDirectory() as td2:
+            td = Path(td2)
+            seqs = ["LLFGPVYV", "A" * 190, "B" * 200, "M" * 100, "H" * 274]
+            self._run_manifest(td, seqs)
+            self.assertEqual(len(list((td / "native").glob("*_model_0.cif"))), 0)
+            self.assertEqual(len(list((td / "cand").glob("*_model_0.cif"))), 0)
 
 
 class TestClinicalScan(unittest.TestCase):
@@ -352,13 +387,27 @@ class TestClinicalScan(unittest.TestCase):
                 w.writerow(["5brz_TARGETPEP", "0.9000"])
                 w.writerow(["5brz_FATALPEPT", "0.9500"])
                 w.writerow(["5brz_SAFEPEPXX", "0.1000"])
+                w.writerow(["5brz_UNVERIPEP", "0.9900"])
             clinical = td / "clinical.tsv"
             with open(clinical, "w", newline="") as fh:
                 w = csv.writer(fh, delimiter="\t")
-                w.writerow(["tcr", "target", "off_targets", "fatal",
-                            "evidence", "note"])
-                w.writerow(["X", "TARGETPEP", "FATALPEPT;SAFEPEPXX", "yes",
-                            "PMID", ""])
+                w.writerow(["case", "tcr", "pdb", "restriction", "peptide",
+                            "role", "severity", "evidence", "note"])
+                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "TARGETPEP",
+                            "target", "", "PMID:23926201", ""])
+                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "FATALPEPT",
+                            "off-target", "fatal-cardiotoxicity",
+                            "PMID:23926201", ""])
+                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "SAFEPEPXX",
+                            "off-target", "", "PMID:23926201", ""])
+                # unverified evidence must NOT yield a hazard flag even when
+                # the score is at/above the target (AUDIT.md #6/#23)
+                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "UNVERIPEP",
+                            "off-target", "fatal-unknown",
+                            "unverified", ""])
+                # no structure: reported as not scored, not fabricated
+                w.writerow(["C2", "Y", "", "HLA-A*02:01", "NOSTRUCTPEP",
+                            "target", "", "PMID:23926201", ""])
             out = td / "scan.tsv"
             subprocess.run([sys.executable, "-m",
                             "meta_acdc.structure.clinical_scan",
@@ -367,9 +416,13 @@ class TestClinicalScan(unittest.TestCase):
                            capture_output=True)
             rows = list(csv.DictReader(open(out), delimiter="\t"))
             by = {r["peptide"]: r for r in rows}
-            self.assertEqual(by["FATALPEPT"]["flag"], "FATAL-mimicry at target level")
-            self.assertEqual(by["TARGETPEP"]["flag"], "cognate")
-            self.assertEqual(by["SAFEPEPXX"]["flag"], "")
+            self.assertEqual(by["FATALPEPT"]["hazard_flag"],
+                             "lethal-mimic scores at/above the intended target")
+            self.assertEqual(by["TARGETPEP"]["hazard_flag"], "")
+            self.assertEqual(by["SAFEPEPXX"]["hazard_flag"], "")
+            self.assertEqual(by["UNVERIPEP"]["hazard_flag"], "")
+            self.assertEqual(by["FATALPEPT"]["proximity"], "at-or-above-target")
+            self.assertNotIn("NOSTRUCTPEP", by)
 
 
 class TestElectrostatics(unittest.TestCase):

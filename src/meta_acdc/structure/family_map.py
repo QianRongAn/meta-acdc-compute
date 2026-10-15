@@ -33,14 +33,22 @@ from meta_acdc.structure.graph import parse_pdb, classify_chains  # noqa: E402
 from meta_acdc.structure.graph import AA3TO1, TCR, PEPTIDE  # noqa: E402
 
 
-def receptor_sequences(residues) -> tuple[str, str]:
-    """(alpha_seq, beta_seq) sorted by chain, hashed into one key."""
+def receptor_sequences(residues, roles) -> tuple[str, str]:
+    """(alpha_seq, beta_seq) of the TCR-classified chains only, sorted.
+
+    Including peptide/MHC/B2M chains (or chain names) made the receptor key
+    change when the peptide changed — the same TCR bound to a different
+    peptide became a different "family", re-opening receptor leakage. Only
+    chains classified as TCR contribute. (AUDIT.md #4.)
+    """
     per_chain: dict[str, list[str]] = defaultdict(list)
     for r in residues:
+        if roles.get(r.chain) != TCR:
+            continue
         per_chain[r.chain].append(r.resname)
     seqs = []
     for chain, names in per_chain.items():
-        seqs.append(chain + ":" + "".join(AA3TO1.get(n.upper(), "X") for n in names))
+        seqs.append("".join(AA3TO1.get(n.upper(), "X") for n in names))
     return tuple(sorted(seqs))
 
 
@@ -63,7 +71,7 @@ def main() -> int:
             continue
         if not any(v == PEPTIDE for v in roles.values()):
             continue
-        seqs = receptor_sequences(residues)
+        seqs = receptor_sequences(residues, roles)
         key = hashlib.sha1("|".join(seqs).encode()).hexdigest()[:12]
         rows.append((pdb.stem, key))
 
