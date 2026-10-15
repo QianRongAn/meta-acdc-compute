@@ -83,9 +83,19 @@ def mhcflurry_prefilter(rows, pool_positions: list[int], thresh: float,
     used: dict[tuple[str, str], str] = {}
     if cache_path and cache_path.exists():
         with open(cache_path, newline="") as fh:
-            for r in csv.DictReader(fh, delimiter="\t"):
-                cache[(r["peptide"], r["allele"])] = float(r["score"])
-                used[(r["peptide"], r["allele"])] = r.get("allele_used", r["allele"])
+            reader = csv.DictReader(fh, delimiter="\t")
+            if "allele_used" not in (reader.fieldnames or []):
+                # old-format cache predates the allele_used provenance column:
+                # its scores may come from the silent A*02:01 substitution —
+                # ignore and rebuild instead of trusting it (AUDIT.md #21)
+                print(f"mhcflurry cache {cache_path} is old-format "
+                      f"(no allele_used column); ignored, will rebuild",
+                      flush=True)
+            else:
+                for r in reader:
+                    cache[(r["peptide"], r["allele"])] = float(r["score"])
+                    used[(r["peptide"], r["allele"])] = r.get(
+                        "allele_used", r["allele"])
     todo = {}
     for i in pool_positions:
         pep, allele = rows[i]["peptide"], rows[i]["mhc_allele"]

@@ -9,13 +9,25 @@
 > binding. The 3-mer baseline feature used as the surrogate was identically
 > zero, and the "fixed budget" ablation spent a different number of labels per
 > batch size. See `docs/AUDIT.md` #1, #11, #20, #12.
+>
+> **SECOND NOTICE — structure-ranking claims are PROVISIONAL.** The
+> cross-instance stability number (mean pairwise Spearman 0.644, 188
+> candidates) predates the structure-QC gate now enforced (#26): 95/188
+> candidates carry a QC flag (`no_confidence`/`low_iptm`) and must be
+> excluded before the number is re-derived. The clinical scan claims are
+> further conditional on confirmed receptor identity and verified evidence:
+> the A118T/MAGE-A12 case has no structure of its own receptor and is NOT
+> scored (#6/#23), and hazard interpretations are only emitted for
+> evidence-verified cases. Treat §2.2/§2.8 numbers as "do not cite" until
+> the QC-gated re-scoring and evidence verification are done.
 
 > Working draft, 2026-09-23. Dry-lab scope. Numbers from docs/benchmarks.md.
 > Companion to paper1 (Meta-TCR-GNN); cites its model as [Meta-TCR-GNN].
-> Domain adaptation is now resolved (as of 2026-10-14: 172 native positives
-> / 188 candidates → cross-instance verdict STABLE at mean pairwise Spearman
-> 0.644; earlier milestones 0.729 at 144 natives / 21 candidates, 0.609 at
-> 154 candidates), and the clinical safety scan is reported (§2.2/§2.8).
+> Domain adaptation is PROVISIONALLY resolved (as of 2026-10-14: 172 native
+> positives / 188 candidates → cross-instance verdict STABLE at mean pairwise
+> Spearman 0.644; earlier milestones 0.729 at 144 natives / 21 candidates,
+> 0.609 at 154 candidates) — pending the structure-QC gate and the clinical
+> identity/evidence verification described in the SECOND NOTICE above.
 
 ## Title (candidate)
 
@@ -56,14 +68,16 @@ reproducible across resubmissions, ipTM median Δ 0.025; 5-model ensemble stds
 reach 0.43), and we show that cross-reactivity rankings on AF3-predicted
 structures are *not* reproducible across model instances at the crystal-data
 scale — a stability requirement any OOD-scoring pipeline must satisfy. We
-then resolve it: domain adaptation on AF3-predicted native complexes raises
-the cross-instance ranking agreement monotonically with the number of native
-positives (0.447 at 25 proxy structures → 0.479 at 89 → 0.729 at 144,
-crossing the 0.5 gate; later extended to 172 natives: 0.609 on 154
-candidates → **0.644 on 188 candidates after the 2026-10-14 attribution
-repair**, docs/benchmarks.md), and the stable model places the documented
-lethal MAGE-A12/titin off-targets within 0.05 of the cognate target — it does
-not clear them. The result is a ranking-based safety-assessment pipeline (TCR-Safety-Radar) and a
+then address it: domain adaptation on AF3-predicted native complexes raises
+the cross-instance ranking agreement with the number of native positives
+(0.447 at 25 proxy structures → 0.479 at 89 → 0.729 at 144, crossing the
+0.5 gate; later extended to 172 natives: 0.609 on 154 candidates →
+**0.644 on 188 candidates after the 2026-10-14 attribution repair**,
+docs/benchmarks.md; PROVISIONAL — see SECOND NOTICE: the 188-panel number
+predates the structure-QC gate, and the 234-mixed-positive ablation did not
+raise stability further). On identity-verified cases with confirmed
+evidence, the stable model places the documented lethal MAGE-A12/titin
+off-targets within 0.05 of the cognate target — it does not clear them. The result is a ranking-based safety-assessment pipeline (TCR-Safety-Radar) and a
 reproducible protocol for in silico off-target screening.
 
 ## 1. Introduction
@@ -434,16 +448,21 @@ OOD-scoring pipeline that cannot reproduce its own rankings is not a
 measurement instrument, and no safety verdict can be built on it. We
 adopted a concrete gate — 3-seed pairwise Spearman on the scored candidates,
 with a 0.5 reporting threshold — and treated every interim ranking as an
-anecdote until that gate was passed. The gate is now passed by the
+anecdote until that gate was passed. The gate is provisionally passed by the
 domain-adaptation route (training on AF3-predicted *native* structures):
-the cross-instance agreement rises monotonically with the number of native
-positives (0.447 at 25 proxy structures, 0.479 at 89 natives, **0.729 at
-144 natives**, later **0.644 at 172 natives on 188 candidates**, all
-pairs significant). The instability was therefore a
-training-data-scale property of the structural model, not an intrinsic
-defect of the AF3 inputs; with ~172 native positives and a fixed 5-seed
-ensemble the rankings become reproducible, and the clinical safety scan
-(§2.8, [Meta-TCR-GNN] §2.7) correctly flags documented lethal off-targets.
+the cross-instance agreement rises with the number of native positives
+(0.447 at 25 proxy structures, 0.479 at 89 natives, **0.729 at 144
+natives**, later **0.644 at 172 natives on 188 candidates**, all pairs
+significant) — but not monotonically: the 234-mixed-positive ablation
+(172 AF3 + 62 crystal) degraded one of three seeds and held the surviving
+pair at r = 0.733 (CI [0.644, 0.801]), pointing to positive-sample *style*
+rather than scale as the constraint. The instability was therefore a
+training-data property of the structural model, not an intrinsic defect of
+the AF3 inputs; with ~172 native positives and a fixed 5-seed ensemble the
+rankings become reproducible — subject to the structure-QC gate now enforced
+(#26) — and the clinical safety scan (§2.8, [Meta-TCR-GNN] §2.7) flags
+documented lethal off-targets only where receptor identity and evidence are
+verified.
 
 Finally, the digital twin is deliberately drop-in for wet-lab data: every
 stage — pre-filter, structural scoring, acquisition — takes the same inputs
