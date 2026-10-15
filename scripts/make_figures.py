@@ -37,6 +37,66 @@ plt.rcParams.update({
     "ytick.color": MUTED,
 })
 
+# Double-column print width (Nature-style 180 mm). Figures are drawn at this
+# size; extra category labels are dropped rather than growing the canvas.
+FULL_W = 7.2
+CLINICAL_PDB = ("1ao7", "3hg1", "5brz", "5bs0", "5eu6")
+CLINICAL_PEP = (
+    "EVDPIGHLY", "ESDPIVAQY", "KVAKELVHFL", "ILAKFLHWL",
+    "YLEPGPVTA", "YLEPGPVTL",
+)
+
+
+def _sparse_positions(positions: list[float], k: int, must: list[int],
+                      min_sep: float) -> list[int]:
+    """Up to k indices, at least min_sep apart in `positions`. Must-keep
+    indices replace a colliding neighbour instead of stacking on it."""
+    n = len(positions)
+    if n == 0:
+        return []
+    if n <= k:
+        return list(range(n))
+    want = [min(n - 1, int(round(i * (n - 1) / (k - 1)))) for i in range(k)]
+    for m in must:
+        if 0 <= m < n:
+            want.append(m)
+    must_set = {m for m in must if 0 <= m < n}
+    kept: list[int] = []
+    for i in sorted(set(want), key=lambda i: (i not in must_set, positions[i])):
+        hit = [j for j in kept if abs(positions[i] - positions[j]) < min_sep]
+        if not hit:
+            kept.append(i)
+            continue
+        if i not in must_set:
+            continue
+        kept = [j for j in kept if j in must_set or j not in hit]
+        if any(abs(positions[i] - positions[j]) < min_sep * 0.5 for j in kept):
+            continue
+        kept.append(i)
+    return sorted(kept)
+
+
+def _staggered_xlabels(ax, centers: list[float], labels: list[str],
+                       min_sep: float, highlight: tuple[str, ...] = (),
+                       fontsize: float = 7.0, rotation: float = 90) -> None:
+    """Tick marks without tick labels; labels sit below the axis, moved to a
+    second row only when a neighbour is closer than min_sep. Vertical labels
+    need far less horizontal room, so they are the default."""
+    ax.set_xticks(centers)
+    ax.set_xticklabels([""] * len(centers))
+    ax.tick_params(axis="x", length=2)
+    tr = ax.get_xaxis_transform()          # x in data, y in axes fraction
+    prev, depth = None, 0
+    for c, lab in zip(centers, labels):
+        if prev is not None and c - prev < min_sep:
+            depth = 1 - depth
+        else:
+            depth = 0
+        prev = c
+        ax.text(c, -0.05 - 0.11 * depth, lab, transform=tr, rotation=rotation,
+                ha="center", va="top", fontsize=fontsize, clip_on=False,
+                color=INK if lab in highlight else MUTED)
+
 
 def fig1_ablation() -> None:
     """Feature-ablation bar chart (graft task)."""
@@ -99,35 +159,57 @@ def fig2_heatmap() -> None:
             mat[i, j] = scores.get(t, {}).get(p, np.nan)
 
     n_rows, n_cols = len(tcrs), len(peps)
-    # Keep the canvas narrow enough that a column-width view still has
-    # ~40 px per TCR row. 0.12 in/row stacked the PDB labels.
-    fig_h = max(12.0, 0.50 * n_rows)
-    fig_w = max(10.5, 0.16 * n_cols + 1.8)
-    fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+    # Print size, not a poster. 72 x 67 cells cannot carry a label each at
+    # 180 mm; keep clinical IDs and an even sample, tick the rest.
+    fig, ax = plt.subplots(figsize=(FULL_W, 6.2))
     cmap = plt.cm.Blues.copy()
     cmap.set_bad("#ececea")
     im = ax.imshow(mat, cmap=cmap, vmin=0, vmax=1, aspect="auto")
-    ax.set_xticks(range(n_cols), peps, rotation=90, ha="center", va="top",
-                  fontsize=6.5)
-    ax.set_yticks(range(n_rows), tcrs, fontsize=8)
-    ax.tick_params(axis="y", pad=4, length=0)
-    ax.tick_params(axis="x", pad=2, length=0)
-    for i in range(len(tcrs)):
-        for j in range(len(peps)):
-            v = mat[i, j]
-            # Adjacent scored cells are narrower than a 4-char label; colour
-            # carries the value there. Annotate only isolated cells.
-            if np.isnan(v):
-                continue
-            left = mat[i, j - 1] if j else np.nan
-            right = mat[i, j + 1] if j + 1 < n_cols else np.nan
-            if np.isnan(left) and np.isnan(right):
-                ax.text(j, i, f"{v:.2f}", ha="center", va="center",
-                        fontsize=6.5,
-                        color="white" if v > 0.55 else INK)
-    cb = fig.colorbar(im, ax=ax, shrink=0.8)
-    cb.set_label("compatibility score (5-seed DA ensemble, cross-instance stable)")
+    y_keep = _sparse_positions(
+        list(range(n_rows)), 12,
+        [tcrs.index(p) for p in CLINICAL_PDB if p in tcrs],
+        min_sep=3.5)
+    x_keep = set(_sparse_positions(
+        list(range(n_cols)), 8,
+        [peps.index(p) for p in CLINICAL_PEP if p in peps],
+        min_sep=4))
+    # Adjacent clinical peptides cannot take two ticks at 180 mm. One tick
+    # between them carries both names (MAGE-A3 pair; Kimmtrak pair).
+    xt_pos, xt_lab = [], []
+    used = set()
+    pairs = (("ESDPIVAQY", "EVDPIGHLY"), ("YLEPGPVTA", "YLEPGPVTL"))
+    for a, b in pairs:
+        if a in peps and b in peps and abs(peps.index(a) - peps.index(b)) <= 2:
+            ia, ib = peps.index(a), peps.index(b)
+            xt_pos.append((ia + ib) / 2)
+            xt_lab.append(f"{a}/{b}")
+            used.update((ia, ib))
+            x_keep.discard(ia)
+            x_keep.discard(ib)
+    for i in sorted(x_keep):
+        if i in used:
+            continue
+        xt_pos.append(i)
+        xt_lab.append(peps[i])
+    order_x = sorted(range(len(xt_pos)), key=lambda k: xt_pos[k])
+    ax.set_yticks(range(n_rows),
+                  [tcrs[i] if i in y_keep else "" for i in range(n_rows)],
+                  fontsize=7)
+    ax.set_xticks([xt_pos[k] for k in order_x],
+                  [xt_lab[k] for k in order_x],
+                  rotation=90, ha="center", va="top", fontsize=6)
+    ax.tick_params(axis="both", length=2, pad=1, colors=MUTED)
+    for lab in ax.get_yticklabels():
+        if lab.get_text() in CLINICAL_PDB:
+            lab.set_color(INK)
+            lab.set_fontweight("medium")
+    for lab in ax.get_xticklabels():
+        if any(p in lab.get_text() for p in CLINICAL_PEP):
+            lab.set_color(INK)
+    cb = fig.colorbar(im, ax=ax, shrink=0.72, pad=0.02)
+    cb.set_label("compatibility score", fontsize=8)
     ax.set_xlabel("peptide")
+    ax.set_ylabel(f"TCR ({n_rows})")
     fig.tight_layout()
     fig.savefig(OUT / "fig2_heatmap.png", dpi=300)
     fig.savefig(OUT / "fig2_heatmap.svg")
@@ -298,28 +380,41 @@ def fig6_domain_adapt() -> None:
     for i, j in enumerate(jobs):
         groups[j.split("_", 1)[0]].append(i)
     order = sorted(groups, key=lambda p: groups[p][0])
-    # Labels sit on the job-span centre, so adjacent singleton PDBs are one
-    # job apart. Size panel A by jobs, not by group count, or those labels
-    # still collide (5m00/5m01/5m02).
-    panel_a = max(36.0, 0.26 * len(jobs))
-    fig, axes = plt.subplots(1, 2, figsize=(panel_a + 5.4, 5.0),
-                             gridspec_kw={"width_ratios": [panel_a, 4.4]})
+    # 180 mm double column. Labelling all 72 PDB prefixes collides; keep
+    # clinical complexes and an even sample of the rest.
+    fig, axes = plt.subplots(1, 2, figsize=(FULL_W, 3.5),
+                             gridspec_kw={"width_ratios": [2.15, 1]})
     ax = axes[0]
     x = np.arange(len(jobs))
     for k, s in enumerate(seeds):
         vals = np.array([per[k].get(j, np.nan) for j in jobs])
-        ax.plot(x, vals, marker="o", markersize=3, linewidth=1.2,
-                color=BLUE if k == 0 else GRAY, alpha=1.0 if k == 0 else 0.85,
-                label=f"DA seed {s}")
-    ax.set_xlabel("AF3 cross-reactivity candidates (188, repaired panel)")
+        ax.plot(x, vals, marker="o", markersize=2.2, linewidth=0.9,
+                color=BLUE if k == 0 else GRAY,
+                alpha=1.0 if k == 0 else 0.55,
+                label="DA seed 0" if k == 0 else ("DA seeds 1–4" if k == 1 else None))
     ax.set_ylabel("compatibility score")
     ax.set_ylim(-0.04, 1.04)
-    ax.legend(frameon=False, fontsize=7.5, loc="upper right")
-    ax.set_title(f"A  Five DA instances, {len(jobs)} AF3 candidates",
+    ax.legend(frameon=False, fontsize=7, loc="lower left")
+    ax.set_title(f"A  Five DA instances, {len(jobs)} candidates",
                  fontsize=9, loc="left")
-    ax.set_xticks([sum(groups[p]) / len(groups[p]) for p in order], order,
-                  rotation=90, ha="center", va="top", fontsize=7)
-    ax.tick_params(axis="x", pad=2, length=0)
+    centers = [sum(groups[p]) / len(groups[p]) for p in order]
+    # A 4-character label needs ~14 job widths at this panel size, so the
+    # clinical samples must win and ordinary samples stay a full width away.
+    keep = _sparse_positions(
+        centers, 8,
+        [order.index(p) for p in CLINICAL_PDB if p in order],
+        min_sep=len(jobs) / 12)
+    # 5BS0 sits three jobs from 5BRZ and was dropped as a neighbour; it is
+    # the cross-structure check in the clinical table, so keep it and let the
+    # two-row stagger separate the pair.
+    for p in CLINICAL_PDB:
+        i = order.index(p)
+        if i in keep or p not in order:
+            continue
+        if all(abs(centers[i] - centers[j]) > 2 for j in keep):
+            keep.append(i)
+    keep = sorted(keep)
+    xlabels = ([centers[i] for i in keep], [order[i] for i in keep])
     for spine in ("top", "right"):
         ax.spines[spine].set_visible(False)
 
@@ -347,7 +442,13 @@ def fig6_domain_adapt() -> None:
     fig.suptitle(
         f"Native domain adaptation: no collapse, mean pairwise r="
         f"{mean_r:.3f} (gate 0.5)", fontsize=10, x=0.02, ha="left")
-    fig.tight_layout(rect=(0, 0, 1, 0.94))
+    # Layout first, then place the x labels. tight_layout must not see them:
+    # it would treat them as artists to fit and squash the axes.
+    fig.tight_layout(rect=(0, 0.28, 1, 0.94))
+    _staggered_xlabels(ax, xlabels[0], xlabels[1], len(jobs) / 40,
+                       highlight=CLINICAL_PDB, fontsize=7)
+    ax.xaxis.set_label_coords(0.5, -0.30)
+    ax.set_xlabel(f"AF3 candidates (n={len(jobs)})")
     fig.savefig(OUT / "fig6_domain_adapt.png", dpi=300)
     fig.savefig(OUT / "fig6_domain_adapt.svg")
     plt.close(fig)
@@ -418,15 +519,19 @@ def figp2_recall() -> None:
     }
     colors = {"random": GRAY, "entropy": "#8ab6e8", "MC variance": "#5a91dd",
               "EIG (BALD)": BLUE}
+    # Only the two acquisition functions that move recall are annotated;
+    # random and entropy end at the same value and the labels would collide.
+    annotate = {"MC variance", "EIG (BALD)"}
     fig, ax = plt.subplots(figsize=(4.4, 3.4))
     for name, pts in data.items():
         xs = [p[0] for p in pts]
         ys = [p[1] for p in pts]
         ax.plot(xs, ys, marker="o", markersize=4.5, linewidth=1.4,
                 color=colors[name], label=name)
-        ax.annotate(f"{ys[-1]:.1f}%", (xs[-1], ys[-1]),
-                    textcoords="offset points", xytext=(5, 0), fontsize=7,
-                    color=colors[name])
+        if name in annotate:
+            ax.annotate(f"{ys[-1]:.1f}%", (xs[-1], ys[-1]),
+                        textcoords="offset points", xytext=(5, 0), fontsize=7,
+                        color=colors[name])
     ax.set_xlabel("sampling fraction of pool (%)")
     ax.set_ylabel("positive recall (%)")
     ax.set_xlim(0, 30)

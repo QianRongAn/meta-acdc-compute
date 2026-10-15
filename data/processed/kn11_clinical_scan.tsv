@@ -1,8 +1,8 @@
-case	family	peptide	role	score	rank	fatal	flag
-A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)	5brz	EVDPIGHLY	target	0.8916	2	yes	cognate
-A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)	5brz	ESDPIVAQY	off-target	0.9483	1	yes	FATAL-mimicry at target level
-A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)	5brz	ILAKFLHWL	off-target	0.6761	4	yes	
-A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)	5brz	KVAKELVHFL	off-target	0.8417	3	yes	FATAL-mimicry at target level
-A2-restricted MAGE-A3 TCR (A118T affinity-enhanced)		KVAELVHFL	target			yes	no structure
-Tebentafusp/Kimmtrak (gp100 TCR, HLA-A*02:01)	5eu6	YLEPGPVTA	target	0.5476	4	no	cognate
-Tebentafusp/Kimmtrak (gp100 TCR, HLA-A*02:01)	5eu6	YLEPGPVTL	off-target	0.9106	1	no	
+case	tcr	pdb	restriction	peptide	role	severity	evidence	score	target_score	delta_vs_target	proximity	hazard_flag
+A3A-MAGEA3	A3A affinity-enhanced MAGE-A3 TCR	5brz	HLA-A*01	EVDPIGHLY	target	approved-target	PMID:23926201 (Cameron 2013, Sci Transl Med)	0.8916	0.8916	+0.0000	at-or-above-target	
+A3A-MAGEA3	A3A affinity-enhanced MAGE-A3 TCR	5brz	HLA-A*01	ESDPIVAQY	off-target	fatal	PMID:23926201 (Cameron 2013: 2 cardiac deaths via titin)	0.9483	0.8916	+0.0567	at-or-above-target	lethal-mimic scores at/above the intended target
+A3A-MAGEA3	A3A affinity-enhanced MAGE-A3 TCR	5brz	HLA-A*01	ILAKFLHWL	off-target	not-documented	unverified - do not cite a PMID	0.6761	0.8916	-0.2155	below-target	
+A3A-MAGEA3	A3A affinity-enhanced MAGE-A3 TCR	5brz	HLA-A*01	KVAKELVHFL	off-target	not-documented	unverified - do not cite a PMID	0.8417	0.8916	-0.0499	below-target	
+A3A-MAGEA3-cross-structure	MAGE-A3-reactive TCR	5bs0	HLA-A*01	EVDPIGHLY	target(predicted-complex)	approved-target	cross-structure check only	0.8829	0.8829	+0.0000	at-or-above-target	
+KIMMTRAK-GP100	gp100 TCR (tebentafusp)	5eu6	HLA-A*02:01	YLEPGPVTA	target	approved-drug	unverified - cite as tebentafusp pivotal trial	0.5476	0.5476	+0.0000	at-or-above-target	
+KIMMTRAK-GP100	gp100 TCR (tebentafusp)	5eu6	HLA-A*02:01	YLEPGPVTL	off-target	not-documented	unverified - do not cite a PMID	0.9106	0.5476	+0.3630	at-or-above-target	

@@ -31,10 +31,67 @@ def _hash_group(parts: list[str]) -> int:
     return int.from_bytes(h[:8], "big")
 
 
-def _similarity_bucket(cdr3: str, n_buckets: int = 32) -> str:
-    """Coarse hash bucket so near-identical CDR3s tend to share a fold."""
-    sh = hashlib.md5(cdr3.encode()).digest()
-    return f"{sh[0] % n_buckets:02d}"
+def _kmers(seq: str, k: int = 3) -> set[str]:
+    if len(seq) < k:
+        return {seq} if seq else set()
+    return {seq[i:i + k] for i in range(len(seq) - k + 1)}
+
+
+def cluster_sequences(seqs: list[str], k: int = 3,
+                      threshold: float = 0.6) -> list[int]:
+    """Single-linkage sequence clusters by k-mer Jaccard similarity.
+
+    Replaces the MD5 `_similarity_bucket` used until 2026-10-15: hashing does
+    not preserve similarity, so three CDR3s differing in their last residue
+    landed in buckets 26, 31 and 22 and were split across folds (AUDIT.md #13).
+    Returns a cluster id per input sequence.
+    """
+    n = len(seqs)
+    parent = list(range(n))
+
+    def find(a: int) -> int:
+        while parent[a] != a:
+            parent[a] = parent[parent[a]]
+            a = parent[a]
+        return a
+
+    def union(a: int, b: int) -> None:
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[max(ra, rb)] = min(ra, rb)
+
+    sets = [_kmers(s, k) if s else set() for s in seqs]
+    index: dict[str, list[int]] = {}
+    for i, ks in enumerate(sets):
+        for km in ks:
+            index.setdefault(km, []).append(i)
+
+    for i, ks in enumerate(sets):
+        if not ks:
+            continue
+        counts: dict[int, int] = {}
+        for km in ks:
+            for j in index[km]:
+                if j != i:
+                    counts[j] = counts.get(j, 0) + 1
+        for j, shared in counts.items():
+            other = sets[j]
+            denom = len(ks) + len(other) - shared
+            if denom and shared / denom >= threshold:
+                union(i, j)
+
+    roots = {}
+    out = []
+    for i in range(n):
+        r = find(i)
+        if r not in roots:
+            roots[r] = len(roots)
+        out.append(roots[r])
+    return out
+
+
+def _cluster_key(cdr3: str, clusters: dict[str, int]) -> str:
+    return f"T{clusters.get(cdr3, hash(cdr3) % 10**9)}"
 
 
 def load_pairs(path: Path) -> tuple[list[str], list[str]]:
@@ -63,7 +120,12 @@ def group_split(
 ) -> Split:
     """Group split: all pairs sharing a group key go to the same fold.
 
-    group_by: 'epitope' | 'tcr' | 'pair'
+    group_by:
+      'epitope'    — group by peptide
+      'tcr'        — group by CDR3 similarity CLUSTER (not by hash bucket)
+      'pair'       — group by (TCR, peptide); only the exact pair is isolated
+      'unseen-both'— test TCR clusters and test peptides are both disjoint
+                     from train: neither the receptor nor the epitope was seen
     """
     rng = random.Random(seed)
     n = len(cdr3s)
@@ -72,14 +134,57 @@ def group_split(
         for i, p in enumerate(peptides):
             groups.setdefault(p, []).append(i)
     elif group_by == "tcr":
+        clusters = {c: i for i, c in
+                    enumerate(cluster_sequences(sorted(set(cdr3s))))}
         groups = {}
         for i, c in enumerate(cdr3s):
-            # similar CDR3s (same coarse bucket) share a fold — leakage control
-            groups.setdefault(_similarity_bucket(c), []).append(i)
+            groups.setdefault(_cluster_key(c, clusters), []).append(i)
     elif group_by == "pair":
         groups = {}
         for i, (c, p) in enumerate(zip(cdr3s, peptides)):
             groups.setdefault(f"{c}|{p}", []).append(i)
+    elif group_by == "unseen-both":
+        # Build the split from the epitope/TCR-cluster incidence, so the same
+        # entity never appears on both sides. The old 'pair' split only
+        # isolated the exact pair: train and test still shared every TCR and
+        # every epitope.
+        clusters = {c: i for i, c in
+                    enumerate(cluster_sequences(sorted(set(cdr3s))))}
+        by_pep: dict[str, set[str]] = {}
+        by_tcr: dict[str, set[str]] = {}
+        for c, p in zip(cdr3s, peptides):
+            tp = _cluster_key(c, clusters)
+            by_pep.setdefault(p, set()).add(tp)
+            by_tcr.setdefault(tp, set()).add(p)
+        pep_ids = sorted(by_pep)
+        rng.shuffle(pep_ids)
+        test_peps: set[str] = set()
+        train_tcr: set[str] = set()
+        target = int(test_frac * len(pep_ids))
+        for p in pep_ids:
+            tcrs = by_pep[p]
+            if len(test_peps) < target and not (tcrs & train_tcr):
+                test_peps.add(p)
+                train_tcr |= {
+                    t for t in by_tcr if p in by_tcr[t] and t not in tcrs}
+            else:
+                for t in tcrs:
+                    train_tcr.add(t)
+        groups = {"__test__": [], "__train__": []}
+        for i, (c, p) in enumerate(zip(cdr3s, peptides)):
+            side = "__test__" if p in test_peps else "__train__"
+            groups[side].append(i)
+        meta = {
+            "n_groups": len(test_peps),
+            "test_groups": len(test_peps),
+            "test_tcr_clusters": sorted({_cluster_key(c, clusters)
+                                         for c, p in zip(cdr3s, peptides)
+                                         if p in test_peps}),
+            "train_tcr_clusters": sorted(train_tcr),
+        }
+        return Split(
+            train_idx=groups["__train__"], test_idx=groups["__test__"],
+            name="unseen-both-split", meta=meta)
     else:
         raise ValueError(group_by)
 

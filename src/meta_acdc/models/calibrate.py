@@ -3,9 +3,19 @@
 The raw sigmoid scores are not calibrated binding probabilities (BCE training
 only constrains within-group ordering). Temperature scaling fits a single
 scalar T on a held-out labeled set (crystal decoy val split) so that
-sigmoid(logit / T) is calibrated — a prerequisite for any absolute score
-threshold in a safety screen. AUROC is invariant to T; calibration affects
-the probability scale and expected calibration error (ECE).
+sigmoid(logit / T) is calibrated ON THAT TASK — a prerequisite for any
+absolute score threshold in a safety screen. AUROC is invariant to T;
+calibration affects the probability scale and expected calibration error (ECE).
+
+WHAT THIS DOES NOT GIVE YOU (AUDIT.md #19): the calibration labels are the
+decoy labels, i.e. "real crystal structure vs artificially constructed
+decoy". Real off-target screening has a different class ratio, different
+negative sources (peptides nobody tested) and a different structure
+distribution (predicted, not crystallised). A calibrated score therefore may
+not be read as "probability of binding", and certainly not as "probability
+that the peptide is dangerous". Calibration must be re-estimated on a task
+that matches its intended use, and T must not be fitted and reported on the
+same set.
 
 Usage:
     .venv/bin/python src/meta_acdc/models/calibrate.py \
@@ -41,10 +51,18 @@ def mask_plddt(graphs):
 
 
 def ece(probs: np.ndarray, labels: np.ndarray, n_bins: int = 10) -> float:
+    """Expected calibration error with closed bins.
+
+    Bin i covers (lo, hi] except the first, which is [0, hi]. The previous
+    `probs > lo` left every prediction of exactly 0.0 outside all bins, so a
+    model that always predicts 0 against all-positive labels scored ECE = 0.
+    See AUDIT.md #18.
+    """
     bins = np.linspace(0.0, 1.0, n_bins + 1)
     total = 0.0
-    for lo, hi in zip(bins[:-1], bins[1:]):
-        m = (probs > lo) & (probs <= hi)
+    for i, (lo, hi) in enumerate(zip(bins[:-1], bins[1:])):
+        lower_ok = probs >= lo if i == 0 else probs > lo
+        m = lower_ok & (probs <= hi)
         if m.sum() == 0:
             continue
         conf = probs[m].mean()

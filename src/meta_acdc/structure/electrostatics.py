@@ -84,7 +84,13 @@ def esp_feature(centroid: tuple[float, float, float],
     """Electrostatic potential (kcal/mol/e) at a residue centroid.
 
     Sources: all charged atoms of the complex (own residue's atoms excluded
-    via own_slice). eps(r) = 4*r, truncation 10 A, tanh-squashed.
+    via own_slice). eps(r) = DIELECTRIC * r, so the screened potential is
+    q / (eps(r) * r) ~ 1/r^2; truncation 10 A, tanh-squashed.
+
+    The node term used q/(4r) until 2026-10-15 while the edge term and the
+    docstring used 1/r^2, i.e. node and edge ran different shielding models
+    and doubling the distance only halved the node potential. Both now use
+    eps(r) = 4r consistently (AUDIT.md #16).
     """
     if sources.shape[0] == 0:
         return 0.0
@@ -96,8 +102,8 @@ def esp_feature(centroid: tuple[float, float, float],
     if not mask.any():
         return 0.0
     q = sources[mask, 3]
-    r = np.sqrt(r2[mask])
-    phi = COULOMB_KCAL * float(np.sum(q / (DIELECTRIC * r)))
+    r2m = r2[mask]
+    phi = COULOMB_KCAL * float(np.sum(q / (DIELECTRIC * r2m)))
     return math.tanh(phi / ESP_SQUASH)
 
 

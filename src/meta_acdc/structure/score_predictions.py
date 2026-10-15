@@ -67,6 +67,16 @@ def main() -> int:
     ap.add_argument("--temperature", type=float, default=1.0,
                     help="divide logits by T before sigmoid (from "
                          "models/calibrate.py) for calibrated probabilities")
+    ap.add_argument("--qc", type=Path,
+                    default=Path("data/processed/af3_qc.tsv"),
+                    help="structure-QC table from structure/af3_qc.py. Since "
+                         "2026-10-15 the gate is ENFORCED: jobs without a QC "
+                         "row, or with a non-empty flag, are not scored, and "
+                         "the reason is written into the output instead of a "
+                         "score (AUDIT.md #26)")
+    ap.add_argument("--no-qc-gate", action="store_true",
+                    help="score even QC-missing/failed jobs (audit/debug only; "
+                         "the result then has no structure-quality basis)")
     args = ap.parse_args()
     if not args.model:
         args.model = [Path("data/processed/egnn_dataset.model.pt")]
@@ -81,23 +91,63 @@ def main() -> int:
         nets.append(net)
     print(f"ensemble: {len(nets)} models", flush=True)
 
+    # --- structure-quality gate -------------------------------------------
+    qc_status: dict[str, tuple[str, str]] = {}   # job_id -> (flag, basis)
+    if not args.no_qc_gate:
+        if not args.qc.exists():
+            print(f"QC gate: {args.qc} not found. Either run "
+                  f"structure/af3_qc.py first or pass --no-qc-gate to score "
+                  f"without a structure-quality basis.", file=sys.stderr)
+            return 2
+        import csv as _csv
+        with open(args.qc, newline="", encoding="utf-8", errors="replace") as fh:
+            for r in _csv.DictReader(fh, delimiter="\t"):
+                job = r.get("job_id") or ""
+                job = job.rsplit("_model_", 1)[0]
+                flag = (r.get("flag") or "").strip()
+                basis = "qc-pass" if not flag else f"qc-flag:{flag}"
+                qc_status[job] = (flag, basis)
+        print(f"QC gate: {len(qc_status)} jobs with a QC record")
+    else:
+        print("QC gate: DISABLED (--no-qc-gate); scores carry no "
+              "structure-quality basis")
+
     rows = []
     for cif in sorted(args.cifs.glob("*.cif")):
+        job_id = cif.stem
+        job = job_id.rsplit("_model_", 1)[0]
+        if not args.no_qc_gate:
+            flag, basis = qc_status.get((cif.parent.name, job),
+                                        qc_status.get(job, ("", "")))
+            if not qc_status.get((cif.parent.name, job)) and job not in qc_status:
+                rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
+                             "score": "", "std": "",
+                             "qc": "missing", "error": "no QC record"})
+                continue
+            if flag:
+                rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
+                             "score": "", "std": "",
+                             "qc": basis, "error": f"QC flagged: {flag}"})
+                continue
         try:
             residues = parse_cif(cif)
             g = build_interface_graph_from_residues(residues)
         except Exception as e:
-            rows.append({"job_id": cif.stem, "n_nodes": 0, "n_edges": 0,
-                         "score": "", "std": "", "error": str(e)})
+            rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
+                         "score": "", "std": "",
+                         "qc": "qc-pass" if not args.no_qc_gate else "not-checked",
+                         "error": str(e)})
             continue
         ss = [score_graph(net, g, args.device, mask_plddt=args.mask_plddt,
                           temperature=args.temperature)
               for net in nets]
         mean = sum(ss) / len(ss)
         std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5
-        rows.append({"job_id": cif.stem, "n_nodes": g.n_nodes,
+        rows.append({"job_id": job_id, "n_nodes": g.n_nodes,
                      "n_edges": len(g.edge_index), "score": f"{mean:.4f}",
-                     "std": f"{std:.4f}", "error": ""})
+                     "std": f"{std:.4f}",
+                     "qc": "qc-pass" if not args.no_qc_gate else "not-checked",
+                     "error": ""})
         print(f"{cif.stem}: score={mean:.4f} +/- {std:.4f} "
               f"(nodes={g.n_nodes})", flush=True)
 
@@ -119,20 +169,25 @@ def main() -> int:
 
     with open(args.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_nodes", "n_edges",
-                                           "score", "std", "error"],
-                           delimiter="\t")
+                                           "score", "std", "qc", "error"],
+                            delimiter="\t")
         w.writeheader()
         for r in rows:
             w.writerow(r)
+    n_gated = sum(1 for r in rows if r.get("qc", "").startswith("qc-flag")
+                  or r.get("qc") == "missing")
     agg_out = Path(str(args.out).replace(".tsv", "_ensemble.tsv"))
     with open(agg_out, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=["job_id", "n_models", "score", "std"],
-                           delimiter="\t")
+        w = csv.DictWriter(fh, fieldnames=["job_id", "n_models", "score",
+                                           "std", "qc"], delimiter="\t")
         w.writeheader()
         for r in agg_rows:
             w.writerow(r)
     print(f"saved {len(rows)} per-model scores to {args.out} and "
           f"{len(agg_rows)} ensemble scores to {agg_out}")
+    if n_gated:
+        print(f"structure-QC gate held back {n_gated} jobs (see the qc/error "
+              f"columns). They are NOT part of any reported ranking.")
     return 0
 
 

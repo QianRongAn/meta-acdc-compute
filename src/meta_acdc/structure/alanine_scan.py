@@ -28,15 +28,35 @@ from meta_acdc.structure.score_predictions import graph_to_tensors
 
 KEEP_ATOMS = ("N", "CA", "C", "O", "CB")
 
+# Only truncations can be built correctly here, because the scan keeps the
+# backbone coordinates and simply drops atoms. ALA is a real truncation; GLY
+# additionally drops CB. Anything else needs a side-chain rotamer, which this
+# code does not have — claiming a TRP or ARG scan by renaming the residue
+# while keeping N/CA/C/O/CB is exactly what the 2026-10-15 audit found
+# (AUDIT.md #15): the three "mutants" had identical atom sets, so the measured
+# effect was a relabelling, not a steric or chemical change.
+SUPPORTED_MUTANTS = {"ALA": ("N", "CA", "C", "O", "CB"),
+                     "GLY": ("N", "CA", "C", "O")}
+
 
 def to_mutant(res: Residue, target: str = "ALA") -> Residue:
-    """Replace the residue identity, keeping backbone + CB coordinates.
+    """Truncate a residue to the target's backbone-only representation.
 
-    'ALA' is a permissive control (small, non-clashing); 'TRP'/'ARG' are
-    clash probes (bulky / charged) that reveal positions the model depends
-    on for compatibility.
+    Supported: ALA, GLY. Any other target raises: building that side chain
+    from scratch (rotamers, ideal geometry, clash relaxation) is out of scope,
+    and silently renaming the residue produces a fake scan.
     """
-    atoms = [a for a in res.atoms if a[0] in KEEP_ATOMS]
+    target = target.upper()
+    if target not in SUPPORTED_MUTANTS:
+        raise ValueError(
+            f"cannot build {target} by truncation; supported targets are "
+            f"{sorted(SUPPORTED_MUTANTS)}. A TRP/ARG 'mutation' here would only "
+            f"rename the residue while keeping N/CA/C/O/CB, which the audit "
+            f"identified as a virtual mutation, not a real one.")
+    keep = SUPPORTED_MUTANTS[target]
+    atoms = [a for a in res.atoms if a[0] in keep]
+    if target == "GLY":
+        atoms = [a for a in atoms if a[0] != "CB"]
     return Residue(res.chain, target, res.resid, res.x, res.y, res.z,
                    res.plddt, res.icode, atoms)
 
@@ -66,8 +86,10 @@ def main() -> int:
     ap.add_argument("--model", type=Path, required=True)
     ap.add_argument("--mask-plddt", action="store_true")
     ap.add_argument("--mutant", default="ALA",
-                    help="mutant residue 3-letter code; ALA = permissive "
-                         "control, TRP/ARG = clash probe")
+                    choices=sorted(SUPPORTED_MUTANTS),
+                    help="truncation target. ALA and GLY are real truncations; "
+                         "ARG/TRP are refused because this scan cannot build "
+                         "their side chains (see AUDIT.md #15)")
     ap.add_argument("--cumulative", action="store_true",
                     help="greedily accumulate the most damaging mutations and "
                          "report score vs number of mutations (distributed vs "

@@ -1,5 +1,15 @@
 # Manuscript draft v0.2 — Active-learning safety assessment
 
+> **RETRACTION NOTICE — 2026-10-15. The active-learning results in this draft
+> are WITHDRAWN.** They were computed on labels derived from `vdjdb.score`,
+> which is an evidence-confidence field, not a binding measurement: `score>0`
+> was read as "binds" and `score==0` as "does not bind", manufacturing
+> 185,117 negatives (92.9% of the set). The 2× positive-recall gain and the
+> batch-size ablation were therefore likely measuring evidence grade, not
+> binding. The 3-mer baseline feature used as the surrogate was identically
+> zero, and the "fixed budget" ablation spent a different number of labels per
+> batch size. See `docs/AUDIT.md` #1, #11, #20, #12.
+
 > Working draft, 2026-09-23. Dry-lab scope. Numbers from docs/benchmarks.md.
 > Companion to paper1 (Meta-TCR-GNN); cites its model as [Meta-TCR-GNN].
 > Domain adaptation is now resolved (as of 2026-10-14: 172 native positives
@@ -37,7 +47,8 @@ condition. A batch-size ablation further inverts the field's "many small
 batches" heuristic: at fixed budget, large batches (3600x2, 24.5%) beat
 small ones (300x20, 21.6%). An MHCflurry presentation
 pre-filter — mirroring how the ACDC display library is constructed —
-compresses the candidate pool ~50x at a top-2% threshold while retaining
+compresses the candidate pool ~50x **on the dataset-internal peptide set at a
+top-2% threshold** while retaining
 56% of known binders under a composition-shuffled (hard) decoy protocol.
 We further quantify the two dominant uncertainty sources: MHC-presentation
 prediction and structure-prediction stability (AF3's own confidence is highly
@@ -239,7 +250,8 @@ shuffling preserves amino-acid composition and only destroys order, which
 sequence-level predictors partially tolerate.
 
 The pre-filter compresses effectively (Table 4 caption; see §Methods): at a
-top-2% threshold it retains 56% of binders at ~50× compression; top-10%
+top-2% threshold it retains 56% of binders at ~50× compression **within this
+pool**; top-10%
 retains 72% at ~10×; mean rank of binders is 30 versus 71 for decoys.
 Presentation filtering is therefore a sound first stage that cuts the pool
 by an order of magnitude while keeping most true binders.
@@ -283,7 +295,8 @@ top-50k candidate list with UniProt mapping (per TCR; delivered for
 Kimmtrak/gp100 and A6).
 
 The result is a decisive negative. The weak sequence surrogate's EIG does
-*not* transfer to proteome scale: known HLA-A2 binders show zero enrichment
+*not* transfer to proteome scale (nothing in this work licenses a proteome-wide
+compression factor): known HLA-A2 binders show zero enrichment
 in the top-50k (0 of 24 recovered versus 0.3 expected, hypergeometric
 P = 1.0), and the Kimmtrak target peptide ranks in the bottom third of the
 pool. The 2.0× gain observed in the simulated closed loop (§2.1) was

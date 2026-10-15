@@ -33,6 +33,9 @@ class InteractionRecord:
     # TCR
     cdr3_alpha: Optional[str] = None
     cdr3_beta: Optional[str] = None
+    # raw VDJdb fields kept for provenance (gene selects the chain column)
+    gene: Optional[str] = None
+    cdr3: Optional[str] = None
     tra_v: Optional[str] = None
     tra_j: Optional[str] = None
     trb_v: Optional[str] = None
@@ -96,20 +99,26 @@ class DatasetStats:
 
     n_records: int = 0
     n_unique_tcr_beta: int = 0
+    n_unique_tcr_alpha: int = 0
     n_unique_peptides: int = 0
     n_alleles: int = 0
     n_labeled: int = 0
     n_unlabeled: int = 0
+    n_skipped_no_gene: int = 0
     warnings: list[str] = field(default_factory=list)
 
     def summary(self) -> str:
         lines = [
             f"records: {self.n_records}",
             f"unique CDR3-beta: {self.n_unique_tcr_beta}",
+            f"unique CDR3-alpha: {self.n_unique_tcr_alpha}",
             f"unique peptides: {self.n_unique_peptides}",
             f"MHC alleles: {self.n_alleles}",
             f"labeled: {self.n_labeled}, unlabeled: {self.n_unlabeled}",
         ]
+        if self.n_skipped_no_gene:
+            lines.append(f"skipped (gene not TRA/TRB): "
+                         f"{self.n_skipped_no_gene}")
         if self.warnings:
             lines.append("warnings:")
             lines.extend(f"  - {w}" for w in self.warnings)

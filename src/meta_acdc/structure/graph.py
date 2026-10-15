@@ -245,7 +245,12 @@ def _sidechain_extent(res: Residue) -> float:
 
 
 def _node_features(res: Residue) -> list[float]:
-    aa = res.resname[:1].upper()
+    # Map the 3-letter name through AA3TO1. The previous `res.resname[:1]`
+    # collapsed ARG/ASN/ASP onto A, GLU onto G, LYS onto L, PHE onto P and
+    # TRP/TYR onto T, so charged and aromatic residues inherited wrong
+    # physicochemical values and identity codes (LYS looked like LEU). That is
+    # an input error, not a display bug. See AUDIT.md #2.
+    aa = AA3TO1.get(res.resname.upper(), "X")
     props = AA_PHYSICOCHEM.get(aa, AA_PHYSICOCHEM["X"])
     conf = res.plddt / 100.0 if res.plddt is not None else 0.5
     onehot = [1.0 if c == aa else 0.0 for c in AA_ORDER]
@@ -324,13 +329,32 @@ def build_interface_graph_from_residues(
                        for i in idx]
     # peptide-chain flag from role classification
     peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
+
+    def _centroid(res: Residue) -> tuple[float, float, float]:
+        """Centroid of the residue's CURRENT heavy atoms.
+
+        parse_pdb stores the full-atom centroid as (x, y, z), but a grafted
+        residue keeps the donor's backbone and gains foreign side chains, so
+        its stored coordinates no longer match its atoms. Keeping the stale
+        centroid meant a "side-chain-only" change also moved the node by up to
+        several Å, which invalidates the claim that geometry is pinned.
+        (AUDIT.md #5.)
+        """
+        heavy = [a for a in res.atoms if not a[0].startswith("H")]
+        if not heavy:
+            return (res.x, res.y, res.z)
+        n = len(heavy)
+        return (sum(a[1] for a in heavy) / n,
+                sum(a[2] for a in heavy) / n,
+                sum(a[3] for a in heavy) / n)
+
     graph.node_features = [
         [*_node_features(residues[i]),
          1.0 if residues[i].chain in peptide_chains else 0.0,
          _sidechain_extent(residues[i])]
         for i in idx
     ]
-    graph.node_coords = [(residues[i].x, residues[i].y, residues[i].z) for i in idx]
+    graph.node_coords = [_centroid(residues[i]) for i in idx]
 
     # --- v11 atom-level electrostatics (opt-in, appended features) --------
     es = None

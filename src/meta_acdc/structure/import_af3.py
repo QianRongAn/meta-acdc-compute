@@ -128,8 +128,13 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=Path("data/raw/af3_predictions"))
     ap.add_argument("--unique-fallback", action="store_true",
                     help="when no exact chain-pair match exists, assign a "
-                         "unique sequence-derived id instead of collapsing "
-                         "onto candidates[0] (use for native submissions)")
+                         "unique sequence-derived id instead of quarantining "
+                         "(use for native submissions)")
+    ap.add_argument("--allow-first-candidate-fallback", action="store_true",
+                    help="DANGEROUS: keep the legacy behaviour of naming an "
+                         "unmatched job after candidates[0]. This silently "
+                         "mislabels structures; only use when you accept the "
+                         "attribution risk. Off by default since 2026-10-15.")
     ap.add_argument("--report", type=Path, default=None,
                     help="write a TSV mapping job_id -> source folder, peptide, "
                          "evidence (for building a native manifest)")
@@ -143,6 +148,7 @@ def main() -> int:
 
     imported = []
     unmatched = []
+    quarantined = []
     for job_dir in sorted(args.src.iterdir()):
         if not job_dir.is_dir():
             continue
@@ -169,19 +175,21 @@ def main() -> int:
             match = next((c for c in candidates
                           if matches_chain_pair(alpha, beta, c)), None)
             if match is None:
-                # no exact chain pair in the list. Two behaviors:
-                #  - candidate route (default): fall back to candidates[0]
-                #    (legacy, may collapse distinct jobs; keep for compat)
-                #  - native route (--unique-fallback): derive a unique,
-                #    sequence-stable id so distinct natives never collide
+                # No exact chain pair in the submission list. Guessing a name
+                # here is what produced the 2026-10-14 misattribution, so the
+                # default is to quarantine the job and say so loudly.
                 if args.unique_fallback or not candidates:
                     key = "|".join(sorted(seqs))  # full chain set: collision-safe
                     stem = "_".join([peptide,
                                      hashlib.sha1(key.encode()
                                                   ).hexdigest()[:8]])
                     match = {"pdb": f"nativetcr-{stem}", "evidence": "native"}
-                else:
+                elif args.allow_first_candidate_fallback:
                     match = candidates[0]
+                else:
+                    quarantined.append((job_dir.name, peptide, alpha[:12],
+                                        beta[:12]))
+                    continue
         job_id = f"{match['pdb']}_{peptide}"
         # copy ALL five ranked models (model_0..4) for structural ensembling
         n_copied = 0
@@ -200,6 +208,18 @@ def main() -> int:
         print(f"  {job_id:30s} <- {src}  [{ev}] {n} models")
     if unmatched:
         print(f"unmatched {len(unmatched)}: {unmatched}")
+    if quarantined:
+        print(f"QUARANTINED {len(quarantined)} jobs: no exact chain-pair "
+              f"match in the submission list. No files were written for "
+              f"them. Inspect manually before assigning a job_id.", flush=True)
+        for src, pep, a, b in quarantined:
+            print(f"  {src}: peptide={pep} alpha={a}... beta={b}...")
+        qpath = args.out.parent / "af3_import_quarantine.tsv"
+        with open(qpath, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["source", "peptide", "alpha_prefix", "beta_prefix"])
+            w.writerows(quarantined)
+        print(f"wrote quarantine list to {qpath}")
     if args.report is not None:
         with open(args.report, "w", newline="") as fh:
             w = csv.writer(fh, delimiter="\t")

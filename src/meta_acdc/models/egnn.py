@@ -21,6 +21,10 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 
+# graph.py node layout: [3 physicochemical, pLDDT, 20 identity one-hot,
+# is-peptide flag, side-chain extent] -> the flag sits at index 24.
+PEPTIDE_FLAG_INDEX = 24
+
 
 class EGCL(nn.Module):
     """One equivariant graph convolution layer."""
@@ -46,6 +50,7 @@ class EGCL(nn.Module):
         x: Tensor,            # (N, 3) coordinates
         edge_index: Tensor,   # (2, E)
         edge_attr: Tensor,    # (E, edge_dim)
+        batch: Tensor | None = None,
     ) -> tuple[Tensor, Tensor]:
         row, col = edge_index
         rel_x = x[row] - x[col]                      # (E, 3)
@@ -57,12 +62,22 @@ class EGCL(nn.Module):
         agg = torch.zeros(h.shape[0], msg_feat.shape[1], device=h.device)
         agg.index_add_(0, row, msg_feat)
 
-        # coordinate update (equivariant): normalized displacement
+        # coordinate update (equivariant): normalized displacement.
+        # The divisor is the node count of each node's OWN graph. Dividing by
+        # the batch-wide h.shape[0]-1 made a graph's output depend on how many
+        # graphs travelled with it (train batches of 32 vs a single scorer
+        # graph differed), which is why training, validation and single-graph
+        # scoring disagreed. See AUDIT.md #3.
+        if batch is None:
+            counts = torch.ones(h.shape[0], 1, device=x.device, dtype=x.dtype)
+        else:
+            per_graph = torch.bincount(batch).clamp(min=1).float()
+            counts = per_graph[batch].unsqueeze(-1).to(x.dtype)
         eps = rel_x / (rel_x.norm(dim=-1, keepdim=True) + 1.0)
         coord_update = (eps * coord_scale).float()
         agg_x = torch.zeros(x.shape[0], 3, device=x.device, dtype=coord_update.dtype)
         agg_x.index_add_(0, row, coord_update)
-        x_new = x + agg_x / max(1, h.shape[0] - 1)   # C = 1/(M-1)
+        x_new = x + agg_x / counts
 
         h_new = self.node_mlp(torch.cat([h, agg], dim=-1))
         return h_new, x_new
@@ -103,8 +118,17 @@ class EGNN(nn.Module):
     ) -> Tensor:
         """Return graph-level logits (num_graphs, 1); with embed_only=True
         return the pooled graph features (num_graphs, 3*hidden+1) instead."""
-        # peptide mask lives in input node-feature dim 4 (is-peptide flag)
-        self.peptide_mask = h[:, 4] > 0.5 if h.shape[1] > 4 else None
+        # The is-peptide flag is node-feature index 24: graph.py appends
+        # [3 phys + pLDDT + 20 identity] = 24 columns, then the peptide flag,
+        # then side-chain extent. Reading h[:, 4] selected one amino-acid
+        # identity column (index 4 = 'E') instead, so "peptide pooling" actually
+        # pooled glutamate residues. See AUDIT.md #3.
+        self.peptide_mask = None
+        if h.shape[1] > PEPTIDE_FLAG_INDEX:
+            self.peptide_mask = h[:, PEPTIDE_FLAG_INDEX] > 0.5
+        elif h.shape[1] > 4:
+            # legacy 5-column inputs (phys + conf + flags): keep old behaviour
+            self.peptide_mask = h[:, 4] > 0.5
 
         # center each graph's coordinates at its centroid (translation invariance)
         centroid = torch.zeros(batch.max().item() + 1, 3, device=x.device, dtype=x.dtype)
@@ -115,7 +139,7 @@ class EGNN(nn.Module):
 
         h = self.embed(h)
         for layer in self.layers:
-            h, x = layer(h, x, edge_index, edge_attr)
+            h, x = layer(h, x, edge_index, edge_attr, batch)
             h = self.dropout(h)
 
         # invariant pooling: global mean+max, peptide-node mean, coord norm.
@@ -130,7 +154,7 @@ class EGNN(nn.Module):
         max_feat = torch.full((n_graphs, h.shape[1]), -1e9, device=h.device)
         max_feat.scatter_reduce_(0, batch.unsqueeze(1).expand_as(h), h,
                                  reduce="amax", include_self=True)
-        # peptide-node mean pooling (peptide flag lives in input feature 4)
+        # peptide-node mean pooling (peptide flag at PEPTIDE_FLAG_INDEX)
         pep_mask = self.peptide_mask
         pep_feat = torch.zeros(n_graphs, h.shape[1], device=h.device)
         pep_counts = torch.zeros(n_graphs, device=h.device)

@@ -160,6 +160,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
     complexes: dict[str, list[Residue]] = {}
     skipped = 0
     n_split = 0
+    warnings: list[str] = []
     for row in rows:
         pdb = row["pdb"]
         path = struct_dir / f"{pdb.lower()}.pdb"
@@ -174,12 +175,15 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
         if n_tcr >= 1 and n_peptide == 1 and n_mhc >= 1:
             complexes[pdb] = residues
         elif (n_tcr > 2 or n_peptide > 1) and n_mhc >= 1:
-            # multi-complex asymmetric unit: split into sub-complexes
+            # multi-complex asymmetric unit: split into sub-complexes.
+            # split_complex now returns (complexes, warnings); the warnings
+            # must be surfaced, because an ambiguous split is not evidence of
+            # an independent complex (AUDIT.md #27).
             try:
                 from meta_acdc.structure.split_complexes import split_complex
-                subs = split_complex(residues)
-            except Exception:
-                subs = []
+                subs, split_warnings = split_complex(residues)
+            except Exception as exc:
+                subs, split_warnings = [], [f"{pdb}: split failed ({exc})"]
             for k, sub in enumerate(subs):
                 sub_roles = classify_chains(sub)
                 if (sum(1 for v in sub_roles.values() if v == TCR) >= 1
@@ -187,12 +191,24 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
                         and sum(1 for v in sub_roles.values() if v == MHC) >= 1):
                     complexes[f"{pdb}_{k}"] = sub
                     n_split += 1
+            if split_warnings:
+                warnings.extend(f"{pdb}: {w}" for w in split_warnings)
         else:
             skipped += 1
     if skipped:
         print(f"skipped {skipped} ambiguous entries", flush=True)
     if n_split:
         print(f"split {n_split} sub-complexes from multi-complex files", flush=True)
+    if warnings:
+        # A split that had to guess is not an independent complex. Report it
+        # and write it out so the count of "real" complexes can be audited.
+        print(f"WARNING: {len(warnings)} assignment issues while splitting "
+              f"multi-complex entries", flush=True)
+        for w in warnings[:20]:
+            print(f"  {w}")
+        wpath = Path(str(out_path).replace(".pt", "_split_warnings.txt"))
+        wpath.write_text("\n".join(warnings) + "\n", encoding="utf-8")
+        print(f"wrote {wpath}")
 
     graphs = []
     labels = []

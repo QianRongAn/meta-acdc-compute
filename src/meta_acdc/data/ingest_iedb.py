@@ -29,6 +29,23 @@ from schema import DataSource, DatasetStats, InteractionRecord, SCHEMA_TSV
 METHOD_KEEP = ("mhc", "mass spectr", "binding", "elution")
 METHOD_DROP = ("t cell",)
 
+# Assay families must not share a number. Affinity (IC50), elution/mass-spec
+# presentation evidence and stability are different measurements; merging them
+# into one "-log10 IC50" column made incomparable numbers comparable
+# (AUDIT.md #22).
+ASSAY_IC50 = "binding-ic50"
+ASSAY_PRESENTATION = "presentation-eluted"
+
+
+def assay_family(method: str) -> str:
+    """Classify an IEDB assay method string into an endpoint family."""
+    m = method.lower()
+    if "elut" in m or "mass spectr" in m:
+        return ASSAY_PRESENTATION
+    if "binding" in m or "ic50" in m or "koff" in m or "kon" in m:
+        return ASSAY_IC50
+    return f"other:{m[:24]}"
+
 
 def parse_ic50(raw: str) -> float | None:
     try:
@@ -40,7 +57,15 @@ def parse_ic50(raw: str) -> float | None:
 
 def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetStats:
     stats = DatasetStats()
-    seen: set[tuple[str, str]] = set()
+    # Conflicting experiments for the same (peptide, allele, assay family) are
+    # resolved by a DETERMINISTIC rule — evidence strength first (positive >
+    # negative > unknown), then the stronger quantitative signal — so the
+    # output no longer depends on the order of rows in the input file, and the
+    # number of conflicting experiments is reported (AUDIT.md #22).
+    best: dict[tuple[str, str, str], tuple[tuple, InteractionRecord]] = {}
+
+    def evidence_rank(label: int | None) -> int:
+        return {1: 3, 0: 2, None: 1}[label]
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, newline="", encoding="utf-8", errors="replace") as fh, \
@@ -59,12 +84,13 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
         i_allele = idx("MHC Restriction", "Name")
         i_qual = idx("Assay", "Qualitative Measurement")
         i_quant = idx("Assay", "Quantitative measurement")
+        i_units = idx("Assay", "Units") if f"Assay|Units" in fieldnames else None
         i_host = idx("Host", "Name")
         i_pmid = idx("Reference", "PMID")
 
         out.write(SCHEMA_TSV + "\n")
-        n_written = 0
-        n_labeled = 0
+        n_conflicts = 0
+        n_by_family: dict[str, int] = {}
         for line in raw:
             if len(line) <= i_method:
                 continue
@@ -83,6 +109,7 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
             if not peptide or not allele_raw:
                 continue
             allele = allele_raw.split(",")[0].strip()
+            family = assay_family(method)
 
             qualitative = line[i_qual].strip().lower()
             label: int | None = None
@@ -90,13 +117,25 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
                 label = 1
             elif qualitative.startswith("negative"):
                 label = 0
-            score = parse_ic50(line[i_quant].strip())
-            if label is None and score is None:
+
+            raw_quant = line[i_quant].strip()
+            units = (line[i_units].strip() if i_units is not None
+                     and len(line) > i_units else "")
+            # Only IC50-family assays may enter the numeric `score` column, and
+            # only with the unit recorded. Elution / mass-spec evidence is kept
+            # as a separate endpoint, never folded into an affinity number.
+            score = None
+            notes = ""
+            if family == ASSAY_IC50 and raw_quant:
+                if units and "nm" not in units.lower():
+                    notes = (f"unit={units} (not nM; -log10 transform assumes "
+                             f"nM, value not converted)")
+                score = parse_ic50(raw_quant)
+            elif family == ASSAY_PRESENTATION:
+                notes = (f"presentation evidence ({method}) "
+                         f"quant={raw_quant or 'n/a'}; not an affinity")
+            if label is None and score is None and not notes:
                 continue
-            key = (peptide, allele)
-            if key in seen:
-                continue
-            seen.add(key)
 
             rec = InteractionRecord(
                 source=DataSource.IEDB,
@@ -106,19 +145,41 @@ def ingest(path: Path, out_path: Path, max_rows: int | None = None) -> DatasetSt
                 score=score,
                 reference_id=(line[i_pmid].strip() or None),
                 organism="HomoSapiens",
-                method=f"iedb:{method}" if method else "iedb",
+                method=f"iedb:{family}",
+                notes=notes,
             )
+            key = (peptide, allele, family)
+            rank = (evidence_rank(label), score if score is not None else -1e9)
+            if key in best:
+                n_conflicts += 1
+                if rank > best[key][0]:
+                    best[key] = (rank, rec)
+            else:
+                best[key] = (rank, rec)
+            n_by_family[family] = n_by_family.get(family, 0) + 1
+
+        rows = [rec for _, rec in best.values()]
+        for rec in rows:
             out.write("\t".join(rec.to_row()) + "\n")
-            n_written += 1
-            n_labeled += 1 if label is not None else 0
-            if max_rows is not None and n_written >= max_rows:
-                break
+        n_written = len(rows)
+        n_labeled = sum(1 for r in rows if r.label is not None)
+        seen = {(r.peptide, r.mhc_allele) for r in rows}
 
     stats.n_records = n_written
     stats.n_unique_peptides = len({k[0] for k in seen})
     stats.n_alleles = len({k[1] for k in seen if k[1]})
     stats.n_labeled = n_labeled
     stats.n_unlabeled = n_written - n_labeled
+    stats.warnings.append(
+        f"assay families kept: "
+        f"{', '.join(f'{k}={v}' for k, v in sorted(n_by_family.items()))}")
+    stats.warnings.append(
+        f"conflicting experiments merged deterministically: {n_conflicts} "
+        f"(rule: positive > negative > unknown, then stronger score; the "
+        f"result is independent of input row order)")
+    stats.warnings.append(
+        "IC50 and presentation/elution endpoints are kept in separate assay "
+        "families; do not pool the score column across them")
     if n_written == 0:
         stats.warnings.append("no records ingested — check column layout")
     return stats

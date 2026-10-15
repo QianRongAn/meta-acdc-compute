@@ -24,6 +24,10 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+from scipy.stats import chi2 as _chi2_dist      # noqa: E402
+
+chi2_sf = _chi2_dist.sf
+
 
 def main() -> int:
     ap = argparse.ArgumentParser()
@@ -71,17 +75,22 @@ def main() -> int:
         print(f"  {pdb:8s} native={nat:12s} rank={rank}/{n} "
               f"(one-sided P={p:.3f})")
     if len(rows) >= 2:
-        # pooled: product of one-sided p-values via Fisher's method
+        # Pooled by Fisher's method: -2*sum(log p) ~ chi2(2k). The p-value is
+        # the chi2 *survival function*, not a normal approximation of it.
+        # With k=2 the normal form is anti-conservative (two rank-1-of-10
+        # controls give chi2=9.21, df=4: exact P=0.0561, normal approx 0.0327
+        # — it turns "not significant" into "significant"). scipy is a hard
+        # dependency of this repo, so use chi2.sf directly.
         chi2 = -2 * sum(math.log(r / n) for _, _, r, n in rows)
         df = 2 * len(rows)
-        # approximate p via chi2 survival (no scipy dependency)
-        from statistics import NormalDist
-        z = (chi2 - df) / math.sqrt(2 * df)
-        pooled_p = 1 - NormalDist().cdf(z)
+        pooled_p = float(chi2_sf(chi2, df))
         print(f"\nFisher pooled P (native ranks not better than chance): "
               f"{pooled_p:.4f} (chi2={chi2:.1f}, df={df})")
         print("interpretation: P < 0.05 => model ranks native peptides "
-              "significantly above chance across structures")
+              "significantly above chance across structures. NOTE: this "
+              "treats the listed structures as independent; receptors from "
+              "the same family are not, so treat this as an upper bound on "
+              "significance until a family-stratified version is run.")
     else:
         print("\nneed >= 2 native controls for the pooled test; "
               "awaiting 1qse/1qsf submissions")

@@ -25,8 +25,13 @@ from schema import DataSource, DatasetStats, InteractionRecord, SCHEMA_TSV
 # friendly VDJdb column name -> record field; None = skipped
 COLUMN_MAP = {
     "complex.id": "reference_id",
-    "gene": None,  # "TRB" — V/J come from v.segm / j.segm
-    "cdr3": "cdr3_beta",
+    # `gene` says which chain the CDR3 belongs to. It used to be discarded and
+    # every CDR3 written to cdr3_beta, which merged alpha and beta chains and
+    # let an alpha-only match count as the same receptor (AUDIT.md #7).
+    "gene": "gene",
+    "cdr3": "cdr3",
+    "cdr3.alpha": "cdr3",
+    "cdr3.beta": "cdr3",
     "v.segm": "trb_v",
     "j.segm": "trb_j",
     "species": "organism",
@@ -75,14 +80,32 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
                     continue
                 setattr(rec, field, (line.get(col) or "").strip() or None)
 
-            if rec.cdr3_beta is None or rec.peptide is None:
+            # Route the CDR3 to its own chain column. Rows whose `gene` is
+            # neither TRA nor TRB are dropped rather than silently filed as
+            # beta.
+            gene = (rec.gene or "").upper()
+            if gene in ("TRA", "A"):
+                rec.cdr3_alpha, rec.cdr3_beta = rec.cdr3, None
+            elif gene in ("TRB", "B"):
+                rec.cdr3_beta, rec.cdr3_alpha = rec.cdr3, None
+            else:
+                stats.n_skipped_no_gene += 1
                 continue
-            # normalize HLA allele style: HLA-A*02:01 -> A*02:01 handled downstream;
-            # keep raw for now, provenance preserved
+
+            if (rec.cdr3_beta is None and rec.cdr3_alpha is None) \
+                    or rec.peptide is None:
+                continue
+            # vdjdb.score is the database's EVIDENCE CONFIDENCE, not a binding
+            # measurement: 0 means "low confidence / no information", not
+            # "does not bind". The old importer turned score>0 into a positive
+            # label and score==0 into a negative, which manufactured 185,117
+            # "non-binders" (92.9% of the set) and every number derived from
+            # them (AUDIT.md #1). The label column is now left empty on
+            # purpose; only `confidence` is written.
             rec.score = parse_score(rec.score)
-            if rec.score is not None:
-                rec.label = 1 if rec.score > 0 else 0
-            key = (rec.cdr3_beta, rec.peptide, rec.mhc_allele or "")
+            rec.label = None
+            chain = rec.cdr3_beta or rec.cdr3_alpha or ""
+            key = (chain, gene, rec.peptide, rec.mhc_allele or "")
             prev = best.get(key)
             if prev is None or (rec.score or -1) > (prev.score or -1):
                 best[key] = rec
@@ -95,7 +118,8 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
             fh.write("\t".join(row) + "\n")
 
     stats.n_records = len(rows)
-    stats.n_unique_tcr_beta = len({r[2] for r in rows})
+    stats.n_unique_tcr_beta = len({r[2] for r in rows if r[2]})
+    stats.n_unique_tcr_alpha = len({r[1] for r in rows if r[1]})
     stats.n_unique_peptides = len({r[7] for r in rows})
     stats.n_alleles = len({r[8] for r in rows if r[8]})
     stats.n_labeled = sum(1 for r in rows if r[9])

@@ -54,10 +54,11 @@ def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None
     candidates = by_peptide.get(peptide, [])
     match = next((c for c in candidates
                   if matches_chain_pair(alpha, beta, c)), None)
-    if match is None and candidates:
-        match = candidates[0]
     if match is None:
-        return None
+        # No exact chain pair: quarantine. The legacy candidates[0] guess is
+        # what produced the 2026-10-14 misattribution.
+        return {"pdb": None, "peptide": peptide, "evidence": "quarantined",
+                "alpha": alpha[:12], "beta": beta[:12]}
     return {"pdb": match["pdb"], "peptide": peptide,
             "evidence": match["evidence"]}
 
@@ -131,6 +132,7 @@ def main() -> int:
     # Seed the per-job counter from existing B* instance dirs so successive
     # import runs continue numbering (B4, B5, ...) instead of colliding.
     occ: dict[str, int] = defaultdict(int)
+    quarantined: list[tuple[str, str, str, str]] = []
     for inst_dir in sorted(args.out.iterdir()):
         if not inst_dir.is_dir() or not inst_dir.name.startswith("B"):
             continue
@@ -159,6 +161,13 @@ def main() -> int:
         if info is None:
             print(f"  UNMATCHED {job_dir.name}", flush=True)
             continue
+        if info.get("evidence") == "quarantined" or info.get("pdb") is None:
+            print(f"  QUARANTINED {job_dir.name}: peptide={info['peptide']} "
+                  f"alpha={info.get('alpha','')}... beta={info.get('beta','')}... "
+                  f"(no exact chain pair; no file written)", flush=True)
+            quarantined.append((job_dir.name, info["peptide"],
+                                info.get("alpha", ""), info.get("beta", "")))
+            continue
         job_id = f"{info['pdb']}_{info['peptide']}"
         occ[job_id] += 1
         instance = f"B{occ[job_id]}"
@@ -180,9 +189,19 @@ def main() -> int:
             n = sum(1 for _ in inst_dir.glob(f"{job_id}_model_?.cif"))
             peptide = job_id.split("_", 1)[1]
             cands = by_peptide.get(peptide, [])
-            ev = cands[0]["evidence"] if cands else ""
+            # Do not guess evidence from candidates[0] either: an unknown
+            # provenance must stay visible as unknown.
+            ev = "unknown" if not cands else cands[0]["evidence"]
             manifest.append({"instance": inst, "job_id": job_id,
                              "src_folder": "", "n_models": n, "evidence": ev})
+    if quarantined:
+        qpath = args.manifest.parent / "af3_instances_quarantine.tsv"
+        with open(qpath, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["source", "peptide", "alpha_prefix", "beta_prefix"])
+            w.writerows(quarantined)
+        print(f"QUARANTINED {len(quarantined)} jobs (no file written): "
+              f"{qpath}", flush=True)
     with open(args.manifest, "w", newline="") as fh:
         w = csv.DictWriter(fh, delimiter="\t", fieldnames=["instance", "job_id",
                          "src_folder", "n_models", "evidence"])

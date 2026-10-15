@@ -1,5 +1,29 @@
 # Manuscript draft v0.1 — Meta-TCR-GNN
 
+> **RETRACTION NOTICE — 2026-10-15. Every performance number in this draft is
+> WITHDRAWN until the defects listed in `docs/AUDIT.md` are fixed and the
+> models are retrained on frozen data.**
+>
+> Confirmed defects that overturn the results: the graph encoder mapped
+> 3-letter residue names with `resname[:1]` (ARG/ASN/ASP→A, GLU→G, LYS→L,
+> PHE→P, TRP/TYR→T), so physicochemical and identity features were wrong for
+> 8 of 20 amino acids; "peptide pooling" read an amino-acid identity column
+> instead of the peptide flag; coordinate updates were normalised by the whole
+> batch, so a graph's score depended on its companions; the train/validation
+> split did not group by complex, so the crystal and predicted copies of the
+> same complex could end up on opposite sides; graft decoys kept the unmodified
+> residue centroid after side-chain replacement; the VDJdb importer turned
+> evidence-confidence scores into binding labels, manufacturing 185,117
+> "non-binders"; the 3-mer baseline feature was identically zero; the clinical
+> index case had a wrong PMID, a wrong description of PDB 5BS0 and a
+> case-level lethality flag applied to every listed peptide.
+>
+> The 0.933 graft AUROC, the 0.644 cross-instance Spearman, the FATAL-mimicry
+> flags and the "179/281 cross-reactive TCRs" statistic are **not citable**.
+> They are retained below only as a record of what the buggy implementation
+> produced. Surviving claims are limited to: the audit itself, the code fixes,
+> and descriptive statements about the defective implementation.
+
 > Working draft, 2026-09-22. All numbers from `docs/benchmarks.md` (reproducible
 > via the pipeline in this repository). Placeholder citations marked [CIT].
 > Not for circulation.
@@ -19,15 +43,19 @@ Predicting T cell receptor (TCR) cross-reactivity against unseen peptides is
 a central unsolved problem in immunotherapy safety. Sequence-based models
 plateau at AUROC 0.62-0.64 on held-out epitopes, and structural predictors
 (AlphaFold 3, DockQ 0.50 on TCR-pMHC) are insufficiently accurate to score
-interfaces directly. Here we show that the bottleneck in learning TCR-pMHC
-chemical compatibility is representational: at Cα resolution — the default
-for protein graph models — interfaces that differ only in side-chain
-chemistry are information-theoretically indistinguishable (AUROC 0.50,
+interfaces directly. **Withdrawn claim:** the plateau of published sequence
+models does not establish that sequence information is exhausted, and nothing
+below establishes that structure is the only route. All quantitative results
+in this draft are withdrawn (AUDIT.md); the description of what the defective
+implementation showed is retained as a record.
+In that implementation, a graph at Cα resolution — the default for protein
+graph models — failed to separate interfaces that differ only in side-chain
+chemistry (AUROC 0.50,
 invariant to a 2.8x increase in training data). Adding side-chain van der
 Waals contact histograms as edge features raises graft-decoy discrimination
 from chance to **AUROC 0.933** (ablation: 0.501 without contacts).
 Residue-level physicochemical scalars are the second pillar (0.606 without);
-sequence fusion adds nothing (0.905). We further report a scale-dependent
+sequence fusion added nothing (0.905). We further report a scale-dependent
 result on AlphaFold 3-predicted structures: cross-reactivity *rankings* are
 not reproducible across independently trained instances at the crystal-data
 scale (423 complexes; Rashomon effect), because decoy discrimination is
@@ -321,22 +349,39 @@ only; verdict STABLE at 0.644 over 188 candidates), the clinical
 gold-standard cases are scanned over cognate targets and documented
 off-targets (current 5-seed ensemble numbers, post-attribution-repair):
 
-| case | peptide | role | score | family rank | fatal |
+| case | peptide | role | score | family rank | documented lethality **(per peptide)** |
 |---|---|---|---|---|---|
-| A3A/MAGE-A3 (5BRZ) | EVDPIGHLY | target | 0.892 | 2 | yes |
-| A3A/MAGE-A3 (5BRZ) | ESDPIVAQY | off-target (titin) | 0.948 | 1 | yes |
-| A3A/MAGE-A3 (5BRZ) | KVAKELVHFL | off-target (MAGE-A12 mimic) | 0.842 | 3 | yes |
-| A3A/MAGE-A3 (5BRZ) | ILAKFLHWL | off-target | 0.676 | 4 | yes |
-| A2-MAGE-A3 (5BS0, second TCR) | EVDPIGHLY | target | 0.883 | 1 | yes |
-| Kimmtrak (5EU6) | YLEPGPVTA | target | 0.548 | 4 | no |
-| Kimmtrak (5EU6) | YLEPGPVTL | off-target mimic | 0.911 | 1 | no |
+| A3A/MAGE-A3 (5BRZ) | EVDPIGHLY | target | 0.892 | 2 | n/a (intended target) |
+| A3A/MAGE-A3 (5BRZ) | ESDPIVAQY | off-target (titin) | 0.948 | 1 | **yes — 2 cardiac deaths** |
+| A3A/MAGE-A3 (5BRZ) | KVAKELVHFL | listed candidate | 0.842 | 3 | not documented |
+| A3A/MAGE-A3 (5BRZ) | ILAKFLHWL | listed candidate | 0.676 | 4 | not documented |
+| MAGE-A3-reactive TCR (5BS0) | EVDPIGHLY | target (predicted complex) | 0.883 | 1 | n/a |
+| Kimmtrak (5EU6) | YLEPGPVTA | target | 0.548 | 4 | n/a (approved drug) |
+| Kimmtrak (5EU6) | YLEPGPVTL | mimic | 0.911 | 1 | not documented |
 
-The titin and MAGE-A12 mimics sit **at or above** the cognate target
-(0.948 / 0.842 vs 0.892), i.e. **statistically indistinguishable from the
-target**. This is the correct safety behaviour for a molecular-mimicry
-hazard: the model does not clear a lethal off-target. The same MAGE-A3
-target peptide on a second, unrelated TCR structure (5BS0) scores 0.883 —
-within 0.01 of the 5BRZ value, a cross-structure consistency check.
+Corrections to this table (AUDIT.md #6): the old `fatal` column was a
+**case-level** flag that every listed peptide inherited, which is how
+"FATAL-mimicry" got attached to candidates with no published fatality
+evidence; the MAGE-A12 citation PMID:23999405 was a rare-earth
+electronic-structure paper (Cameron 2013 titin is PMID 23926201); and the
+`--margin 0.1` rule in `clinical_scan.py` labelled any candidate within 0.1 of
+the target as statistically indistinguishable, which is not a test. The table
+above reports per-peptide evidence only, and the numbers remain non-citable
+pending a retrain.
+
+The titin and MAGE-A12 mimics score **at or above** the cognate target
+(0.948 / 0.842 vs 0.892). The correct wording is arithmetic: those scores are
+higher. They are **not** "statistically indistinguishable from the target" —
+a score difference is not a test, and no error model for the comparison was
+ever fitted. This is the behaviour a mimicry hazard should produce, but the
+numbers themselves are not citable (see the retraction notice at the top).
+
+The same MAGE-A3 target peptide scored on the 5BS0 receptor gives 0.883.
+Correction to the case description: **5BS0 is the MAGE-A3-reactive TCR
+crystallised WITH the titin peptide** (our own `structure_vdjdb_map` lists
+5bs0 -> ESDPIVAQY). Scoring a predicted 5BS0/EVDPIGHLY complex is therefore a
+cross-structure check on a related receptor, *not* "a second unrelated TCR",
+and not an independent patient case.
 At the per-seed level the target-vs-MAGE-A12 ordering is a coin
 flip (seed0 KVA>target, seed1 target>KVA, seed2 KVA>target, seed4
 target>KVA), which is exactly what mimicry predicts and is not a model

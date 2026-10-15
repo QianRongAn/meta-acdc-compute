@@ -106,6 +106,7 @@ def main() -> int:
 
     seen: set[str] = set()
     report = []
+    quarantined = []
     unmatched = 0
     for base in args.src:
         for job_dir in sorted(glob.glob(str(base) + "/*/")):
@@ -123,8 +124,13 @@ def main() -> int:
                     cands = by_peptide.get(peptide, [])
                     match = next((c for c in cands
                                   if matches_chain_pair(alpha, beta, c)), None)
-                    if match is None and cands:
-                        match = cands[0]
+                    if match is None:
+                        # A guessed name is the misattribution bug that forced
+                        # the 2026-10-14 repair. Quarantine instead of writing.
+                        quarantined.append(
+                            (os.path.basename(job_dir.rstrip("/")),
+                             peptide, alpha[:12], beta[:12]))
+                        continue
                     if match is not None:
                         cid = f"{match['pdb']}_{peptide}"
                         for cif in sorted(glob.glob(job_dir + "*_model_?.cif")):
@@ -145,10 +151,28 @@ def main() -> int:
             report.append((job, os.path.basename(job_dir.rstrip("/")),
                            seqs[0] if seqs else ""))
 
-    # every native CIF currently on disk belongs in the manifest
+    # Files on disk are only treated as natives if they were matched in this
+    # run or already carried by the manifest. Anything else is reported as
+    # unverified: the old behaviour silently adopted every *_model_0.cif in
+    # the output dir, which is how stale misattributed files survived.
     on_disk = {p.name.rsplit("_model_0", 1)[0]
                for p in args.out.glob("*_model_0.cif")}
-    all_ids = sorted(set(existing) | {r[0] for r in report} | on_disk)
+    verified = set(existing) | {r[0] for r in report}
+    unverified = sorted(on_disk - verified)
+    if unverified:
+        print(f"WARNING: {len(unverified)} CIFs in {args.out} were not matched "
+              f"in this run and are not in the manifest. They are NOT added "
+              f"to the native manifest. Verify their provenance before use:",
+              flush=True)
+        for job in unverified:
+            print(f"  unverified: {job}")
+        qpath = args.manifest.parent / "af3_native_unverified_on_disk.tsv"
+        with open(qpath, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["job_id"])
+            w.writerows([[j] for j in unverified])
+        print(f"wrote {qpath}")
+    all_ids = sorted(verified)
     with open(args.manifest, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
         w.writerow(["job_id", "pdb", "peptide", "cdr3", "mhc_hint"])
@@ -161,7 +185,17 @@ def main() -> int:
         w.writerow(["job_id", "source", "peptide"])
         w.writerows(report)
     print(f"matched {len(seen)} in this run; manifest now {len(all_ids)} "
-          f"natives ({len(on_disk)} CIFs on disk); excluded {unmatched}")
+          f"natives ({len(on_disk)} CIFs on disk, {len(unverified)} unverified); "
+          f"excluded {unmatched}; quarantined {len(quarantined)}")
+    if quarantined:
+        print(f"QUARANTINED {len(quarantined)}: chain-pair match failed and no "
+              f"file was written. Inspect before assigning a job_id.")
+        qpath = args.manifest.parent / "af3_native_quarantine.tsv"
+        with open(qpath, "w", newline="") as fh:
+            w = csv.writer(fh, delimiter="\t")
+            w.writerow(["source", "peptide", "alpha_prefix", "beta_prefix"])
+            w.writerows(quarantined)
+        print(f"wrote {qpath}")
     print(f"-> {args.out}, {args.manifest}, {args.report}")
     return 0
 

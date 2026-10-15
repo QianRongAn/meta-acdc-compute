@@ -1,15 +1,20 @@
-"""Proteome-wide candidate selection for the first 50k oligo pool (Q3, KN-8).
+"""Proteome-wide candidate selection for the first study pool (Q3, KN-8).
 
-Proposal: "select the most informative 0.05% (50,000) of candidates from a
-filtered pool of 5 million peptides, prioritized by Expected Information
-Gain (EIG)."
+Proposal: select the most informative 0.05% of candidates from a filtered pool
+of 5 million peptides, prioritized by Expected Information Gain (EIG).
+
+ARITHMETIC CORRECTION (2026-10-15, docs/AUDIT.md): 0.05% of 5,000,000 is
+**2,500**, not 50,000. 50,000 is 1%. The earlier docstring (and the
+"50× compression" language in the papers) used the wrong figure, which
+overstated the compression by 20×. Use 2,500 for 0.05%, or state the fraction
+explicitly whenever the pool size changes.
 
 Pipeline (stages, resumable):
   prefilter: human Swiss-Prot FASTA -> all 9/10-mers -> MHCflurry
              presentation scores -> top 5M pool -> data/processed/acdc_pool5m.tsv.gz
   rank:      pool + TCR -> 20x bootstrap LR ensemble (VDJdb epitope-split
              train fold, same protocol as simulate_al.py) -> EIG (BALD)
-             -> top 50k -> data/processed/kn8_top50k_<tcr>.tsv
+             -> top pool -> data/processed/kn8_top_<tcr>.tsv
 
 The wet-lab ordering (KN-8) is the user's; this produces the ranked
 candidate list. Model caveat: EIG from the weak sequence surrogate;

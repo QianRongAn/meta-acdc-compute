@@ -25,10 +25,16 @@ for s in 0 1 2; do
     continue
   fi
   echo "== 1/4 score seed $s $(date +%T)"
-  $PY src/meta_acdc/structure/score_predictions.py \
+  if ! $PY src/meta_acdc/structure/score_predictions.py \
       --cifs data/raw/af3_predictions \
       --model "$CKPT/da_seed${s}.model.pt" --mask-plddt \
-      --out "$OUT/da234_scores_seed${s}.tsv" --device cuda
+      --out "$OUT/da234_scores_seed${s}.tsv" --device cuda; then
+    echo "seed $s cuda scoring failed -> CPU retry $(date +%T)"
+    $PY src/meta_acdc/structure/score_predictions.py \
+      --cifs data/raw/af3_predictions \
+      --model "$CKPT/da_seed${s}.model.pt" --mask-plddt \
+      --out "$OUT/da234_scores_seed${s}.tsv" --device cpu
+  fi
 done
 
 # 2/4 stability verdict across the 3 new seeds

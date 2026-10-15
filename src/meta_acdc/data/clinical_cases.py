@@ -1,16 +1,27 @@
-"""Gold-standard clinical cross-reactivity cases (proposal Module 3).
+"""Clinical cross-reactivity index cases (per-peptide evidence).
 
-The classic MAGE-A3/Titin case is the proposal's designated gold-standard
-validation target for the safety-scanning pipeline. This module curates the
-known case data from the literature (lit review 02, section 4) into a
-machine-readable test set for:
-- AF3/TCRmodel2 batch 2 submissions (TCR x off-target peptide pairs)
-- the in silico safety-scan benchmark (KN-11): the model must rank the
-  known lethal off-targets (titin ESDPIVAQY) at the top.
+Curated from the literature. Two corrections after the 2026-10-15 audit
+(AUDIT.md #6):
+
+1. PMIDs are only written where they have been verified. The previous file
+   carried PMID:23999405, which is a rare-earth electronic-structure paper and
+   has nothing to do with TCR toxicity. Cameron et al. 2013 (titin, Sci Transl
+   Med) is PMID 23926201. Unverified references are marked as such and must
+   not be quoted as a PMID until checked.
+2. Lethality is a property of a peptide, not of a case. "The patient died"
+   was previously attached to the whole case, so every listed candidate
+   inherited `fatal=yes` and was then flagged by a score margin. Each row now
+   carries its own severity and its own evidence.
+
+Structure identity is also explicit: 5BS0 is the MAGE-A3-reactive TCR
+crystallised WITH the titin peptide (our own structure_vdjdb_map lists
+5bs0 -> ESDPIVAQY), so scoring a predicted 5bs0/EVDPIGHLY complex is a
+cross-structure check of the target on a related receptor, not an
+independent second patient case.
 
 Usage:
     .venv/bin/python src/meta_acdc/data/clinical_cases.py \
-        --out data/processed/clinical_gold_standard.tsv
+        --out data/processed/clinical_index_cases.tsv
 """
 
 from __future__ import annotations
@@ -20,44 +31,76 @@ import csv
 import sys
 from pathlib import Path
 
-# curated from lit review 02 section 4 (all entries PMID-verified there)
+# One row per (case, peptide). Fields:
+#   case, tcr, pdb, restriction, peptide, role, severity, evidence, note
 CASES = [
-    {
-        "tcr": "A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)",
-        "target": "EVDPIGHLY",  # MAGE-A3 168-176
-        "off_targets": "ESDPIVAQY;ILAKFLHWL;KVAKELVHFL",
-        # titin (LETHAL, Cameron 2013); MAGE-A6; MAGE-B18
-        "fatal": "yes",
-        "evidence": "PMID:23999400; PMID:23999405",
-        "note": "titin ESDPIVAQY: 2 deaths (cardiac), backbone RMSD 0.285A vs target (Raman 2016, PDB 5BRZ)",
-    },
-    {
-        "tcr": "A2-restricted MAGE-A3 TCR (A118T affinity-enhanced)",
-        "target": "KVAELVHFL",  # MAGE-A3 112-120, HLA-A*02:01
-        "off_targets": "KMVELVHFL;KMAELVHFL",
-        # MAGE-A12 (LETHAL brain, Morgan 2013); MAGE-A9
-        "fatal": "yes",
-        "evidence": "PMID:23470321",
-        "note": "MAGE-A12: 3 neurotoxicity / 2 deaths (necrotic leukoencephalopathy)",
-    },
-    {
-        "tcr": "Tebentafusp/Kimmtrak (gp100 TCR, HLA-A*02:01)",
-        "target": "YLEPGPVTA",  # gp100 280-288
-        "off_targets": "YLEPGPVTV;YLEPGPVTL",
-        # on-target/off-tumor (melanocytes) — approved, manageable
-        "fatal": "no",
-        "evidence": "PMID:34525232",
-        "note": "FDA approved 2022; skin toxicity on-target/off-tumor, no Tx-related deaths",
-    },
+    # --- A3A / MAGE-A3, HLA-A*01 (PDB 5BRZ, crystallised with MAGE-A3) ----
+    dict(case="A3A-MAGEA3", tcr="A3A affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*01", peptide="EVDPIGHLY",
+         role="target", severity="approved-target",
+         evidence="PMID:23926201 (Cameron 2013, Sci Transl Med)",
+         note="MAGE-A3 168-176; affinity-enhanced TCR"),
+    dict(case="A3A-MAGEA3", tcr="A3A affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*01", peptide="ESDPIVAQY",
+         role="off-target", severity="fatal",
+         evidence="PMID:23926201 (Cameron 2013: 2 cardiac deaths via titin)",
+         note="titin; backbone RMSD 0.285 A vs target (Raman 2016)"),
+    dict(case="A3A-MAGEA3", tcr="A3A affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*01", peptide="ILAKFLHWL",
+         role="off-target", severity="not-documented",
+         evidence="unverified - do not cite a PMID",
+         note="listed candidate; no published fatality evidence found"),
+    dict(case="A3A-MAGEA3", tcr="A3A affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*01", peptide="KVAKELVHFL",
+         role="off-target", severity="not-documented",
+         evidence="unverified - do not cite a PMID",
+         note="listed candidate; no published fatality evidence found"),
+    # --- same peptide, related receptor crystallised WITH titin ------------
+    dict(case="A3A-MAGEA3-cross-structure", tcr="MAGE-A3-reactive TCR",
+         pdb="5bs0", restriction="HLA-A*01", peptide="EVDPIGHLY",
+         role="target(predicted-complex)", severity="approved-target",
+         evidence="cross-structure check only",
+         note="5BS0 is crystallised with the titin peptide "
+              "(structure_vdjdb_map: 5bs0 -> ESDPIVAQY); the MAGE-A3 target "
+              "is a PREDICTED complex on this receptor, not a second case"),
+    # --- A118T / MAGE-A12, HLA-A*02:01 ------------------------------------
+    dict(case="A118T-MAGEA12", tcr="A118T affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*02:01", peptide="KVAELVHFL",
+         role="target", severity="not-documented",
+         evidence="unverified - do not cite a PMID",
+         note="MAGE-A3 112-120"),
+    dict(case="A118T-MAGEA12", tcr="A118T affinity-enhanced MAGE-A3 TCR",
+         pdb="5brz", restriction="HLA-A*02:01", peptide="KMVELVHFL",
+         role="off-target", severity="fatal-neurotoxicity",
+         evidence="unverified - cite as Linette 2013 (MAGE-A12 neurotoxicity)",
+         note="3 neurotoxicity / 2 deaths reported"),
+    # --- Tebentafusp / Kimmtrak, gp100, HLA-A*02:01 -----------------------
+    dict(case="KIMMTRAK-GP100", tcr="gp100 TCR (tebentafusp)",
+         pdb="5eu6", restriction="HLA-A*02:01", peptide="YLEPGPVTA",
+         role="target", severity="approved-drug",
+         evidence="unverified - cite as tebentafusp pivotal trial",
+         note="gp100 280-288; 5EU6 is crystallised with YLEPGPVTV"),
+    dict(case="KIMMTRAK-GP100", tcr="gp100 TCR (tebentafusp)",
+         pdb="5eu6", restriction="HLA-A*02:01", peptide="YLEPGPVTV",
+         role="crystallised-peptide", severity="approved-drug",
+         evidence="unverified - cite as tebentafusp pivotal trial",
+         note="peptide present in the 5EU6 structure"),
+    dict(case="KIMMTRAK-GP100", tcr="gp100 TCR (tebentafusp)",
+         pdb="5eu6", restriction="HLA-A*02:01", peptide="YLEPGPVTL",
+         role="off-target", severity="not-documented",
+         evidence="unverified - do not cite a PMID",
+         note="mimic; on-target/off-tumour skin toxicity reported, "
+              "no treatment-related deaths"),
 ]
 
-FIELD_ORDER = ["tcr", "target", "off_targets", "fatal", "evidence", "note"]
+FIELD_ORDER = ["case", "tcr", "pdb", "restriction", "peptide", "role",
+               "severity", "evidence", "note"]
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", type=Path,
-                    default=Path("data/processed/clinical_gold_standard.tsv"))
+                    default=Path("data/processed/clinical_index_cases.tsv"))
     args = ap.parse_args()
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", newline="") as fh:
@@ -65,7 +108,7 @@ def main() -> int:
         w.writeheader()
         for c in CASES:
             w.writerow(c)
-    print(f"gold-standard clinical cases: {len(CASES)} -> {args.out}")
+    print(f"clinical index cases: {len(CASES)} rows -> {args.out}")
     return 0
 
 

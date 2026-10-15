@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -33,33 +34,89 @@ AA_PHYS = {
 
 
 def featurize(cdr3: str, peptide: str) -> np.ndarray:
-    """CDR3 + peptide -> fixed-size feature vector (physicochemical profile)."""
+    """CDR3 + peptide -> fixed-size feature vector.
+
+    Two blocks:
+    * per-chain summaries (mean / std / extremes / terminal means / length)
+    * TCR x peptide INTERACTION terms. Without these the model is exactly
+      s(T,P) = a(T) + b(P): swapping the TCR shifts every peptide's logit by
+      the same amount and cannot change the ranking of candidates for that
+      receptor, so it cannot act as a per-receptor off-target surrogate
+      (AUDIT.md #12).
+
+    The interactions are products of chain-level physicochemical summaries
+    (hydrophobicity, length-normalised bulk via extremes and means) plus a
+    position-wise complementarity term.
+    """
     f = []
+    summaries = []
     for seq in (cdr3, peptide):
         vals = np.array([AA_PHYS.get(a, 0.0) for a in seq])
-        # fixed-length profile: mean + moments + positional bins
-        f += [
+        summary = [
             vals.mean(), vals.std(), vals.min(), vals.max(),
             vals[:7].mean() if len(vals) >= 7 else vals.mean(),
             vals[-7:].mean() if len(vals) >= 7 else vals.mean(),
             len(vals),
         ]
-    # 3-mer composition of the peptide (standard for epitopes)
+        summaries.append((vals, summary))
+        f += summary
+
+    (tv, ts), (pv, ps) = summaries
+    # chain-level products: 3 phys scalars (mean, min, max) x same on the other
+    for i in (0, 2, 3):
+        for j in (0, 2, 3):
+            f.append(ts[i] * ps[j])
+    # position-wise complementarity: matched hydrophobic core vs mismatch
+    n = min(len(tv), len(pv))
+    if n:
+        f.append(float(np.mean(tv[:n] * pv[:n])))
+        f.append(float(np.mean(np.abs(tv[:n] - pv[:n]))))
+        f.append(float(np.sum(tv[:n] > 0) * np.sum(pv[:n] > 0)))
+    else:
+        f += [0.0, 0.0, 0.0]
+
+    # amino-acid composition of the peptide (20-dim). NOTE: the previous
+    # implementation counted 3-letter windows ("GIL") but then looked up
+    # single letters ("G"), so all 20 values were always 0 and the baseline
+    # was silently feature-starved. Keep the lookup and the count on the same
+    # alphabet; this is asserted in tests/test_baseline_features.py.
     from collections import Counter
-    kmers = Counter(peptide[i:i + 3] for i in range(len(peptide) - 2))
+    counts = Counter(peptide)
+    n_pep = max(len(peptide), 1)
     for aa in "ACDEFGHIKLMNPQRSTVWY":
-        f.append(kmers.get(aa, 0) / max(len(peptide) - 2, 1))
+        f.append(counts.get(aa, 0) / n_pep)
     return np.asarray(f, dtype=float)
 
 
 def load(path: Path) -> tuple[list[str], list[str], np.ndarray]:
+    """Read (cdr3_beta, peptide, label) from the unified TSV.
+
+    Refuses to run on a file whose label column is empty. Since 2026-10-15 the
+    VDJdb importer no longer writes a label at all: vdjdb.score is evidence
+    confidence, not a binding outcome, so turning it into 1/0 manufactured
+    185,117 "non-binders" and every AUROC computed on them (AUDIT.md #1).
+    """
     cdr3s, peptides, labels = [], [], []
+    n_missing = 0
     with open(path, newline="", encoding="utf-8", errors="replace") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
-            if row["cdr3_beta"] and row["peptide"] and row["label"]:
-                cdr3s.append(row["cdr3_beta"])
-                peptides.append(row["peptide"])
-                labels.append(int(row["label"]))
+            if not (row["cdr3_beta"] and row["peptide"]):
+                continue
+            if not row["label"]:
+                n_missing += 1
+                continue
+            cdr3s.append(row["cdr3_beta"])
+            peptides.append(row["peptide"])
+            labels.append(int(row["label"]))
+    if n_missing and not cdr3s:
+        raise ValueError(
+            f"{path}: {n_missing} rows have no binding label. VDJdb's score is "
+            f"an evidence-confidence field, so binding labels must come from "
+            f"an assay-derived source. Nothing can be scored on this file "
+            f"until the labels are rebuilt (see docs/AUDIT.md #1).")
+    if n_missing:
+        print(f"warning: skipped {n_missing} rows without a binding label",
+              file=sys.stderr)
     return cdr3s, peptides, np.asarray(labels, dtype=float)
 
 

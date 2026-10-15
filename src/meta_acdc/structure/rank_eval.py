@@ -30,11 +30,17 @@ def main() -> int:
                     default=Path("data/processed/structure_vdjdb_map.tsv"))
     args = ap.parse_args()
 
-    scores: dict[str, float] = {}
+    # Average over ranked models first. Writing each *_model_N row into the
+    # same dict key kept only the last model in the file, so the reported
+    # recall depended on row order (two models scoring 0.1/0.9 flipped
+    # recall@0.5 from 100% to 0%). See AUDIT.md #24.
+    per_job: dict[str, list[float]] = defaultdict(list)
     with open(args.scores, newline="", encoding="utf-8", errors="replace") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
             if row["score"]:
-                scores[row["job_id"].rsplit("_model", 1)[0]] = float(row["score"])
+                per_job[row["job_id"].rsplit("_model", 1)[0]].append(
+                    float(row["score"]))
+    scores = {job: sum(v) / len(v) for job, v in per_job.items() if v}
 
     # evidence: (pdb, peptide) -> set of cdr3s with VDJdb validation
     evidence: dict[tuple[str, str], int] = defaultdict(int)

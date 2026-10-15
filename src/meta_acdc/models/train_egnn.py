@@ -85,6 +85,13 @@ def main() -> int:
                     help="model output path (default: <data>.model.pt)")
     ap.add_argument("--seed", type=int, default=0,
                     help="torch init + batch-order seed (split seed stays 42)")
+    ap.add_argument("--group-by", choices=["pdb", "family"], default="family",
+                    help="fold grouping: pdb = same complex only; family = "
+                         "also merges PDBs sharing a receptor (recommended; "
+                         "needs --family-map)")
+    ap.add_argument("--family-map", type=Path,
+                    default=Path("data/processed/pdb_family_map.tsv"),
+                    help="pdb -> family_id map (structure/family_map.py)")
     args = ap.parse_args()
     node_dim, edge_dim = args.node_dim, args.edge_dim
 
@@ -96,9 +103,32 @@ def main() -> int:
     print(f"config: node_dim={node_dim} edge_dim={edge_dim} epochs={args.epochs} "
           f"seed={args.seed} device={args.device}", flush=True)
 
-    # PDB-grouped split: all variants (native + decoys) of one PDB share a fold
+    # Complex-identity grouping: every decoy and every re-prediction of the
+    # same PDB must land in ONE fold. The old key only stripped "-disp"/"<-",
+    # so "5brz_0", "5brz_1" and "af3-5brz_EVDPIGHLY" were three independent
+    # groups and the crystal version of a complex could sit in validation
+    # while its predicted copy was in training (AUDIT.md #4).
+    family: dict[str, str] = {}
+    if args.group_by == "family":
+        fpath = args.family_map
+        if not fpath.exists():
+            print(f"family map {fpath} not found; falling back to pdb grouping",
+                  flush=True)
+            args.group_by = "pdb"
+        else:
+            with open(fpath, newline="") as fh:
+                for r in csv.DictReader(fh, delimiter="\t"):
+                    family[r["pdb"]] = r["family_id"]
+
     def pdb_group(name: str) -> str:
-        return name.split("-disp")[0].split("<-")[0]
+        n = name.split("<-")[0].split("-disp")[0]
+        for pre in ("af3-", "tcr-", "inst-", "nativetcr-"):
+            if n.startswith(pre):
+                n = n[len(pre):]
+        head = n.split("_")[0]          # peptide / replication suffix
+        # PDB ids are exactly 4 characters; synthetic stems stay unique
+        pdb = head if len(head) == 4 else n
+        return family.get(pdb, pdb) if family else pdb
 
     groups: dict[str, list[int]] = {}
     for i, p in enumerate(pdbs):

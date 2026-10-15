@@ -2,9 +2,15 @@
 
 For scored candidate peptides that have the same length as their cognate
 crystal peptide, correlate the model score with sequence identity to the
-cognate. A strong correlation would mean the model merely measures
-similarity; a weak one (and, decisively, same-identity peptides with opposite
-scores) shows it captures side-chain chemistry instead.
+cognate.
+
+The output is a *screening* result only. A weak correlation does NOT show the
+model "captures side-chain chemistry": identity to the cognate peptide is one
+crude sequence proxy, and a null result can also come from structure quality,
+receptor-family shifts, decoy artefacts, or noise. Supporting a mechanistic
+claim needs controlled comparisons plus independent binding labels
+(AUDIT.md #28). Two peptides at the same identity that score differently do
+not rule out a subtler sequence shortcut either.
 
 Usage:
     .venv/bin/python src/meta_acdc/structure/score_vs_identity.py \
@@ -60,8 +66,13 @@ def main() -> int:
         if len(set(xs)) > 1 and len(set(ys)) > 1:
             r, p = spearmanr(xs, ys)
             print(f"\nSpearman(identity, score) = {r:.3f} (P={p:.3g})")
-            print("weak/n.s. correlation => the model is not a similarity "
-                  "proxy; check same-identity pairs with opposite scores")
+            print("Reading: no association with THIS identity metric was "
+                  "detected. That is a screening result only. It does not "
+                  "show the model captures side-chain chemistry, and it does "
+                  "not exclude other sequence shortcuts or structure "
+                  "artefacts. Do not quote it as evidence of chemical "
+                  "specificity without controlled experiments and "
+                  "independent binding labels.")
     return 0
 
 

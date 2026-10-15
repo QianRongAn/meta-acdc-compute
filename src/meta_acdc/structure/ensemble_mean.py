@@ -36,6 +36,11 @@ def main() -> int:
     ap.add_argument("--scores", type=Path, nargs="+", required=True)
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/prediction_scores_ensemble.tsv"))
+    ap.add_argument("--min-coverage", type=int, default=None,
+                    help="minimum number of seeds a job must be scored by to "
+                         "appear in the output. Default: the full seed count "
+                         "(the common job set). Output gains n_seeds and "
+                         "uncertainty_known columns.")
     args = ap.parse_args()
 
     seeds = [load_seed(p) for p in args.scores]
@@ -57,15 +62,30 @@ def main() -> int:
         for job, v in d.items():
             agg.setdefault(job, []).append(v)
 
+    # A candidate scored by one seed and another by five must not both be
+    # reported as an ensemble mean: the single-seed row has no uncertainty at
+    # all, and a std of exactly 0 would read as "highly stable". Require the
+    # common job set unless the caller opts out, and always report coverage.
+    covered = [j for j, v in agg.items() if len(v) == len(good)]
+    if args.min_coverage is not None:
+        covered = [j for j, v in agg.items() if len(v) >= args.min_coverage]
+    dropped = sorted(set(agg) - set(covered))
+    if dropped:
+        print(f"dropping {len(dropped)} jobs scored by fewer than "
+              f"{args.min_coverage or len(good)} seeds; their 'std' would be "
+              f"an artefact of missing coverage, not stability", flush=True)
+    covered.sort()
+
     with open(args.out, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
-        w.writerow(["job_id", "score", "std"])
-        for job in sorted(agg):
+        w.writerow(["job_id", "score", "std", "n_seeds", "uncertainty_known"])
+        for job in covered:
             v = agg[job]
-            w.writerow([job, f"{statistics.mean(v):.4f}",
-                        f"{statistics.pstdev(v):.4f}"])
-    print(f"averaged {len(good)}/{len(seeds)} seeds over {len(agg)} jobs "
-          f"-> {args.out}")
+            known = "yes" if len(v) >= 2 else "no"   # 1 seed: std undefined, not 0
+            sd = f"{statistics.pstdev(v):.4f}" if len(v) >= 2 else "NA"
+            w.writerow([job, f"{statistics.mean(v):.4f}", sd, len(v), known])
+    print(f"averaged {len(good)}/{len(seeds)} seeds over {len(covered)} jobs "
+          f"({len(dropped)} dropped for insufficient coverage) -> {args.out}")
     return 0
 
 
