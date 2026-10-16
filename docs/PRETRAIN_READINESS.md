@@ -1,3 +1,5 @@
+> Historical repair record. Current experimental-data status and the user’s hy4 waiver are documented in [EXPERIMENTAL_EVIDENCE.md](EXPERIMENTAL_EVIDENCE.md). Existing manifest hashes are preserved; new guard code requires a new manifest before training.
+
 # Pretraining readiness repair — 2026-10-16
 
 Decision: machine validation passed for a structural-decoy prototype; **training remains blocked pending independent hy4 acceptance**. The provider returned HTTP 402, `Insufficient account funds`, before any review. No training, scheduling, replacement of historical artifacts, or restored performance claims occurred.

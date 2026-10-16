@@ -1,0 +1,76 @@
+test_ambiguous_receptor_exports_are_preserved_and_quarantined (test_experimental_evidence.ExperimentalEvidence.test_ambiguous_receptor_exports_are_preserved_and_quarantined) ... ok
+test_censored_kd_retains_inequality (test_experimental_evidence.ExperimentalEvidence.test_censored_kd_retains_inequality) ... ok
+test_condition_conflicts_are_retained (test_experimental_evidence.ExperimentalEvidence.test_condition_conflicts_are_retained) ... ok
+test_database_negative_does_not_become_universal_training_label (test_experimental_evidence.ExperimentalEvidence.test_database_negative_does_not_become_universal_training_label) ... ok
+test_duplicate_assay_source_ids_fail_closed (test_experimental_evidence.ExperimentalEvidence.test_duplicate_assay_source_ids_fail_closed) ... ok
+test_endpoints_are_separate (test_experimental_evidence.ExperimentalEvidence.test_endpoints_are_separate) ... ok
+test_epitope_mismatch_is_quarantined (test_experimental_evidence.ExperimentalEvidence.test_epitope_mismatch_is_quarantined) ... ok
+test_group_match_cannot_substitute_for_exact_receptor_assay_link (test_experimental_evidence.ExperimentalEvidence.test_group_match_cannot_substitute_for_exact_receptor_assay_link) ... ok
+test_invalid_assay_id_and_unit_are_refused (test_experimental_evidence.ExperimentalEvidence.test_invalid_assay_id_and_unit_are_refused) ... ok
+test_missing_alpha_does_not_inherit_group_sequence (test_experimental_evidence.ExperimentalEvidence.test_missing_alpha_does_not_inherit_group_sequence) ... ok
+test_future_training_reservation_is_enforced (test_experimental_evidence.ExternalPanel.test_future_training_reservation_is_enforced) ... ok
+test_known_family_is_refused_even_if_only_one_chain_matches (test_experimental_evidence.ExternalPanel.test_known_family_is_refused_even_if_only_one_chain_matches) ... ok
+test_missing_registry_is_not_silently_ignored (test_experimental_evidence.ExternalPanel.test_missing_registry_is_not_silently_ignored) ... ok
+test_panel_has_matched_positive_and_conditional_negative (test_experimental_evidence.ExternalPanel.test_panel_has_matched_positive_and_conditional_negative) ... ok
+test_single_chain_associations_are_also_reserved (test_experimental_evidence.ExternalPanel.test_single_chain_associations_are_also_reserved) ... ok
+test_undetected_is_not_zero_affinity (test_experimental_evidence.ExternalPanel.test_undetected_is_not_zero_affinity) ... ok
+test_missing_atom_is_not_graft_eligible (test_release_safety.AtomIntegrity.test_missing_atom_is_not_graft_eligible) ... ok
+test_bad_input_does_not_truncate_output (test_release_safety.Ingestion.test_bad_input_does_not_truncate_output) ... ok
+test_csv_and_tsv_preserve_assays_and_conflicts (test_release_safety.Ingestion.test_csv_and_tsv_preserve_assays_and_conflicts) ... ok
+test_endpoint_and_unit_boundaries (test_release_safety.Ingestion.test_endpoint_and_unit_boundaries) ... ok
+test_max_rows_is_enforced (test_release_safety.Ingestion.test_max_rows_is_enforced) ... ok
+test_old_vdj_labels_are_refused (test_release_safety.Ingestion.test_old_vdj_labels_are_refused) ... ok
+test_artifact_tamper_refused (test_release_safety.ManifestSafety.test_artifact_tamper_refused) ... ok
+test_binding_scope_is_not_authorized (test_release_safety.ManifestSafety.test_binding_scope_is_not_authorized) ... ok
+test_manifest_required (test_release_safety.ManifestSafety.test_manifest_required) ... ok
+test_single_and_mixed_batch_match_scoring (test_release_safety.ModelConsistency.test_single_and_mixed_batch_match_scoring) ... ok
+test_family_components_and_fold_stability (test_release_safety.StructuralSafety.test_family_components_and_fold_stability) ... ok
+test_gly_to_ala_cannot_fake_a_sidechain (test_release_safety.StructuralSafety.test_gly_to_ala_cannot_fake_a_sidechain) ... ok
+test_high_confidence_parse_failure_is_rejected (test_release_safety.StructuralSafety.test_high_confidence_parse_failure_is_rejected) ... ok
+test_missing_backbone_graft_refused (test_release_safety.StructuralSafety.test_missing_backbone_graft_refused) ... ok
+test_per_model_confidence_not_borrowed (test_release_safety.StructuralSafety.test_per_model_confidence_not_borrowed) ... ok
+test_prefix_graft_is_refused (test_release_safety.StructuralSafety.test_prefix_graft_is_refused) ... ok
+test_split_identity_aliases (test_release_safety.StructuralSafety.test_split_identity_aliases) ... ok
+test_attribution_runs (test_structure_pipeline.TestAttribution.test_attribution_runs) ... skipped 'attribution fixtures missing'
+test_to_mutant_truncation_only (test_structure_pipeline.TestAttribution.test_to_mutant_truncation_only) ... ok
+test_ece_bounds_and_improvement (test_structure_pipeline.TestCalibration.test_ece_bounds_and_improvement) ... ok
+test_candidate_routed_not_dropped (test_structure_pipeline.TestCandidateRouting.test_candidate_routed_not_dropped) ... ok
+test_unrecognizable_tcr_quarantined_not_crash (test_structure_pipeline.TestCandidateRouting.test_unrecognizable_tcr_quarantined_not_crash) ... ok
+test_roles (test_structure_pipeline.TestChainClassification.test_roles) ... ok
+test_matches_no_match_when_missing (test_structure_pipeline.TestChainPairMatching.test_matches_no_match_when_missing) ... ok
+test_matches_swapped_columns (test_structure_pipeline.TestChainPairMatching.test_matches_swapped_columns) ... ok
+test_tcr_pair (test_structure_pipeline.TestChainPairMatching.test_tcr_pair) ... ok
+test_fatal_mimicry_flagged (test_structure_pipeline.TestClinicalScan.test_fatal_mimicry_flagged) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:417: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3hensnjw/scan.tsv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader(open(out), delimiter="\t"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_low_complexity_rejected (test_structure_pipeline.TestComplexityFilter.test_low_complexity_rejected) ... ok
+test_build_data_serializable (test_structure_pipeline.TestDashboard.test_build_data_serializable) ... /home/administrator/docs/meta-acdc-readiness/src/meta_acdc/dashboard/server.py:83: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/administrator/docs/meta-acdc-readiness/data/processed/af3_native_todo.txt' mode='r' encoding='UTF-8'>
+  return {ln.strip() for ln in open(p)} if p.exists() else set()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/administrator/docs/meta-acdc-readiness/src/meta_acdc/dashboard/server.py:83: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/administrator/docs/meta-acdc-readiness/data/processed/af3_upload_todo.txt' mode='r' encoding='UTF-8'>
+  return {ln.strip() for ln in open(p)} if p.exists() else set()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_cif_parse_and_identity (test_structure_pipeline.TestDataFixtures.test_cif_parse_and_identity) ... skipped 'fixture missing: /home/administrator/docs/meta-acdc-readiness/data/raw/af3_instances/A/1ao7_LLFGYPVYV_model_0.cif'
+test_qc_table (test_structure_pipeline.TestDataFixtures.test_qc_table) ... ok
+test_relabel_map_present_and_sane (test_structure_pipeline.TestDataFixtures.test_relabel_map_present_and_sane) ... ok
+test_charge_tables_net_charge (test_structure_pipeline.TestElectrostatics.test_charge_tables_net_charge) ... ok
+test_coulomb_symmetry (test_structure_pipeline.TestElectrostatics.test_coulomb_symmetry) ... ok
+test_features_appended_and_respond (test_structure_pipeline.TestElectrostatics.test_features_appended_and_respond) ... skipped 'structure fixtures missing'
+test_average_across_seeds (test_structure_pipeline.TestEnsembleMean.test_average_across_seeds) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:238: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc1k9l3nk/mean.tsv' mode='r' encoding='UTF-8'>
+  row = next(csv.DictReader(open(out), delimiter="\t"))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_degenerate_seed_excluded (test_structure_pipeline.TestEnsembleMean.test_degenerate_seed_excluded) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:269: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpreu4mr9y/mean.tsv' mode='r' encoding='UTF-8'>
+  for x in csv.DictReader(open(out), delimiter="\t")}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_legacy_fallback_removed_quarantines_by_default (test_structure_pipeline.TestImportUniqueFallback.test_legacy_fallback_removed_quarantines_by_default) ... ok
+test_unique_fallback_no_collapse (test_structure_pipeline.TestImportUniqueFallback.test_unique_fallback_no_collapse) ... ok
+test_entry_points_importable (test_structure_pipeline.TestPackaging.test_entry_points_importable) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 0.425s
+
+OK (skipped=3)

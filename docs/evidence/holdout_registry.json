@@ -1,0 +1,28 @@
+{
+  "purpose": "reserved_external_test_only",
+  "scope": "entire_receptor_family_and_future_predicted_copies",
+  "rule": "reject either corresponding alpha/beta variable-domain near match, or CDR3 core >=0.9 SequenceMatcher similarity with minimum 8 residues; conservative reservation, not specificity equivalence",
+  "receptors": [
+    {
+      "receptor_name": "12-6",
+      "alpha_variable": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQ",
+      "beta_variable": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLT",
+      "pmid": "32518267",
+      "receptor_sequence_source": "[{\"file\":\"6VRM_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/3\",\"sha256\":\"0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6\"},{\"file\":\"6VRM_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/4\",\"sha256\":\"b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab\"}]"
+    },
+    {
+      "receptor_name": "38-10",
+      "alpha_variable": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLS",
+      "beta_variable": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLT",
+      "pmid": "32518267",
+      "receptor_sequence_source": "[{\"file\":\"6VRN_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/3\",\"sha256\":\"0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37\"},{\"file\":\"6VRN_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/4\",\"sha256\":\"153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878\"}]"
+    },
+    {
+      "receptor_name": "1a2",
+      "alpha_variable": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLL",
+      "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLT",
+      "pmid": "32518267",
+      "receptor_sequence_source": "[{\"file\":\"6VQO_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/3\",\"sha256\":\"8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c\"},{\"file\":\"6VQO_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/4\",\"sha256\":\"7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5\"}]"
+    }
+  ]
+}

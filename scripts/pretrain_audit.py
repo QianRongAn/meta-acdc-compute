@@ -124,7 +124,7 @@ def main():
             from meta_acdc.data.validate_release import validate
             m,_=load_release(args.release,require_training=False)
             v=validate(args.release.parent)
-            result=dict(machine_checks_passed=v['passed'],training_allowed=v['passed'] and m.get('training_allowed',False),binding_training_allowed=False,decision=('GO_STRUCTURAL_ONLY' if m.get('training_allowed',False) else 'WAIT_INDEPENDENT_ACCEPTANCE') if v['passed'] else 'NO_GO',task=m['task'],validation=v)
+            result=dict(machine_checks_passed=v['passed'],training_allowed=v['passed'] and m.get('training_allowed',False),binding_training_allowed=False,decision=('GO_STRUCTURAL_ONLY' if m.get('training_allowed',False) else 'WAIT_TRAINING_RELEASE_DECISION') if v['passed'] else 'NO_GO',task=m['task'],validation=v)
         else:result = audit(args.project_root.resolve())
     except Exception as exc:
         result = dict(machine_checks_passed=False,training_allowed=False,decision='NO_GO',error=f'{type(exc).__name__}: {exc}')

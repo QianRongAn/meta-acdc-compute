@@ -1,0 +1,24 @@
+{
+  "n_records": 6,
+  "n_receptors": 3,
+  "n_positive": 3,
+  "n_conditional_negative": 3,
+  "n_studies": 1,
+  "training_allowed": false,
+  "benchmark_allowed": false,
+  "use": "external_sanity_panel_only",
+  "limitations": [
+    "single-study selected panel",
+    "wild-type/mutant peptide pair only",
+    "no broad specificity or clinical accuracy claim",
+    "negative only within stated SPR concentration and assay conditions"
+  ],
+  "n_database_evidence": 1464,
+  "observed_outcomes": {
+    "positive": 1197,
+    "conditional_negative": 267
+  },
+  "n_primary_review_pending": 1464,
+  "n_condition_conflict_groups": 105,
+  "n_screened_candidates": 20
+}

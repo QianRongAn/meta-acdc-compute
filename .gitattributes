@@ -1,0 +1,3 @@
+
+# Empty terminal TSV fields and CSV-standard CRLF are data, not code whitespace.
+docs/evidence/*.tsv whitespace=-blank-at-eol

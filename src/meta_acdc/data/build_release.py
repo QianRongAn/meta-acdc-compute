@@ -72,7 +72,10 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
                     units.append((rs,meta,graph))
                 except ValueError as e:excluded.append(dict(pdb=pdb,complex_id=identifier,reason=str(e)))
         except Exception as e:excluded.append(dict(pdb=pdb,reason=f'{type(e).__name__}: {e}'))
-    records=[x[1] for x in units];nf=assign_folds(records)
+    records=[x[1] for x in units]
+    from .experimental_evidence import assert_reserved_absent
+    assert_reserved_absent(records)
+    nf=assign_folds(records)
     if predicted_root is not None:
         from ..structure.quality import build_qc,annotate_prediction
         from ..structure.cif import parse_cif

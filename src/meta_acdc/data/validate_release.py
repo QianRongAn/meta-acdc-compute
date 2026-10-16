@@ -78,11 +78,12 @@ def publish(folder,code_root):
     code_files={}
     for p in (code_root/'src/meta_acdc').rglob('*.py'):code_files[str(p.relative_to(code_root))]=sha256(p)
     code_files['scripts/pretrain_audit.py']=sha256(code_root/'scripts/pretrain_audit.py')
+    code_files['docs/evidence/holdout_registry.json']=sha256(code_root/'docs/evidence/holdout_registry.json')
     files={p.name:{'sha256':sha256(p),'bytes':p.stat().st_size} for p in sorted(folder.iterdir()) if p.is_file() and not p.name.endswith('.tmp')}
     sources={}
     d=json.loads((folder/'structure_records.json').read_text())
     for x in d:sources[x['source_path']]=x['source_sha256']
-    m={'schema_version':1,'status':'validated','task':STRUCTURAL_TASK,'training_allowed':False,'acceptance_status':'pending_independent_hy4_review','acceptance_blocker':'hy4 upstream quota HTTP 402; no acceptance verdict obtained','binding_training_allowed':False,'domains':report['domains'],'dataset':'graphs.pt','code_commit':subprocess.run(['git','-C',str(code_root),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip(),'code_files':code_files,'files':files,'source_structures':sources,'splits':report['folds'],'scope':'class-I alpha-beta crystal/predicted native versus synthetic decoys; not experimentally validated binding probabilities'}
+    m={'schema_version':1,'status':'validated','task':STRUCTURAL_TASK,'training_allowed':False,'acceptance_status':'machine_validation_only','acceptance_blocker':'A separate explicit training release decision is required; publishing data does not start or authorize training','binding_training_allowed':False,'domains':report['domains'],'dataset':'graphs.pt','code_commit':subprocess.run(['git','-C',str(code_root),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip(),'code_files':code_files,'files':files,'source_structures':sources,'splits':report['folds'],'scope':'class-I alpha-beta crystal/predicted native versus synthetic decoys; not experimentally validated binding probabilities'}
     manifest.write_text(json.dumps(m,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='folds'}),flush=True)
     return m
 

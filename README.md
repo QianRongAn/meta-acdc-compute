@@ -1,3 +1,5 @@
+> **2026-10-16 experimental-evidence update:** [evidence report](docs/EXPERIMENTAL_EVIDENCE.md): 6 primary-verified conditional binding observations reserved for external checks, 1,464 database evidence rows under review, and mandatory receptor holdout guards. Hy4 is deferred at the user’s request. No new training or performance claim. Earlier release manifests are historical and need new code-hash acceptance.
+
 > **2026-10-16 readiness update:** legacy data caches/checkpoints are historical and ineligible for retraining. See [PRETRAIN_READINESS.md](docs/PRETRAIN_READINESS.md). Rebuilt structural data passed machine checks; independent hy4 acceptance is pending (provider HTTP 402). Training remains blocked. No binding/clinical performance is authorized.
 
 # Meta-ACDC — 用 AI 预测 T 细胞受体的"误伤"风险

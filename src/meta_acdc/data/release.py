@@ -37,6 +37,9 @@ def load_release(path, *, data_path=None, task=STRUCTURAL_TASK, require_training
     if 'input_sources.json' in m['files']:
         for name,record in json.loads((path.parent/'input_sources.json').read_text()).items():
             if sha256(name)!=record['sha256']:raise ValueError('source evidence changed: '+name)
+    if 'structure_records.json' in m['files']:
+        from .experimental_evidence import assert_reserved_absent
+        assert_reserved_absent(json.loads((path.parent/'structure_records.json').read_text()))
     actual=(path.parent/m['dataset']).resolve()
     if not actual.is_relative_to(path.parent) or m['dataset'] not in m['files']:raise ValueError('dataset is outside approved artifacts')
     if 'splits.json' in m['files'] and json.loads((path.parent/'splits.json').read_text())!=m.get('splits'):raise ValueError('manifest/frozen split mismatch')
