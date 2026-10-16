@@ -14,6 +14,14 @@ test_missing_registry_is_not_silently_ignored (test_experimental_evidence.Extern
 test_panel_has_matched_positive_and_conditional_negative (test_experimental_evidence.ExternalPanel.test_panel_has_matched_positive_and_conditional_negative) ... ok
 test_single_chain_associations_are_also_reserved (test_experimental_evidence.ExternalPanel.test_single_chain_associations_are_also_reserved) ... ok
 test_undetected_is_not_zero_affinity (test_experimental_evidence.ExternalPanel.test_undetected_is_not_zero_affinity) ... ok
+test_all_external_training_labels_are_empty (test_primary_panel.PrimaryPanel.test_all_external_training_labels_are_empty) ... ok
+test_censored_value_is_not_exact_affinity (test_primary_panel.PrimaryPanel.test_censored_value_is_not_exact_affinity) ... ok
+test_parent_and_engineered_wt_are_different_observations (test_primary_panel.PrimaryPanel.test_parent_and_engineered_wt_are_different_observations) ... ok
+test_positive_only_receptors_do_not_gain_fabricated_wt_negatives (test_primary_panel.PrimaryPanel.test_positive_only_receptors_do_not_gain_fabricated_wt_negatives) ... ok
+test_real_source_snapshots (test_primary_panel.PrimaryPanel.test_real_source_snapshots) ... ok
+test_source_tampering_is_rejected (test_primary_panel.PrimaryPanel.test_source_tampering_is_rejected) ... ok
+test_training_label_is_rejected (test_primary_panel.PrimaryPanel.test_training_label_is_rejected) ... ok
+test_whole_family_and_graft_donors_are_removed (test_primary_panel.PrimaryPanel.test_whole_family_and_graft_donors_are_removed) ... ok
 test_missing_atom_is_not_graft_eligible (test_release_safety.AtomIntegrity.test_missing_atom_is_not_graft_eligible) ... ok
 test_bad_input_does_not_truncate_output (test_release_safety.Ingestion.test_bad_input_does_not_truncate_output) ... ok
 test_csv_and_tsv_preserve_assays_and_conflicts (test_release_safety.Ingestion.test_csv_and_tsv_preserve_assays_and_conflicts) ... ok
@@ -40,7 +48,7 @@ test_roles (test_structure_pipeline.TestChainClassification.test_roles) ... ok
 test_matches_no_match_when_missing (test_structure_pipeline.TestChainPairMatching.test_matches_no_match_when_missing) ... ok
 test_matches_swapped_columns (test_structure_pipeline.TestChainPairMatching.test_matches_swapped_columns) ... ok
 test_tcr_pair (test_structure_pipeline.TestChainPairMatching.test_tcr_pair) ... ok
-test_fatal_mimicry_flagged (test_structure_pipeline.TestClinicalScan.test_fatal_mimicry_flagged) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:417: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp3hensnjw/scan.tsv' mode='r' encoding='UTF-8'>
+test_fatal_mimicry_flagged (test_structure_pipeline.TestClinicalScan.test_fatal_mimicry_flagged) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:417: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmphyozbc57/scan.tsv' mode='r' encoding='UTF-8'>
   rows = list(csv.DictReader(open(out), delimiter="\t"))
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ok
@@ -58,11 +66,11 @@ test_relabel_map_present_and_sane (test_structure_pipeline.TestDataFixtures.test
 test_charge_tables_net_charge (test_structure_pipeline.TestElectrostatics.test_charge_tables_net_charge) ... ok
 test_coulomb_symmetry (test_structure_pipeline.TestElectrostatics.test_coulomb_symmetry) ... ok
 test_features_appended_and_respond (test_structure_pipeline.TestElectrostatics.test_features_appended_and_respond) ... skipped 'structure fixtures missing'
-test_average_across_seeds (test_structure_pipeline.TestEnsembleMean.test_average_across_seeds) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:238: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc1k9l3nk/mean.tsv' mode='r' encoding='UTF-8'>
+test_average_across_seeds (test_structure_pipeline.TestEnsembleMean.test_average_across_seeds) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:238: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpd1t4nksz/mean.tsv' mode='r' encoding='UTF-8'>
   row = next(csv.DictReader(open(out), delimiter="\t"))
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ok
-test_degenerate_seed_excluded (test_structure_pipeline.TestEnsembleMean.test_degenerate_seed_excluded) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:269: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpreu4mr9y/mean.tsv' mode='r' encoding='UTF-8'>
+test_degenerate_seed_excluded (test_structure_pipeline.TestEnsembleMean.test_degenerate_seed_excluded) ... /home/administrator/docs/meta-acdc-readiness/tests/test_structure_pipeline.py:269: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpgynd8cor/mean.tsv' mode='r' encoding='UTF-8'>
   for x in csv.DictReader(open(out), delimiter="\t")}
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ok
@@ -71,6 +79,6 @@ test_unique_fallback_no_collapse (test_structure_pipeline.TestImportUniqueFallba
 test_entry_points_importable (test_structure_pipeline.TestPackaging.test_entry_points_importable) ... ok
 
 ----------------------------------------------------------------------
-Ran 56 tests in 0.425s
+Ran 64 tests in 0.436s
 
 OK (skipped=3)

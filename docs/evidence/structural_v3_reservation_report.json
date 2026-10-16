@@ -1,0 +1,148 @@
+{
+  "source_release": "/home/administrator/docs/meta-acdc-readiness/data/releases/20261016-structural-v2",
+  "source_manifest_sha256": "fe4094589110c2dde32c9b284f284238d59a47d06e43f5091bb3ae5c01d53c3b",
+  "registry_sha256": "a5803413d6ba4d7ecfada7a576dfa0190afbf3e2d684e50d77103dcc4510f905",
+  "excluded_complexes": [
+    "7ow5",
+    "7ow6",
+    "7pb2_0",
+    "7pb2_1",
+    "af3-7ow5_VVVGAGGVGK_model_0",
+    "af3-7ow6_VVVGADGVGK_model_0"
+  ],
+  "excluded_graphs": [
+    {
+      "original_index": 190,
+      "graph_id": "7ow5",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 191,
+      "graph_id": "7ow6",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 192,
+      "graph_id": "7pb2_0",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 193,
+      "graph_id": "7pb2_1",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 293,
+      "graph_id": "af3-7ow5_VVVGAGGVGK_model_0",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 294,
+      "graph_id": "af3-7ow6_VVVGADGVGK_model_0",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 442,
+      "graph_id": "3utt_1<-af3-7ow5_VVVGAGGVGK_model_0",
+      "reason": "reserved_graft_donor"
+    },
+    {
+      "original_index": 501,
+      "graph_id": "5c0a_0<-7pb2_1",
+      "reason": "reserved_graft_donor"
+    },
+    {
+      "original_index": 537,
+      "graph_id": "5hyj_0<-7ow5",
+      "reason": "reserved_graft_donor"
+    },
+    {
+      "original_index": 585,
+      "graph_id": "5yxn<-af3-7ow6_VVVGADGVGK_model_0",
+      "reason": "reserved_graft_donor"
+    },
+    {
+      "original_index": 681,
+      "graph_id": "7ow5-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 682,
+      "graph_id": "7ow5<-5c08_1",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 683,
+      "graph_id": "7ow6-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 684,
+      "graph_id": "7ow6<-af3-6amu_MMWDRGLGMM_model_0",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 685,
+      "graph_id": "7pb2_0-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 686,
+      "graph_id": "7pb2_0<-5c09_1",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 687,
+      "graph_id": "7pb2_1-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 688,
+      "graph_id": "7pb2_1<-3vxu_1",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 884,
+      "graph_id": "af3-7ow5_VVVGAGGVGK_model_0-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 885,
+      "graph_id": "af3-7ow5_VVVGAGGVGK_model_0<-4qok",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 886,
+      "graph_id": "af3-7ow6_VVVGADGVGK_model_0-disp",
+      "reason": "reserved_receptor_family"
+    },
+    {
+      "original_index": 887,
+      "graph_id": "af3-7ow6_VVVGADGVGK_model_0<-af3-5e9d_ELAGIGILTV_model_0",
+      "reason": "reserved_receptor_family"
+    }
+  ],
+  "n_graphs_before": 910,
+  "n_graphs_after": 888,
+  "n_native_after": 300,
+  "fold_counts": {
+    "train": 537,
+    "validation": 157,
+    "calibration": 67,
+    "test": 127
+  },
+  "folds_preserved": true,
+  "association_filter": {
+    "source_sha256": "69c9b9aae2d689c41bd09fd1fd4e81d3d08ac219b64d215d2b88fa6a63ca8c38",
+    "output_sha256": "bf35c62cfb60e8a8f8f4412249e3d8bff2626afc93a7fecf5e6a183722a69ea6",
+    "quarantine_sha256": "fdc76e9673d6f3c335b78beeac161227e26230ba7afc37a5bdfde485bcb00a39",
+    "registry_sha256": "a5803413d6ba4d7ecfada7a576dfa0190afbf3e2d684e50d77103dcc4510f905",
+    "n_input": 199385,
+    "n_retained": 199279,
+    "n_quarantined": 106,
+    "rule": "either corresponding alpha/beta CDR3 core >=0.9 SequenceMatcher similarity, minimum 8 residues; conservative reservation, not specificity equivalence",
+    "training_labels_added": false
+  },
+  "training_allowed": false,
+  "reason": "external receptor reservation only; arrays retained byte-for-byte, old release unchanged"
+}

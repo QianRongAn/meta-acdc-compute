@@ -1,0 +1,54 @@
+[
+  {
+    "receptor_name": "JDI",
+    "peptide": "VVVGADGVGK",
+    "raw_kd_values_M": [
+      6.313e-05,
+      6.252e-05
+    ],
+    "sheet": "Figure S1, Table 1, 2 and 4",
+    "cells": "D6:E6",
+    "source": {
+      "path": "data/external_evidence/20261016-expansion/Source Data.xlsx",
+      "sha256": "4cdbd66fc1509d1cd056cdb6fd23d0f408fae4a696b5afddcc5aecbdd3afe8ea",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9464187/supplementaryFiles",
+      "locator": "D6:E6"
+    },
+    "count_as_independent_pairs": false
+  },
+  {
+    "receptor_name": "JDIa41b1",
+    "peptide": "VVVGADGVGK",
+    "raw_kd_values_M": [
+      7.25824717153411e-10,
+      7.612904041720185e-10
+    ],
+    "sheet": "Figure S1, Table 1, 2 and 4",
+    "cells": "D19:E19",
+    "source": {
+      "path": "data/external_evidence/20261016-expansion/Source Data.xlsx",
+      "sha256": "4cdbd66fc1509d1cd056cdb6fd23d0f408fae4a696b5afddcc5aecbdd3afe8ea",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9464187/supplementaryFiles",
+      "locator": "D19:E19"
+    },
+    "count_as_independent_pairs": false
+  },
+  {
+    "receptor_name": "JDIa41b1",
+    "peptide": "VVVGAGGVGK",
+    "raw_kd_values_M": [
+      3e-06,
+      2.99e-06,
+      3.01e-06
+    ],
+    "sheet": "Figure S1, Table 1, 2 and 4",
+    "cells": "D23:F23",
+    "source": {
+      "path": "data/external_evidence/20261016-expansion/Source Data.xlsx",
+      "sha256": "4cdbd66fc1509d1cd056cdb6fd23d0f408fae4a696b5afddcc5aecbdd3afe8ea",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9464187/supplementaryFiles",
+      "locator": "D23:F23"
+    },
+    "count_as_independent_pairs": false
+  }
+]

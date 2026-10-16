@@ -49,6 +49,9 @@ def validate(folder):
     # Independent exact variable-chain overlap check across all four folds.
     from .build_release import domain,similar
     items=list(meta.values())
+    from .experimental_evidence import assert_reserved_absent
+    try:assert_reserved_absent(items)
+    except ValueError as exc:errors.append(str(exc))
     for i,a in enumerate(items):
         for b in items[:i]:
             if a['fold']!=b['fold'] and similar(a['alpha'],b['alpha']) and similar(a['beta'],b['beta']):
@@ -56,6 +59,8 @@ def validate(folder):
     with (folder/'vdjdb.associations.tsv').open() as f:
         vdj=list(csv.DictReader(f,delimiter='\t'))
     if not vdj or any(x['label'] or x['label_scope']!='unlabeled' for x in vdj):errors.append('VDJdb carries fabricated binding labels')
+    try:assert_reserved_absent(vdj)
+    except ValueError as exc:errors.append(str(exc))
     assay=Counter()
     with (folder/'iedb.assays.tsv').open() as f:
         for row in csv.DictReader(f,delimiter='\t'):

@@ -1,0 +1,1040 @@
+{
+  "jobs": [
+    {
+      "job_id": "external_2e378eb1f828de5d",
+      "evidence_id": "PMID32518267:12-6:SPR:HMTEVVRHC",
+      "lineage": "12-6",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "2e378eb1f828de5d317952e53f468b64fbd45a780a0f04ca726edee00b926d0d",
+      "fasta_sha256": "9b23d4993349424d2bed91ca0ba4d0e9b50a253c88003ab0f014a2c3df627081",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRHC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_3.json",
+          "sha256": "0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_4.json",
+          "sha256": "b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRM_entity_1.json",
+          "sha256": "62b28a3a7541b91046acb5e91d4de42a4f401426c492817b6f1a1ae498043fde"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRM_entity_2.json",
+          "sha256": "e7a4e2af12715011e0a67053486de8fbe08e6565fa35adbe05e4b89887ced01c"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_422ce5b2714c1175",
+      "evidence_id": "PMID32518267:12-6:SPR:HMTEVVRRC",
+      "lineage": "12-6",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "422ce5b2714c11758b17b5ceae1594b772a5d4e50af174bb6792a7283b11eb92",
+      "fasta_sha256": "e8aaebe7bbd25ac05b9aec4b9054cd677ea1fdb684204eef1f46f86879b60500",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRRC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_3.json",
+          "sha256": "0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_4.json",
+          "sha256": "b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRM_entity_1.json",
+          "sha256": "62b28a3a7541b91046acb5e91d4de42a4f401426c492817b6f1a1ae498043fde"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRM_entity_2.json",
+          "sha256": "e7a4e2af12715011e0a67053486de8fbe08e6565fa35adbe05e4b89887ced01c"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_25269a3ae86d5fff",
+      "evidence_id": "PMID32518267:38-10:SPR:HMTEVVRHC",
+      "lineage": "38-10",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "25269a3ae86d5fffbea9ccc8d9b0a357ff94522dae3727b30c9f7242d59ebbfc",
+      "fasta_sha256": "23c00dd71a85711ef877724f7e1b612e87a55321b9ada711e1f5bf9983aecd9c",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRHC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_3.json",
+          "sha256": "0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_4.json",
+          "sha256": "153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRN_entity_1.json",
+          "sha256": "546cead8b50b42e0a00278a3fba1e6e1d6787bac34b5a0429dcf49808bd4d6a8"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRN_entity_2.json",
+          "sha256": "9f4808f6103d5e17a992e029ba76d215a8b405534fb831e78f37c4f046d147d0"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_6cd7ebb6f13e9b6a",
+      "evidence_id": "PMID32518267:38-10:SPR:HMTEVVRRC",
+      "lineage": "38-10",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "6cd7ebb6f13e9b6a91fb4daab89d79fc478647a25893031d9c637fd8e7fd904f",
+      "fasta_sha256": "7b2e46d532df5cb5392d85638abe3fa2ce21bdfecc8a0573502a099ea2b5c848",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRRC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_3.json",
+          "sha256": "0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_4.json",
+          "sha256": "153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRN_entity_1.json",
+          "sha256": "546cead8b50b42e0a00278a3fba1e6e1d6787bac34b5a0429dcf49808bd4d6a8"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VRN_entity_2.json",
+          "sha256": "9f4808f6103d5e17a992e029ba76d215a8b405534fb831e78f37c4f046d147d0"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_5f1caeb9692f58fc",
+      "evidence_id": "PMID32518267:1a2:SPR:HMTEVVRHC",
+      "lineage": "1a2",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "5f1caeb9692f58fc4ebc0d31a00f6e4d06ef80c7542c755615b38a185a48b856",
+      "fasta_sha256": "72312ed58ffeb5c9ccff3ccfd52744582fb73a19bff3457346ea845317b0ca38",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLLVRPDIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRHC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_3.json",
+          "sha256": "8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_4.json",
+          "sha256": "7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VQO_entity_1.json",
+          "sha256": "48603804ae070ad1f8e05010747434e24a82df34637b2679856fa7c5f76c5c79"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VQO_entity_2.json",
+          "sha256": "80361c36c72d4d8477d5483f49ab3c6c90ca13f121e14359b62c1c6a086012bc"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_c02dd671445acbee",
+      "evidence_id": "PMID32518267:1a2:SPR:HMTEVVRRC",
+      "lineage": "1a2",
+      "mhc_allele": "HLA-A*02:01",
+      "input_sha256": "c02dd671445acbee935234b59085d5493c3398754f450ca6af94c8789a1dbfb3",
+      "fasta_sha256": "71f7e74dc792551060d6aff0e9af11971a1a93b31a5c432c2afe55fd146ccaf4",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLLVRPDIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "HMTEVVRRC"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWEGGGLNDIFEAQKIEWHE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_3.json",
+          "sha256": "8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_4.json",
+          "sha256": "7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VQO_entity_1.json",
+          "sha256": "48603804ae070ad1f8e05010747434e24a82df34637b2679856fa7c5f76c5c79"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/6VQO_entity_2.json",
+          "sha256": "80361c36c72d4d8477d5483f49ab3c6c90ca13f121e14359b62c1c6a086012bc"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_85195ea7f6da5bbb",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGADGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "85195ea7f6da5bbbe9f18510c79da1b150f25f79dfb41a62a02bf14c48ddebf0",
+      "fasta_sha256": "45616c147872a6318338bd522e51cbd128fc1737f5bff701a00810c5f0ef22ea",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGADGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_5c9ae6de64a0fd30",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGAGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "5c9ae6de64a0fd3089e407c208da336b98231cfe5bae3a467ea98445c8bdc78a",
+      "fasta_sha256": "d30a3ee200c3e95c63932babb3f612a9bf726842945c502eb5624b872ac397b0",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGAGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_8222e93103ccfcf4",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGACGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "8222e93103ccfcf4b6b73e61796d0a9b9f44c0dfeffabe74a3c3fd49bdfc1381",
+      "fasta_sha256": "855658164c2b8e6aacc02d04a7ec5af4c1d82035041ec1e41975a02512d38ad6",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGACGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_1681652b5c236767",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGASGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "1681652b5c236767da07ffef1daab00957cad8f43c76f4b9e7b6232563834716",
+      "fasta_sha256": "d8439e8700cc0d76a7ec868d0f92bd252aae956635a6cb43525bd57e274dfc3d",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGASGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_c7e114971a2d389e",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGGGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "c7e114971a2d389e0b748aa46b76ba54f6e2d918196eb1d10b4b30b207f6d19f",
+      "fasta_sha256": "2c4f7d65effc4f03e9baaed475a8c4fab8a906268501be584c26d7e7c7814311",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGGGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_1aee155d237b4a4c",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGDGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "1aee155d237b4a4cd288aa33064f81e94806cf5eb0c0cbf5e1216aaa806868ca",
+      "fasta_sha256": "7f6200bbf1051d9713ab1715a60322a3cae7726dfa41ef9ecfbcf450e1e0ce4b",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGDGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_0837e97c395e3d22",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVFGAGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "0837e97c395e3d220904fcf3c445abcb0562db5bf3290f7820d8fbadac72d0f6",
+      "fasta_sha256": "ec2fa06c5fc8f4ba52972f5d327705fdb2e2710a4bcf0287dc1fe99de0158a90",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVFGAGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_ed224a4a71d29d89",
+      "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVLGSGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "ed224a4a71d29d8934d296ac460086f8abb5db34bf21be8b9cfbd99ba9e557da",
+      "fasta_sha256": "304ab4e924532e2db90cdfccbba270caa2cf174c470c51ab81c49299c4e227cd",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVLGSGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_1.json",
+          "sha256": "12af3f0c5fdbe49312406d95243987b182e3cbf19d2d1c60d3a37928b2328b33"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_2.json",
+          "sha256": "332638cddc7fa4c11abbd3d12ea05a6005726347ec0ece5bc7cd02ee3c6fe34b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_f8071f10eee77459",
+      "evidence_id": "PMID36088370:JDIa41b1:tcr_binding_spr:VVVGADGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "f8071f10eee77459a490480d6c8c43f6215542ca72a091bca906d934aa343825",
+      "fasta_sha256": "4510bcd6f67d0a47736719f5fe2355309f8d26d3feb81da12b295788c86b7348",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "MNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGADGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_4.json",
+          "sha256": "78bce00feb39450efa11c54084e89a3241ad472d6d6747443e85756ac5193a30"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_5.json",
+          "sha256": "9a2afcbb46a3511ab225b5fbe62c0e32cdef98affb4eb52a07cff014ca251795"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_1.json",
+          "sha256": "6c0804cbbb3d50137cb0dcd56b2e9a5ea0e386c40ee622a0cffcca7f2ecf5fcb"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_2.json",
+          "sha256": "a7d6f7f39712d55a3aeff0b419f0ee8c04bfc91df0a87ac500a952e3848969b7"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_7543262c73955c4e",
+      "evidence_id": "PMID36088370:JDIa41b1:tcr_binding_spr:VVVGAGGVGK",
+      "lineage": "JDI",
+      "mhc_allele": "HLA-A*11:01",
+      "input_sha256": "7543262c73955c4ee442e0ea8cb193fa7499ec4029c47bbf5381bcf425303adc",
+      "fasta_sha256": "8fc60c1e384cfb893ae3ec8907c08703080df59adecfc3ebbbc8ef618fccb9e6",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDT"
+        },
+        {
+          "role": "beta",
+          "sequence": "MNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "VVVGAGGVGK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_4.json",
+          "sha256": "78bce00feb39450efa11c54084e89a3241ad472d6d6747443e85756ac5193a30"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_5.json",
+          "sha256": "9a2afcbb46a3511ab225b5fbe62c0e32cdef98affb4eb52a07cff014ca251795"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_1.json",
+          "sha256": "6c0804cbbb3d50137cb0dcd56b2e9a5ea0e386c40ee622a0cffcca7f2ecf5fcb"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_2.json",
+          "sha256": "a7d6f7f39712d55a3aeff0b419f0ee8c04bfc91df0a87ac500a952e3848969b7"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_b82c50e6fcc9565e",
+      "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGKEEY",
+      "lineage": "N17.1.2",
+      "mhc_allele": "HLA-A*01:01",
+      "input_sha256": "b82c50e6fcc9565e080254c140f9af5a000dc8f8c48b3dc9861d213b8d00f7ee",
+      "fasta_sha256": "e5ddb6a15d0358974e8f8c2423b39a13279e92d22f23020412ecb36a5812c599",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLTVKPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "ILDTAGKEEY"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQKMEPRAPWIEQEGPEYWDQETRNMKAHSQTDRANLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAVHAAEQRRVYLEGRCVDGLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+          "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+          "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_1.json",
+          "sha256": "cd84c3702b365d0b33983921c47858dd9317b9338b2798c984288fb2c565307c"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_3.json",
+          "sha256": "3d134e8f82f68f7555420ed7d0c497e76e32f761d2db5d6641905e75ca1eee9e"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_2a25774e06c9f2be",
+      "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGREEY",
+      "lineage": "N17.1.2",
+      "mhc_allele": "HLA-A*01:01",
+      "input_sha256": "2a25774e06c9f2beb1efffa6f8e671b9ad06504078ecf74191765bd1d248c04e",
+      "fasta_sha256": "2a6bf473d8bc5a0724adfa779f75b36b067a681b3dca7986bd6d5f9acd1fa4d7",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLTVKPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "ILDTAGREEY"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQKMEPRAPWIEQEGPEYWDQETRNMKAHSQTDRANLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAVHAAEQRRVYLEGRCVDGLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+          "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+          "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_1.json",
+          "sha256": "cd84c3702b365d0b33983921c47858dd9317b9338b2798c984288fb2c565307c"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_3.json",
+          "sha256": "3d134e8f82f68f7555420ed7d0c497e76e32f761d2db5d6641905e75ca1eee9e"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_2d4454cf3d0f32a8",
+      "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGQEEY",
+      "lineage": "N17.1.2",
+      "mhc_allele": "HLA-A*01:01",
+      "input_sha256": "2d4454cf3d0f32a82df01ad19984bf340d2074af8c93df2360b85d774e4e71d3",
+      "fasta_sha256": "9233b48b4a497f72f13495fe289dde9c1305cc6bfaad79a05c8058f5404f3fc3",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLTVKPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "ILDTAGQEEY"
+        },
+        {
+          "role": "mhc",
+          "sequence": "MGSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQKMEPRAPWIEQEGPEYWDQETRNMKAHSQTDRANLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAVHAAEQRRVYLEGRCVDGLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWE"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+          "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+          "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_1.json",
+          "sha256": "cd84c3702b365d0b33983921c47858dd9317b9338b2798c984288fb2c565307c"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_3.json",
+          "sha256": "3d134e8f82f68f7555420ed7d0c497e76e32f761d2db5d6641905e75ca1eee9e"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_37f052635059bc60",
+      "evidence_id": "PMID35484264:TCR4:tcr_binding_spr:ALHGGWTTK",
+      "lineage": "TCR4",
+      "mhc_allele": "HLA-A*03:01",
+      "input_sha256": "37f052635059bc60203a254ae95f916b3f04d02c684a55d79dcacc6fe702afe5",
+      "fasta_sha256": "99a6371de24f0e471c2afa125a84dda343177b53b323e921686b17f53fa99dd2",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQVTLNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLTVLEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFFPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYSLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "ALHGGWTTK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEAGSHTIQIMYGCDVGSDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHEAEQLRAYLDGTCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRW"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_4.json",
+          "sha256": "63941c12aa62e026a7c13d500a059a88451553d19f420b1d5a19201b0ede04e3"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_5.json",
+          "sha256": "4c83c4517f847183c326c5a10575ac62df2fee8b24bfe2220b2923bb759e1094"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_1.json",
+          "sha256": "fae7419f2fa0ae42b9b179cf64b3841204182eed2950b7872e450fc57112e81c"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_2.json",
+          "sha256": "e418c65c4c6695b120d0fee54ee67b931db301d27929bd85bc4fe91e1d36513b"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    },
+    {
+      "job_id": "external_930d53a3374c63db",
+      "evidence_id": "PMID35484264:TCR3:tcr_binding_spr:ALHGGWTTK",
+      "lineage": "TCR3",
+      "mhc_allele": "HLA-A*03:01",
+      "input_sha256": "930d53a3374c63db240948b48389ec2a4d344322c4367aae2ad23d9388361eaf",
+      "fasta_sha256": "99960e7ba268fa582f03d78e57b9398198941651c323f135926a116e494ae314",
+      "chains": [
+        {
+          "role": "alpha",
+          "sequence": "MLAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGGAYTGGFKTIFGAGTRLFVKANIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+        },
+        {
+          "role": "beta",
+          "sequence": "MEAGVAQSPRYKIIEKRQSVAFWCNPISGHATLYWYQQILGQGPKLLIQFQNNGVVDDSQLPKDRFSAERLKGVDSTLKIQPAKLEDSAVYLCASSLVAETYEQYFGPGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFFPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYSLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+        },
+        {
+          "role": "peptide",
+          "sequence": "ALHGGWTTK"
+        },
+        {
+          "role": "mhc",
+          "sequence": "GSHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEAGSHTIQIMYGCDVGSDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHEAEQLRAYLDGTCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRW"
+        },
+        {
+          "role": "b2m",
+          "sequence": "MIQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM"
+        }
+      ],
+      "chain_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_3.json",
+          "sha256": "c35a6af8b9af3c6de3890703690982ab189a2d37d2d3e15d1cc56e531a8f41ab"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_4.json",
+          "sha256": "7c42906f3ff3853e7e208eafe7ab9c9149031cb0a796c9f64619530af6847077"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_1.json",
+          "sha256": "178f57321d2b0a4db9c0ab3cce05aa4f53d23683374c27abb21ad17f251caac6"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_2.json",
+          "sha256": "9630dd8ede99e4a0d0375ebf50d49103b6fe4a1ca95200a80c8d06d37b6488e8"
+        }
+      ],
+      "state": "prepared_not_submitted"
+    }
+  ],
+  "n_jobs": 21,
+  "submitted": false,
+  "protocol": "Use one frozen prediction backend/version and common seeds for every pair, same template/MSA settings, QC before scoring. Native positives and predicted negatives must not be compared as performance.",
+  "backend": null,
+  "seeds": null,
+  "execution_blocker": "No configured verified local five-chain structure prediction backend in this task; inputs prepared without submission.",
+  "training_allowed": false
+}

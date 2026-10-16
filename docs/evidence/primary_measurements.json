@@ -1,0 +1,1083 @@
+[
+  {
+    "evidence_id": "PMID32518267:12-6:SPR:HMTEVVRHC",
+    "receptor_name": "12-6",
+    "lineage": "12-6",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQ",
+    "beta_variable": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VRM_entity_3.json",
+        "sha256": "0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VRM_entity_4.json",
+        "sha256": "b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRHC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "1.1",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 1100.0,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 328 uM TCR",
+    "max_tested_um": null,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "evidence_id": "PMID32518267:12-6:SPR:HMTEVVRRC",
+    "receptor_name": "12-6",
+    "lineage": "12-6",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQ",
+    "beta_variable": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VRM_entity_3.json",
+        "sha256": "0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VRM_entity_4.json",
+        "sha256": "b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRRC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 328 uM TCR",
+    "max_tested_um": 328,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "evidence_id": "PMID32518267:38-10:SPR:HMTEVVRHC",
+    "receptor_name": "38-10",
+    "lineage": "38-10",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLS",
+    "beta_variable": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VRN_entity_3.json",
+        "sha256": "0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VRN_entity_4.json",
+        "sha256": "153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRHC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "39.9",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 39900.0,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 232 uM TCR",
+    "max_tested_um": null,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "evidence_id": "PMID32518267:38-10:SPR:HMTEVVRRC",
+    "receptor_name": "38-10",
+    "lineage": "38-10",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLS",
+    "beta_variable": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VRN_entity_3.json",
+        "sha256": "0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VRN_entity_4.json",
+        "sha256": "153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRRC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 232 uM TCR",
+    "max_tested_um": 232,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "evidence_id": "PMID32518267:1a2:SPR:HMTEVVRHC",
+    "receptor_name": "1a2",
+    "lineage": "1a2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLL",
+    "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VQO_entity_3.json",
+        "sha256": "8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VQO_entity_4.json",
+        "sha256": "7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRHC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "16.2",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 16200.0,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 153 uM TCR",
+    "max_tested_um": null,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "evidence_id": "PMID32518267:1a2:SPR:HMTEVVRRC",
+    "receptor_name": "1a2",
+    "lineage": "1a2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Sequences from paired deposited constructs; engineered constant-domain interchain disulfide and expression initiator retained in source, variable sequence used for overlap checks; 1a2 alpha sequence corrected in this paper",
+    "alpha_variable": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLL",
+    "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/6VQO_entity_3.json",
+        "sha256": "8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-repro/6VQO_entity_4.json",
+        "sha256": "7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "32518267",
+    "primary_locator": "Table 1; Figure 1; Results Par8; Methods Par35",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-repro/PMC7283474.xml",
+        "sha256": "c47a5ee6237a4a3b97021a231b980794f2f1f768a58a6089d0982a21f1158f30",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7283474/",
+        "locator": "Table 1; Figure 1; Results Par8; Methods Par35"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "HMTEVVRRC",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC 3000 RU; free-biotin blank flow cell; soluble recombinant alpha/beta TCR; WT tested up to 153 uM TCR",
+    "max_tested_um": 153,
+    "condition_limit": "SPR non-detection is conditional; not a cellular or clinical safety label",
+    "training_label": null,
+    "use": "reserved_external_only"
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGADGVGK",
+    "peptide": "VVVGADGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "63",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 63000,
+    "max_tested_um": 50
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGAGGVGK",
+    "peptide": "VVVGAGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGACGVGK",
+    "peptide": "VVVGACGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGASGVGK",
+    "peptide": "VVVGASGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGGGGVGK",
+    "peptide": "VVVGGGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVVGDGGVGK",
+    "peptide": "VVVGDGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVFGAGGVGK",
+    "peptide": "VVFGAGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDI",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Parent JDI; not interchangeable with affinity-enhanced JDI variants",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+    "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+        "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+        "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 1, 3, 4; Methods SPR; Supplementary Figure S1a"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; weak binding steady-state multicycle, 400-500 RU; JDI target concentration series 0.1-50 uM. Exact per-mimetic maximum and baseline temperature not stated. Pools use different loading and are excluded.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDI:tcr_binding_spr:VVLGSGGVGK",
+    "peptide": "VVLGSGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDIa41b1",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Affinity-enhanced alpha and beta construct; WT binds measurably; NEVER inherits parent NB",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLS",
+    "beta_variable": "MNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7OW6_entity_4.json",
+        "sha256": "78bce00feb39450efa11c54084e89a3241ad472d6d6747443e85756ac5193a30",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7OW6_entity_5.json",
+        "sha256": "9a2afcbb46a3511ab225b5fbe62c0e32cdef98affb4eb52a07cff014ca251795",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 2, 3, 4; Supplementary Figure S1d,e",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 2, 3, 4; Supplementary Figure S1d,e"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; mutant strong single-cycle 100-200 RU, injections 2.5,5,10,20,40 nM; WT ten two-fold injections starting 5 uM. Baseline temperature unspecified.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDIa41b1:tcr_binding_spr:VVVGADGVGK",
+    "peptide": "VVVGADGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "7.43e-10",
+    "raw_unit": "M",
+    "qualifier": "=",
+    "kd_nm": 0.743,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "JDIa41b1",
+    "lineage": "JDI",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Affinity-enhanced alpha and beta construct; WT binds measurably; NEVER inherits parent NB",
+    "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLS",
+    "beta_variable": "MNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7OW6_entity_4.json",
+        "sha256": "78bce00feb39450efa11c54084e89a3241ad472d6d6747443e85756ac5193a30",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7OW6_entity_5.json",
+        "sha256": "9a2afcbb46a3511ab225b5fbe62c0e32cdef98affb4eb52a07cff014ca251795",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "36088370",
+    "primary_locator": "Tables 2, 3, 4; Supplementary Figure S1d,e",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9464187.xml",
+        "sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9464187/",
+        "locator": "Tables 2, 3, 4; Supplementary Figure S1d,e"
+      }
+    ],
+    "mhc_allele": "HLA-A*11:01",
+    "conditions": "Biacore T200/8K; mutant strong single-cycle 100-200 RU, injections 2.5,5,10,20,40 nM; WT ten two-fold injections starting 5 uM. Baseline temperature unspecified.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID36088370:JDIa41b1:tcr_binding_spr:VVVGAGGVGK",
+    "peptide": "VVVGAGGVGK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "3e-06",
+    "raw_unit": "M",
+    "qualifier": "=",
+    "kd_nm": 3000.0,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "N17.1.2",
+    "lineage": "N17.1.2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Human alpha/beta receptor using TRDV1 in alpha chain (not a gamma/delta receptor)",
+    "alpha_variable": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLT",
+    "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLL",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+        "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+        "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "39576860",
+    "primary_locator": "Figure 1; Results; Methods SPR and structure determination",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC11584006.xml",
+        "sha256": "cf02b4893130479f3838c8afe72679c53eaa433cc69d9b7f4d4386d4d1794164",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11584006/",
+        "locator": "Figure 1; Results; Methods SPR and structure determination"
+      }
+    ],
+    "mhc_allele": "HLA-A*01:01",
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC about 1000 RU; 50 uL/min; free-biotin blank; 600 s dissociation; positive 0.25-16 uM; WT up to 200 uM.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGKEEY",
+    "peptide": "ILDTAGKEEY",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "1.2",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 1200.0,
+    "max_tested_um": 16
+  },
+  {
+    "receptor_name": "N17.1.2",
+    "lineage": "N17.1.2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Human alpha/beta receptor using TRDV1 in alpha chain (not a gamma/delta receptor)",
+    "alpha_variable": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLT",
+    "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLL",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+        "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+        "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "39576860",
+    "primary_locator": "Figure 1; Results; Methods SPR and structure determination",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC11584006.xml",
+        "sha256": "cf02b4893130479f3838c8afe72679c53eaa433cc69d9b7f4d4386d4d1794164",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11584006/",
+        "locator": "Figure 1; Results; Methods SPR and structure determination"
+      }
+    ],
+    "mhc_allele": "HLA-A*01:01",
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC about 1000 RU; 50 uL/min; free-biotin blank; 600 s dissociation; positive 0.25-16 uM; WT up to 200 uM.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGREEY",
+    "peptide": "ILDTAGREEY",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "3.4",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 3400.0,
+    "max_tested_um": 16
+  },
+  {
+    "receptor_name": "N17.1.2",
+    "lineage": "N17.1.2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Human alpha/beta receptor using TRDV1 in alpha chain (not a gamma/delta receptor)",
+    "alpha_variable": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLT",
+    "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLL",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+        "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+        "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "39576860",
+    "primary_locator": "Figure 1; Results; Methods SPR and structure determination",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC11584006.xml",
+        "sha256": "cf02b4893130479f3838c8afe72679c53eaa433cc69d9b7f4d4386d4d1794164",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11584006/",
+        "locator": "Figure 1; Results; Methods SPR and structure determination"
+      }
+    ],
+    "mhc_allele": "HLA-A*01:01",
+    "conditions": "BIAcore T100; 25 C; immobilized pMHC about 1000 RU; 50 uL/min; free-biotin blank; 600 s dissociation; positive 0.25-16 uM; WT up to 200 uM.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID39576860:N17.1.2:tcr_binding_spr:ILDTAGQEEY",
+    "peptide": "ILDTAGQEEY",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "not_detected",
+    "raw_value": "NB",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": 200
+  },
+  {
+    "receptor_name": "TCR4",
+    "lineage": "TCR4",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Human variable sequences; exact deposited recombinant construct; cellular experiments use murine constant domains",
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQ",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_4.json",
+        "sha256": "63941c12aa62e026a7c13d500a059a88451553d19f420b1d5a19201b0ede04e3",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_5.json",
+        "sha256": "4c83c4517f847183c326c5a10575ac62df2fee8b24bfe2220b2923bb759e1094",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "35484264",
+    "primary_locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9117146.xml",
+        "sha256": "68df84d4cb8c2717cf80451ab23574c99ed39582296f7578b99d9238735a0f04",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9117146/",
+        "locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR"
+      }
+    ],
+    "mhc_allele": "HLA-A*03:01",
+    "conditions": "Biacore T200; 25 C; TCR immobilized 900-1300 RU; pMHC analyte; duplicate injections; activated/deactivated reference; HEPES/NaCl/EDTA/P20 pH7.4. No WT SPR non-detection value inferred.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID35484264:TCR4:tcr_binding_spr:ALHGGWTTK",
+    "peptide": "ALHGGWTTK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "49",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 49000,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "TCR4",
+    "lineage": "TCR4",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Cellular construct differs in constant domains from soluble SPR; separate endpoint",
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQ",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_4.json",
+        "sha256": "63941c12aa62e026a7c13d500a059a88451553d19f420b1d5a19201b0ede04e3",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_5.json",
+        "sha256": "4c83c4517f847183c326c5a10575ac62df2fee8b24bfe2220b2923bb759e1094",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "35484264",
+    "primary_locator": "Figure 3d,e; Methods intracellular cytokine staining",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9117146.xml",
+        "sha256": "68df84d4cb8c2717cf80451ab23574c99ed39582296f7578b99d9238735a0f04",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9117146/",
+        "locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR"
+      }
+    ],
+    "mhc_allele": "HLA-A*03:01",
+    "conditions": "Human variable TCR4 with murine constant regions in CD8+ live mTCR+ T cells; HLA-A*03:01 targets; peptide 1 uM; TNF-alpha ICS; E:T 1:1; 6 h; 37 C; n=3.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID35484264:TCR4:tcr_cellular_tnf_alpha:ALHGGWTTK",
+    "peptide": "ALHGGWTTK",
+    "endpoint": "tcr_cellular_tnf_alpha",
+    "observed_outcome": "activation_detected",
+    "raw_value": "detected",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "TCR4",
+    "lineage": "TCR4",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Cellular construct differs in constant domains from soluble SPR; separate endpoint",
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQ",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_4.json",
+        "sha256": "63941c12aa62e026a7c13d500a059a88451553d19f420b1d5a19201b0ede04e3",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7L1D_entity_5.json",
+        "sha256": "4c83c4517f847183c326c5a10575ac62df2fee8b24bfe2220b2923bb759e1094",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/5",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "35484264",
+    "primary_locator": "Figure 3d,e; Methods intracellular cytokine staining",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9117146.xml",
+        "sha256": "68df84d4cb8c2717cf80451ab23574c99ed39582296f7578b99d9238735a0f04",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9117146/",
+        "locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR"
+      }
+    ],
+    "mhc_allele": "HLA-A*03:01",
+    "conditions": "Human variable TCR4 with murine constant regions in CD8+ live mTCR+ T cells; HLA-A*03:01 targets; peptide 1 uM; TNF-alpha ICS; E:T 1:1; 6 h; 37 C; n=3.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID35484264:TCR4:tcr_cellular_tnf_alpha:AHHGGWTTK",
+    "peptide": "AHHGGWTTK",
+    "endpoint": "tcr_cellular_tnf_alpha",
+    "observed_outcome": "activation_not_detected",
+    "raw_value": "not_detected",
+    "raw_unit": null,
+    "qualifier": null,
+    "kd_nm": null,
+    "max_tested_um": null
+  },
+  {
+    "receptor_name": "TCR3",
+    "lineage": "TCR3",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "Human variable sequences; exact deposited recombinant construct; cellular experiments use murine constant domains",
+    "alpha_variable": "MLAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGGAYTGGFKTIFGAGTRLF",
+    "beta_variable": "MEAGVAQSPRYKIIEKRQSVAFWCNPISGHATLYWYQQILGQGPKLLIQFQNNGVVDDSQLPKDRFSAERLKGVDSTLKIQPAKLEDSAVYLCASSLVAETYEQYFGPGTRLT",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/7RRG_entity_3.json",
+        "sha256": "c35a6af8b9af3c6de3890703690982ab189a2d37d2d3e15d1cc56e531a8f41ab",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7RRG/3",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      },
+      {
+        "path": "data/external_evidence/20261016-expansion/7RRG_entity_4.json",
+        "sha256": "7c42906f3ff3853e7e208eafe7ab9c9149031cb0a796c9f64619530af6847077",
+        "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7RRG/4",
+        "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+      }
+    ],
+    "pmid": "35484264",
+    "primary_locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261016-expansion/PMC9117146.xml",
+        "sha256": "68df84d4cb8c2717cf80451ab23574c99ed39582296f7578b99d9238735a0f04",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9117146/",
+        "locator": "Figure 4b,c (TCR4, n=4); Extended Data Figure 3e (TCR3, n=3); Methods SPR"
+      }
+    ],
+    "mhc_allele": "HLA-A*03:01",
+    "conditions": "Biacore T200; 25 C; TCR immobilized 900-1300 RU; pMHC analyte; duplicate injections; activated/deactivated reference; HEPES/NaCl/EDTA/P20 pH7.4. No WT SPR non-detection value inferred.",
+    "condition_limit": "Assay-specific observation; missing conditions remain unknown; no absolute nonbinding or safety inference",
+    "training_label": null,
+    "use": "reserved_external_only",
+    "evidence_id": "PMID35484264:TCR3:tcr_binding_spr:ALHGGWTTK",
+    "peptide": "ALHGGWTTK",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "200",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 200000,
+    "max_tested_um": null
+  }
+]

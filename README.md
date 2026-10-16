@@ -1,8 +1,8 @@
-> **2026-10-16 experimental-evidence update:** [evidence report](docs/EXPERIMENTAL_EVIDENCE.md): 6 primary-verified conditional binding observations reserved for external checks, 1,464 database evidence rows under review, and mandatory receptor holdout guards. Hy4 is deferred at the user’s request. No new training or performance claim. Earlier release manifests are historical and need new code-hash acceptance.
+> **2026-10-16 current status:** [expanded evidence and readiness](docs/EXPERIMENTAL_EVIDENCE_EXPANSION.md): 23 endpoint-separated primary observations from 4 studies, 8 reserved receptor constructs; structural-v3 validated (888 graphs), 106 VDJdb associations quarantined. Hy4 deferred. Training and clinical/performance claims remain blocked.
 
-> **2026-10-16 readiness update:** legacy data caches/checkpoints are historical and ineligible for retraining. See [PRETRAIN_READINESS.md](docs/PRETRAIN_READINESS.md). Rebuilt structural data passed machine checks; independent hy4 acceptance is pending (provider HTTP 402). Training remains blocked. No binding/clinical performance is authorized.
+> **2026-10-16 readiness update:** legacy data caches/checkpoints are historical and ineligible for retraining. See [PRETRAIN_READINESS.md](docs/PRETRAIN_READINESS.md). Rebuilt structural data passed machine checks; Hy4 is deferred by user request; this paragraph describes historical readiness. Training remains blocked. No binding/clinical performance is authorized.
 
-# Meta-ACDC — 用 AI 预测 T 细胞受体的"误伤"风险
+# Meta-ACDC — TCR–pMHC 结构诱饵判别与实验参照核查原型
 
 > # ⚠ 2026-10-15 撤回声明:本 README 中的性能数字已全部不可引用
 >
@@ -19,9 +19,8 @@
 > 在按冻结数据重训、并引入真实结合标签之前，这个仓库不产出可引用的
 > 性能数字。
 
-> **一句话**:我们训练了一个"分子相容性"AI,输入一个免疫受体(T 细胞受体,
-> TCR)和一段肽,输出它们"能不能结合"的分数——用来在治疗前找出可能
-> **误伤健康组织、甚至致死**的脱靶肽。
+> **当前定位**：研究原型输出天然结构与指定合成诱饵的判别分数，
+> 并核查外部实验参照；分数不能解释为真实结合概率或临床危险概率。
 >
 > **本仓库**是这项研究的**干实验(纯计算)执行仓库**:数据管线、模型、
 > 基准、失败记录、复现手册全部在此。湿实验(细胞/动物实验)的技术路线

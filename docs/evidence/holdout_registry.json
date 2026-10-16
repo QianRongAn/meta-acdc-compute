@@ -1,28 +1,175 @@
 {
   "purpose": "reserved_external_test_only",
-  "scope": "entire_receptor_family_and_future_predicted_copies",
+  "scope": "all selected constructs and corresponding near-chain families; JDI parent/enhanced share a biological lineage and cannot be independent folds",
   "rule": "reject either corresponding alpha/beta variable-domain near match, or CDR3 core >=0.9 SequenceMatcher similarity with minimum 8 residues; conservative reservation, not specificity equivalence",
   "receptors": [
     {
       "receptor_name": "12-6",
+      "lineage": "12-6",
       "alpha_variable": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQ",
       "beta_variable": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLT",
       "pmid": "32518267",
-      "receptor_sequence_source": "[{\"file\":\"6VRM_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/3\",\"sha256\":\"0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6\"},{\"file\":\"6VRM_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/4\",\"sha256\":\"b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab\"}]"
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_3.json",
+          "sha256": "0b9de5bbe5858b34acf5a3a6ede06758933a7a46c3a3efa08b1d417f430194f6",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/3",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRM_entity_4.json",
+          "sha256": "b631029ab4ee4312163af668c4c62982fa2ff05b5d151faa9777f2dfbacba1ab",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRM/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
     },
     {
       "receptor_name": "38-10",
+      "lineage": "38-10",
       "alpha_variable": "MAQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLS",
       "beta_variable": "MDAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLT",
       "pmid": "32518267",
-      "receptor_sequence_source": "[{\"file\":\"6VRN_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/3\",\"sha256\":\"0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37\"},{\"file\":\"6VRN_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/4\",\"sha256\":\"153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878\"}]"
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_3.json",
+          "sha256": "0cd8565beb0486f2220ceec60030965b59f958a1edd58c0dc516fd82b4900e37",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/3",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VRN_entity_4.json",
+          "sha256": "153dbf018808c5aa55ae537ba5ab7d22cfe838bb01d422e40e9e5402af3ee878",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VRN/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
     },
     {
       "receptor_name": "1a2",
+      "lineage": "1a2",
       "alpha_variable": "MKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSGLKEDSSYKLIFGSGTRLL",
       "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSIQQGADTQYFGPGTRLT",
       "pmid": "32518267",
-      "receptor_sequence_source": "[{\"file\":\"6VQO_entity_3.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/3\",\"sha256\":\"8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c\"},{\"file\":\"6VQO_entity_4.json\",\"url\":\"https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/4\",\"sha256\":\"7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5\"}]"
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_3.json",
+          "sha256": "8ed77588af366887dd4ba0fd5d86afa06564a7f16882f6ebe4ae6fd78931152c",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/3",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-repro/6VQO_entity_4.json",
+          "sha256": "7ed6099227b84ec7cd17da25cf3b9cf2de7211966f400a50c98be5693ac381d5",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/6VQO/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
+    },
+    {
+      "receptor_name": "JDI",
+      "lineage": "JDI",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGPSGAGSYQLTFGKGTKLS",
+      "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGPGQHNSPLHFGNGTRLT",
+      "pmid": "36088370",
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_4.json",
+          "sha256": "a30448c7b35227a95380a440b07d85e841ea405feb3167dff696b8dcef632fd5",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7PB2_entity_5.json",
+          "sha256": "12fd5e43edcd95c22a5f7ccabaa9f551b81625651746b515cb8ff6125c841d10",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7PB2/5",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
+    },
+    {
+      "receptor_name": "JDIa41b1",
+      "lineage": "JDI",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLS",
+      "beta_variable": "MNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLT",
+      "pmid": "36088370",
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_4.json",
+          "sha256": "78bce00feb39450efa11c54084e89a3241ad472d6d6747443e85756ac5193a30",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7OW6_entity_5.json",
+          "sha256": "9a2afcbb46a3511ab225b5fbe62c0e32cdef98affb4eb52a07cff014ca251795",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7OW6/5",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
+    },
+    {
+      "receptor_name": "N17.1.2",
+      "lineage": "N17.1.2",
+      "alpha_variable": "MAQKVTQAQSSVSMPVRKAVTLNCLYETSWWSYYIFWYKQLPSKEMIFLIRQGSDEQNAKSGRYSVNFKKAAKSVALTISALQLEDSAKYFCALGDTAGKSTFGDGTTLT",
+      "beta_variable": "MEAQVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSLVSTPLPKETQYFGPGTRLL",
+      "pmid": "39576860",
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_4.json",
+          "sha256": "828c841db54263ffac59880b4d78263813632b3c039fdc01cc74d7a0134a93c0",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/8YIV_entity_5.json",
+          "sha256": "a0c3be03f3d56d7333c1c128ee185bd3aab922758f6500e4ad95ab4c8df71aab",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/8YIV/5",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
+    },
+    {
+      "receptor_name": "TCR4",
+      "lineage": "TCR4",
+      "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQ",
+      "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLT",
+      "pmid": "35484264",
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_4.json",
+          "sha256": "63941c12aa62e026a7c13d500a059a88451553d19f420b1d5a19201b0ede04e3",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7L1D_entity_5.json",
+          "sha256": "4c83c4517f847183c326c5a10575ac62df2fee8b24bfe2220b2923bb759e1094",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7L1D/5",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
+    },
+    {
+      "receptor_name": "TCR3",
+      "lineage": "TCR3",
+      "alpha_variable": "MLAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGGAYTGGFKTIFGAGTRLF",
+      "beta_variable": "MEAGVAQSPRYKIIEKRQSVAFWCNPISGHATLYWYQQILGQGPKLLIQFQNNGVVDDSQLPKDRFSAERLKGVDSTLKIQPAKLEDSAVYLCASSLVAETYEQYFGPGTRLT",
+      "pmid": "35484264",
+      "sequence_sources": [
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_3.json",
+          "sha256": "c35a6af8b9af3c6de3890703690982ab189a2d37d2d3e15d1cc56e531a8f41ab",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7RRG/3",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        },
+        {
+          "path": "data/external_evidence/20261016-expansion/7RRG_entity_4.json",
+          "sha256": "7c42906f3ff3853e7e208eafe7ab9c9149031cb0a796c9f64619530af6847077",
+          "url": "https://data.rcsb.org/rest/v1/core/polymer_entity/7RRG/4",
+          "locator": "entity_poly.pdbx_seq_one_letter_code_can"
+        }
+      ]
     }
   ]
 }

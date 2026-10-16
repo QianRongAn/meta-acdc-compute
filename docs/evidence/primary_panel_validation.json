@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "records": 23,
+  "receptors": 8,
+  "studies": 4,
+  "endpoints": {
+    "tcr_binding_spr": 21,
+    "tcr_cellular_tnf_alpha": 2
+  },
+  "training_allowed": false,
+  "population_benchmark_allowed": false,
+  "binding_outcomes": {
+    "measured_binding": 10,
+    "not_detected": 11
+  },
+  "priority_adjudications": {
+    "blocked_primary_fulltext_conditions_unavailable": 9,
+    "provisional_not_in_strict_panel": 2,
+    "excluded_from_intrinsic_binding_panel": 9
+  },
+  "limitations": [
+    "Targeted case-selected panel, not representative benchmark",
+    "JDI parent and enhanced share lineage; do not count as independent families",
+    "Conditional NB not proof of absent binding outside measured conditions",
+    "Cellular nonresponse does not imply intrinsic nonbinding",
+    "No observed WT SPR result fabricated for PIK3CA",
+    "Missing full sequences for JDIa9bwt/JDIa96b35 and workbook Mutant IDs: excluded; pooled peptides not split into negatives"
+  ]
+}
