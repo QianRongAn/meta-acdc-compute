@@ -1,3 +1,5 @@
+> 2026-10-16: earlier item-level code-fix claims do not certify the historical datasets. See [PRETRAIN_READINESS.md](PRETRAIN_READINESS.md) for rebuilt inputs, measured checks and remaining release blockers. Independent hy4 acceptance is pending; no retraining or historical performance is authorized.
+
 # 代码与主张审计（2026-10-15）
 
 外部复核提出 28 条问题。全部记录在案，逐条修复，状态列在每行末尾。
