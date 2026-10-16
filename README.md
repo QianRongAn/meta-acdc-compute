@@ -1,3 +1,5 @@
+> **2026-10-16 readiness update:** legacy data caches/checkpoints are historical and ineligible for retraining. See [PRETRAIN_READINESS.md](docs/PRETRAIN_READINESS.md). Rebuilt structural data passed machine checks; independent hy4 acceptance is pending (provider HTTP 402). Training remains blocked. No binding/clinical performance is authorized.
+
 # Meta-ACDC — 用 AI 预测 T 细胞受体的"误伤"风险
 
 > # ⚠ 2026-10-15 撤回声明:本 README 中的性能数字已全部不可引用

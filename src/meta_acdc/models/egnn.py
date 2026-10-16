@@ -115,6 +115,7 @@ class EGNN(nn.Module):
         edge_attr: Tensor,
         batch: Tensor,
         embed_only: bool = False,
+        peptide_mask: Tensor | None = None,
     ) -> Tensor:
         """Return graph-level logits (num_graphs, 1); with embed_only=True
         return the pooled graph features (num_graphs, 3*hidden+1) instead."""
@@ -123,12 +124,13 @@ class EGNN(nn.Module):
         # then side-chain extent. Reading h[:, 4] selected one amino-acid
         # identity column (index 4 = 'E') instead, so "peptide pooling" actually
         # pooled glutamate residues. See AUDIT.md #3.
-        self.peptide_mask = None
-        if h.shape[1] > PEPTIDE_FLAG_INDEX:
+        self.peptide_mask = peptide_mask
+        if peptide_mask is None:
+            if h.shape[1] <= PEPTIDE_FLAG_INDEX:
+                raise ValueError("explicit peptide mask required for reduced features")
             self.peptide_mask = h[:, PEPTIDE_FLAG_INDEX] > 0.5
-        elif h.shape[1] > 4:
-            # legacy 5-column inputs (phys + conf + flags): keep old behaviour
-            self.peptide_mask = h[:, 4] > 0.5
+        if self.peptide_mask.shape != (h.shape[0],):
+            raise ValueError("invalid peptide mask")
 
         # center each graph's coordinates at its centroid (translation invariance)
         centroid = torch.zeros(batch.max().item() + 1, 3, device=x.device, dtype=x.dtype)

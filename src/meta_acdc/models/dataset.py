@@ -28,6 +28,7 @@ from meta_acdc.structure.graph import (
     build_interface_graph_from_residues,
     classify_chains,
     parse_pdb,
+    AA3TO1,
     TCR,
     MHC,
     PEPTIDE,
@@ -86,7 +87,7 @@ def _transplanted_atoms(native: Residue, foreign: Residue) -> list[tuple]:
     src = _backbone_coords(foreign)
     dst = _backbone_coords(native)
     if src is None or dst is None:
-        return list(native.atoms)  # fallback: keep native atoms
+        raise ValueError("graft requires complete N/CA/C backbone in both residues")
     r, t = _kabsch(src, dst)
     out = [a for a in native.atoms if a[0] in ("N", "CA", "C", "O", "OXT")]
     for name, x, y, z in foreign.atoms:
@@ -112,18 +113,20 @@ def make_decoy(
     """
     roles = classify_chains(residues)
     native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
-    if not native_pep_chains:
-        return residues
+    if len(native_pep_chains) != 1:
+        raise ValueError("graft requires exactly one peptide chain")
     native_pep_chain = native_pep_chains[0]
     native_pep = [r for r in residues if r.chain == native_pep_chain]
+    if len(native_pep) != len(peptide):
+        raise ValueError("graft peptide lengths must match; prefix swaps forbidden")
     swap = {id(r): f for r, f in zip(native_pep, peptide)}
     out = []
     for r in residues:
         f = swap.get(id(r))
         if f is not None:
             atoms = _transplanted_atoms(r, f)
-            out.append(Residue(r.chain, f.resname, r.resid, r.x, r.y, r.z,
-                               r.plddt, r.icode, atoms))
+            from dataclasses import replace
+            out.append(replace(r, resname=f.resname, atoms=atoms))
         else:
             out.append(r)
     return out
@@ -144,8 +147,8 @@ def make_displaced_peptide_decoy(
     for r in residues:
         if roles[r.chain] == PEPTIDE:
             shifted_atoms = [(n, x, y, z + shift) for n, x, y, z in r.atoms]
-            out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift,
-                               r.plddt, r.icode, shifted_atoms))
+            from dataclasses import replace
+            out.append(replace(r, z=r.z+shift, atoms=shifted_atoms))
         else:
             out.append(r)
     return out
@@ -257,7 +260,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
         peptides = _peptide_chains(residues)
         if not peptides:
             continue
-        native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
+        native_seq = "".join(AA3TO1.get(r.resname.upper(), "X") for r in next(iter(peptides.values())))
         # pick a donor peptide with a DIFFERENT sequence (else decoy == native)
         graft = None
         donor_pdb = None
@@ -267,7 +270,7 @@ def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
             if not donor_peptides:
                 continue
             candidate = rng.choice(list(donor_peptides.values()))
-            if "".join(r.resname[:1] for r in candidate) != native_seq:
+            if "".join(AA3TO1.get(r.resname.upper(), "X") for r in candidate) != native_seq:
                 graft = candidate
                 break
         if graft is None:

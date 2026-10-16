@@ -56,6 +56,14 @@ class InteractionRecord:
     method: Optional[str] = None  # experimental assay
     notes: str = field(default="", repr=False)
 
+    assay_id: str | None = None
+    endpoint: str | None = None
+    evidence_status: str | None = None
+    label_scope: str | None = None
+    raw_value: str | None = None
+    raw_unit: str | None = None
+    qualifier: str | None = None
+
     def to_row(self) -> list[str]:
         return [
             self.source.value,
@@ -74,6 +82,9 @@ class InteractionRecord:
             self.organism or "",
             self.method or "",
             self.notes,
+            self.assay_id or "", self.endpoint or "",
+            self.evidence_status or "", self.label_scope or "",
+            self.raw_value or "", self.raw_unit or "", self.qualifier or "",
         ]
 
 
@@ -94,6 +105,8 @@ SCHEMA_HEADER = [
     "organism",
     "method",
     "notes",
+    "assay_id", "endpoint", "evidence_status", "label_scope",
+    "raw_value", "raw_unit", "qualifier",
 ]
 
 SCHEMA_TSV = "\t".join(SCHEMA_HEADER)

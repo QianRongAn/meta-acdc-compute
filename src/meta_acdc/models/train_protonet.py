@@ -83,6 +83,7 @@ def main() -> int:
     ap.add_argument("--episodes", type=int, default=10000)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
+    raise ValueError("Binding meta-learning requires assay-derived paired receptor labels; association-only negative sampling is disabled pending a binding release")
 
     epitope_tcrs, tcr_epitopes = load_vdjdb(args.data)
     sampler = TaskSampler(epitope_tcrs, tcr_epitopes, seed=42)

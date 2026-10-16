@@ -238,6 +238,8 @@ def group_split(
             test_idx.extend(idxs)
         else:
             train_idx.extend(idxs)
+    if not train_idx or not test_idx:
+        raise ValueError("group split impossible: train and test must both be non-empty")
     return Split(
         train_idx=train_idx,
         test_idx=test_idx,

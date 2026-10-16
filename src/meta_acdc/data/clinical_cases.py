@@ -99,6 +99,10 @@ CASES = [
               "no treatment-related deaths"),
 ]
 
+for _case in CASES:
+    if "unverified" in _case["evidence"].lower():
+        _case["pdb"] = ""
+
 FIELD_ORDER = ["case", "tcr", "pdb", "restriction", "peptide", "role",
                "severity", "evidence", "note"]
 

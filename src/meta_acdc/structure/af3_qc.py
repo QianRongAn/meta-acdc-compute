@@ -1,19 +1,8 @@
-"""Structural QC / reliability gate for AF3 predictions.
+"""Strict per-model AF3 structural QC.
 
-Derived from the 2026-09-23 resubmission analysis (docs/benchmarks.md):
-- high-confidence predictions (ipTM >= ~0.85) reproduce across independent
-  AF3 runs (ipTM Delta <= 0.07, peptide register RMSD <= 0.43 A);
-- low-confidence complexes (ipTM ~0.5, e.g. JM22) genuinely vary across runs;
-- some first submissions were defective (truncated TCR chains, 324 vs 443 CA).
-
-This script flags, per (instance, job) model set, the metrics that predict
-whether a structure is trustworthy — an ipTM gate plus a chain-completeness
-check — so downstream scoring/ranking can exclude or annotate bad inputs.
-
-Usage:
-    .venv/bin/python src/meta_acdc/structure/af3_qc.py \
-        --root data/raw/af3_instances \
-        --out data/processed/af3_qc.tsv
+Requires --release, repeatable --root, and a new --out TSV. Confidence must
+belong to the same model. Parses/identities/peptide integrity must pass even
+when confidence is high. ipTM>=0.75 is a project QC filter, not proof of binding.
 """
 
 from __future__ import annotations
@@ -60,49 +49,17 @@ def chain_ca_counts(cif: Path) -> tuple[int, int]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--root", type=Path, action="append", default=[],
-                    help="structure dir to QC (repeatable); defaults to "
-                         "data/raw/af3_instances and data/raw/af3_predictions "
-                         "so the QC table covers both the instance set and "
-                         "the scoring panel")
-    ap.add_argument("--out", type=Path, default=Path("data/processed/af3_qc.tsv"))
-    args = ap.parse_args()
-    roots = args.root or [Path("data/raw/af3_instances"),
-                          Path("data/raw/af3_predictions")]
-
-    rows = []
-    for root in roots:
-        if not root.exists():
-            print(f"QC root not found: {root}", file=sys.stderr)
-            continue
-        if any(root.glob("*_model_0.cif")):
-            _qc_one_dir(root, root.name, rows)
-        else:
-            for inst_dir in sorted(root.iterdir()):
-                if not inst_dir.is_dir():
-                    continue
-                _qc_one_dir(inst_dir, inst_dir.name, rows)
-
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    with open(args.out, "w", newline="") as fh:
-        w = csv.DictWriter(fh, delimiter="\t", fieldnames=[
-            "instance", "job_id", "n_conf", "iptm_mean", "iptm_std",
-            "ptm_mean", "tcr_ca", "pep_ca", "flag", "basis"])
-        w.writeheader()
-        for r in rows:
-            w.writerow(r)
-
-    n = len(rows)
-    bad = [r for r in rows if r["flag"]]
-    n_low = sum(1 for r in rows if "low_iptm" in r["flag"])
-    n_nc = sum(1 for r in rows if "no_confidence" in r["flag"])
-    print(f"wrote {n} structure records to {args.out}")
-    print(f"  flagged: {len(bad)} (low_iptm={n_low}, no_confidence={n_nc}); "
-          f"gate: ipTM<{IPMT_LOW}")
-    for r in bad:
-        print(f"  {r['instance']:3s} {r['job_id']:22s} "
-              f"ipTM={r['iptm_mean']} tcr_ca={r['tcr_ca']} [{r['flag']}]")
+    ap=argparse.ArgumentParser(description="Per-model QC with source hashes and reference identity")
+    ap.add_argument('--root',type=Path,action='append',required=True)
+    ap.add_argument('--release',type=Path,required=True)
+    ap.add_argument('--out',type=Path,required=True)
+    args=ap.parse_args()
+    from meta_acdc.data.release import load_release
+    from meta_acdc.structure.quality import build_qc
+    load_release(args.release,require_training=False)
+    references=json.loads((args.release.parent/'structure_records.json').read_text())
+    rows=build_qc(args.root,references,args.out)
+    print(f"per-model QC rows={len(rows)} pass={sum(not x['flag'] for x in rows)}")
     return 0
 
 
@@ -115,9 +72,13 @@ def _qc_one_dir(inst_dir: Path, inst: str, rows: list[dict]) -> None:
         try:
             tcr_ca, pep_ca = chain_ca_counts(inst_dir / f"{job}_model_0.cif")
         except Exception:  # noqa: BLE001
-            pass
+            tcr_ca = pep_ca = -1
         m = float(np.mean(iptm)) if iptm else None
         flags = []
+        if tcr_ca < 0 or pep_ca < 0:
+            flags.append("parse_failed")
+        elif not tcr_ca or not pep_ca:
+            flags.append("missing_tcr_or_peptide")
         if not iptm:
             # no confidence basis at all: explicit rejection flag, NOT an
             # empty flag that downstream would read as "passed" (AUDIT.md #26)

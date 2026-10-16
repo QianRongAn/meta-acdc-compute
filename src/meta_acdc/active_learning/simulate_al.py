@@ -199,6 +199,8 @@ def main() -> int:
                     default="3600,1800,900,600,300",
                     help="comma list of batch sizes for the ablation")
     args = ap.parse_args()
+    from meta_acdc.models.benchmark_baseline import load as verify_binding_labels
+    verify_binding_labels(args.data)
 
     rows = load_rows(args.data)
     cdr3s = [r["cdr3_beta"] for r in rows]

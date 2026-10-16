@@ -41,7 +41,17 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--scores", type=Path, nargs="+", required=True,
                     help="per-seed ensemble score TSVs (same jobs)")
+    ap.add_argument("--release",type=Path,required=True)
     args = ap.parse_args()
+    from meta_acdc.data.release import load_release,complex_id
+    import json
+    load_release(args.release)
+    families={}
+    for row in json.loads((args.release.parent/"structure_records.json").read_text()):
+        if row["domain"]=="crystal":
+            key=complex_id(row["pdb"])
+            if key in families and families[key]!=row["family_id"]:raise ValueError("ambiguous family for PDB")
+            families[key]=row["family_id"]
 
     per_seed = [load_jobs(p) for p in args.scores]
     common = set(per_seed[0])
@@ -86,7 +96,9 @@ def main() -> int:
     rng = np.random.default_rng(0)
     groups: dict[str, list[int]] = {}
     for k, job in enumerate(common):
-        groups.setdefault(job.split("_", 1)[0], []).append(k)
+        key=complex_id(job)
+        if key not in families:raise ValueError("missing receptor family: "+job)
+        groups.setdefault(families[key], []).append(k)
     group_ids = sorted(groups, key=lambda g: groups[g][0])
     n_groups = len(group_ids)
     boot = []

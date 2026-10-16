@@ -55,3 +55,6 @@ venv/
 data/raw/af3_instances/A/
 .github/
 logs/
+
+# Immutable local releases are large; publish only their acceptance reports.
+data/releases/

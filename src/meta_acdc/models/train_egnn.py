@@ -1,16 +1,9 @@
-"""EGNN prototype training on interface graphs with graft-decoy negatives.
+"""Train a structural native-versus-synthetic-decoy scorer.
 
-This is the KN-4 pipeline-validation run: can the EGNN distinguish native
-TCR-pMHC interfaces from grafted decoys (foreign peptide in the groove)?
-
-Usage:
-    .venv/bin/python src/meta_acdc/models/train_egnn.py \
-        --data data/processed/egnn_dataset.pt --epochs 30
-
-    # v11 feature ablation on the electrostatics-augmented dataset:
-    .venv/bin/python src/meta_acdc/models/train_egnn.py \
-        --data data/processed/egnn_dataset_v11.pt \
-        --node-dim 28 --edge-dim 18 --out .../v11_full.model.pt
+Requires an independently accepted immutable release and a new checkpoint path.
+Example: python -m meta_acdc.models.train_egnn --release RELEASE_MANIFEST
+         --out NEW_RUN/model.pt --epochs 30
+Calibration/test folds remain unavailable to model fitting.
 """
 
 from __future__ import annotations
@@ -41,10 +34,11 @@ def collate(graphs: list[tuple], node_dim: int = NODE_DIM,
     node_dim/edge_dim slice the stored features, so one cached dataset can
     serve feature ablations (e.g. v11 28/18 vs v9.1 26/16).
     """
-    hs, xs, eis, eas, batch = [], [], [], [], []
+    hs, xs, eis, eas, batch, masks = [], [], [], [], [], []
     offset = 0
     for nf, coords, ei, ef in graphs:
         n = len(nf)
+        masks.append(torch.tensor([row[PEPTIDE_FLAG_INDEX] > .5 for row in nf], dtype=torch.bool))
         h = torch.tensor([row[:node_dim] for row in nf],
                          dtype=torch.float32)
         h = normalize_node_features(h)
@@ -57,6 +51,7 @@ def collate(graphs: list[tuple], node_dim: int = NODE_DIM,
         offset += n
     return {
         "h": torch.cat(hs),
+        "peptide_mask": torch.cat(masks),
         "x": torch.cat(xs),
         "edge_index": torch.cat(eis, dim=1),
         "edge_attr": torch.cat(eas),
@@ -96,28 +91,28 @@ def train_val_split(n: int, val_frac: float = 0.2, seed: int = 42) -> tuple[list
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", type=Path, default=Path("data/processed/egnn_dataset.pt"))
+    ap.add_argument("--data", type=Path, default=None)
     ap.add_argument("--epochs", type=int, default=30)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     ap.add_argument("--node-dim", type=int, default=NODE_DIM,
                     help="slice node features to this width (26 baseline / 28 v11)")
     ap.add_argument("--edge-dim", type=int, default=EDGE_DIM,
                     help="slice edge features to this width (16 baseline / 18 v11)")
-    ap.add_argument("--out", type=Path, default=None,
+    ap.add_argument("--out", type=Path, required=True,
                     help="model output path (default: <data>.model.pt)")
     ap.add_argument("--seed", type=int, default=0,
                     help="torch init + batch-order seed (split seed stays 42)")
-    ap.add_argument("--group-by", choices=["pdb", "family"], default="family",
-                    help="fold grouping: pdb = same complex only; family = "
-                         "also merges PDBs sharing a receptor (recommended; "
-                         "needs --family-map)")
-    ap.add_argument("--family-map", type=Path,
-                    default=Path("data/processed/pdb_family_map.tsv"),
-                    help="pdb -> family_id map (structure/family_map.py)")
+    ap.add_argument("--release", type=Path, required=True, help="validated frozen structural release manifest")
     args = ap.parse_args()
+    from meta_acdc.data.release import load_release, frozen_indices, sha256
+    manifest, approved_data = load_release(args.release, data_path=args.data)
+    if args.out.exists():raise ValueError("refusing to overwrite checkpoint")
+    if args.out.resolve().is_relative_to(args.release.resolve().parent):raise ValueError("checkpoint must be outside immutable release")
+    args.data = approved_data
     node_dim, edge_dim = args.node_dim, args.edge_dim
 
     data = torch.load(args.data, weights_only=False)
+    if not (25 <= node_dim <= len(data["graphs"][0][0][0]) and 1 <= edge_dim <= len(data["graphs"][0][3][0])):raise ValueError("feature width incompatible with release")
     graphs, labels = data["graphs"], torch.tensor(data["labels"], dtype=torch.float32)
     pdbs = data["pdbs"]
     print(f"dataset: {len(graphs)} graphs ({int(labels.sum())} pos / {len(labels) - int(labels.sum())} neg)",
@@ -125,44 +120,9 @@ def main() -> int:
     print(f"config: node_dim={node_dim} edge_dim={edge_dim} epochs={args.epochs} "
           f"seed={args.seed} device={args.device}", flush=True)
 
-    # Complex-identity grouping: every decoy and every re-prediction of the
-    # same PDB must land in ONE fold. The old key only stripped "-disp"/"<-",
-    # so "5brz_0", "5brz_1" and "af3-5brz_EVDPIGHLY" were three independent
-    # groups and the crystal version of a complex could sit in validation
-    # while its predicted copy was in training (AUDIT.md #4).
-    family: dict[str, str] = {}
-    if args.group_by == "family":
-        fpath = args.family_map
-        if not fpath.exists():
-            print(f"family map {fpath} not found; falling back to pdb grouping",
-                  flush=True)
-            args.group_by = "pdb"
-        else:
-            with open(fpath, newline="") as fh:
-                for r in csv.DictReader(fh, delimiter="\t"):
-                    family[r["pdb"]] = r["family_id"]
-
-    def pdb_group(name: str) -> str:
-        n = name.split("<-")[0].split("-disp")[0]
-        for pre in ("af3-", "tcr-", "inst-", "nativetcr-"):
-            if n.startswith(pre):
-                n = n[len(pre):]
-        head = n.split("_")[0]          # peptide / replication suffix
-        # PDB ids are exactly 4 characters; synthetic stems stay unique
-        pdb = head if len(head) == 4 else n
-        return family.get(pdb, pdb) if family else pdb
-
-    groups: dict[str, list[int]] = {}
-    for i, p in enumerate(pdbs):
-        groups.setdefault(pdb_group(p), []).append(i)
-    rng = random.Random(42)
-    gids = list(groups.keys())
-    rng.shuffle(gids)
-    n_val_groups = max(1, int(0.2 * len(gids)))
-    val_groups = set(gids[:n_val_groups])
-    tr_idx = [i for g in gids if g not in val_groups for i in groups[g]]
-    va_idx = [i for g in gids if g in val_groups for i in groups[g]]
-    print(f"split: {len(gids)} PDB groups -> train={len(tr_idx)} val={len(va_idx)}", flush=True)
+    frozen = frozen_indices(manifest, data)
+    tr_idx, va_idx = frozen['train'], frozen['validation']
+    print(f"frozen split: train={len(tr_idx)} validation={len(va_idx)}; calibration/test untouched")
 
     va_batch = collate([graphs[i] for i in va_idx], node_dim, edge_dim)
     va_batch = {k: v.to(args.device) for k, v in va_batch.items()}
@@ -202,10 +162,10 @@ def main() -> int:
 
     net.eval()
     with torch.no_grad():
-        tr_batch = collate([graphs[i] for i in tr_idx[:100]], node_dim, edge_dim)
+        tr_batch = collate([graphs[i] for i in tr_idx], node_dim, edge_dim)
         tr_batch = {k: v.to(args.device) for k, v in tr_batch.items()}
         prob_tr = torch.sigmoid(net(**tr_batch).squeeze(-1)).cpu().numpy()
-    print(f"train(subset) AUROC={roc_auc_score(labels[tr_idx[:100]].numpy(), prob_tr):.3f}",
+    print(f"train(subset) AUROC={roc_auc_score(labels[tr_idx].numpy(), prob_tr):.3f}",
           flush=True)
 
     # per-decoy-type val breakdown (displaced = geometry, graft = hard)
@@ -223,7 +183,7 @@ def main() -> int:
               f"AUPRC={average_precision_score(y, p):.3f} (n={len(sel)})", flush=True)
 
     out = args.out or Path(args.data).with_suffix(".model.pt")
-    torch.save({"model": net.state_dict(),
+    torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": False, "model": net.state_dict(),
                 "n_node_dim": node_dim, "n_edge_dim": edge_dim}, out)
     print(f"saved model to {out}", flush=True)
     return 0

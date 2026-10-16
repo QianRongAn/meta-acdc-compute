@@ -116,9 +116,16 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--project-root',type=Path,required=True)
     p.add_argument('--report',type=Path,required=True)
+    p.add_argument("--release",type=Path)
     args = p.parse_args()
     try:
-        result = audit(args.project_root.resolve())
+        if args.release:
+            from meta_acdc.data.release import load_release
+            from meta_acdc.data.validate_release import validate
+            m,_=load_release(args.release,require_training=False)
+            v=validate(args.release.parent)
+            result=dict(machine_checks_passed=v['passed'],training_allowed=v['passed'] and m.get('training_allowed',False),binding_training_allowed=False,decision=('GO_STRUCTURAL_ONLY' if m.get('training_allowed',False) else 'WAIT_INDEPENDENT_ACCEPTANCE') if v['passed'] else 'NO_GO',task=m['task'],validation=v)
+        else:result = audit(args.project_root.resolve())
     except Exception as exc:
         result = dict(machine_checks_passed=False,training_allowed=False,decision='NO_GO',error=f'{type(exc).__name__}: {exc}')
     args.report.parent.mkdir(parents=True,exist_ok=True)
@@ -126,7 +133,7 @@ def main():
     print(json.dumps({k:v for k,v in result.items() if k!='checks'},ensure_ascii=False))
     for item in result.get('checks',[]):
         print(('PASS ' if item['passed'] else 'FAIL ')+item['name'])
-    return 2 if not result.get('machine_checks_passed') else 0
+    return 0 if result.get('training_allowed') else 2
 
 if __name__ == '__main__':
     raise SystemExit(main())

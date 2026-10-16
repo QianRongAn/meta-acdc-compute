@@ -53,6 +53,8 @@ def to_mutant(res: Residue, target: str = "ALA") -> Residue:
             f"{sorted(SUPPORTED_MUTANTS)}. A TRP/ARG 'mutation' here would only "
             f"rename the residue while keeping N/CA/C/O/CB, which the audit "
             f"identified as a virtual mutation, not a real one.")
+    if target == "ALA" and not any(a[0] == "CB" for a in res.atoms):
+        raise ValueError("ALA truncation requires an existing CB; cannot build alanine from glycine or incomplete atoms")
     keep = SUPPORTED_MUTANTS[target]
     atoms = [a for a in res.atoms if a[0] in keep]
     if target == "GLY":
@@ -73,7 +75,8 @@ def score(net, residues, device, mask_plddt):
     if mask_plddt:
         h = h.clone()
         h[:, 3] = 0.0
-    h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
+    from meta_acdc.models.train_egnn import normalize_node_features
+    h = normalize_node_features(h)
     with torch.no_grad():
         logit = net(h, t["x"], t["edge_index"], t["edge_attr"],
                     t["batch"]).squeeze(-1)

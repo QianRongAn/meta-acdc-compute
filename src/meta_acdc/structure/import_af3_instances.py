@@ -67,7 +67,7 @@ def resolve_job(job_dir: Path, by_peptide: dict[str, list[dict]]) -> dict | None
         # No exact chain pair: quarantine. The legacy candidates[0] guess is
         # what produced the 2026-10-14 misattribution.
         return {"pdb": None, "peptide": peptide, "evidence": "quarantined",
-                "alpha": alpha[:12], "beta": beta[:12]}
+                "alpha": (alpha or "")[:12], "beta": (beta or "")[:12]}
     return {"pdb": match["pdb"], "peptide": peptide,
             "evidence": match["evidence"]}
 

@@ -52,6 +52,8 @@ class Residue:
     plddt: float | None = None  # from B-factor column when available
     icode: str = ""  # insertion code (CDR3 regions: resid 100A/100B...)
     atoms: list[tuple[str, float, float, float]] = field(default_factory=list)
+    role: str | None = None
+    chain_kind: str | None = None
     # (atom name, x, y, z) — ALL heavy atoms (backbone N/CA/C/O + side chains)
 
 
@@ -65,6 +67,8 @@ class InterfaceGraph:
     edge_index: list[tuple[int, int]] = field(default_factory=list)
     edge_features: list[list[float]] = field(default_factory=list)  # RBF distances
     residue_info: list[tuple[str, str, int]] = field(default_factory=list)
+    peptide_mask: list[bool] = field(default_factory=list)
+    node_roles: list[str] = field(default_factory=list)
     node_keys: list[tuple[str, int, str]] = field(default_factory=list)  # (chain, resid, icode)
 
     def summary(self) -> str:
@@ -122,6 +126,11 @@ def classify_chains(residues: list[Residue]) -> dict[str, str]:
 
     roles: dict[str, str] = {}
     for chain, seq in seqs.items():
+        explicit = {r.role for r in residues if r.chain == chain and r.role is not None}
+        if explicit:
+            if len(explicit) != 1: raise ValueError("conflicting chain role annotations")
+            roles[chain] = explicit.pop()
+            continue
         n = len(seq)
         if "YFC" in seq or "YLC" in seq:
             roles[chain] = TCR
@@ -147,6 +156,7 @@ def parse_pdb(path: Path) -> list[Residue]:
     resname: dict[tuple[str, int, str], str] = {}
     with open(path) as fh:
         for line in fh:
+            if line.startswith("ENDMDL"): break
             if not line.startswith(("ATOM", "HETATM")):
                 continue
             resn = line[17:20].strip()
@@ -170,8 +180,8 @@ def parse_pdb(path: Path) -> list[Residue]:
             atoms.setdefault(key, []).append((name, x, y, z))
             resname.setdefault(key, resn)
             # treat B-factor as pLDDT when it looks like a confidence score
-            if bfac > 0:
-                plddt[key] = min(bfac, 100.0)
+            # Crystallographic B factors are not pLDDT.
+            plddt[key] = None
 
     residues = []
     for (chain, resid, icode), coords in atoms.items():
@@ -182,6 +192,8 @@ def parse_pdb(path: Path) -> list[Residue]:
         heavy = [(n, x, y, z) for n, x, y, z in coords if not n.startswith("H")]
         residues.append(Residue(chain, resname[(chain, resid, icode)], resid, cx, cy, cz,
                                 plddt.get((chain, resid, icode)), icode, heavy))
+    from .identity import annotate
+    annotate(residues, path)
     return residues
 
 
@@ -339,27 +351,26 @@ def build_interface_graph_from_residues(
         raise ValueError(f"{pdb_path or '<residues>'}: cannot split TCR/pMHC chains "
                          f"(tcr={len(tcr)}, pmhc={len(pmhc)}); roles={roles}")
 
+    centers = np.asarray([residue_centroid(r) for r in residues])
+    distances = np.linalg.norm(centers[:, None, :] - centers[None, :, :], axis=-1)
+
     def dist(a: Residue, b: Residue) -> float:
         # current-atom centroids: stale stored coords would disagree with
         # the node coordinates reported in the output graph (AUDIT.md #5)
         return residue_dist(a, b)
 
+    by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
     if forced_nodes is not None:
-        by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
-        keep = {by_key[k] for k in forced_nodes if k in by_key}
-        if len(keep) < 5:
-            keep = set(range(len(residues)))
+        if not forced_nodes or not forced_nodes <= set(by_key):
+            raise ValueError("pinned node identities missing from perturbed structure")
+        keep = {by_key[k] for k in forced_nodes}
     else:
-        # interface selection: within interface_radius of the opposite side
-        keep = set()
-        for i, r in enumerate(residues):
-            is_t = roles[r.chain] == TCR
-            other = pmhc if is_t else tcr
-            if any(dist(r, o) <= interface_radius for o in other):
-                keep.add(i)
+        is_t = np.asarray([roles[r.chain] == TCR for r in residues])
+        keep = set(np.where(np.where(is_t, distances[:, ~is_t].min(1), distances[:, is_t].min(1)) <= interface_radius)[0].tolist())
         if len(keep) < 5:
-            # fall back to the full complex if the interface is too small
-            keep = set(range(len(residues)))
+            raise ValueError("no valid interface; full-complex fallback forbidden")
+    if not any(roles[residues[i].chain] == PEPTIDE for i in keep):
+        raise ValueError("interface contains no peptide nodes")
 
     idx = sorted(keep)
     pos = {old: new for new, old in enumerate(idx)}
@@ -368,6 +379,8 @@ def build_interface_graph_from_residues(
                           for i in idx]
     graph.node_keys = [(residues[i].chain, residues[i].resid, residues[i].icode)
                        for i in idx]
+    graph.node_roles = [roles[residues[i].chain] for i in idx]
+    graph.peptide_mask = [x == PEPTIDE for x in graph.node_roles]
     # peptide-chain flag from role classification
     peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
 
@@ -425,7 +438,7 @@ def build_interface_graph_from_residues(
         for new_j, old_j in enumerate(idx):
             if new_j <= new_i:
                 continue
-            d = dist(residues[old_i], residues[old_j])
+            d = float(distances[old_i, old_j])
             if d <= edge_cutoff:
                 contact = _contact_hist(residues[old_i].atoms,
                                         residues[old_j].atoms)

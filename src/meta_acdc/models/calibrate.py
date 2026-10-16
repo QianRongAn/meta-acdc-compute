@@ -75,35 +75,29 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", type=Path, required=True)
     ap.add_argument("--data", type=Path,
-                    default=Path("data/processed/egnn_dataset.pt"))
+                    default=None)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--device",
                     default="cuda" if torch.cuda.is_available() else "cpu")
+    ap.add_argument("--release", type=Path, required=True)
     args = ap.parse_args()
+    if args.out.exists():raise ValueError("refusing to overwrite calibration output")
+    from meta_acdc.data.release import load_release, frozen_indices, sha256
+    manifest, approved = load_release(args.release, data_path=args.data)
+    args.data = approved
 
     data = torch.load(args.data, weights_only=False)
-    graphs = mask_plddt(list(data["graphs"]))
+    graphs = list(data["graphs"])
     labels = np.asarray(data["labels"])
     pdbs = list(data["pdbs"])
 
-    def pdb_group(name: str) -> str:
-        return name.split("-disp")[0].split("<-")[0]
-
-    groups: dict[str, list[int]] = {}
-    for i, p in enumerate(pdbs):
-        groups.setdefault(pdb_group(p), []).append(i)
-    rng = random.Random(42)
-    gids = list(groups.keys())
-    rng.shuffle(gids)
-    n_val = max(1, int(0.2 * len(gids)))
-    val_groups = set(gids[:n_val])
-    # calibration split (T is FIT here) vs held-out split (ECE is REPORTED
-    # here) — reporting the in-sample ECE of the fitted T double-uses the
-    # data and overstates calibration (AUDIT.md #19)
-    va_idx = [i for g in gids if g in val_groups for i in groups[g]]
-    te_idx = [i for g in gids if g not in val_groups for i in groups[g]]
+    frozen = frozen_indices(manifest, data)
+    va_idx, te_idx = frozen['calibration'], frozen['test']
 
     ck = torch.load(args.model, weights_only=False)
+    if ck.get("release_sha256") != sha256(args.release):
+        raise ValueError("checkpoint was not trained on this accepted release")
+    if ck["mask_plddt"]:graphs=mask_plddt(graphs)
     net = EGNN(node_dim=ck["n_node_dim"], edge_dim=ck["n_edge_dim"],
                depth=6, hidden=128).to(args.device)
     net.load_state_dict(ck["model"])
@@ -111,7 +105,7 @@ def main() -> int:
 
     def logits_for(idx):
         b = {k: v.to(args.device) for k, v in
-             collate([graphs[i] for i in idx]).items()}
+             collate([graphs[i] for i in idx], ck["n_node_dim"], ck["n_edge_dim"]).items()}
         with torch.no_grad():
             return net(**b).squeeze(-1).cpu(), \
                 torch.tensor(labels[idx], dtype=torch.float32)
@@ -147,7 +141,7 @@ def main() -> int:
           f"ECE={ece(p1_cal, y_cal.numpy()):.3f}")
 
     with open(args.out, "w") as fh:
-        json.dump({"model": str(args.model), "temperature": T,
+        json.dump({"release_sha256": sha256(args.release), "task": manifest["task"], "model": str(args.model), "temperature": T,
                    "n_cal": len(y_cal), "n_heldout": len(y_test),
                    "ece_heldout_before": ece(p0_test, y_test.numpy()),
                    "ece_heldout_after": ece(p1_test, y_test.numpy()),
