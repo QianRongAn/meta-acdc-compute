@@ -51,6 +51,13 @@
 
 ## 0. 给完全不懂生物的你:这件事在解决什么问题?
 
+<div align="center">
+  <a href="docs/figures/comic_s0.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s0.png" alt="第 0 话条漫：三分钟背景：警察为什么会抓错人" width="800">
+  </a>
+</div>
+
+
 ### 0.1 三分钟背景:免疫系统怎么"抓坏人"
 
 你的身体里有一支"警察部队"叫 **T 细胞**。每个 T 细胞表面有一把"识别
@@ -98,6 +105,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 
 ## 1. 核心思想(用一个比喻讲清楚)
 
+<div align="center">
+  <a href="docs/figures/comic_s1.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s1.png" alt="第 1 话条漫：钥匙、锁孔和两个假锁" width="800">
+  </a>
+</div>
+
+
 ### 1.1 钥匙与锁:形状 + 化学
 
 把 TCR 想成**钥匙**,pMHC 想成**锁孔**。传统方法只比较**钥匙和锁孔的
@@ -133,6 +147,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ---
 
 ## 2. 技术栈与方法
+
+<div align="center">
+  <a href="docs/figures/comic_s2.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s2.png" alt="第 2 话条漫：四站流水线" width="800">
+  </a>
+</div>
+
 
 ### 2.1 数据(从哪来)
 
@@ -183,6 +204,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ---
 
 ## 3. 实验日志:每一步为什么这么做、结果如何解释
+
+<div align="center">
+  <a href="docs/figures/comic_s3.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s3.png" alt="第 3 话条漫：十五步探案录" width="800">
+  </a>
+</div>
+
 
 > 按时间顺序,每步记录 **动机(为什么)→ 方法 → 结果 → 含义**。
 > **阴性结果同样记录**——它们排除了假说、重定向了研究,是本项目
@@ -372,6 +400,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 
 ## 4. 主要结果速览
 
+<div align="center">
+  <a href="docs/figures/comic_s4.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s4.png" alt="第 4 话条漫：诚实成绩单" width="800">
+  </a>
+</div>
+
+
 | 实验 | 结果 | 意义 |
 |---|---|---|
 | 序列天花板 | 0.62–0.64(未见表位) | 序列信息在此口径下接近上限(AUDIT.md #11) |
@@ -388,6 +423,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ---
 
 ## 5. 创新点:人无我有、人有我优
+
+<div align="center">
+  <a href="docs/figures/comic_s5.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s5.png" alt="第 5 话条漫：空白补位战" width="800">
+  </a>
+</div>
+
 
 ### 5.1 人无我有(填补的空白)
 
@@ -419,6 +461,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ---
 
 ## 6. 未来方向:怎么做得更有创新、更空白
+
+<div align="center">
+  <a href="docs/figures/comic_s6.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s6.png" alt="第 6 话条漫：下一站地图" width="800">
+  </a>
+</div>
+
 
 ### 6.1 立刻可做的"补全"(把现有结论做扎实)
 
@@ -467,6 +516,13 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ---
 
 ## 7. 复现与环境
+
+<div align="center">
+  <a href="docs/figures/comic_s7.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s7.png" alt="第 7 话条漫：一键回家" width="800">
+  </a>
+</div>
+
 
 ### 7.1 两条路径
 
@@ -530,6 +586,13 @@ docs/             基准记录、SOP、论文草稿、图、里程碑
 ---
 
 ## 8. 诚实性记录(阴性结果与踩过的坑)
+
+<div align="center">
+  <a href="docs/figures/comic_s8.png" title="点击查看清晰全图（3200x1800）">
+    <img src="docs/figures/comic_s8.png" alt="第 8 话条漫：翻车纪念馆" width="800">
+  </a>
+</div>
+
 
 > 这一节是论文 Methods 的素材,也是本项目可信度的基础。**"看似突破
 > 先自查泄漏"**。
