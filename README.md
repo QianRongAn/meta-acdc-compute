@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="docs/figures/poster_vertical.png" title="点击查看清晰全图（2480x3508）">
-    <img src="docs/figures/poster_vertical.png" alt="Meta-ACDC 项目海报：三幕漫画版方法总览" width="800">
+    <img src="docs/figures/poster_vertical.png" alt="Meta-ACDC 项目海报：三幕漫画版方法总览" width="860">
   </a>
 </div>
 
@@ -52,8 +52,8 @@
 ## 0. 给完全不懂生物的你:这件事在解决什么问题?
 
 <div align="center">
-  <a href="docs/figures/comic_s0.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s0.png" alt="第 0 话条漫：三分钟背景：警察为什么会抓错人" width="800">
+  <a href="docs/figures/comic_s0.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s0.png" alt="第 0 话条漫：三分钟背景：警察为什么会抓错人" width="860">
   </a>
 </div>
 
@@ -106,8 +106,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 1. 核心思想(用一个比喻讲清楚)
 
 <div align="center">
-  <a href="docs/figures/comic_s1.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s1.png" alt="第 1 话条漫：钥匙、锁孔和两个假锁" width="800">
+  <a href="docs/figures/comic_s1.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s1.png" alt="第 1 话条漫：钥匙、锁孔和两个假锁" width="860">
   </a>
 </div>
 
@@ -149,8 +149,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 2. 技术栈与方法
 
 <div align="center">
-  <a href="docs/figures/comic_s2.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s2.png" alt="第 2 话条漫：四站流水线" width="800">
+  <a href="docs/figures/comic_s2.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s2.png" alt="第 2 话条漫：四站流水线" width="860">
   </a>
 </div>
 
@@ -206,8 +206,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 3. 实验日志:每一步为什么这么做、结果如何解释
 
 <div align="center">
-  <a href="docs/figures/comic_s3.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s3.png" alt="第 3 话条漫：十五步探案录" width="800">
+  <a href="docs/figures/comic_s3.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s3.png" alt="第 3 话条漫：十五步探案录" width="860">
   </a>
 </div>
 
@@ -401,8 +401,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 4. 主要结果速览
 
 <div align="center">
-  <a href="docs/figures/comic_s4.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s4.png" alt="第 4 话条漫：诚实成绩单" width="800">
+  <a href="docs/figures/comic_s4.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s4.png" alt="第 4 话条漫：诚实成绩单" width="860">
   </a>
 </div>
 
@@ -425,8 +425,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 5. 创新点:人无我有、人有我优
 
 <div align="center">
-  <a href="docs/figures/comic_s5.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s5.png" alt="第 5 话条漫：空白补位战" width="800">
+  <a href="docs/figures/comic_s5.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s5.png" alt="第 5 话条漫：空白补位战" width="860">
   </a>
 </div>
 
@@ -463,8 +463,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 6. 未来方向:怎么做得更有创新、更空白
 
 <div align="center">
-  <a href="docs/figures/comic_s6.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s6.png" alt="第 6 话条漫：下一站地图" width="800">
+  <a href="docs/figures/comic_s6.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s6.png" alt="第 6 话条漫：下一站地图" width="860">
   </a>
 </div>
 
@@ -518,8 +518,8 @@ TCR 疗法中,被"增强亲和力"的 TCR 意外识别了心脏蛋白 **titin** 
 ## 7. 复现与环境
 
 <div align="center">
-  <a href="docs/figures/comic_s7.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s7.png" alt="第 7 话条漫：一键回家" width="800">
+  <a href="docs/figures/comic_s7.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s7.png" alt="第 7 话条漫：一键回家" width="860">
   </a>
 </div>
 
@@ -588,8 +588,8 @@ docs/             基准记录、SOP、论文草稿、图、里程碑
 ## 8. 诚实性记录(阴性结果与踩过的坑)
 
 <div align="center">
-  <a href="docs/figures/comic_s8.png" title="点击查看清晰全图（3200x1800）">
-    <img src="docs/figures/comic_s8.png" alt="第 8 话条漫：翻车纪念馆" width="800">
+  <a href="docs/figures/comic_s8.png" title="点击查看清晰全图（3200x2000）">
+    <img src="docs/figures/comic_s8.png" alt="第 8 话条漫：翻车纪念馆" width="860">
   </a>
 </div>
 
