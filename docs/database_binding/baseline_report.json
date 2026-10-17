@@ -1,0 +1,32 @@
+{
+  "model_sha256": "18d974695240de163bb08ca2651af20d83ad06ce41616e8f6e2410f533dbbc82",
+  "task": "experimental_SPR_pKD_regression",
+  "release_manifest_sha256": "4a4f5dfd1b26f357be8b0facd91da9b589d39d0e41ab397f3af43659b83ba3f6",
+  "objective": "pKD = -log10(KD in molar); not probability of binding",
+  "n_train": 55,
+  "n_validation": 18,
+  "n_test": 18,
+  "n_test_connected_blocks": 6,
+  "hyperparameter_selection": "Ridge alpha 1,10,100; validation RMSE only; no refit on test",
+  "selected_alpha": 100.0,
+  "test_ridge": {
+    "rmse_pkd": 2.2620521606931177,
+    "mae_pkd": 1.491965097933185
+  },
+  "test_train_mean_baseline": {
+    "rmse_pkd": 2.2722662050163924,
+    "mae_pkd": 1.508698470377344
+  },
+  "rmse_improvement_block_bootstrap_95ci": [
+    0.005585044571412878,
+    0.023848667025811343
+  ],
+  "acceptance_predeclared": "lower 95% block-bootstrap RMSE improvement > 0; lower MAE; exploratory comparison only, not a clinical/industry standard or broad affinity validation",
+  "exploratory_comparison_passed": true,
+  "general_affinity_validation_passed": false,
+  "binary_binding_validation_passed": false,
+  "clinical_validation_passed": false,
+  "uses_pretrained_checkpoint": false,
+  "external_primary_panel_used": false,
+  "scope": "fresh sequence/assay exploratory model; does not validate structural EGNN or unseen nonbinders"
+}

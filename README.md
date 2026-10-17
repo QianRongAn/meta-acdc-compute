@@ -1,3 +1,5 @@
+> **2026-10-17 experimental database run:** [real measurements and external checks](docs/DATABASE_BINDING_VALIDATION.md): ATLAS SPR affinity data acquired and filtered; 91 records after external reservation, 10,000 MIRA activation observations and 4 trial safety snapshots. Fresh affinity baseline showed near-random external activation ranking. Binding/clinical validation remains unapproved; structural prototype release has separate scope.
+
 > **2026-10-17 training decision:** [GO for scoped structural retraining](docs/RETRAINING_DECISION_20261017.md). New v4 manifest passes the normal loader. Fresh-model forward/backward smoke passed. Binding/clinical training remains NO GO. No optimizer run started by the readiness assessment. Older status notes below are historical.
 
 > **2026-10-16 current status:** [expanded evidence and readiness](docs/EXPERIMENTAL_EVIDENCE_EXPANSION.md): 23 endpoint-separated primary observations from 4 studies, 8 reserved receptor constructs; structural-v3 validated (888 graphs), 106 VDJdb associations quarantined. Hy4 deferred. Training and clinical/performance claims remain blocked.

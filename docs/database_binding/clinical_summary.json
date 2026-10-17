@@ -1,0 +1,16 @@
+{
+  "n_trials": 4,
+  "n_arm_event_observations": 690,
+  "n_event_groups": 8,
+  "clinical_model_validation_allowed": false,
+  "uses": "retrospective aggregate safety and identity audit only",
+  "limitations": [
+    "No individual patient dose/exposure/follow-up to receptor-peptide mapping",
+    "All-cause mortality is not treatment-caused mortality",
+    "AE occurrence does not establish molecular off-target causality",
+    "Unreported events and absent rows do not mean zero risk",
+    "No synthetic safe negative for a peptide or TCR",
+    "Do not sum counts across overlapping trials or event categories",
+    "Anti-CD3 soluble TCR bispecific and TCR-T mechanisms must be stratified"
+  ]
+}

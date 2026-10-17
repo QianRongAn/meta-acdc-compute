@@ -1,0 +1,31 @@
+{
+  "records": 10000,
+  "paired_receptors": 1000,
+  "peptides": 20,
+  "hla_alleles": [
+    "HLA-A*02:01",
+    "HLA-B*40:01"
+  ],
+  "activation_counts": {
+    "1": 1000,
+    "0": 9000
+  },
+  "endpoint": "MIRA_pool_activation",
+  "use": "external functional benchmark candidate only; not a training source in this run",
+  "physical_binding_validation_allowed": false,
+  "clinical_validation_allowed": false,
+  "license": {
+    "value": 3,
+    "name": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "raw_pool_measurements_available_in_export": false,
+  "individual_donor_ids_available_in_export": false,
+  "limitations": [
+    "One source/platform; 20 selected viral peptides and two HLA contexts",
+    "Conditional pool nonactivation is not proof of absent physical binding",
+    "HLA assignment uses prediction plus donor genotype",
+    "No dose/detection curves or patient toxicity outcomes",
+    "Related receptor families and peptide exposure must be excluded from any training sources before scoring"
+  ]
+}

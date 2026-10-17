@@ -1,0 +1,31 @@
+{
+  "task": "experimental_SPR_pKD_regression",
+  "release_manifest_sha256": "e7cf9079fabff511275976e04e8f22b694b2389cea8c83c99277a0ad39d4a929",
+  "objective": "pKD = -log10(KD in molar); not probability of binding",
+  "n_train": 77,
+  "n_validation": 26,
+  "n_test": 26,
+  "n_test_connected_blocks": 8,
+  "hyperparameter_selection": "Ridge alpha 1,10,100; validation RMSE only; no refit on test",
+  "selected_alpha": 100.0,
+  "test_ridge": {
+    "rmse_pkd": 0.7576601704548457,
+    "mae_pkd": 0.6399483968117146
+  },
+  "test_train_mean_baseline": {
+    "rmse_pkd": 0.7292974721575,
+    "mae_pkd": 0.6071989242796685
+  },
+  "rmse_improvement_block_bootstrap_95ci": [
+    -0.046337229981016526,
+    0.003690409818423036
+  ],
+  "acceptance_predeclared": "lower 95% block-bootstrap RMSE improvement > 0; lower MAE; exploratory comparison only, not a clinical/industry standard or broad affinity validation",
+  "exploratory_comparison_passed": false,
+  "general_affinity_validation_passed": false,
+  "binary_binding_validation_passed": false,
+  "clinical_validation_passed": false,
+  "uses_pretrained_checkpoint": false,
+  "external_primary_panel_used": false,
+  "scope": "fresh sequence/assay exploratory model; does not validate structural EGNN or unseen nonbinders"
+}

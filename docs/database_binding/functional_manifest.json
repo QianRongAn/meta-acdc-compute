@@ -1,0 +1,35 @@
+{
+  "task": "external_MIRA_activation_benchmark",
+  "sources": [
+    {
+      "file": "figshare_30491582.json",
+      "url": "https://api.figshare.com/v2/articles/30491582",
+      "sha256": "684bd0dd46eb8dfb99e5ad0d542a69278c18a63f8d332f1e820d4b5cd0489e5e",
+      "bytes": 4275,
+      "retrieved_at_utc": "2026-10-17T09:25:11.385177+00:00"
+    },
+    {
+      "file": "immrep2025_for_release.tsv",
+      "url": "https://ndownloader.figshare.com/files/59188478",
+      "sha256": "d8fe2c70b015e4594e98d527079ea76c6ec4636c2e1f70428704f1fb8d5bfb2a",
+      "publisher_md5": "460bd1750d81b457f4d6416567f1beaa",
+      "bytes": 9671632,
+      "retrieved_at_utc": "2026-10-17T09:26:19.359204+00:00"
+    },
+    {
+      "file": "immrep25_dataset_and_methods.pdf",
+      "url": "https://ndownloader.figshare.com/files/59188622",
+      "sha256": "5fb0a30237d75223ec0438dfb8eb06da852ec4bd51b53164f1263feb8536da9a",
+      "publisher_md5": "7bf20786f7934db3409e2ef5010f4f12",
+      "bytes": 215227,
+      "retrieved_at_utc": "2026-10-17T09:26:24.950823+00:00"
+    }
+  ],
+  "files": {
+    "functional_observations.json": "5af77db359c390edf5e381aa2275424fd2f1ba3079e2cfe2909c05ddb8af885f",
+    "summary.json": "df2c99056294dfa900410e225c77475643edb5bc588f88862406ac6e8072f4b7",
+    "reservation_registry.json": "6d669076f2a74351aa1fb98d972e2852ec941355c23ea0071268b66d62f025eb"
+  },
+  "code_sha256": "4b74b855311c818fb7f43813211d35290033e3a808a0274a06cc52c6d9d5c772",
+  "training_used": false
+}
