@@ -1,0 +1,79 @@
+[
+  {
+    "candidate": "T4H2 / SILv44",
+    "decision": "reserved_classical_external_only",
+    "measurements": 3,
+    "lineages": 2,
+    "papers": 2,
+    "research_groups": 1,
+    "reason": "source25C SPR, named deposited paired chains, no local historical/clinical family hits; two T4H2 values retained separately; no scoring"
+  },
+  {
+    "candidate": "P1-15",
+    "doi": "10.1172/jci.insight.202235",
+    "decision": "quarantine_historical_family_and_sequence_conflict",
+    "reason": "PDB28IL is a real entry, not presumed typo; deposited betaCDR3 CASSESGGYEQYF conflicts with article motif CASSSGGGYEQYF; corresponding beta near NYN-I8YE4 in historicv1-v4 inclAF3; cannot count as new independent family",
+    "history_audit": "data/external_evidence/20261018-spr-followup-v1/28IL_history_check.json"
+  },
+  {
+    "candidate": "NYN-I / NYN-II",
+    "doi": "10.1016/j.jbc.2024.107563",
+    "decision": "not_admitted_to_independent_panel",
+    "reason": "NYN-I8YE4 historically used; NYN-II public near-family identity not cleared; no family novelty inferred from clone names; KD13.5 primary retained as primary vs secondary13.6 discrepancy"
+  },
+  {
+    "candidate": "TP53 R248Q TCR",
+    "doi": "10.1172/JCI196613",
+    "decision": "quarantine_temperature_and_construct_link",
+    "kd_um": 1.86,
+    "reason": "primary usesSPR; temperature unreported in SPR paragraph;25C elsewhere is ELISA; patentCN118772260B identified but exact assayed clone to paired sequence and full expression construct not verified; no clinical treatment outcome assigned"
+  },
+  {
+    "candidate": "T4H2 gp100209-2Nle",
+    "pmid": "39042676",
+    "decision": "separate_noncanonical_peptide",
+    "kd_um": 8.0,
+    "reason": "norleucine is noncanonical; never encode asL/M; not a biological replicate of IMDQVPFSV"
+  },
+  {
+    "candidate": "T4H2 SARS-CoV spike assay",
+    "pmid": "39042676",
+    "decision": "different_endpoint_not_peptide_nonbinding",
+    "reason": "whole spike-TCR absence is not peptide-MHC-TCR nonbinding label"
+  },
+  {
+    "candidate": "TW10 D1/D6",
+    "decision": "reserved_partial_identity_not_model_ready",
+    "reason": "differentTRAV4/TRBV20-1 versuspriorTRBV19; real25CSPR; fullvariablechainsnotpubliclyrecovered; onlypairedCDR3,V/J; cannotfillfromgermlinereference",
+    "file": "external_differentV_candidates.json"
+  },
+  {
+    "candidate": "IW9 726/309 TCR3/4",
+    "decision": "quarantine_unlinked_paired_identity_preprint",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889509/",
+    "kd_um": [
+      1.53,
+      1.92,
+      6.53,
+      7.98
+    ],
+    "reason": "newRagon/Birnbaum/Walkerprimarypreprint25CSPR; exactassayedpairedsequence/Vgenesnotretrieved; supplementHTMLchallenge,bioRxiv429;not4independentresearchstudies"
+  },
+  {
+    "candidate": "G9",
+    "decision": "separate_MHCII_reverse_docking_temperature_unverified",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979002/",
+    "reason": "TRAV12-1/TRBV5-1 butclassIIpeptideagnosticbinding; noexplicitassaytemperature; notclassicalMHCIcore"
+  },
+  {
+    "candidate": "2025PIK3CAallostery TCR3/TCR4",
+    "decision": "existing_external_lineages_not_new_independent_receptors",
+    "source": "https://www.nature.com/articles/s41467-025-56004-8",
+    "reason": "samepreexistingPIK3CAreservedfamilies; nofalseincrementfornewpublication"
+  },
+  {
+    "candidate": "US20220241383A1",
+    "decision": "irrelevant_title_rejected",
+    "reason": "downloadedpatentisnotKRAS/TCR;neverusedforsequenceorfacts"
+  }
+]

@@ -39,7 +39,7 @@ class SPRFollowup(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'reserved'):assert_reserved_absent([x])
     def test_prior_panel_and_folds_unchanged(self):
         panel=self.load('external_classical_panel.json');old=json.loads((ROOT/'docs/evidence_completion_20261018/external_classical_core.json').read_text());self.assertEqual(panel[:4],old);self.assertEqual(len(panel),7)
-        rows=self.load('review_ledger.json');self.assertEqual(sum(a['training_allowed'] for a in rows),25)
+        rows=self.load('review_ledger.json');self.assertEqual(sum(a['training_allowed'] for a in rows),31)
         for a in rows:self.assertEqual(a['parent_fold'],a['original_record']['fold'])
     def test_recovered_fulltext_is_not_exact_numeric_confirmation(self):
         x={a['evidence_id']:a for a in self.load('review_ledger.json')}

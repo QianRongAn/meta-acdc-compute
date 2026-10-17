@@ -1,0 +1,86 @@
+{
+  "purpose": "carryforwardallpriorreservations; add pairedCDR3only TW10D1/D6 and public KRAS10mer reference; never training",
+  "receptors": [
+    {
+      "receptor_name": "clinical:4196-AV6/BV11",
+      "lineage": "p53-R175H-4196-AV6/BV11",
+      "alpha_variable": "MESFLGGVLLILWLQVDWVKSQKIEQNSEALNIQEGKTATLTCNYTNYSPAYLQWYRQDPGRGPVFLLLIRENEKEKRKERLKVTFDTTLKQSLFHITASQPADSATYLCALDIYPHDMRFGAGTRLTVKPDIQNPEPAV",
+      "beta_variable": "MATRLLCWAALCLLGAELTEAGVAQSPRYKIIEKRQSVAFWCNPISGHATLYWYQQILGQGPKLLIQFQNNGVVDDSQLPKDRFSAERLKGVDSTLKIQPAKLEDSAVYLCASSLDPGDTGELFFGEGSRLTVLEDLRN",
+      "cdr3_alpha": "CALDIYPHDMRF",
+      "cdr3_beta": "CASSLDPGDTGELFF",
+      "sequence_scope": "published chain fragments with signal peptides and short constant flanks; NOT complete clinical engineered chains",
+      "clinical_patient_id": "4349",
+      "pmid": "35749374"
+    },
+    {
+      "receptor_name": "WT1:C4",
+      "lineage": "WT1:C4",
+      "alpha_variable": "MTSIRAVFIFLWLQLDLVNGENVEQHPSTLSVQEGDSAVIKCTYSDSASNYFPWYKQELGKRPQLIIDIRSNVGEKKDQRIAVTLNKTAKHFSLHITETQPEDSAVYFCAATEDYQLIWGAGTKLIIKP",
+      "beta_variable": "MSNQVLCCVVLCFLGANTVDGGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSPGALYEQYFGPGTRLTVT",
+      "cdr3_alpha": "CAATEDYQLIW",
+      "cdr3_beta": "CASSPGALYEQYF",
+      "source": "US20160083449A1_SEQ96"
+    },
+    {
+      "receptor_name": "HBV:a09b08",
+      "alpha_variable": "MAKEVEQNSGPLSVPEGAIASLNCTYSDRGSVSFFWYRQYSGKSPELIMSIYLNGLKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVGNHNTGNMLTFGGGTRLM",
+      "beta_variable": "MNAGVTQTPKFQVLKTGQSMTLQCAQDMNYEYMSWYRQDPGMGLRLIHYSVSAGLTDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASHRNRLTEAFFGQGTRLT",
+      "cdr3_alpha": "AVGNHNTGNMLT",
+      "cdr3_beta": "ASHRNRLTEAF",
+      "lineage": "HBV:a09b08",
+      "source": "10.1038/s41467-024-54378-9"
+    },
+    {
+      "receptor_name": "T4H2",
+      "lineage": "T4H2",
+      "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNALLGNQFYFGTGTSLTVIP",
+      "beta_variable": "MGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSMGGTYEQYFGPGTRLTVT",
+      "cdr3_alpha": "CAVNALLGNQFYF",
+      "cdr3_beta": "CASSMGGTYEQYF",
+      "pmid": "33468649"
+    },
+    {
+      "receptor_name": "SILv44",
+      "lineage": "SILv44",
+      "alpha_variable": "MAQSVSQHNHHVILSEAASLELGCNYSYGGTVNLFWYVQYPGQHLQLLLKYFSGDPLVKGIKGFEAEFIKSKFSFNLRKPSVQWSDTAEYFCAVNARRNTPLVFGKGTRLSVIA",
+      "beta_variable": "MGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSITLSSYNEQFFGPGTRLTVL",
+      "cdr3_alpha": "CAVNARRNTPLVF",
+      "cdr3_beta": "CASSITLSSYNEQFF",
+      "pmid": "33468649"
+    },
+    {
+      "receptor_name": "TW10:D1",
+      "lineage": "TW10:D1",
+      "cdr3_alpha": "CLVGGGANNLFF",
+      "cdr3_beta": "CSARQEGGLRNEQYF",
+      "alpha_variable": "",
+      "beta_variable": "",
+      "trav": "TRAV4",
+      "trbv": "TRBV20-1",
+      "source": "10.1016/j.celrep.2024.114555",
+      "sequence_scope": "pairedCDR3only; fullvariablesNOTimputed"
+    },
+    {
+      "receptor_name": "TW10:D6",
+      "lineage": "TW10:D6",
+      "cdr3_alpha": "CLAQTGANNLFF",
+      "cdr3_beta": "CSARASGEAKNIQYF",
+      "alpha_variable": "",
+      "beta_variable": "",
+      "trav": "TRAV4",
+      "trbv": "TRBV20-1",
+      "source": "10.1016/j.celrep.2024.114555",
+      "sequence_scope": "pairedCDR3only; fullvariablesNOTimputed"
+    },
+    {
+      "receptor_name": "clinical_reference:KRAS10mer",
+      "lineage": "KRAS10mer_TRAV12-2_TRBV10-2",
+      "alpha_variable": "MKSLRVLLVILWLQLSWVWSQQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAAAMDSSYKLIFGSGTRLLVRPD",
+      "beta_variable": "MGTRLFFYVALCLLWAGHRDAGITQSPRYKITETGRQVTLMCHQTWSHSYMFWYRQDLGHGLRLIYYSAAADITDKGEVPDGYVVSRSKTENFPLTLESATRSQTSVYFCASSDPGTEAFFGQGTRLTVVEDLR",
+      "cdr3_alpha": "CAAAMDSSYKLIF",
+      "cdr3_beta": "CASSDPGTEAFF",
+      "source": "EP3494133B1SEQ56/57",
+      "sequence_scope": "publishedproteinreference;clinicalcassetteunverified"
+    }
+  ]
+}

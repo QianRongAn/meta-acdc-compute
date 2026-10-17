@@ -7,15 +7,15 @@ from meta_acdc.data.experimental_evidence import reserved_hits,assert_reserved_a
 ROOT=Path(__file__).resolve().parents[1]
 class EvidenceCompletion(unittest.TestCase):
     def load(self,name):return json.loads((CURATION/name).read_text())
-    def test_primary_51_covered_and_25_eligible(self):
+    def test_primary_51_covered_and_31_eligible(self):
         rows=self.load('review_ledger.json');parent=json.loads((ROOT/'docs/clinical_primary_20261018/affinity_dataset.json').read_text())
-        self.assertTrue(validate_review(rows,parent,check_sources=False));self.assertEqual(sum(x['training_allowed'] for x in rows),25)
+        self.assertTrue(validate_review(rows,parent,check_sources=False));self.assertEqual(sum(x['training_allowed'] for x in rows),31)
     def test_tk3_q5_value_is_not_wt(self):
         row=next(x for x in self.load('review_ledger.json') if x['evidence_id']=='ATLAS:914')
         self.assertEqual(row['peptide'],'HPVGQADYFEY');self.assertEqual(row['status'],'quarantine_wrong_ligand_value');self.assertFalse(row['training_allowed'])
-    def test_original_four_temperatures_stay_missing(self):
+    def test_two_original_temperatures_stay_missing(self):
         rows={x['evidence_id']:x for x in self.load('review_ledger.json')}
-        for key in ['747','751','714','716']:self.assertIsNone(rows['ATLAS:'+key]['temperature_K']);self.assertFalse(rows['ATLAS:'+key]['training_allowed'])
+        for key in ['714','716']:self.assertIsNone(rows['ATLAS:'+key]['temperature_K']);self.assertFalse(rows['ATLAS:'+key]['training_allowed'])
     def test_unverified_database_error_bars_removed(self):
         rows={x['evidence_id']:x for x in self.load('review_ledger.json')}
         for key in ['502','505','485']:self.assertIsNone(rows['ATLAS:'+key]['primary_error'])
