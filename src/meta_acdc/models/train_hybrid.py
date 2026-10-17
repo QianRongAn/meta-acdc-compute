@@ -122,7 +122,7 @@ def main() -> int:
     out = args.out
     out.parent.mkdir(parents=True, exist_ok=True)
     torch.save({"model": net.state_dict(), "release_sha256": sha256(args.release),
-                "task": manifest["task"], "mask_plddt": False,
+                "task": manifest["task"], "mask_plddt": bool(manifest.get("mask_plddt_required",False)),
                 "n_node_dim": NODE_DIM, "n_edge_dim": EDGE_DIM}, out)
     print(f"saved to {out}", flush=True)
     return 0

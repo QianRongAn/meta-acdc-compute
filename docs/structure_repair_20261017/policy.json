@@ -1,0 +1,33 @@
+{
+  "policy_id": "rigid-observed-peptide-transfer-v1",
+  "retired_accepted_controls": [
+    "per_residue_sidechain_graft",
+    "fixed_global_z_translation"
+  ],
+  "missing_atoms": "reject any native/control pair with incomplete canonical heavy atoms in the union of their interface nodes; do not impute",
+  "donors": "same frozen fold, same domain, exact observed MHC and B2M sequences, equal peptide length, different peptide sequence",
+  "transformation": "single proper Kabsch rotation+translation of ALL donor peptide atoms onto receiver N/CA/C/O backbone; no local stitching or coordinate minimization",
+  "max_backbone_fit_rmsd_A": 1.0,
+  "hard_min_cross_chain_distance_A": 1.2,
+  "bondi_vdw_radii_A": {
+    "C": 1.7,
+    "N": 1.55,
+    "O": 1.52,
+    "S": 1.8
+  },
+  "max_cross_chain_vdw_overlap_A": 0.4,
+  "hydrogen_bond_exemption": false,
+  "steric_policy_note": "deliberately conservative heavy-atom-only screen, including N/O contacts; may exclude legitimate tight hydrogen bonds; not MolProbity clashscore",
+  "peptide_CN_bond_range_A": [
+    1.1,
+    1.6
+  ],
+  "internal_distance_preservation_max_error_A": 1e-08,
+  "pin_nodes": "same union of native and transfer interface residue keys; completeness required in both",
+  "pairing": "one native and one control per retained receiver; no unmatched positives in training arrays",
+  "label_scope": "native_vs_synthetic_decoy; never experimentally validated nonbinding",
+  "tuning": "fixed before reconstruction; no training/AUROC based threshold selection",
+  "training_allowed": false,
+  "binding_training_allowed": false,
+  "clinical_training_allowed": false
+}

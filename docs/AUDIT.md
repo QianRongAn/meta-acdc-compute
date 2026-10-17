@@ -1,3 +1,5 @@
+> **后续原子数据处置已落地，当前判决见 [N2／N8 修复报告](STRUCTURE_ATOMIC_REPAIR_20261017.md)：168 份无标签资料核验，5 对新控制不足以恢复重训。**
+
 > **2026-10-17 补充审计发现新阻断项，原 28 项修复不能推出当前已可重训。见 [N1–N14 逐项复核](N_REVIEW_20261017.md)。**
 
 > 2026-10-16: earlier item-level code-fix claims do not certify the historical datasets. See [PRETRAIN_READINESS.md](PRETRAIN_READINESS.md) for rebuilt inputs, measured checks and remaining release blockers. Independent hy4 acceptance is pending; no retraining or historical performance is authorized.

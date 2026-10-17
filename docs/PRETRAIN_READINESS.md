@@ -1,3 +1,5 @@
+> **后续原子数据处置已落地，当前判决见 [N2／N8 修复报告](STRUCTURE_ATOMIC_REPAIR_20261017.md)：168 份无标签资料核验，5 对新控制不足以恢复重训。**
+
 > **2026-10-17 update:** [Scoped structural retraining is now released](RETRAINING_DECISION_20261017.md); binding and clinical claims remain blocked. The release/guard state described below is historical.
 
 > **最新状态：** [证据扩展与 structural-v3](EXPERIMENTAL_EVIDENCE_EXPANSION.md) 已完成机器验证；hy4 按用户要求暂缓。旧报告中的配额阻断和 v2 计数为历史状态；训练尚未放行。

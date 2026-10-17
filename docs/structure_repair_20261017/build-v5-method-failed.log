@@ -1,0 +1,34 @@
+source records checked; accepted inventory 0
+source records checked; accepted inventory 0
+{
+  "n_previous_native": 300,
+  "n_clean_inventory": 18,
+  "n_pairs": 0,
+  "n_graphs": 0,
+  "graph_kinds": {},
+  "inventory_domains": {
+    "crystal": 17,
+    "predicted": 1
+  },
+  "paired_domains": {},
+  "n_families": 0,
+  "fold_graph_counts": {
+    "train": 0,
+    "validation": 0,
+    "calibration": 0,
+    "test": 0
+  },
+  "usable_all_four_folds": false,
+  "policy_id": "rigid-observed-peptide-transfer-v1",
+  "thresholds_modified_after_build": false,
+  "training_allowed": false,
+  "binding_training_allowed": false,
+  "clinical_training_allowed": false,
+  "labels_are_experimental_nonbinding": false,
+  "n_identity_corrections": 0,
+  "excluded_by_stage": {
+    "native_atoms": 211,
+    "native_identity_or_completeness": 71,
+    "paired_control": 18
+  }
+}

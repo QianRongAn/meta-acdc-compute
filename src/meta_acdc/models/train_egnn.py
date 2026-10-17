@@ -191,7 +191,7 @@ def main() -> int:
 
     out = args.out or Path(args.data).with_suffix(".model.pt")
     out.parent.mkdir(parents=True, exist_ok=True)
-    torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": False, "update_coordinates": not args.fixed_coordinates, "model": net.state_dict(),
+    torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": bool(manifest.get("mask_plddt_required",False)), "update_coordinates": not args.fixed_coordinates, "model": net.state_dict(),
                 "n_node_dim": node_dim, "n_edge_dim": edge_dim}, out)
     print(f"saved model to {out}", flush=True)
     return 0

@@ -1,0 +1,729 @@
+[
+  {
+    "receiver": "2bnr",
+    "donor": "2bnq",
+    "fold": "validation",
+    "family_id": "Fef92facf2b304718",
+    "domain": "crystal",
+    "n_nodes": 82,
+    "native_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.41821377683076566,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "control_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.4428605109494379,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "rigid_transfer": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "rotation": [
+        [
+          0.9999814751512432,
+          0.0058828354684100715,
+          -0.0015625623813303718
+        ],
+        [
+          -0.0058557713490084646,
+          0.9998418192372419,
+          0.016794238484414265
+        ],
+        [
+          0.001661112955842312,
+          -0.016784777365662883,
+          0.9998577458581464
+        ]
+      ],
+      "translation": [
+        -35.646955631544934,
+        -0.22966056416387914,
+        -0.44090055292394226
+      ],
+      "backbone_fit_rmsd_A": 0.3938687756271515,
+      "internal_distance_max_error_A": 1.7763568394002505e-14,
+      "donor_geometry_preserved": true,
+      "relaxed": false,
+      "validates_nonbinding": false
+    },
+    "rejected_donor_attempts": [
+      {
+        "donor": "1oga",
+        "reason": "preset_heavy_atom_screen",
+        "qc": {
+          "policy_id": "rigid-observed-peptide-transfer-v2",
+          "passed": false,
+          "gross_screen": {
+            "policy": "construction-screen-v1",
+            "severe_distance_A": 1.2,
+            "cross_chain_pairs_below_cutoff": 0,
+            "ca_cb_outliers": [],
+            "passed": true,
+            "validates_rotamers": false,
+            "validates_nonbinding": false
+          },
+          "vdw_overlap_pairs": 15,
+          "max_vdw_overlap_A": 1.4482410034835012,
+          "worst_pairs": [
+            {
+              "peptide": [
+                "C",
+                6,
+                "",
+                "CG2"
+              ],
+              "environment": [
+                "E",
+                95,
+                "",
+                "CG2"
+              ],
+              "distance_A": 1.9517589965164988,
+              "overlap_A": 1.4482410034835012
+            },
+            {
+              "peptide": [
+                "C",
+                9,
+                "",
+                "CD1"
+              ],
+              "environment": [
+                "A",
+                116,
+                "",
+                "CZ"
+              ],
+              "distance_A": 2.217800863854107,
+              "overlap_A": 1.182199136145893
+            },
+            {
+              "peptide": [
+                "C",
+                9,
+                "",
+                "CD1"
+              ],
+              "environment": [
+                "A",
+                116,
+                "",
+                "OH"
+              ],
+              "distance_A": 2.084460798651324,
+              "overlap_A": 1.1355392013486756
+            },
+            {
+              "peptide": [
+                "C",
+                9,
+                "",
+                "CD1"
+              ],
+              "environment": [
+                "A",
+                116,
+                "",
+                "CE1"
+              ],
+              "distance_A": 2.30705200092902,
+              "overlap_A": 1.0929479990709798
+            },
+            {
+              "peptide": [
+                "C",
+                6,
+                "",
+                "O"
+              ],
+              "environment": [
+                "E",
+                96,
+                "",
+                "CA"
+              ],
+              "distance_A": 2.136927341908608,
+              "overlap_A": 1.0830726580913916
+            },
+            {
+              "peptide": [
+                "C",
+                9,
+                "",
+                "O"
+              ],
+              "environment": [
+                "A",
+                143,
+                "",
+                "OG1"
+              ],
+              "distance_A": 2.1164595997207956,
+              "overlap_A": 0.9235404002792045
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CE1"
+              ],
+              "environment": [
+                "A",
+                155,
+                "",
+                "OE1"
+              ],
+              "distance_A": 2.335426473865733,
+              "overlap_A": 0.8845735261342669
+            },
+            {
+              "peptide": [
+                "C",
+                6,
+                "",
+                "N"
+              ],
+              "environment": [
+                "E",
+                95,
+                "",
+                "O"
+              ],
+              "distance_A": 2.286021790205329,
+              "overlap_A": 0.7839782097946713
+            }
+          ],
+          "peptide_CN_outliers": [],
+          "potential_hbond_contacts": 1,
+          "too_short_donor_acceptor_contacts": 3,
+          "heavy_atom_only": true,
+          "is_molprobity": false,
+          "validates_nonbinding": false
+        }
+      }
+    ]
+  },
+  {
+    "receiver": "3vxr",
+    "donor": "3vxs",
+    "fold": "validation",
+    "family_id": "Fde4a656c257aa9b3",
+    "domain": "crystal",
+    "n_nodes": 73,
+    "native_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.4309632439088684,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "control_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.46492863837957543,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "rigid_transfer": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "rotation": [
+        [
+          -0.4639094308065888,
+          0.2467683360535644,
+          0.8508192688991366
+        ],
+        [
+          0.7048113030100245,
+          0.6846512011525014,
+          0.18572495769214464
+        ],
+        [
+          -0.5366833956421778,
+          0.6858265969483773,
+          -0.49154126150323246
+        ]
+      ],
+      "translation": [
+        -64.13301653765652,
+        26.226639848986345,
+        -13.584758095749708
+      ],
+      "backbone_fit_rmsd_A": 0.14903377071557616,
+      "internal_distance_max_error_A": 1.4210854715202004e-14,
+      "donor_geometry_preserved": true,
+      "relaxed": false,
+      "validates_nonbinding": false
+    },
+    "rejected_donor_attempts": []
+  },
+  {
+    "receiver": "3vxs",
+    "donor": "3vxr",
+    "fold": "validation",
+    "family_id": "Fde4a656c257aa9b3",
+    "domain": "crystal",
+    "n_nodes": 74,
+    "native_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.4483154127093312,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 2,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "control_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.6150762623580412,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 5,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "rigid_transfer": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "rotation": [
+        [
+          -0.463909430806589,
+          0.7048113030100248,
+          -0.5366833956421779
+        ],
+        [
+          0.24676833605356457,
+          0.6846512011525016,
+          0.6858265969483776
+        ],
+        [
+          0.8508192688991371,
+          0.18572495769214442,
+          -0.4915412615032328
+        ]
+      ],
+      "translation": [
+        -55.527457507236996,
+        7.186685717465625,
+        43.01719553490402
+      ],
+      "backbone_fit_rmsd_A": 0.14903377071557658,
+      "internal_distance_max_error_A": 1.7763568394002505e-14,
+      "donor_geometry_preserved": true,
+      "relaxed": false,
+      "validates_nonbinding": false
+    },
+    "rejected_donor_attempts": []
+  },
+  {
+    "receiver": "5c0c_1",
+    "donor": "5c07_0",
+    "fold": "train",
+    "family_id": "F0465ecc03c008240",
+    "domain": "crystal",
+    "n_nodes": 65,
+    "native_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.46010504089798365,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 3,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "control_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.5729068418832122,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 3,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "rigid_transfer": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "rotation": [
+        [
+          0.9265057193843599,
+          0.16337898788531055,
+          0.33896085063859677
+        ],
+        [
+          0.176403480622438,
+          -0.9842874323099736,
+          -0.007750007801824294
+        ],
+        [
+          0.3323687168979036,
+          0.06697430040105486,
+          -0.9407685576768767
+        ]
+      ],
+      "translation": [
+        -49.827165788155654,
+        -31.221829082026026,
+        218.6648963125648
+      ],
+      "backbone_fit_rmsd_A": 0.3731872545378406,
+      "internal_distance_max_error_A": 3.730349362740526e-14,
+      "donor_geometry_preserved": true,
+      "relaxed": false,
+      "validates_nonbinding": false
+    },
+    "rejected_donor_attempts": []
+  },
+  {
+    "receiver": "af3-2bnr_SLLMWITQC_model_0",
+    "donor": "af3-2bnq_SLLMWITQV_model_0",
+    "fold": "validation",
+    "family_id": "Fef92facf2b304718",
+    "domain": "predicted",
+    "n_nodes": 81,
+    "native_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.44264114916710096,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "control_atomic_qc": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "passed": true,
+      "gross_screen": {
+        "policy": "construction-screen-v1",
+        "severe_distance_A": 1.2,
+        "cross_chain_pairs_below_cutoff": 0,
+        "ca_cb_outliers": [],
+        "passed": true,
+        "validates_rotamers": false,
+        "validates_nonbinding": false
+      },
+      "vdw_overlap_pairs": 0,
+      "max_vdw_overlap_A": 0.5458915080497158,
+      "worst_pairs": [],
+      "peptide_CN_outliers": [],
+      "potential_hbond_contacts": 1,
+      "too_short_donor_acceptor_contacts": 0,
+      "heavy_atom_only": true,
+      "is_molprobity": false,
+      "validates_nonbinding": false
+    },
+    "rigid_transfer": {
+      "policy_id": "rigid-observed-peptide-transfer-v2",
+      "rotation": [
+        [
+          -0.8764609534980603,
+          -0.2963531733181556,
+          0.37946145213648624
+        ],
+        [
+          -0.08353065939797939,
+          0.8697680044456852,
+          0.48633964200249075
+        ],
+        [
+          -0.4741717262066672,
+          0.39456104104033274,
+          -0.7870722704805188
+        ]
+      ],
+      "translation": [
+        -0.8300012018686684,
+        1.0074069697087866,
+        0.2256565384841558
+      ],
+      "backbone_fit_rmsd_A": 0.10410916010674276,
+      "internal_distance_max_error_A": 1.5987211554602254e-14,
+      "donor_geometry_preserved": true,
+      "relaxed": false,
+      "validates_nonbinding": false
+    },
+    "rejected_donor_attempts": [
+      {
+        "donor": "af3-1oga_GILGFVFTL_model_0",
+        "reason": "preset_heavy_atom_screen",
+        "qc": {
+          "policy_id": "rigid-observed-peptide-transfer-v2",
+          "passed": false,
+          "gross_screen": {
+            "policy": "construction-screen-v1",
+            "severe_distance_A": 1.2,
+            "cross_chain_pairs_below_cutoff": 2,
+            "ca_cb_outliers": [],
+            "passed": false,
+            "validates_rotamers": false,
+            "validates_nonbinding": false
+          },
+          "vdw_overlap_pairs": 37,
+          "max_vdw_overlap_A": 2.345498763464482,
+          "worst_pairs": [
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CE2"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "NE2"
+              ],
+              "distance_A": 0.9045012365355181,
+              "overlap_A": 2.345498763464482
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CZ"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "CD"
+              ],
+              "distance_A": 1.2410612780839865,
+              "overlap_A": 2.158938721916013
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CE1"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "OE1"
+              ],
+              "distance_A": 1.0896053230372316,
+              "overlap_A": 2.1303946769627684
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CZ"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "OE1"
+              ],
+              "distance_A": 1.229523699117737,
+              "overlap_A": 1.9904763008822628
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CE2"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "CD"
+              ],
+              "distance_A": 1.493694006009128,
+              "overlap_A": 1.906305993990872
+            },
+            {
+              "peptide": [
+                "C",
+                5,
+                "",
+                "CZ"
+              ],
+              "environment": [
+                "D",
+                155,
+                "",
+                "NE2"
+              ],
+              "distance_A": 1.3715633842254022,
+              "overlap_A": 1.8784366157745978
+            },
+            {
+              "peptide": [
+                "C",
+                6,
+                "",
+                "O"
+              ],
+              "environment": [
+                "B",
+                95,
+                "",
+                "CA"
+              ],
+              "distance_A": 1.6023876353943989,
+              "overlap_A": 1.6176123646056009
+            },
+            {
+              "peptide": [
+                "C",
+                6,
+                "",
+                "CG2"
+              ],
+              "environment": [
+                "B",
+                94,
+                "",
+                "CG2"
+              ],
+              "distance_A": 1.9206475620969832,
+              "overlap_A": 1.4793524379030167
+            }
+          ],
+          "peptide_CN_outliers": [],
+          "potential_hbond_contacts": 2,
+          "too_short_donor_acceptor_contacts": 4,
+          "heavy_atom_only": true,
+          "is_molprobity": false,
+          "validates_nonbinding": false
+        }
+      }
+    ]
+  }
+]
