@@ -1,0 +1,2463 @@
+{
+  "schema_version": 1,
+  "receptors": [
+    {
+      "receptor_name": "Foy:TCR445",
+      "lineage": "Foy:TCR445",
+      "patient_id": "0010",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 2,
+      "mhc_allele": "HLA-A*24:02",
+      "peptide": "KYTKAFLV",
+      "target_gene": "CEBPZ",
+      "mutation": "p.S100F",
+      "cdr3_alpha": "CASSRWGGSEKLVF",
+      "cdr3_beta": "CASSDSRTGGTDTQYF",
+      "alpha_variable": "AQTVTQSQPEMSVQEAETVTLSCTYDTSESDYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDAAMYFCASSRWGGSEKLVFGKGTKLTVNP",
+      "beta_variable": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSDSRTGGTDTQYFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCTCAGACAGTCACTCAGTCTCAACCAGAGATGTCTGTGCAGGAGGCAGAGACCGTGACCCTGAGCTGCACATATGACACCAGTGAGAGTGATTATTATTTATTCTGGTACAAGCAGCCTCCCAGCAGGCAGATGATTCTCGTTATTCGCCAAGAAGCTTATAAGCAACAGAATGCAACAGAGAATCGTTTCTCTGTGAACTTCCAGAAAGCAGCCAAATCCTTCAGTCTCAAGATCTCAGACTCACAGCTGGGGGATGCCGCGATGTATTTCTGTGCTTCCTCTCGATGGGGCGGATCTGAAAAGCTGGTCTTTGGAAAGGGAACGAAACTGACAGTAAACCCAT",
+        "amino_acids": "AQTVTQSQPEMSVQEAETVTLSCTYDTSESDYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDAAMYFCASSRWGGSEKLVFGKGTKLTVNP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATTCTGGAGTCACACAAACCCCAAAGCACCTGATCACAGCAACTGGACAGCGAGTGACGCTGAGATGCTCCCCTAGGTCTGGAGACCTCTCTGTGTACTGGTACCAACAGAGCCTGGACCAGGGCCTCCAGTTCCTCATTCAGTATTATAATGGAGAAGAGAGAGCAAAAGGAAACATTCTTGAACGATTCTCCGCACAACAGTTCCCTGACTTGCACTCTGAACTAAACCTGAGCTCTCTGGAGCTGGGGGACTCAGCTTTGTATTTCTGTGCCAGCAGCGACTCCCGGACAGGGGGCACAGATACGCAGTATTTTGGCCCAGGCACCCGGCTGACAGTGCTCG",
+        "amino_acids": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSDSRTGGTDTQYFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A2:K2",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          1.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR447",
+      "lineage": "Foy:TCR447",
+      "patient_id": "0010",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 3,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "LLDTVLVNV",
+      "target_gene": "PDS5B",
+      "mutation": "p.L203V",
+      "cdr3_alpha": "CAVHHLNRDDKIIF",
+      "cdr3_beta": "CASSADLGTREQYF",
+      "alpha_variable": "EDQVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVHHLNRDDKIIFGKGTRLHILP",
+      "beta_variable": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSADLGTREQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GAAGACCAGGTGACGCAGAGTCCCGAGGCCCTGAGACTCCAGGAGGGAGAGAGTAGCAGTCTCAACTGCAGTTACACAGTCAGCGGTTTAAGAGGGCTGTTCTGGTATAGGCAAGATCCTGGGAAAGGCCCTGAATTCCTCTTCACCCTGTATTCAGCTGGGGAAGAAAAGGAGAAAGAAAGGCTAAAAGCCACATTAACAAAGAAGGAAAGCTTTCTGCACATCACAGCCCCTAAACCTGAAGACTCAGCCACTTATCTCTGTGCTGTGCACCACCTTAACAGAGATGACAAGATCATCTTTGGAAAAGGGACACGACTTCATATTCTCCCCA",
+        "amino_acids": "EDQVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVHHLNRDDKIIFGKGTRLHILP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATTCTGGAGTCACACAAACCCCAAAGCACCTGATCACAGCAACTGGACAGCGAGTGACGCTGAGATGCTCCCCTAGGTCTGGAGACCTCTCTGTGTACTGGTACCAACAGAGCCTGGACCAGGGCCTCCAGTTCCTCATTCAGTATTATAATGGAGAAGAGAGAGCAAAAGGAAACATTCTTGAACGATTCTCCGCACAACAGTTCCCTGACTTGCACTCTGAACTAAACCTGAGCTCTCTGGAGCTGGGGGACTCAGCTTTGTATTTCTGTGCCAGCAGCGCGGACCTAGGAACGAGGGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSADLGTREQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A3:K3",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          101.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR441",
+      "lineage": "Foy:TCR441",
+      "patient_id": "0010",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 4,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "RQFDITSVSV",
+      "target_gene": "SVIL",
+      "mutation": "p.E1748D",
+      "cdr3_alpha": "CAPSKYNNNDMRF",
+      "cdr3_beta": "CAISGTEDGELFF",
+      "alpha_variable": "ILNVEQSPQSLHVQEGDSTNFTCSFPSSNFYALHWYRWETAKSPEALFVMTLNGDEKKKGRISATLNTKEGYSYLYIKGSQPEDSATYLCAPSKYNNNDMRFGAGTRLTVKP",
+      "beta_variable": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISGTEDGELFFGEGSRLTVL",
+      "alpha_fragment": {
+        "dna": "ATACTGAACGTGGAACAAAGTCCTCAGTCACTGCATGTTCAGGAGGGAGACAGCACCAATTTCACCTGCAGCTTCCCTTCCAGCAATTTTTATGCCTTACACTGGTACAGATGGGAAACTGCAAAAAGCCCCGAGGCCTTGTTTGTAATGACTTTAAATGGGGATGAAAAGAAGAAAGGACGAATAAGTGCCACTCTTAATACCAAGGAGGGTTACAGCTATTTGTACATCAAAGGATCCCAGCCTGAAGACTCAGCCACATACCTCTGTGCCCCCTCTAAGTACAATAACAATGACATGCGCTTTGGAGCAGGGACCAGACTGACAGTAAAACCAA",
+        "amino_acids": "ILNVEQSPQSLHVQEGDSTNFTCSFPSSNFYALHWYRWETAKSPEALFVMTLNGDEKKKGRISATLNTKEGYSYLYIKGSQPEDSATYLCAPSKYNNNDMRFGAGTRLTVKP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAATCACCCAGAGCCCAAGACACAAGGTCACAGAGACAGGAACACCAGTGACTCTGAGATGTCACCAGACTGAGAACCACCGCTATATGTACTGGTATCGACAAGACCCGGGGCATGGGCTGAGGCTGATCCATTACTCATATGGTGTTAAAGATACTGACAAAGGAGAAGTCTCAGATGGCTATAGTGTCTCTAGATCAAAGACAGAGGATTTCCTCCTCACTCTGGAGTCCGCTACCAGCTCCCAGACATCTGTGTACTTCTGTGCCATCAGTGGGACAGAGGACGGGGAGCTGTTTTTTGGAGAAGGCTCTAGGCTGACCGTACTGG",
+        "amino_acids": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISGTEDGELFFGEGSRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A4:K4",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          5.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:21faf2d0f09815b07aa3b1937800752201d626774811b8f223ff277a8490c133"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR536",
+      "lineage": "Foy:TCR536",
+      "patient_id": "0605",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 5,
+      "mhc_allele": "HLA-A*24:02",
+      "peptide": "DYIIRSHKV",
+      "target_gene": "PPP5C",
+      "mutation": "p.E428K",
+      "cdr3_alpha": "CAVSPLTSGTYKYIF",
+      "cdr3_beta": "CAWSEGDETQYF",
+      "alpha_variable": "AQSVAQPEDQVNVAEGNPLTVKCTYSVSGNPYLFWYVQYPNRGLQFLLKYITGDNLVKGSYGFEAEFNKSQTSFHLKKPSALVSDSALYFCAVSPLTSGTYKYIFGTGTRLKVLA",
+      "beta_variable": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGLQLLFYSVGIGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSEGDETQYFGPGTRLLVL",
+      "alpha_fragment": {
+        "dna": "GCTCAGTCAGTGGCTCAGCCGGAAGATCAGGTCAACGTTGCTGAAGGGAATCCTCTGACTGTGAAATGCACCTATTCAGTCTCTGGAAACCCTTATCTTTTTTGGTATGTTCAATACCCCAACCGAGGCCTCCAGTTCCTTCTGAAATACATCACAGGGGATAACCTGGTTAAAGGCAGCTATGGCTTTGAAGCTGAATTTAACAAGAGCCAAACCTCCTTCCACCTGAAGAAACCATCTGCCCTTGTGAGCGACTCCGCTTTGTACTTCTGTGCTGTGAGTCCCCTAACCTCAGGAACCTACAAATACATCTTTGGAACAGGCACCAGGCTGAAGGTTTTAGCAA",
+        "amino_acids": "AQSVAQPEDQVNVAEGNPLTVKCTYSVSGNPYLFWYVQYPNRGLQFLLKYITGDNLVKGSYGFEAEFNKSQTSFHLKKPSALVSDSALYFCAVSPLTSGTYKYIFGTGTRLKVLA",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "TCTCAGACTATTCATCAATGGCCAGCGACCCTGGTGCAGCCTGTGGGCAGCCCGCTCTCTCTGGAGTGCACTGTGGAGGGAACATCAAACCCCAACCTATACTGGTACCGACAGGCTGCAGGCAGGGGCCTCCAGCTGCTCTTCTACTCCGTTGGTATTGGCCAGATCAGCTCTGAGGTGCCCCAGAATCTCTCAGCCTCCAGACCCCAGGACCGGCAGTTCATCCTGAGTTCTAAGAAGCTCCTTCTCAGTGACTCTGGCTTCTATCTCTGTGCCTGGAGTGAAGGTGACGAGACCCAGTACTTCGGGCCAGGCACGCGGCTCCTGGTGCTCG",
+        "amino_acids": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGLQLLFYSVGIGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSEGDETQYFGPGTRLLVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A5:K5",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          177.9
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR535",
+      "lineage": "Foy:TCR535",
+      "patient_id": "0605",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 6,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "FVNLEQHVV",
+      "target_gene": "VPS13B",
+      "mutation": "p.G2602E",
+      "cdr3_alpha": "CALSTSMDSNYQLIW",
+      "cdr3_beta": "CASSCWDRSTDTQYF",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSTSMDSNYQLIWGAGTKLIIKP",
+      "beta_variable": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSCWDRSTDTQYFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCTCAGAAGGTAACTCAAGCGCAGACTGAAATTTCTGTGGTGGAGAAGGAGGATGTGACCTTGGACTGTGTGTATGAAACCCGTGATACTACTTATTACTTATTCTGGTACAAGCAACCACCAAGTGGAGAATTGGTTTTCCTTATTCGTCGGAACTCTTTTGATGAGCAAAATGAAATAAGTGGTCGGTATTCTTGGAACTTCCAGAAATCCACCAGTTCCTTCAACTTCACCATCACAGCCTCACAAGTCGTGGACTCAGCAGTATACTTCTGTGCTCTGAGTACCTCCATGGATAGCAACTATCAGTTAATCTGGGGCGCTGGGACCAAGCTAATTATAAAGCCAG",
+        "amino_acids": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSTSMDSNYQLIWGAGTKLIIKP",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GAACCTGAAGTCACCCAGACTCCCAGCCATCAGGTCACACAGATGGGACAGGAAGTGATCTTGCGCTGTGTCCCCATCTCTAATCACTTATACTTCTATTGGTACAGACAAATCTTGGGGCAGAAAGTCGAGTTTCTGGTTTCCTTTTATAATAATGAAATCTCAGAGAAGTCTGAAATATTCGATGATCAATTCTCAGTTGAAAGGCCTGATGGATCAAATTTCACTCTGAAGATCCGGTCCACAAAGCTGGAGGACTCAGCCATGTACTTCTGTGCCAGCAGTTGCTGGGACAGGAGCACAGATACGCAGTATTTTGGCCCAGGCACCCGGCTGACAGTGCTCG",
+        "amino_acids": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSCWDRSTDTQYFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A6:K6",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          362.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:014273a1fb615e9b093340799c9c8be10636b29133989eb12a42fc69352f9f6b",
+        "IMMREP25:213ec62ca1e017c9ea9c0201677412a76504a6350f50d643ae2f7564c04ebf5a",
+        "IMMREP25:3b8a71037d23f1c800eefc838b9326bbc9ca511c890086d24a3ea788ac7c4547",
+        "IMMREP25:3f8cf0088c1aa6bfbd8a622e9fd1788394da7c51d4aa42db37967f8acd7fc0f0",
+        "IMMREP25:458539a7eb1d238eba35593bf3ecfaaedcd860e11eee3c05edea0753d9e39c95",
+        "IMMREP25:49532a36adee9a6f3e8aa6815ea2cf2cd82e0b29451d2e31406570d83937d990",
+        "IMMREP25:76940ba4149f3e920ea7b69df38e6de7bdb04ba65994086f38c7c6c15d3ce5a7",
+        "IMMREP25:982890731ff9d8715bf3d497db3558f13cc5e179a39314852bef34ea5d830afd",
+        "IMMREP25:b1429155dac49c13ee0d8b57005d748bbf1e6aaacc8a4bcb6c501cde120f58ec",
+        "IMMREP25:be295b5fe5b2d931e92a375a58541d5608e01d02d219d94a57390924fe4fbf61",
+        "IMMREP25:c43b65ea13074a662124693f61a206ac0442e3e23a3cd3ba2dffad188de4be4a",
+        "IMMREP25:ebeb0e14af04fd7ecfc8477796675bf2fc0cd76ee10d8ffdf75bdc26c7088cd9",
+        "IMMREP25:f669438aa64333b76db1fb9cdd724525d3de48419be97cd4766c8424e9d23973",
+        "JDI"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR538",
+      "lineage": "Foy:TCR538",
+      "patient_id": "0605",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 7,
+      "mhc_allele": "HLA-C*03:03",
+      "peptide": "YLHAYAKAL",
+      "target_gene": "GPSM2",
+      "mutation": "p.D77A",
+      "cdr3_alpha": "CAFDNYGQNFVF",
+      "cdr3_beta": "CASSLTGSFNEQFF",
+      "alpha_variable": "ILNVEQSPQSLHVQEGDSTNFTCSFPSSNFYALHWYRWETAKSPEALFVMTLNGDEKKKGRISATLNTKEGYSYLYIKGSQPEDSATYLCAFDNYGQNFVFGPGTRLSVLP",
+      "beta_variable": "DVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSLTGSFNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "ATACTGAACGTGGAACAAAGTCCTCAGTCACTGCATGTTCAGGAGGGAGACAGCACCAATTTCACCTGCAGCTTCCCTTCCAGCAATTTTTATGCCTTACACTGGTACAGATGGGAAACTGCAAAAAGCCCCGAGGCCTTGTTTGTAATGACTTTAAATGGGGATGAAAAGAAGAAAGGACGAATAAGTGCCACTCTTAATACCAAGGAGGGTTACAGCTATTTGTACATCAAAGGATCCCAGCCTGAAGACTCAGCCACATACCTCTGTGCCTTCGATAACTATGGTCAGAATTTTGTCTTTGGTCCCGGAACCAGATTGTCCGTGCTGCCCT",
+        "amino_acids": "ILNVEQSPQSLHVQEGDSTNFTCSFPSSNFYALHWYRWETAKSPEALFVMTLNGDEKKKGRISATLNTKEGYSYLYIKGSQPEDSATYLCAFDNYGQNFVFGPGTRLSVLP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGTGAAAGTAACCCAGAGCTCGAGATATCTAGTCAAAAGGACGGGAGAGAAAGTTTTTCTGGAATGTGTCCAGGATATGGACCATGAAAATATGTTCTGGTATCGACAAGACCCAGGTCTGGGGCTACGGCTGATCTATTTCTCATATGATGTTAAAATGAAAGAAAAAGGAGATATTCCTGAGGGGTACAGTGTCTCTAGAGAGAAGAAGGAGCGCTTCTCCCTGATTCTGGAGTCCGCCAGCACCAACCAGACATCTATGTACCTCTGTGCCAGCAGTTTGACAGGCTCGTTTAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSLTGSFNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A7:K7",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          31.6
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:f21fc6518100e81cbcda2dc80eb77ab3329b529cd7ab085dca00a20c0ed82547"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR707",
+      "lineage": "Foy:TCR707",
+      "patient_id": "0603",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 8,
+      "mhc_allele": "HLA-C*05:01",
+      "peptide": "LSDAFVSV",
+      "target_gene": "TENM4",
+      "mutation": "p.E1133D",
+      "cdr3_alpha": "CAVNVFNKFYF",
+      "cdr3_beta": "CASSFLITDTQYF",
+      "alpha_variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNVFNKFYFGSGTKLNVKP",
+      "beta_variable": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHDYLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASSFLITDTQYFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGAATTCTGGACCCCTCAGTGTTCCAGAGGGAGCCATTGCCTCTCTCAACTGCACTTACAGTGACCGAGGTTCCCAGTCCTTCTTCTGGTACAGACAATATTCTGGGAAAAGCCCTGAGTTGATAATGTCCATATACTCCAATGGTGACAAAGAAGATGGAAGGTTTACAGCACAGCTCAATAAAGCCAGCCAGTATGTTTCTCTGCTCATCAGAGACTCCCAGCCCAGTGATTCAGCCACCTACCTCTGTGCCGTGAACGTCTTCAACAAATTTTACTTTGGATCTGGGACCAAACTCAATGTAAAACCAA",
+        "amino_acids": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNVFNKFYFGSGTKLNVKP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAGTTATCCAGTCACCCCGGCACGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCAATTTCAGGACACGACTACCTTTTCTGGTACAGACAGACCATGATGCGGGGACTGGAGTTGCTCATTTACTTTAACAACAACGTTCCGATAGATGATTCAGGGATGCCCGAGGATCGATTCTCAGCTAAGATGCCTAATGCATCATTCTCCACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAGTTTTTTGATCACAGATACGCAGTATTTTGGCCCAGGCACCCGGCTGACAGTGCTCG",
+        "amino_acids": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHDYLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASSFLITDTQYFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A8:K8",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          39.8
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR691",
+      "lineage": "Foy:TCR691",
+      "patient_id": "0506",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 9,
+      "mhc_allele": "HLA-B*35:01",
+      "peptide": "FPNIHMETC",
+      "target_gene": "CLSTN1",
+      "mutation": "p.L289M",
+      "cdr3_alpha": "CAVQAGTALIF",
+      "cdr3_beta": "CASSQPGGGNTEAFF",
+      "alpha_variable": "GQSLEQPSEVTAVEGAIVQINCTYQTSGFYGLSWYQQHDGGAPTFLSYNALDGLEETGRFSSFLSRSDSYGYLLLQELQMKDSASYFCAVQAGTALIFGKGTTLSVSS",
+      "beta_variable": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQPGGGNTEAFFGQGTRLTVV",
+      "alpha_fragment": {
+        "dna": "GGACAAAGCCTTGAGCAGCCCTCTGAAGTGACAGCTGTGGAAGGAGCCATTGTCCAGATAAACTGCACGTACCAGACATCTGGGTTTTATGGGCTGTCCTGGTACCAGCAACATGATGGCGGAGCACCCACATTTCTTTCTTACAATGCTCTGGATGGTTTGGAGGAGACAGGTCGTTTTTCTTCATTCCTTAGTCGCTCTGATAGTTATGGTTACCTCCTTCTACAGGAGCTCCAGATGAAAGACTCTGCCTCTTACTTCTGCGCTGTGCAGGCAGGAACTGCTCTGATCTTTGGGAAGGGAACCACCTTATCAGTGAGTTCCA",
+        "amino_acids": "GQSLEQPSEVTAVEGAIVQINCTYQTSGFYGLSWYQQHDGGAPTFLSYNALDGLEETGRFSSFLSRSDSYGYLLLQELQMKDSASYFCAVQAGTALIFGKGTTLSVSS",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACACTGAAGTTACCCAGACACCAAAACACCTGGTCATGGGAATGACAAATAAGAAGTCTTTGAAATGTGAACAACATATGGGGCACAGGGCTATGTATTGGTACAAGCAGAAAGCTAAGAAGCCACCGGAGCTCATGTTTGTCTACAGCTATGAGAAACTCTCTATAAATGAAAGTGTGCCAAGTCGCTTCTCACCTGAATGCCCCAACAGCTCTCTCTTAAACCTTCACCTACACGCCCTGCAGCCAGAAGACTCAGCCCTGTATCTCTGCGCCAGCAGCCAACCCGGAGGGGGGAACACTGAAGCTTTCTTTGGACAAGGCACCAGACTCACAGTTGTAG",
+        "amino_acids": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQPGGGNTEAFFGQGTRLTVV",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A9:K9",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          30.9
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:7963abf231d62c64046e70822e96eda0e8e13a85b677c027d604250bb1d0df5b"
+      ],
+      "known_historical_exposure": [
+        {
+          "receptor_name": "Foy:TCR691",
+          "history": "historical_structure_v4",
+          "hits": [
+            "6zkw",
+            "6zkx",
+            "6zky",
+            "6zkz",
+            "af3-6zkw_RLPAKAPLL_model_0",
+            "af3-6zkx_RLPAKAPLLGCG_model_0"
+          ]
+        }
+      ],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR692",
+      "lineage": "Foy:TCR692",
+      "patient_id": "0506",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 10,
+      "mhc_allele": "HLA-B*35:01",
+      "peptide": "FPLDVGSIVAY",
+      "target_gene": "PREP",
+      "mutation": "p.G384A",
+      "cdr3_alpha": "CAERNGGATNKLIF",
+      "cdr3_beta": "CASSQDRTGAYSPLHF",
+      "alpha_variable": "GEDVEQSLFLSVREGDSSVINCTYTDSSSTYLYWYKQEPGAGLQLLTYIFSNMDMKQDQRLTVLLNKKDKHLSLRIADTQTGDSAIYFCAERNGGATNKLIFGTGTLLAVQP",
+      "beta_variable": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDRTGAYSPLHFGNGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GGAGAGGATGTGGAGCAGAGTCTTTTCCTGAGTGTCCGAGAGGGAGACAGCTCCGTTATAAACTGCACTTACACAGACAGCTCCTCCACCTACTTATACTGGTATAAGCAAGAACCTGGAGCAGGTCTCCAGTTGCTGACGTATATTTTTTCAAATATGGACATGAAACAAGACCAAAGACTCACTGTTCTATTGAATAAAAAGGATAAACATCTGTCTCTGCGCATTGCAGACACCCAGACTGGGGACTCAGCTATCTACTTCTGTGCAGAGAGGAATGGTGGTGCTACAAACAAGCTCATCTTTGGAACTGGCACTCTGCTTGCTGTCCAGCCAA",
+        "amino_acids": "GEDVEQSLFLSVREGDSSVINCTYTDSSSTYLYWYKQEPGAGLQLLTYIFSNMDMKQDQRLTVLLNKKDKHLSLRIADTQTGDSAIYFCAERNGGATNKLIFGTGTLLAVQP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACACTGAAGTTACCCAGACACCAAAACACCTGGTCATGGGAATGACAAATAAGAAGTCTTTGAAATGTGAACAACATATGGGGCACAGGGCTATGTATTGGTACAAGCAGAAAGCTAAGAAGCCACCGGAGCTCATGTTTGTCTACAGCTATGAGAAACTCTCTATAAATGAAAGTGTGCCAAGTCGCTTCTCACCTGAATGCCCCAACAGCTCTCTCTTAAACCTTCACCTACACGCCCTGCAGCCAGAAGACTCAGCCCTGTATCTCTGCGCCAGCAGCCAAGATCGAACAGGGGCATATTCACCCCTCCACTTTGGGAATGGGACCAGGCTCACTGTGACAG",
+        "amino_acids": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDRTGAYSPLHFGNGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A10:K10",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          61.5
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR696",
+      "lineage": "Foy:TCR696",
+      "patient_id": "0506",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 11,
+      "mhc_allele": "HLA-C*03:03",
+      "peptide": "LAVFPNIHM",
+      "target_gene": "CLSTN1",
+      "mutation": "p.L289M",
+      "cdr3_alpha": "CVVSAPDTGRRALTF",
+      "cdr3_beta": "CASSSGQGFTDTQYF",
+      "alpha_variable": "AQSVTQLDSHVSVSEGTPVLLRCNYSSSYSPSLFWYVQHPNKGLQLLLKYTSAATLVKGINGFEAEFKKSETSFHLTKPSAHMSDAAEYFCVVSAPDTGRRALTFGSGTRLQVQP",
+      "beta_variable": "GAGVSQSPSNKVTEKGKDVELRCDPISGHTALYWYRQSLGQGLEFLIYFQGNSAPDKSGLPSDRFSAERTGGSVSTLTIQRTQQEDSAVYLCASSSGQGFTDTQYFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCGGTGACCCAGCTTGACAGCCACGTCTCTGTCTCTGAAGGAACCCCGGTGCTGCTGAGGTGCAACTACTCATCTTCTTATTCACCATCTCTCTTCTGGTATGTGCAACACCCCAACAAAGGACTCCAGCTTCTCCTGAAGTACACATCAGCGGCCACCCTGGTTAAAGGCATCAACGGTTTTGAGGCTGAATTTAAGAAGAGTGAAACCTCCTTCCACCTGACGAAACCCTCAGCCCATATGAGCGACGCGGCTGAGTACTTCTGTGTTGTGAGTGCTCCGGACACGGGCAGGAGAGCACTTACTTTTGGGAGTGGAACAAGACTCCAAGTGCAACCAA",
+        "amino_acids": "AQSVTQLDSHVSVSEGTPVLLRCNYSSSYSPSLFWYVQHPNKGLQLLLKYTSAATLVKGINGFEAEFKKSETSFHLTKPSAHMSDAAEYFCVVSAPDTGRRALTFGSGTRLQVQP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GGAGCTGGAGTCTCCCAGTCCCCCAGTAACAAGGTCACAGAGAAGGGAAAGGATGTAGAGCTCAGGTGTGATCCAATTTCAGGTCATACTGCCCTTTACTGGTACCGACAGAGCCTGGGGCAGGGCCTGGAGTTTTTAATTTACTTCCAAGGCAACAGTGCACCAGACAAATCAGGGCTGCCCAGTGATCGCTTCTCTGCAGAGAGGACTGGGGGATCCGTCTCCACTCTGACGATCCAGCGCACACAGCAGGAGGACTCGGCCGTGTATCTCTGTGCCAGCAGCTCGGGACAGGGCTTCACAGATACGCAGTATTTTGGCCCAGGCACCCGGCTGACAGTGCTCG",
+        "amino_acids": "GAGVSQSPSNKVTEKGKDVELRCDPISGHTALYWYRQSLGQGLEFLIYFQGNSAPDKSGLPSDRFSAERTGGSVSTLTIQRTQQEDSAVYLCASSSGQGFTDTQYFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A11:K11",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          266.4
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR689",
+      "lineage": "Foy:TCR689",
+      "patient_id": "0503",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 12,
+      "mhc_allele": "HLA-C*12:02",
+      "peptide": "RTHPGRPFF",
+      "target_gene": "ICK",
+      "mutation": "p.P591T",
+      "cdr3_alpha": "CAVVLSYNTDKLIF",
+      "cdr3_beta": "CASSLSPPGYLETQYF",
+      "alpha_variable": "GIQVEQSPPDLILQEGANSTLRCNFSDSVNNLQWFHQNPWGQLINLFYIPSGTKQNGRLSATTVATERYSLLYISSSQTTDSGVYFCAVVLSYNTDKLIFGTGTRLQVFP",
+      "beta_variable": "DVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSLSPPGYLETQYFGPGTRLLVL",
+      "alpha_fragment": {
+        "dna": "GGAATACAAGTGGAGCAGAGTCCTCCAGACCTGATTCTCCAGGAGGGAGCCAATTCCACGCTGCGGTGCAATTTTTCTGACTCTGTGAACAATTTGCAGTGGTTTCATCAAAACCCTTGGGGACAGCTCATCAACCTGTTTTACATTCCCTCAGGGACAAAACAGAATGGAAGATTAAGCGCCACGACTGTCGCTACGGAACGCTACAGCTTATTGTACATTTCCTCTTCCCAGACCACAGACTCAGGCGTTTATTTCTGTGCTGTGGTCCTATCTTATAACACCGACAAGCTCATCTTTGGGACTGGGACCAGATTACAAGTCTTTCCAA",
+        "amino_acids": "GIQVEQSPPDLILQEGANSTLRCNFSDSVNNLQWFHQNPWGQLINLFYIPSGTKQNGRLSATTVATERYSLLYISSSQTTDSGVYFCAVVLSYNTDKLIFGTGTRLQVFP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGTGAAAGTAACCCAGAGCTCGAGATATCTAGTCAAAAGGACGGGAGAGAAAGTTTTTCTGGAATGTGTCCAGGATATGGACCATGAAAATATGTTCTGGTATCGACAAGACCCAGGTCTGGGGCTACGGCTGATCTATTTCTCATATGATGTTAAAATGAAAGAAAAAGGAGATATTCCTGAGGGGTACAGTGTCTCTAGAGAGAAGAAGGAGCGCTTCTCCCTGATTCTGGAGTCCGCCAGCACCAACCAGACATCTATGTACCTCTGTGCCAGCAGTTTAAGCCCCCCGGGGTATCTGGAGACCCAGTACTTCGGGCCAGGCACGCGGCTCCTGGTGCTCG",
+        "amino_acids": "DVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSLSPPGYLETQYFGPGTRLLVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A12:K12",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          48.1
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR687",
+      "lineage": "Foy:TCR687",
+      "patient_id": "0503",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 13,
+      "mhc_allele": "HLA-B*39:01",
+      "peptide": "MRTHPGRPFF",
+      "target_gene": "ICK",
+      "mutation": "p.P591T",
+      "cdr3_alpha": "CAVTDSNYQLIW",
+      "cdr3_beta": "CATSDFQRGEETQYF",
+      "alpha_variable": "AQSVTQLGSHVSVSEGALVLLRCNYSSSVPPYLFWYVQYPNQGLQLLLKYTSAATLVKGINGFEAEFKKSETSFHLTKPSAHMSDAAEYFCAVTDSNYQLIWGAGTKLIIKP",
+      "beta_variable": "DADVTQTPRNRITKTGKRIMLECSQTKGHDRMYWYRQDPGLGLRLIYYSFDVKDINKGEISDGYSVSRQAQAKFSLSLESAIPNQTALYFCATSDFQRGEETQYFGPGTRLLVL",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCGGTGACCCAGCTTGGCAGCCACGTCTCTGTCTCTGAAGGAGCCCTGGTTCTGCTGAGGTGCAACTACTCATCGTCTGTTCCACCATATCTCTTCTGGTATGTGCAATACCCCAACCAAGGACTCCAGCTTCTCCTGAAGTACACATCAGCGGCCACCCTGGTTAAAGGCATCAACGGTTTTGAGGCTGAATTTAAGAAGAGTGAAACCTCCTTCCACCTGACGAAACCCTCAGCCCATATGAGCGACGCGGCTGAGTACTTCTGTGCTGTGACGGATAGCAACTATCAGTTAATCTGGGGCGCTGGGACCAAGCTAATTATAAAGCCAG",
+        "amino_acids": "AQSVTQLGSHVSVSEGALVLLRCNYSSSVPPYLFWYVQYPNQGLQLLLKYTSAATLVKGINGFEAEFKKSETSFHLTKPSAHMSDAAEYFCAVTDSNYQLIWGAGTKLIIKP",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGATGTTACCCAGACCCCAAGGAATAGGATCACAAAGACAGGAAAGAGGATTATGCTGGAATGTTCTCAGACTAAGGGTCATGATAGAATGTACTGGTATCGACAAGACCCAGGACTGGGCCTACGGTTGATCTATTACTCCTTTGATGTCAAAGATATAAACAAAGGAGAGATCTCTGATGGATACAGTGTCTCTCGACAGGCACAGGCTAAATTCTCCCTGTCCCTAGAGTCTGCCATCCCCAACCAGACAGCTCTTTACTTCTGTGCCACCAGTGATTTCCAGAGGGGAGAAGAGACCCAGTACTTCGGGCCAGGCACGCGGCTCCTGGTGCTCG",
+        "amino_acids": "DADVTQTPRNRITKTGKRIMLECSQTKGHDRMYWYRQDPGLGLRLIYYSFDVKDINKGEISDGYSVSRQAQAKFSLSLESAIPNQTALYFCATSDFQRGEETQYFGPGTRLLVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A13:K13",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          54.6
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:0a2264a1b6232b3add334fdde7a3702d47d1100a695120d9736d4c9b53c48067",
+        "IMMREP25:2346d3b9362737c643c80812ae3402c4b9cc44f7a2568881bf5063931a448eb1",
+        "IMMREP25:2e3eb9d13bdf849d88cd20a9b963b6b55fe6f55a3ef0cacf21407a7a44d21cf0",
+        "IMMREP25:3041547d48001227db800670b65c2b9cbdf9d496a8a5af687832434196d348c6",
+        "IMMREP25:4a57c66bddb7875d0bd2a5443529829e7b6829354e307157e9952d60b664d109",
+        "IMMREP25:935d7644ea7617bacf6f0e43a0d7cf220eeb2eb4ac94001014faf62576493196",
+        "IMMREP25:ad6fd41010673e71ec07e4895b3c7d8b29a55fa8fd1d33a348c803f837cd87b2",
+        "IMMREP25:b3d0cca1fc757587d042485ef483dff604fbbdc4bec5515fdc88d2237b8b4a46",
+        "IMMREP25:c18baf6257be272e094a32c9784532b6f9f07042877f8b9dbe40a645c355242a",
+        "IMMREP25:f098d152585901f1bd7e5aa1f595a738b69fe737f21be99fc4680173f1a19da9",
+        "IMMREP25:f536a2646194c02be018364da1a1ff513e1704040d01387817fb04cf60d2b54f",
+        "IMMREP25:f6f356bfe88bad98abc3140a980c14a38d05614b93e603959a86567bd1751aff"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR682",
+      "lineage": "Foy:TCR682",
+      "patient_id": "0503",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 14,
+      "mhc_allele": "HLA-C*12:02",
+      "peptide": "FVGPLDEDF",
+      "target_gene": "UGGT2",
+      "mutation": "p.L880V",
+      "cdr3_alpha": "CAVAPDNYGQNFVF",
+      "cdr3_beta": "CATYSSGANVLTF",
+      "alpha_variable": "AQSVTQPDIHITVSEGASLELRCNYSYGATPYLFWYVQSPGQGLQLLLKYFSGDTLVQGIKGFEAEFKRSQSSFNLRKPSVHWSDAAEYFCAVAPDNYGQNFVFGPGTRLSVLP",
+      "beta_variable": "DAMVIQNPRYQVTQFGKPVTLSCSQTLNHNVMYWYQQKSSQAPKLLFHYYDKDFNNEADTPDNFQSRRPNTSFCFLDIRSPGLGDAAMYLCATYSSGANVLTFGAGSRLTVL",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCAGTGACCCAGCCTGACATCCACATCACTGTCTCTGAAGGAGCCTCACTGGAGTTGAGATGTAACTATTCCTATGGGGCAACACCTTATCTCTTCTGGTATGTCCAGTCCCCCGGCCAAGGCCTCCAGCTGCTCCTGAAGTACTTTTCAGGAGACACTCTGGTTCAAGGCATTAAAGGCTTTGAGGCTGAATTTAAGAGGAGTCAATCTTCCTTCAATCTGAGGAAACCCTCTGTGCATTGGAGTGATGCTGCTGAGTACTTCTGTGCTGTGGCCCCCGATAACTATGGTCAGAATTTTGTCTTTGGTCCCGGAACCAGATTGTCCGTGCTGCCCT",
+        "amino_acids": "AQSVTQPDIHITVSEGASLELRCNYSYGATPYLFWYVQSPGQGLQLLLKYFSGDTLVQGIKGFEAEFKRSQSSFNLRKPSVHWSDAAEYFCAVAPDNYGQNFVFGPGTRLSVLP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCCATGGTCATCCAGAACCCAAGATACCAGGTTACCCAGTTTGGAAAGCCAGTGACCCTGAGTTGTTCTCAGACTTTGAACCATAACGTCATGTACTGGTACCAGCAGAAGTCAAGTCAGGCCCCAAAGCTGCTGTTCCACTACTATGACAAAGATTTTAACAATGAAGCAGACACCCCTGATAACTTCCAATCCAGGAGGCCGAACACTTCTTTCTGCTTTCTTGACATCCGCTCACCAGGCCTGGGGGACGCAGCCATGTACCTGTGTGCCACGTATTCCTCTGGGGCCAACGTCCTGACTTTCGGGGCCGGCAGCAGGCTGACCGTGCTGG",
+        "amino_acids": "DAMVIQNPRYQVTQFGKPVTLSCSQTLNHNVMYWYQQKSSQAPKLLFHYYDKDFNNEADTPDNFQSRRPNTSFCFLDIRSPGLGDAAMYLCATYSSGANVLTFGAGSRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A14:K14",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          20.8
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:f21fc6518100e81cbcda2dc80eb77ab3329b529cd7ab085dca00a20c0ed82547"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR802",
+      "lineage": "Foy:TCR802",
+      "patient_id": "0030",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 15,
+      "mhc_allele": "HLA-B*35:01",
+      "peptide": "FAFRWVLGIAY",
+      "target_gene": "GALNT2",
+      "mutation": "p.L14R",
+      "cdr3_alpha": "CAVNLLTDSWGKFQF",
+      "cdr3_beta": "CATMGSGGNEQFF",
+      "alpha_variable": "AQSVSQHNHHVILSEAASLELGCNYSYGGTVNLFWYVQYPGQHLQLLLKYFSGDPLVKGIKGFEAEFIKSKFSFNLRKPSVQWSDTAEYFCAVNLLTDSWGKFQFGAGTQVVVTP",
+      "beta_variable": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCATMGSGGNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCTGTGAGCCAGCATAACCACCACGTAATTCTCTCTGAAGCAGCCTCACTGGAGTTGGGATGCAACTATTCCTATGGTGGAACTGTTAATCTCTTCTGGTATGTCCAGTACCCTGGTCAACACCTTCAGCTTCTCCTCAAGTACTTTTCAGGGGATCCACTGGTTAAAGGCATCAAGGGCTTTGAGGCTGAATTTATAAAGAGTAAATTCTCCTTTAATCTGAGGAAACCCTCTGTGCAGTGGAGTGACACAGCTGAGTACTTCTGTGCCGTGAACCTTCTAACTGACAGCTGGGGGAAATTCCAGTTTGGAGCAGGGACCCAGGTTGTGGTCACCCCAG",
+        "amino_acids": "AQSVSQHNHHVILSEAASLELGCNYSYGGTVNLFWYVQYPGQHLQLLLKYFSGDPLVKGIKGFEAEFIKSKFSFNLRKPSVQWSDTAEYFCAVNLLTDSWGKFQFGAGTQVVVTP",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GAACCTGAAGTCACCCAGACTCCCAGCCATCAGGTCACACAGATGGGACAGGAAGTGATCTTGCGCTGTGTCCCCATCTCTAATCACTTATACTTCTATTGGTACAGACAAATCTTGGGGCAGAAAGTCGAGTTTCTGGTTTCCTTTTATAATAATGAAATCTCAGAGAAGTCTGAAATATTCGATGATCAATTCTCAGTTGAAAGGCCTGATGGATCAAATTTCACTCTGAAGATCCGGTCCACAAAGCTGGAGGACTCAGCCATGTACTTCTGTGCCACCATGGGGAGTGGCGGGAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCATMGSGGNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A15:K15",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          1.3
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR800",
+      "lineage": "Foy:TCR800",
+      "patient_id": "0030",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 16,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "SISAFNLDVV",
+      "target_gene": "SF3A1",
+      "mutation": "p.D163N",
+      "cdr3_alpha": "CAAYSGGGADGLTF",
+      "cdr3_beta": "CASSSVAGITYEQYF",
+      "alpha_variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAAYSGGGADGLTFGKGTHLIIQP",
+      "beta_variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSSVAGITYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGAATTCTGGACCCCTCAGTGTTCCAGAGGGAGCCATTGCCTCTCTCAACTGCACTTACAGTGACCGAGGTTCCCAGTCCTTCTTCTGGTACAGACAATATTCTGGGAAAAGCCCTGAGTTGATAATGTTCATATACTCCAATGGTGACAAAGAAGATGGAAGGTTTACAGCACAGCTCAATAAAGCCAGCCAGTATGTTTCTCTGCTCATCAGAGACTCCCAGCCCAGTGATTCAGCCACCTACCTCTGTGCCGCCTATTCAGGAGGAGGTGCTGACGGACTCACCTTTGGCAAAGGGACTCATCTAATCATCCAGCCCT",
+        "amino_acids": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAAYSGGGADGLTFGKGTHLIIQP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCAGGTCCTGAAGACAGGACAGAGCATGACACTGCAGTGTGCCCAGGATATGAACCATGAATACATGTCCTGGTATCGACAAGACCCAGGCATGGGGCTGAGGCTGATTCATTACTCAGTTGGTGCTGGTATCACTGACCAAGGAGAAGTCCCCAATGGCTACAATGTCTCCAGATCAACCACAGAGGATTTCCCGCTCAGGCTGCTGTCGGCTGCTCCCTCCCAGACATCTGTGTACTTCTGTGCCAGCAGTTCTGTAGCGGGCATTACCTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSSVAGITYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A16:K16",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          0.4
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:3802485fc6eb6caa02e3430383fdc18a406579137db50e96a61325812cbf1fa7"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR798",
+      "lineage": "Foy:TCR798",
+      "patient_id": "0030",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 17,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "ITADVNYNL",
+      "target_gene": "UAP1",
+      "mutation": "p.H469Y",
+      "cdr3_alpha": "CAVSYSGSARQLTF",
+      "cdr3_beta": "CASNPGGRGEKLFF",
+      "alpha_variable": "AQSVTQLDSQVPVFEEAPVELRCNYSSSVSVYLFWYVQYPNQGLQLLLKYLSGSTLVKGINGFEAEFNKSQTSFHLRKPSVHISDTAEYFCAVSYSGSARQLTFGSGTQLTVLP",
+      "beta_variable": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHNSLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASNPGGRGEKLFFGSGTQLSVL",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCTGTGACCCAGCTTGACAGCCAAGTCCCTGTCTTTGAAGAAGCCCCTGTGGAGCTGAGGTGCAACTACTCATCGTCTGTTTCAGTGTATCTCTTCTGGTATGTGCAATACCCCAACCAAGGACTCCAGCTTCTCCTGAAGTATTTATCAGGATCCACCCTGGTTAAAGGCATCAACGGTTTTGAGGCTGAATTTAACAAGAGTCAAACTTCCTTCCACTTGAGGAAACCCTCAGTCCATATAAGCGACACGGCTGAGTACTTCTGTGCTGTGAGCTATTCTGGTTCTGCAAGGCAACTGACCTTTGGATCTGGGACACAATTGACTGTTTTACCTG",
+        "amino_acids": "AQSVTQLDSQVPVFEEAPVELRCNYSSSVSVYLFWYVQYPNQGLQLLLKYLSGSTLVKGINGFEAEFNKSQTSFHLRKPSVHISDTAEYFCAVSYSGSARQLTFGSGTQLTVLP",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAGTTATCCAGTCACCCCGCCATGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCAATTTCAGGCCACAACTCCCTTTTCTGGTACAGACAGACCATGATGCGGGGACTGGAGTTGCTCATTTACTTTAACAACAACGTTCCGATAGATGATTCAGGGATGCCCGAGGATCGATTCTCAGCTAAGATGCCTAATGCATCATTCTCCACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAACCCGGGGGGGAGGGGTGAAAAACTGTTTTTTGGCAGTGGAACCCAGCTCTCTGTCTTGG",
+        "amino_acids": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHNSLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASNPGGRGEKLFFGSGTQLSVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A17:K17",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          1.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:1094d19b31182f73cc03f0e5ff952d5b565c404df54f1eb5bb9f0ba049cb85cd",
+        "IMMREP25:5a67d2d1cb1317be4ba1a58d345ebe7882b04da1f0d12de4df9cf8d9ec6b1217"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR814",
+      "lineage": "Foy:TCR814",
+      "patient_id": "0404",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 18,
+      "mhc_allele": "HLA-B*40:01",
+      "peptide": "FEADTFFHFV",
+      "target_gene": "MTHFR",
+      "mutation": "p.R238H",
+      "cdr3_alpha": "CAGLLGDSGAGSYQLTF",
+      "cdr3_beta": "CAISESWMSSYNEQFF",
+      "alpha_variable": "TQLLEQSPQFLSIQEGENLTVYCNSSSVFSSLQWYRQEPGEGPVLLVTVVTGGEVKKLKRLTFQFGDARKDSSLHITAAQPGDTGLYLCAGLLGDSGAGSYQLTFGKGTKLSVIP",
+      "beta_variable": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISESWMSSYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "ACCCAGCTGCTGGAGCAGAGCCCTCAGTTTCTAAGCATCCAAGAGGGAGAAAATCTCACTGTGTACTGCAACTCCTCAAGTGTTTTTTCCAGCTTACAATGGTACAGACAGGAGCCTGGGGAAGGTCCTGTCCTCCTGGTGACAGTAGTTACGGGTGGAGAAGTGAAGAAGCTGAAGAGACTAACCTTTCAGTTTGGTGATGCAAGAAAGGACAGTTCTCTCCACATCACTGCGGCCCAGCCTGGTGATACAGGCCTCTACCTCTGTGCAGGTCTCCTGGGGGACTCTGGGGCTGGGAGTTACCAACTCACTTTCGGGAAGGGGACCAAACTCTCGGTCATACCAA",
+        "amino_acids": "TQLLEQSPQFLSIQEGENLTVYCNSSSVFSSLQWYRQEPGEGPVLLVTVVTGGEVKKLKRLTFQFGDARKDSSLHITAAQPGDTGLYLCAGLLGDSGAGSYQLTFGKGTKLSVIP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAATCACCCAGAGCCCAAGACACAAGGTCACAGAGACAGGAACACCAGTGACTCTGAGATGTCACCAGACTGAGAACCACCGCTATATGTACTGGTATCGACAAGACCCGGGGCATGGGCTGAGGCTGATCCATTACTCATATGGTGTTAAAGATACTGACAAAGGAGAAGTCTCAGATGGCTATAGTGTCTCTAGATCAAAGACAGAGGATTTCCTCCTCACTCTGGAGTCCGCTACCAGCTCCCAGACATCTGTGTACTTCTGTGCCATCAGTGAGTCTTGGATGAGCTCCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISESWMSSYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A18:K18",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          6.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:bbe6ef78ae3513093e9fc12a8b089ec6ca385502b7c99635cc7b2d2351598e55"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR827",
+      "lineage": "Foy:TCR827",
+      "patient_id": "0404",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 19,
+      "mhc_allele": "HLA-C*07:01",
+      "peptide": "KALDYIHHV",
+      "target_gene": "STRADA",
+      "mutation": "p.M189V",
+      "cdr3_alpha": "CAAPDAGGTSYGKLTF",
+      "cdr3_beta": "CASSPLNPYNEQFF",
+      "alpha_variable": "GQQVMQIPQYQHVQEGEDFTTYCNSSTTLSNIQWYKQRPGGHPVFLIQLVKSGEVKKQKRLTFQFGEAKKNSSLHITATQTTDVGTYFCAAPDAGGTSYGKLTFGQGTILTVHP",
+      "beta_variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSPLNPYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GGACAACAGGTAATGCAAATTCCTCAGTACCAGCATGTACAAGAAGGAGAGGACTTCACCACGTACTGCAATTCCTCAACTACTTTAAGCAATATACAGTGGTATAAGCAAAGGCCTGGTGGACATCCCGTTTTTTTGATACAGTTAGTGAAGAGTGGAGAAGTGAAGAAGCAGAAAAGACTGACATTTCAGTTTGGAGAAGCAAAAAAGAACAGCTCCCTGCACATCACAGCCACCCAGACTACAGATGTAGGAACCTACTTCTGTGCAGCGCCTGATGCTGGTGGTACTAGCTATGGAAAGCTGACATTTGGACAAGGGACCATCTTGACTGTCCATCCAA",
+        "amino_acids": "GQQVMQIPQYQHVQEGEDFTTYCNSSTTLSNIQWYKQRPGGHPVFLIQLVKSGEVKKQKRLTFQFGEAKKNSSLHITATQTTDVGTYFCAAPDAGGTSYGKLTFGQGTILTVHP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCAGGTCCTGAAGACAGGACAGAGCATGACACTGCAGTGTGCCCAGGATATGAACCATGAATACATGTCCTGGTATCGACAAGACCCAGGCATGGGGCTGAGGCTGATTCATTACTCAGTTGGTGCTGGTATCACTGACCAAGGAGAAGTCCCCAATGGCTACAATGTCTCCAGATCAACCACAGAGGATTTCCCGCTCAGGCTGCTGTCGGCTGCTCCCTCCCAGACATCTGTGTACTTCTGTGCCAGCAGTCCCCTAAACCCCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSPLNPYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A19:K19",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          13.0
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR829",
+      "lineage": "Foy:TCR829",
+      "patient_id": "0404",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 20,
+      "mhc_allele": "HLA-A*01:01",
+      "peptide": "ALDYIHHVGYV",
+      "target_gene": "STRADA",
+      "mutation": "p.M189V",
+      "cdr3_alpha": "CAMSPTYSGAGSYQLTF",
+      "cdr3_beta": "CSASLLGEGYEQYF",
+      "alpha_variable": "QKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSPTYSGAGSYQLTFGKGTKLSVIP",
+      "beta_variable": "GAVVSQHPSWVICKSGTSVKIECRSLDFQATTMFWYRQFPKQSLMLMATSNEGSKATYEQGVEKDKFLINHASLTLSTLTVTSAHPEDSSFYICSASLLGEGYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGGATCCTGGACCACTCAGTGTTCCAGAGGGAGCCATTGTTTCTCTCAACTGCACTTACAGCAACAGTGCTTTTCAATACTTCATGTGGTACAGACAGTATTCCAGAAAAGGCCCTGAGTTGCTGATGTACACATACTCCAGTGGTAACAAAGAAGATGGAAGGTTTACAGCACAGGTCGATAAATCCAGCAAGTATATCTCCTTGTTCATCAGAGACTCACAGCCCAGTGATTCAGCCACCTACCTCTGTGCAATGAGCCCTACATACTCTGGGGCTGGGAGTTACCAACTCACTTTCGGGAAGGGGACCAAACTCTCGGTCATACCAA",
+        "amino_acids": "QKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMSPTYSGAGSYQLTFGKGTKLSVIP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GGTGCTGTCGTCTCTCAACATCCGAGCTGGGTTATCTGTAAGAGTGGAACCTCTGTGAAGATCGAGTGCCGTTCCCTGGACTTTCAGGCCACAACTATGTTTTGGTATCGTCAGTTCCCGAAACAGAGTCTCATGCTGATGGCAACTTCCAATGAGGGCTCCAAGGCCACATACGAGCAAGGCGTCGAGAAGGACAAGTTTCTCATCAACCATGCAAGCCTGACCTTGTCCACTCTGACAGTGACCAGTGCCCATCCTGAAGACAGCAGCTTCTACATCTGCAGTGCTAGCCTACTAGGGGAAGGCTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "GAVVSQHPSWVICKSGTSVKIECRSLDFQATTMFWYRQFPKQSLMLMATSNEGSKATYEQGVEKDKFLINHASLTLSTLTVTSAHPEDSSFYICSASLLGEGYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A20:K20",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          38.9
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:2d3c5cc20312c6b59d339579f5b29f350a84e291d631276579ab0c117b490100",
+        "IMMREP25:a490a32726d62902c5c5c3d2345f4abd5f6f995bbcf09c6c478f6ddb5aeb61e2",
+        "IMMREP25:c17432a87a856ea336fd86c5b4f126e42b82fe2b59a69b6409cac947e5c85557",
+        "IMMREP25:c7d16262a91895a1547fb86bf44185cf9ea4961e8b2f189b470febc73a21a889"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1057",
+      "lineage": "Foy:TCR1057",
+      "patient_id": "0611",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 21,
+      "mhc_allele": "HLA-A*24:02",
+      "peptide": "AGVNQISYW",
+      "target_gene": "CDADC1",
+      "mutation": "p.R148Q",
+      "cdr3_alpha": "CAASRGPAGGTSYGKLTF",
+      "cdr3_beta": "CASSQDAWWLSQPQHF",
+      "alpha_variable": "GENVEQHPSTLSVQEGDSAVIKCTYSDSASNYFPWYKQELGKRPQLIIDIRSNVGEKKDQRIAVTLNKTAKHFSLHITETQPEDSAVYFCAASRGPAGGTSYGKLTFGQGTILTVHP",
+      "beta_variable": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDAWWLSQPQHFGDGTRLSIL",
+      "alpha_fragment": {
+        "dna": "GGAGAGAATGTGGAGCAGCATCCTTCAACCCTGAGTGTCCAGGAGGGAGACAGCGCTGTTATCAAGTGTACTTATTCAGACAGTGCCTCAAACTACTTCCCTTGGTATAAGCAAGAACTTGGAAAAAGACCTCAGCTTATTATAGACATTCGTTCAAATGTGGGCGAAAAGAAAGACCAACGAATTGCTGTTACATTGAACAAGACAGCCAAACATTTCTCCCTGCACATCACAGAGACCCAACCTGAAGACTCGGCTGTCTACTTCTGTGCAGCAAGTAGAGGACCTGCTGGTGGTACTAGCTATGGAAAGCTGACATTTGGACAAGGGACCATCTTGACTGTCCATCCAA",
+        "amino_acids": "GENVEQHPSTLSVQEGDSAVIKCTYSDSASNYFPWYKQELGKRPQLIIDIRSNVGEKKDQRIAVTLNKTAKHFSLHITETQPEDSAVYFCAASRGPAGGTSYGKLTFGQGTILTVHP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACACTGAAGTTACCCAGACACCAAAACACCTGGTCATGGGAATGACAAATAAGAAGTCTTTGAAATGTGAACAACATATGGGGCACAGGGCTATGTATTGGTACAAGCAGAAAGCTAAGAAGCCACCGGAGCTCATGTTTGTCTACAGCTATGAGAAACTCTCTATAAATGAAAGTGTGCCAAGTCGCTTCTCACCTGAATGCCCCAACAGCTCTCTCTTAAACCTTCACCTACACGCCCTGCAGCCAGAAGACTCAGCCCTGTATCTCTGCGCCAGCAGCCAAGATGCCTGGTGGTTGAGTCAGCCCCAGCATTTTGGTGATGGGACTCGACTCTCCATCCTAG",
+        "amino_acids": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDAWWLSQPQHFGDGTRLSIL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A21:K21",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          82.6
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1059",
+      "lineage": "Foy:TCR1059",
+      "patient_id": "0611",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 22,
+      "mhc_allele": "HLA-C*06:02",
+      "peptide": "LRFLRNGLT",
+      "target_gene": "FCGRT",
+      "mutation": "p.A241T",
+      "cdr3_alpha": "CATDEGNFVF",
+      "cdr3_beta": "CASSPGQRETQYF",
+      "alpha_variable": "SQQGEEDPQALSIQEGENATMNCSYKTSINNLQWYRQNSGRGLVHLILIRSNEREKHSGRLRVTLDTSKKSSSLLITASRAADTASYFCATDEGNFVFGPGTRLSVLP",
+      "beta_variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSPGQRETQYFGPGTRLLVL",
+      "alpha_fragment": {
+        "dna": "AGTCAACAGGGAGAAGAGGATCCTCAGGCCTTGAGCATCCAGGAGGGTGAAAATGCCACCATGAACTGCAGTTACAAAACTAGTATAAACAATTTACAGTGGTATAGACAAAATTCAGGTAGAGGCCTTGTCCACCTAATTTTAATACGTTCAAATGAAAGAGAGAAACACAGTGGAAGATTAAGAGTCACGCTTGACACTTCCAAGAAAAGCAGTTCCTTGTTGATCACGGCTTCCCGGGCAGCAGACACTGCTTCTTACTTCTGTGCTACGGACGAGGGTAATTTTGTCTTTGGTCCCGGAACCAGATTGTCCGTGCTGCCCT",
+        "amino_acids": "SQQGEEDPQALSIQEGENATMNCSYKTSINNLQWYRQNSGRGLVHLILIRSNEREKHSGRLRVTLDTSKKSSSLLITASRAADTASYFCATDEGNFVFGPGTRLSVLP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCAGGTCCTGAAGACAGGACAGAGCATGACACTGCAGTGTGCCCAGGATATGAACCATGAATACATGTCCTGGTATCGACAAGACCCAGGCATGGGGCTGAGGCTGATTCATTACTCAGTTGGTGCTGGTATCACTGACCAAGGAGAAGTCCCCAATGGCTACAATGTCTCCAGATCAACCACAGAGGATTTCCCGCTCAGGCTGCTGTCGGCTGCTCCCTCCCAGACATCTGTGTACTTCTGTGCCAGCAGTCCCGGACAGAGGGAGACCCAGTACTTCGGGCCAGGCACGCGGCTCCTGGTGCTCG",
+        "amino_acids": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSPGQRETQYFGPGTRLLVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A22:K22",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          35.7
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:e025a4d8f2cedeb6999354a6b2038a51f8fd45f5071b802b6a18d411f03993e3"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR955",
+      "lineage": "Foy:TCR955",
+      "patient_id": "0038",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 23,
+      "mhc_allele": "HLA-A*24:02",
+      "peptide": "EMQLTPFFI",
+      "target_gene": "BRPF1",
+      "mutation": "p.L634F",
+      "cdr3_alpha": "CAYRRRNSGYALNF",
+      "cdr3_beta": "CASSLRVWSSYEQYF",
+      "alpha_variable": "AQTVTQSQPEMSVQEAETVTLSCTYDTSESDYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDAAMYFCAYRRRNSGYALNFGKGTSLLVTP",
+      "beta_variable": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLRVWSSYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GCTCAGACAGTCACTCAGTCTCAACCAGAGATGTCTGTGCAGGAGGCAGAGACCGTGACCCTGAGCTGCACATATGACACCAGTGAGAGTGATTATTATTTATTCTGGTACAAGCAGCCTCCCAGCAGGCAGATGATTCTCGTTATTCGCCAAGAAGCTTATAAGCAACAGAATGCAACAGAGAATCGTTTCTCTGTGAACTTCCAGAAAGCAGCCAAATCCTTCAGTCTCAAGATCTCAGACTCACAGCTGGGGGATGCCGCGATGTATTTCTGTGCTTATAGGAGGAGGAATTCCGGGTATGCACTCAACTTCGGCAAAGGCACCTCGCTGTTGGTCACACCCC",
+        "amino_acids": "AQTVTQSQPEMSVQEAETVTLSCTYDTSESDYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDAAMYFCAYRRRNSGYALNFGKGTSLLVTP",
+        "frame": 0,
+        "trailing_nt": "C",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACGCTGGAGTCACCCAAAGTCCCACACACCTGATCAAAACGAGAGGACAGCAAGTGACTCTGAGATGCTCTCCTAAGTCTGGGCATGACACTGTGTCCTGGTACCAACAGGCCCTGGGTCAGGGGCCCCAGTTTATCTTTCAGTATTATGAGGAGGAAGAGAGACAGAGAGGCAACTTCCCTGATCGATTCTCAGGTCACCAGTTCCCTAACTATAGCTCTGAGCTGAATGTGAACGCCTTGTTGCTGGGGGACTCGGCCCTCTATCTCTGTGCCAGCAGCCTACGGGTCTGGTCGTCCTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLRVWSSYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A23:K23",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          5.3
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR919",
+      "lineage": "Foy:TCR919",
+      "patient_id": "0038",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 24,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "SLLKLGKLPL",
+      "target_gene": "NAALADL2",
+      "mutation": "p.A301S",
+      "cdr3_alpha": "CAALSNSGYALNF",
+      "cdr3_beta": "CASEDGQLTTVYEQYF",
+      "alpha_variable": "TQLLEQSPQFLSIQEGENLTVYCNSSSVFSSLQWYRQEPGEGPVLLVTVVTGGEVKKLKRLTFQFGDARKDSSLHITAAQPGDTGLYLCAGLLGDSGAGSYQLTFGKGTKLSVIP",
+      "beta_variable": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISESWMSSYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "ACCCAGCTGCTGGAGCAGAGCCCTCAGTTTCTAAGCATCCAAGAGGGAGAAAATCTCACTGTGTACTGCAACTCCTCAAGTGTTTTTTCCAGCTTACAATGGTACAGACAGGAGCCTGGGGAAGGTCCTGTCCTCCTGGTGACAGTAGTTACGGGTGGAGAAGTGAAGAAGCTGAAGAGACTAACCTTTCAGTTTGGTGATGCAAGAAAGGACAGTTCTCTCCACATCACTGCGGCCCAGCCTGGTGATACAGGCCTCTACCTCTGTGCAGGTCTCCTGGGGGACTCTGGGGCTGGGAGTTACCAACTCACTTTCGGGAAGGGGACCAAACTCTCGGTCATACCAA",
+        "amino_acids": "TQLLEQSPQFLSIQEGENLTVYCNSSSVFSSLQWYRQEPGEGPVLLVTVVTGGEVKKLKRLTFQFGDARKDSSLHITAAQPGDTGLYLCAGLLGDSGAGSYQLTFGKGTKLSVIP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": false,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAATCACCCAGAGCCCAAGACACAAGGTCACAGAGACAGGAACACCAGTGACTCTGAGATGTCACCAGACTGAGAACCACCGCTATATGTACTGGTATCGACAAGACCCGGGGCATGGGCTGAGGCTGATCCATTACTCATATGGTGTTAAAGATACTGACAAAGGAGAAGTCTCAGATGGCTATAGTGTCTCTAGATCAAAGACAGAGGATTTCCTCCTCACTCTGGAGTCCGCTACCAGCTCCCAGACATCTGTGTACTTCTGTGCCATCAGTGAGTCTTGGATGAGCTCCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISESWMSSYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": false,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "quarantined_CDR3_DNA_conflict",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A24:K24",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          1.6
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:a29c2e4f795f9c78a3f111b7c0737ee5818eb558c75dec054ec155e45bcb8468",
+        "IMMREP25:bbe6ef78ae3513093e9fc12a8b089ec6ca385502b7c99635cc7b2d2351598e55"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR952",
+      "lineage": "Foy:TCR952",
+      "patient_id": "0038",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 25,
+      "mhc_allele": "HLA-C*07:02",
+      "peptide": "ARHIHEGASL",
+      "target_gene": "PAPSS1",
+      "mutation": "p.Q144H",
+      "cdr3_alpha": "CATDEVGDMRF",
+      "cdr3_beta": "CAISGSLYNEQFF",
+      "alpha_variable": "SQQGEEDPQALSIQEGENATMNCSYKTSINNLQWYRQNSGRGLVHLILIRSNEREKHSGRLRVTLDTSKKSSSLLITASRAADTASYFCATDEVGDMRFGAGTRLTVKP",
+      "beta_variable": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCAISGSLYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "AGTCAACAGGGAGAAGAGGATCCTCAGGCCTTGAGCATCCAGGAGGGTGAAAATGCCACCATGAACTGCAGTTACAAAACTAGTATAAACAATTTACAGTGGTATAGACAAAATTCAGGTAGAGGCCTTGTCCACCTAATTTTAATACGTTCAAATGAAAGAGAGAAACACAGTGGAAGATTAAGAGTCACGCTTGACACTTCCAAGAAAAGCAGTTCCTTGTTGATCACGGCTTCCCGGGCAGCAGACACTGCTTCTTACTTCTGTGCTACGGACGAAGTGGGTGACATGCGCTTTGGAGCAGGGACCAGACTGACAGTAAAACCAA",
+        "amino_acids": "SQQGEEDPQALSIQEGENATMNCSYKTSINNLQWYRQNSGRGLVHLILIRSNEREKHSGRLRVTLDTSKKSSSLLITASRAADTASYFCATDEVGDMRFGAGTRLTVKP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GAACCTGAAGTCACCCAGACTCCCAGCCATCAGGTCACACAGATGGGACAGGAAGTGATCTTGCGCTGTGTCCCCATCTCTAATCACTTATACTTCTATTGGTACAGACAAATCTTGGGGCAGAAAGTCGAGTTTCTGGTTTCCTTTTATAATAATGAAATCTCAGAGAAGTCTGAAATATTCGATGATCAATTCTCAGTTGAAAGGCCTGATGGATCAAATTTCACTCTGAAGATCCGGTCCACAAAGCTGGAGGACTCAGCCATGTACTTCTGTGCCATAAGCGGGTCACTCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCAISGSLYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A25:K25",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          1.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:c18baf6257be272e094a32c9784532b6f9f07042877f8b9dbe40a645c355242a",
+        "IMMREP25:e025a4d8f2cedeb6999354a6b2038a51f8fd45f5071b802b6a18d411f03993e3"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR903",
+      "lineage": "Foy:TCR903",
+      "patient_id": "0612",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 26,
+      "mhc_allele": "HLA-C*07:02",
+      "peptide": "FRSTRFLHI",
+      "target_gene": "USP34",
+      "mutation": "p.S2706F",
+      "cdr3_alpha": "CALSEETDRGSTLGRLYF",
+      "cdr3_beta": "CASSQDGGFEQFF",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSEETDRGSTLGRLYFGRGTQLTVWP",
+      "beta_variable": "DTAVSQTPKYLVTQMGNDKSIKCEQNLGHDTMYWYKQDSKKFLKIMFSYNNKELIINETVPNRFSPKSPDKAHLNLHINSLELGDSAVYFCASSQDGGFEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCTCAGAAGGTAACTCAAGCGCAGACTGAAATTTCTGTGGTGGAGAAGGAGGATGTGACCTTGGACTGTGTGTATGAAACCCGTGATACTACTTATTACTTATTCTGGTACAAGCAACCACCAAGTGGAGAATTGGTTTTCCTTATTCGTCGGAACTCTTTTGATGAGCAAAATGAAATAAGTGGTCGGTATTCTTGGAACTTCCAGAAATCCACCAGTTCCTTCAACTTCACCATCACAGCCTCACAAGTCGTGGACTCAGCAGTATACTTCTGTGCTCTGAGTGAGGAAACCGACAGAGGCTCAACCCTGGGGAGGCTATACTTTGGAAGAGGAACTCAGTTGACTGTCTGGCCTG",
+        "amino_acids": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSEETDRGSTLGRLYFGRGTQLTVWP",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACACAGCTGTTTCCCAGACTCCAAAATACCTGGTCACACAGATGGGAAACGACAAGTCCATTAAATGTGAACAAAATCTGGGCCATGATACTATGTATTGGTATAAACAGGACTCTAAGAAATTTCTGAAGATAATGTTTAGCTACAATAATAAGGAGCTCATTATAAATGAAACAGTTCCAAATCGCTTCTCACCTAAATCTCCAGACAAAGCTCACTTAAATCTTCACATCAATTCCCTGGAGCTTGGTGACTCTGCTGTGTATTTCTGTGCCAGCAGCCAAGACGGGGGTTTTGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DTAVSQTPKYLVTQMGNDKSIKCEQNLGHDTMYWYKQDSKKFLKIMFSYNNKELIINETVPNRFSPKSPDKAHLNLHINSLELGDSAVYFCASSQDGGFEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A26:K26",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          6.7
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR913",
+      "lineage": "Foy:TCR913",
+      "patient_id": "0612",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 27,
+      "mhc_allele": "HLA-B*08:01",
+      "peptide": "VLKNRYLVL",
+      "target_gene": "DDX23",
+      "mutation": "p.E534K",
+      "cdr3_alpha": "CAGGGSQGNLIF",
+      "cdr3_beta": "CASSQDTGGYSGNTIYF",
+      "alpha_variable": "AQSVTQLDSQVPVFEEAPVELRCNYSSSVSVYLFWYVQYPNQGLQLLLKYLSGSTLVKGINGFEAEFNKSQTSFHLRKPSVHISDTAEYFCAGGGSQGNLIFGKGTKLSVKP",
+      "beta_variable": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDTGGYSGNTIYFGEGSWLTVV",
+      "alpha_fragment": {
+        "dna": "GCCCAGTCTGTGACCCAGCTTGACAGCCAAGTCCCTGTCTTTGAAGAAGCCCCTGTGGAGCTGAGGTGCAACTACTCATCGTCTGTTTCAGTGTATCTCTTCTGGTATGTGCAATACCCCAACCAAGGACTCCAGCTTCTCCTGAAGTATTTATCAGGATCCACCCTGGTTAAAGGCATCAACGGTTTTGAGGCTGAATTTAACAAGAGTCAAACTTCCTTCCACTTGAGGAAACCCTCAGTCCATATAAGCGACACGGCTGAGTACTTCTGTGCTGGGGGAGGAAGCCAAGGAAATCTCATCTTTGGAAAAGGCACTAAACTCTCTGTTAAACCAA",
+        "amino_acids": "AQSVTQLDSQVPVFEEAPVELRCNYSSSVSVYLFWYVQYPNQGLQLLLKYLSGSTLVKGINGFEAEFNKSQTSFHLRKPSVHISDTAEYFCAGGGSQGNLIFGKGTKLSVKP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACACTGAAGTTACCCAGACACCAAAACACCTGGTCATGGGAATGACAAATAAGAAGTCTTTGAAATGTGAACAACATATGGGGCACAGGGCTATGTATTGGTACAAGCAGAAAGCTAAGAAGCCACCGGAGCTCATGTTTGTCTACAGCTATGAGAAACTCTCTATAAATGAAAGTGTGCCAAGTCGCTTCTCACCTGAATGCCCCAACAGCTCTCTCTTAAACCTTCACCTACACGCCCTGCAGCCAGAAGACTCAGCCCTGTATCTCTGCGCCAGCAGCCAAGATACAGGGGGCTACTCTGGAAACACCATATATTTTGGAGAGGGAAGTTGGCTCACTGTTGTAG",
+        "amino_acids": "DTEVTQTPKHLVMGMTNKKSLKCEQHMGHRAMYWYKQKAKKPPELMFVYSYEKLSINESVPSRFSPECPNSSLLNLHLHALQPEDSALYLCASSQDTGGYSGNTIYFGEGSWLTVV",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A27:K27",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          2.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:21933d4f46d26c75e55f797a51c524ce717b530ad6b98c47b7ae51be5d6ba5d9",
+        "IMMREP25:670ec4ccca2d439fcd59c0cd46ad510a1423c557b981002f967abd25cab5a112",
+        "IMMREP25:d6ad75ef0dcb13a36be9414a3dddeffd54dc20a8570d6497c7daf22ebd588de0"
+      ],
+      "known_historical_exposure": [
+        {
+          "receptor_name": "Foy:TCR913",
+          "history": "historical_structure_v4",
+          "hits": [
+            "1oga",
+            "2vlj",
+            "2vlk",
+            "2vlr_0",
+            "2vlr_1",
+            "5hhm_0",
+            "5hhm_1",
+            "5hho",
+            "af3-1oga_GILGFVFTL_model_0",
+            "af3-2vlj_GILGFVFTL_model_0",
+            "af3-2vlr_GILGFVFTL_model_0"
+          ]
+        }
+      ],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR915",
+      "lineage": "Foy:TCR915",
+      "patient_id": "0612",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 28,
+      "mhc_allele": "HLA-C*07:02",
+      "peptide": "SRVLHKLEV",
+      "target_gene": "MED12L",
+      "mutation": "p.T462K",
+      "cdr3_alpha": "CALSDHNTDKLIF",
+      "cdr3_beta": "CASISDSYNEQFF",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSDHNTDKLIFGTGTRLQVFP",
+      "beta_variable": "NAGVTQTPKFRILKIGQSMTLQCTQDMNHNYMYWYRQDPGMGLKLIYYSVGAGITDKGEVPNGYNVSRSTTEDFPLRLELAAPSQTSVYFCASISDSYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GCTCAGAAGGTAACTCAAGCGCAGACTGAAATTTCTGTGGTGGAGAAGGAGGATGTGACCTTGGACTGTGTGTATGAAACCCGTGATACTACTTATTACTTATTCTGGTACAAGCAACCACCAAGTGGAGAATTGGTTTTCCTTATTCGTCGGAACTCTTTTGATGAGCAAAATGAAATAAGTGGTCGGTATTCTTGGAACTTCCAGAAATCCACCAGTTCCTTCAACTTCACCATCACAGCCTCACAAGTCGTGGACTCAGCAGTATACTTCTGTGCTCTGAGTGACCATAACACCGACAAGCTCATCTTTGGGACTGGGACCAGATTACAAGTCTTTCCAA",
+        "amino_acids": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSDHNTDKLIFGTGTRLQVFP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCGCATCCTGAAGATAGGACAGAGCATGACACTGCAGTGTACCCAGGATATGAACCATAACTACATGTACTGGTATCGACAAGACCCAGGCATGGGGCTGAAGCTGATTTATTATTCAGTTGGTGCTGGTATCACTGATAAAGGAGAAGTCCCGAATGGCTACAACGTCTCCAGATCAACCACAGAGGATTTCCCGCTCAGGCTGGAGTTGGCTGCTCCCTCCCAGACATCTGTGTACTTCTGTGCCAGCATCAGTGATTCCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "NAGVTQTPKFRILKIGQSMTLQCTQDMNHNYMYWYRQDPGMGLKLIYYSVGAGITDKGEVPNGYNVSRSTTEDFPLRLELAAPSQTSVYFCASISDSYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A28:K28",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          36.3
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1036",
+      "lineage": "Foy:TCR1036",
+      "patient_id": "0613",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 29,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "SLTQILLTWT",
+      "target_gene": "SDK1",
+      "mutation": "p.S1290L",
+      "cdr3_alpha": "CVVNMYNQGGKLIF",
+      "cdr3_beta": "CASSYSGPNYEQYF",
+      "alpha_variable": "RKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVNMYNQGGKLIFGQGTELSVKP",
+      "beta_variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSYSGPNYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "CGGAAGGAGGTGGAGCAGGATCCTGGACCCTTCAATGTTCCAGAGGGAGCCACTGTCGCTTTCAACTGTACTTACAGCAACAGTGCTTCTCAGTCTTTCTTCTGGTACAGACAGGATTGCAGGAAAGAACCTAAGTTGCTGATGTCCGTATACTCCAGTGGTAATGAAGATGGAAGGTTTACAGCACAGCTCAATAGAGCCAGCCAGTATATTTCCCTGCTCATCAGAGACTCCAAGCTCAGTGATTCAGCCACCTACCTCTGTGTGGTGAACATGTATAACCAGGGAGGAAAGCTTATCTTCGGACAGGGAACGGAGTTATCTGTGAAACCCA",
+        "amino_acids": "RKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVNMYNQGGKLIFGQGTELSVKP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCAGGTCCTGAAGACAGGACAGAGCATGACACTGCAGTGTGCCCAGGATATGAACCATGAATACATGTCCTGGTATCGACAAGACCCAGGCATGGGGCTGAGGCTGATTCATTACTCAGTTGGTGCTGGTATCACTGACCAAGGAGAAGTCCCCAATGGCTACAATGTCTCCAGATCAACCACAGAGGATTTCCCGCTCAGGCTGCTGTCGGCTGCTCCCTCCCAGACATCTGTGTACTTCTGTGCCAGCAGTTACTCGGGTCCAAACTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSYSGPNYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A29:K29",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          41.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:3d8ee024341db9cd7fde341551c38c1b03e6d5d77d7fc38213fafccecc62c31d"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1037",
+      "lineage": "Foy:TCR1037",
+      "patient_id": "0613",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 30,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "HMWRAAFTAER",
+      "target_gene": "ENOPH1",
+      "mutation": "p.G125E",
+      "cdr3_alpha": "CAVNSYGKLTF",
+      "cdr3_beta": "CASSDGTLGNSPLHF",
+      "alpha_variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNSYGKLTFGQGTILTVHP",
+      "beta_variable": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSDGTLGNSPLHFGNGTRLTVT",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGAATTCTGGACCCCTCAGTGTTCCAGAGGGAGCCATTGCCTCTCTCAACTGCACTTACAGTGACCGAGGTTCCCAGTCCTTCTTCTGGTACAGACAATATTCTGGGAAAAGCCCTGAGTTGATAATGTTCATATACTCCAATGGTGACAAAGAAGATGGAAGGTTTACAGCACAGCTCAATAAAGCCAGCCAGTATGTTTCTCTGCTCATCAGAGACTCCCAGCCCAGTGATTCAGCCACCTACCTCTGTGCCGTGAATAGCTATGGAAAGCTGACATTTGGACAAGGGACCATCTTGACTGTCCATCCAA",
+        "amino_acids": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNSYGKLTFGQGTILTVHP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GAACCTGAAGTCACCCAGACTCCCAGCCATCAGGTCACACAGATGGGACAGGAAGTGATCTTGCGCTGTGTCCCCATCTCTAATCACTTATACTTCTATTGGTACAGACAAATCTTGGGGCAGAAAGTCGAGTTTCTGGTTTCCTTTTATAATAATGAAATCTCAGAGAAGTCTGAAATATTCGATGATCAATTCTCAGTTGAAAGGCCTGATGGATCAAATTTCACTCTGAAGATCCGGTCCACAAAGCTGGAGGACTCAGCCATGTACTTCTGTGCCAGCAGTGACGGGACGTTGGGGAATTCACCCCTCCACTTTGGGAACGGGACCAGGCTCACTGTGACAG",
+        "amino_acids": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSDGTLGNSPLHFGNGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A30:K30",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          4.8
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:8ba6d5af47498ccbeb4c0d850b7f30691e52e76533de40f6d96d4912a8b2684e"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1033",
+      "lineage": "Foy:TCR1033",
+      "patient_id": "0613",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 31,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "LGLWYLQTALE",
+      "target_gene": "ROM1",
+      "mutation": "p.R287W",
+      "cdr3_alpha": "CAASEGDDKIIF",
+      "cdr3_beta": "CASSLAWAPEQYF",
+      "alpha_variable": "DQQVKQNSPSLSVQEGRISILNCDYTNSMFDYFLWYKKYPAEGPTFLISISSIKDKNEDGRFTVFLNKSAKHLSLHIVPSQPGDSAVYFCAASEGDDKIIFGKGTRLHILP",
+      "beta_variable": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSLAWAPEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GACCAGCAAGTTAAGCAAAATTCACCATCCCTGAGCGTCCAGGAAGGAAGAATTTCTATTCTGAACTGTGACTATACTAACAGCATGTTTGATTATTTCCTATGGTACAAAAAATACCCTGCTGAAGGTCCTACATTCCTGATATCTATAAGTTCCATTAAGGATAAAAATGAAGATGGAAGATTCACTGTCTTCTTAAACAAAAGTGCCAAGCACCTCTCTCTGCACATTGTGCCCTCCCAGCCTGGAGACTCTGCAGTGTACTTCTGTGCAGCAAGCGAAGGAGATGACAAGATCATCTTTGGAAAAGGGACACGACTTCATATTCTCCCCA",
+        "amino_acids": "DQQVKQNSPSLSVQEGRISILNCDYTNSMFDYFLWYKKYPAEGPTFLISISSIKDKNEDGRFTVFLNKSAKHLSLHIVPSQPGDSAVYFCAASEGDDKIIFGKGTRLHILP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATACTGGAGTCTCCCAGAACCCCAGACACAAGATCACAAAGAGGGGACAGAATGTAACTTTCAGGTGTGATCCAATTTCTGAACACAACCGCCTTTATTGGTACCGACAGACCCTGGGGCAGGGCCCAGAGTTTCTGACTTACTTCCAGAATGAAGCTCAACTAGAAAAATCAAGGCTGCTCAGTGATCGGTTCTCTGCAGAGAGGCCTAAGGGATCTTTCTCCACCTTGGAGATCCAGCGCACAGAGCAGGGGGACTCGGCCATGTATCTCTGTGCCAGCAGCTTAGCCTGGGCTCCCGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSLAWAPEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A31:K31",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          33.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1312",
+      "lineage": "Foy:TCR1312",
+      "patient_id": "0417",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 32,
+      "mhc_allele": "HLA-A*02:01",
+      "peptide": "FQVIQPERV",
+      "target_gene": "RASA3",
+      "mutation": "p.A654V",
+      "cdr3_alpha": "CAVNRAGGSYIPTF",
+      "cdr3_beta": "CASSQGQGVLGMKKLFF",
+      "alpha_variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRAGGSYIPTFGRGTSLIVHP",
+      "beta_variable": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHDYLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASSQGQGVLGMKKLFFGSGTQLSVL",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGAATTCTGGACCCCTCAGTGTTCCAGAGGGAGCCATTGCCTCTCTCAACTGCACTTACAGTGACCGAGGTTCCCAGTCCTTCTTCTGGTACAGACAATATTCTGGGAAAAGCCCTGAGTTGATAATGTTCATATACTCCAATGGTGACAAAGAAGATGGAAGGTTTACAGCACAGCTCAATAAAGCCAGCCAGTATGTTTCTCTGCTCATCAGAGACTCCCAGCCCAGTGATTCAGCCACCTACCTCTGTGCCGTGAACCGGGCCGGAGGAAGCTACATACCTACATTTGGAAGAGGAACCAGCCTTATTGTTCATCCGT",
+        "amino_acids": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRAGGSYIPTFGRGTSLIVHP",
+        "frame": 0,
+        "trailing_nt": "T",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAGTTATCCAGTCACCCCGGCACGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCAATTTCAGGACACGACTACCTTTTCTGGTACAGACAGACCATGATGCGGGGACTGGAGTTGCTCATTTACTTTAACAACAACGTTCCGATAGATGATTCAGGGATGCCCGAGGATCGATTCTCAGCTAAGATGCCTAATGCATCATTCTCCACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAGTCAAGGACAGGGGGTGCTGGGAATGAAAAAACTGTTTTTTGGCAGTGGAACCCAGCTCTCTGTCTTGG",
+        "amino_acids": "DAGVIQSPRHEVTEMGQEVTLRCKPISGHDYLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASSQGQGVLGMKKLFFGSGTQLSVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A32:K32",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          19.2,
+          25.8
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR721",
+      "lineage": "Foy:TCR721",
+      "patient_id": "0604",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 33,
+      "mhc_allele": "HLA-C*04:01",
+      "peptide": "IWDYVNKELA",
+      "target_gene": "MAN2A2",
+      "mutation": "p.R877W",
+      "cdr3_alpha": "CALSEATGFGNEKLTF",
+      "cdr3_beta": "CAISDPRDSYEQYF",
+      "alpha_variable": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSEATGFGNEKLTFGTGTRLTIIP",
+      "beta_variable": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISDPRDSYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GCTCAGAAGGTAACTCAAGCGCAGACTGAAATTTCTGTGGTGGAGAAGGAGGATGTGACCTTGGACTGTGTGTATGAAACCCGTGATACTACTTATTACTTATTCTGGTACAAGCAACCACCAAGTGGAGAATTGGTTTTCCTTATTCGTCGGAACTCTTTTGATGAGCAAAATGAAATAAGTGGTCGGTATTCTTGGAACTTCCAGAAATCCACCAGTTCCTTCAACTTCACCATCACAGCCTCACAAGTCGTGGACTCAGCAGTATACTTCTGTGCTCTGAGTGAGGCAACTGGCTTTGGAAATGAGAAATTAACCTTTGGGACTGGAACAAGACTCACCATCATACCCA",
+        "amino_acids": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSEATGFGNEKLTFGTGTRLTIIP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGGAATCACCCAGAGCCCAAGACACAAGGTCACAGAGACAGGAACACCAGTGACTCTGAGATGTCACCAGACTGAGAACCACCGCTACATGTACTGGTATCGACAAGACCCGGGGCATGGGCTGAGGCTAATCCATTACTCATATGGTGTTAAAGATACTGACAAAGGAGAAGTCTCAGATGGCTATAGTGTCTCTAGATCAAAGACAGAGGATTTCCTCCTCACTCTGGAGTCCGCTACCAGCTCCCAGACATCTGTGTACTTCTGTGCCATCAGTGATCCGCGGGACAGCTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISDPRDSYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A33:K33",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          90.9
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR720",
+      "lineage": "Foy:TCR720",
+      "patient_id": "0604",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 34,
+      "mhc_allele": "HLA-A*11:01",
+      "peptide": "VMVNHLHKY",
+      "target_gene": "WDFY3",
+      "mutation": "p.L512H",
+      "cdr3_alpha": "CLVIEAGNNRKLIW",
+      "cdr3_beta": "CATSDLGLEVDEQFF",
+      "alpha_variable": "LAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVIEAGNNRKLIWGLGTSLAVNP",
+      "beta_variable": "DADVTQTPRNRITKTGKRIMLECSQTKGHDRMYWYRQDPGLGLRLIYYSFDVKDINKGEISDGYSVSRQAQAKFSLSLESAIPNQTALYFCATSDLGLEVDEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "CTTGCTAAGACCACCCAGCCCATCTCCATGGACTCATATGAAGGACAAGAAGTGAACATAACCTGTAGCCACAACAACATTGCTACAAATGATTATATCACGTGGTACCAACAGTTTCCCAGCCAAGGACCACGATTTATTATTCAAGGATACAAGACAAAAGTTACAAACGAAGTGGCCTCCCTGTTTATCCCTGCCGACAGAAAGTCCAGCACTCTGAGCCTGCCCCGGGTTTCCCTGAGCGACACTGCTGTGTACTACTGCCTCGTGATCGAAGCTGGCAACAACCGTAAGCTGATTTGGGGATTGGGAACAAGCCTGGCAGTAAATCCGA",
+        "amino_acids": "LAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVIEAGNNRKLIWGLGTSLAVNP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATGCTGATGTTACCCAGACCCCAAGGAATAGGATCACAAAGACAGGAAAGAGGATTATGCTGGAATGTTCTCAGACTAAGGGTCATGATAGAATGTACTGGTATCGACAAGACCCAGGACTGGGCCTACGGTTGATCTATTACTCCTTTGATGTCAAAGATATAAACAAAGGAGAGATCTCTGATGGATACAGTGTCTCTCGACAGGCACAGGCTAAATTCTCCCTGTCCCTAGAGTCTGCCATCCCCAACCAGACAGCTCTTTACTTCTGTGCCACCAGTGATTTGGGACTAGAGGTGGATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DADVTQTPRNRITKTGKRIMLECSQTKGHDRMYWYRQDPGLGLRLIYYSFDVKDINKGEISDGYSVSRQAQAKFSLSLESAIPNQTALYFCATSDLGLEVDEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A34:K34",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          5.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:043c9ade58462a51983719702577b205f8b09037a439e0fe8cbad3c19bdda49d",
+        "IMMREP25:05b600bdd81d68bf7c04a72ecacc378dd7f342b7d60b38f57342f12653a6fd71",
+        "IMMREP25:1268abe880060f7f59cf0ea85f20e71eee8189fd94cf8977a7c4fbc2b2eadf37",
+        "IMMREP25:129317a58110b51aa920cbfca6912ec1255be8c95bf8d350a3e57fbd9c6c10bb",
+        "IMMREP25:246dc72e1a3e4ee2f9938ea2c4e165826fa46efd0873edbf5a2b26482335bf20",
+        "IMMREP25:2a701e8e6b4339d70589e9eec542c3f11d931040ad11ace02fdce2cc5fa5234d",
+        "IMMREP25:318d998dfc04e112fe90abd739f76e53360b9c1e05563092d72ed1b09b3bd1df",
+        "IMMREP25:371962aa1a074dca83d1a63d65ddbefe0040d2f30dfbb5ff0f499aab06e57ea9",
+        "IMMREP25:4f956366c71b608d0fe11771661541eeca7f57cdbd3e3d4a274e105443fbd14b",
+        "IMMREP25:51e81a437615bfb5a394a6744dea0051ee3407a37df9d6cfbbc259f5cf48f8cb",
+        "IMMREP25:532dd2b3765bd038ab597acf5acebbedf9b36d5da9d1501ff558d99b185ddbd7",
+        "IMMREP25:6561de8d1bc5ce40868199cabdba0061111c36019e17461ac767124718ce6de8",
+        "IMMREP25:6e79abb35cf5e56852209df8a6e16d3dfd27de4845a885dcb0ae5d1313301d64",
+        "IMMREP25:a91fff4a4aeeb0c8363ec6f0f1a6f6f5d8a930fab5e57e071819fdf666e83840",
+        "IMMREP25:d01a84a3c600fae65ebc28f8ea0735e9b8199ce2812b32b4805059375ff78ba1",
+        "IMMREP25:f4d56a388a8f19daa56c65f8c94a9d5873ae6370ab6f2bb54ef6d25542777b6c",
+        "IMMREP25:fa10fae506e33dd6c081588103de7a4616645f82c77c58341cd6f256f9494a34"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR901",
+      "lineage": "Foy:TCR901",
+      "patient_id": "0411",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 35,
+      "mhc_allele": "HLA-B*57:01",
+      "peptide": "VSFGLQFQF",
+      "target_gene": "ACE",
+      "mutation": "p.V535G",
+      "cdr3_alpha": "CAMTRGGGGNKLTF",
+      "cdr3_beta": "CASSYGGPEQFF",
+      "alpha_variable": "QKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMTRGGGGNKLTFGTGTQLKVEL",
+      "beta_variable": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGGPEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "CAGAAGGAGGTGGAGCAGGATCCTGGACCACTCAGTGTTCCAGAGGGAGCCATTGTTTCTCTCAACTGCACTTACAGCAACAGTGCTTTTCAATACTTCATGTGGTACAGACAGTATTCCAGAAAAGGCCCTGAGTTGCTGATGTACACATACTCCAGTGGTAACAAAGAAGATGGAAGGTTTACAGCACAGGTCGATAAATCCAGCAAGTATATCTCCTTGTTCATCAGAGACTCACAGCCCAGTGATTCAGCCACCTACCTCTGTGCAATGACCCGCGGGGGAGGAGGAAACAAACTCACCTTTGGGACAGGCACTCAGCTAAAAGTGGAACTCA",
+        "amino_acids": "QKEVEQDPGPLSVPEGAIVSLNCTYSNSAFQYFMWYRQYSRKGPELLMYTYSSGNKEDGRFTAQVDKSSKYISLFIRDSQPSDSATYLCAMTRGGGGNKLTFGTGTQLKVEL",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "AATGCTGGTGTCACTCAGACCCCAAAATTCCGGGTCCTGAAGACAGGACAGAGCATGACACTGCTGTGTGCCCAGGATATGAACCATGAATACATGTACTGGTATCGACAAGACCCAGGCATGGGGCTGAGGCTGATTCATTACTCAGTTGGTGAGGGTACAACTGCCAAAGGAGAGGTCCCTGATGGCTACAATGTCTCCAGATTAAAAAAACAGAATTTCCTGCTGGGGTTGGAGTCGGCTGCTCCCTCCCAAACATCTGTGTACTTCTGTGCCAGCAGTTACGGGGGACCGGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "NAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASSYGGPEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A35:K35",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          0.9
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR775",
+      "lineage": "Foy:TCR775",
+      "patient_id": "0026",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 36,
+      "mhc_allele": "HLA-C*07:01",
+      "peptide": "KRKEPLKI",
+      "target_gene": "PRCC",
+      "mutation": "p.V145L",
+      "cdr3_alpha": "CAAHSGGYQKVTF",
+      "cdr3_beta": "CASSEDEQEYSYEQYF",
+      "alpha_variable": "GQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCAAHSGGYQKVTFGTGTKLQVIP",
+      "beta_variable": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSEDEQEYSYEQYFGPGTRLTVT",
+      "alpha_fragment": {
+        "dna": "GGACAAAACATTGACCAGCCCACTGAGATGACAGCTACGGAAGGTGCCATTGTCCAGATCAACTGCACGTACCAGACATCTGGGTTCAACGGGCTGTTCTGGTACCAGCAACATGCTGGCGAAGCACCTACATTTCTGTCTTACAATGTTCTGGATGGTTTGGAGGAGAAAGGTCGTTTTTCTTCATTCCTTAGTCGGTCTAAAGGGTACAGTTACCTCCTTTTGAAGGAGCTCCAGATGAAAGACTCTGCCTCTTACCTCTGTGCTGCTCATTCTGGGGGTTACCAGAAAGTTACCTTTGGAACTGGAACAAAGCTCCAAGTCATCCCAA",
+        "amino_acids": "GQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCAAHSGGYQKVTFGTGTKLQVIP",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GAACCTGAAGTCACCCAGACTCCCAGCCATCAGGTCACACAGATGGGACAGGAAGTGATCTTGCGCTGTGTCCCCATCTCTAATCACTTATACTTCTATTGGTACAGACAAATCTTGGGGCAGAAAGTCGAGTTTCTGGTTTCCTTTTATAATAATGAAATCTCAGAGAAGTCTGAAATATTCGATGATCAATTCTCAGTTGAAAGGCCTGATGGATCAAATTTCACTCTGAAGATCCGGTCCACAAAGCTGGAGGACTCAGCCATGTACTTCTGTGCCAGCAGTGAAGACGAACAGGAATACTCCTACGAGCAGTACTTCGGGCCGGGCACCAGGCTCACGGTCACAG",
+        "amino_acids": "EPEVTQTPSHQVTQMGQEVILRCVPISNHLYFYWYRQILGQKVEFLVSFYNNEISEKSEIFDDQFSVERPDGSNFTLKIRSTKLEDSAMYFCASSEDEQEYSYEQYFGPGTRLTVT",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A36:K36",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          13.4
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:d22e13fba80f5a3d0a56e66c4335cd41033eb47507d44cca8c7bbee96c05371a"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1285",
+      "lineage": "Foy:TCR1285",
+      "patient_id": "0026",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 37,
+      "mhc_allele": "HLA-C*07:01",
+      "peptide": "FRLIARLL",
+      "target_gene": "ETNK1",
+      "mutation": "p.Q233L",
+      "cdr3_alpha": "CIVRLAPYSGNTPLVF",
+      "cdr3_beta": "CASISGFMGLMNTEAFF",
+      "alpha_variable": "DAKTTQPPSMDCAEGRAANLPCNHSTISGNEYVYWYRQIHSQGPQYIIHGLKNNETNEMASLIITEDRKSSTLILPHATLRDTAVYYCIVRLAPYSGNTPLVFGKGTRLSVIAN",
+      "beta_variable": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASISGFMGLMNTEAFFGQGTRLTVV",
+      "alpha_fragment": {
+        "dna": "GATGCTAAGACCACCCAGCCCCCCTCCATGGATTGCGCTGAAGGAAGAGCTGCAAACCTGCCTTGTAATCACTCTACCATCAGTGGAAATGAGTATGTGTATTGGTATCGACAGATTCACTCCCAGGGGCCACAGTATATCATTCATGGTCTAAAAAACAATGAAACCAATGAAATGGCCTCTCTGATCATCACAGAAGACAGAAAGTCCAGCACCTTGATCCTGCCCCACGCTACGCTGAGAGACACTGCTGTGTACTATTGCATCGTCAGACTCGCCCCTTATTCAGGAAACACACCTCTTGTCTTTGGAAAGGGCACAAGACTTTCTGTGATTGCAAAT",
+        "amino_acids": "DAKTTQPPSMDCAEGRAANLPCNHSTISGNEYVYWYRQIHSQGPQYIIHGLKNNETNEMASLIITEDRKSSTLILPHATLRDTAVYYCIVRLAPYSGNTPLVFGKGTRLSVIAN",
+        "frame": 0,
+        "trailing_nt": "",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GACGCTGGAGTCACCCAAAGTCCCACACACCTGATCAAAACGAGAGGACAGCAAGTGACTCTGAGATGCTCTCCTAAGTCTGGGCATGACACTGTGTCCTGGTACCAACAGGCCCTGGGTCAGGGGCCCCAGTTTATCTTTCAGTATTATGAGGAGGAAGAGAGACAGAGAGGCAACTTCCCTGATCGATTCTCAGGTCACCAGTTCCCTAACTATAGCTCTGAGCTGAATGTGAACGCCTTGTTGCTGGGGGACTCGGCCCTCTATCTCTGTGCCAGCATTTCGGGTTTCATGGGGCTTATGAACACTGAAGCTTTCTTTGGACAAGGCACCAGACTCACAGTTGTAG",
+        "amino_acids": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASISGFMGLMNTEAFFGQGTRLTVV",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A37:K37",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          23.7,
+          11.2
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": true,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "Foy:TCR1364",
+      "lineage": "Foy:TCR1364",
+      "patient_id": "1003",
+      "cohort_id": "NCT03970382:36356599",
+      "pmid": "36356599",
+      "excel_row": 38,
+      "mhc_allele": "HLA-B*35:01",
+      "peptide": "RPSTAEKYIF",
+      "target_gene": "KBTBD3",
+      "mutation": "p.T293A",
+      "cdr3_alpha": "CAVKGDYKLSF",
+      "cdr3_beta": "CASSDRSYNEQFF",
+      "alpha_variable": "GQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCAVKGDYKLSFGAGTTVTVRA",
+      "beta_variable": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSDRSYNEQFFGPGTRLTVL",
+      "alpha_fragment": {
+        "dna": "GGACAAAACATTGACCAGCCCACTGAGATGACAGCTACGGAAGGTGCCATTGTCCAGATCAACTGCACGTACCAGACATCTGGGTTCAACGGGCTGTTCTGGTACCAGCAACATGCTGGCGAAGCACCCACATTTCTGTCTTACAATGTTCTGGATGGTTTGGAGGAGAAAGGTCGTTTTTCTTCATTCCTTAGTCGGTCTAAAGGGTACAGTTACCTCCTTTTGAAGGAGCTCCAGATGAAAGACTCTGCCTCTTACCTCTGTGCTGTGAAGGGCGACTACAAGCTCAGCTTTGGAGCCGGAACCACAGTAACTGTAAGAGCAA",
+        "amino_acids": "GQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCAVKGDYKLSFGAGTTVTVRA",
+        "frame": 0,
+        "trailing_nt": "A",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "beta_fragment": {
+        "dna": "GATACTGGAGTCTCCCAGAACCCCAGACACAAGATCACAAAGAGGGGACAGAATGTAACTTTCAGGTGTGATCCAATTTCTGAACACAACCGCCTTTATTGGTACCGACAGACCCTGGGGCAGGGCCCAGAGTTTCTGACTTACTTCCAGAATGAAGCTCAACTAGAAAAATCAAGGCTGCTCAGTGATCGGTTCTCTGCAGAGAGGCCTAAGGGATCTTTCTCCACCTTGGAGATCCAGCGCACAGAGCAGGGGGACTCGGCCATGTATCTCTGTGCCAGCTCCGACAGGTCCTACAATGAGCAGTTCTTCGGGCCAGGGACACGGCTCACCGTGCTAG",
+        "amino_acids": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSDRSYNEQFFGPGTRLTVL",
+        "frame": 0,
+        "trailing_nt": "G",
+        "cdr3_matches": true,
+        "scope": "published_variable_fragment; not complete engineered chain"
+      },
+      "identity_status": "variable_pair_verified",
+      "complete_engineered_sequence": false,
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "source_locator": "Supplementary Table 2!A38:K38",
+      "functional_evidence": {
+        "endpoint": "cellular_IFNg_release_pMHC_stimulation_EC50",
+        "reported_unit": "pg/mL",
+        "values": [
+          98.7
+        ],
+        "scope": "clinical lot release table; not molecular KD or binding affinity",
+        "method": "ELLA Simple Plex for TCR1364; IFNg ELISA otherwise",
+        "source_locator": "Extended Data Table 2 selected TCR ID; multiple manufactured products not independently attributed to infused lot"
+      },
+      "prior_reserved_panel_overlap": [
+        "IMMREP25:0d64453113f6842bfcfbc5ff22490d0935d2f38d4f07f5ee041b16857266af07",
+        "IMMREP25:1cda4ec837f064aaff12296476231f540eb00667295041a1d592b181c1494bd3",
+        "IMMREP25:bae5bf4ff62d206bdab44727f3bd12b315a007d8c58fabce09a745cbaaa4a5a4",
+        "IMMREP25:cb07f8be165921ed1901d809ae961c46b3997eaf932d94bb0a63353ff993a397",
+        "IMMREP25:cbb970dc804e5a4c9cdd21bc873b20e971aaba838c85e592c8986e411e9f1bf3",
+        "IMMREP25:d5a826c8d7b52fd28c77ff91dbb24602200e4c83fd733268263a5d58c032f3de"
+      ],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    },
+    {
+      "receptor_name": "HPV16-E7-optimized",
+      "lineage": "HPV16-E7",
+      "dna": "ATGGCCCCGGGGCTTTTGTGTTGGGCCTTGCTTTGTTTGCTTGGGGCAGGCTTGGTGGATGCTGGAGTCACACAGTCACCCACACACCTCATTAAAACCAGGGGACAACAAGTCACTCTGCGCTGCAGTCCTAAGTCAGGCCATGACACAGTTTCCTGGTATCAACAGGCTCTGGGGCAGGGCCCTCAGTTCATTTTCCAATATTACGAGGAAGAGGAACGCCAACGCGGTAATTTCCCCGATCGGTTCTCTGGGCACCAGTTCCCAAACTACTCAAGTGAGTTGAACGTAAATGCTCTCCTCCTCGGAGACTCCGCCCTCTACTTGTGTGCCAGTTCTCTTGGTTGGCGGGGCGGCCGATACAATGAACAATTTTTTGGACCTGGTACTCGGCTGACCGTGCTAGAGGACCTGCGCAACGTCACCCCACCAAAGGTCAGTTTGTTTGAGCCATCAAAGGCGGAGATCGCCAACAAACAGAAAGCTACGCTCGTGTGTTTGGCTCGGGGCTTCTTCCCAGACCACGTAGAACTTTCCTGGTGGGTCAATGGAAAGGAGGTTCATTCCGGAGTGTGCACTGATCCCCAAGCGTACAAGGAATCCAACTATAGCTACTGTCTCTCATCTCGGCTCCGGGTGAGTGCGACATTCTGGCATAATCCTCGGAACCACTTTCGATGCCAAGTGCAGTTTCATGGGTTGAGCGAGGAAGACAAGTGGCCCGAGGGCAGTCCTAAACCAGTCACTCAAAACATAAGCGCCGAGGCATGGGGTAGAGCCGATTGTGGGATTACTAGCGCTTCATACCAACAAGGGGTATTGAGCGCTACAATTCTTTACGAAATTCTCCTCGGCAAGGCGACGCTCTACGCCGTACTGGTGTCTACTCTCGTGGTTATGGCAATGGTGAAACGGAAAAACAGCAGAGCCAAAAGAAGTGGTTCTGGCGCGACGAATTTTAGTTTGCTTAAGCAAGCCGGAGATGTGGAGGAAAATCCTGGACCGATGTGGGGTGTCTTCCTTTTGTACGTCAGCATGAAGATGGGAGGCACTACTGGGCAAAACATAGATCAGCCTACCGAAATGACTGCTACCGAGGGAGCCATTGTCCAAATCAACTGCACCTATCAGACTAGCGGCTTCAATGGACTCTTCTGGTACCAACAGCATGCGGGCGAAGCACCTACCTTCTTGTCCTATAATGTCTTGGATGGTCTCGAAGAGAAAGGCAGATTCTCCAGTTTCCTCAGCCGGAGCAAGGGATACTCATATCTTCTCCTGAAAGAGCTTCAGATGAAGGATTCTGCATCCTATCTCTGTGCTTCAGTCGATGGCAATAACCGACTCGCCTTTGGAAAAGGGAATCAAGTGGTCGTCATACCGAATATTCAGAACCCCGAACCAGCCGTATATCAGTTGAAGGACCCAAGATCTCAGGATAGTACACTCTGTTTGTTTACGGACTTTGACTCACAAATCAACGTCCCGAAGACTATGGAAAGTGGTACGTTCATCACAGATAAGTGCGTTCTGGACATGAAGGCTATGGACTCAAAGAGCAACGGGGCAATTGCTTGGTCCAACCAGACAAGCTTTACCTGTCAGGACATTTTTAAGGAGACTAATGCTACTTATCCCTCCAGCGACGTTCCGTGTGATGCGACTCTTACCGAGAAGTCTTTTGAGACCGATATGAATCTCAACTTCCAGAATCTGCTGGTGATCGTTCTGCGGATCCTGCTTCTGAAGGTTGCAGGATTCAATCTTCTTATGACTCTCCGGCTCTGGTCTTCATGATAA",
+      "protein": "MAPGLLCWALLCLLGAGLVDAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVLEDLRNVTPPKVSLFEPSKAEIANKQKATLVCLARGFFPDHVELSWWVNGKEVHSGVCTDPQAYKESNYSYCLSSRLRVSATFWHNPRNHFRCQVQFHGLSEEDKWPEGSPKPVTQNISAEAWGRADCGITSASYQQGVLSATILYEILLGKATLYAVLVSTLVVMAMVKRKNSRAKRSGSGATNFSLLKQAGDVEENPGPMWGVFLLYVSMKMGGTTGQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIPNIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNGAIAWSNQTSFTCQDIFKETNATYPSSDVPCDATLTEKSFETDMNLNFQNLLVIVLRILLLKVAGFNLLMTLRLWSS",
+      "terminal_stop_codons": 2,
+      "segments": [
+        "ATGGCCCCGGGGCTTTTGTGTTGGGCCTTGCTTTGTTTGCTTGGGGCAGGCTTGGTGGATGCTGGAGTCACACAGTCACCCACACACCTCATTAAAACCAGGGGACAACAAGTCACTCTGCGCTGCAGTCCTAAGTCAGGCCATGACACAGTTTCCTGGTATCAACAGGCTCTGGGGCAGGGCCCTCAGTTCATTTTCCAATATTACGAGGAAGAGGAACGCCAACGCGGTAATTTCCCCGATCGGTTCTCTGGGCACCAGTTCCCAAACTACTCAAGTGAGTTGAACGTAAATGCTCTCCTCCTCGGAGACTCCGCCCTCTACTTGTGTGCCAGTTCTCTTGGTTGGCGGGGCGGCCGATACAATGAACAATTTTTTGGACCTGGTACTCGGCTGACCGTGCTA",
+        "GAGGACCTGCGCAACGTCACCCCACCAAAGGTCAGTTTGTTTGAGCCATCAAAGGCGGAGATCGCCAACAAACAGAAAGCTACGCTCGTGTGTTTGGCTCGGGGCTTCTTCCCAGACCACGTAGAACTTTCCTGGTGGGTCAATGGAAAGGAGGTTCATTCCGGAGTGTGCACTGATCCCCAAGCGTACAAGGAATCCAACTATAGCTACTGTCTCTCATCTCGGCTCCGGGTGAGTGCGACATTCTGGCATAATCCTCGGAACCACTTTCGATGCCAAGTGCAGTTTCATGGGTTGAGCGAGGAAGACAAGTGGCCCGAGGGCAGTCCTAAACCAGTCACTCAAAACATAAGCGCCGAGGCATGGGGTAGAGCCGATTGTGGGATTACTAGCGCTTCATACCAACAAGGGGTATTGAGCGCTACAATTCTTTACGAAATTCTCCTCGGCAAGGCGACGCTCTACGCCGTACTGGTGTCTACTCTCGTGGTTATGGCAATGGTGAAACGGAAAAACAGC",
+        "AGAGCCAAAAGAAGTGGTTCTGGCGCGACGAATTTTAGTTTGCTTAAGCAAGCCGGAGATGTGGAGGAAAATCCTGGACCG",
+        "ATGTGGGGTGTCTTCCTTTTGTACGTCAGCATGAAGATGGGAGGCACTACTGGGCAAAACATAGATCAGCCTACCGAAATGACTGCTACCGAGGGAGCCATTGTCCAAATCAACTGCACCTATCAGACTAGCGGCTTCAATGGACTCTTCTGGTACCAACAGCATGCGGGCGAAGCACCTACCTTCTTGTCCTATAATGTCTTGGATGGTCTCGAAGAGAAAGGCAGATTCTCCAGTTTCCTCAGCCGGAGCAAGGGATACTCATATCTTCTCCTGAAAGAGCTTCAGATGAAGGATTCTGCATCCTATCTCTGTGCTTCAGTCGATGGCAATAACCGACTCGCCTTTGGAAAAGGGAATCAAGTGGTCGTCATACCG",
+        "AATATTCAGAACCCCGAACCAGCCGTATATCAGTTGAAGGACCCAAGATCTCAGGATAGTACACTCTGTTTGTTTACGGACTTTGACTCACAAATCAACGTCCCGAAGACTATGGAAAGTGGTACGTTCATCACAGATAAGTGCGTTCTGGACATGAAGGCTATGGACTCAAAGAGCAACGGGGCAATTGCTTGGTCCAACCAGACAAGCTTTACCTGTCAGGACATTTTTAAGGAGACTAATGCTACTTATCCCTCCAGCGACGTTCCGTGTGATGCGACTCTTACCGAGAAGTCTTTTGAGACCGATATGAATCTCAACTTCCAGAATCTGCTGGTGATCGTTCTGCGGATCCTGCTTCTGAAGGTTGCAGGATTCAATCTTCTTATGACTCTCCGGCTCTGGTCTTCATGATAA"
+      ],
+      "sequence_scope": "complete published preclinical beta-furinP2A-alpha coding insert; vector backbone not included",
+      "alpha_variable": "MWGVFLLYVSMKMGGTTGQNIDQPTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIP",
+      "beta_variable": "MAPGLLCWALLCLLGAGLVDAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVL",
+      "cdr3_alpha": "CASVDGNNRLAF",
+      "cdr3_beta": "CASSLGWRGGRYNEQF",
+      "complete_published_coding_insert": true,
+      "clinical_lot_sequence_verified": false,
+      "clinical_product_link": "reference-linked optimized E7 receptor; no public lot-level sequencing certificate",
+      "primary_pmid": "29669936",
+      "clinical_pmid": "33558725",
+      "trial": "NCT02858310",
+      "engineering": [
+        "mouse constants",
+        "alpha T48C",
+        "beta S57C",
+        "alpha TM LSVMGLRIL -> LLVIVLRIL",
+        "beta-alpha order",
+        "furin-P2A"
+      ],
+      "source_typo": "Fifth block headed Beta chain in source; follows alpha variable and corresponds to alpha constant per Methods. Raw text retained.",
+      "clinical_training_allowed": false,
+      "clinical_risk_label": null,
+      "role": "retrospective_reserved_candidate",
+      "prior_reserved_panel_overlap": [],
+      "known_historical_exposure": [],
+      "future_external_identity_candidate": false,
+      "external_scope": "retrospective family-isolated candidate for future experimental scoring; no clinical risk acceptance threshold fitted"
+    }
+  ],
+  "patients": [
+    {
+      "patient_id": "0010",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 38,
+      "cancer": "HR+ Breast",
+      "n_prior_regimens": 7,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR445",
+        "Foy:TCR447",
+        "Foy:TCR441"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": false,
+      "response_table3": "SD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G3 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0010"
+    },
+    {
+      "patient_id": "0605",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 53,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 4,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR536",
+        "Foy:TCR535",
+        "Foy:TCR538"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "SAE D52 small bowel obstruction",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0605"
+    },
+    {
+      "patient_id": "0603",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 65,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 4,
+      "n_receptors": 1,
+      "receptors": [
+        "Foy:TCR707"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "COVID-19 + pneumonia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0603"
+    },
+    {
+      "patient_id": "0506",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 70,
+      "cancer": "Ovarian",
+      "n_prior_regimens": 6,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR691",
+        "Foy:TCR692",
+        "Foy:TCR696"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G3 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0506"
+    },
+    {
+      "patient_id": "0503",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 48,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 9,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR689",
+        "Foy:TCR687",
+        "Foy:TCR682"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia; SAE UTI D74",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0503"
+    },
+    {
+      "patient_id": "0030",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 35,
+      "cancer": "HR+ Breast",
+      "n_prior_regimens": 5,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR802",
+        "Foy:TCR800",
+        "Foy:TCR798"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": false,
+      "response_table3": "SD at D28 and D56",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": null,
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0030"
+    },
+    {
+      "patient_id": "0404",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 47,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 7,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR814",
+        "Foy:TCR827",
+        "Foy:TCR829"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia; SAE G3 peri-hepatic hematoma week 3",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0404"
+    },
+    {
+      "patient_id": "0611",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 44,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 5,
+      "n_receptors": 2,
+      "receptors": [
+        "Foy:TCR1057",
+        "Foy:TCR1059"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G2 headaches week 2",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0611"
+    },
+    {
+      "patient_id": "0038",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 39,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 2,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR955",
+        "Foy:TCR919",
+        "Foy:TCR952"
+      ],
+      "dose_level": "DL3",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0038"
+    },
+    {
+      "patient_id": "0612",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 47,
+      "cancer": "Melanoma",
+      "n_prior_regimens": 3,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR903",
+        "Foy:TCR913",
+        "Foy:TCR915"
+      ],
+      "dose_level": "DL3",
+      "additional_IL2": false,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0612"
+    },
+    {
+      "patient_id": "0613",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 30,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 3,
+      "n_receptors": 3,
+      "receptors": [
+        "Foy:TCR1036",
+        "Foy:TCR1037",
+        "Foy:TCR1033"
+      ],
+      "dose_level": "DL3",
+      "additional_IL2": false,
+      "response_table3": "SD at D28 and D56",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "SAE G4 febrile neutropenia",
+      "tcr_related_event_table3": "G1 CRS",
+      "attribution": "possibly attributed to therapy; not peptide-specific causal evidence",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0613"
+    },
+    {
+      "patient_id": "0417",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 38,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 4,
+      "n_receptors": 1,
+      "receptors": [
+        "Foy:TCR1312"
+      ],
+      "dose_level": "DL3",
+      "additional_IL2": false,
+      "response_table3": "No post-baseline assessment",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "SAE G4 hyponatremia; SAE G5 malignant neoplasm progression",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0417"
+    },
+    {
+      "patient_id": "0604",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 40,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 5,
+      "n_receptors": 2,
+      "receptors": [
+        "Foy:TCR721",
+        "Foy:TCR720"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": true,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G3 neutropenia and febrile neutropenia; SAE G3 pancreatitis D40",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0604"
+    },
+    {
+      "patient_id": "0411",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 58,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 5,
+      "n_receptors": 1,
+      "receptors": [
+        "Foy:TCR901"
+      ],
+      "dose_level": "DL1",
+      "additional_IL2": true,
+      "response_table3": "SD at D28 and D56",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0411"
+    },
+    {
+      "patient_id": "0026",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 58,
+      "cancer": "MSS-CRC",
+      "n_prior_regimens": 5,
+      "n_receptors": 2,
+      "receptors": [
+        "Foy:TCR775",
+        "Foy:TCR1285"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": true,
+      "response_table3": "PD",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G4 neutropenia",
+      "tcr_related_event_table3": null,
+      "attribution": "no TCR-related event listed in Table 3; not a safety-negative label",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 0026"
+    },
+    {
+      "patient_id": "1003",
+      "cohort_id": "NCT03970382:36356599",
+      "age_years": 66,
+      "cancer": "NSCLC",
+      "n_prior_regimens": 4,
+      "n_receptors": 1,
+      "receptors": [
+        "Foy:TCR1364"
+      ],
+      "dose_level": "DL2",
+      "additional_IL2": true,
+      "response_table3": "SD at D28",
+      "response_time": "D28 first assessment; D56 where explicitly listed",
+      "adverse_events_table3": "G3 encephalopathy",
+      "tcr_related_event_table3": "G3 encephalopathy",
+      "attribution": "possibly attributed to therapy; not peptide-specific causal evidence",
+      "conditioning": "cyclophosphamide + fludarabine; regimen varies by dose cohort",
+      "per_receptor_causality_established": false,
+      "source_locator": "Extended Data Table 3 patient 1003"
+    }
+  ],
+  "summary": {
+    "patients": 16,
+    "foy_receptors": 37,
+    "variable_pairs_verified": 36,
+    "foy_conflict": "TCR919 both CDR3s inconsistent with own nucleotide columns",
+    "clinical_training_allowed": false,
+    "clinical_risk_training_allowed": false,
+    "response_discrepancy": "Abstract/body says 5 SD + 11 PD; Table 3 has 5 SD + 10 PD + 1 no post-baseline assessment. Keep both source statements; do not assign PD to 0417.",
+    "sequence_scope": "Foy table contains variable fragments (108-119 aa), all but one record terminate with partial codon; complete Foy cassette not supplied in table. E7 full published coding insert available; clinical lot equality not certified."
+  }
+}

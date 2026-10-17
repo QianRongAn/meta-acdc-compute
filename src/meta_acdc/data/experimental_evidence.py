@@ -220,15 +220,17 @@ def reserved_hits(record,registry):
     ca=record.get('cdr3_alpha') or (domain(alpha)[1] if alpha else '')
     cb=record.get('cdr3_beta') or (domain(beta)[1] if beta else '')
     for r in registry:
-        if ((alpha and similar(alpha,r['alpha_variable'])) or (beta and similar(beta,r['beta_variable']))
-            or _near_cdr3(ca,domain(r['alpha_variable'])[1]) or _near_cdr3(cb,domain(r['beta_variable'])[1])):result.append(r['receptor_name'])
+        if ((alpha and similar(alpha,r.get('alpha_variable',''))) or (beta and similar(beta,r.get('beta_variable','')))
+            or _near_cdr3(ca,r.get('cdr3_alpha') or domain(r.get('alpha_variable',''))[1]) or _near_cdr3(cb,r.get('cdr3_beta') or domain(r.get('beta_variable',''))[1])):result.append(r['receptor_name'])
     return sorted(set(result))
 
 
 def assert_reserved_absent(records,registry_path=None):
     if registry_path is None:registry_path=Path(__file__).resolve().parents[3]/'docs/evidence/holdout_registry.json'
     if not registry_path.exists():raise ValueError('external holdout reservation ledger is missing')
-    registry=json.loads(registry_path.read_text())['receptors']
+    clinical_path=Path(__file__).resolve().parents[3]/'docs/clinical_primary_20261018/clinical_reservations.json'
+    if not clinical_path.exists():raise ValueError('clinical holdout reservations missing')
+    registry=json.loads(registry_path.read_text())['receptors']+json.loads(clinical_path.read_text())['receptors']
     checked=set()
     for row in records:
         key=tuple(row.get(x,'') for x in ['alpha','beta','alpha_variable','beta_variable','cdr3_alpha','cdr3_beta'])

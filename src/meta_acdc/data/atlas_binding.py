@@ -83,7 +83,9 @@ def build(snapshot,registry_path,output):
         if not path.is_relative_to(snapshot.resolve()) or sha256(path)!=source['sha256']:raise ValueError('changed source '+source['file'])
     atlas=list(csv.DictReader((snapshot/'atlas_Mutants.tsv').open(),delimiter='\t'));complexes={x['PDB_ID']:x for x in csv.DictReader((snapshot/'tcr3d_complexes.tsv').open(),delimiter='\t')};chains=defaultdict(list)
     for x in csv.DictReader((snapshot/'tcr3d_chain.tsv').open(),delimiter='\t'):chains[x['pdb_id']].append(x)
-    registry=json.loads(registry_path.read_text())['receptors'];ledger=[];candidate=[]
+    clinical_path=Path(__file__).resolve().parents[3]/'docs/clinical_primary_20261018/clinical_reservations.json'
+    if not clinical_path.exists():raise ValueError('clinical holdout reservations missing')
+    registry=json.loads(registry_path.read_text())['receptors']+json.loads(clinical_path.read_text())['receptors'];ledger=[];candidate=[]
     for raw in atlas:
         row={'evidence_id':'ATLAS:'+raw['Ind'],'raw_record':raw,'training_label':None,'measurement':kd_measurement(raw['Kd_microM']),'reasons':[],'primary_review':'database_curated; not independently reviewed per paper'};why=row['reasons'];pdb=raw['true_PDB'].lower();meta=complexes.get(pdb)
         if not meta or meta['TCR_complex']!='CLASSI' or meta['TCR_organism']!='Human':why.append('not_exact_human_class_I_complex')
@@ -119,16 +121,40 @@ def build(snapshot,registry_path,output):
             eligible.append(values[0])
             for x in values[1:]:x['reasons'].append('duplicate_measurement_not_independent')
     eligible.sort(key=lambda x:x['evidence_id']);folds,grouping=grouped_folds(eligible)
+    # Never recycle previously exposed validation/test points into training after filtering.
+    parent_path=Path(__file__).resolve().parents[3]/'docs/database_binding/affinity_dataset.json'
+    if parent_path.exists():
+        previous={x['evidence_id']:x for x in json.loads(parent_path.read_text())}
+        if any(x['evidence_id'] not in previous for x in eligible):raise ValueError('new assay rows require an explicit new split protocol')
+        retained_ids={x['evidence_id'] for x in eligible}
+        blocked={x['split_block'] for key,x in previous.items() if key not in retained_ids}
+        for x in eligible:
+            if previous[x['evidence_id']]['split_block'] in blocked:x['reasons'].append('reserved_parent_connected_block')
+        eligible=[x for x in eligible if previous[x['evidence_id']]['split_block'] not in blocked]
+        for x in eligible:
+            old=previous[x['evidence_id']]
+            if old['pair_id']!=x['pair_id'] or old['pkd']!=x['pkd']:raise ValueError('parent assay changed')
+            x['fold']=old['fold'];x['split_block']=old['split_block']
+        folds={f:[i for i,x in enumerate(eligible) if x['fold']==f] for f in ['train','validation','test']}
+        grouping['parent_fold_inheritance']='old fold and connected block retained; exclusions never promote validation/test to train'
+        grouping['parent_dataset_sha256']=sha256(parent_path)
+        grouping['n_blocks']=len({x['split_block'] for x in eligible})
+        grouping['block_sizes']=list(Counter(x['split_block'] for x in eligible).values())
+
     output.mkdir(parents=True,exist_ok=False)
     def save(name,value):(output/name).write_text(json.dumps(value,indent=2)+'\n')
     save('measurement_ledger.json',ledger);save('affinity_dataset.json',eligible);save('splits.json',folds)
     report={'n_source_records':len(atlas),'n_eligible_exact_SPR':len(eligible),'n_studies':len({x['pmid'] for x in eligible}),'n_receptor_names':len({x['receptor_name'] for x in eligible}),'fold_counts':{k:len(v) for k,v in folds.items()},'fold_blocks':{k:len({eligible[i]['split_block'] for i in v}) for k,v in folds.items()},'grouping':grouping,'exclusions':dict(Counter(reason for x in ledger for reason in x['reasons'])),'task':'experimental_SPR_pKD_regression','binary_binding_training_allowed':False,'clinical_training_allowed':False,'scope':'exploratory database-curated measured-affinity research only; censored and unobserved pairs are not negatives; no broad affinity or binary-binding accuracy accepted'}
     save('summary.json',report)
-    manifest={'schema_version':1,'task':report['task'],'status':'frozen_exploratory_affinity_dataset','binary_training_allowed':False,'clinical_training_allowed':False,'external_registry_sha256':sha256(registry_path),'sources':sources,'source_snapshot':str(snapshot.resolve()),'registry_path':str(registry_path.resolve()),'code_files':{name:sha256(Path(__file__).resolve().parents[3]/name) for name in ['src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']},'files':{p.name:sha256(p) for p in output.iterdir() if p.is_file()},'summary':report};save('manifest.json',manifest);return report
+    manifest={'schema_version':1,'task':report['task'],'status':'frozen_exploratory_affinity_dataset','binary_training_allowed':False,'clinical_training_allowed':False,'parent_dataset_sha256':sha256(parent_path) if parent_path.exists() else None,'clinical_registry_sha256':sha256(clinical_path),'external_registry_sha256':sha256(registry_path),'sources':sources,'source_snapshot':str(snapshot.resolve()),'registry_path':str(registry_path.resolve()),'code_files':{name:sha256(Path(__file__).resolve().parents[3]/name) for name in ['src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']},'files':{p.name:sha256(p) for p in output.iterdir() if p.is_file()},'summary':report};save('manifest.json',manifest);return report
 
 
 def verify_release(release):
     manifest=json.loads((release/'manifest.json').read_text());root=Path(__file__).resolve().parents[3]
+    clinical_path=root/'docs/clinical_primary_20261018/clinical_reservations.json'
+    parent_path=root/'docs/database_binding/affinity_dataset.json'
+    if manifest.get('parent_dataset_sha256') is not None and (not parent_path.exists() or sha256(parent_path)!=manifest['parent_dataset_sha256']):raise ValueError('parent split history changed')
+    if not clinical_path.exists() or manifest.get('clinical_registry_sha256')!=sha256(clinical_path):raise ValueError('clinical reservation absent or changed; rebuild a new release')
     if manifest['task']!='experimental_SPR_pKD_regression':raise ValueError('not quantitative affinity data')
     if not manifest.get('code_files') or not manifest.get('source_snapshot'):raise ValueError('affinity dependency provenance missing')
     for name,digest in manifest['code_files'].items():

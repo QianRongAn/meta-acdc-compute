@@ -1,3 +1,5 @@
+> 2026-10-18 更新：[临床原文、工程构型和结局整理](CLINICAL_PRIMARY_CURATION_20261018.md)。临床资料仍按患者/组合保留；新SPR开发集51条，临床候选队列独立预留，旧版本数据量和结果仅作历史。
+
 > **后续原子数据处置已落地，当前判决见 [N2／N8 修复报告](STRUCTURE_ATOMIC_REPAIR_20261017.md)：168 份无标签资料核验，5 对新控制不足以恢复重训。**
 
 > **2026-10-17 update:** [Scoped structural retraining is now released](RETRAINING_DECISION_20261017.md); binding and clinical claims remain blocked. The release/guard state described below is historical.

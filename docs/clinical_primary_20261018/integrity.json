@@ -1,0 +1,28 @@
+{
+  "tests_run": 139,
+  "tests_passed": 136,
+  "tests_skipped": 3,
+  "original_worktree_clean": true,
+  "historical_artifacts_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "clinical_bundle_validated": true,
+  "offline_primary_reconstruction_matches": true,
+  "affinity_release_verified": true,
+  "clinical_family_hits_in_new_affinity": 0,
+  "new_affinity_counts": {
+    "train": 27,
+    "validation": 18,
+    "test": 6
+  },
+  "clinical_candidates_scored": false,
+  "training_started": false,
+  "scheduling_enabled": false,
+  "whole_clinical_cohort_training_allowed": false,
+  "clinical_risk_model_accepted": false
+}
