@@ -1,3 +1,5 @@
+> **2026-10-17 update:** [Scoped structural retraining is now released](RETRAINING_DECISION_20261017.md); binding and clinical claims remain blocked. The release/guard state described below is historical.
+
 > **最新状态：** [证据扩展与 structural-v3](EXPERIMENTAL_EVIDENCE_EXPANSION.md) 已完成机器验证；hy4 按用户要求暂缓。旧报告中的配额阻断和 v2 计数为历史状态；训练尚未放行。
 
 > Historical repair record. Current experimental-data status and the user’s hy4 waiver are documented in [EXPERIMENTAL_EVIDENCE.md](EXPERIMENTAL_EVIDENCE.md). Existing manifest hashes are preserved; new guard code requires a new manifest before training.

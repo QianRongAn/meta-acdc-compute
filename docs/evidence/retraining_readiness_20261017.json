@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-17",
+  "code_commit": "7b5126d648468fb5b65509fbb39ba436e175d49d",
+  "release_sha256": "9bce542435ccb676aaa9be87ab67bab1635db4eb078f4400b47ca2eae6187d3e",
+  "machine_checks_passed": true,
+  "structural_data_ready": true,
+  "binding_training_ready": false,
+  "training_manifest_allowed": false,
+  "smoke_check": {
+    "graph_ids": [
+      "1ao7",
+      "1ao7-disp",
+      "1ao7<-af3-3pwp_LGYGFVNYI_model_0"
+    ],
+    "fold": "train",
+    "device": "cpu",
+    "depth": 6,
+    "hidden": 128,
+    "node_dim": 26,
+    "edge_dim": 16,
+    "finite_loss": true,
+    "finite_gradients": true,
+    "batch_invariance_max_absolute_error": 0.0,
+    "optimizer_steps": 0,
+    "checkpoint_loaded": false,
+    "checkpoint_written": false,
+    "validation_test_used": false
+  },
+  "elapsed_seconds": 44.15,
+  "decision": "GO_FOR_SCOPED_STRUCTURAL_RETRAINING_AFTER_NEW_TRAINING_RELEASE; NO_GO_FOR_BINDING_OR_CLINICAL_MODEL",
+  "scope": "native_vs_synthetic_decoy only; external reference remains reserved",
+  "remaining": [
+    "Current immutable manifest intentionally has training_allowed=false; preserve it and issue a separate scoped training release before optimizer execution",
+    "No validated same-pipeline structures for the 21 external SPR pairs",
+    "External case-selected assay panel cannot substantiate population binding or clinical accuracy"
+  ]
+}

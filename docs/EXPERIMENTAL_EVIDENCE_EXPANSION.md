@@ -1,3 +1,5 @@
+> **2026-10-17 update:** [Scoped structural retraining is now released](RETRAINING_DECISION_20261017.md); binding and clinical claims remain blocked. The release/guard state described below is historical.
+
 # Experimental evidence expansion and retraining boundary — 2026-10-16
 
 本报告更新 `EXPERIMENTAL_EVIDENCE.md` 的首批单研究面板；旧表、原始下载和历史结构版本均保留。hy4 按用户要求暂缓，不作为当前阻断原因。本轮没有训练、预测提交或新性能指标。

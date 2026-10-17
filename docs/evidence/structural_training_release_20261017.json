@@ -1,0 +1,31 @@
+{
+  "decision": {
+    "date": "2026-10-17",
+    "status": "accepted_for_scoped_structural_retraining",
+    "basis": "User-directed pretraining readiness repairs and continuation; hy4 explicitly deferred by user. Current code/source/array checks and actual-model finite forward/backward smoke passed. This is a machine-reviewed scoped release, not independent model or scientific validation.",
+    "task": "native_vs_synthetic_decoy",
+    "training_allowed": true,
+    "binding_training_allowed": false,
+    "hy4": "deferred_by_user",
+    "source_release_sha256": "9bce542435ccb676aaa9be87ab67bab1635db4eb078f4400b47ca2eae6187d3e",
+    "readiness_report_sha256": "98fede57c46a4583201e619a3d1eeca48a275d7ce2ed31fd57608278e63161e7",
+    "requirements": [
+      "Fresh model initialization; never load legacy checkpoints",
+      "Train fold only for optimizer; validation for model selection; calibration and test remain held out",
+      "External primary receptor registry remains excluded",
+      "Use CPU on current host; no assumption of CUDA support or adequate GPU memory",
+      "Report synthetic-decoy task metrics only; do not call these binding, cross-reactivity or clinical accuracy",
+      "Store logs/config/checkpoints in a new run directory; never overwrite release or historical results"
+    ],
+    "scientific_limitations": [
+      "No ground truth negative status established for synthetic decoys",
+      "External SPR pairs lack validated consistent-pipeline predicted structures",
+      "External panel is case-selected and does not validate clinical/general population performance"
+    ],
+    "optimizer_started": false
+  },
+  "manifest_sha256": "38322c41ac7c90df184b247c3256a616c707f4472c2b7b27a3816bf2e7e886a1",
+  "manifest_path": "/home/administrator/docs/meta-acdc-readiness/data/releases/20261017-structural-v4/release_manifest.json",
+  "normal_training_loader_passed": true,
+  "training_started": false
+}

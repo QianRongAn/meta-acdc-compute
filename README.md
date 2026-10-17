@@ -1,3 +1,5 @@
+> **2026-10-17 training decision:** [GO for scoped structural retraining](docs/RETRAINING_DECISION_20261017.md). New v4 manifest passes the normal loader. Fresh-model forward/backward smoke passed. Binding/clinical training remains NO GO. No optimizer run started by the readiness assessment. Older status notes below are historical.
+
 > **2026-10-16 current status:** [expanded evidence and readiness](docs/EXPERIMENTAL_EVIDENCE_EXPANSION.md): 23 endpoint-separated primary observations from 4 studies, 8 reserved receptor constructs; structural-v3 validated (888 graphs), 106 VDJdb associations quarantined. Hy4 deferred. Training and clinical/performance claims remain blocked.
 
 > **2026-10-16 readiness update:** legacy data caches/checkpoints are historical and ineligible for retraining. See [PRETRAIN_READINESS.md](docs/PRETRAIN_READINESS.md). Rebuilt structural data passed machine checks; Hy4 is deferred by user request; this paragraph describes historical readiness. Training remains blocked. No binding/clinical performance is authorized.
