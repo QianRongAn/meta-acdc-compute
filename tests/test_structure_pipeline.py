@@ -37,6 +37,8 @@ class TestChainClassification(unittest.TestCase):
         residues += chain_residues("C", "LGYGFVNYI")               # peptide
         residues += chain_residues("D", "G" * 274)                 # MHC-I
         residues += chain_residues("E", "M" * 100)                 # B2M
+        mapping = {"A": TCR, "B": TCR, "C": PEPTIDE, "D": MHC, "E": B2M}
+        for residue in residues: residue.role = mapping[residue.chain]
         roles = classify_chains(residues)
         self.assertEqual(roles["A"], TCR)
         self.assertEqual(roles["B"], TCR)
@@ -238,7 +240,7 @@ class TestEnsembleMean(unittest.TestCase):
             row = next(csv.DictReader(open(out), delimiter="\t"))
             self.assertAlmostEqual(float(row["score"]), 0.4, places=3)
 
-    def test_degenerate_seed_excluded(self):
+    def test_degenerate_seed_retained_and_not_quality_eligible(self):
         import csv
         import subprocess
         import sys
@@ -267,8 +269,8 @@ class TestEnsembleMean(unittest.TestCase):
             self.assertIn("degenerate", r.stdout)
             rows = {x["job_id"]: float(x["score"])
                     for x in csv.DictReader(open(out), delimiter="\t")}
-            self.assertAlmostEqual(rows["a"], 0.25, places=3)
-            self.assertAlmostEqual(rows["b"], 0.75, places=3)
+            self.assertAlmostEqual(rows["a"], (0.2+0.3)/3, places=3)
+            self.assertAlmostEqual(rows["b"], (0.8+0.7)/3, places=3)
 
 
 class TestAttribution(unittest.TestCase):

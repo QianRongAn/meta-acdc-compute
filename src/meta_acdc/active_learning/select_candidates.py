@@ -334,7 +334,11 @@ def main() -> int:
                     help="reject peptides whose most frequent residue exceeds "
                          "this fraction (low-complexity EIG artefacts); "
                          "1.0 disables the filter")
+    ap.add_argument('--allow-lossy-research-subset', action='store_true',
+                    help='explicitly authorize a research subset; excluded peptides remain untested')
     args = ap.parse_args()
+    if not args.allow_lossy_research_subset:
+        raise ValueError('legacy top-presentation/top-EIG subset is not a safety screen; explicit research opt-in required')
 
     if args.stage == "prefilter":
         return stage_prefilter(args.fasta, args.pool)

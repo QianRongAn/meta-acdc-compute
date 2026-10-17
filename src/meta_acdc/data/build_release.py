@@ -7,6 +7,8 @@ from difflib import SequenceMatcher
 from pathlib import Path
 import numpy as np
 from .release import STRUCTURAL_TASK,sha256
+from ..structure.artifact_qc import require_construction_screen
+from ..structure.feature_schema import FEATURE_SCHEMA
 from ..structure.graph import parse_pdb,build_interface_graph_from_residues,AA_ORDER
 from ..structure.identity import class_i_units,chain_sequence,validate_peptide_atoms
 from ..models.dataset import make_decoy,make_displaced_peptide_decoy,_peptide_chains
@@ -51,8 +53,23 @@ def assign_folds(records,seed=42):
     return len(families)
 
 
-def build(source,output,with_electrostatics=False,predicted_root=None):
+def inherit_folds(records, previous):
+    old={r['complex_id']:r for r in previous if r['domain']=='crystal'}
+    retained=[];excluded=[]
+    for row in records:
+        before=old.get(row['complex_id'])
+        if before is None:
+            excluded.append(dict(complex_id=row['complex_id'],reason='not_in_frozen_reference_release'));continue
+        if any(row[k]!=before[k] for k in ('alpha','beta','peptide','pdb')):
+            raise ValueError('frozen complex identity changed: '+row['complex_id'])
+        row['family_id']=before['family_id'];row['fold']=before['fold'];retained.append(row['complex_id'])
+    return set(retained),excluded
+
+
+def build(source,output,with_electrostatics=False,predicted_root=None,frozen_records=None):
     import torch
+    if frozen_records is None:raise ValueError('repair builds require --inherit-records; do not reshuffle historical test families')
+    previous=json.loads(Path(frozen_records).read_text())
     if (output/'graphs.pt').exists():raise ValueError('immutable release graph already exists; choose a new version')
     output.mkdir(parents=True,exist_ok=True);source=source.resolve();units=[];excluded=[];raw_hashes={}
     with (source/'complexes.tsv').open() as f:pdbs=sorted({x['pdb'].lower() for x in csv.DictReader(f,delimiter='\t')})
@@ -67,15 +84,18 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
                 if 'X' in meta['alpha']+meta['beta']+meta['peptide'] or any(a not in AA_ORDER for a in meta['peptide']):raise ValueError('noncanonical sequence; manual review')
                 try:
                     validate_peptide_atoms(rs)
+                    meta['construction_qc']=require_construction_screen(rs)
                     graph=build_interface_graph_from_residues(rs,electrostatics=with_electrostatics)
                     if graph.n_nodes<20:raise ValueError('too few interface nodes')
                     units.append((rs,meta,graph))
                 except ValueError as e:excluded.append(dict(pdb=pdb,complex_id=identifier,reason=str(e)))
         except Exception as e:excluded.append(dict(pdb=pdb,reason=f'{type(e).__name__}: {e}'))
+    retained,bad=inherit_folds([x[1] for x in units],previous)
+    excluded.extend(bad);units=[x for x in units if x[1]['complex_id'] in retained]
     records=[x[1] for x in units]
     from .experimental_evidence import assert_reserved_absent
     assert_reserved_absent(records)
-    nf=assign_folds(records)
+    nf=len({r['family_id'] for r in records})
     if predicted_root is not None:
         from ..structure.quality import build_qc,annotate_prediction
         from ..structure.cif import parse_cif
@@ -85,16 +105,23 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
         for q in qc:
             if q['flag'] or q['native']!='yes' or not q['model_id'].endswith('_model_0'):
                 continue
-            ref=by_id[q['reference_id']];path=Path(q['source_path']);rs=annotate_prediction(parse_cif(path),ref,ref['peptide'])
+            ref=by_id[q['reference_id']];path=Path(q['source_path']);rs=annotate_prediction(parse_cif(path, confidence_kind="af3_plddt"),ref,ref['peptide'])
             meta=dict(ref,domain='predicted',complex_id='af3-'+q['model_id'],source_path=str(path),source_sha256=q['file_sha256'],qc_model_id=q['model_id'],confidence_path=q['confidence_path'],confidence_sha256=q['confidence_sha256'])
             for field,kind in [('alpha_chain','tra'),('beta_chain','trb'),('mhc_chain','mhc_i'),('b2m_chain','b2m'),('peptide_chain','peptide')]:
                 meta[field]=next(x.chain for x in rs if x.chain_kind==kind)
+            meta['reference_mhc_sequence']=ref['mhc_sequence'];meta['reference_b2m_sequence']=ref['b2m_sequence']
+            meta['mhc_sequence']=chain_sequence([x for x in rs if x.chain==meta['mhc_chain']])
+            meta['b2m_sequence']=chain_sequence([x for x in rs if x.chain==meta['b2m_chain']])
             meta['reference_id']=ref['complex_id']
             meta['reference_alpha']=ref['alpha'];meta['reference_beta']=ref['beta']
             meta['alpha']=chain_sequence([x for x in rs if x.chain==meta['alpha_chain']])
             meta['beta']=chain_sequence([x for x in rs if x.chain==meta['beta_chain']])
             meta['identity_basis']='reference_observed_variable_sequence_match+per_model_QC'
-            g=build_interface_graph_from_residues(rs,electrostatics=with_electrostatics)
+            try:
+                meta['construction_qc']=require_construction_screen(rs)
+                g=build_interface_graph_from_residues(rs,electrostatics=with_electrostatics)
+            except ValueError as e:
+                excluded.append(dict(complex_id=meta['complex_id'],reason=str(e)));continue
             predicted.append((rs,meta,g));raw_hashes[str(path)]=q['file_sha256']
         units.extend(predicted);records=[x[1] for x in units]
         # Predicted copies inherit the already frozen reference family/fold.
@@ -108,6 +135,7 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
         if digest in seen:
             excluded.append({'complex_id':meta['complex_id'],'kind':kind,'donor':donor,'reason':'identical_model_input','existing':seen[digest]});return False
         if not graph.peptide_mask or not any(graph.peptide_mask):raise ValueError('no peptide nodes')
+        if graph.missing_atom_nodes:raise ValueError('incomplete interface atoms')
         seen[digest]=meta['complex_id']+':'+kind
         graphs.append(arrays);labels.append(label);names.append(meta['complex_id'] if label else meta['complex_id']+('-disp' if kind=='displaced' else '<-'+donor))
         masks.append(graph.peptide_mask);nodes.append(graph.node_keys)
@@ -118,22 +146,26 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
         if add(g,meta,'native'):native.append((rs,meta,g))
     for k,(rs,meta,g) in enumerate(native):
         forced=set(g.node_keys)
-        try:add(build_interface_graph_from_residues(make_displaced_peptide_decoy(rs),forced_nodes=forced,electrostatics=with_electrostatics),meta,'displaced')
+        try:
+            displaced=make_displaced_peptide_decoy(rs)
+            dm_meta=dict(meta,construction_qc=require_construction_screen(displaced))
+            add(build_interface_graph_from_residues(displaced,forced_nodes=forced,electrostatics=with_electrostatics),dm_meta,'displaced')
         except ValueError as e:excluded.append({'complex_id':meta['complex_id'],'kind':'displaced','reason':str(e)})
         pool=[x for x in native if x[1]['fold']==meta['fold'] and len(x[1]['peptide'])==len(meta['peptide']) and x[1]['peptide']!=meta['peptide']]
         rng.shuffle(pool)
         for dr,dm,dg in pool[:20]:
             try:
                 foreign=next(iter(_peptide_chains(dr).values()));mutated=make_decoy(rs,foreign)
+                graft_meta=dict(meta,construction_qc=require_construction_screen(mutated))
                 gg=build_interface_graph_from_residues(mutated,forced_nodes=forced,electrostatics=with_electrostatics)
-                if add(gg,meta,'graft',dm['complex_id']):break
+                if add(gg,graft_meta,'graft',dm['complex_id']):break
             except ValueError:continue
         else:excluded.append({'complex_id':meta['complex_id'],'kind':'graft','reason':'no_valid_distinct_same_length_same_fold_donor'})
         if k%40==0:print(f'build {k}/{len(native)} natives; graphs={len(graphs)}',flush=True)
     splits={fold:[i for i,x in enumerate(provenance) if x['fold']==fold] for fold in ['train','validation','calibration','test']}
     for fold,idx in splits.items():
         if not idx or {labels[i] for i in idx}!={0,1}:raise ValueError('unusable frozen fold '+fold)
-    data={'graphs':graphs,'labels':labels,'pdbs':names,'peptide_masks':masks,'node_keys':nodes,'records':provenance,'provenance':{'schema_version':1,'task':STRUCTURAL_TASK,'identity':'depositor_metadata+unique_contacts','family_rule':'same_PDB_or_alpha_and_beta_variable_domain_90pct_and_CDR3_90pct_when_available','seed':42,'raw_sha256':raw_hashes,'feature_dims':[len(graphs[0][0][0]),len(graphs[0][3][0])]}}
+    data={'graphs':graphs,'labels':labels,'pdbs':names,'peptide_masks':masks,'node_keys':nodes,'records':provenance,'provenance':{'schema_version':1,'feature_schema':FEATURE_SCHEMA,'complete_interface_heavy_atoms':True,'construction_screen':'construction-screen-v1','task':STRUCTURAL_TASK,'identity':'depositor_metadata+unique_contacts','family_rule':'same_PDB_or_alpha_and_beta_variable_domain_90pct_and_CDR3_90pct_when_available','seed':42,'raw_sha256':raw_hashes,'inherited_records_path':str(Path(frozen_records).resolve()),'inherited_records_sha256':sha256(frozen_records),'feature_dims':[len(graphs[0][0][0]),len(graphs[0][3][0])]}}
     torch.save(data,output/'graphs.pt')
     (output/'structure_records.json').write_text(json.dumps(records,indent=2))
     (output/'graph_records.json').write_text(json.dumps(provenance,indent=2))
@@ -148,5 +180,5 @@ def build(source,output,with_electrostatics=False,predicted_root=None):
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--structures',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--with-electrostatics',action='store_true');p.add_argument('--predicted-root',type=Path);a=p.parse_args();build(a.structures,a.out,a.with_electrostatics,a.predicted_root)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--structures',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--with-electrostatics',action='store_true');p.add_argument('--predicted-root',type=Path);p.add_argument('--inherit-records',type=Path,required=True);a=p.parse_args();build(a.structures,a.out,a.with_electrostatics,a.predicted_root,a.inherit_records)
 if __name__=='__main__':main()

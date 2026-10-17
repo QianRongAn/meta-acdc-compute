@@ -32,13 +32,16 @@ COL_B = "_atom_site.B_iso_or_equiv"
 COL_MODEL = "_atom_site.pdbx_PDB_model_num"
 
 
-def parse_cif(path: Path, model: str = "1") -> list[Residue]:
+def parse_cif(path: Path, model: str = "1", *, confidence_kind: str | None = None) -> list[Residue]:
     """Parse one model of an mmCIF file into Residue records.
 
     Returns residues keyed by (chain, resid) with heavy-atom lists, matching
     the PDB-pipeline Residue layout. AF3 confidence (pLDDT) lands in the
-    B-factor slot when present.
+    B-factor slot only with explicit confidence_kind="af3_plddt". Experimental
+    or unspecified CIF B factors are never interpreted as confidence.
     """
+    if confidence_kind not in (None, 'af3_plddt'):
+        raise ValueError('unknown confidence provenance')
     with open(path, errors="replace") as fh:
         lines = fh.readlines()
 
@@ -91,7 +94,7 @@ def parse_cif(path: Path, model: str = "1") -> list[Residue]:
 
     atoms: dict[tuple[str, int], list[tuple[str, float, float, float]]] = {}
     resname: dict[tuple[str, int], str] = {}
-    plddt: dict[tuple[str, int], float | None] = {}
+    plddt: dict[tuple[str, int], list[float]] = {}
 
     for ln in lines[data_start:]:
         row = ln.split()
@@ -124,8 +127,13 @@ def parse_cif(path: Path, model: str = "1") -> list[Residue]:
         key = (chain, resid)
         atoms.setdefault(key, []).append((name, x, y, z))
         resname.setdefault(key, resn)
-        if bfac > 0:
-            plddt[key] = min(bfac, 100.0)
+        if confidence_kind == 'af3_plddt' and i_b is not None:
+            import math
+            try: confidence = float(get(row, i_b))
+            except ValueError: raise ValueError('invalid AF3 atom pLDDT')
+            if not math.isfinite(confidence) or not 0 <= confidence <= 100:
+                raise ValueError('AF3 pLDDT outside [0,100]')
+            plddt.setdefault(key, []).append(confidence)
 
     residues = []
     for (chain, resid), coords in atoms.items():
@@ -133,7 +141,7 @@ def parse_cif(path: Path, model: str = "1") -> list[Residue]:
         cy = sum(c[2] for c in coords) / len(coords)
         cz = sum(c[3] for c in coords) / len(coords)
         residues.append(Residue(chain, resname[(chain, resid)], resid, cx, cy, cz,
-                                plddt.get((chain, resid)), "", coords))
+                                (sum(plddt[(chain,resid)])/len(plddt[(chain,resid)])) if (chain,resid) in plddt else None, "", coords))
     return residues
 
 

@@ -1,18 +1,9 @@
-"""EGNN dataset: interface graphs + graft-decoy negatives (KN-4 prep).
+"""Synthetic structural controls; their class labels are not experimental binding labels.
 
-Positive examples: real TCR-pMHC complex interface graphs (from STCRDab /
-RCSB, 289 complexes curated by fetch_structures.py).
-
-Negative examples ("graft decoys"): the peptide chain of complex X is
-replaced by the peptide of complex Y (different antigen), then the interface
-graph is rebuilt with the same 10A rule. The TCR and MHC geometry stay
-real; only the antigen changes — the model must learn physical compatibility
-of the interface, not sequence shortcuts. This mirrors the proposal's
-hard-negative strategy at the structural level.
-
-Usage:
-    .venv/bin/python src/meta_acdc/models/dataset.py \
-        --struct-dir data/raw/structures --out data/processed/egnn_dataset.pt
+Grafting aligns donor N/CA/C and transfers its side chain without relaxation.
+This can create clashes and local geometry artifacts. Success on this task
+only establishes discrimination of this construction protocol. Use the
+immutable release builder rather than this legacy exploratory dataset CLI.
 """
 
 from __future__ import annotations
@@ -104,12 +95,12 @@ def make_decoy(
 ) -> list[Residue]:
     """Graft a foreign peptide chain in place of the native one.
 
-    TRUE structural-mimicry decoy: the foreign peptide's side-chain chemistry
+    Synthetic construction control (not an experimentally validated nonbinder): the foreign peptide's side-chain chemistry
     is transplanted onto the NATIVE peptide's backbone via Kabsch alignment.
     Backbone coordinates, node set and chain labels are untouched; only the
     side-chain atoms (and residue identities) change — the C-alpha-invisible
-    signal that real cross-reactivity (e.g., titin vs MAGE-A3) exhibits.
-    (Peptide lengths may differ: swap the aligned prefix.)
+    signal. This does not establish realistic conformations or nonbinding.
+    Peptide lengths must match; no prefix swaps are allowed.
     """
     roles = classify_chains(residues)
     native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
@@ -136,11 +127,13 @@ def make_displaced_peptide_decoy(
     residues: list[Residue],
     shift: float = 6.0,
 ) -> list[Residue]:
-    """Negative decoy: the native peptide chain rigidly translated out of the
-    groove (along +z). Shift is 6A: the peptide leaves the binding groove but
-    STAYS WITHIN the 10A interface selection, so peptide nodes remain in the
-    graph — the is-peptide flag does not leak the label. Geometry is disrupted,
-    not removed. (The graft decoy is the weaker-signal variant.)
+    """Synthetic fixed-axis translation control, not an experimental nonbinder.
+
+    A 6 A shift can introduce peptide/environment clashes rather than remove
+    the peptide from the groove. Node membership is pinned by the accepted
+    builder; neither overlap-free geometry nor physical plausibility follows
+    from this construction rule. Apply the same artifact screen as to native
+    and graft controls and record exclusions.
     """
     roles = classify_chains(residues)
     out = []

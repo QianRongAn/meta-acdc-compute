@@ -52,7 +52,7 @@ def qc_file(path, references):
     if v is None:flags.append('no_model_confidence')
     elif v<.75:flags.append('low_iptm')
     try:
-        rs=parse_cif(path)
+        rs=parse_cif(path, confidence_kind="af3_plddt")
         if not rs:raise ValueError('empty structure')
         accepted=[]
         for ref in references.get(pdb,[]):
@@ -62,6 +62,8 @@ def qc_file(path, references):
         if len(identities)!=1:raise ValueError('no unique reference receptor/pMHC sequence match')
         ref=sorted(accepted,key=lambda x:x['complex_id'])[0];annotate_prediction(rs,ref,expected)
         validate_peptide_atoms(rs)
+        from .artifact_qc import require_construction_screen
+        require_construction_screen(rs)
         row.update(reference_id=ref['complex_id'],reference_sha256=ref['source_sha256'],family_id=ref['family_id'],native='yes' if expected==ref['peptide'] else 'no')
         from .graph import build_interface_graph_from_residues
         g=build_interface_graph_from_residues(rs)

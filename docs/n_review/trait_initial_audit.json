@@ -1,0 +1,741 @@
+{
+  "source": "https://pgx.zju.edu.cn/download.trait/Therapeutics.zip",
+  "named_rows": 72,
+  "rows_with_both_cdr3": 60,
+  "unique_cdr3_pairs": 50,
+  "full_alpha_beta_sequence_columns_present": false,
+  "independent_receptor_count": null,
+  "clinical_training_allowed": false,
+  "observations": [
+    {
+      "excel_row": 2,
+      "name": "TCRVβ12",
+      "antigen": "MART-1",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "CAISEVGVGQPQHF",
+      "cdr_modification": "No",
+      "trial": "NA",
+      "pmid": 16946036
+    },
+    {
+      "excel_row": 3,
+      "name": "MSGV1AIB(M1F12/DMF4)",
+      "antigen": "MART-1",
+      "cdr3_alpha": "CAGGTGNQFYF",
+      "cdr3_beta": "CAISEVGVGQPQHF",
+      "cdr_modification": "No",
+      "trial": "NCT00509288",
+      "pmid": 19451549
+    },
+    {
+      "excel_row": 4,
+      "name": "F5(TIL-DMF5)",
+      "antigen": "MART-1",
+      "cdr3_alpha": "CAVNFGGGKLIF",
+      "cdr3_beta": "CASSLSFGTEAFF",
+      "cdr_modification": "No",
+      "trial": "NCT00910650",
+      "pmid": 24634374
+    },
+    {
+      "excel_row": 5,
+      "name": "1D3(1D3HMCys)",
+      "antigen": "MART-1",
+      "cdr3_alpha": "CALGGGADGLTF",
+      "cdr3_beta": "CASSLSGTTADEQYF",
+      "cdr_modification": "No",
+      "trial": "NCT02654821",
+      "pmid": 35865122
+    },
+    {
+      "excel_row": 6,
+      "name": "DMF4",
+      "antigen": "gp100",
+      "cdr3_alpha": "CAGGTGNQFYF",
+      "cdr3_beta": "CAISEVGVGQPQHF",
+      "cdr_modification": "No",
+      "trial": "NCT00509496",
+      "pmid": 19451549
+    },
+    {
+      "excel_row": 7,
+      "name": "TIL1383I TCR",
+      "antigen": "Tyrosinase",
+      "cdr3_alpha": "CLVALNYGGSQGNLIF",
+      "cdr3_beta": "CAISPTEEGGLIFPGNTIYF",
+      "cdr_modification": "No",
+      "trial": "NCT01586403",
+      "pmid": 29052782
+    },
+    {
+      "excel_row": 9,
+      "name": "MAGE-A3 TCR",
+      "antigen": "MAGE-A3/9/12",
+      "cdr3_alpha": "CAFDTNTYKVIF(A118T)",
+      "cdr3_beta": "NA",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT01273181",
+      "pmid": 23377668
+    },
+    {
+      "excel_row": 10,
+      "name": "MAGE-A3^a3a",
+      "antigen": "MAGE-A3",
+      "cdr3_alpha": "CAVRPGGAGPFFVVF",
+      "cdr3_beta": "CASSFNMATGQYF",
+      "cdr_modification": "Yes(CDR2α)",
+      "trial": "NCT01350401",
+      "pmid": 23770775
+    },
+    {
+      "excel_row": 11,
+      "name": "6F9",
+      "antigen": "MAGE-A3/6",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "NCT02111850",
+      "pmid": 28809608
+    },
+    {
+      "excel_row": 13,
+      "name": "ADP-A2M4",
+      "antigen": "MAGE-A4",
+      "cdr3_alpha": "CVVSGGTDSWGKLQF",
+      "cdr3_beta": "CATSGQGAYEEQFF",
+      "cdr_modification": "Yes",
+      "trial": "NCT03132922",
+      "pmid": 36624315
+    },
+    {
+      "excel_row": 14,
+      "name": "ADP-A2M10",
+      "antigen": "MAGE-A10",
+      "cdr3_alpha": "CAVRGTGRRALTF",
+      "cdr3_beta": "CASSFTDTQYF",
+      "cdr_modification": "Yes",
+      "trial": "NCT02592577",
+      "pmid": 35086946
+    },
+    {
+      "excel_row": 15,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT01352286",
+      "pmid": 26193344
+    },
+    {
+      "excel_row": 16,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT00670748",
+      "pmid": 21282551
+    },
+    {
+      "excel_row": 17,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": null,
+      "pmid": 25538264
+    },
+    {
+      "excel_row": 18,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT02070406;NCT01697527",
+      "pmid": 30573690
+    },
+    {
+      "excel_row": 19,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT01343043",
+      "pmid": 29891538
+    },
+    {
+      "excel_row": 20,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": null,
+      "pmid": "31651363;36075914"
+    },
+    {
+      "excel_row": 21,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT03017131",
+      "pmid": 33927729
+    },
+    {
+      "excel_row": 22,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT02457650",
+      "pmid": 30546433
+    },
+    {
+      "excel_row": 23,
+      "name": "1G4-α95:LY",
+      "antigen": "NY-ESO-1(CRISPR -Cas9)",
+      "cdr3_alpha": "CAVRPLYGGSYIPTF(T95L S96Y)",
+      "cdr3_beta": "CASSYVGNTGELFF",
+      "cdr_modification": "Yes(CDR3α)",
+      "trial": "NCT03399448",
+      "pmid": 32029687
+    },
+    {
+      "excel_row": 24,
+      "name": "E6",
+      "antigen": "HPV16-E6",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "CASSSQTGARTDTQYF",
+      "cdr_modification": "No",
+      "trial": "NCT02280811",
+      "pmid": 31408414
+    },
+    {
+      "excel_row": 25,
+      "name": "E7",
+      "antigen": "HPV16-E7",
+      "cdr3_alpha": "CASVDGNNRLAF",
+      "cdr3_beta": "CASSLGWRGGRYNEQF",
+      "cdr_modification": "No",
+      "trial": "NCT02858310",
+      "pmid": 33558725
+    },
+    {
+      "excel_row": 26,
+      "name": "TCR-A02/HBs",
+      "antigen": "HBV",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "NCT03899415",
+      "pmid": 34850325
+    },
+    {
+      "excel_row": 27,
+      "name": "TCR-C08/HBs",
+      "antigen": "HBV",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 34850325
+    },
+    {
+      "excel_row": 29,
+      "name": "C22",
+      "antigen": "pp65",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "NCT04153279",
+      "pmid": 36054234
+    },
+    {
+      "excel_row": 30,
+      "name": "C27",
+      "antigen": "pp65",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36054234
+    },
+    {
+      "excel_row": 31,
+      "name": "C45",
+      "antigen": "pp65",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36054234
+    },
+    {
+      "excel_row": 32,
+      "name": "TCR2",
+      "antigen": "AFP",
+      "cdr3_alpha": "CAASTVNAYKVIF",
+      "cdr3_beta": "CASSDAGTSQNTLYF",
+      "cdr_modification": "No",
+      "trial": "NCT03971747",
+      "pmid": 32425926
+    },
+    {
+      "excel_row": 33,
+      "name": "4196 AV6/BV11",
+      "antigen": "TP53 R175H",
+      "cdr3_alpha": "CALDIYPHDMRF",
+      "cdr3_beta": "CASSLDPGDTGELFF",
+      "cdr_modification": "No",
+      "trial": "NCT03412877",
+      "pmid": 35749374
+    },
+    {
+      "excel_row": 34,
+      "name": "TRBV5-6-B",
+      "antigen": "KRAS G12D",
+      "cdr3_alpha": "CLVGDMDQAGTALIF",
+      "cdr3_beta": "CASSLGRASNQPQHF",
+      "cdr_modification": "No",
+      "trial": "IND 27501",
+      "pmid": 35648703
+    },
+    {
+      "excel_row": 35,
+      "name": "TRBV10-02",
+      "antigen": "KRAS G12D",
+      "cdr3_alpha": "CAAAMDSSYKLIF",
+      "cdr3_beta": "CASSDPGTEAFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 35648703
+    },
+    {
+      "excel_row": 36,
+      "name": "TCR445",
+      "antigen": "CEBPZ",
+      "cdr3_alpha": "CASSRWGGSEKLVF",
+      "cdr3_beta": "CASSDSRTGGTDTQYF",
+      "cdr_modification": "No",
+      "trial": "NCT03970382",
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 37,
+      "name": "TCR447",
+      "antigen": "PDS5B",
+      "cdr3_alpha": "CAVHHLNRDDKIIF",
+      "cdr3_beta": "CASSADLGTREQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 38,
+      "name": "TCR441",
+      "antigen": "SVIL",
+      "cdr3_alpha": "CAPSKYNNNDMRF",
+      "cdr3_beta": "CAISGTEDGELFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 39,
+      "name": "TCR536",
+      "antigen": "PPP5C",
+      "cdr3_alpha": "CAVSPLTSGTYKYIF",
+      "cdr3_beta": "CAWSEGDETQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 40,
+      "name": "TCR535",
+      "antigen": "VPS13B",
+      "cdr3_alpha": "CALSTSMDSNYQLIW",
+      "cdr3_beta": "CASSCWDRSTDTQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 41,
+      "name": "TCR538",
+      "antigen": "GPSM2",
+      "cdr3_alpha": "CAFDNYGQNFVF",
+      "cdr3_beta": "CASSLTGSFNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 42,
+      "name": "TCR707",
+      "antigen": "TENM4",
+      "cdr3_alpha": "CAVNVFNKFYF",
+      "cdr3_beta": "CASSFLITDTQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 43,
+      "name": "TCR691",
+      "antigen": "CLSTN1",
+      "cdr3_alpha": "CAVQAGTALIF",
+      "cdr3_beta": "CASSQPGGGNTEAFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 44,
+      "name": "TCR692",
+      "antigen": "PREP",
+      "cdr3_alpha": "CAERNGGATNKLIF",
+      "cdr3_beta": "CASSQDRTGAYSPLHF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 45,
+      "name": "TCR696",
+      "antigen": "CLSTN1",
+      "cdr3_alpha": "CVVSAPDTGRRALTF",
+      "cdr3_beta": "CASSSGQGFTDTQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 46,
+      "name": "TCR689",
+      "antigen": "ICK",
+      "cdr3_alpha": "\tCAVVLSYNTDKLIF",
+      "cdr3_beta": "CASSLSPPGYLETQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 47,
+      "name": "TCR687",
+      "antigen": "ICK",
+      "cdr3_alpha": "CAVTDSNYQLIW",
+      "cdr3_beta": "CATSDFQRGEETQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 48,
+      "name": "TCR682",
+      "antigen": "UGGT2",
+      "cdr3_alpha": "CAVAPDNYGQNFVF",
+      "cdr3_beta": "\tCATYSSGANVLTF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 49,
+      "name": "TCR802",
+      "antigen": "GALNT2",
+      "cdr3_alpha": "CAVNLLTDSWGKFQF",
+      "cdr3_beta": "CATMGSGGNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 50,
+      "name": "TCR800",
+      "antigen": "SF3A1",
+      "cdr3_alpha": "\tCAAYSGGGADGLTF",
+      "cdr3_beta": "CASSSVAGITYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 51,
+      "name": "TCR798",
+      "antigen": "UAP1",
+      "cdr3_alpha": "\tCAVSYSGSARQLTF",
+      "cdr3_beta": "CASNPGGRGEKLFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 52,
+      "name": "TCR814",
+      "antigen": "MTHFR",
+      "cdr3_alpha": "\tCAGLLGDSGAGSYQLTF",
+      "cdr3_beta": "\tCAISESWMSSYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 53,
+      "name": "TCR827",
+      "antigen": "STRADA",
+      "cdr3_alpha": "CAAPDAGGTSYGKLTF",
+      "cdr3_beta": "CASSPLNPYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 54,
+      "name": "TCR829",
+      "antigen": "STRADA",
+      "cdr3_alpha": "CAMSPTYSGAGSYQLTF",
+      "cdr3_beta": "CSASLLGEGYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 55,
+      "name": "TCR1057",
+      "antigen": "CDADC1",
+      "cdr3_alpha": "CAASRGPAGGTSYGKLTF",
+      "cdr3_beta": "CASSQDAWWLSQPQHF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 56,
+      "name": "TCR1059",
+      "antigen": "FCGRT",
+      "cdr3_alpha": "\tCATDEGNFVF",
+      "cdr3_beta": "CASSPGQRETQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 57,
+      "name": "TCR955",
+      "antigen": "BRPF1",
+      "cdr3_alpha": "CAYRRRNSGYALNF",
+      "cdr3_beta": "CASSLRVWSSYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 58,
+      "name": "TCR919",
+      "antigen": "NAALADL2",
+      "cdr3_alpha": "CAGLLGDSGAGSYQLTF",
+      "cdr3_beta": "\tCAISESWMSSYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 59,
+      "name": "TCR952",
+      "antigen": "PAPSS1",
+      "cdr3_alpha": "CATDEVGDMRF",
+      "cdr3_beta": "\tCAISGSLYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 60,
+      "name": "TCR903",
+      "antigen": "USP34",
+      "cdr3_alpha": "CALSEETDRGSTLGRLYF",
+      "cdr3_beta": "CASSQDGGFEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 61,
+      "name": "TCR913",
+      "antigen": "DDX23",
+      "cdr3_alpha": "CAGGGSQGNLIF",
+      "cdr3_beta": "\tCASSQDTGGYSGNTIYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 62,
+      "name": "TCR915",
+      "antigen": "MED12L",
+      "cdr3_alpha": "CALSDHNTDKLIF",
+      "cdr3_beta": "CASISDSYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 63,
+      "name": "TCR1036",
+      "antigen": "SDK1",
+      "cdr3_alpha": "CVVNMYNQGGKLIF",
+      "cdr3_beta": "CASSYSGPNYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 64,
+      "name": "TCR1037",
+      "antigen": "ENOPH1",
+      "cdr3_alpha": "CAVNSYGKLTF",
+      "cdr3_beta": "CASSDGTLGNSPLHF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 65,
+      "name": "TCR1033",
+      "antigen": "ROM1",
+      "cdr3_alpha": "CAASEGDDKIIF",
+      "cdr3_beta": "CASSLAWAPEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 66,
+      "name": "TCR1312",
+      "antigen": "RASA3",
+      "cdr3_alpha": "CAVNRAGGSYIPTF",
+      "cdr3_beta": "CASSQGQGVLGMKKLFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 67,
+      "name": "TCR721",
+      "antigen": "MAN2A2",
+      "cdr3_alpha": "CALSEATGFGNEKLTF",
+      "cdr3_beta": "CAISDPRDSYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 68,
+      "name": "TCR720",
+      "antigen": "WDFY3",
+      "cdr3_alpha": "CLVIEAGNNRKLIW",
+      "cdr3_beta": "CATSDLGLEVDEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 69,
+      "name": "TCR901",
+      "antigen": "ACE",
+      "cdr3_alpha": "CAMTRGGGGNKLTF",
+      "cdr3_beta": "CASSYGGPEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 70,
+      "name": "TCR775",
+      "antigen": "PRCC",
+      "cdr3_alpha": "CAAHSGGYQKVTF",
+      "cdr3_beta": "CASSEDEQEYSYEQYF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 71,
+      "name": "TCR1285",
+      "antigen": "ETNK1",
+      "cdr3_alpha": "CIVRLAPYSGNTPLVF",
+      "cdr3_beta": "CASISGFMGLMNTEAFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 72,
+      "name": "TCR1364",
+      "antigen": "KBTBD3",
+      "cdr3_alpha": "CAVKGDYKLSF",
+      "cdr3_beta": "CASSDRSYNEQFF",
+      "cdr_modification": "No",
+      "trial": null,
+      "pmid": 36356599
+    },
+    {
+      "excel_row": 73,
+      "name": "TAK-1",
+      "antigen": "WT1 235-243",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "UMIN000011519",
+      "pmid": 28860210
+    },
+    {
+      "excel_row": 74,
+      "name": "C4",
+      "antigen": "WT1 126-134",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "NCT01640301",
+      "pmid": 31235963
+    },
+    {
+      "excel_row": 75,
+      "name": "C4",
+      "antigen": "WT1 126-134",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "cdr_modification": "No",
+      "trial": "NCT02408016",
+      "pmid": 33588928
+    },
+    {
+      "excel_row": 76,
+      "name": "ADP-A2M4",
+      "antigen": "MAGE-A4",
+      "cdr3_alpha": "CVVSGGTDSWGKLQF",
+      "cdr3_beta": "CATSGQGAYEEQFF",
+      "cdr_modification": "Yes",
+      "trial": "NCT04044768",
+      "pmid": 38554725
+    }
+  ],
+  "quarantine_examples": [
+    {
+      "excel_row": 6,
+      "reason": "gp100 trial labelled DMF4 and repeats MART-1 CDR3 pair; primary PMID19451549 distinguishes DMF5 and murine gp100(154), requires source reconstruction"
+    }
+  ],
+  "strict_canonical_paired_rows": 51,
+  "distinct_canonical_cdr3_pairs": 48,
+  "biological_independence_verified": false,
+  "caution": "CDR3 pairs are candidate identity keys, not verified full engineered alpha/beta constructs; same treatment cohort may include multiple receptors"
+}

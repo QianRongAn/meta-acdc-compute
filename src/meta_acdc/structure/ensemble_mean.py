@@ -27,7 +27,12 @@ def load_seed(path: Path) -> dict[str, float]:
     with open(path, newline="") as fh:
         for r in csv.DictReader(fh, delimiter="\t"):
             if r.get("score"):
-                d[r["job_id"]] = float(r["score"])
+                job = r["job_id"]
+                value = float(r["score"])
+                import math
+                if not job or job in d or not math.isfinite(value):
+                    raise ValueError("duplicate, empty, or nonfinite seed score")
+                d[job] = value
     return d
 
 
@@ -44,19 +49,14 @@ def main() -> int:
     args = ap.parse_args()
 
     seeds = [load_seed(p) for p in args.scores]
-    # degenerate-seed guard: a seed whose candidate scores are constant
-    # carries no ranking signal and must not enter the reported ensemble
-    good = []
-    for p, d in zip(args.scores, seeds):
-        vals = list(d.values())
-        if len(vals) >= 2 and statistics.pstdev(vals) < 1e-6:
-            print(f"excluding degenerate seed {p.name} (constant output)")
-            continue
-        good.append(d)
-    if not good:
-        print("all seeds degenerate", file=sys.stderr)
-        return 1
-
+    # Keep every requested seed. Constant outputs are failures of ranking,
+    # not a reason to select a more agreeable survivor ensemble.
+    good = seeds
+    degenerate = [p.name for p,d in zip(args.scores,seeds)
+                  if len(d)<2 or statistics.pstdev(list(d.values()))<1e-6]
+    if degenerate:
+        print(f"degenerate seeds retained; ensemble is diagnostic only: {degenerate}")
+    if args.out.exists(): raise ValueError("refusing to overwrite ensemble")
     agg: dict[str, list[float]] = {}
     for d in good:
         for job, v in d.items():
@@ -78,12 +78,12 @@ def main() -> int:
 
     with open(args.out, "w", newline="") as fh:
         w = csv.writer(fh, delimiter="\t")
-        w.writerow(["job_id", "score", "std", "n_seeds", "uncertainty_known"])
+        w.writerow(["job_id", "score", "std", "n_seeds", "uncertainty_known", "quality_eligible", "n_degenerate_seeds"])
         for job in covered:
             v = agg[job]
             known = "yes" if len(v) >= 2 else "no"   # 1 seed: std undefined, not 0
             sd = f"{statistics.pstdev(v):.4f}" if len(v) >= 2 else "NA"
-            w.writerow([job, f"{statistics.mean(v):.4f}", sd, len(v), known])
+            w.writerow([job, f"{statistics.mean(v):.4f}", sd, len(v), known, "no" if degenerate or len(v)!=len(seeds) else "yes", len(degenerate)])
     print(f"averaged {len(good)}/{len(seeds)} seeds over {len(covered)} jobs "
           f"({len(dropped)} dropped for insufficient coverage) -> {args.out}")
     return 0

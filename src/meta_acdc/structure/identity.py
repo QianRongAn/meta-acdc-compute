@@ -126,3 +126,13 @@ def validate_peptide_atoms(residues):
         required={'N','CA','C','O'} | set(_SIDECHAINS[aa].split())
         missing=required-{a[0] for a in r.atoms}
         if missing:raise ValueError(f'incomplete peptide heavy atoms {r.chain}:{r.resid}{r.icode}: {sorted(missing)}')
+
+
+def missing_heavy_atoms(residue):
+    """GLY has no side chain; incomplete observed residues are not zero-contact evidence."""
+    from .graph import AA3TO1
+    aa = AA3TO1.get(residue.resname.upper())
+    if aa not in _SIDECHAINS:
+        return ["unsupported_canonical_residue"]
+    required = {"N", "CA", "C", "O"} | set(_SIDECHAINS[aa].split())
+    return sorted(required - {a[0].upper() for a in residue.atoms})

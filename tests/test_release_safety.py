@@ -117,7 +117,7 @@ class ModelConsistency(unittest.TestCase):
         torch.manual_seed(3)
         rng=np.random.default_rng(7)
         def graph(n):
-            h=rng.normal(size=(n,26));h[:,24]=0;h[0,24]=1
+            h=rng.normal(size=(n,26));h[:,4:24]=0;h[:,4]=1;h[:,24]=0;h[0,24]=1
             x=rng.normal(size=(n,3));ei=[(i,j) for i in range(n) for j in range(n) if i!=j]
             ef=rng.normal(size=(len(ei),16));return h.tolist(),x.tolist(),ei,ef.tolist()
         a,b=graph(8),graph(13);net=EGNN(26,16,depth=2,hidden=16).eval()

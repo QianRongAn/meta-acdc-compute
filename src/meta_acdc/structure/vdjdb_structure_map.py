@@ -1,17 +1,5 @@
-"""Map structure TCRs to VDJdb records (KN-4+).
-
-Strategy: extract the full ATOM-record sequence of TCR chains A/B from each
-complex PDB, then search every VDJdb CDR3 as an exact substring of those
-chains (CDR3 is contained in the solved V domain). Hits link a structure to
-real specificity data:
-- match: PDB peptide == VDJdb epitope -> strong positive (same complex class)
-- mismatch: TCR validated against a DIFFERENT epitope -> cross-reactivity /
-  multi-specificity evidence.
-
-Usage:
-    .venv/bin/python src/meta_acdc/structure/vdjdb_structure_map.py \
-        --struct-dir data/raw/structures --vdjdb data/processed/vdjdb.clean.tsv \
-        --out data/processed/structure_vdjdb_map.tsv
+"""Shared single-chain CDR3 candidate associations; not paired-receptor validation.
+Confidence strata describe database evidence, never binding labels.
 """
 
 from __future__ import annotations
@@ -66,92 +54,63 @@ def aa3to1(seq: str) -> str:
     return "".join(out)
 
 
+def association_hits(records, rows):
+    """Exact CDR3 substring candidates with chain, MHC, species and evidence retained."""
+    index = {'alpha':defaultdict(list),'beta':defaultdict(list)}
+    for row in rows:
+        for kind,column in [('alpha','cdr3_alpha'),('beta','cdr3_beta')]:
+            cdr = row.get(column,'')
+            if len(cdr) >= CDR3_MIN_LEN:
+                index[kind][cdr].append(row)
+    for record in records:
+        for kind in ['alpha','beta']:
+            seq = record[kind]
+            # Candidate association only: no paired receptor identity or assay result inferred.
+            lengths = {len(cdr) for cdr in index[kind]}
+            found = {seq[i:i+n] for n in lengths for i in range(max(0,len(seq)-n+1))}
+            for cdr in sorted(found & index[kind].keys()):
+                for row in index[kind][cdr]:
+                    confidence = row.get('confidence','')
+                    if confidence == '': confidence = row.get('score','')
+                    yield dict(pdb=record['pdb'],complex_id=record['complex_id'],chain=record[kind+'_chain'],
+                               gene='TRA' if kind=='alpha' else 'TRB',cdr3=cdr,
+                               vdjdb_epitope=row['peptide'],pdb_peptide=record['peptide'],
+                               match='same' if row['peptide']==record['peptide'] else 'different',
+                               confidence=confidence,reference_id=row.get('reference_id',''),
+                               mhc_allele=row.get('mhc_allele',''),organism=row.get('organism',''),
+                               evidence_scope='shared_single_chain_CDR3_candidate_association')
+
+
 def main() -> int:
+    import json
+    from collections import Counter
+    from meta_acdc.structure.identity import class_i_units
     ap = argparse.ArgumentParser()
-    ap.add_argument("--struct-dir", type=Path, default=Path("data/raw/structures"))
-    ap.add_argument("--vdjdb", type=Path, default=Path("data/processed/vdjdb.clean.tsv"))
-    ap.add_argument("--out", type=Path, default=Path("data/processed/structure_vdjdb_map.tsv"))
+    ap.add_argument('--struct-dir',type=Path,default=Path('data/raw/structures'))
+    ap.add_argument('--vdjdb',type=Path,required=True)
+    ap.add_argument('--out',type=Path,required=True)
     args = ap.parse_args()
-
-    # load VDJdb: cdr3 -> set of epitopes (binders only)
-    cdr3_epitopes: dict[str, set[str]] = defaultdict(set)
-    with open(args.vdjdb, newline="", encoding="utf-8", errors="replace") as fh:
-        for row in csv.DictReader(fh, delimiter="\t"):
-            if row["label"] == "1" and row["cdr3_beta"] and row["peptide"]:
-                cdr3_epitopes[row["cdr3_beta"]].add(row["peptide"])
-    print(f"VDJdb positive CDR3s: {len(cdr3_epitopes)}", flush=True)
-
-    # complexes
-    with open(args.struct_dir / "complexes.tsv") as fh:
-        complexes = list(csv.DictReader(fh, delimiter="\t"))
-    print(f"complexes to map: {len(complexes)}", flush=True)
-
-    matches = []
-    for row in complexes:
-        pdb = row["pdb"]
-        path = args.struct_dir / f"{pdb.lower()}.pdb"
-        residues = parse_pdb(path)
-        roles = classify_chains(residues)
-        # PDB peptide sequence: chain(s) with the peptide role
-        pep_chain = next((c for c, r in roles.items() if r == PEPTIDE), None)
-        pdb_pep = ""
-        if pep_chain:
-            pep_res = sorted(
-                {(r.resid, r.icode): r.resname
-                 for r in residues if r.chain == pep_chain}.items()
-            )
-            pdb_pep = aa3to1("".join(n for _, n in pep_res))
-
-        chains = chain_sequences(path)
-        tcr_seqs = {c: aa3to1(s) for c, s in chains.items()
-                    if roles.get(c) == TCR}
-        for cdr3, epitopes in cdr3_epitopes.items():
-            if len(cdr3) < CDR3_MIN_LEN:
-                continue
-            for chain, seq in tcr_seqs.items():
-                # locate CDR3 window: after the conserved YFC/YLC motif,
-                # bounded by the FGXG motif (length cap 30)
-                m = None
-                for motif in ("YFC", "YLC"):
-                    pos = seq.find(motif)
-                    if pos != -1:
-                        m = (pos, motif)
-                        break
-                if m is None:
-                    continue
-                # IMGT CDR3 starts at the conserved Cys (the C of YFC);
-                # require the VDJdb CDR3 to start exactly there (idx == 0)
-                # to exclude substring-overlap false positives
-                start = m[0] + 2
-                window = seq[start:start + 35]
-                idx = window.find(cdr3)
-                if idx != 0:
-                    continue
-                for epitope in epitopes:
-                    matches.append({
-                        "pdb": pdb,
-                        "chain": chain,
-                        "cdr3": cdr3,
-                        "vdjdb_epitope": epitope,
-                        "pdb_peptide": pdb_pep,
-                        "match": "same" if epitope == pdb_pep else "different",
-                    })
-
-    with open(args.out, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=["pdb", "chain", "cdr3", "vdjdb_epitope",
-                                           "pdb_peptide", "match"], delimiter="\t")
-        w.writeheader()
-        for m in matches:
-            w.writerow(m)
-
-    n_pdb = len({m["pdb"] for m in matches})
-    n_same = sum(1 for m in matches if m["match"] == "same")
-    n_diff = sum(1 for m in matches if m["match"] == "different")
-    print(f"mapped: {len(matches)} CDR3 hits across {n_pdb} PDBs "
-          f"({n_same} same-epitope, {n_diff} different-epitope)", flush=True)
-    print(f"saved to {args.out}")
-    return 0
+    if args.out.exists() or args.out.with_suffix('.summary.json').exists():
+        raise ValueError('refusing to overwrite association evidence')
+    records=[]
+    with (args.struct_dir/'complexes.tsv').open() as fh:
+        pdbs=sorted({r['pdb'].lower() for r in csv.DictReader(fh,delimiter='\t')})
+    for pdb in pdbs:
+        parts,_=class_i_units(parse_pdb(args.struct_dir/(pdb+'.pdb')))
+        for i,(_,meta) in enumerate(parts):
+            records.append(dict(meta,pdb=pdb,complex_id=pdb+'_'+str(i)))
+    with args.vdjdb.open() as fh: rows=list(csv.DictReader(fh,delimiter='\t'))
+    hits=list(association_hits(records,rows))
+    columns=['pdb','complex_id','chain','gene','cdr3','vdjdb_epitope','pdb_peptide','match','confidence','reference_id','mhc_allele','organism','evidence_scope']
+    args.out.parent.mkdir(parents=True,exist_ok=True)
+    with args.out.open('w',newline='') as fh:
+        writer=csv.DictWriter(fh,fieldnames=columns,delimiter='\t');writer.writeheader();writer.writerows(hits)
+    summary=dict(scope='candidate_association_not_cross_reactivity_prevalence',n_hits=len(hits),
+                 confidence_by_hit=dict(Counter(str(x['confidence']) for x in hits)),
+                 different_epitope_confidence_by_hit=dict(Counter(str(x['confidence']) for x in hits if x['match']=='different')),
+                 denominator='matched database association rows, not independent paired receptors')
+    args.out.with_suffix('.summary.json').write_text(json.dumps(summary,indent=2)+'\n')
+    print(json.dumps(summary,indent=2));return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__=='__main__':raise SystemExit(main())

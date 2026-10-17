@@ -12,6 +12,29 @@ def validate(folder):
     data=torch.load(folder/'graphs.pt',map_location='cpu',weights_only=False)
     errors=[];seen={};folds=defaultdict(set);pdb_folds=defaultdict(set);counts=Counter();source_cache={}
     if len({len(data[k]) for k in ['graphs','labels','records','peptide_masks','node_keys']})!=1:raise ValueError('unaligned dataset arrays')
+    from ..structure.feature_schema import FEATURE_SCHEMA
+    policy=data.get('provenance',{})
+    if policy.get('feature_schema')!=FEATURE_SCHEMA or not policy.get('complete_interface_heavy_atoms') or policy.get('construction_screen')!='construction-screen-v1':
+        errors.append('new atomic completeness/construction QC policy requires data regeneration')
+    from ..structure.artifact_qc import load_record_residues, construction_screen
+    from ..structure.identity import missing_heavy_atoms
+    from ..models.dataset import make_decoy, make_displaced_peptide_decoy
+    reconstructed={}
+    def original(identifier):
+        if identifier not in reconstructed:
+            reconstructed[identifier]=load_record_residues(meta[identifier])
+        return reconstructed[identifier]
+    inherited_path=policy.get('inherited_records_path')
+    inherited_digest=policy.get('inherited_records_sha256')
+    if not inherited_path or not inherited_digest or sha256(inherited_path)!=inherited_digest:
+        errors.append('frozen reference inheritance missing or changed')
+    else:
+        previous={r['complex_id']:r for r in json.loads(Path(inherited_path).read_text())}
+        for row in json.loads((folder/'structure_records.json').read_text()):
+            if row['domain']=='crystal':
+                before=previous.get(row['complex_id'])
+                if before is None or any(row[k]!=before[k] for k in ('family_id','fold','alpha','beta','peptide','pdb')):
+                    errors.append('frozen receptor identity/fold changed: '+row['complex_id'])
     records=data['records'];meta={x['complex_id']:x for x in json.loads((folder/'structure_records.json').read_text())}
     splits=json.loads((folder/'splits.json').read_text());frozen_indices({'splits':splits},data)
     qc={x['model_id']:x for x in csv.DictReader((folder/'native_qc.tsv').open(),delimiter='\t')} if (folder/'native_qc.tsv').exists() else {}
@@ -34,6 +57,16 @@ def validate(folder):
         if h!=row['input_sha256']:fail('stored input hash mismatch')
         if h in seen:fail('duplicate graph input '+seen[h])
         seen[h]=name
+        try:
+            atoms=original(row['complex_id'])
+            if row['kind']=='graft':atoms=make_decoy(atoms,[r for r in original(row['donor']) if r.role=='peptide'])
+            elif row['kind']=='displaced':atoms=make_displaced_peptide_decoy(atoms)
+            expected_keys=set(map(tuple,keys))
+            selected=[r for r in atoms if (r.chain,r.resid,r.icode) in expected_keys]
+            if len(selected)!=len(keys) or any(missing_heavy_atoms(r) for r in selected):fail('source has incomplete or missing interface residues')
+            if construction_screen(atoms)!=row.get('construction_qc'):fail('construction QC does not reproduce from source atoms')
+        except (ValueError,KeyError) as exc:fail('source atom reconstruction: '+str(exc))
+        if not row.get('construction_qc',{}).get('passed') or row.get('construction_qc',{}).get('policy')!='construction-screen-v1':fail('missing construction QC')
         if y!=int(row['kind']=='native') or row['label_scope']!=STRUCTURAL_TASK:fail('label semantics')
         if row['donor'] and meta[row['donor']]['fold']!=row['fold']:fail('cross-fold graft donor')
         folds[row['family_id']].add(row['fold']);pdb_folds[row['pdb']].add(row['fold'])
@@ -88,6 +121,9 @@ def publish(folder,code_root):
     sources={}
     d=json.loads((folder/'structure_records.json').read_text())
     for x in d:sources[x['source_path']]=x['source_sha256']
+    import torch
+    provenance=torch.load(folder/'graphs.pt',map_location='cpu',weights_only=False)['provenance']
+    sources[provenance['inherited_records_path']]=provenance['inherited_records_sha256']
     m={'schema_version':1,'status':'validated','task':STRUCTURAL_TASK,'training_allowed':False,'acceptance_status':'machine_validation_only','acceptance_blocker':'A separate explicit training release decision is required; publishing data does not start or authorize training','binding_training_allowed':False,'domains':report['domains'],'dataset':'graphs.pt','code_commit':subprocess.run(['git','-C',str(code_root),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip(),'code_files':code_files,'files':files,'source_structures':sources,'splits':report['folds'],'scope':'class-I alpha-beta crystal/predicted native versus synthetic decoys; not experimentally validated binding probabilities'}
     manifest.write_text(json.dumps(m,indent=2));print(json.dumps({k:v for k,v in report.items() if k!='folds'}),flush=True)
     return m

@@ -115,7 +115,8 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
                     scores.append({
                         "job": row["job_id"].rsplit("_model", 1)[0],
                         "score": float(row["score"]),
-                        "std": float(row["std"]) if row.get("std") else None,
+                        "std": float(row["std"]) if row.get("std") not in (None, "", "NA") else None,
+                        "status": "WITHDRAWN_HISTORICAL_SCORE",
                     })
     # per-TCR groups
     groups: dict[str, list] = {}
@@ -133,7 +134,8 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
                 native.setdefault(row["pdb"], row["pdb_peptide"])
                 evidence.setdefault((row["pdb"], row["vdjdb_epitope"]), 0)
                 evidence[(row["pdb"], row["vdjdb_epitope"])] += 1
-    # cross-reactivity evidence per PDB: VDJdb-validated epitopes that differ
+    # Shared-CDR3 candidates per PDB; not paired-receptor cross-reactivity evidence.
+    # Epitopes that differ
     # from the crystallized peptide (KN-4+ map)
     cross: dict[str, list[str]] = {}
     same: dict[str, list[str]] = {}
@@ -165,27 +167,13 @@ def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
         if clinical_scan_path else [],
         "submission_status": load_submission_status(),
         "domain_adaptation": {
-            "n_native_positives": 144,
-            "val_auroc": [0.959, 0.952, 0.964],
-            "val_cross_seed_spearman": [0.943, 0.939, 0.947],
-            "candidate_verdict": "STABLE",
-            "candidate_mean_spearman": 0.729,
-            "candidate_mean_spearman_73": 0.802,
-            "note": "144 个真实天然 AF3 正样本域适应;val AUROC 0.96;候选"
-                    "判决 mean r=0.729(21 候选)/ 0.802(73 实例,CI "
-                    "0.72-0.86)= STABLE,Rashomon 危机解除;扩样单调"
-                    "(0.447→0.479→0.729),弱 seed 须过滤,见 benchmarks.md",
+            "candidate_verdict": "WITHDRAWN_UNVALIDATED",
+            "note": "历史性能撤回；结构合成控制分数不是结合或临床风险概率。",
         },
         "caveats": [
-            "AF3 交叉反应排名已跨实例稳定(144 native 域适应,mean pairwise "
-            "Spearman 0.729,过 0.5 门)——排名可报告,但须用固定多实例集成;"
-            "单实例 EGNN 打分仍不可信。详见 benchmarks.md 2026-09-23",
-            "打分须报告固定多实例集成;单实例 EGNN 打分不可信(非 AF3 不稳)。"
-            "重提分析(31 任务):高置信(ipTM≥0.88)跨重提稳,低 ipTM(~0.5)"
-            " AF3 自身会飘——见 reliability 面板",
-            "pdb 标签可靠性警告(2026-09-23):kn5 提交清单 tcr_a/tcr_b 两列"
-            "写反,历史脚本曾把 48/73 条结构标签张冠李戴;下表的 TCR 分组名"
-            "请按链指纹家族理解,待结构映射修复",
+            "所有历史分数仅供事故追溯，不得作为当前排名或性能结果。",
+            "共享 CDR3 关联不是完整受体交叉反应证据；临床索引不是临床验证。",
+            "新原子完整性检查要求重建和重新验收数据；当前不得重训。",
         ],
     }
 

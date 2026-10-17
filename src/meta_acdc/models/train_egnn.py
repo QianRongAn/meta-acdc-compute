@@ -34,9 +34,11 @@ def collate(graphs: list[tuple], node_dim: int = NODE_DIM,
     node_dim/edge_dim slice the stored features, so one cached dataset can
     serve feature ablations (e.g. v11 28/18 vs v9.1 26/16).
     """
+    from meta_acdc.structure.feature_schema import validate_node_features
     hs, xs, eis, eas, batch, masks = [], [], [], [], [], []
     offset = 0
     for nf, coords, ei, ef in graphs:
+        validate_node_features(nf)
         n = len(nf)
         masks.append(torch.tensor([row[PEPTIDE_FLAG_INDEX] > .5 for row in nf], dtype=torch.bool))
         h = torch.tensor([row[:node_dim] for row in nf],
@@ -103,6 +105,8 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=0,
                     help="torch init + batch-order seed (split seed stays 42)")
     ap.add_argument("--release", type=Path, required=True, help="validated frozen structural release manifest")
+    ap.add_argument('--fixed-coordinates', action='store_true',
+                    help='invariant distance/message baseline; do not update coordinates')
     args = ap.parse_args()
     from meta_acdc.data.release import load_release, frozen_indices, sha256
     manifest, approved_data = load_release(args.release, data_path=args.data)
@@ -129,7 +133,7 @@ def main() -> int:
     y_va = labels[va_idx].to(args.device)
 
     torch.manual_seed(args.seed)
-    net = EGNN(node_dim=node_dim, edge_dim=edge_dim, depth=6, hidden=128).to(args.device)
+    net = EGNN(node_dim=node_dim, edge_dim=edge_dim, depth=6, hidden=128, update_coordinates=not args.fixed_coordinates).to(args.device)
     opt = torch.optim.Adam(net.parameters(), lr=3e-4, weight_decay=1e-4)
     loss_fn = nn.BCEWithLogitsLoss()
 
@@ -173,6 +177,9 @@ def main() -> int:
         sel = [i for i in va_idx if dtype in pdbs[i]] + [i for i in va_idx if labels[i] == 1]
         if not sel:
             continue
+        if len({float(labels[i]) for i in sel}) < 2:
+            print("per-control AUROC unavailable: both classes required", flush=True)
+            continue
         b = collate([graphs[i] for i in sel], node_dim, edge_dim)
         b = {k: v.to(args.device) for k, v in b.items()}
         with torch.no_grad():
@@ -183,7 +190,8 @@ def main() -> int:
               f"AUPRC={average_precision_score(y, p):.3f} (n={len(sel)})", flush=True)
 
     out = args.out or Path(args.data).with_suffix(".model.pt")
-    torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": False, "model": net.state_dict(),
+    out.parent.mkdir(parents=True, exist_ok=True)
+    torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": False, "update_coordinates": not args.fixed_coordinates, "model": net.state_dict(),
                 "n_node_dim": node_dim, "n_edge_dim": edge_dim}, out)
     print(f"saved model to {out}", flush=True)
     return 0

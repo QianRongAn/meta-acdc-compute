@@ -1,0 +1,21 @@
+{
+  "scope": "candidate_associations_not_paired_receptor_prevalence",
+  "denominator": "matched association rows; duplicate database evidence and structure copies are not independent",
+  "source_sha256": "bf35c62cfb60e8a8f8f4412249e3d8bff2626afc93a7fecf5e6a183722a69ea6",
+  "native_records": 233,
+  "n_hits": 3132,
+  "confidence": {
+    "0": 1548,
+    "3": 1399,
+    "2": 41,
+    "1": 144
+  },
+  "different_epitope_confidence": {
+    "0": 1501,
+    "3": 857,
+    "2": 20,
+    "1": 86
+  },
+  "n_distinct_shared_cdr3_candidates": 755,
+  "n_verified_paired_receptor_cross_reactivities": null
+}

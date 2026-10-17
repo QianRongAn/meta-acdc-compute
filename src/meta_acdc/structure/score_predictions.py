@@ -101,7 +101,7 @@ def main() -> int:
         if ckpt.get("release_sha256") != sha256(args.release):
             raise ValueError("legacy or mismatched checkpoint; retrain on the accepted release first")
         net = EGNN(node_dim=ckpt["n_node_dim"], edge_dim=ckpt["n_edge_dim"],
-                   depth=6, hidden=128).to(args.device)
+                   depth=6, hidden=128, update_coordinates=ckpt.get("update_coordinates", True)).to(args.device)
         net.load_state_dict(ckpt["model"])
         net.eval()
         net.n_node_dim=ckpt["n_node_dim"];net.n_edge_dim=ckpt["n_edge_dim"]
@@ -122,7 +122,7 @@ def main() -> int:
             key=str(Path(row['source_path']).resolve())
             if key in qc_status:raise ValueError("duplicate per-model QC record")
             qc_status[key]=row
-    rows = []
+    rows = []; evaluation_context={}
     for cif in sorted(args.cifs.glob("*.cif")):
         job_id = cif.stem
         job = job_id.rsplit("_model_", 1)[0]
@@ -136,12 +136,18 @@ def main() -> int:
             rows.append({'job_id':job_id,'n_nodes':0,'n_edges':0,'score':'','std':'','qc':failure,'error':'per-model QC rejected'})
             continue
         try:
-            residues = parse_cif(cif)
+            residues = parse_cif(cif, confidence_kind="af3_plddt")
             from meta_acdc.structure.quality import annotate_prediction
             reference=identity_records[q['reference_id']]
             if q['reference_sha256']!=reference['source_sha256']:
                 raise ValueError("QC reference identity version mismatch")
             annotate_prediction(residues, reference, job.split('_',1)[1])
+            from meta_acdc.structure.artifact_qc import require_construction_screen
+            require_construction_screen(residues)
+            evaluation_context[job] = dict(reference_family=reference['family_id'],
+                reference_fold=reference['fold'],
+                evaluation_scope=('seen_receptor_cross_representation' if reference['fold'] in {'train','validation'}
+                                  else 'heldout_family_structural_only_not_binding'))
             g = build_interface_graph_from_residues(residues,electrostatics=dimensions[0][0]>26 or dimensions[0][1]>16)
         except Exception as e:
             rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
@@ -156,7 +162,8 @@ def main() -> int:
         std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5
         rows.append({"job_id": job_id, "n_nodes": g.n_nodes,
                      "n_edges": len(g.edge_index), "score": f"{mean:.4f}",
-                     "std": f"{std:.4f}",
+                     "std": f"{std:.4f}" if len(ss)>1 else "NA",
+                     **evaluation_context[job],
                      "qc": "qc-pass" if not args.no_qc_gate else "not-checked",
                      "error": ""})
         print(f"{cif.stem}: score={mean:.4f} +/- {std:.4f} "
@@ -174,23 +181,22 @@ def main() -> int:
         mean = sum(vals) / len(vals)
         sd = (sum((v - mean) ** 2 for v in vals) / max(len(vals) - 1, 1)) ** 0.5
         agg_rows.append({"job_id": job, "n_models": len(vals),
-                         "score": f"{mean:.4f}", "std": f"{sd:.4f}", "qc": "qc-pass"})
+                         "score": f"{mean:.4f}", "std": f"{sd:.4f}" if len(vals)>1 else "NA", "qc": "qc-pass", **evaluation_context[job]})
         print(f"{job}: ensemble mean={mean:.4f} +/- {sd:.4f} over "
               f"{len(vals)} AF3 models", flush=True)
 
     with open(args.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_nodes", "n_edges",
-                                           "score", "std", "qc", "error"],
+                                           "score", "std", "qc", "error", "reference_family", "reference_fold", "evaluation_scope"],
                             delimiter="\t")
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    n_gated = sum(1 for r in rows if r.get("qc", "").startswith("qc-flag")
-                  or r.get("qc") == "missing")
+    n_gated = sum(not r["score"] for r in rows)
     agg_out = Path(str(args.out).replace(".tsv", "_ensemble.tsv"))
     with open(agg_out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_models", "score",
-                                           "std", "qc"], delimiter="\t")
+                                           "std", "qc", "reference_family", "reference_fold", "evaluation_scope"], delimiter="\t")
         w.writeheader()
         for r in agg_rows:
             w.writerow(r)

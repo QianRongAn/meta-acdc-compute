@@ -1,0 +1,36 @@
+{
+  "decision": "NO_GO",
+  "structural_training_allowed": false,
+  "binding_prediction_validated": false,
+  "clinical_risk_validated": false,
+  "reasons": [
+    "N2: constructed decoy atom overlaps",
+    "N8: incomplete interface heavy atoms",
+    "new data version and source-level acceptance required"
+  ],
+  "original_data_hashes": {
+    "data/processed/vdjdb.clean.tsv": "09441bac59109e7f55dd02ac0c4bb41d533d7390a0548c57dd4d2d5cf18fc98d",
+    "data/processed/iedb.clean.tsv": "53f14062320098f0e66b478392fb4d7d5f15a0c1cdde4ce7299504dfb2c0cbe6",
+    "data/processed/egnn_dataset.pt": "94f50e37242374cbf63e043c0bec388c8f595bc18b16e4829bfa63483851359b",
+    "data/processed/pdb_family_map.tsv": "58db945b4b7454aeb11672c24df22bdeea029e8331818f80e69c07021fd31011",
+    "data/processed/clinical_index_cases.tsv": "8377b97c6f93c11c0e9ef0a1f59c792fbf84644e6f306a0934069194362161ed",
+    "data/processed/af3_qc.tsv": "3160bfe1fecd1a317c7bc6e000a33d536514674b1c65182d98d343009208c2fc"
+  },
+  "history_archives": {
+    "README.md": "exact_pre_change_bytes",
+    "docs/benchmarks.md": "exact_pre_change_bytes",
+    "docs/benchmark-report.md": "exact_pre_change_bytes",
+    "docs/paper1_manuscript.md": "exact_pre_change_bytes",
+    "docs/paper2_manuscript.md": "exact_pre_change_bytes",
+    "docs/paper1_outline.md": "exact_pre_change_bytes",
+    "docs/paper2_outline.md": "exact_pre_change_bytes",
+    "docs/proposal/committee_proposal.md": "exact_pre_change_bytes",
+    "docs/milestones/KEY-NODES.md": "exact_pre_change_bytes",
+    "docs/RETRAINING_DECISION_20261017.md": "exact_pre_change_bytes",
+    "src/meta_acdc/dashboard/static/index.html": "exact_pre_change_bytes"
+  },
+  "historical_source_structures_verified": 300,
+  "old_manifest_refused": "builder/consumer code changed since data acceptance: src/meta_acdc/active_learning/select_candidates.py",
+  "tests": "110",
+  "tests_skipped": 3
+}
