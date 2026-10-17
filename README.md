@@ -1,7 +1,9 @@
 # Meta-ACDC — 用 AI 预测 T 细胞受体的"误伤"风险
 
 <div align="center">
-  <img src="docs/figures/poster_vertical.png" alt="Meta-ACDC 项目海报：三幕漫画版方法总览" width="560">
+  <a href="docs/figures/poster_vertical.png" title="点击查看清晰全图（2480x3508）">
+    <img src="docs/figures/poster_vertical.png" alt="Meta-ACDC 项目海报：三幕漫画版方法总览" width="800">
+  </a>
 </div>
 
 
