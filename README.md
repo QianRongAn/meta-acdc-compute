@@ -1,5 +1,10 @@
 # Meta-ACDC — 用 AI 预测 T 细胞受体的"误伤"风险
 
+<div align="center">
+  <img src="docs/figures/poster_vertical.png" alt="Meta-ACDC 项目海报：三幕漫画版方法总览" width="560">
+</div>
+
+
 > # ⚠ 2026-10-15 撤回声明:本 README 中的性能数字已全部不可引用
 >
 > 外部复核确认了 28 项问题，其中直接影响结果的是：残基编码把
