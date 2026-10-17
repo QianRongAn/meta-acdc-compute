@@ -17,7 +17,7 @@ def validate_review(rows,parent,*,check_sources=True):
         original=old[x['evidence_id']]
         if x['original_record']!=original:raise ValueError('immutable original changed')
         if (x['parent_fold'],x['parent_block'])!=(original['fold'],original['split_block']):raise ValueError('inherited split changed')
-        if x['status'] not in {'primary_verified_soluble_SPR','quarantine_primary_unretrieved','quarantine_temperature_unverified','quarantine_wrong_ligand_value','separate_full_length_TCR_CD3','quarantine_secondary_measurement_origin','quarantine_SPR_Octet_method_conflict','quarantine_citation_and_method_conflict'}:raise ValueError('unknown review status')
+        if x['status'] not in {'primary_verified_soluble_SPR','quarantine_primary_unretrieved','quarantine_primary_value_unverified','quarantine_temperature_unverified','quarantine_wrong_ligand_value','separate_full_length_TCR_CD3','quarantine_secondary_measurement_origin','quarantine_SPR_Octet_method_conflict','quarantine_citation_and_method_conflict'}:raise ValueError('unknown review status')
         allowed=x['status']=='primary_verified_soluble_SPR'
         if x.get('training_allowed') is not allowed:raise ValueError('quarantine bypass')
         if x.get('clinical_label') is not None or x.get('binary_binding_label') is not None:raise ValueError('endpoint promotion')
@@ -44,6 +44,8 @@ def build(snapshot,output):
     curation=CURATION
     parent_path=ROOT/'docs/clinical_primary_20261018/affinity_dataset.json'
     parent=json.loads(parent_path.read_text());review=json.loads(REVIEW.read_text());validate_review(review,parent)
+    from .spr_followup import validate_classical_additions
+    validate_classical_additions(json.loads((curation/'external_classical_additions.json').read_text()))
     registry_path=ROOT/'docs/clinical_primary_20261018/combined_reservation_registry.json'
     clinical_path=ROOT/'docs/clinical_primary_20261018/clinical_reservations.json'
     refs=json.loads(registry_path.read_text())['receptors']+json.loads(ADDITIONS.read_text())['receptors']
@@ -77,7 +79,7 @@ def build(snapshot,output):
         f=ROOT/name
         if sha256(f)!=info['sha256']:raise ValueError('snapshot source changed')
         sources.append(dict(file=str(f.relative_to(snapshot)),sha256=info['sha256']))
-    code=['src/meta_acdc/data/spr_primary.py','src/meta_acdc/data/evidence_completion.py','src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']
+    code=['src/meta_acdc/data/spr_primary.py','src/meta_acdc/data/spr_followup.py','src/meta_acdc/data/evidence_completion.py','src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']
     manifest=dict(schema_version=2,task='experimental_SPR_pKD_regression',status=summary['status'],training_allowed=bool(train_ok),binary_training_allowed=False,clinical_training_allowed=False,
         primary_review_sha256=sha256(REVIEW),clinical_additions_sha256=sha256(ADDITIONS),clinical_registry_sha256=sha256(clinical_path),
         parent_dataset_path=str(parent_path),parent_dataset_sha256=sha256(parent_path),registry_path=str(registry_path),external_registry_sha256=sha256(registry_path),

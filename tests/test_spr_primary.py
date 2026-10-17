@@ -59,7 +59,7 @@ class PrimarySPR(unittest.TestCase):
         self.assertEqual(v['PRIMARY:37100770:PN45545:MAGEA4']['kd_um'],6.1);self.assertEqual(v['PRIMARY:37100770:PN45545:MAGEA8']['kd_um'],420)
         self.assertIsNone(v['PRIMARY:37100770:PN45545:MAGEA8']['structure_complex_pdb']);self.assertTrue(all(not x['training_allowed'] for x in rows))
     def test_inspection_release_cannot_run_optimizer(self):
-        release=ROOT/'data/external_evidence/20261018-primary-reviewed-affinity-v4'
+        release=ROOT/'data/external_evidence/20261018-primary-reviewed-affinity-v5'
         if not release.exists():self.skipTest('local raw snapshot/release not in Git')
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)/'model'

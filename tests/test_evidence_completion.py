@@ -7,9 +7,9 @@ from meta_acdc.data.experimental_evidence import reserved_hits,assert_reserved_a
 ROOT=Path(__file__).resolve().parents[1]
 class EvidenceCompletion(unittest.TestCase):
     def load(self,name):return json.loads((CURATION/name).read_text())
-    def test_primary_51_covered_and_23_eligible(self):
+    def test_primary_51_covered_and_25_eligible(self):
         rows=self.load('review_ledger.json');parent=json.loads((ROOT/'docs/clinical_primary_20261018/affinity_dataset.json').read_text())
-        self.assertTrue(validate_review(rows,parent,check_sources=False));self.assertEqual(sum(x['training_allowed'] for x in rows),23)
+        self.assertTrue(validate_review(rows,parent,check_sources=False));self.assertEqual(sum(x['training_allowed'] for x in rows),25)
     def test_tk3_q5_value_is_not_wt(self):
         row=next(x for x in self.load('review_ledger.json') if x['evidence_id']=='ATLAS:914')
         self.assertEqual(row['peptide'],'HPVGQADYFEY');self.assertEqual(row['status'],'quarantine_wrong_ligand_value');self.assertFalse(row['training_allowed'])
