@@ -151,8 +151,12 @@ def build(snapshot,registry_path,output):
 
 def verify_release(release):
     manifest=json.loads((release/'manifest.json').read_text());root=Path(__file__).resolve().parents[3]
+    primary_path=root/'docs/spr_primary_20261018/review_ledger.json'
+    additions_path=root/'docs/spr_primary_20261018/clinical_sequence_reservations.json'
+    if not primary_path.exists() or manifest.get('primary_review_sha256')!=sha256(primary_path):raise ValueError('primary measurement audit absent or changed; database candidates cannot train')
+    if not additions_path.exists() or manifest.get('clinical_additions_sha256')!=sha256(additions_path):raise ValueError('clinical sequence additions absent or changed')
     clinical_path=root/'docs/clinical_primary_20261018/clinical_reservations.json'
-    parent_path=root/'docs/database_binding/affinity_dataset.json'
+    parent_path=Path(manifest.get('parent_dataset_path',str(root/'docs/database_binding/affinity_dataset.json')))
     if manifest.get('parent_dataset_sha256') is not None and (not parent_path.exists() or sha256(parent_path)!=manifest['parent_dataset_sha256']):raise ValueError('parent split history changed')
     if not clinical_path.exists() or manifest.get('clinical_registry_sha256')!=sha256(clinical_path):raise ValueError('clinical reservation absent or changed; rebuild a new release')
     if manifest['task']!='experimental_SPR_pKD_regression':raise ValueError('not quantitative affinity data')

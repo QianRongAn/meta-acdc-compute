@@ -1,0 +1,30 @@
+[
+  {
+    "reference": "ATLAS:102",
+    "variant": "ATLAS:106",
+    "source_numbering": "Q55 primary paper; sequence position depends on construct offsets",
+    "differences": [
+      {
+        "index0": 47,
+        "reference": "Q",
+        "variant": "A"
+      }
+    ],
+    "additional_deposited_N_terminal_methionine": false,
+    "original_sequences_preserved": true
+  },
+  {
+    "reference": "ATLAS:102",
+    "variant": "ATLAS:110",
+    "source_numbering": "Q55 primary paper; sequence position depends on construct offsets",
+    "differences": [
+      {
+        "index0": 47,
+        "reference": "Q",
+        "variant": "H"
+      }
+    ],
+    "additional_deposited_N_terminal_methionine": true,
+    "original_sequences_preserved": true
+  }
+]

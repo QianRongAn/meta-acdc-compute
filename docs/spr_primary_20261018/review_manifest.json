@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "training_allowed": false,
+  "code_files": {
+    "src/meta_acdc/data/spr_primary.py": "f169e1ac6380547e6410607ccf734359356e82aba946196a158f3e776a6ab7da",
+    "src/meta_acdc/data/atlas_binding.py": "c19aae26b4a2464f723398c641139e8cfee1d7c3891a3842fe7d273b75750d7c",
+    "src/meta_acdc/data/experimental_evidence.py": "0166b21883f749055fc018430a9a4ed4bd79ceedf8cb2e57117a7b062774f75a",
+    "src/meta_acdc/models/affinity_baseline.py": "352b898fae2afe0debd1351e2d030ce6c2fc5306328bd892c26a858f9c45e4f1",
+    "tests/test_spr_primary.py": "1e93374d1f4cabbad4afada581110d8a5926f0a75f6bb150214e36903a1c9b50"
+  },
+  "artifacts": {
+    "docs/spr_primary_20261018/TK3_mutation_sequence_audit.json": "c65f236fe8224a08af5bef09898dca7c9a08ad7ad5ce40dd6310ff480eecb6f5",
+    "docs/spr_primary_20261018/affinity_dataset.json": "a68892933484a162e98e0cca1a55ad7acb68c2d76a875cc8c320b68cde562721",
+    "docs/spr_primary_20261018/affinity_manifest.json": "615348147a09e0d2902b01de467797156fe054634a6384fafe181550ef80fe25",
+    "docs/spr_primary_20261018/affinity_splits.json": "5f960427e67c2be671c767abd85321f4d70ed5d68e3a6a605ef4177d56b78c9b",
+    "docs/spr_primary_20261018/affinity_summary.json": "1baa8da6ed2e71d895f789cfa8c91a208b14512317eccc96b148d64df8e6e140",
+    "docs/spr_primary_20261018/clinical_fulltext_followup.json": "fe9b15a2da5e5b57d98d8dd761ca86b6306e187e7ec0038b1f4bb19c448dded0",
+    "docs/spr_primary_20261018/clinical_link_followup.json": "a1bc3ce19e2dd8c2a68b2df1d54af9b0af20276ecdcfd55bd29badaf729230d5",
+    "docs/spr_primary_20261018/clinical_remaining_gaps.json": "2d1468109cb03272395426490ad7a6a7f03003cc5802379e65ebf03c23932101",
+    "docs/spr_primary_20261018/clinical_sequence_reservations.json": "d67b9c60baf5c694ca836e9d87d65562010ee7608237b4db4d3f04a0d3584eab",
+    "docs/spr_primary_20261018/conditional_nondetection_controls.json": "cb9795255c3e83465a100d89bd71d37d827be2fff4e153a82cb28f8f9d579fd6",
+    "docs/spr_primary_20261018/full_length_TCR_CD3_affinities.json": "b057c16a7a358c03db93f756cf925e47a4629a3035f8e8cfd56bab4f99d9b385",
+    "docs/spr_primary_20261018/integrity.json": "328f5ad158024af28dd429eff12b9583c5789a90fb294a4e216f22d3723a21c8",
+    "docs/spr_primary_20261018/p53_paired_sequence_ledger.json": "a6aee95556823cfe5ed0f4940f45ccf4a3ca3ab4d8a6e8eae4d42f822751fe50",
+    "docs/spr_primary_20261018/retrieval_attempts.json": "460e78f6bc5c4a20ce3094947dea59c1fa7e72e4f9c0c43111aeab79a6920112",
+    "docs/spr_primary_20261018/review_51.tsv": "508b479e88f5c78395ef000b6922e895f2f1bcdb10651904548061410e023e95",
+    "docs/spr_primary_20261018/review_ledger.json": "01903e851c6d38a3c7e8f3c4c685acaf0cb12b1beea7acf0a4f00afcd90a6134",
+    "docs/spr_primary_20261018/source_files.json": "24d3ee93c78d69d9df2ae8e9c60992aaf6490301b58dddb479fdbd435b6435e9",
+    "docs/spr_primary_20261018/unit-tests.log": "0836eab8c203566887b671fd89a0390b6c95a695c1734e60dbbfd4011c0ee5de",
+    "docs/spr_primary_20261018/unresolved_measurements.json": "a456c1057d76d83df4c09730e238335f52eaf652a35360996371785f4653e63f"
+  }
+}

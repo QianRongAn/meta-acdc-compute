@@ -40,6 +40,7 @@ def run(release,output):
     if output.exists():raise ValueError('refusing duplicate run/output overwrite')
     from meta_acdc.data.atlas_binding import verify_release
     m=verify_release(release)
+    if m.get('training_allowed') is not True:raise ValueError('primary data release has insufficient independent splits; training blocked')
     rows=json.loads((release/'affinity_dataset.json').read_text());splits=json.loads((release/'splits.json').read_text());tr,va,te=[splits[f] for f in ['train','validation','test']]
     if set(tr)&set(va) or set(tr)&set(te) or set(va)&set(te):raise ValueError('overlapping folds')
     if set(tr+va+te)!=set(range(len(rows))):raise ValueError('fold coverage')

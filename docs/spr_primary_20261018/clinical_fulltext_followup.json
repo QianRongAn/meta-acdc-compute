@@ -1,0 +1,103 @@
+{
+  "recovered": [
+    {
+      "pmid": "31235963",
+      "file": "data/external_evidence/20261018-spr-primary/31235963_bioc.xml",
+      "full_text_recovered": true,
+      "complete_engineered_sequence_recovered": false
+    }
+  ],
+  "still_unretrieved": [
+    {
+      "pmid": "16946036",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/16946036/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "DMF4 original trial; complete engineered construct not established by beta CDR3 alone."
+    },
+    {
+      "pmid": "19451549",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19451549/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Human DMF5 versus murine gp100154: quarantine TRAIT rows 3 and 6 rather than transfer DMF4 CDR3s."
+    },
+    {
+      "pmid": "21282551",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21282551/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "1G4 alpha95LY; follow-up PMID25538264 overlaps cohort: do not add denominators."
+    },
+    {
+      "pmid": "23770775",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23770775/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "A*01 affinity-enhanced MAGE-A3 a3a; 2 fatal cardiac cases linked to titin investigation. Historically exposed receptor family."
+    },
+    {
+      "pmid": "24634374",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/24634374/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "DMF5 plus dendritic vaccine and IL2; 14 enrolled, 13 treated. Historically exposed family."
+    },
+    {
+      "pmid": "25538264",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25538264/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Long-term NYESO1 follow-up; 18 sarcoma plus20 melanoma; overlaps PMID21282551, not an independent validation cohort."
+    },
+    {
+      "pmid": "28809608",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28809608/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "MHC-II restricted6F9 MAGE-A3 receptor;17patients. Keep separate from both class-I toxicity receptors."
+    },
+    {
+      "pmid": "28860210",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28860210/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "WT1 TAK1 with endogenous-TCR siRNA and post-transfer peptide vaccination;8patients; no observed normal tissue toxicity is not proof of nonbinding."
+    },
+    {
+      "pmid": "29052782",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29052782/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Tyrosinase TIL1383I;3patients; later high-dose IL2 response not initial TCR-alone response. Historically exposed family."
+    },
+    {
+      "pmid": "29891538",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29891538/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 c259 NCT01343043; overlaps subsequent mechanistic and biomarker analyses."
+    },
+    {
+      "pmid": "30573690",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30573690/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 plus dendritic vaccine with/without ipilimumab; retain combination arms."
+    },
+    {
+      "pmid": "32029687",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32029687/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 engineered T cells also edited at endogenous TCR and PDCD1;3patients. Not interchangeable with unedited1G4."
+    },
+    {
+      "pmid": "33558725",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33558725/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "HPV16 E7;12patients,6responses;patient11 DLT with baseline pulmonary progression. Complete preclinical coding insert source29669936; no public clinical-lot sequence certificate."
+    },
+    {
+      "pmid": "36054234",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36054234/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "CMVpp65 donor TCRs;7entered and6completed; C22/C27/C45 do not imply3independent trials. Full text not retrieved in this audit."
+    },
+    {
+      "pmid": "38554725",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/38554725/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "SPEARHEAD1 phase2 afami-cel;52patients;37percent response andCRS37/52. Same receptor as phase1, not new receptor family."
+    }
+  ],
+  "scope": "full text recovery does not imply full coding construct is public; old freeze not overwritten"
+}

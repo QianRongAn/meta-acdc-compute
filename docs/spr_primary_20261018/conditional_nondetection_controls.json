@@ -1,0 +1,40 @@
+[
+  {
+    "evidence_id": "PRIMARY:30575715:EM2:HLA-B*18:01",
+    "receptor": "EM2",
+    "peptide": "FEDLRVLSF",
+    "mhc_allele": "HLA-B*18:01",
+    "source_locator": "Supplementary Table6 HLA-B*18:01 NP338",
+    "source_file": "30575715_supplements/41467_2018_7815_MOESM1_ESM.pdf",
+    "endpoint": "SPR_no_binding_detected",
+    "reported_call": "NB",
+    "kd_um": null,
+    "pkd": null,
+    "binary_binding_label": null,
+    "clinical_label": null,
+    "tested_concentration_max_um": 200,
+    "concentration_limit_source": "SPR Methods, max pHLA concentration; not a reported fitted lower KD bound",
+    "role": "conditional experimental non-detection only; no independently validated nonbinder label",
+    "parent_fold": "train",
+    "parent_block": "B1efd0a602bc096d5"
+  },
+  {
+    "evidence_id": "PRIMARY:30575715:EM2:HLA-B*44:05",
+    "receptor": "EM2",
+    "peptide": "FEDLRVLSF",
+    "mhc_allele": "HLA-B*44:05",
+    "source_locator": "Supplementary Table6 HLA-B*44:05 NP338",
+    "source_file": "30575715_supplements/41467_2018_7815_MOESM1_ESM.pdf",
+    "endpoint": "SPR_no_binding_detected",
+    "reported_call": "NB",
+    "kd_um": null,
+    "pkd": null,
+    "binary_binding_label": null,
+    "clinical_label": null,
+    "tested_concentration_max_um": 200,
+    "concentration_limit_source": "SPR Methods, max pHLA concentration; not a reported fitted lower KD bound",
+    "role": "conditional experimental non-detection only; no independently validated nonbinder label",
+    "parent_fold": "train",
+    "parent_block": "B1efd0a602bc096d5"
+  }
+]
