@@ -230,7 +230,8 @@ def assert_reserved_absent(records,registry_path=None):
     if not registry_path.exists():raise ValueError('external holdout reservation ledger is missing')
     clinical_path=Path(__file__).resolve().parents[3]/'docs/clinical_primary_20261018/clinical_reservations.json'
     if not clinical_path.exists():raise ValueError('clinical holdout reservations missing')
-    additions_path=Path(__file__).resolve().parents[3]/'docs/spr_primary_20261018/clinical_sequence_reservations.json'
+    from .evidence_completion import CURATION
+    additions_path=CURATION/'reservation_additions.json'
     if not additions_path.exists():raise ValueError('clinical sequence additions missing')
     registry=json.loads(registry_path.read_text())['receptors']+json.loads(clinical_path.read_text())['receptors']+json.loads(additions_path.read_text())['receptors']
     checked=set()

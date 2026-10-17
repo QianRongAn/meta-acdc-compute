@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "status": "frozen_unscored_external_panels",
+  "core": {
+    "file": "external_classical_core.json",
+    "n_measurements": 4,
+    "n_receptor_lineages": 3,
+    "n_studies": 2,
+    "history": "alreadyreserved, neverusedbyrecordedaffinitymodel; notnewlycollected",
+    "endpoint": "SPR pKD regression",
+    "temperature_K": 298.15
+  },
+  "format_shift": {
+    "file": "external_HLAE_challenge.json",
+    "n_pairs": 6,
+    "n_lineages": 1,
+    "n_studies": 1,
+    "scope": "engineeredTCR-antiCD3 + HLA-E; analyse separately, do notpoolwithcore"
+  },
+  "allowed_evaluation": "future locked freshlytrainedexperimentalKDmodel only; noevaluationperformednow",
+  "forbidden": [
+    "modelselectionortrainingonexternalrecords",
+    "countingreplicatesasnewreceptors",
+    "clinicalriskbinarylabels",
+    "callingformatshiftpairsclassicalsolubleTCRbenchmark",
+    "reassigningoldtrainorvalidationfoldstoatestfold"
+  ],
+  "metrics": [
+    "pKD RMSE and MAE versus trainingmean, overall and bystudy/lineage",
+    "retainreceptorandstudy dependence; fewclusterscannotprovideprecisegeneralizationCI"
+  ],
+  "broad_validation_allowed": false,
+  "training_release_allowed": false,
+  "remaining": "only2classicalexternalstudies and4records; additionalindependentclassicalSPRstudies/lineages needed forrobustvalidation; noindexreshuffle"
+}

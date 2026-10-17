@@ -6,8 +6,9 @@ from pathlib import Path
 from .release import sha256
 from .experimental_evidence import reserved_hits
 ROOT=Path(__file__).resolve().parents[3]
-REVIEW=ROOT/'docs/spr_primary_20261018/review_ledger.json'
-ADDITIONS=ROOT/'docs/spr_primary_20261018/clinical_sequence_reservations.json'
+from .evidence_completion import CURATION
+REVIEW=CURATION/'review_ledger.json'
+ADDITIONS=CURATION/'reservation_additions.json'
 
 def validate_review(rows,parent,*,check_sources=True):
     old={x['evidence_id']:x for x in parent}
@@ -40,7 +41,7 @@ def validate_review(rows,parent,*,check_sources=True):
 def build(snapshot,output):
     snapshot=snapshot.resolve()
     if output.exists():raise ValueError('refusing to overwrite release')
-    curation=ROOT/'docs/spr_primary_20261018'
+    curation=CURATION
     parent_path=ROOT/'docs/clinical_primary_20261018/affinity_dataset.json'
     parent=json.loads(parent_path.read_text());review=json.loads(REVIEW.read_text());validate_review(review,parent)
     registry_path=ROOT/'docs/clinical_primary_20261018/combined_reservation_registry.json'
@@ -55,6 +56,8 @@ def build(snapshot,output):
         y['primary_locator']=x['primary_locator'];y['primary_source_sha256']=x['primary_source_sha256']
         y['primary_assay']=dict(instrument=x['instrument'],orientation=x['orientation'],buffer=x['buffer'],chip=x['chip'],fit=x['fit'])
         y['temperature_K']=x['temperature_K'];y['method']=x['instrument']
+        for key in ['structure_assay_mhc_match','structure_based_affinity_training_allowed']:
+            if key in x:y[key]=x[key]
         y['measurement']['error_um']=None if x['primary_error'] is None else x['primary_error']*{'uM':1,'nM':.001,'pM':.000001}[x['primary_unit']]
         records.append(y)
     records.sort(key=lambda x:x['evidence_id']);splits={f:[i for i,x in enumerate(records) if x['fold']==f] for f in ['train','validation','test']}
@@ -74,7 +77,7 @@ def build(snapshot,output):
         f=ROOT/name
         if sha256(f)!=info['sha256']:raise ValueError('snapshot source changed')
         sources.append(dict(file=str(f.relative_to(snapshot)),sha256=info['sha256']))
-    code=['src/meta_acdc/data/spr_primary.py','src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']
+    code=['src/meta_acdc/data/spr_primary.py','src/meta_acdc/data/evidence_completion.py','src/meta_acdc/data/atlas_binding.py','src/meta_acdc/data/experimental_evidence.py','src/meta_acdc/data/build_release.py','src/meta_acdc/data/release.py','src/meta_acdc/models/affinity_baseline.py']
     manifest=dict(schema_version=2,task='experimental_SPR_pKD_regression',status=summary['status'],training_allowed=bool(train_ok),binary_training_allowed=False,clinical_training_allowed=False,
         primary_review_sha256=sha256(REVIEW),clinical_additions_sha256=sha256(ADDITIONS),clinical_registry_sha256=sha256(clinical_path),
         parent_dataset_path=str(parent_path),parent_dataset_sha256=sha256(parent_path),registry_path=str(registry_path),external_registry_sha256=sha256(registry_path),
