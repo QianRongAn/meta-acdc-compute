@@ -1,0 +1,49 @@
+{
+  "source": {
+    "path": "data/external_evidence/20261018-sequence-followup-v1/TW10_tableS1.xlsx",
+    "sha256": "4dac490d8fac866e2b44b26bcb8cfa47fe19f0cf98380895e38c898355ad2daf",
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc2.xlsx",
+    "locator": "onlysheetTableS1.TW10-specificTCRs214x22;rows36-38"
+  },
+  "sheets": 1,
+  "rows": 214,
+  "columns": 22,
+  "max_cell_text_length": 66,
+  "has_full_variable_sequences": false,
+  "has_engineered_DNA": false,
+  "matched_rows": [
+    {
+      "row": 36,
+      "clone": "D6",
+      "cdr3_alpha": "CLAQTGANNLFF",
+      "cdr3_beta": "CSARASGEAKNIQYF",
+      "VJ": "4/36;20-1/2-4"
+    },
+    {
+      "row": 37,
+      "clone": "D1_alpha_mixed_beta",
+      "cdr3_alpha": "CLVGGGANNLFF",
+      "cdr3_beta": "CSARQEGGLRNEQYF/ CASSLGGTEAFF",
+      "VJ": "4/36;20-1 or5-1 /2-7 or1-1",
+      "decision": "ambiguous donor cell; do not pickone beta"
+    },
+    {
+      "row": 38,
+      "clone": "D1_pair",
+      "cdr3_alpha": "CLVGGGANNLFF",
+      "cdr3_beta": "CSARQEGGLRNEQYF",
+      "VJ": "4/36;20-1/2-7"
+    }
+  ],
+  "pdb_name_collision": {
+    "pdb": "8V4Z",
+    "name": "D1",
+    "peptide": "LPFEKSTIM",
+    "study": "10.1126/sciimmunol.adn3805",
+    "trav": "TRAV1-1",
+    "trbv": "TRBV7-8",
+    "decision": "different influenzaD1; cannot supply HIVTW10D1sequence"
+  },
+  "source_data_availability": "PrimaryPDF16 deposits only8F5A(KS1) and8F7M(pMHC mutant), additionaldatauponrequest; noD1/D6pairedfullvariablesrecovered",
+  "decision": "D1/D6 remainpartialidentityreserved; do notimputeVJgermline"
+}

@@ -1,0 +1,2325 @@
+{
+  "data/external_evidence/20261018-evidence-completion-v1/final_targeted_attempts.json": [
+    {
+      "id": "E7_clinical",
+      "url": "https://www.nature.com/articles/s41591-020-01225-1",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/E7_clinical.html",
+      "sha256": "9f7bf725635edd416fddfaf5ec59cbb3316a141a33938cd716bda26c9b2e6e59",
+      "bytes": 406114
+    },
+    {
+      "id": "ni3850",
+      "url": "https://www.nature.com/articles/ni.3850",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni3850.html",
+      "sha256": "b25c4f9e3f7fad846f8da7b5b64ed308908575ed277bf44ecb307aff8b95bed8",
+      "bytes": 434972
+    },
+    {
+      "id": "ni1155",
+      "url": "https://www.nature.com/articles/ni1155",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni1155.html",
+      "sha256": "40fcbed5e9bb885a97a04c0ccd8ddc9abc5af9494acfacd0b11ed0eaed4e9450",
+      "bytes": 393594
+    },
+    {
+      "id": "LS_primary",
+      "url": "https://www.nature.com/articles/nsmb.3383",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary.html",
+      "sha256": "77082bf36a4f9aab35e7194e8f32f6ed92b415bc255cf26ebd54f7cdba384ae2",
+      "bytes": 513643
+    },
+    {
+      "id": "HCV_primary",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5474831/",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HCV_primary.html",
+      "sha256": "03f85f7d4c57185867cf20fbf7f7b66e42b3dfa8e6908f34f854cc177ba3ff1d",
+      "bytes": 254936
+    },
+    {
+      "id": "SB27_primary",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3320977/",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/SB27_primary.html",
+      "sha256": "3d9a085755b13cf61097eaa4ff458cea66b05bec377135d28429351ec6cb6297",
+      "bytes": 203903
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/temperature_supplement_attempts.json": [
+    {
+      "id": "ni1155_supp1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fni1155/MediaObjects/41590_2005_BFni1155_MOESM1_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni1155_supp1.pdf",
+      "sha256": "c350fcb0e3c52f3f3961b6216e6384e708eafc0d07f273405abc5f928f1d894e"
+    },
+    {
+      "id": "ni1155_supp2",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fni1155/MediaObjects/41590_2005_BFni1155_MOESM2_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni1155_supp2.pdf",
+      "sha256": "e060f0cf96bd33146fd060bc32567bd0e8fafaeeaec4113ad5ee6459130df35c"
+    },
+    {
+      "id": "ni1155_supp3",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fni1155/MediaObjects/41590_2005_BFni1155_MOESM3_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni1155_supp3.pdf",
+      "sha256": "8cb3b151707d4c7ace65910a7e0de850d625572f3401024bb88c30ed596966f4"
+    },
+    {
+      "id": "ni3850_supp1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fni.3850/MediaObjects/41590_2017_BFni3850_MOESM1_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni3850_supp1.pdf",
+      "sha256": "58986906e98e74458f7aab4d78733411a700b3186f165865aaa594feb57a1128"
+    },
+    {
+      "id": "ni3850_supp2",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fni.3850/MediaObjects/41590_2017_BFni3850_MOESM2_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/ni3850_supp2.pdf",
+      "sha256": "bc086ff43e5728b2eb8994ce6cd95db95ddcfa86cbbf6008e40d54aeed80a541"
+    },
+    {
+      "id": "LS_primary_supp1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fnsmb.3383/MediaObjects/41594_2017_BFnsmb3383_MOESM18_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary_supp1.pdf",
+      "sha256": "a3e57711a29267072d6a77e716bebf72c1d4137e1272584b208a2024a29fb0ed"
+    },
+    {
+      "id": "E7_clinical_supp1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41591-020-01225-1/MediaObjects/41591_2020_1225_MOESM1_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/E7_clinical_supp1.pdf",
+      "sha256": "9bc4e813cb40f711787936a2a65abdeb65a45de00b66ad4ea389015f3c34ab47"
+    },
+    {
+      "id": "E7_clinical_supp2",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41591-020-01225-1/MediaObjects/41591_2020_1225_MOESM2_ESM.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/E7_clinical_supp2.pdf",
+      "sha256": "8855bb223c56dd530dcef1c2a5b8fdf16e5370447c1d07339cb40762d1e2ce85"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/bioc_attempts.json": [
+    {
+      "pmid": "38554725",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC11419333/unicode",
+      "status": "failed",
+      "error": "429 Client Error: Too Many Requests for url: https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC11419333/unicode"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/remaining_publisher_final_attempts.json": [
+    {
+      "pmid": "15670602",
+      "url": "https://doi.org/10.1016/j.jmb.2004.11.063",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0022283604015347",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/15670602_publisher_final.html",
+      "sha256": "faf67f7d4b40a082bf21f4f428198d281bc40c2df27b161fa7f60620d6f98acd",
+      "bytes": 2725
+    },
+    {
+      "pmid": "15849183",
+      "url": "https://doi.org/10.1074/jbc.m503060200",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021925820674476",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/15849183_publisher_final.html",
+      "sha256": "35a85db05b6675b9d13204114e0451c85f087139bb98ff65bb7a05c7eebb659f",
+      "bytes": 2648
+    },
+    {
+      "pmid": "19167249",
+      "url": "https://doi.org/10.1016/j.immuni.2008.11.011",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S1074761309000612",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/19167249_publisher_final.html",
+      "sha256": "e95afe040d1b31601cbd7ad7c68ee1736b528dfac97343cf0363349f5f7e4338",
+      "bytes": 2952
+    },
+    {
+      "pmid": "19542454",
+      "url": "https://doi.org/10.4049/jimmunol.0900556",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "pmid": "20064448",
+      "url": "https://doi.org/10.1016/j.immuni.2009.09.025",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S107476130900510X",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/20064448_publisher_final.html",
+      "sha256": "8fa22336a90ba7c43e3c8f7e8d8e6465351c0ddf084cae8a9f0be48ef2fbaf2e",
+      "bytes": 2936
+    },
+    {
+      "pmid": "20483993",
+      "url": "https://doi.org/10.1073/pnas.1004926107",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "pmid": "23521884",
+      "url": "https://doi.org/10.1016/j.immuni.2012.11.021",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S1074761313001064",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/23521884_publisher_final.html",
+      "sha256": "b5d0b448e85f467662f581fbf8946008abdd8e6aa6b4e1661dea6e75c5369652",
+      "bytes": 2983
+    },
+    {
+      "pmid": "25355921",
+      "url": "https://doi.org/10.4049/jimmunol.1401357",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "pmid": "28931605",
+      "url": "https://doi.org/10.1074/jbc.m117.810382",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021925820329781",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/28931605_publisher_final.html",
+      "sha256": "6d44954ec54ebe28f865f500e90f752d61e931220160f47603bd5cfcb9b2baa4",
+      "bytes": 2644
+    },
+    {
+      "pmid": "30053426",
+      "url": "https://doi.org/10.1016/j.cell.2018.06.017",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0092867418307852",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/30053426_publisher_final.html",
+      "sha256": "c473d6b65390074ac16ac8576c252776968a424c128fd98bf647c7fd1fc074f8",
+      "bytes": 2987
+    },
+    {
+      "pmid": "42190883",
+      "url": "https://doi.org/10.1016/j.jsb.2026.108329",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S1047847726000456",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/42190883_publisher_final.html",
+      "sha256": "c48fa2a3dd0df8a693ee9c87c527653435fcaff8bc2fca75fde78c7ee50b0076",
+      "bytes": 2708
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/windows_source_attempts.json": [
+    {
+      "id": "biocSB27",
+      "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC3320977/unicode",
+      "status": "failed",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "24759101",
+      "url": "https://researchonline.jcu.edu.au/45058/1/45058_Miles_2014.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "20483993",
+      "url": "https://researchonline.jcu.edu.au/45358/1/45358_Miles_2010.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "25355921",
+      "url": "https://researchonline.jcu.edu.au/45054/1/45054_Miles_2014.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "15640805",
+      "url": "https://researchonline.jcu.edu.au/45426/1/45426_Miles_2005.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "32310221",
+      "url": "https://www.jci.org/articles/view/130562/files/pdf",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "id": "30053426",
+      "url": "https://resolver.caltech.edu/CaltechAUTHORS:20180726-081557948",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "589osti",
+      "url": "https://www.osti.gov/servlets/purl/1471537",
+      "status": "failed",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "id": "28572406",
+      "url": "https://www.osti.gov/servlets/purl/1437463",
+      "status": "failed",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "id": "28945243",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/106078/204/CulshawRevFinal%20%2800000002%29.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "24600035",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/74255/1/2014%20Motozono%20C%20JI.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/second_publisher_attempts.json": [
+    {
+      "id": "24759101",
+      "url": "https://www.jbc.org/article/S0021-9258(20)45959-6/pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.jbc.org/article/S0021-9258(20)45959-6/pdf",
+      "status": "failed"
+    },
+    {
+      "id": "26429912",
+      "url": "https://www.jbc.org/article/S0021-9258(20)41234-7/pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.jbc.org/article/S0021-9258(20)41234-7/pdf",
+      "status": "failed"
+    },
+    {
+      "id": "28931605",
+      "url": "https://www.jbc.org/article/S0021-9258(20)32978-1/pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.jbc.org/article/S0021-9258(20)32978-1/pdf",
+      "status": "failed"
+    },
+    {
+      "id": "22343629",
+      "url": "https://www.jbc.org/article/S0021-9258(20)53155-4/pdf",
+      "error": "403 Client Error: Forbidden for url: https://www.jbc.org/article/S0021-9258(20)53155-4/pdf",
+      "status": "failed"
+    },
+    {
+      "id": "19542454",
+      "url": "https://hal.science/hal-00432094/document",
+      "error": "404 Client Error: Not Found for url: https://hal.science/hal-00432094/document",
+      "status": "failed"
+    },
+    {
+      "id": "15640805",
+      "url": "https://hdl.handle.net/11343/26466",
+      "final_url": "https://minerva-access.unimelb.edu.au/handle/11343/26466",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/15640805_second.html",
+      "sha256": "a614db2d801152c3d865dd37b7ff643291dcc5563983b063938d495c0987e07d",
+      "bytes": 1155,
+      "status": "retrieved",
+      "content_type": "text/html"
+    },
+    {
+      "id": "30053426",
+      "url": "https://authors.library.caltech.edu/records/kw22f-7wn52",
+      "error": "404 Client Error: Not Found for url: https://authors.library.caltech.edu/records/kw22f-7wn52",
+      "status": "failed"
+    },
+    {
+      "id": "LS",
+      "url": "https://www.nature.com/articles/nsmb.3383.pdf",
+      "final_url": "https://www.nature.com/articles/nsmb.3383.pdf",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/LS_second.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "newKRAS",
+      "url": "https://www.nature.com/articles/s41423-024-01155-6",
+      "final_url": "https://www.nature.com/articles/s41423-024-01155-6",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/newKRAS_second.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "newHBV",
+      "url": "https://www.nature.com/articles/s41467-024-54378-9",
+      "final_url": "https://www.nature.com/articles/s41467-024-54378-9",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/newHBV_second.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "newRA",
+      "url": "https://www.nature.com/articles/s41467-024-50511-w",
+      "final_url": "https://www.nature.com/articles/s41467-024-50511-w",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/newRA_second.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/fulltext_html_attempts.json": [
+    {
+      "pmid": "38554725",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11419333/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11419333/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/38554725_full.html",
+      "sha256": "8c9ae701716330f2b46c21d1c2866df8d421b6337fd0b12588675467701add7a",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "33558725",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9620481/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9620481/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/33558725_full.html",
+      "sha256": "16b4013102b2af0463f75f621900ef066b303bad03673c5bf411701ac674a3cb",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "32029687",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11249135/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11249135/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/32029687_full.html",
+      "sha256": "83a0644a159fc52102e0f6612a2801d9cf8921a10cae3ee58e67c3e205c036c1",
+      "bytes": 21312,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "30573690",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6445780/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6445780/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/30573690_full.html",
+      "sha256": "6cab72bc601af034fcbe9991c677b1683fa935b62327c861f6c01d6d4d89f86e",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "30053426",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6140336/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6140336/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/30053426_full.html",
+      "sha256": "448c3015aab455ab6a0153e7da91d4cf7f8489c83e85afbb9c3b0f669956926b",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "29891538",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8092079/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8092079/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/29891538_full.html",
+      "sha256": "318877d12b84bf1c2d408f62a3d575a29b35b55178dd7972662c0021f8b7fc45",
+      "bytes": 21309,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "29052782",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5935006/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5935006/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/29052782_full.html",
+      "sha256": "c4f39bb730c4622a017749539a49bdf24f1ad561f54e933e7bc37a61e078c997",
+      "bytes": 21307,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "28931605",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5683187/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5683187/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/28931605_full.html",
+      "sha256": "4a69f87f1ac9b1358efee6edc8830f4557bd616124180b35b9b55a3e2cb54444",
+      "bytes": 21304,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "28809608",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5652397/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5652397/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/28809608_full.html",
+      "sha256": "be6abad9a859b7afd0c8c44324f8a6f7c66944807392042207b8d92e75762211",
+      "bytes": 21306,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "28572406",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5474831/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5474831/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/28572406_full.html",
+      "sha256": "e3d2a8ae9d365136e98591c4e87f0deb86c3dee922bf7d141fcce5214af01837",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "26429912",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4661422/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4661422/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/26429912_full.html",
+      "sha256": "6e4f084300ab536e29f0c1f696fb6bee550bac6390000103cd32c56d702aa583",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "25538264",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4361810/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4361810/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/25538264_full.html",
+      "sha256": "9a9612e9a472f32882e6f6623ac7f1e726dc52202c4b2f7b87da6c5001a6f258",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "24759101",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4059114/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4059114/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/24759101_full.html",
+      "sha256": "70622e386428baed4af5234f8ec32b4fef044f3d799d11868028612565826ca4",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "24634374",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4070853/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4070853/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/24634374_full.html",
+      "sha256": "d1d5d78fddffc1807fe9ee5d5ecd25283a9faa61bc4e7c6ee895b9c2337115d5",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "24600035",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3962895/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3962895/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/24600035_full.html",
+      "sha256": "5d0fe011993b79834d33c7594dc20a91a38d430fe9ac5cebc7b080284c3f4be7",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "23770775",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3743463/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3743463/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/23770775_full.html",
+      "sha256": "28a0c8401dc750048ba97d83f1c59fba00599e767b35c685388098f228911cfe",
+      "bytes": 21306,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "22343629",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3320977/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3320977/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/22343629_full.html",
+      "sha256": "fc3dee34ebf35e7f2f52dc0dd6059cd622b6453b50de5c9c9cbef229a2c4ccce",
+      "bytes": 21311,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "21282551",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3068063/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3068063/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/21282551_full.html",
+      "sha256": "a7b98b403a01ecace8b61f1c48ebba4bd227000de16d92bfac051a6658f0c928",
+      "bytes": 21306,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "20483993",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2890827/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2890827/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/20483993_full.html",
+      "sha256": "a628e721a627b6c5d9d51ea7678937c11124195557490cba25a4f6faad4019d2",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "19451549",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2929689/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2929689/",
+      "status": "rejected_not_fulltext",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/19451549_full.html",
+      "sha256": "64ac59640b02c84dc41be4f8b15cb699072c612f3c511214778d663b1915e6a5",
+      "bytes": 21310,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "16946036",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2267026/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2267026/",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/16946036_full.html",
+      "sha256": "842f2f29e63fbc0aa480971292b0779be28127c5e2548022905f9b7762582889",
+      "bytes": 155852,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "C4_patent_pdf",
+      "url": "https://patentimages.storage.googleapis.com/0c/9d/6e/852f5809bd1a28/US20160083449A1.pdf",
+      "final_url": "https://patentimages.storage.googleapis.com/0c/9d/6e/852f5809bd1a28/US20160083449A1.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/C4_patent_pdf_full.pdf",
+      "sha256": "20982820137e806257aae9f204dd6179d25874d6a1d337e746de63a49412fe7a",
+      "bytes": 6323944,
+      "content_type": "application/pdf"
+    },
+    {
+      "pmid": "HBV",
+      "url": "https://www.nature.com/articles/s41467-024-54378-9",
+      "final_url": "https://www.nature.com/articles/s41467-024-54378-9?error=cookies_not_supported&code=4c3ca51a-f005-497a-8054-2c19c298b89e",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_full.html",
+      "sha256": "b09f19546ee5044be95d27c1e3a0be1ca70d08c2220c10aa8a91f3bf55f5bb74",
+      "bytes": 612479,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "NEW56004",
+      "url": "https://www.nature.com/articles/s41467-025-56004-8",
+      "final_url": "https://www.nature.com/articles/s41467-025-56004-8?error=cookies_not_supported&code=e01ad632-50ce-4681-a45d-702c8f94b6fd",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/NEW56004_full.html",
+      "sha256": "d23c128446d62838ae1dbb56505a1d4dbe7c85df3e68d73a7d6cd397c585df7d",
+      "bytes": 730622,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "pmid": "RA",
+      "url": "https://www.nature.com/articles/s41467-024-50511-w",
+      "final_url": "https://www.nature.com/articles/s41467-024-50511-w?error=cookies_not_supported&code=e65dc63a-ea3b-47ea-8160-228022f244c5",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/RA_full.html",
+      "sha256": "53a4e9a7bc2759f91132946568430c683888eb1ecb6710eda6c411fa9205cd8e",
+      "bytes": 542194,
+      "content_type": "text/html; charset=utf-8"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/patent_and_xml_attempts.json": [
+    {
+      "id": "C4_patent",
+      "url": "https://patents.google.com/patent/US20160083449A1/en",
+      "error": "HTTPSConnectionPool(host='patents.google.com', port=443): Read timed out. (read timeout=25)",
+      "status": "failed"
+    },
+    {
+      "id": "new56004_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11742974/fullTextXML",
+      "error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=25)",
+      "status": "failed"
+    },
+    {
+      "id": "clinicalKras_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9531755/fullTextXML",
+      "error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out. (read timeout=25)",
+      "status": "failed"
+    },
+    {
+      "id": "newKRAS_xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11058820/fullTextXML",
+      "error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Max retries exceeded with url: /europepmc/webservices/rest/PMC11058820/fullTextXML (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))",
+      "status": "failed"
+    },
+    {
+      "id": "ATLAS24759101",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4059114/fullTextXML",
+      "error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Max retries exceeded with url: /europepmc/webservices/rest/PMC4059114/fullTextXML (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))",
+      "status": "failed"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/HBV_source_downloads.json": [
+    {
+      "id": "HBV_1",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM1_ESM.pdf",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_1.pdf",
+      "sha256": "63aec76876bd01fbacd7b026975a2281af6212f35765bdf7c705fe19f77e2ea5",
+      "bytes": 6083822,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_2",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM2_ESM.pdf",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_2.pdf",
+      "sha256": "374a974760bd20a3f7fec7d7caace3de9a6f2d3a2eea41f70df541d9c493db3f",
+      "bytes": 187736,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_3",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM3_ESM.xlsx",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_3.xlsx",
+      "sha256": "8d623233e8c9b21efecb71408be26d0b774fc642da50ce898c87f87b7425c8e6",
+      "bytes": 17288,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_4",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM4_ESM.xlsx",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_4.xlsx",
+      "sha256": "d4f1911a6a3c04d82eeee2c9fbee26be48e9538cb5d22284846bdbade1551a8c",
+      "bytes": 81578,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_5",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM5_ESM.pdf",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_5.pdf",
+      "sha256": "1fdbeef6db74cdfda2b6ba313067dcf5111266d54fb796ae2d82cf5ccb220476",
+      "bytes": 229951,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_6",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM6_ESM.pdf",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_6.pdf",
+      "sha256": "831e81564c273e65b5a54df70a047717ce8badcc0f051551cc66ed72d2b2da01",
+      "bytes": 1216917,
+      "status": "retrieved"
+    },
+    {
+      "id": "HBV_7",
+      "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-024-54378-9/MediaObjects/41467_2024_54378_MOESM7_ESM.xlsx",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/HBV_7.xlsx",
+      "sha256": "8e34a0ad923eeda7827e52253ad8001de5aa8af5d32738213f4b689052cb06b3",
+      "bytes": 28977344,
+      "status": "retrieved"
+    },
+    {
+      "id": "8RLT_fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8RLT/display",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/8RLT_fasta.fasta",
+      "sha256": "640d2920ef930a3d53b811657f510e32ed88196c88a289dc9e6caacbd9530c46",
+      "bytes": 1277,
+      "status": "retrieved"
+    },
+    {
+      "id": "8RLU_fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8RLU/display",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/8RLU_fasta.fasta",
+      "sha256": "10257e2eb5cdf8e9bf9fe9281a9b61d6108c2c2057527c7b824bf8bf71515b85",
+      "bytes": 1277,
+      "status": "retrieved"
+    },
+    {
+      "id": "8RLV_fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8RLV/display",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/8RLV_fasta.fasta",
+      "sha256": "4377fc26bb9af26e9db121b99e00d7680c5cccef7adb61751f4fdc2bfad2c554",
+      "bytes": 1277,
+      "status": "retrieved"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/targeted_publisher_downloads.json": [
+    {
+      "id": "NYBR1",
+      "url": "https://www.jci.org/articles/view/130562",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/NYBR1.html",
+      "sha256": "f3a721a2a73aaaab082e572f2d8facafb8cf7ea686c09d6904b47ec17ebf6453",
+      "bytes": 266837,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "LS",
+      "url": "https://www.nature.com/articles/nsmb.3383",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/LS.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "NEW56004",
+      "url": "https://www.nature.com/articles/s41467-025-56004-8",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/NEW56004.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038,
+      "status": "retrieved",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "id": "LSsupp",
+      "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fnsmb.3383/MediaObjects/41594_2017_BFnsmb3383_MOESM1_ESM.pdf",
+      "error": "HTTPSConnectionPool(host='static-content.springer-cdn.com', port=443): Max retries exceeded with url: /esm/art%3A10.1038%2Fnsmb.3383/MediaObjects/41594_2017_BFnsmb3383_MOESM1_ESM.pdf (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)')))",
+      "status": "failed"
+    },
+    {
+      "id": "OSTI_HCV",
+      "url": "https://www.osti.gov/servlets/purl/1437463",
+      "error": "HTTPSConnectionPool(host='www.osti.gov', port=443): Read timed out. (read timeout=35)",
+      "status": "failed"
+    },
+    {
+      "id": "OSTI_589",
+      "url": "https://www.osti.gov/servlets/purl/1471537",
+      "error": "HTTPSConnectionPool(host='www.osti.gov', port=443): Read timed out. (read timeout=35)",
+      "status": "failed"
+    }
+  ],
+  "data/external_evidence/20261018-evidence-completion-v1/repository_downloads.json": [
+    {
+      "pmid": "28945243",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/106078/204/CulshawRevFinal%20%2800000002%29.pdf",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://orca.cardiff.ac.uk/id/eprint/106078/204/CulshawRevFinal%20%2800000002%29.pdf"
+    },
+    {
+      "pmid": "25355921",
+      "url": "https://researchonline.jcu.edu.au/45054/1/45054_Miles_2014.pdf",
+      "status": "failed",
+      "error": "401 Client Error: Unauthorized for url: https://researchonline.jcu.edu.au/45054/1/45054_Miles_2014.pdf"
+    },
+    {
+      "pmid": "24634374",
+      "url": "https://escholarship.org/content/qt4ts2h0fg/qt4ts2h0fg.pdf",
+      "status": "failed",
+      "error": "not PDF text/html; charset=UTF-8"
+    },
+    {
+      "pmid": "15849183",
+      "url": "https://researchonline.jcu.edu.au/45422/1/45422_Miles_2005.pdf",
+      "status": "failed",
+      "error": "401 Client Error: Unauthorized for url: https://researchonline.jcu.edu.au/45422/1/45422_Miles_2005.pdf"
+    },
+    {
+      "pmid": "15640805",
+      "url": "https://researchonline.jcu.edu.au/45426/1/45426_Miles_2005.pdf",
+      "status": "failed",
+      "error": "401 Client Error: Unauthorized for url: https://researchonline.jcu.edu.au/45426/1/45426_Miles_2005.pdf"
+    },
+    {
+      "pmid": "38554725",
+      "url": "https://discovery.ucl.ac.uk/10213399/1/nihms-1984642.pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/38554725_repo_b55f48.pdf",
+      "sha256": "640a1def4e4086f00c76eca9607bd0b96f9b520b78167afd4d3eb673d3fe8af9"
+    },
+    {
+      "pmid": "32310221",
+      "url": "https://www.jci.org/articles/view/130562/files/pdf",
+      "status": "retrieved",
+      "file": "data/external_evidence/20261018-evidence-completion-v1/32310221_repo_424d4c.pdf",
+      "sha256": "05e9d1a0b12f9000f1e1b7546461486f4437dfca5f2e46eca3f33c72f794729b"
+    },
+    {
+      "pmid": "28572406",
+      "url": "https://digitalcommons.unl.edu/ffhdocs/14",
+      "status": "failed",
+      "error": "not PDF text/html; charset=UTF-8"
+    },
+    {
+      "pmid": "28572406",
+      "url": "https://www.osti.gov/servlets/purl/1437463",
+      "status": "failed",
+      "error": "HTTPSConnectionPool(host='www.osti.gov', port=443): Read timed out. (read timeout=40)"
+    },
+    {
+      "pmid": "24759101",
+      "url": "https://researchonline.jcu.edu.au/45058/1/45058_Miles_2014.pdf",
+      "status": "failed",
+      "error": "401 Client Error: Unauthorized for url: https://researchonline.jcu.edu.au/45058/1/45058_Miles_2014.pdf"
+    },
+    {
+      "pmid": "24600035",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/74255/1/2014%20Motozono%20C%20JI.pdf",
+      "status": "failed",
+      "error": "403 Client Error: Forbidden for url: https://orca.cardiff.ac.uk/id/eprint/74255/1/2014%20Motozono%20C%20JI.pdf"
+    },
+    {
+      "pmid": "20483993",
+      "url": "https://researchonline.jcu.edu.au/45358/1/45358_Miles_2010.pdf",
+      "status": "failed",
+      "error": "401 Client Error: Unauthorized for url: https://researchonline.jcu.edu.au/45358/1/45358_Miles_2010.pdf"
+    },
+    {
+      "pmid": "30053426",
+      "url": "https://www.osti.gov/servlets/purl/1563054",
+      "status": "failed",
+      "error": "HTTPSConnectionPool(host='www.osti.gov', port=443): Read timed out. (read timeout=40)"
+    },
+    {
+      "pmid": "30053426",
+      "url": "https://escholarship.org/content/qt55f2788k/qt55f2788k.pdf",
+      "status": "failed",
+      "error": "not PDF text/html; charset=UTF-8"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/public_api_downloads.json": [
+    {
+      "file": "oa_7848747.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC7848747",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "oa_2890827.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC2890827",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "oa_9531755.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC9531755",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "oa_6140336.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC6140336",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "oa_4817886.xml",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC4817886",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "epmc_7848747.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7848747/supplementaryFiles",
+      "bytes": 296,
+      "prefix": "b'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns4:errorBean xmlns:slx=\"http://www.scholix.org\" xmlns'"
+    },
+    {
+      "file": "epmc_9531755.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9531755/supplementaryFiles",
+      "bytes": 296,
+      "prefix": "b'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns4:errorBean xmlns:slx=\"http://www.scholix.org\" xmlns'"
+    },
+    {
+      "file": "epmc_4817886.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4817886/supplementaryFiles",
+      "bytes": 296,
+      "prefix": "b'<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns4:errorBean xmlns:slx=\"http://www.scholix.org\" xmlns'"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/initial_downloads.json": [
+    {
+      "id": "newJCI196613",
+      "url": "https://www.jci.org/articles/view/196613",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "id": "ATLAS19167249",
+      "url": "https://www.cell.com/immunity/fulltext/S1074-7613(09)00061-2",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "ATLAS20064448",
+      "url": "https://www.cell.com/immunity/fulltext/S1074-7613(09)00510-X",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "ATLAS23521884",
+      "url": "https://www.cell.com/immunity/fulltext/S1074-7613(13)00106-4",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "ATLAS30053426",
+      "url": "https://www.cell.com/cell/fulltext/S0092-8674(18)30785-2",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "atlasF50",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5683187/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5683187/",
+      "status": "candidate_source",
+      "file": "data/external_evidence/20261018-spr-followup-v1/atlasF50.html",
+      "sha256": "b396e71f07638147deccd8376db81f77df4bab491a1d05ca257deb8214ce6b1f",
+      "bytes": 233829
+    },
+    {
+      "id": "atlasLC13SB27",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2890827/",
+      "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2890827/",
+      "status": "candidate_source",
+      "file": "data/external_evidence/20261018-spr-followup-v1/atlasLC13SB27.html",
+      "sha256": "a2878b5e2030374584e3bb8b0eaf997e99fb231b478337cd4c6c9783c7230d02",
+      "bytes": 205915
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/fasta_publishers_downloads.json": [
+    {
+      "file": "rcsb_6VM9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VM9/display",
+      "bytes": 1163,
+      "prefix": "b'>6VM9_5|Chain E|T4H2 T cell receptor beta chain|Homo sa'"
+    },
+    {
+      "file": "rcsb_6VM7.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VM7/display",
+      "bytes": 1211,
+      "prefix": "b'>6VM7_5|Chain E[auth C]|Melanocyte protein PMEL|Homo sa'"
+    },
+    {
+      "file": "rcsb_8YE4.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8YE4/display",
+      "bytes": 1184,
+      "prefix": "b'>8YE4_5|Chains H, J|TCR NYN-I beta chain|Homo sapiens ('"
+    },
+    {
+      "file": "rcsb_28IL.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/28IL/display",
+      "bytes": 1202,
+      "prefix": "b'>28IL_5|Chains E, J|P1-15 T-cell Receptor Beta Chain|Ho'"
+    },
+    {
+      "file": "T4H2_2021supp.pdf",
+      "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.2018125118/suppl_file/pnas.2018125118.sapp.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "LC13_supp_publisher.pdf",
+      "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.1004926107/suppl_file/pnas.201004926SI.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "KRAS_appendix_publisher.pdf",
+      "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa2119662/suppl_file/nejmoa2119662_appendix.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/source_followup_downloads.json": [
+    {
+      "file": "oa_current_7848747.xml",
+      "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC7848747",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "oa_current_9531755.xml",
+      "url": "https://pmc.ncbi.nlm.nih.gov/utils/oa/oa.fcgi?id=PMC9531755",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "file": "1D3_manufacturing.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4208561/",
+      "bytes": 228578,
+      "sha256": "44b35734d5eec6bbf8ee7cfe8ba665587d147cef7a6a46d6a71818e8104b7ba6",
+      "prefix": "b'\\n<!DOCTYPE h'"
+    },
+    {
+      "file": "LC13_figure1.jpg",
+      "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/989f/2890827/b63230218e56/pnas.1004926107fig01.jpg",
+      "bytes": 171311,
+      "sha256": "cf6ad0692b1a5e12b81d81ebb11ce131a03da5bb072c2701d4c0386b2a8d1869",
+      "prefix": "b'\\xff\\xd8\\xff\\xe0\\x00\\x10JFIF\\x00\\x01'"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/old_wsl_downloads.json": [
+    {
+      "file": "DD31_wsl.pdf",
+      "url": "https://www.jimmunol.org/content/jimmunol/193/11/5402.full.pdf",
+      "http": 403,
+      "bytes": 93,
+      "prefix": "b'<html><body><h1'"
+    },
+    {
+      "file": "RA14_wsl.pdf",
+      "url": "https://journals.aai.org/jimmunol/article-pdf/183/1/430/1318465/zim01309000430.pdf",
+      "http": 403,
+      "bytes": 93,
+      "prefix": "b'<html><body><h1'"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/focused_downloads.json": [
+    {
+      "file": "T4H2_2021.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7848747/",
+      "bytes": 244976,
+      "sha256": "a6b6732587bb6614b61acf759c7f8fffa9f15926795b98d8ecaf74098ff7b749",
+      "prefix": "b'\\n<!DOCTYPE h'"
+    },
+    {
+      "file": "KRAS_appendix.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/9531755/bin/NIHMS1822388-supplement-Supplementary_Appendix.pdf",
+      "bytes": 1817,
+      "sha256": "4963314100bef651927cc3b45b2963540c3e0120dfda777095f5b8ede75a5780",
+      "prefix": "b'\\n\\n\\n\\n<html>\\n '"
+    },
+    {
+      "file": "1D3_supp.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/4817886/bin/mt201560x1.pdf",
+      "bytes": 1817,
+      "sha256": "6568cf9234a86afff672730d58127cc3853163c86ebacb66c97c6143e09c911d",
+      "prefix": "b'\\n\\n\\n\\n<html>\\n '"
+    },
+    {
+      "file": "589_supp.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/6140336/bin/NIHMS1504900-supplement-13.pdf",
+      "bytes": 1817,
+      "sha256": "6bb902fce31d37849391b6ab3ca893a71646aef962d7495f4321741d9c3f946e",
+      "prefix": "b'\\n\\n\\n\\n<html>\\n '"
+    },
+    {
+      "file": "589_data.xlsx",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/6140336/bin/NIHMS1504900-supplement-14.xlsx",
+      "bytes": 1817,
+      "sha256": "643fb5adfdc3feac8619a30380a88ddbbe254def8eda676901bb23e91b30bb8c",
+      "prefix": "b'\\n\\n\\n\\n<html>\\n '"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/novel_studies_downloads.json": [
+    {
+      "id": "newNF9",
+      "url": "https://insight.jci.org/articles/view/202235",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "id": "newNF9supp",
+      "url": "https://insight.jci.org/articles/view/202235/sd/pdf/render/1",
+      "status": "failed",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "id": "newNYN",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11342781/",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newNYN.html",
+      "sha256": "89b518ba4694ac23d0c5cae5672bcad41992e78d6b299222f600afbf0d433415",
+      "bytes": 225525,
+      "status": "candidate_source"
+    },
+    {
+      "id": "newT4H2",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11295079/",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newT4H2.html",
+      "sha256": "981390881cf126375a4857ace88bd361bd680c6ed1afa102493879e4f15841d1",
+      "bytes": 150505,
+      "status": "candidate_source"
+    },
+    {
+      "id": "atlas589",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6140336/",
+      "file": "data/external_evidence/20261018-spr-followup-v1/atlas589.html",
+      "sha256": "835a88a7243e9c3142fb4871bb2b8538dd3cbea95a334b3c18e3cacfee8dac1c",
+      "bytes": 350715,
+      "status": "candidate_source"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/targeted_downloads.json": [
+    {
+      "id": "atlasLC13SB27_supp",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/2890827/bin/1004926107_pnas.201004926SI.pdf",
+      "file": "data/external_evidence/20261018-spr-followup-v1/atlasLC13SB27_supp.html",
+      "sha256": "9a837a163fde0b030b559f32292b0d9336ea2957837e7335803a326d31dc9004",
+      "bytes": 1817,
+      "status": "rejected_not_fulltext"
+    },
+    {
+      "id": "clinicalKRAS_NEJM",
+      "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa2119662/suppl_file/nejmoa2119662_appendix.pdf",
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "clinicalKRAS_PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9531755/",
+      "file": "data/external_evidence/20261018-spr-followup-v1/clinicalKRAS_PMC.html",
+      "sha256": "47c31260eedf33a213178ea6cf1c09c788568cbb12fbd55829c739f2f0d29a81",
+      "bytes": 171515,
+      "status": "candidate_source"
+    },
+    {
+      "id": "clinical1D3",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4817886/",
+      "file": "data/external_evidence/20261018-spr-followup-v1/clinical1D3.html",
+      "sha256": "a16b21070e5b460537304249b16d78dc698a87167216deb903594cd990a0dc6d",
+      "bytes": 200292,
+      "status": "candidate_source"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/last_old_sources_downloads.json": [
+    {
+      "file": "DD31_primary.pdf",
+      "url": "https://www.jimmunol.org/content/jimmunol/193/11/5402.full.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "file": "RA14_primary.pdf",
+      "url": "https://journals.aai.org/jimmunol/article-pdf/183/1/430/1318465/zim01309000430.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "file": "SB27_primary.pdf",
+      "url": "https://www.jbc.org/content/280/25/23900.full.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "D30_orca.pdf",
+      "url": "https://orca.cardiff.ac.uk/106078/204/CulshawRevFinal%20%2800000002%29.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "LS_full.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5383516/",
+      "bytes": 278651,
+      "sha256": "97c95d64c6b77cd4148da6e734c9e125342cfc2f9ca7c1b8cda6888f6b51ddad",
+      "prefix": "b'\\n<!DOCTYPE h'"
+    },
+    {
+      "file": "NYBR1_full.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7190993/",
+      "bytes": 291411,
+      "sha256": "5e0288e1b8198f360b298b7f6032308309f2c17d6b3ba861bbe718b78ff158df",
+      "prefix": "b'\\n<!DOCTYPE h'"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/second_novel_downloads.json": [
+    {
+      "id": "newNF9",
+      "url": "https://insight.jci.org/articles/view/202235",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newNF9.html",
+      "sha256": "9392616dae6d0b11e749cd1629267d22f657c7c0f29f9e58393a63808a2e646f",
+      "bytes": 229224,
+      "status": "candidate_source"
+    },
+    {
+      "id": "newNF9supp",
+      "url": "https://insight.jci.org/articles/view/202235/sd/pdf/render/1",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newNF9supp.pdf",
+      "sha256": "21cb96426ad7543ab752985b8bb46f81075676cee203059b14e058069d1124ea",
+      "bytes": 2712776,
+      "status": "candidate_source"
+    },
+    {
+      "id": "LC13SB27supp",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2890827/supplementaryFiles",
+      "file": "data/external_evidence/20261018-spr-followup-v1/LC13SB27supp.html",
+      "sha256": "b8188ac6614c0179b676183f3eb7aafd050d19c706114a59d29cf93a2cb12f2b",
+      "bytes": 296,
+      "status": "candidate_source"
+    },
+    {
+      "id": "JCI196613patent",
+      "url": "https://patents.google.com/patent/CN118772260B/en",
+      "file": "data/external_evidence/20261018-spr-followup-v1/JCI196613patent.html",
+      "sha256": "31f41214c2f76fc8f61f29a00549ac2b2ca2a45e11e54b052d08e974e7b773d2",
+      "bytes": 181715,
+      "status": "candidate_source"
+    }
+  ],
+  "data/external_evidence/20261018-spr-followup-v1/wsl_downloads.json": [
+    {
+      "id": "newJCI196613",
+      "url": "https://www.jci.org/articles/view/196613",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newJCI196613_wsl.html",
+      "sha256": "9c564287803455245bc0468fa21fc4a20022a63f0952c5736ffbfe615c9361c5",
+      "bytes": 242756,
+      "status": "candidate_source"
+    },
+    {
+      "id": "newJCI196613_supp",
+      "url": "https://www.jci.org/articles/view/196613/sd/pdf/render/1",
+      "file": "data/external_evidence/20261018-spr-followup-v1/newJCI196613_supp_wsl.pdf",
+      "sha256": "e9e1330bc2a73f02aa4fc93237d0c1e56ba8581ba4ad4c4325807a0f3bb2f1de",
+      "bytes": 4043224,
+      "status": "candidate_source"
+    },
+    {
+      "id": "atlasLC13SB27",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2890827/fullTextXML",
+      "status": "failed",
+      "error": "500 Server Error:  for url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2890827/fullTextXML"
+    },
+    {
+      "id": "atlasF50",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5683187/fullTextXML",
+      "status": "failed",
+      "error": "500 Server Error:  for url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5683187/fullTextXML"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/supp_downloads.json": [
+    {
+      "file": "TW10_supp.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc1.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "file": "TW10_pdf.pdf",
+      "url": "https://www.cell.com/action/showPdf?pii=S2211-1247%2824%2900884-2",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "IW9_supp.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/12889509/bin/NIHPP2026.01.29.702605v1-supplement-1.pdf",
+      "http": 200,
+      "bytes": 1817,
+      "sha256": "4a8bf4f21c4dab1031e7db51057cbb74635fd8bc1baaeddb9cba4a9ddef4defe"
+    },
+    {
+      "file": "IW9_bio_supp.html",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.01.29.702605v1.supplementary-material",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "file": "KRAS2022_appendix.pdf",
+      "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa2119662/suppl_file/nejmoa2119662_appendix.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "KRAS_patent.pdf",
+      "url": "https://patentimages.storage.googleapis.com/a6/63/45/76d90e3a55d9a0/EP3494133B1.pdf",
+      "http": 200,
+      "bytes": 1283887,
+      "sha256": "5aa820e3c5c44e203aee86eac97b7512c00d25c66e63df6f10c6d4b108d68897"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/sequence_routes_downloads.json": [
+    {
+      "file": "KRAS_US2024.pdf",
+      "url": "https://patentimages.storage.googleapis.com/a3/fb/ac/beb55714cd70d4/US20240209059A1.pdf",
+      "http": 200,
+      "bytes": 2730960,
+      "sha256": "147a91e547fe68c476a5137045a235ca62ed21e5c21cdda5a7b305d2bd768137"
+    },
+    {
+      "file": "KRAS_NCBI_proteins.json",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=protein&term=US20200247869&retmode=json",
+      "http": 200,
+      "bytes": 355,
+      "sha256": "8186afe5d27053c3b188edb864a05bd58dafc4f388957dc78b618fcc3d9653bf"
+    },
+    {
+      "file": "IW9_biorxiv_api.json",
+      "url": "https://api.biorxiv.org/details/biorxiv/10.64898/2026.01.29.702605",
+      "http": 200,
+      "bytes": 3308,
+      "sha256": "1565cab2facab1128e915f2d941ee4d30dcb3ab3da01bf2724950f3c29cd00f8"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/initial_downloads.json": [
+    {
+      "file": "TW10_metadata.json",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:39083376%20AND%20SRC:MED&format=json&resultType=core",
+      "http": 200,
+      "bytes": 9231,
+      "sha256": "445958925a56036d889db3d502dc28a7772d4f42ac22ebb501f8e50b0499d629"
+    },
+    {
+      "file": "TW10_main.html",
+      "url": "https://www.cell.com/cell-reports/fulltext/S2211-1247(24)00884-2",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "G9_main.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11979002/",
+      "http": 200,
+      "bytes": 232829,
+      "sha256": "2874f8dca59009f88562f62d1e98ea04568bd3a0160b47e1ba8bc2047045a6e9"
+    },
+    {
+      "file": "allostery_main.html",
+      "url": "https://www.nature.com/articles/s41467-025-56004-8",
+      "http": 200,
+      "bytes": 730616,
+      "sha256": "e62dbc9d2f265a28e232720d386a0ebff85b59ab3caeb2203c839ecc182b8b1f"
+    },
+    {
+      "file": "ORCA_D30.html",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/106078/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "patentKRAS.html",
+      "url": "https://patents.google.com/patent/US20220241383A1/en",
+      "http": 200,
+      "bytes": 809455,
+      "sha256": "e7e56bcbe4b6ccaa54e0a8e9dcb2225fc52ae82a40315a2ccb49de9fb4822b70"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/D30_downloads.json": [
+    {
+      "file": "D30_accepted.pdf",
+      "url": "https://spiral.imperial.ac.uk/bitstreams/1e3552a4-773a-4736-8140-165a6bbc7afc/download",
+      "http": 200,
+      "bytes": 21948656,
+      "sha256": "64538667f326fbee5394817846939584350da760edbc98290f8fac9f44f30547"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/last_sources_downloads.json": [
+    {
+      "file": "NYBR1_Crean_thesis.pdf",
+      "url": "https://purehost.bath.ac.uk/ws/portalfiles/portal/202462532/Rory_Crean_Thesis.pdf",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "file": "PNAS_openalex.json",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1073/pnas.1004926107",
+      "http": 200,
+      "bytes": 40235,
+      "sha256": "4439633c45a4d99c49a380143770167f41488296f95731538a11ea34df267b60"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/old_supp_downloads.json": [
+    {
+      "file": "LC13_allo_supp.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S107476130900510X-mmc1.pdf",
+      "http": 200,
+      "bytes": 1101347,
+      "prefix": "b'%PDF-1.4'"
+    },
+    {
+      "file": "C12C_supp.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1074761313001064-mmc1.pdf",
+      "http": 200,
+      "bytes": 4535024,
+      "prefix": "b'%PDF-1.5'"
+    },
+    {
+      "file": "CF34_supp.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S1074761309000612-mmc1.pdf",
+      "http": 200,
+      "bytes": 16994,
+      "prefix": "b'%PDF-1.4'"
+    },
+    {
+      "file": "SB27_old_supp.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0021925820674476-mmc1.pdf",
+      "http": 200,
+      "bytes": 51494,
+      "prefix": "b'%PDF-1.4'"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/repository_downloads.json": [
+    {
+      "file": "TW10_figshare.json",
+      "url": "https://api.figshare.com/v2/articles/26860549",
+      "http": 200,
+      "bytes": 11318,
+      "sha256": "c2e1b479fed8b2fdea75c8b0af09239512eac52f1e7d772487594c0903917f77"
+    },
+    {
+      "file": "RA14_hal.json",
+      "url": "https://api.archives-ouvertes.fr/search/?q=halId_s:hal-00432094&fl=title_s,fileMain_s,files_s,uri_s&wt=json",
+      "http": 200,
+      "bytes": 317,
+      "sha256": "f5c4dd3c6796bf21b7860b316c26f86d086903bb0e30cc24d7889c88bd6a5529"
+    },
+    {
+      "file": "SB27_publisher.html",
+      "url": "https://www.jbc.org/article/S0021-9258(20)67447-6/fulltext",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/wsl_downloads.json": [
+    {
+      "file": "TW10_supp_wsl.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc1.pdf",
+      "http": 200,
+      "bytes": 2333458,
+      "prefix": "b'%PDF-1.7\\r%'"
+    },
+    {
+      "file": "TW10_UWA_wsl.html",
+      "url": "https://research-repository.uwa.edu.au/en/publications/b5e1e2c3-89cc-450b-92f5-5b576faf4e9c/",
+      "http": 200,
+      "bytes": 57016,
+      "prefix": "b'\\n\\n\\n\\n<!DOCT'"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/new_sources_downloads.json": [
+    {
+      "file": "IW9_main.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889509/",
+      "http": 200,
+      "bytes": 327175,
+      "sha256": "8411b2b88dd9fba44649f8d993ec2cb45e343a9475a821024742bd8e491aff4f"
+    },
+    {
+      "file": "KRAS_patent_correct.html",
+      "url": "https://patents.google.com/patent/US20240209059A1/en",
+      "http": 200,
+      "bytes": 579280,
+      "sha256": "01d7f742155cd7d645f39b6e68cde41423c46d0d17d7843ef649c3c52d38fde7"
+    },
+    {
+      "file": "TW10_UWA.html",
+      "url": "https://research-repository.uwa.edu.au/en/publications/b5e1e2c3-89cc-450b-92f5-5b576faf4e9c/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    },
+    {
+      "file": "KS1.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8F5A/display",
+      "http": 200,
+      "bytes": 1135,
+      "sha256": "34f843d1f85367eec269e43c54e5500ce52b2390bd16f1f0e4ca36c7487388c5"
+    },
+    {
+      "file": "JImmunol_DD31.html",
+      "url": "https://academic.oup.com/jimmunol/article/193/11/5402/7973579",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/author_repository_downloads.json": [
+    {
+      "file": "D30_imperial.html",
+      "url": "https://hdl.handle.net/10044/1/52167",
+      "final_url": "https://spiral.imperial.ac.uk/entities/publication/c55987f2-6336-410a-9d2c-e37c11088237",
+      "http": 200,
+      "bytes": 677333,
+      "prefix": "b'<!DOCTYP'"
+    },
+    {
+      "file": "LC13_melbourne.html",
+      "url": "https://hdl.handle.net/11343/26466",
+      "final_url": "https://minerva-access.unimelb.edu.au/handle/11343/26466",
+      "http": 200,
+      "bytes": 1156,
+      "prefix": "b'<html st'"
+    },
+    {
+      "file": "NI1155_jcu.pdf",
+      "url": "https://researchonline.jcu.edu.au/45426/1/45426_Miles_2005.pdf",
+      "final_url": "https://researchonline.jcu.edu.au/45426/1/45426_Miles_2005.pdf",
+      "http": 401,
+      "bytes": 381,
+      "prefix": "b'<!DOCTYP'"
+    },
+    {
+      "file": "SB27_jcu.pdf",
+      "url": "https://researchonline.jcu.edu.au/45422/1/45422_Miles_2005.pdf",
+      "final_url": "https://researchonline.jcu.edu.au/45422/1/45422_Miles_2005.pdf",
+      "http": 401,
+      "bytes": 381,
+      "prefix": "b'<!DOCTYP'"
+    },
+    {
+      "file": "DD31_jcu.pdf",
+      "url": "https://researchonline.jcu.edu.au/45054/1/45054_Miles_2014.pdf",
+      "final_url": "https://researchonline.jcu.edu.au/45054/1/45054_Miles_2014.pdf",
+      "http": 401,
+      "bytes": 381,
+      "prefix": "b'<!DOCTYP'"
+    },
+    {
+      "file": "RA14_HAL.html",
+      "url": "https://hal.science/hal-00432094v1",
+      "final_url": "https://hal.science/hal-00432094v1",
+      "http": 200,
+      "bytes": 113134,
+      "prefix": "b'\\n\\n\\n<!DOC'"
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/primary_routes_downloads.json": [
+    {
+      "file": "TW10_openalex.raw",
+      "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.celrep.2024.114555",
+      "final_url": "https://api.openalex.org/works/https://doi.org/10.1016/j.celrep.2024.114555",
+      "http": 200,
+      "bytes": 46334,
+      "locations": [
+        {
+          "landing_page_url": "https://doi.org/10.1016/j.celrep.2024.114555",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/39083376",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://admin.research-repository.uwa.edu.au/en/publications/b5e1e2c3-89cc-450b-92f5-5b576faf4e9c",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://doaj.org/article/132eb11625684b04becdf44331b5fdb1",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://figshare.com/articles/journal_contribution/Public_T_cell_clonotypes_are_selected_in_HLA-B_57_01_HIV_patients_independently_of_the_viral_load/26860549",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://doi.org/10.26181/26860549",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://doi.org/10.26181/26860549.v1",
+          "pdf_url": null
+        }
+      ]
+    },
+    {
+      "file": "RA14_doi.raw",
+      "url": "https://doi.org/10.4049/jimmunol.0900556",
+      "final_url": "https://academic.oup.com/jimmunol/article/183/1/430/8053807",
+      "http": 403,
+      "bytes": 5541
+    },
+    {
+      "file": "DD31_doi.raw",
+      "url": "https://doi.org/10.4049/jimmunol.1401357",
+      "final_url": "https://academic.oup.com/jimmunol/article/193/11/5402/7967160",
+      "http": 403,
+      "bytes": 5547
+    },
+    {
+      "file": "SB27_doi.raw",
+      "url": "https://doi.org/10.1074/jbc.M503060200",
+      "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0021925820674476",
+      "http": 200,
+      "bytes": 2648
+    },
+    {
+      "file": "RA14_openalex.raw",
+      "url": "https://api.openalex.org/works/https://doi.org/10.4049/jimmunol.0900556",
+      "final_url": "https://api.openalex.org/works/https://doi.org/10.4049/jimmunol.0900556",
+      "http": 200,
+      "bytes": 63871,
+      "locations": [
+        {
+          "landing_page_url": "https://doi.org/10.4049/jimmunol.0900556",
+          "pdf_url": "https://journals.aai.org/jimmunol/article-pdf/183/1/430/1318465/zim01309000430.pdf"
+        },
+        {
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/19542454",
+          "pdf_url": null
+        },
+        {
+          "landing_page_url": "https://hal.science/hal-00432094",
+          "pdf_url": null
+        }
+      ]
+    }
+  ],
+  "data/external_evidence/20261018-diversity-followup-v1/TW10_full_download.json": {
+    "url": "https://ndownloader.figshare.com/files/48843463",
+    "http": 200,
+    "bytes": 4737207
+  },
+  "data/external_evidence/20261018-diversity-followup-v1/thesis_download.json": {
+    "url": "https://purehost.bath.ac.uk/ws/portalfiles/portal/202462532/Rory_Crean_Thesis.pdf",
+    "http": 200,
+    "bytes": 15609325
+  },
+  "data/external_evidence/20261018-sequence-followup-v1/initial_downloads.json": [
+    {
+      "file": "TW10_tableS1.xlsx",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc2.xlsx",
+      "http": 200,
+      "bytes": 31311,
+      "prefix": "b'PK\\x03\\x04\\x14\\x00\\x06\\x00\\x08\\x00'"
+    },
+    {
+      "file": "TW10_tableS1.xls",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc2.xls",
+      "http": 404,
+      "bytes": 189,
+      "prefix": "b'<?xml vers'"
+    },
+    {
+      "file": "TCR3d_class1.html",
+      "url": "https://tcr3d.ibbr.umd.edu/class1",
+      "http": 200,
+      "bytes": 122402,
+      "prefix": "b'<!doctype '"
+    },
+    {
+      "file": "LC13_2010_SI.pdf",
+      "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.1004926107/suppl_file/pnas.201004926SI.pdf",
+      "http": 403,
+      "bytes": 5694,
+      "prefix": "b'<!DOCTYPE '"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/clinical_downloads.json": [
+    {
+      "file": "1D3_author_thesis.pdf",
+      "url": "https://epub.uni-regensburg.de/13413/1/Doktorarbeit_v7_Bibliotheksexpemplar.pdf",
+      "status": 200,
+      "bytes": 4886862,
+      "magic": "b'%PDF-1.4\\n%\\xc7\\xec\\x8f\\xa2\\n5 0 o'"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/structure_citation_downloads.json": [
+    {
+      "pdb": "6VMX",
+      "http": 200,
+      "citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "J Immunol.",
+        "journal_id_ISSN": "1550-6606",
+        "journal_volume": "205",
+        "page_first": "1524",
+        "page_last": "1534",
+        "pdbx_database_id_DOI": "10.4049/jimmunol.2000249",
+        "pdbx_database_id_PubMed": 32817371,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Rowntree, L.C.",
+          "Nguyen, T.H.O.",
+          "Farenc, C.",
+          "Halim, H.",
+          "Hensen, L.",
+          "Rossjohn, J.",
+          "Kotsimbos, T.C.",
+          "Purcell, A.W.",
+          "Kedzierska, K.",
+          "Gras, S.",
+          "Mifsud, N.A."
+        ],
+        "rcsb_journal_abbrev": "J Immunol",
+        "title": "A Shared TCR Bias toward an Immunogenic EBV Epitope Dominates in HLA-B*07:02-Expressing Individuals.",
+        "year": 2020
+      },
+      "title": "Structure of HD14 TCR in complex with HLA-B7 presenting an EBV epitope"
+    },
+    {
+      "pdb": "8RRO",
+      "http": 200,
+      "citation": {
+        "country": "GW",
+        "id": "primary",
+        "journal_abbrev": "Eur.J.Immunol.",
+        "journal_id_ASTM": "EJIMAF",
+        "journal_id_CSD": "0794",
+        "journal_id_ISSN": "0014-2980",
+        "journal_volume": "54",
+        "page_first": "e2451079",
+        "page_last": "e2451079",
+        "pdbx_database_id_DOI": "10.1002/eji.202451079",
+        "pdbx_database_id_PubMed": 39030753,
+        "rcsb_ORCID_identifiers": [
+          "0000-0003-3407-9661",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "0000-0002-1075-870X",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Sim, M.J.W.",
+          "Hanada, K.I.",
+          "Stotz, Z.",
+          "Yu, Z.",
+          "Lu, J.",
+          "Brennan, P.",
+          "Quastel, M.",
+          "Gillespie, G.M.",
+          "Long, E.O.",
+          "Yang, J.C.",
+          "Sun, P.D."
+        ],
+        "rcsb_journal_abbrev": "Eur J Immunol",
+        "title": "Identification and structural characterization of a mutant KRAS-G12V specific TCR restricted by HLA-A3.",
+        "year": 2024
+      },
+      "title": "G12V-TCR complex with HLA-A3"
+    },
+    {
+      "pdb": "8V4Z",
+      "http": 200,
+      "citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "Sci Immunol",
+        "journal_id_ISSN": "2470-9468",
+        "journal_volume": "10",
+        "page_first": "eadn3805",
+        "page_last": "eadn3805",
+        "pdbx_database_id_DOI": "10.1126/sciimmunol.adn3805",
+        "pdbx_database_id_PubMed": 39919196,
+        "rcsb_ORCID_identifiers": [
+          "0009-0007-5586-8877",
+          "0000-0001-7416-038X",
+          "0000-0002-9294-7693",
+          "0000-0001-6383-3032",
+          "0000-0003-3784-5210",
+          "0000-0002-0649-5089",
+          "?",
+          "?",
+          "0000-0002-4700-8224",
+          "?",
+          "?",
+          "0000-0002-2045-6342",
+          "?",
+          "0000-0002-6350-5976",
+          "0000-0001-5904-1905",
+          "0000-0002-2020-7522",
+          "0000-0001-6141-335X"
+        ],
+        "rcsb_authors": [
+          "Quinones-Parra, S.M.",
+          "Gras, S.",
+          "Nguyen, T.H.O.",
+          "Farenc, C.",
+          "Szeto, C.",
+          "Rowntree, L.C.",
+          "Chaurasia, P.",
+          "Sant, S.",
+          "Boon, A.C.M.",
+          "Jayasinghe, D.",
+          "Rimmelzwaan, G.F.",
+          "Petersen, J.",
+          "Doherty, P.C.",
+          "Uldrich, A.P.",
+          "Littler, D.R.",
+          "Rossjohn, J.",
+          "Kedzierska, K."
+        ],
+        "rcsb_journal_abbrev": "Sci Immunol",
+        "title": "Molecular determinants of cross-strain influenza A virus recognition by alpha beta T cell receptors.",
+        "year": 2025
+      },
+      "title": "Crystal structure of a HLA-B*35:01-NP7 with D1 TCR"
+    },
+    {
+      "pdb": "9D95",
+      "http": 200,
+      "citation": {
+        "id": "primary",
+        "journal_abbrev": "To Be Published",
+        "journal_id_CSD": "0353",
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Zhu, S.",
+          "Petersen, J.",
+          "Rossjohn, J."
+        ],
+        "rcsb_journal_abbrev": "To be published",
+        "title": "T cell recognition of a viral antigen"
+      },
+      "title": "TCR - peptide - HLA complex"
+    },
+    {
+      "pdb": "9GV6",
+      "http": 200,
+      "citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "J.Biol.Chem.",
+        "journal_id_ASTM": "JBCHA3",
+        "journal_id_CSD": "0071",
+        "journal_id_ISSN": "1083-351X",
+        "journal_volume": "301",
+        "page_first": "108445",
+        "page_last": "108445",
+        "pdbx_database_id_DOI": "10.1016/j.jbc.2025.108445",
+        "pdbx_database_id_PubMed": 40154610,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Powell, T.",
+          "Karuppiah, V.",
+          "Shaikh, S.A.",
+          "Pengelly, R.",
+          "Mai, N.",
+          "Barnbrook, K.",
+          "Sharma, A.",
+          "Harper, S.",
+          "Ebner, M.",
+          "Creese, A.J."
+        ],
+        "rcsb_journal_abbrev": "J Biol Chem",
+        "title": "Determining T-cell receptor binding orientation and Peptide-HLA interactions using cross-linking mass spectrometry.",
+        "year": 2025
+      },
+      "title": "Structure of TCR in complex with peptide-HLA"
+    },
+    {
+      "pdb": "9NMU",
+      "http": 200,
+      "citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "Science",
+        "journal_id_ASTM": "SCIEAS",
+        "journal_id_CSD": "0038",
+        "journal_id_ISSN": "1095-9203",
+        "journal_volume": "391",
+        "page_first": "eadx3162",
+        "page_last": "eadx3162",
+        "pdbx_database_id_DOI": "10.1126/science.adx3162",
+        "pdbx_database_id_PubMed": 41855322,
+        "rcsb_ORCID_identifiers": [
+          "0009-0002-8599-1992",
+          "0000-0002-5536-4691",
+          "?",
+          "0000-0003-1539-7621",
+          "0000-0002-3675-5136",
+          "0000-0003-2421-7389",
+          "0009-0002-5494-6128",
+          "?",
+          "?",
+          "0000-0002-8358-2960",
+          "0000-0002-1755-1349",
+          "?",
+          "0000-0001-5238-7137",
+          "0000-0002-8704-0288",
+          "0000-0002-5090-9162",
+          "0000-0001-6840-5336",
+          "0000-0003-0909-7358",
+          "?",
+          "0000-0002-6570-2180",
+          "0000-0003-2343-5771",
+          "0000-0002-8310-8708",
+          "0000-0002-3561-3494",
+          "0000-0003-4798-9621",
+          "0000-0001-9273-0278"
+        ],
+        "rcsb_authors": [
+          "Chen, X.",
+          "Mao, Z.",
+          "Kolawole, E.M.",
+          "Persechino, M.",
+          "Jude, K.M.",
+          "Ogishi, M.",
+          "Mo, K.C.",
+          "McLaughlin, J.",
+          "Cheng, D.",
+          "Xiang, X.",
+          "Yang, X.",
+          "Gee, C.",
+          "Liu, S.",
+          "Yang, A.",
+          "Obenaus, M.",
+          "Wang, N.",
+          "Noguchi, M.",
+          "Stoyanova, T.",
+          "Lee, J.K.",
+          "Good, Z.",
+          "Latorraca, N.R.",
+          "Evavold, B.D.",
+          "Witte, O.N.",
+          "Garcia, K.C."
+        ],
+        "rcsb_journal_abbrev": "Science",
+        "title": "Overcoming T cell tolerance to tumor self-antigens through catch-bond engineering.",
+        "year": 2026
+      },
+      "title": "TCR156 bound to HLA A*02:01-PAP"
+    },
+    {
+      "pdb": "9RU5",
+      "http": 200,
+      "citation": {
+        "id": "primary",
+        "journal_abbrev": "To Be Published",
+        "journal_id_CSD": "0353",
+        "rcsb_ORCID_identifiers": [
+          "0000-0002-9464-1903",
+          "0000-0003-1025-7929",
+          "0000-0003-1539-6768",
+          "0000-0003-1803-691X"
+        ],
+        "rcsb_authors": [
+          "Akil, C.",
+          "Zhu, Y.",
+          "Hardenbrook, N.",
+          "Zhang, P."
+        ],
+        "rcsb_journal_abbrev": "To be published",
+        "title": "Cryo-EM structure of TCRpub/pMHC"
+      },
+      "title": "Cryo-EM structure of TCRpub/pMHC"
+    },
+    {
+      "pdb": "9K2R",
+      "http": 200,
+      "citation": {
+        "id": "primary",
+        "journal_abbrev": "To Be Published",
+        "journal_id_CSD": "0353",
+        "rcsb_ORCID_identifiers": [
+          "0000-0001-8907-1320",
+          "0000-0001-9796-4217",
+          "?",
+          "?",
+          "0000-0002-0529-2765",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "0000-0001-6226-8617",
+          "0000-0002-2001-9388",
+          "0000-0003-3969-302X",
+          "0000-0002-9283-2167",
+          "0000-0001-9191-9984",
+          "0000-0001-9714-442X",
+          "0000-0002-9283-0743",
+          "0000-0002-3877-9780",
+          "0000-0002-5459-521X",
+          "0000-0002-8516-6442"
+        ],
+        "rcsb_authors": [
+          "Chikata, T.",
+          "Kuroki, K.",
+          "Kuse, N.",
+          "Kliszczak, A.",
+          "Paes, W.",
+          "Tomioka, N.",
+          "Parker, R.",
+          "Aflalo, A.",
+          "Akahoshi, T.",
+          "Yamashita, R.",
+          "Sakata, R.",
+          "Kusaka, H.",
+          "Watanabe, Y.",
+          "Nicastri, A.",
+          "Matsubara, H.",
+          "Ose, T.",
+          "Kita, S.",
+          "Oka, S.",
+          "Gatanaga, H.",
+          "Lin, Z.",
+          "Ternette, N.",
+          "Borrow, P.",
+          "Maenaka, K.",
+          "Takiguchi, M."
+        ],
+        "rcsb_journal_abbrev": "To be published",
+        "title": "Human T cell receptor (TRAV24*01/TRBV27*01) in complex with HLA-C*1202 and IY11 peptide"
+      },
+      "title": "Human T cell receptor (TRAV24*01/TRBV27*01) in complex with HLA-C*1202 and IY11 peptide"
+    },
+    {
+      "pdb": "9X7R",
+      "http": 200,
+      "citation": {
+        "country": "US",
+        "id": "primary",
+        "journal_abbrev": "J.Struct.Biol.",
+        "journal_id_ASTM": "JSBIEM",
+        "journal_id_CSD": "0803",
+        "journal_id_ISSN": "1095-8657",
+        "journal_volume": "218",
+        "page_first": "108371",
+        "page_last": "108371",
+        "pdbx_database_id_DOI": "10.1016/j.jsb.2026.108371",
+        "pdbx_database_id_PubMed": 42727733,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Wang, J.",
+          "Li, S.",
+          "Mao, L.",
+          "Yang, D.",
+          "Yao, Z.",
+          "Shi, J.",
+          "He, W.",
+          "Wu, D."
+        ],
+        "rcsb_journal_abbrev": "J Struct Biol",
+        "title": "Structural basis for CD8 + T cell recognition of the charge-reversed neoantigen UTP20 D2661H .",
+        "year": 2026
+      },
+      "title": "The molecular mechanisms of CD8+ T cell responses to restrictive UTP20 antigen"
+    },
+    {
+      "pdb": "9Y7Y",
+      "http": 200,
+      "citation": {
+        "id": "primary",
+        "journal_abbrev": "To Be Published",
+        "journal_id_CSD": "0353",
+        "rcsb_authors": [
+          "Hallisey, M.M."
+        ],
+        "rcsb_journal_abbrev": "To be published",
+        "title": "KRAS-specific 24-246 TCR in complex with HLA-C*01:02 presenting KRAS G12V 9mer peptide (11-AVGVGKSAL-19)"
+      },
+      "title": "KRAS-specific 24-246 TCR in complex with HLA-C*01:02 presenting KRAS G12V 9mer peptide (11-AVGVGKSAL-19)"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/targeted_downloads.json": [
+    {
+      "file": "PAP_full.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13004167/fullTextXML",
+      "status": 200,
+      "bytes": 157292,
+      "magic": "b'<?xml version=\"1.0\" encoding=\"UTF-8\"?><a'"
+    },
+    {
+      "file": "PAP_full.html",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13004167/?pdf=1",
+      "status": 200,
+      "bytes": 266479,
+      "magic": "b'\\n<!DOCTYPE html>\\n<html lang=\"en\" >\\n    <'"
+    },
+    {
+      "file": "crosslink_full.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12019010/fullTextXML",
+      "status": 200,
+      "bytes": 112574,
+      "magic": "b'\\n<!DOCTYPE article\\n  PUBLIC \"-//NLM//DTD'"
+    },
+    {
+      "file": "KRASG12V_preprint.pdf",
+      "url": "https://www.biorxiv.org/content/10.1101/2024.02.01.578367v1.full.pdf",
+      "status": 429,
+      "bytes": 11535,
+      "magic": "b'<!DOCTYPE html>\\n<html lang=\"en\">\\n<head>\\n'"
+    },
+    {
+      "file": "HD14_openalex.json",
+      "url": "https://api.openalex.org/works/https://doi.org/10.4049/jimmunol.2000249",
+      "status": 200,
+      "bytes": 48633,
+      "magic": "b'{\"id\":\"https://openalex.org/W3070953717\"'"
+    },
+    {
+      "file": "PAP_supp.pdf",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/13004167/bin/NIHMS2137487-supplement-adx3162_SupplementalMaterial_v6.pdf",
+      "status": 200,
+      "bytes": 1817,
+      "magic": "b'\\n\\n\\n\\n<html>\\n  <head>\\n    <meta name=\"view'"
+    },
+    {
+      "file": "KRASG12V_wiley.pdf",
+      "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/eji.202451079",
+      "status": 403,
+      "bytes": 5575,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><head>'"
+    },
+    {
+      "file": "G12V_supp.pdf",
+      "url": "https://onlinelibrary.wiley.com/doi/suppl/10.1002/eji.202451079/supinfo/eji202451079-sup-0001-supinfo.pdf",
+      "status": 403,
+      "bytes": 5750,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><head>'"
+    },
+    {
+      "file": "LC13_PNAS_SI2.pdf",
+      "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.1004926107/suppl_file/pnas.201004926_si.pdf",
+      "status": 403,
+      "bytes": 5697,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><head>'"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/second_targeted_downloads.json": [
+    {
+      "file": "PAP_science.html",
+      "url": "https://www.science.org/doi/10.1126/science.adx3162",
+      "status": 403,
+      "bytes": 5540,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-'"
+    },
+    {
+      "file": "PAP_science_supp.pdf",
+      "url": "https://www.science.org/doi/suppl/10.1126/science.adx3162/suppl_file/science.adx3162_sm.pdf",
+      "status": 403,
+      "bytes": 5724,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-'"
+    },
+    {
+      "file": "PAP_epmc_supp.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13004167/supplementaryFiles",
+      "status": 200,
+      "bytes": 54695714,
+      "magic": "b'PK\\x03\\x04\\x14\\x00\\x08\\x08\\x08\\x00\"\\xb0Q]\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x17\\x00\\x00\\x00'"
+    },
+    {
+      "file": "crosslink_supp.xlsx",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0021925825002947-mmc1.xlsx",
+      "status": 200,
+      "bytes": 86471,
+      "magic": "b'PK\\x03\\x04\\x14\\x00\\x06\\x00\\x08\\x00\\x00\\x00!\\x00\\xc0\\xea\\x9aM\\xe0\\x01\\x00\\x00z\\x0e\\x00\\x00\\x13\\x00\\x08\\x02'"
+    },
+    {
+      "file": "PAP_fasta.txt",
+      "url": "https://www.rcsb.org/fasta/entry/9NMU/display",
+      "status": 200,
+      "bytes": 1274,
+      "magic": "b'>9NMU_5|Chain E|TCR156 beta ch'"
+    },
+    {
+      "file": "PAP_M_fasta.txt",
+      "url": "https://www.rcsb.org/fasta/entry/9NMX/display",
+      "status": 200,
+      "bytes": 1323,
+      "magic": "b'>9NMX_5|Chain E|TCR156 beta ch'"
+    },
+    {
+      "file": "PAP_H_fasta.txt",
+      "url": "https://www.rcsb.org/fasta/entry/9NMV/display",
+      "status": 200,
+      "bytes": 1287,
+      "magic": "b'>9NMV_5|Chain E|TCR156 beta ch'"
+    },
+    {
+      "file": "PAP_Q_fasta.txt",
+      "url": "https://www.rcsb.org/fasta/entry/9NMY/display",
+      "status": 200,
+      "bytes": 1188,
+      "magic": "b'>9NMY_5|Chain E|TCR156 beta ch'"
+    },
+    {
+      "file": "PAP_EQ_fasta.txt",
+      "url": "https://www.rcsb.org/fasta/entry/9NMW/display",
+      "status": 200,
+      "bytes": 1284,
+      "magic": "b'>9NMW_5|Chain E|TCR156 beta ch'"
+    },
+    {
+      "file": "KRASG12V_full.html",
+      "url": "https://onlinelibrary.wiley.com/doi/full/10.1002/eji.202451079",
+      "status": 403,
+      "bytes": 5578,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-'"
+    },
+    {
+      "file": "HD14_ORCA.html",
+      "url": "https://orca.cardiff.ac.uk/id/eprint/136024/",
+      "status": 403,
+      "bytes": 50720,
+      "magic": "b'<!DOCTYPE html>\\r\\n<html lang=\"e'"
+    },
+    {
+      "file": "HD14_publisher.pdf",
+      "url": "https://www.jimmunol.org/content/jimmunol/205/6/1524.full.pdf",
+      "status": 403,
+      "bytes": 93,
+      "magic": "b'<html><body><h1>403 Forbidden<'"
+    },
+    {
+      "file": "KRAS_US_EP.html",
+      "url": "https://patents.google.com/patent/EP3494133B1/en",
+      "status": 200,
+      "bytes": 633729,
+      "magic": "b'<!DOCTYPE html>\\n<html lang=\"en'"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/gap_downloads.json": [
+    {
+      "file": "PNAS2010_supp.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2890827/supplementaryFiles",
+      "status": 200,
+      "bytes": 296,
+      "magic": "b'<?xml version=\"1.0\" encoding=\"UTF-8'"
+    },
+    {
+      "file": "clinical_KRAS_supp.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9531755/supplementaryFiles",
+      "status": 200,
+      "bytes": 296,
+      "magic": "b'<?xml version=\"1.0\" encoding=\"UTF-8'"
+    },
+    {
+      "file": "LC13_NI1155.pdf",
+      "url": "https://www.nature.com/articles/ni1155.pdf",
+      "status": 200,
+      "bytes": 3038,
+      "magic": "b'<!DOCTYPE html>\\n<html lang=\"en\">\\n  '"
+    },
+    {
+      "file": "CF34_cell.pdf",
+      "url": "https://www.cell.com/immunity/pdf/S1074-7613(09)00061-2.pdf",
+      "status": 403,
+      "bytes": 5591,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><'"
+    },
+    {
+      "file": "C12C_cell.pdf",
+      "url": "https://www.cell.com/immunity/pdf/S1074-7613(13)00106-4.pdf",
+      "status": 403,
+      "bytes": 5591,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><'"
+    },
+    {
+      "file": "RA14_AAI.pdf",
+      "url": "https://journals.aai.org/jimmunol/article-pdf/183/1/430/1318465/zim01309000430.pdf",
+      "status": 403,
+      "bytes": 93,
+      "magic": "b'<html><body><h1>403 Forbidden</h1>\\n'"
+    },
+    {
+      "file": "SB27_JBC.pdf",
+      "url": "https://www.jbc.org/article/S0021-9258(20)67447-6/pdf",
+      "status": 403,
+      "bytes": 5532,
+      "magic": "b'<!DOCTYPE html><html lang=\"en-US\"><'"
+    },
+    {
+      "file": "B7_primary.html",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0022283604014398",
+      "status": 403,
+      "bytes": 832803,
+      "magic": "b\"<!DOCTYPE html>\\n<html lang='en-us'>\""
+    },
+    {
+      "file": "LC13_B7_SI.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0022283604014398-mmc1.pdf",
+      "status": 404,
+      "bytes": 189,
+      "magic": "b'<?xml version=\"1.0\" encoding=\"UTF-8'"
+    }
+  ],
+  "data/external_evidence/20261018-sequence-followup-v1/1D3_link_downloads.json": {
+    "attempts": [
+      {
+        "file": "1D3_research_article.xml",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11030462/fullTextXML",
+        "status": 500,
+        "bytes": 151,
+        "magic": "b'{\"timestamp\":\"2026-10-17T21:14'"
+      }
+    ],
+    "file_sha256": "af901e3ec29dde02e3a0ed0ee76a09bb6943f9bf4440ca8cfcffcc679f066d83",
+    "scope": "late diagnostic-only failed500; notsourceinputtoaffinityreleasev8"
+  }
+}

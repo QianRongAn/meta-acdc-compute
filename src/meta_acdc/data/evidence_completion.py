@@ -3,7 +3,7 @@ from pathlib import Path
 import json,math,statistics
 from .clinical_primary import CODONS
 ROOT=Path(__file__).resolve().parents[3]
-CURATION=ROOT/'docs/diversity_followup_20261018'
+CURATION=ROOT/'docs/sequence_followup_20261018'
 
 def validate_c4(row):
     dna=row['dna'];protein=row['amino_acids']

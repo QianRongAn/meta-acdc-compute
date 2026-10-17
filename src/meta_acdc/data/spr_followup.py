@@ -1,5 +1,5 @@
 """Source-checked classical SPR holdouts; no clinical or binary endpoint promotion."""
-import hashlib, math
+import hashlib, math, re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 
@@ -10,7 +10,8 @@ def paired_receptor_fasta(text, clone):
     for record in text.split('>')[1:]:
         header,*lines=record.splitlines()
         h=header.lower()
-        if clone.lower() not in h or not ('receptor' in h or 'tcr ' in h):continue
+        if not re.search(r'(?<![a-z0-9])'+re.escape(clone.lower())+r'(?![a-z0-9])',h):continue
+        if not ('receptor' in h or re.search(r'\btcr(?:\d+)?\b',h)):continue
         for chain in ('alpha','beta'):
             if chain+' chain' not in h:continue
             if chain in result:raise ValueError('ambiguous receptor chain')
