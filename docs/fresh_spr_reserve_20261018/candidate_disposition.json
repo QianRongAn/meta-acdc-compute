@@ -1,0 +1,95 @@
+[
+  {
+    "candidate": "IY11",
+    "pdb": "9K2R",
+    "pmid": "41198628",
+    "status": "reserved",
+    "reason": "1 receptor; WT primary +9A sensitivity, source and family checked"
+  },
+  {
+    "candidate": "IW9",
+    "pdb": "not supplied",
+    "pmid": "41756414",
+    "status": "quarantine",
+    "reason": "4 measurements have quantitative SPR and25C, but no public fullpairedidentity linked to assayedIDs; preprint"
+  },
+  {
+    "candidate": "UTP20-CL1",
+    "pdb": "9X7R",
+    "pmid": "42727733",
+    "status": "quarantine",
+    "reason": "primary publisher paywall; Elsevier HTTP200 is metadata/entitlement only; exact KD and SPR conditions unavailable"
+  },
+  {
+    "candidate": "RAC1-5934",
+    "pdb": "9K2I",
+    "pmid": "42190883",
+    "status": "exclude",
+    "reason": "5934 already in historical91; engineering/another PDB does not create new receptor family"
+  },
+  {
+    "candidate": "TCR581/589",
+    "pdb": "9SOL/9SOK",
+    "pmid": "not found",
+    "status": "quarantine",
+    "reason": "PDB sequences and SPR annotation do not supply exact measurements or published methods; primary citation not recovered"
+  },
+  {
+    "candidate": "viral-TCR",
+    "pdb": "9D95",
+    "pmid": "not found",
+    "status": "quarantine",
+    "reason": "No public linked primary measurement/methods found"
+  },
+  {
+    "candidate": "HPV/KRAS",
+    "pdb": "9YIR/9Z51/9Y7Y",
+    "pmid": "not found",
+    "status": "quarantine",
+    "reason": "No linked primary quantitative SPR found; clinical families additionally reserved"
+  },
+  {
+    "candidate": "AS19.2",
+    "pdb": "9PBG/9PBH",
+    "pmid": "42129507",
+    "status": "exclude",
+    "reason": "Same near-beta family as exposed AS8.4, and retrieved main paper lacks quantitative SPR Methods"
+  },
+  {
+    "candidate": "KRAS9a/9d",
+    "pdb": "6ULN/6ULR",
+    "pmid": "32463171",
+    "status": "exclude",
+    "reason": "Clinical9a/9d lineage reserved; do not reuse for independent assay acceptance"
+  },
+  {
+    "candidate": "JDI/JDIa41b1",
+    "pdb": "7PB2/7OW3-7OW6",
+    "pmid": "36088370",
+    "status": "exclude",
+    "reason": "Parent7PB2 matches historically exposed7pb2_0/7pb2_1; engineered variants remain same lineage"
+  },
+  {
+    "candidate": "C3-QW9",
+    "pdb": "7R80",
+    "pmid": null,
+    "status": "exclude",
+    "reason": "Historical7r80 family match; true SPR does not restore independence",
+    "doi": "10.1038/s41467-023-38573-8",
+    "pmcid": "PMC10202051"
+  },
+  {
+    "candidate": "T18A/T11A/T7A",
+    "pdb": "various",
+    "pmid": "37192909",
+    "status": "exclude",
+    "reason": "Methods use Octet QKe BLI despite SPR section title; not strictSPR"
+  },
+  {
+    "candidate": "crosslinked-TCRA-E",
+    "pdb": "9GV6/9GV7",
+    "pmid": "40154610",
+    "status": "quarantine",
+    "reason": "Numeric affinities and25C known, but instrument/orientation/fit not documented in available main/SI; not inferred by lab practice"
+  }
+]

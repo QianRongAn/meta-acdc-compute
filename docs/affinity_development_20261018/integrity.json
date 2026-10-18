@@ -1,0 +1,42 @@
+{
+  "old_baseline_artifacts_and_code_unchanged": true,
+  "old_source_files_unchanged": true,
+  "old_freeze_valid": true,
+  "old_access_ledgers_unchanged": true,
+  "new_model_matches_fit_lock": true,
+  "new_fit_code_matches_preregistration_commit": "d41af3d",
+  "old_test_not_used_for_new_fitting_or_selection": true,
+  "new_reserve_unscored": true,
+  "fresh_reserve": {
+    "status": "partial_reserved_not_formal_acceptance",
+    "evaluation_allowed": false,
+    "training_allowed": false,
+    "model_scored": false,
+    "counts": {
+      "observations": 2,
+      "primary_observations": 1,
+      "sensitivity_observations": 1,
+      "lineages": 1,
+      "studies": 1,
+      "research_source_components": 1,
+      "connected_blocks": 1
+    },
+    "source_safe_development_rows": 19,
+    "inherited_anchor_has_configuration_exposure": true
+  },
+  "original_critical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "original_worktree_clean": true,
+  "independent_model_acceptance_started": false,
+  "new_improved_model_promoted": false,
+  "tests_run": 264,
+  "tests_passed": 261,
+  "tests_skipped": 3,
+  "new_negative_case_tests": 12
+}

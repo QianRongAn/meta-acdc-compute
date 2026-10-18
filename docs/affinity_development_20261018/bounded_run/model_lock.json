@@ -1,0 +1,19 @@
+{
+  "plan_sha256": "89a967a8a29c7e92134b80dcc4504125295a04dc5b9d601b9680c1ceb310c510",
+  "development_sha256": "5222a5afae9ea39470bd709dc0d16df43231b545b60a9cfc6dc8fea954d71af1",
+  "model_sha256": "1ff1accc68fe63d93a19c7a89d3a4a9744d32a33181b465bc869277cc533b62b",
+  "selection": "train-only LOBO for candidatealpha, original validation for candidate choice; no test",
+  "code_files": {
+    "src/meta_acdc/models/development_affinity.py": "d2e0ef11a22d40b86c8ba1c9deb5c000a33813e87061e17daec74f2ee6db4313",
+    "src/meta_acdc/models/affinity_baseline.py": "352b898fae2afe0debd1351e2d030ce6c2fc5306328bd892c26a858f9c45e4f1",
+    "src/meta_acdc/models/frozen_affinity_baseline.py": "1cf3d37844e4ce53e8beceda5adde407c468430c34a901798138f3bb5d04d5f1",
+    "src/meta_acdc/structure/graph.py": "28aec3175ae5090f1b60f962c2176a5f83ef477b2a3d6284a6f914fb51b321a8"
+  },
+  "artifacts": {
+    "data_access.json": "aca48a7ab5797acc4875793bba0c3e30c8cdbb98d05363e67bb8451bc50aa7dd",
+    "validation_predictions.json": "ae4362eb55720fc231a7187632558d301fe9c711580eca2404c8340e2c97d4c1",
+    "selected_model.json": "1ff1accc68fe63d93a19c7a89d3a4a9744d32a33181b465bc869277cc533b62b",
+    "comparison.json": "137dc98840bcce431b7f73451befa0a1e20c51cad6aa3b5c85ebe5c3dc917190"
+  },
+  "test_evaluated": false
+}

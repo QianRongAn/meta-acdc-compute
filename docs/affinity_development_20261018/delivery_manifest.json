@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "scope": "development-only bounded comparison and unscored partial SPR reserve",
+  "preregistration_commits": [
+    "7f8e9b1",
+    "d41af3d"
+  ],
+  "old_test_used_for_selection": false,
+  "new_test_evaluated": false,
+  "improved_model_promoted": false,
+  "code_files": {
+    "src/meta_acdc/models/development_affinity.py": "d2e0ef11a22d40b86c8ba1c9deb5c000a33813e87061e17daec74f2ee6db4313",
+    "src/meta_acdc/data/fresh_spr_reserve.py": "4ecd4cc5d967a600b3b24f98990eb125540a5dbe3aab330b16056f0e3a272f4d",
+    "tests/test_development_affinity.py": "f9ca3960375cd18c78feca7c33e3dfa6ad1826311ffcd0c94c3d6479d0bb5154",
+    "tests/test_fresh_spr_reserve.py": "33809fb19ba25213cbbf1d461af81a643073222444f0e7b4c9936af77e591f35"
+  },
+  "artifacts": {
+    "docs/affinity_development_20261018/IY11_identity_audit.json": "bc87b58f6d680f1b190b51546c919552baa1265d1bd3ec488c6f1949984eea63",
+    "docs/affinity_development_20261018/README.md": "3045d7f61fafbe066cad8811a38e2a14c225859d0e6f65981d734920429230da",
+    "docs/affinity_development_20261018/additional_candidate_identity_checks.json": "ef8770163cf3614510069309371e3bcc9f20549a0fd1747352cd3ce62d2c51f5",
+    "docs/affinity_development_20261018/bounded_run/comparison.json": "137dc98840bcce431b7f73451befa0a1e20c51cad6aa3b5c85ebe5c3dc917190",
+    "docs/affinity_development_20261018/bounded_run/data_access.json": "aca48a7ab5797acc4875793bba0c3e30c8cdbb98d05363e67bb8451bc50aa7dd",
+    "docs/affinity_development_20261018/bounded_run/model_lock.json": "191e9742a786ea5f34aa0cea4cfc5131d451e2abb586f0a002b05cb239fc5951",
+    "docs/affinity_development_20261018/bounded_run/selected_model.json": "1ff1accc68fe63d93a19c7a89d3a4a9744d32a33181b465bc869277cc533b62b",
+    "docs/affinity_development_20261018/bounded_run/validation_predictions.json": "ae4362eb55720fc231a7187632558d301fe9c711580eca2404c8340e2c97d4c1",
+    "docs/affinity_development_20261018/development-process.log": "c9fbc4e7ea836efa0fd082443e6892c6123f9cff630142a868d01098ff97110e",
+    "docs/affinity_development_20261018/development_input.json": "faf1eb8128556c9f55ecad48555b9c56e51ad06caf349fe84b989ae5afb08f41",
+    "docs/affinity_development_20261018/development_source_safe.json": "5222a5afae9ea39470bd709dc0d16df43231b545b60a9cfc6dc8fea954d71af1",
+    "docs/affinity_development_20261018/diagnostic_followup.json": "ee4617ca903fabdbf03bda94e487d3599d37653c92d5dbe78bd5c419d413dcc0",
+    "docs/affinity_development_20261018/diagnostic_initial.json": "74b1e5362fcc6ade9f96d0b0f954a79ff5630ba1f992c3b757f1d058c9292929",
+    "docs/affinity_development_20261018/integrity.json": "d6dd1378f293fd58a4e1529c3852a73f342ec2b50b50e51687e19831ac9bc12c",
+    "docs/affinity_development_20261018/new_source_exclusions.json": "c9ec8c7b32fe07e119a06f90602941acc97602a6ef1c3375deffd9bec38e8489",
+    "docs/affinity_development_20261018/new_study_source.json": "a8ee73707c83cf73f8c02c8f228a16f32e4598810332599690fc9acda7ed1ba6",
+    "docs/affinity_development_20261018/plan.json": "34a33b3dda5dfb6e6d996f782dbec3d54a23f3b242c1e0e994f219acb29c2feb",
+    "docs/affinity_development_20261018/plan_v2.json": "89a967a8a29c7e92134b80dcc4504125295a04dc5b9d601b9680c1ceb310c510",
+    "docs/affinity_development_20261018/verification-tests.log": "890f8e35c1af1d54645bc9c62e8b2374021100ede262e53dd89bd39a652c82e6",
+    "docs/fresh_spr_reserve_20261018/README.md": "bad6ef1d7806f6e2310da76f0e82447087eadcaa7594a290c90d85bad75dd701",
+    "docs/fresh_spr_reserve_20261018/candidate_disposition.json": "7aef10e2967ecd7abeed3dc98f2187d8997ede8d7306775f18cab7d6b6573428",
+    "docs/fresh_spr_reserve_20261018/data_access.json": "b309709479662918187af60191deab7a3526c7e8f5be9f4aee05b571f5676725",
+    "docs/fresh_spr_reserve_20261018/manifest.json": "aace29f9a05f3e2bfecf26d33f1efaf74c3d5fee04716bd12add6469a1fcd069",
+    "docs/fresh_spr_reserve_20261018/protocol.json": "67b726dbdccfb16dbd3f6653552014622193b82779f6d75dca1474e3bff31da8",
+    "docs/fresh_spr_reserve_20261018/quarantined_IW9_measurements.json": "c9bcb4b09561a9dbb641b4d5efcbf6432148543bf988c1a3068d1dfcac1e601d",
+    "docs/fresh_spr_reserve_20261018/raw_sources.json": "54dd0f036640a86eccf2161dc5dfda6e9d7c471c40d118a3d9461b2964cbee4e",
+    "docs/fresh_spr_reserve_20261018/required_sources.json": "99ed0d0293d37d07a7ff72d99c62de08d44ef271ece8c32acdc5d98f51e5559d",
+    "docs/fresh_spr_reserve_20261018/reservation_registry.json": "7c09b0d74124aa583f3a9d9788a787a3a1d31ff261018e687fabbd542388e6bd",
+    "docs/fresh_spr_reserve_20261018/reserved_measurements.json": "0addb202a7de709e1f696bf753d0acedf0273c3d5dc0f675342a5cb2077439c0",
+    "docs/fresh_spr_reserve_20261018/sequence_identity_audit.json": "bc87b58f6d680f1b190b51546c919552baa1265d1bd3ec488c6f1949984eea63",
+    "docs/fresh_spr_reserve_20261018/study_sources.json": "05ad7369f129e42286526867db6f25768e5e33f246592b6379cdf2d11051bc69"
+  }
+}
