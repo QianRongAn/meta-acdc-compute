@@ -1,0 +1,365 @@
+{
+  "created_utc": "2026-10-18T09:14:13.091778+00:00",
+  "acceptance_process_pid": 643,
+  "fit_process_pid": 602,
+  "independent_process": true,
+  "model_lock_verified": true,
+  "model_lock_sha256": "b1e3b73add12343a9f28f61dc9530a5d97a1e7d4c56a1b5071dcf82dbe58f463",
+  "model_sha256": "c0e5f8807db07b88695579a15a1d530bedbf6ed0f8150bf5add2da298eeaaf2b",
+  "release_manifest_sha256": "01b1a9dcb406520ca720a3d2c821150d4f58fceb24391abab5b41d29bc5200d0",
+  "test_sha256": "35fcd46990c8a56bc62f4d9bbc7647940d4d4851b1bd9c50a534f23b449a2b7f",
+  "plan_sha256": "606a1a938eda536edcbe72eb497cdfc3a7d8e60dcc8bd9341c8b160ee71b03a5",
+  "selected_alpha": 1.0,
+  "train_mean_pkd": 5.140139860202501,
+  "primary": {
+    "n": 14,
+    "n_sources": 3,
+    "n_lineages": 7,
+    "model": {
+      "rmse_pkd": 0.9962149031371532,
+      "mae_pkd": 0.8485966954001063
+    },
+    "train_mean": {
+      "rmse_pkd": 1.0036320119550348,
+      "mae_pkd": 0.8530823037321458
+    },
+    "rmse_improvement": 0.007417108817881601,
+    "mae_improvement": 0.004485608332039481
+  },
+  "all15_sensitivity": {
+    "n": 15,
+    "n_sources": 3,
+    "n_lineages": 7,
+    "model": {
+      "rmse_pkd": 1.0241211416883111,
+      "mae_pkd": 0.876009374071735
+    },
+    "train_mean": {
+      "rmse_pkd": 1.031228116048797,
+      "mae_pkd": 0.8804953193690807
+    },
+    "rmse_improvement": 0.007106974360485907,
+    "mae_improvement": 0.004485945297345695
+  },
+  "leave_one_source_out_metric_sensitivity": {
+    "source:33468649,35484264,39042676": {
+      "n": 9,
+      "n_sources": 2,
+      "n_lineages": 3,
+      "model": {
+        "rmse_pkd": 0.9300748945397386,
+        "mae_pkd": 0.7654185506361052
+      },
+      "train_mean": {
+        "rmse_pkd": 0.9353653571668382,
+        "mae_pkd": 0.7733941578573882
+      },
+      "rmse_improvement": 0.005290462627099646,
+      "mae_improvement": 0.007975607221282988
+    },
+    "source:39500929": {
+      "n": 7,
+      "n_sources": 2,
+      "n_lineages": 5,
+      "model": {
+        "rmse_pkd": 0.891194437749531,
+        "mae_pkd": 0.7766104901649036
+      },
+      "train_mean": {
+        "rmse_pkd": 0.9029567610880983,
+        "mae_pkd": 0.7834943268671101
+      },
+      "rmse_improvement": 0.011762323338567304,
+      "mae_improvement": 0.006883836702206492
+    },
+    "source:39576860": {
+      "n": 12,
+      "n_sources": 2,
+      "n_lineages": 6,
+      "model": {
+        "rmse_pkd": 1.1480703655999898,
+        "mae_pkd": 1.0037610453993104
+      },
+      "train_mean": {
+        "rmse_pkd": 1.1539464383064657,
+        "mae_pkd": 1.0023584264719392
+      },
+      "rmse_improvement": 0.005876072706475943,
+      "mae_improvement": -0.0014026189273712575
+    }
+  },
+  "by_source": {
+    "source:33468649,35484264,39042676": {
+      "n": 5,
+      "n_sources": 1,
+      "n_lineages": 4,
+      "model": {
+        "rmse_pkd": 1.1168051668896821,
+        "mae_pkd": 1.014952984928109
+      },
+      "train_mean": {
+        "rmse_pkd": 1.127836399256133,
+        "mae_pkd": 1.0124585954816612
+      },
+      "rmse_improvement": 0.011031232366450983,
+      "mae_improvement": -0.0024943894464477534
+    },
+    "source:39500929": {
+      "n": 7,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "model": {
+        "rmse_pkd": 1.1785064055601469,
+        "mae_pkd": 0.9925691058705121
+      },
+      "train_mean": {
+        "rmse_pkd": 1.1794786227284135,
+        "mae_pkd": 0.9922582574622173
+      },
+      "rmse_improvement": 0.0009722171682666758,
+      "mae_improvement": -0.00031084840829476157
+    },
+    "source:39576860": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.584124362580362,
+        "mae_pkd": 0.5382679954016982
+      },
+      "train_mean": {
+        "rmse_pkd": 0.5988713395232552,
+        "mae_pkd": 0.554530058252559
+      },
+      "rmse_improvement": 0.014746976942893175,
+      "mae_improvement": 0.016262062850860737
+    }
+  },
+  "by_lineage": {
+    "N17.1.2": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.584124362580362,
+        "mae_pkd": 0.5382679954016982
+      },
+      "train_mean": {
+        "rmse_pkd": 0.5988713395232552,
+        "mae_pkd": 0.554530058252559
+      },
+      "rmse_improvement": 0.014746976942893175,
+      "mae_improvement": 0.016262062850860737
+    },
+    "S2": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 1.4986072185979344,
+        "mae_pkd": 1.3714914834750278
+      },
+      "train_mean": {
+        "rmse_pkd": 1.5018472387901423,
+        "mae_pkd": 1.3750310622936013
+      },
+      "rmse_improvement": 0.0032400201922078153,
+      "mae_improvement": 0.0035395788185734745
+    },
+    "S8": {
+      "n": 5,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.7293360681186402,
+        "mae_pkd": 0.6136467282659963
+      },
+      "train_mean": {
+        "rmse_pkd": 0.7258061134249675,
+        "mae_pkd": 0.6094854526308334
+      },
+      "rmse_improvement": -0.0035299546936726767,
+      "mae_improvement": -0.0041612756351628866
+    },
+    "SILv44": {
+      "n": 1,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 1.405355395462208,
+        "mae_pkd": 1.405355395462208
+      },
+      "train_mean": {
+        "rmse_pkd": 1.4623591549364203,
+        "mae_pkd": 1.4623591549364203
+      },
+      "rmse_improvement": 0.05700375947421232,
+      "mae_improvement": 0.05700375947421232
+    },
+    "T4H2": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.47282741120807725,
+        "mae_pkd": 0.37452008387287883
+      },
+      "train_mean": {
+        "rmse_pkd": 0.42794526381800074,
+        "mae_pkd": 0.31596943089272767
+      },
+      "rmse_improvement": -0.04488214739007651,
+      "mae_improvement": -0.05855065298015116
+    },
+    "TCR3": {
+      "n": 1,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 1.4492985092937882,
+        "mae_pkd": 1.4492985092937882
+      },
+      "train_mean": {
+        "rmse_pkd": 1.441169855866482,
+        "mae_pkd": 1.441169855866482
+      },
+      "rmse_improvement": -0.008128653427306176,
+      "mae_improvement": -0.008128653427306176
+    },
+    "TCR4": {
+      "n": 1,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.8306379510835606,
+        "mae_pkd": 0.8306379510835606
+      },
+      "train_mean": {
+        "rmse_pkd": 0.8303359402310146,
+        "mae_pkd": 0.8303359402310146
+      },
+      "rmse_improvement": -0.00030201085254599747,
+      "mae_improvement": -0.00030201085254599747
+    }
+  },
+  "by_study": {
+    "33468649": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "model": {
+        "rmse_pkd": 1.0988121259192583,
+        "mae_pkd": 1.034246841568276
+      },
+      "train_mean": {
+        "rmse_pkd": 1.118932640075237,
+        "mae_pkd": 1.0334733948153065
+      },
+      "rmse_improvement": 0.02012051415597882,
+      "mae_improvement": -0.00077344675296942
+    },
+    "35484264": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "model": {
+        "rmse_pkd": 1.181191257760887,
+        "mae_pkd": 1.1399682301886744
+      },
+      "train_mean": {
+        "rmse_pkd": 1.1761012556530879,
+        "mae_pkd": 1.1357528980487483
+      },
+      "rmse_improvement": -0.005090002107799085,
+      "mae_improvement": -0.004215332139926087
+    },
+    "39042676": {
+      "n": 1,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.08590188007141375,
+        "mae_pkd": 0.08590188007141375
+      },
+      "train_mean": {
+        "rmse_pkd": 0.027351227091262587,
+        "mae_pkd": 0.027351227091262587
+      },
+      "rmse_improvement": -0.05855065298015116,
+      "mae_improvement": -0.05855065298015116
+    },
+    "39500929": {
+      "n": 7,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "model": {
+        "rmse_pkd": 1.1785064055601469,
+        "mae_pkd": 0.9925691058705121
+      },
+      "train_mean": {
+        "rmse_pkd": 1.1794786227284135,
+        "mae_pkd": 0.9922582574622173
+      },
+      "rmse_improvement": 0.0009722171682666758,
+      "mae_improvement": -0.00031084840829476157
+    },
+    "39576860": {
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "model": {
+        "rmse_pkd": 0.584124362580362,
+        "mae_pkd": 0.5382679954016982
+      },
+      "train_mean": {
+        "rmse_pkd": 0.5988713395232552,
+        "mae_pkd": 0.554530058252559
+      },
+      "rmse_improvement": 0.014746976942893175,
+      "mae_improvement": 0.016262062850860737
+    }
+  },
+  "by_assay_orientation": {
+    "TCR immobilized": {
+      "n": 4,
+      "n_sources": 1,
+      "n_lineages": 4,
+      "model": {
+        "rmse_pkd": 1.1407455622262894,
+        "mae_pkd": 1.0871075358784752
+      },
+      "train_mean": {
+        "rmse_pkd": 1.1478729059818666,
+        "mae_pkd": 1.0846131464320274
+      },
+      "rmse_improvement": 0.00712734375557722,
+      "mae_improvement": -0.0024943894464477534
+    },
+    "pMHC immobilized": {
+      "n": 10,
+      "n_sources": 3,
+      "n_lineages": 4,
+      "model": {
+        "rmse_pkd": 0.7610207513390629,
+        "mae_pkd": 0.5389129937812079
+      },
+      "train_mean": {
+        "rmse_pkd": 0.7638858536891253,
+        "mae_pkd": 0.5247131809353462
+      },
+      "rmse_improvement": 0.0028651023500624317,
+      "mae_improvement": -0.014199812845861692
+    }
+  },
+  "acceptance_predeclared": "primary source/lineage-weighted RMSE and MAE both strictly lower than train-mean comparator AND RMSE lower in all3 leave-one-source-out metric subsets; no significance or clinical claim",
+  "exploratory_performance_passed": true,
+  "general_affinity_validation_passed": false,
+  "binary_binding_validation_passed": false,
+  "clinical_validation_passed": false,
+  "structural_EGNN_validation_passed": false,
+  "confidence_interval": null,
+  "uncertainty": "3 source components insufficient for precise population CI; no bootstrap CI or p-value asserted",
+  "test_labels_used_for_selection": false,
+  "post_test_fit_allowed": false,
+  "scope": "one frozen source-disjoint test of a10-observation-trained sequence/assay Ridge baseline; not population or clinical validation"
+}

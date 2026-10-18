@@ -1,0 +1,60 @@
+{
+  "gate": {
+    "observations": 15,
+    "primary": 14,
+    "lineages": 7,
+    "studies": 5,
+    "research_source_components": 3,
+    "development": {
+      "train": 10,
+      "validation": 10
+    },
+    "development_blocks": {
+      "train": 5,
+      "validation": 5
+    },
+    "test_connected_blocks": 4,
+    "training_allowed": false,
+    "model_scored": false,
+    "optimizer_started": false
+  },
+  "scope": "new release approved research-only regression; parent-freeze flags are historical snapshots",
+  "active_release": "20261018-affinity-source-disjoint-v2",
+  "release_sha256": "01b1a9dcb406520ca720a3d2c821150d4f58fceb24391abab5b41d29bc5200d0",
+  "release_published_copy_identical": true,
+  "model_lock_sha256": "b1e3b73add12343a9f28f61dc9530a5d97a1e7d4c56a1b5071dcf82dbe58f463",
+  "model_locked_before_test_access": true,
+  "fit_pid": 602,
+  "acceptance_pid": 643,
+  "independent_process": true,
+  "model_unchanged_after_test": true,
+  "original_worktree_clean": true,
+  "original_critical_inputs_preserved": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "frozen_files_and_sources_unchanged": true,
+  "legacy_splits_unchanged": true,
+  "test_exposure_now": "consumed_once; preserved parent snapshot remains immutable",
+  "guard_checks": {
+    "post_test_fit_blocked": "frozen test already accessed; no additional fitting on this profile",
+    "duplicate_acceptance_blocked": "refusing duplicate acceptance output",
+    "duplicate_test_claim_blocked": "frozen test already claimed; duplicate acceptance/refit forbidden"
+  },
+  "preregistration_commit": "0b8e6acf3fc56a628e6434f6985022e959117603",
+  "model_lock_commit": "c0c2095762950b212001dffd84600c6ec59d5083",
+  "exploratory_performance_passed": true,
+  "general_affinity_validation_passed": false,
+  "clinical_validation_passed": false,
+  "tests_run": 252,
+  "tests_passed": 249,
+  "tests_skipped": 3,
+  "preregistration_code_and_release_match_git_commit": true,
+  "locked_model_matches_pretest_git_commit": true,
+  "pretest_commit_has_no_test_access_ledger": true,
+  "post_test_refit_or_reselection_performed": false
+}
