@@ -1,0 +1,21 @@
+{
+  "rule": "connected components of test-study coauthor overlaps; normalized surname+initials, conservatively quarantine ambiguous homonyms; manually checked affiliations and Baker SPR contribution; three components are not three independent statistical replicates per observation",
+  "components": [
+    [
+      "33468649",
+      "35484264",
+      "39042676"
+    ],
+    [
+      "39500929"
+    ],
+    [
+      "39576860"
+    ]
+  ],
+  "labels": {
+    "33468649,35484264,39042676": "Baker SPR collaboration",
+    "39500929": "Immunocore Karuppiah/Harper",
+    "39576860": "Wu/Mariuzza/Pierce"
+  }
+}

@@ -63,6 +63,7 @@ class PrimarySPR(unittest.TestCase):
         if not release.exists():self.skipTest('local raw snapshot/release not in Git')
         with tempfile.TemporaryDirectory() as tmp:
             output=Path(tmp)/'model'
-            with self.assertRaisesRegex(ValueError,'insufficient independent'):run(release,output)
+            # New reservation code invalidates old manifest provenance before the split gate.
+            with self.assertRaisesRegex(ValueError,'insufficient independent|affinity builder/consumer code changed'):run(release,output)
             self.assertFalse(output.exists())
 if __name__=='__main__':unittest.main()

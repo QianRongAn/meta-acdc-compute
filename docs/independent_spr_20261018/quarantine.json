@@ -1,0 +1,53 @@
+[
+  {
+    "candidate": "S2-WT",
+    "decision": "quarantine full-pair conflict; not repaired by copying sibling variant",
+    "reason": "primary sequenceSI alpha DSAIRYNL contains extraR;8RYM alpha DSAIYNL; inspect raw full chains. S2-198 primary/PDB exact and has directly reported SPR values; admitted independently of WT identity assumption"
+  },
+  {
+    "candidate": "FTS TCRpub/TCRpriv",
+    "decision": "quarantine numeric-to-clone mapping conflict despite complete paired sequences and37CSPR",
+    "reason": "accepted article Fig2e labelpub plots9.7uM butcaptionpub7.2uM; Fig2f priv plots7.2butcaption9.7; SourceData samplesTCR19/TCR3, no complete explicit mapping to publicclone20/privateclone19. Do not silently choosecaption orreassignbasedonfit; primary clarification needed",
+    "source": "https://doi.org/10.1038/s41467-026-77827-z"
+  },
+  {
+    "candidate": "AS8.4/8CX4",
+    "decision": "exclude old structural family",
+    "reason": "historical structure7n2p/7n2q/7n2r/7n2s share family; newPDB doesnotprove novelreceptor"
+  },
+  {
+    "candidate": "Q04/CLB/302TIL",
+    "decision": "exclude already exposed old91",
+    "reason": "old91 includesATLAS1130/1134/745/754; notnewtest"
+  },
+  {
+    "candidate": "WT1 C4 andalpha7beta2 2026",
+    "decision": "notnew independent receptor",
+    "reason": "C4 clinicalreserve; alpha7beta2 oldtest; censored>150uM keptcensored notexactnegative"
+  },
+  {
+    "candidate": "TCR156 PAP",
+    "decision": "continue separate format-pending reserve",
+    "reason": "immobilized pMHC tetramer as literal primary Methods; not silently converted to monomeric SPR"
+  },
+  {
+    "candidate": "G12V8RRO/4TCR2/1-2C/3-2E",
+    "decision": "exclude human pool",
+    "reason": "murine TCR despite human MHC"
+  },
+  {
+    "candidate": "CTNNB1S37F2025",
+    "decision": "functional data not converted to affinity",
+    "reason": "no classicalSPR value verified"
+  },
+  {
+    "candidate": "HD14",
+    "decision": "primary methods inaccessible",
+    "reason": "secondary KD1.21 not promoted without primaryconditions"
+  },
+  {
+    "candidate": "TW10D1/D6",
+    "decision": "full pairedvariables still missing",
+    "reason": "newworkbook provides CDR3/VJonly; no germlineimputation; row37ambiguousbeta retained"
+  }
+]

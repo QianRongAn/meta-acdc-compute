@@ -1,0 +1,38 @@
+{
+  "observations": 15,
+  "primary": 14,
+  "lineages": 7,
+  "studies": 5,
+  "research_source_components": 3,
+  "development": {
+    "train": 10,
+    "validation": 10
+  },
+  "development_blocks": {
+    "train": 5,
+    "validation": 5
+  },
+  "training_allowed": false,
+  "model_scored": false,
+  "optimizer_started": false,
+  "tests_run": 240,
+  "tests_passed": 237,
+  "tests_skipped": 3,
+  "old_source_files_unchanged": 591,
+  "new_raw_files_checked": 120,
+  "previous_frozen_files_unchanged": 160,
+  "original_worktree_clean": true,
+  "original_critical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "schedule_enabled": false,
+  "legacy_test_preserved": true,
+  "old_splits_reassigned": false,
+  "training_or_test_fitted": false,
+  "test_connected_blocks": 4
+}

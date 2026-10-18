@@ -234,6 +234,9 @@ def assert_reserved_absent(records,registry_path=None):
     additions_path=CURATION/'reservation_additions.json'
     if not additions_path.exists():raise ValueError('clinical sequence additions missing')
     registry=json.loads(registry_path.read_text())['receptors']+json.loads(clinical_path.read_text())['receptors']+json.loads(additions_path.read_text())['receptors']
+    independent_path=Path(__file__).resolve().parents[3]/'docs/independent_spr_20261018/reservation_registry.json'
+    if not independent_path.exists():raise ValueError('independent SPR reservations missing')
+    registry+=json.loads(independent_path.read_text())['receptors']
     checked=set()
     for row in records:
         key=tuple(row.get(x,'') for x in ['alpha','beta','alpha_variable','beta_variable','cdr3_alpha','cdr3_beta'])
