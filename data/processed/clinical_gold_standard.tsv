@@ -1,4 +1,5 @@
-tcr	target	off_targets	fatal	evidence	note
-A3A (affinity-enhanced MAGE-A3 TCR, HLA-A*01)	EVDPIGHLY	ESDPIVAQY;ILAKFLHWL;KVAKELVHFL	yes	PMID:23999400; PMID:23999405	titin ESDPIVAQY: 2 deaths (cardiac), backbone RMSD 0.285A vs target (Raman 2016, PDB 5BRZ)
-A2-restricted MAGE-A3 TCR (A118T affinity-enhanced)	KVAELVHFL	KMVELVHFL;KMAELVHFL	yes	PMID:23470321	MAGE-A12: 3 neurotoxicity / 2 deaths (necrotic leukoencephalopathy)
-Tebentafusp/Kimmtrak (gp100 TCR, HLA-A*02:01)	YLEPGPVTA	YLEPGPVTV;YLEPGPVTL	no	PMID:34525232	FDA approved 2022; skin toxicity on-target/off-tumor, no Tx-related deaths
+record_id	clinical_receptor	structural_receptor	pdb	restriction	peptide	endpoint	evidence	construct_equivalence	clinical_prediction_label	record_status	note
+clinical-a3a	a3a	not established as a3a		HLA-A*01	EVDPIGHLY;ESDPIVAQY	clinical case reference only	PMID:23926201; PMID:26758806	not established		REFERENCE_ONLY_NOT_GOLD_STANDARD	Clinical a3a and MAG-IC3 share a progenitor; not interchangeable engineered constructs.
+structural-MAG-IC3	not the clinical a3a construct	MAG-IC3	5BRZ;5BS0	HLA-A*01	EVDPIGHLY;ESDPIVAQY	structural/experimental reagent reference	PMID:26758806	MAG-IC3 confirmed for these structures, a3a equivalence false		REFERENCE_ONLY_NOT_GOLD_STANDARD	No patient death label transferred to MAG-IC3 or every tested peptide.
+clinical-Morgan-A02	A2-restricted MAGE-A3 A118T index case	not mapped here		HLA-A*02:01	KVAELVHFL	separate clinical case reference only	PMID:23377668	unverified		REFERENCE_ONLY_NOT_GOLD_STANDARD	Do not equate nine-residue KVAELVHFL with ten-residue KVAKELVHFL; exact candidate10mer remains unverified. No transfer to A01/MAG-IC3.
+clinical-tebentafusp-index	tebentafusp	5EU6 gp100 construct equivalence unverified		HLA-A*02:01	YLEPGPVTA	trial reference only	PMID:34551229	unverified		REFERENCE_ONLY_NOT_GOLD_STANDARD	Trial outcomes do not label all candidate peptides safe or establish structural construct equivalence.

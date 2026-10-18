@@ -1,0 +1,275 @@
+[
+  {
+    "review_item": 1,
+    "title": "两表分数与排序反转",
+    "assessment": "confirmed_mixed_estimands_reconstructed",
+    "evidence": "7行临床分数逐一由恢复的5种子表还原；21行另一表由105条逐AF3模型行还原，均值/SD全部吻合。不是同一5-seed统计量的两份复本。",
+    "action": "两套旧结果均撤回；恢复6张原始评分表与哈希；不择一恢复临床结论。"
+  },
+  {
+    "review_item": 2,
+    "title": "差值小于SD",
+    "assessment": "descriptive_reproduced_inference_overstated",
+    "evidence": "中位SD0.2512，13/21>0.20，4个差值均小于自身SD复现。delta<SD不是显著性或等效性检验，SD也不是已校准测量噪声。",
+    "action": "撤回接近即危险/不可区分；明确AF3与seed轴，不能机械相加或推出真实离散度必更大。"
+  },
+  {
+    "review_item": 3,
+    "title": "MAG-IC3替代临床a3a",
+    "assessment": "confirmed_fixed_this_round",
+    "evidence": "官方5BRZ五链全部逐字匹配原CIF；Raman2016正文及PDB沉积段明确MAG-IC3与a3a不同构建体。",
+    "action": "修正参考生成器和现行表；临床评分与hazard路径阻断。"
+  },
+  {
+    "review_item": 4,
+    "title": "KVAKELVHFL跨案例",
+    "assessment": "unverified_candidate_transfer_quarantined",
+    "evidence": "9mer KVAELVHFL和10mer KVAKELVHFL不同，现有材料不足以认定10mer属于Morgan病例；它原本就不能作为a3a临床真值。",
+    "action": "10mer仍隔离，不直接改名或转挂到HLA-A02；病例和构建体分开。"
+  },
+  {
+    "review_item": 5,
+    "title": "4/7临床行绕过QC",
+    "assessment": "historical_confirmed_fixed_consumers",
+    "evidence": "按af3_predictions联合键4/7含flag且旧表有分数。当前逐模型评分入口原已拒绝旧QC及不匹配checkpoint，但旧临床消费路径仍能生成误导。",
+    "action": "现行7行分数/hazard清空且逐行WITHDRAWN；旧扫描/仪表盘不再输出排名；保留原表。"
+  },
+  {
+    "review_item": 6,
+    "title": "诱饵去重残基编码",
+    "assessment": "already_fixed_in_current_branch",
+    "evidence": "当前dataset及DA辅助路径使用AA3TO1；新真实结构测试和既有编码测试通过。",
+    "action": "不得把旧包实现错误当作当前仍未修，也不得恢复旧诱饵结果。"
+  },
+  {
+    "review_item": 7,
+    "title": "DA切分独立pdb_group坏实现",
+    "assessment": "already_fixed_in_current_branch",
+    "evidence": "8个5brz命名现全部归5brz；实际训练读取release冻结索引及family_id，不再就地重新分组。",
+    "action": "退休3个未接线旧DA驱动；不为迎合旧脚本加另一套--family-map切分。"
+  },
+  {
+    "review_item": 8,
+    "title": "math.ceil未导入math",
+    "assessment": "already_fixed_in_current_branch",
+    "evidence": "当前simulate_al.py已导入math；固定预算测试已有覆盖。未重新跑缺真实标签的AL。",
+    "action": "旧结果仍撤回；无法据当前代码复原当年消融的执行情况。"
+  },
+  {
+    "review_item": 9,
+    "title": "data包缺失/torch.func失败",
+    "assessment": "version_or_export_mismatch",
+    "evidence": "本地data.zip确为数据包，不含源码；报告所用code.tar.gz未取得。当前data包完整，torch2.9.1+cu126有torch.func，当前完整测试验证imports。",
+    "action": "交付当前代码快照和完整git bundle，明确环境；不重复安装。"
+  },
+  {
+    "review_item": 10,
+    "title": "数据表错误PMID",
+    "assessment": "confirmed_fixed_and_extended",
+    "evidence": "旧表23999400/23999405仍在，另发现23470321为共刺激综述，34525232为儿科COVID；不仅修代码。",
+    "action": "现行参考使用23926201/26758806/23377668/34551229；旧错误引用只在不可用归档中保留。"
+  },
+  {
+    "review_item": 11,
+    "title": "bootstrap按PDB而非受体",
+    "assessment": "historical_confirmed_current_fixed",
+    "evidence": "188候选/72PDB前缀/59精确A-B对复现；全体角色仍需来源核验，不能仅凭链字母作为新受体注册。当前da_stability使用release.family_id。",
+    "action": "旧CI不复活；不能未重算就断言CI一定变宽多少。"
+  },
+  {
+    "review_item": 12,
+    "title": "长度不等按索引截断",
+    "assessment": "already_fixed_in_current_branch",
+    "evidence": "当前make_decoy长度不等直接报错；本轮以真实结构复现拒绝。",
+    "action": "不引入未经验证的MHC锚点重排。"
+  },
+  {
+    "review_item": 13,
+    "title": "缺骨架静默回退/身份几何冲突",
+    "assessment": "already_fixed_in_current_branch",
+    "evidence": "当前_transplanted_atoms缺N/CA/C即抛错；本轮真实结构缺原子测试通过。",
+    "action": "旧数据仍无效，不能因为函数修复就保留旧样本训练。"
+  },
+  {
+    "review_item": 14,
+    "title": "固定全局z位移和全复合物兜底",
+    "assessment": "historical_control_retired",
+    "evidence": "固定z函数仍以历史重建辅助保留，legacy build_dataset已硬拒绝；当前graph小界面抛错、不再全复合物回退，新原子重建release不足放行。",
+    "action": "不把函数注释当物理验证；不按报告建议朝MHC质心移动并声称是脱离沟槽。"
+  },
+  {
+    "review_item": 15,
+    "title": "诱饵未证不结合",
+    "assessment": "confirmed_scientific_limit",
+    "evidence": "当前所有相关文档已将结构任务限定合成控制；没有真实负样本论证。",
+    "action": "不追加虚构负标签，不恢复0.933的结合预测解释。"
+  },
+  {
+    "review_item": 16,
+    "title": "名义面板数与独立样本数",
+    "assessment": "partially_reproduced",
+    "evidence": "188/72/59复现；报告347/73所针对确切pending面板在本地data.zip未找到同名目录，不能独立确认73阈值聚类。",
+    "action": "保留门槛和真实family分组；缺确切原code.tar.gz/面板清单明确记账。"
+  },
+  {
+    "review_item": 17,
+    "title": "NA/GS前缀就是糖基化/标签",
+    "assessment": "unsupported_blanket_inference",
+    "evidence": "NA是合法二肽，不是ASN糖基化占位的标准一字母表示；UniProtP04439成熟链25位开始GSHSM...，GS可为天然MHC序列。",
+    "action": "不自动裁剪；所有构建体变异/标签必须按原始蛋白/核酸、PDB修饰和链注释逐条核实。"
+  },
+  {
+    "review_item": 18,
+    "title": "图中字面量结果",
+    "assessment": "confirmed_fixed_this_round",
+    "evidence": "旧make_figures的0.933等为硬编码，原样归档。",
+    "action": "入口改为哈希绑定的机器报告派生；生成验证RMSE图和provenance，不生成旧稿件图。"
+  },
+  {
+    "review_item": 19,
+    "title": "无同任务已发表工具对照",
+    "assessment": "historical_limit_claim_withdrawn",
+    "evidence": "旧跨数据集文献数字不能推序列上限；当前新任务为pKD，不能拿结合二分类工具硬比回归指标。",
+    "action": "上限/结构优越主张继续撤回；未伪造head-to-head。"
+  },
+  {
+    "review_item": 20,
+    "title": "无随机肽绝对分数参照",
+    "assessment": "historical_limit_claim_withdrawn",
+    "evidence": "随机肽可为构造分布对照，但不等于实测阴性，也不能校准临床风险。",
+    "action": "不在缺陷旧模型上新造1000肽分数来恢复结论。"
+  },
+  {
+    "review_item": 21,
+    "title": "复现关键产物缺失",
+    "assessment": "export_defect_partially_recovered",
+    "evidence": "原工作目录恢复6评分表、5checkpoint和旧dataset，5checkpoint含seed但无release_sha256。",
+    "action": "交付原表和本地补充归档及哈希；数值聚合可重建，历史checkpoint->输入->分数的完整run receipt仍缺，不能补造。"
+  },
+  {
+    "review_item": 22,
+    "title": "单squash导致历史不存在",
+    "assessment": "shallow_export_not_squash",
+    "evidence": "旧data.zip含.git/shallow且边界a3da597；当前非shallow，有237可达提交，报告列的6个提交全部存在。",
+    "action": "交付完整可达git bundle；一条可见历史不能证明squash或提交造假。"
+  },
+  {
+    "review_item": 23,
+    "title": "关键数据测试全skip",
+    "assessment": "historical_export_gap_current_extended",
+    "evidence": "旧包测试数不同于当前264项；本轮增加必须存在的官方FASTA/真实CIF fixture、恢复评分表校验和故障回归。",
+    "action": "缺fixture时新审计测试失败而不是skip；仍保留3项既有可选测试skip并明示。"
+  },
+  {
+    "review_item": 24,
+    "title": "MHC预筛小样本外推",
+    "assessment": "historical_limit_claim_withdrawn",
+    "evidence": "小对照不能支持蛋白组安全排除或50倍有效压缩。",
+    "action": "不恢复召回与临床预筛声明。"
+  },
+  {
+    "review_item": 25,
+    "title": "计划书80–90灵敏度",
+    "assessment": "unvalidated_target_not_achieved",
+    "evidence": "计划指标没有验收证据。",
+    "action": "仅保留历史计划，不能表述为结果或当前放行标准已达。"
+  },
+  {
+    "review_item": 26,
+    "title": "未做湿实验却称Dry-Wet",
+    "assessment": "historical_claim_withdrawn",
+    "evidence": "现行稿件已收缩；旧稿件位于history，不能作为可投稿结果。",
+    "action": "未声称完成文库、细胞或动物实验。"
+  },
+  {
+    "review_item": 27,
+    "title": "0.5阈值被当客观可靠性标准",
+    "assessment": "historical_claim_withdrawn",
+    "evidence": "当前stability已注明quality_only且threshold_validated_against_binding=false。",
+    "action": "不作正确性/临床门槛；旧shell已退休。"
+  },
+  {
+    "review_item": 28,
+    "title": "CI下界低于阈值仍STABLE",
+    "assessment": "historical_claim_withdrawn",
+    "evidence": "阈值针对均值还是CI必须预先定义；无论哪种，旧稳定性均非准确率证据。",
+    "action": "旧判决不复活，不事后更改统计规则以维持通过。"
+  },
+  {
+    "review_item": 29,
+    "title": "best-of-N选择报告",
+    "assessment": "historical_claim_withdrawn_details_unresolved",
+    "evidence": "0.920/0.741/0.692的最大值为0.920，本身不能推出0.933是其best；需版本/run对应。",
+    "action": "旧headline全部撤回；不伪造三种子与另一数字的对应。"
+  },
+  {
+    "review_item": 30,
+    "title": "事后种子过滤",
+    "assessment": "historical_confirmed_current_guarded",
+    "evidence": "当前稳定性/集成保留所有预声明seed，常数seed使quality失败。",
+    "action": "集成新增seed-plan/receipts/不等覆盖检查，不只报幸存者。"
+  },
+  {
+    "review_item": 31,
+    "title": "单调改善跳过NaN",
+    "assessment": "historical_claim_withdrawn",
+    "evidence": "NaN不能被删除来支持单调；不同数据域/版本不能只归因样本量。",
+    "action": "不恢复扩样单调或危机解除。"
+  },
+  {
+    "review_item": 32,
+    "title": "Fisher合并非独立结构",
+    "assessment": "historical_limit_no_new_significance",
+    "evidence": "不能把结构副本当独立受体。",
+    "action": "没有用旧结果新算一个家族版P值来恢复生物学结论。"
+  },
+  {
+    "review_item": 33,
+    "title": "面板154/172/188/347口径",
+    "assessment": "historical_version_mixture",
+    "evidence": "不同批次/覆盖率/模型数不能合并称同一冻结集。",
+    "action": "新增原表/来源/统计轴逐项清单；未知确切347面板仍未确认。"
+  },
+  {
+    "review_item": 34,
+    "title": "清单alpha/beta反转和重复",
+    "assessment": "historical_source_not_active_registry",
+    "evidence": "原提交清单是历史来源；当前入口以序列/元数据和release注册，不用列名猜角色或旧清单直接派发。",
+    "action": "保留历史原清单，退休依赖旧表的自动DA驱动；没有未经原始依据直接交换所有行或删除来源。"
+  },
+  {
+    "review_item": 35,
+    "title": "pytest路径错误",
+    "assessment": "confirmed_documentation_corrected",
+    "evidence": "src/meta_acdc/tests不存在。",
+    "action": "当前审计命令统一python -m unittest discover -s tests -v，历史声明不再作完成证明。"
+  },
+  {
+    "review_item": 36,
+    "title": "测试16/23计数错误",
+    "assessment": "versioned_historical_count",
+    "evidence": "旧计数不代表当前测试数。",
+    "action": "当前日志给出实际run/pass/skip，旧日志原样保留。"
+  },
+  {
+    "review_item": 37,
+    "title": "顶部撤回不足",
+    "assessment": "confirmed_delivery_gap_fixed",
+    "evidence": "原临床/评分表缺逐行状态；仅顶部声明不足。",
+    "action": "现行表逐行WITHDRAWN，临床分数清空、消费路径硬拒绝、旧图目录提示与注册表标记。"
+  },
+  {
+    "review_item": 38,
+    "title": "Morgan混引titin",
+    "assessment": "confirmed_reference_separation",
+    "evidence": "Morgan对应另一HLA-A02病例；其旧PMID还错指综述。",
+    "action": "按来源与构建体分开；不把A02候选或未核实10mer贴到a3a/MAG-IC3。"
+  },
+  {
+    "review_item": 39,
+    "title": "bib占位/未验证",
+    "assessment": "historical_unverified_not_promoted",
+    "evidence": "占位书目不能支撑现行结论，现行稿件不靠这些未验证文献出性能结论。",
+    "action": "保留历史条目可追溯；未补造DOI或宣称外部工具复现。"
+  }
+]

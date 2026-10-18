@@ -218,59 +218,27 @@ class TestCalibration(unittest.TestCase):
 
 class TestEnsembleMean(unittest.TestCase):
     def test_average_across_seeds(self):
-        import csv
-        import subprocess
-        import sys
-        import tempfile
-        with tempfile.TemporaryDirectory() as td:
-            td = Path(td)
-            seeds = []
-            for s, val in enumerate([0.2, 0.4, 0.6]):
-                p = td / f"seed{s}.tsv"
-                with open(p, "w", newline="") as fh:
-                    w = csv.writer(fh, delimiter="\t")
-                    w.writerow(["job_id", "score", "std"])
-                    w.writerow(["x_PEP", str(val), "0.0"])
-                seeds.append(str(p))
-            out = td / "mean.tsv"
-            subprocess.run([sys.executable, "-m",
-                            "meta_acdc.structure.ensemble_mean",
-                            "--scores", *seeds, "--out", str(out)],
-                           check=True, cwd=str(ROOT), capture_output=True)
-            row = next(csv.DictReader(open(out), delimiter="\t"))
-            self.assertAlmostEqual(float(row["score"]), 0.4, places=3)
+        from meta_acdc.structure.ensemble_mean import combine
+        rows,_=combine([{'x':.2,'y':.8},{'x':.4,'y':.6},{'x':.6,'y':.4}],['x','y'])
+        self.assertAlmostEqual({x['job_id']:x['score'] for x in rows}['x'],.4)
 
     def test_degenerate_seed_retained_and_not_quality_eligible(self):
-        import csv
-        import subprocess
-        import sys
-        import tempfile
+        from meta_acdc.structure.ensemble_mean import combine
+        rows,diag=combine([{'a':.2,'b':.8},{'a':.3,'b':.7},{'a':0.,'b':0.}],['a','b'])
+        self.assertEqual(diag['degenerate_seeds_retained'],[2])
+        by={x['job_id']:x for x in rows}
+        self.assertAlmostEqual(by['a']['score'],(.2+.3)/3)
+        self.assertAlmostEqual(by['b']['score'],(.8+.7)/3)
+        self.assertTrue(all(x['quality_eligible']=='no' for x in rows))
+
+    def test_legacy_ensemble_cli_without_release_is_blocked(self):
+        import subprocess,sys,tempfile
         with tempfile.TemporaryDirectory() as td:
-            td = Path(td)
-            paths = []
-            for name, rows in (
-                ("good1", [("a", 0.2), ("b", 0.8)]),
-                ("good2", [("a", 0.3), ("b", 0.7)]),
-                ("bad", [("a", 0.0), ("b", 0.0)]),   # constant -> degenerate
-            ):
-                p = td / f"{name}.tsv"
-                with open(p, "w", newline="") as fh:
-                    w = csv.writer(fh, delimiter="\t")
-                    w.writerow(["job_id", "score", "std"])
-                    for j, v in rows:
-                        w.writerow([j, str(v), "0.0"])
-                paths.append(str(p))
-            out = td / "mean.tsv"
-            r = subprocess.run([sys.executable, "-m",
-                                "meta_acdc.structure.ensemble_mean",
-                                "--scores", *paths, "--out", str(out)],
-                               check=True, cwd=str(ROOT),
-                               capture_output=True, text=True)
-            self.assertIn("degenerate", r.stdout)
-            rows = {x["job_id"]: float(x["score"])
-                    for x in csv.DictReader(open(out), delimiter="\t")}
-            self.assertAlmostEqual(rows["a"], (0.2+0.3)/3, places=3)
-            self.assertAlmostEqual(rows["b"], (0.8+0.7)/3, places=3)
+            out=Path(td)/'scores.tsv'
+            p=subprocess.run([sys.executable,'-m','meta_acdc.structure.ensemble_mean',
+                '--scores','old.tsv','--out',str(out)],capture_output=True,cwd=ROOT)
+            self.assertNotEqual(p.returncode,0)
+            self.assertFalse(out.exists())
 
 
 class TestAttribution(unittest.TestCase):
@@ -373,58 +341,11 @@ class TestCandidateRouting(unittest.TestCase):
 
 
 class TestClinicalScan(unittest.TestCase):
-    """KN-11: a fatal off-target scoring at/above the target must be flagged."""
-
-    def test_fatal_mimicry_flagged(self):
-        import csv
-        import subprocess
-        import sys
-        import tempfile
-        with tempfile.TemporaryDirectory() as td:
-            td = Path(td)
-            scores = td / "scores.tsv"
-            with open(scores, "w", newline="") as fh:
-                w = csv.writer(fh, delimiter="\t")
-                w.writerow(["job_id", "score"])
-                w.writerow(["5brz_TARGETPEP", "0.9000"])
-                w.writerow(["5brz_FATALPEPT", "0.9500"])
-                w.writerow(["5brz_SAFEPEPXX", "0.1000"])
-                w.writerow(["5brz_UNVERIPEP", "0.9900"])
-            clinical = td / "clinical.tsv"
-            with open(clinical, "w", newline="") as fh:
-                w = csv.writer(fh, delimiter="\t")
-                w.writerow(["case", "tcr", "pdb", "restriction", "peptide",
-                            "role", "severity", "evidence", "note"])
-                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "TARGETPEP",
-                            "target", "", "PMID:23926201", ""])
-                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "FATALPEPT",
-                            "off-target", "fatal-cardiotoxicity",
-                            "PMID:23926201", ""])
-                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "SAFEPEPXX",
-                            "off-target", "", "PMID:23926201", ""])
-                # unverified evidence must NOT yield a hazard flag even when
-                # the score is at/above the target (AUDIT.md #6/#23)
-                w.writerow(["C1", "X", "5brz", "HLA-A*01:01", "UNVERIPEP",
-                            "off-target", "fatal-unknown",
-                            "unverified", ""])
-                # no structure: reported as not scored, not fabricated
-                w.writerow(["C2", "Y", "", "HLA-A*02:01", "NOSTRUCTPEP",
-                            "target", "", "PMID:23926201", ""])
-            out = td / "scan.tsv"
-            subprocess.run([sys.executable, "-m",
-                            "meta_acdc.structure.clinical_scan",
-                            "--scores", str(scores), "--clinical", str(clinical),
-                            "--out", str(out)], check=True, cwd=str(ROOT),
-                           capture_output=True)
-            rows = list(csv.DictReader(open(out), delimiter="\t"))
-            by = {r["peptide"]: r for r in rows}
-            self.assertEqual(by["FATALPEPT"]["hazard_flag"],
-                             "lethal-mimic scores at/above the intended target")
-            self.assertEqual(by["TARGETPEP"]["hazard_flag"], "")
-            self.assertEqual(by["SAFEPEPXX"]["hazard_flag"], "")
-            self.assertEqual(by["UNVERIPEP"]["hazard_flag"], "")
-            self.assertEqual(by["FATALPEPT"]["proximity"], "at-or-above-target")
-            self.assertNotIn("NOSTRUCTPEP", by)
+    """A high structural score must never fabricate a clinical hazard label."""
+    def test_legacy_fatal_mimicry_rule_is_blocked(self):
+        from meta_acdc.structure.clinical_scan import main
+        with self.assertRaisesRegex(ValueError,'Clinical scoring blocked'):
+            main(['--scores','does-not-need-to-exist.tsv','--clinical','legacy.tsv'])
 
 
 class TestElectrostatics(unittest.TestCase):
@@ -527,6 +448,9 @@ class TestDashboard(unittest.TestCase):
         json.dumps(d)  # must be JSON-serializable
         self.assertIn("groups", d)
         self.assertIn("caveats", d)
+        self.assertEqual(d["groups"], {})
+        self.assertEqual(d["clinical_scan"], [])
+        self.assertEqual(d["clinical"], [])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,38 @@
+{
+  "n_jobs": 21,
+  "sd_median": 0.2512,
+  "sd_mean": 0.21943333333333334,
+  "above_020": 13,
+  "above_030": 5,
+  "contrasts": [
+    {
+      "job_id": "5brz_ELQHGLYAL",
+      "delta": 0.10920000000000007,
+      "own_sd": 0.2646,
+      "abs_delta_below_own_sd": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "delta": 0.023400000000000087,
+      "own_sd": 0.1472,
+      "abs_delta_below_own_sd": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "delta": 0.12670000000000003,
+      "own_sd": 0.2512,
+      "abs_delta_below_own_sd": true
+    },
+    {
+      "job_id": "5brz_KVAKELVHFL",
+      "delta": -0.03289999999999993,
+      "own_sd": 0.3065,
+      "abs_delta_below_own_sd": true
+    }
+  ],
+  "std_semantics": "All21 means and sample SDs reconstruct exactly from archived105 per-AF3-model rows (five models/job). The188-job recovered ensemble instead averages five training-seed means. Neither quantity is calibrated clinical uncertainty.",
+  "statistical_limit": "delta<ownSD is descriptive, not an equivalence/nonsignificance test. Need paired contrasts, covariance, source/run identity, and predefined equivalence margins; no minimum resolvable delta can be derived from these summaries alone.",
+  "seed_sd_distinct_from_model_sd": true,
+  "clinical_conclusions_supported": false,
+  "reconstruction_evidence": "relabeled_table_reconstruction.json"
+}

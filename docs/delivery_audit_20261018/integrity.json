@@ -1,0 +1,32 @@
+{
+  "original_worktree_clean": true,
+  "original_critical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "reviewed_original_data_zip_unchanged": true,
+  "archived_legacy_artifacts_exact": true,
+  "recovered_legacy_inputs_exact": true,
+  "prior_affinity_baseline_artifacts_and_code_unchanged": true,
+  "prior_affinity_development_artifacts_and_code_unchanged": true,
+  "old_independent_freeze_unchanged": true,
+  "fresh_reserve_unchanged_and_unscored": true,
+  "scientific_fit_or_scoring_performed": false,
+  "old_test_used_for_tuning": false,
+  "new_test_used_for_selection": false,
+  "clinical_scores_emitted": 0,
+  "clinical_hazard_flags_emitted": 0,
+  "structural_training_allowed": false,
+  "clinical_model_released": false,
+  "legacy_structural_code_fingerprints_changed": "intentional scoring/consumer guard change; old release manifests preserved and not re-signed",
+  "tests_run": 279,
+  "tests_passed": 276,
+  "tests_skipped": 3,
+  "mandatory_incident_tests": 14,
+  "new_CLI_contract_test": 1,
+  "new_real_fixture_tests_skipped": 0
+}

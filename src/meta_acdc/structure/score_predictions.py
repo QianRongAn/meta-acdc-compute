@@ -1,9 +1,9 @@
 """Score predicted TCR-pMHC structures with the trained EGNN (KN-5 pipeline).
 
 Input: a directory of AF3/TCRmodel2 CIF files (one per complex).
-Output: a risk table — for each job, the EGNN "compatibility" score
-(sigmoid of the logit; the model was trained to output high scores for
-native interfaces and low scores for incompatible ones).
+Output: structural synthetic-control diagnostics, never a clinical risk table.
+Sigmoid values are not binding probabilities. Accepted release, current
+per-model QC, checkpoint binding and output provenance are mandatory.
 
 Usage:
     .venv/bin/python src/meta_acdc/structure/score_predictions.py \
@@ -84,7 +84,9 @@ def main() -> int:
                          "the result then has no structure-quality basis)")
     ap.add_argument("--release", type=Path, required=True)
     args = ap.parse_args()
-    if args.out.exists() or Path(str(args.out).replace(".tsv","_ensemble.tsv")).exists():raise ValueError("refusing to overwrite scores")
+    expected_outputs=[args.out,Path(str(args.out).replace(".tsv","_ensemble.tsv"))]
+    if len(set(expected_outputs))!=2:raise ValueError("score output must have .tsv suffix")
+    if any(p.exists() or Path(str(p)+'.provenance.json').exists() for p in expected_outputs):raise ValueError("refusing to overwrite scores or provenance")
     if not __import__("math").isfinite(args.temperature) or args.temperature<=0:raise ValueError("temperature must be finite and positive")
     from meta_acdc.data.release import load_release, sha256
     manifest, _ = load_release(args.release)
@@ -95,7 +97,7 @@ def main() -> int:
     if not args.model:
         args.model = [Path("data/processed/egnn_dataset.model.pt")]
 
-    nets = []; masking=[];dimensions=[]
+    nets = []; masking=[];dimensions=[];seed_ids=[]
     for mp in args.model:
         ckpt = torch.load(mp, weights_only=False)
         if ckpt.get("release_sha256") != sha256(args.release):
@@ -105,6 +107,7 @@ def main() -> int:
         net.load_state_dict(ckpt["model"])
         net.eval()
         net.n_node_dim=ckpt["n_node_dim"];net.n_edge_dim=ckpt["n_edge_dim"]
+        seed_ids.append(ckpt.get('seed'))
         nets.append(net);masking.append(bool(ckpt["mask_plddt"]));dimensions.append((ckpt["n_node_dim"],ckpt["n_edge_dim"]))
     if len(set(dimensions))!=1 or len(set(masking))!=1:raise ValueError("ensemble preprocessing mismatch")
     args.mask_plddt=masking[0]
@@ -202,6 +205,20 @@ def main() -> int:
             w.writerow(r)
     print(f"saved {len(rows)} per-model scores to {args.out} and "
           f"{len(agg_rows)} ensemble scores to {agg_out}")
+    # Bind every output to the exact models, input structures, QC and release.
+    receipt_base = dict(schema_version=1, release_sha256=sha256(args.release),
+        task=manifest['task'], seed_ids=seed_ids,
+        checkpoint_sha256={str(p):sha256(p) for p in args.model},
+        qc_sha256=sha256(args.qc),
+        planned_jobs=sorted({p.stem.rsplit('_model_',1)[0] for p in args.cifs.glob('*.cif')}),
+        input_structures={str(p):sha256(p) for p in args.cifs.glob('*.cif')},
+        clinical_interpretation_allowed=False, qc_path=str(args.qc.resolve()),
+        all_planned_models_scored=(n_gated==0))
+    for output, axis in [(args.out,'checkpoints_within_structure'),
+                         (agg_out,'AF3_models_of_checkpoint_means')]:
+        receipt=dict(receipt_base, output_sha256=sha256(output), std_axis=axis)
+        with Path(str(output)+'.provenance.json').open('x') as fh:
+            json.dump(receipt,fh,indent=2);fh.write('\n')
     if n_gated:
         print(f"structure-QC gate held back {n_gated} jobs (see the qc/error "
               f"columns). They are NOT part of any reported ranking.")

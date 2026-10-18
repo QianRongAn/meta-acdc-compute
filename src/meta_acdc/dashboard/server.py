@@ -58,22 +58,8 @@ def load_reliability(qc_path: Path) -> dict:
 
 
 def load_clinical_scan(path: Path) -> list[dict]:
-    """KN-11 structural safety scan over clinical gold-standard cases."""
-    if not path.exists():
-        return []
-    rows = []
-    with open(path, newline="", encoding="utf-8", errors="replace") as fh:
-        for r in csv.DictReader(fh, delimiter="\t"):
-            if r.get("role") == "no structure":
-                continue
-            rows.append({
-                "case": r["case"], "family": r["family"],
-                "peptide": r["peptide"], "role": r["role"],
-                "score": float(r["score"]) if r.get("score") else None,
-                "rank": r.get("rank", ""), "fatal": r["fatal"],
-                "flag": r.get("flag", ""),
-            })
-    return rows
+    """No clinical scoring model is released; old scans never enter the UI."""
+    return []
 
 
 def load_submission_status() -> dict:
@@ -107,75 +93,25 @@ def load_submission_status() -> dict:
 def build_data(scores_path: Path, map_path: Path, clinical_path: Path,
                qc_path: Path | None = None,
                clinical_scan_path: Path | None = None) -> dict:
-    scores = []
-    if scores_path.exists():
-        with open(scores_path, newline="", encoding="utf-8", errors="replace") as fh:
-            for row in csv.DictReader(fh, delimiter="\t"):
-                if row["score"]:
-                    scores.append({
-                        "job": row["job_id"].rsplit("_model", 1)[0],
-                        "score": float(row["score"]),
-                        "std": float(row["std"]) if row.get("std") not in (None, "", "NA") else None,
-                        "status": "WITHDRAWN_HISTORICAL_SCORE",
-                    })
-    # per-TCR groups
-    groups: dict[str, list] = {}
-    for s in scores:
-        pdb, pep = s["job"].split("_", 1)
-        groups.setdefault(pdb, []).append({"peptide": pep, **s})
-    for v in groups.values():
-        v.sort(key=lambda r: -r["score"])
-
-    native = {}
-    evidence = {}
-    if map_path.exists():
-        with open(map_path, newline="", encoding="utf-8", errors="replace") as fh:
-            for row in csv.DictReader(fh, delimiter="\t"):
-                native.setdefault(row["pdb"], row["pdb_peptide"])
-                evidence.setdefault((row["pdb"], row["vdjdb_epitope"]), 0)
-                evidence[(row["pdb"], row["vdjdb_epitope"])] += 1
-    # Shared-CDR3 candidates per PDB; not paired-receptor cross-reactivity evidence.
-    # Epitopes that differ
-    # from the crystallized peptide (KN-4+ map)
-    cross: dict[str, list[str]] = {}
-    same: dict[str, list[str]] = {}
-    for (pdb, epi), n in evidence.items():
-        if epi == native.get(pdb):
-            same.setdefault(pdb, []).append(epi)
-        else:
-            cross.setdefault(pdb, []).append(epi)
-
-    clinical = []
+    """Incident/reference view only; revoked scores never become rankings."""
+    from meta_acdc.structure.artifact_status import catalog
+    state=catalog()
+    references=[]
     if clinical_path.exists():
-        with open(clinical_path, newline="", encoding="utf-8", errors="replace") as fh:
-            for row in csv.DictReader(fh, delimiter="\t"):
-                clinical.append({
-                    "tcr": row["tcr"], "target": row["target"],
-                    "off_targets": row["off_targets"].split(";"),
-                    "fatal": row["fatal"], "evidence": row["evidence"],
-                    "note": row["note"],
-                })
-
-    return {
-        "groups": {pdb: {"native": native.get(pdb, ""), "rows": rows}
-                   for pdb, rows in sorted(groups.items())},
-        "clinical": clinical,
-        "cross_evidence": {pdb: sorted(set(v)) for pdb, v in cross.items()},
-        "same_evidence": {pdb: sorted(set(v)) for pdb, v in same.items()},
-        "reliability": load_reliability(qc_path) if qc_path else {},
-        "clinical_scan": load_clinical_scan(clinical_scan_path)
-        if clinical_scan_path else [],
-        "submission_status": load_submission_status(),
-        "domain_adaptation": {
-            "candidate_verdict": "WITHDRAWN_UNVALIDATED",
-            "note": "历史性能撤回；结构合成控制分数不是结合或临床风险概率。",
-        },
-        "caveats": [
-            "所有历史分数仅供事故追溯，不得作为当前排名或性能结果。",
-            "共享 CDR3 关联不是完整受体交叉反应证据；临床索引不是临床验证。",
-            "新原子完整性检查要求重建和重新验收数据；当前不得重训。",
-        ],
-    }
+        with clinical_path.open() as f:
+            references=[r for r in csv.DictReader(f,delimiter='\t')
+                        if r.get('record_status')=='REFERENCE_ONLY_NOT_GOLD_STANDARD']
+    return dict(groups={}, clinical=[], clinical_scan=[], cross_evidence={},
+        same_evidence={}, clinical_reference_facts=references,
+        reliability=dict(load_reliability(qc_path) if qc_path else {},
+                         status='historical_job_level_QC_not_release_authorization'),
+        submission_status=dict(load_submission_status(),status='historical_counts_only'),
+        artifact_status=state,
+        domain_adaptation=dict(candidate_verdict='WITHDRAWN_UNVALIDATED',
+                               note='No structural scoring or clinical model is released.'),
+        caveats=['历史结构分数、临床危险标签及排名已撤回，当前不展示。',
+                 'MAG-IC3 不是临床 a3a；临床参考事实不构成模型验收。',
+                 '新亲和力研究基线及冻结验收集另行管理；本页不作风险判断。'])
 
 
 class Handler(SimpleHTTPRequestHandler):

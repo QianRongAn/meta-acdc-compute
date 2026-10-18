@@ -1,0 +1,149 @@
+[
+  {
+    "job_id": "5brz_EVDPIGHLY",
+    "clinical_score": 0.8916,
+    "recovered_5seed_values": [
+      0.7178,
+      0.9695,
+      0.9956,
+      0.9241,
+      0.8512
+    ],
+    "reconstructed_5seed_mean": 0.89164,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.8916,
+    "recovered_ensemble_sd": 0.0998,
+    "delivered_other_table_score": 0.6828,
+    "delivered_other_table_sd": 0.2566,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5brz_ESDPIVAQY",
+    "clinical_score": 0.9483,
+    "recovered_5seed_values": [
+      0.8838,
+      0.9718,
+      0.9951,
+      0.9067,
+      0.9842
+    ],
+    "reconstructed_5seed_mean": 0.9483199999999999,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.9483,
+    "recovered_ensemble_sd": 0.0445,
+    "delivered_other_table_score": 0.7062,
+    "delivered_other_table_sd": 0.1472,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "",
+    "clinical_has_hazard": true,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5brz_ILAKFLHWL",
+    "clinical_score": 0.6761,
+    "recovered_5seed_values": [
+      0.7798,
+      0.5966,
+      0.805,
+      0.4194,
+      0.7795
+    ],
+    "reconstructed_5seed_mean": 0.67606,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.6761,
+    "recovered_ensemble_sd": 0.1485,
+    "delivered_other_table_score": 0.8095,
+    "delivered_other_table_sd": 0.2512,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "low_iptm",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5brz_KVAKELVHFL",
+    "clinical_score": 0.8417,
+    "recovered_5seed_values": [
+      0.9887,
+      0.7165,
+      0.9975,
+      0.7841,
+      0.7216
+    ],
+    "reconstructed_5seed_mean": 0.84168,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.8417,
+    "recovered_ensemble_sd": 0.1259,
+    "delivered_other_table_score": 0.6499,
+    "delivered_other_table_sd": 0.3065,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5bs0_EVDPIGHLY",
+    "clinical_score": 0.8829,
+    "recovered_5seed_values": [
+      0.7154,
+      0.9803,
+      0.9937,
+      0.7834,
+      0.9418
+    ],
+    "reconstructed_5seed_mean": 0.88292,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.8829,
+    "recovered_ensemble_sd": 0.1124,
+    "delivered_other_table_score": null,
+    "delivered_other_table_sd": null,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "no_confidence",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5eu6_YLEPGPVTA",
+    "clinical_score": 0.5476,
+    "recovered_5seed_values": [
+      0.968,
+      0.5483,
+      0.396,
+      0.3104,
+      0.5154
+    ],
+    "reconstructed_5seed_mean": 0.54762,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.5476,
+    "recovered_ensemble_sd": 0.2267,
+    "delivered_other_table_score": null,
+    "delivered_other_table_sd": null,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "no_confidence",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  },
+  {
+    "job_id": "5eu6_YLEPGPVTL",
+    "clinical_score": 0.9106,
+    "recovered_5seed_values": [
+      0.9627,
+      0.8458,
+      0.9726,
+      0.8013,
+      0.9708
+    ],
+    "reconstructed_5seed_mean": 0.91064,
+    "matches_clinical_to_4_decimals": true,
+    "recovered_ensemble_score": 0.9106,
+    "recovered_ensemble_sd": 0.0726,
+    "delivered_other_table_score": null,
+    "delivered_other_table_sd": null,
+    "qc_instance": "af3_predictions",
+    "qc_flag": "no_confidence",
+    "clinical_has_hazard": false,
+    "interpretation_allowed": false
+  }
+]
