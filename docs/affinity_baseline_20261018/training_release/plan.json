@@ -1,0 +1,26 @@
+{
+  "task": "experimental_SPR_pKD_regression",
+  "model": "Ridge; existing sequence/interaction/assay feature map",
+  "alpha_grid": [
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selection": "validation connected-block-equal weighted RMSE; lower alpha breaks exact ties",
+  "training_weights": "equal total weight per inherited training connected block",
+  "validation_weights": "equal total weight per inherited validation connected block",
+  "feature_fit": "DictVectorizer fitted on train only; validation/test unseen categories ignored; no other normalization",
+  "assay_feature": "instrument from verified primary_assay for development; frozen instrument for test; missing or unassigned instrument remains explicit",
+  "refit_on_validation": false,
+  "baseline": "training connected-block-weighted mean pKD",
+  "test_weights": "equal source total; equal lineage within source; equal observation within lineage",
+  "primary": "14 metric_role=primary observations; original15 preserved; excluded extrapolated S8WT/A11 sensitivity only",
+  "sensitivity": "all15; each source omitted in turn for metric sensitivity only, never refit",
+  "acceptance_predeclared": "primary source/lineage-weighted RMSE and MAE both strictly lower than train-mean comparator AND RMSE lower in all3 leave-one-source-out metric subsets; no significance or clinical claim",
+  "uncertainty": "3 source components insufficient for precise population CI; no bootstrap CI or p-value asserted",
+  "clinical_validation_allowed": false,
+  "binary_validation_allowed": false,
+  "structural_EGNN_validation_allowed": false,
+  "test_access_policy": "exclusive persisted ledger before reading test labels; no new fits on this profile after test access; no retry/overwrite of completed output",
+  "created_utc": "2026-10-18T09:13:20.074899+00:00"
+}
