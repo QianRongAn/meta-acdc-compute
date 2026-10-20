@@ -1,6 +1,14 @@
+> 2026-10-18：[交付审查逐项复核](delivery_audit_20261018/README.md)。下方“已修”属于历史代码声明，不能代表数据、模型、结果和交付闭环。旧临床表已逐行撤回，现行入口硬阻断；39项状态见新报告。
+
+> **后续原子数据处置已落地，当前判决见 [N2／N8 修复报告](STRUCTURE_ATOMIC_REPAIR_20261017.md)：168 份无标签资料核验，5 对新控制不足以恢复重训。**
+
+> **2026-10-17 补充审计发现新阻断项，原 28 项修复不能推出当前已可重训。见 [N1–N14 逐项复核](N_REVIEW_20261017.md)。**
+
+> 2026-10-16: earlier item-level code-fix claims do not certify the historical datasets. See [PRETRAIN_READINESS.md](PRETRAIN_READINESS.md) for rebuilt inputs, measured checks and remaining release blockers. Independent hy4 acceptance is pending; no retraining or historical performance is authorized.
+
 # 代码与主张审计（2026-10-15）
 
-外部复核提出 28 条问题。全部记录在案，逐条修复，状态列在每行末尾。
+外部复核提出28条问题。以下保留历史修复记录；当前完成度以2026-10-18逐项可复现证据为准，不再宣称全部解决。
 
 状态：`已修`=代码已改并有最小验证；`已撤回`=不支持的表述已从论文/文档移除；
 `待重算`=须重训或用真实标签重新评估后才能给数字；`待补数据`=需要实验或外部数据。
@@ -227,7 +235,7 @@ bootstrap 按任务逐条重采样，同受体候选、重复结构并不独立�
 
 ## 复现与验证
 
-每条修复都附最小验证（单测或可复跑脚本），入口：`python -m pytest src/meta_acdc/tests -q`。
+每条修复都附最小验证（单测或可复跑脚本），入口：`python -m unittest discover -s tests -v`。
 
 ---
 

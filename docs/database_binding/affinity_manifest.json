@@ -1,0 +1,1382 @@
+{
+  "schema_version": 1,
+  "task": "experimental_SPR_pKD_regression",
+  "status": "frozen_exploratory_affinity_dataset",
+  "binary_training_allowed": false,
+  "clinical_training_allowed": false,
+  "external_registry_sha256": "9e54cee8d222a1b3a968daea06396b1187531e70f182a4ebc9a49dfa5f05a7b7",
+  "sources": [
+    {
+      "file": "atlas_home.html",
+      "url": "https://atlas.ibbr.umd.edu/web/index.php",
+      "sha256": "8ea79cb6d43e87e0358fd5582017892be1239cdd708c49f26e51cbc74cbf58f7",
+      "bytes": 2411329,
+      "retrieved_at_utc": "2026-10-17T09:12:20.163627+00:00"
+    },
+    {
+      "file": "tcr3d_downloads.html",
+      "url": "https://tcr3d.ibbr.umd.edu/downloads",
+      "sha256": "551967d61fee13bff650abff48c3444f9e7cf773920feb3468081addc9bc7f3d",
+      "bytes": 17697,
+      "retrieved_at_utc": "2026-10-17T09:12:22.305594+00:00"
+    },
+    {
+      "file": "atlas_downloads.html",
+      "url": "https://atlas.ibbr.umd.edu/web/downloads.html",
+      "sha256": "32441553738891a6cdea5febaab7657f3fe1dde9699fe12f3f7e17041e48161e",
+      "bytes": 7702,
+      "retrieved_at_utc": "2026-10-17T09:13:02.314722+00:00"
+    },
+    {
+      "file": "atlas_TCRs.tsv",
+      "url": "https://atlas.ibbr.umd.edu/web/tables/downloads/TCRs.tsv",
+      "sha256": "260d2ae5a5511199083fabc72a36615533b5802713110cb2c3fa129bd7e352d4",
+      "bytes": 4413,
+      "retrieved_at_utc": "2026-10-17T09:13:03.322521+00:00"
+    },
+    {
+      "file": "atlas_MHCs.tsv",
+      "url": "https://atlas.ibbr.umd.edu/web/tables/downloads/MHCs.tsv",
+      "sha256": "f9250f44fda5913b638f94ec8d751f30559cb2ab19db3348f6373d7a880cf6a6",
+      "bytes": 854,
+      "retrieved_at_utc": "2026-10-17T09:13:04.235067+00:00"
+    },
+    {
+      "file": "atlas_Mutants.tsv",
+      "url": "https://atlas.ibbr.umd.edu/web/tables/downloads/Mutants.tsv",
+      "sha256": "61b3edb49ca654c0709d315d8eb8e32a998ad2aec21d0a8981eda2ccfc6396d4",
+      "bytes": 258490,
+      "retrieved_at_utc": "2026-10-17T09:13:06.281718+00:00"
+    },
+    {
+      "file": "tcr3d_chain.tsv",
+      "url": "https://tcr3d.ibbr.umd.edu/static/download/tcr_chain_data.tsv",
+      "sha256": "8ae7f039811506650d718e1956fc0ad73e13b9f2bf9609a3dcf88a699bdb33a9",
+      "bytes": 141510,
+      "retrieved_at_utc": "2026-10-17T09:13:07.871792+00:00"
+    },
+    {
+      "file": "tcr3d_complexes.tsv",
+      "url": "https://tcr3d.ibbr.umd.edu/static/download/tcr_complexes_data.tsv",
+      "sha256": "52796bee519ecafab3c93c94544c4c8a3f8ff490c1857dcad46d66adbf802e2d",
+      "bytes": 78041,
+      "retrieved_at_utc": "2026-10-17T09:13:09.367893+00:00"
+    },
+    {
+      "file": "clinical_NCT03070392.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03070392",
+      "sha256": "6ccc6645f4ad7da122c06da0de8ac7b4a4ced4d5e27eb7289357d9241ccafd79",
+      "bytes": 118141,
+      "retrieved_at_utc": "2026-10-17T09:14:42.702251+00:00"
+    },
+    {
+      "file": "clinical_NCT01350401.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01350401",
+      "sha256": "f29c84a72606637cf6c36e4fe033dda414ad7f3f9c9d9078c9cb9de68768ba90",
+      "bytes": 27996,
+      "retrieved_at_utc": "2026-10-17T09:14:43.358977+00:00"
+    },
+    {
+      "file": "clinical_NCT01352286.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01352286",
+      "sha256": "d8e3378b29fab19113f1eafdf1d9220f23453c5e02ccfd4209eeeadbfbbad7af",
+      "bytes": 68167,
+      "retrieved_at_utc": "2026-10-17T09:14:44.635627+00:00"
+    },
+    {
+      "file": "rcsb_1mi5.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1MI5/display",
+      "sha256": "97da95b0a95aa921403a7e811940ae92892ae3f018164a47caa75a042105e5fa",
+      "bytes": 1092,
+      "retrieved_at_utc": "2026-10-17T09:16:37.180336+00:00"
+    },
+    {
+      "file": "clinical_NCT01273181.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01273181",
+      "sha256": "8fa1b2df8a3b129ad69505a346c8a15974e411cff185306a2ad7e4da69f4e45d",
+      "bytes": 61318,
+      "retrieved_at_utc": "2026-10-17T09:16:38.225896+00:00"
+    },
+    {
+      "file": "rcsb_1ao7.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1AO7/display",
+      "sha256": "b3c909d29f4f0da96d017b282e7b3aab118c330fbd207cf0798b065d9ccf639b",
+      "bytes": 1122,
+      "retrieved_at_utc": "2026-10-17T09:17:11.517202+00:00"
+    },
+    {
+      "file": "rcsb_1bd2.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1BD2/display",
+      "sha256": "dffa8637f903641d8e45e96804e1f0c3f8c8d43a0fea3ac47a4b74750f70e2eb",
+      "bytes": 1121,
+      "retrieved_at_utc": "2026-10-17T09:17:13.004639+00:00"
+    },
+    {
+      "file": "rcsb_1qrn.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1QRN/display",
+      "sha256": "250e45f33cab2f028fb12e43b26f6efa7b8d125f87c4035f23068720e8e0f3d5",
+      "bytes": 1142,
+      "retrieved_at_utc": "2026-10-17T09:17:13.004935+00:00"
+    },
+    {
+      "file": "rcsb_1qse.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1QSE/display",
+      "sha256": "7ffe8fe6304f7a4e23676cb821ef19e4979b0cfefddbc8dc6952f38d5ca6fa10",
+      "bytes": 1135,
+      "retrieved_at_utc": "2026-10-17T09:17:13.005175+00:00"
+    },
+    {
+      "file": "rcsb_1qsf.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/1QSF/display",
+      "sha256": "d8692432c41a268cea1a015649c5100c1a9eb172876ebec67cda8e8c0af999d5",
+      "bytes": 1095,
+      "retrieved_at_utc": "2026-10-17T09:17:13.005330+00:00"
+    },
+    {
+      "file": "rcsb_2ak4.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2AK4/display",
+      "sha256": "69938950bd52c74094ef61ec74569d6e7bdef5687fb4d32fa03c04a175469db3",
+      "bytes": 1240,
+      "retrieved_at_utc": "2026-10-17T09:17:13.005541+00:00"
+    },
+    {
+      "file": "rcsb_2bnq.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2BNQ/display",
+      "sha256": "b2eec5c7ddf81c9c1239f3f1ad31769f15b63eee52408fa85975684e17653e40",
+      "bytes": 1165,
+      "retrieved_at_utc": "2026-10-17T09:17:13.005681+00:00"
+    },
+    {
+      "file": "rcsb_2bnr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2BNR/display",
+      "sha256": "da639ec39945c5f2d7556340980cca9428a5941ff9e76a63ed621b11322a2405",
+      "bytes": 1165,
+      "retrieved_at_utc": "2026-10-17T09:17:13.006022+00:00"
+    },
+    {
+      "file": "rcsb_2esv.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2ESV/display",
+      "sha256": "3ed265d2881616680c8ab3a6beb27cf0c03afecc3b1c69f3850385f56e2547a6",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:17:13.006177+00:00"
+    },
+    {
+      "file": "rcsb_2f53.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2F53/display",
+      "sha256": "b6a08ac724119df38abbe4c54c37143b0f1455b9ab2bd2283d870b965a0bccd9",
+      "bytes": 1132,
+      "retrieved_at_utc": "2026-10-17T09:17:13.024866+00:00"
+    },
+    {
+      "file": "rcsb_2f54.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2F54/display",
+      "sha256": "0a8d39aa251e219485fbf203b48d809506026c27348da3c3d050a4b9dea9ac0e",
+      "bytes": 1176,
+      "retrieved_at_utc": "2026-10-17T09:17:13.762853+00:00"
+    },
+    {
+      "file": "rcsb_2p5e.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2P5E/display",
+      "sha256": "325a7c0e33b30bc6a13a239b2f4d1845cf0b8c1cc3a8617830798935dd5a272d",
+      "bytes": 1144,
+      "retrieved_at_utc": "2026-10-17T09:17:13.763179+00:00"
+    },
+    {
+      "file": "rcsb_2p5w.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2P5W/display",
+      "sha256": "4911d9516f82e3e17349131234e306386f750baf40c1c704e9abe509db6795d5",
+      "bytes": 1142,
+      "retrieved_at_utc": "2026-10-17T09:17:15.118026+00:00"
+    },
+    {
+      "file": "rcsb_2vlj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2VLJ/display",
+      "sha256": "7764f5f2a3e8c1123a05cc401a20e7f78762012c0e5db55f1dcc1084cc41003d",
+      "bytes": 1169,
+      "retrieved_at_utc": "2026-10-17T09:17:15.118492+00:00"
+    },
+    {
+      "file": "rcsb_2vlr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/2VLR/display",
+      "sha256": "d81874579d7fc9690da05873217d0b85179fa93c0c39dc2a782f43ab4f16309c",
+      "bytes": 1189,
+      "retrieved_at_utc": "2026-10-17T09:17:15.118937+00:00"
+    },
+    {
+      "file": "rcsb_3dxa.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3DXA/display",
+      "sha256": "9621e5995ec315ef5155f16ff95a29c814f2f7600b892965456690b54716feaa",
+      "bytes": 1191,
+      "retrieved_at_utc": "2026-10-17T09:17:15.119215+00:00"
+    },
+    {
+      "file": "rcsb_3ffc.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3FFC/display",
+      "sha256": "4ddd34c7bd3e4176c89652aad9e5179666b99f8383c153166386d14bf6846608",
+      "bytes": 1196,
+      "retrieved_at_utc": "2026-10-17T09:17:15.119351+00:00"
+    },
+    {
+      "file": "rcsb_3gsn.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3GSN/display",
+      "sha256": "55ffa2572932f46f84344c70d01b1ec3c5cb3ed2e3182cfdc65c420086991bea",
+      "bytes": 1231,
+      "retrieved_at_utc": "2026-10-17T09:17:15.119449+00:00"
+    },
+    {
+      "file": "rcsb_3h9s.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3H9S/display",
+      "sha256": "6edb09d0b966a9bf29240f6c67b82315cef5d04142313aff776e0a40329570ac",
+      "bytes": 1125,
+      "retrieved_at_utc": "2026-10-17T09:17:15.278308+00:00"
+    },
+    {
+      "file": "rcsb_3hg1.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3HG1/display",
+      "sha256": "0edd35777c3dd36eecb6910468e500f0ae4fdbc302a7eee856a1504b2aad0389",
+      "bytes": 1121,
+      "retrieved_at_utc": "2026-10-17T09:17:15.279405+00:00"
+    },
+    {
+      "file": "rcsb_3kpr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3KPR/display",
+      "sha256": "5d96ff71be82d036cf9d4ca4f03a57ddaea3b4677495e61e12598b0b857abb67",
+      "bytes": 1159,
+      "retrieved_at_utc": "2026-10-17T09:17:15.799521+00:00"
+    },
+    {
+      "file": "rcsb_3kps.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3KPS/display",
+      "sha256": "1b3203faa9eb09a8336153e00e4358c721985f4648ea5e1a3ae86a009998c26d",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:17:16.799198+00:00"
+    },
+    {
+      "file": "rcsb_3mv7.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3MV7/display",
+      "sha256": "db89c349519cc47832b3ced1efac27c4e90937c0275066196d2657989a3ec199",
+      "bytes": 1177,
+      "retrieved_at_utc": "2026-10-17T09:17:16.799854+00:00"
+    },
+    {
+      "file": "rcsb_3mv8.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3MV8/display",
+      "sha256": "5591bfbbd1174b16d2743c316c111a62724d244d7577a7053b20e5588641f113",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:17:16.800126+00:00"
+    },
+    {
+      "file": "rcsb_3mv9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3MV9/display",
+      "sha256": "83a040d4ae1140d442030bec56ef6ee93911f42b46719c4fa8706e0f4d2aca3e",
+      "bytes": 1178,
+      "retrieved_at_utc": "2026-10-17T09:17:16.800445+00:00"
+    },
+    {
+      "file": "rcsb_3o4l.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3O4L/display",
+      "sha256": "35c989a4d4fc882bac81665e192e6da40d0e3c11c2f3cb6414289546a5e8d5c2",
+      "bytes": 1136,
+      "retrieved_at_utc": "2026-10-17T09:17:16.800717+00:00"
+    },
+    {
+      "file": "rcsb_3pwp.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3PWP/display",
+      "sha256": "dab708cfbf48d1b6db94446feb04cd1acab2edefd4cc0a04df4313a44b9ff3e7",
+      "bytes": 1121,
+      "retrieved_at_utc": "2026-10-17T09:17:16.800941+00:00"
+    },
+    {
+      "file": "rcsb_3qdg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3QDG/display",
+      "sha256": "0dab3cd42873feae00e7d9f3ac416ff6c4408dbc9a747423991fea65ec7c2c8c",
+      "bytes": 1125,
+      "retrieved_at_utc": "2026-10-17T09:17:17.355263+00:00"
+    },
+    {
+      "file": "rcsb_3qdj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3QDJ/display",
+      "sha256": "309b26b55bbf7fb95d18308a2521c1e492d16ae906b7a9db97017cccf89a6fb2",
+      "bytes": 1123,
+      "retrieved_at_utc": "2026-10-17T09:17:17.545352+00:00"
+    },
+    {
+      "file": "rcsb_3qdm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3QDM/display",
+      "sha256": "0c044709d92a6bb9b7413e3fe1df7eb4d45a381425da09bfd3ddff8e9d33ae10",
+      "bytes": 1131,
+      "retrieved_at_utc": "2026-10-17T09:17:18.618758+00:00"
+    },
+    {
+      "file": "rcsb_3qeq.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3QEQ/display",
+      "sha256": "342d86b8b81186a46d63fd237d165f840f864ab028b58409311452a0e97af77b",
+      "bytes": 1130,
+      "retrieved_at_utc": "2026-10-17T09:17:18.618981+00:00"
+    },
+    {
+      "file": "rcsb_3qfj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3QFJ/display",
+      "sha256": "f98bd40fc71d55b2c41f7b18ac998c9ab11124aae8438737c0d48153bd3478dc",
+      "bytes": 1118,
+      "retrieved_at_utc": "2026-10-17T09:17:18.621015+00:00"
+    },
+    {
+      "file": "rcsb_3utt.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3UTT/display",
+      "sha256": "3324392e51b9fb41d40b1c796af688354900f8322bd740911ba575ec2b171a6a",
+      "bytes": 1158,
+      "retrieved_at_utc": "2026-10-17T09:17:18.621180+00:00"
+    },
+    {
+      "file": "rcsb_3vxm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3VXM/display",
+      "sha256": "3d65a667ee46ad46dfd1d7cbb8fcf2d911af0834c860e9dc932bb44cd09018f5",
+      "bytes": 1197,
+      "retrieved_at_utc": "2026-10-17T09:17:18.621402+00:00"
+    },
+    {
+      "file": "rcsb_3vxr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3VXR/display",
+      "sha256": "540ddc0d7b4511229f352f21aaacc44bd6f2d58bb7983e1e07ce91e98d85787b",
+      "bytes": 1219,
+      "retrieved_at_utc": "2026-10-17T09:17:18.970130+00:00"
+    },
+    {
+      "file": "rcsb_3vxs.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3VXS/display",
+      "sha256": "914dcfbace704e2908aec6204b189e0e28f38f9623ff81ee1180006d5ce08d34",
+      "bytes": 1219,
+      "retrieved_at_utc": "2026-10-17T09:17:19.137487+00:00"
+    },
+    {
+      "file": "rcsb_3vxu.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/3VXU/display",
+      "sha256": "b29ccc0e3301b5407e87bf3cfb9fb9cf3d2f2d3a4903a5b753b2c6b7e4bc616a",
+      "bytes": 1209,
+      "retrieved_at_utc": "2026-10-17T09:17:19.562217+00:00"
+    },
+    {
+      "file": "rcsb_4ftv.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4FTV/display",
+      "sha256": "f2e5646c733f798731fb88b23353597d8489cf8c7d463343e504244d845f8675",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:17:20.354819+00:00"
+    },
+    {
+      "file": "rcsb_4g8g.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4G8G/display",
+      "sha256": "eec6a46eb16099264c740f97d1dcf22c456ed0bb49594a6aa0a4fa67a72129ec",
+      "bytes": 1165,
+      "retrieved_at_utc": "2026-10-17T09:17:20.355743+00:00"
+    },
+    {
+      "file": "rcsb_4g9f.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4G9F/display",
+      "sha256": "08e8a2375c954338dbfd316b6799d72034ff791141b0aea91a24601f142a7563",
+      "bytes": 1175,
+      "retrieved_at_utc": "2026-10-17T09:17:20.356032+00:00"
+    },
+    {
+      "file": "rcsb_4jfd.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4JFD/display",
+      "sha256": "93b06b2d3b26bf6ab1585721222ef51784dbc52bd836840f66fc15be966a80e1",
+      "bytes": 1150,
+      "retrieved_at_utc": "2026-10-17T09:17:21.323181+00:00"
+    },
+    {
+      "file": "rcsb_4jfe.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4JFE/display",
+      "sha256": "cde3c5f1a47654055a0d41c05512be24ea07cfda818d3a3e56a0cf76be08faca",
+      "bytes": 1155,
+      "retrieved_at_utc": "2026-10-17T09:17:21.323481+00:00"
+    },
+    {
+      "file": "rcsb_4jff.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4JFF/display",
+      "sha256": "aafdd1503e4aa26cb5ec8c7ae1e176c88f606ce391b9af6b5c59466a730aa686",
+      "bytes": 1164,
+      "retrieved_at_utc": "2026-10-17T09:17:21.567146+00:00"
+    },
+    {
+      "file": "rcsb_4jry.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4JRY/display",
+      "sha256": "06760ec5060ab22df18a8a4ae193c2ebb3ead96c588708c89563caa094e9643a",
+      "bytes": 1137,
+      "retrieved_at_utc": "2026-10-17T09:17:22.167124+00:00"
+    },
+    {
+      "file": "rcsb_4l3e.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4L3E/display",
+      "sha256": "7a799854a162dcc23bc0bda8d645a7d61947fc490f52b45db270ac395cf4d6f9",
+      "bytes": 1162,
+      "retrieved_at_utc": "2026-10-17T09:17:22.167545+00:00"
+    },
+    {
+      "file": "rcsb_4mji.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4MJI/display",
+      "sha256": "d2dec1f67fec2c1ee393fddf49ecd1343595bafa121e35433f856e61b01cb57d",
+      "bytes": 1218,
+      "retrieved_at_utc": "2026-10-17T09:17:22.920625+00:00"
+    },
+    {
+      "file": "rcsb_4mnq.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4MNQ/display",
+      "sha256": "86c65df7e45ff990c3e02527a0fa7e2b62dafc94fa16e8c278f429333d2dc456",
+      "bytes": 1252,
+      "retrieved_at_utc": "2026-10-17T09:17:23.286101+00:00"
+    },
+    {
+      "file": "rcsb_4prh.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4PRH/display",
+      "sha256": "b1969b1f34dd08ac11167c5cb7583e25b0debdb6ecd288f705048fda09699c54",
+      "bytes": 1138,
+      "retrieved_at_utc": "2026-10-17T09:17:23.406937+00:00"
+    },
+    {
+      "file": "rcsb_4pri.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4PRI/display",
+      "sha256": "512d1861e28a919248ccfdab5f942dc37f4da12146e9203d4648c841ef024993",
+      "bytes": 1132,
+      "retrieved_at_utc": "2026-10-17T09:17:23.858084+00:00"
+    },
+    {
+      "file": "rcsb_4prp.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4PRP/display",
+      "sha256": "bede7ce82056363a3544149156dfbbec456c072c7a526a9a1b68d61443c00fd5",
+      "bytes": 1131,
+      "retrieved_at_utc": "2026-10-17T09:17:24.548564+00:00"
+    },
+    {
+      "file": "rcsb_4qok.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4QOK/display",
+      "sha256": "8754b76a17df242de5aa1248a20e77f1df2177f2246c98df270cb06840df719f",
+      "bytes": 1183,
+      "retrieved_at_utc": "2026-10-17T09:17:24.992020+00:00"
+    },
+    {
+      "file": "rcsb_4qrp.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4QRP/display",
+      "sha256": "fc5f2fe62c6c199b5bcb5d50cea339d5daf307cd2cf59536d104f62ecd4ca62c",
+      "bytes": 1188,
+      "retrieved_at_utc": "2026-10-17T09:17:25.149429+00:00"
+    },
+    {
+      "file": "rcsb_4qrr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/4QRR/display",
+      "sha256": "fc78ec6ff3aea83c2f672aa2f82cd48a4b63c1f6d683fe4d3cd8fbcd5df29c1d",
+      "bytes": 1205,
+      "retrieved_at_utc": "2026-10-17T09:17:25.595860+00:00"
+    },
+    {
+      "file": "rcsb_5brz.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5BRZ/display",
+      "sha256": "2417a7cd90bde016a690278c95fb6631e716f413bcbe4432a728ab33af5b7f6a",
+      "bytes": 1213,
+      "retrieved_at_utc": "2026-10-17T09:17:26.487226+00:00"
+    },
+    {
+      "file": "rcsb_5bs0.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5BS0/display",
+      "sha256": "2de2a7552bd21e070269d83feadeabfcd39d7f52815f54d66510c61319fd898e",
+      "bytes": 1183,
+      "retrieved_at_utc": "2026-10-17T09:17:26.487495+00:00"
+    },
+    {
+      "file": "rcsb_5c07.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C07/display",
+      "sha256": "642ced8b5adab56724e04168a2c4228d579c45fad8ce1c70d1e05194ebf37c07",
+      "bytes": 1168,
+      "retrieved_at_utc": "2026-10-17T09:17:26.488324+00:00"
+    },
+    {
+      "file": "rcsb_5c08.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C08/display",
+      "sha256": "c341888243db094efeb066d773f9482eb0e9bf9dd75fe83c703d29c738f496a0",
+      "bytes": 1158,
+      "retrieved_at_utc": "2026-10-17T09:17:27.542899+00:00"
+    },
+    {
+      "file": "rcsb_5c09.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C09/display",
+      "sha256": "04c78e19f6c5dd5821c881c9819bfd809a63e45a1c19fa0393323c260416df13",
+      "bytes": 1168,
+      "retrieved_at_utc": "2026-10-17T09:17:27.543204+00:00"
+    },
+    {
+      "file": "rcsb_5c0a.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C0A/display",
+      "sha256": "eaa7b568267ca0f1a45dbc31c9b6aaa0d6ef014dd0719731abfa1ff2789c8c3c",
+      "bytes": 1165,
+      "retrieved_at_utc": "2026-10-17T09:17:27.544001+00:00"
+    },
+    {
+      "file": "rcsb_5c0b.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C0B/display",
+      "sha256": "909d16b5c060dfd8dc92a58a5d374fa87db61f72dd26b5210d0a37022d532204",
+      "bytes": 1167,
+      "retrieved_at_utc": "2026-10-17T09:17:27.544381+00:00"
+    },
+    {
+      "file": "rcsb_5c0c.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5C0C/display",
+      "sha256": "bdc09629ef9f7b1c97a152c157365f59703dd6dcddc6d9e3fb73a9fde976c69e",
+      "bytes": 1170,
+      "retrieved_at_utc": "2026-10-17T09:17:27.544661+00:00"
+    },
+    {
+      "file": "rcsb_5d2l.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5D2L/display",
+      "sha256": "bca5ad80b330dd6611ea7796d88bcf2e8e55216530f95ba293b12c8823233c28",
+      "bytes": 1368,
+      "retrieved_at_utc": "2026-10-17T09:17:27.544907+00:00"
+    },
+    {
+      "file": "rcsb_5d2n.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5D2N/display",
+      "sha256": "50bada65f654f48b2e4dd20c98547e8af5eaae03613302e7fad7e63900e61e94",
+      "bytes": 1248,
+      "retrieved_at_utc": "2026-10-17T09:17:27.658611+00:00"
+    },
+    {
+      "file": "rcsb_5e9d.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5E9D/display",
+      "sha256": "8cd4a330d4232126553dd31978abd49e58d6cddbddc3b09320fe2bd8411b578b",
+      "bytes": 1011,
+      "retrieved_at_utc": "2026-10-17T09:17:27.822195+00:00"
+    },
+    {
+      "file": "rcsb_5eu6.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5EU6/display",
+      "sha256": "8fff3423835d90da04b863d8a58569aa97f024af718e6bcc8318140b1bec75f9",
+      "bytes": 1183,
+      "retrieved_at_utc": "2026-10-17T09:17:28.223775+00:00"
+    },
+    {
+      "file": "rcsb_5hhm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5HHM/display",
+      "sha256": "201ba632a011cc85fff4054e9d5fbb9d7c887c603cbe004851e61b553029fcdb",
+      "bytes": 1175,
+      "retrieved_at_utc": "2026-10-17T09:17:29.524962+00:00"
+    },
+    {
+      "file": "rcsb_5hho.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5HHO/display",
+      "sha256": "ebeeb64d8847c30d214668927d523882a9185f97efe8a935d3fe600862865c0b",
+      "bytes": 1178,
+      "retrieved_at_utc": "2026-10-17T09:17:29.525396+00:00"
+    },
+    {
+      "file": "rcsb_5hyj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5HYJ/display",
+      "sha256": "c2ad6e07bb9c6278c86f193983b28076ae96a7a1b3e7774b8f6ad162375a3fc4",
+      "bytes": 1246,
+      "retrieved_at_utc": "2026-10-17T09:17:29.526053+00:00"
+    },
+    {
+      "file": "rcsb_5isz.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5ISZ/display",
+      "sha256": "9795c90f9d11fc348d324934cc337505447e10bb01b6c647642909b379eadbfd",
+      "bytes": 1145,
+      "retrieved_at_utc": "2026-10-17T09:17:29.526304+00:00"
+    },
+    {
+      "file": "rcsb_5jhd.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5JHD/display",
+      "sha256": "cdcabd7aaf4b79a93ea16bc5ee60562f5c25caae7dc366aee09d9ca96f1e918b",
+      "bytes": 1185,
+      "retrieved_at_utc": "2026-10-17T09:17:29.526742+00:00"
+    },
+    {
+      "file": "rcsb_5jzi.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5JZI/display",
+      "sha256": "6a4dedf5a87587501da6b266a9b0f7a721a0bc72dcc28930b0c35a2b2d2dd12f",
+      "bytes": 1230,
+      "retrieved_at_utc": "2026-10-17T09:17:29.526931+00:00"
+    },
+    {
+      "file": "rcsb_5men.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5MEN/display",
+      "sha256": "5fed219df2c5fa3865ca2d858057b098474ab9c2fa4315391cee2517aff458bd",
+      "bytes": 1205,
+      "retrieved_at_utc": "2026-10-17T09:17:29.527117+00:00"
+    },
+    {
+      "file": "rcsb_5nme.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5NME/display",
+      "sha256": "0e68a324058b8fc51c260fb842b285eb1478799b2943df2dd9fad108049ab931",
+      "bytes": 1202,
+      "retrieved_at_utc": "2026-10-17T09:17:29.527391+00:00"
+    },
+    {
+      "file": "rcsb_5nmf.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5NMF/display",
+      "sha256": "f7b22ddf640381548f183331992d2ea4e649d161a479718b51adbbaafc45b22a",
+      "bytes": 1473,
+      "retrieved_at_utc": "2026-10-17T09:17:29.773674+00:00"
+    },
+    {
+      "file": "rcsb_5nmg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5NMG/display",
+      "sha256": "4f396de3ee59478d35413b254caffad011dc36aa49c0ced73f9f213913e36c78",
+      "bytes": 1207,
+      "retrieved_at_utc": "2026-10-17T09:17:29.953379+00:00"
+    },
+    {
+      "file": "rcsb_5tez.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5TEZ/display",
+      "sha256": "b54535cf85419899f97ef998d1ab458dde0e9b7af7effcdb76fa070581f5cf8d",
+      "bytes": 1218,
+      "retrieved_at_utc": "2026-10-17T09:17:30.033956+00:00"
+    },
+    {
+      "file": "rcsb_5w1v.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5W1V/display",
+      "sha256": "1ab6a7c92e15810a2e8ec554009657c60110c40e9bf4231a69930a64c54179bb",
+      "bytes": 1268,
+      "retrieved_at_utc": "2026-10-17T09:17:31.356122+00:00"
+    },
+    {
+      "file": "rcsb_5w1w.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5W1W/display",
+      "sha256": "67b2b39eebbea3b818a301d0cadf58fab43abe869371176e4def132ccb6701ef",
+      "bytes": 1285,
+      "retrieved_at_utc": "2026-10-17T09:17:31.356556+00:00"
+    },
+    {
+      "file": "rcsb_5wkf.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5WKF/display",
+      "sha256": "23d6b12ecfa7171f8409546ea0cf2042275e56b37fa1c9e4ba795e35e0237969",
+      "bytes": 1221,
+      "retrieved_at_utc": "2026-10-17T09:17:31.357269+00:00"
+    },
+    {
+      "file": "rcsb_5wkh.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/5WKH/display",
+      "sha256": "d3d0fa5422bbf540b9a8182134f14eae671d965c59e57f370dc8524b8796d60e",
+      "bytes": 1213,
+      "retrieved_at_utc": "2026-10-17T09:17:31.357529+00:00"
+    },
+    {
+      "file": "rcsb_6am5.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6AM5/display",
+      "sha256": "0987ae884716246c6dbd7739f128900847d57e7ad27b9492ee327accf5bc3870",
+      "bytes": 1167,
+      "retrieved_at_utc": "2026-10-17T09:17:31.460628+00:00"
+    },
+    {
+      "file": "rcsb_6amu.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6AMU/display",
+      "sha256": "7402c8b52acb5b3f0d5f7d8490073d1dca50c2d88cfee4890cfd9f0ccd5a3809",
+      "bytes": 1172,
+      "retrieved_at_utc": "2026-10-17T09:17:31.460977+00:00"
+    },
+    {
+      "file": "rcsb_6avf.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6AVF/display",
+      "sha256": "be1b47931e12c4a69ff77874bad47019e0bef8922539eb0098216bac7943b7bf",
+      "bytes": 1376,
+      "retrieved_at_utc": "2026-10-17T09:17:36.127194+00:00"
+    },
+    {
+      "file": "rcsb_6avg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6AVG/display",
+      "sha256": "a2f3d7c6ebb22a8d21f2506e4f39ad269e7d905283787681ac219fcfe1c20a7f",
+      "bytes": 1423,
+      "retrieved_at_utc": "2026-10-17T09:17:36.127479+00:00"
+    },
+    {
+      "file": "rcsb_6bj2.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6BJ2/display",
+      "sha256": "e5349560a35ca069265150a74788ada8d464cfa09576e74773994c97506306e8",
+      "bytes": 1212,
+      "retrieved_at_utc": "2026-10-17T09:17:36.127814+00:00"
+    },
+    {
+      "file": "rcsb_6d78.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6D78/display",
+      "sha256": "b895d98d8612034100b7eb329902d7ffd03468c15148eb5c5127a45b0ef7effe",
+      "bytes": 1197,
+      "retrieved_at_utc": "2026-10-17T09:17:36.128209+00:00"
+    },
+    {
+      "file": "rcsb_6dkp.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6DKP/display",
+      "sha256": "df4bea8e1df108b4ba0bbbc478c77ae6a839f174acd0e3c6cdece5b94eeb1a20",
+      "bytes": 1211,
+      "retrieved_at_utc": "2026-10-17T09:17:36.128638+00:00"
+    },
+    {
+      "file": "rcsb_6eqa.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6EQA/display",
+      "sha256": "d63bf0806e22f13e512626b4880d6670e81ba0daae4a582e8d77066f8abce338",
+      "bytes": 1164,
+      "retrieved_at_utc": "2026-10-17T09:17:36.129083+00:00"
+    },
+    {
+      "file": "rcsb_6eqb.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6EQB/display",
+      "sha256": "5622c2ff36ee6be3f10bcd9b589b8a3b2686d0c49a69753446761f206d228999",
+      "bytes": 1194,
+      "retrieved_at_utc": "2026-10-17T09:17:36.129273+00:00"
+    },
+    {
+      "file": "rcsb_6mtm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6MTM/display",
+      "sha256": "b2065eb093f9d3bdf23f28b9acd5bd70609ef7f4afee7a5b8a292ba8053d3c03",
+      "bytes": 1157,
+      "retrieved_at_utc": "2026-10-17T09:17:36.129570+00:00"
+    },
+    {
+      "file": "rcsb_6p64.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6P64/display",
+      "sha256": "9a51824b5eb179c7341158d1b27704d987c5b30a783d1f32ff755fb361b58ff2",
+      "bytes": 1222,
+      "retrieved_at_utc": "2026-10-17T09:17:36.129797+00:00"
+    },
+    {
+      "file": "rcsb_6q3s.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6Q3S/display",
+      "sha256": "638d864b4a3c6e6f760ffbf59f3b6e524f5725479b9ca78ddacd3b148e8a9caf",
+      "bytes": 1259,
+      "retrieved_at_utc": "2026-10-17T09:17:36.130200+00:00"
+    },
+    {
+      "file": "rcsb_6r2l.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6R2L/display",
+      "sha256": "3d3076ab4bcf1e6f0496fd2d270b4dec384761bcd5ab30238cc5c04031406917",
+      "bytes": 1244,
+      "retrieved_at_utc": "2026-10-17T09:17:36.130476+00:00"
+    },
+    {
+      "file": "rcsb_6rp9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6RP9/display",
+      "sha256": "8cdecc406c95f4f151fa677dc4395dfd53b5e0312c529db400ed72469f1f216f",
+      "bytes": 1205,
+      "retrieved_at_utc": "2026-10-17T09:17:36.567384+00:00"
+    },
+    {
+      "file": "rcsb_6rpa.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6RPA/display",
+      "sha256": "b9023af7a449d2a1db3b56099ff37cb58d329ee9e6786ee065514845cda826e7",
+      "bytes": 1199,
+      "retrieved_at_utc": "2026-10-17T09:17:37.432569+00:00"
+    },
+    {
+      "file": "rcsb_6rpb.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6RPB/display",
+      "sha256": "0d133fa6cc2e1f4c34c2ca3b65398b1cae6450b5f5a82073728cc6b7f8b61d9f",
+      "bytes": 1241,
+      "retrieved_at_utc": "2026-10-17T09:17:37.488951+00:00"
+    },
+    {
+      "file": "rcsb_6rsy.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6RSY/display",
+      "sha256": "dd1d3f701538f900c76f1e6e7913fcf08a88f9682c4194c1438125121f015769",
+      "bytes": 1189,
+      "retrieved_at_utc": "2026-10-17T09:17:37.489367+00:00"
+    },
+    {
+      "file": "rcsb_6tmo.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6TMO/display",
+      "sha256": "b279ecdc9b3c3fdde09c8b365a8ad351dd7b2c97f865050b93f571a355add58c",
+      "bytes": 1175,
+      "retrieved_at_utc": "2026-10-17T09:17:38.135639+00:00"
+    },
+    {
+      "file": "rcsb_6tro.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6TRO/display",
+      "sha256": "4299b7528e7e4a1deae10d0de222fcd82b3cdaa51ffa99b04ec7f462e5cfc9d4",
+      "bytes": 1160,
+      "retrieved_at_utc": "2026-10-17T09:17:38.177084+00:00"
+    },
+    {
+      "file": "rcsb_6uk2.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6UK2/display",
+      "sha256": "8ccd0ce213d8f2b2284859e714f9ac216ba76ad75ce1002e960c70c7125d6424",
+      "bytes": 1180,
+      "retrieved_at_utc": "2026-10-17T09:17:39.212730+00:00"
+    },
+    {
+      "file": "rcsb_6uk4.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6UK4/display",
+      "sha256": "b47bf25342f6852c6049f5fe17658d301e09b8ba2647faa6702fb62e6264a748",
+      "bytes": 1180,
+      "retrieved_at_utc": "2026-10-17T09:17:39.725839+00:00"
+    },
+    {
+      "file": "rcsb_6uln.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6ULN/display",
+      "sha256": "f08e00979b289e5e6b7e889639149ea058d2a7a21f97775bb0547e37637a8970",
+      "bytes": 1128,
+      "retrieved_at_utc": "2026-10-17T09:17:39.726115+00:00"
+    },
+    {
+      "file": "rcsb_6ulr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6ULR/display",
+      "sha256": "88b274eaba840e7bdabfb43bc6fc8eca1b9c6186ec7301e7f92995d315d5f38c",
+      "bytes": 1129,
+      "retrieved_at_utc": "2026-10-17T09:17:39.794627+00:00"
+    },
+    {
+      "file": "rcsb_6uon.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6UON/display",
+      "sha256": "e818afbd2ac54332249f25d528b982df8f3d11a0dd21995fb7c7ccc66943d707",
+      "bytes": 1232,
+      "retrieved_at_utc": "2026-10-17T09:17:39.794911+00:00"
+    },
+    {
+      "file": "rcsb_6uz1.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6UZ1/display",
+      "sha256": "de50810423e76e344b52d8a5ff015d17c12f54d63aebb417ddcb1db27ea88606",
+      "bytes": 1005,
+      "retrieved_at_utc": "2026-10-17T09:17:41.296061+00:00"
+    },
+    {
+      "file": "rcsb_6vm7.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VM7/display",
+      "sha256": "980c8170791c423a805605930834b316ca4e6082855362254177f6ee13434889",
+      "bytes": 1211,
+      "retrieved_at_utc": "2026-10-17T09:17:41.296357+00:00"
+    },
+    {
+      "file": "rcsb_6vm8.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VM8/display",
+      "sha256": "625ddad48d330a4e2afbe7644eba9655b2392179fc97a1d8229e620234dc6417",
+      "bytes": 1203,
+      "retrieved_at_utc": "2026-10-17T09:17:41.297136+00:00"
+    },
+    {
+      "file": "rcsb_6vm9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VM9/display",
+      "sha256": "d06c6c33c266efbd856f98ddf4b6af66e318989494d91c2f1d526eb0983ca5ad",
+      "bytes": 1163,
+      "retrieved_at_utc": "2026-10-17T09:17:41.297392+00:00"
+    },
+    {
+      "file": "rcsb_6vma.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VMA/display",
+      "sha256": "0e352bf39240584aed2a7906f1cd6a115daca0190b1679f4d7f799238e2386b7",
+      "bytes": 1187,
+      "retrieved_at_utc": "2026-10-17T09:17:41.297750+00:00"
+    },
+    {
+      "file": "rcsb_6vmc.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VMC/display",
+      "sha256": "584e5861a6590b80bd7fff13b71f299c53e9537dd49852056d1a87271d4ccbab",
+      "bytes": 1203,
+      "retrieved_at_utc": "2026-10-17T09:17:41.297932+00:00"
+    },
+    {
+      "file": "rcsb_6vmx.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VMX/display",
+      "sha256": "3612631c6b37cbbefecf9f6bd100aa8359eea38b3c6af1a0d78567184575527f",
+      "bytes": 1199,
+      "retrieved_at_utc": "2026-10-17T09:17:41.647482+00:00"
+    },
+    {
+      "file": "rcsb_6vqo.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VQO/display",
+      "sha256": "84839e5200dc5171bb22b6ab90a35c9aefd6e2b7f22a8bbf972ff77456e18073",
+      "bytes": 1259,
+      "retrieved_at_utc": "2026-10-17T09:17:42.740339+00:00"
+    },
+    {
+      "file": "rcsb_6vrm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VRM/display",
+      "sha256": "b9e0289557978cb9963b09bbbdd10bfc328436440f9c04e460e4009f8eee41c9",
+      "bytes": 1192,
+      "retrieved_at_utc": "2026-10-17T09:17:42.740964+00:00"
+    },
+    {
+      "file": "rcsb_6vrn.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6VRN/display",
+      "sha256": "fbdb471737a0487945d51c6ed9b182b2974dca8077f5ac7f00a65604d02a8742",
+      "bytes": 1209,
+      "retrieved_at_utc": "2026-10-17T09:17:42.969284+00:00"
+    },
+    {
+      "file": "rcsb_6zkw.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/6ZKW/display",
+      "sha256": "26f71f4295d179a3bcee9f669e72e533b723dc539fc5e0fa48a1493d04c26328",
+      "bytes": 1211,
+      "retrieved_at_utc": "2026-10-17T09:17:42.969785+00:00"
+    },
+    {
+      "file": "rcsb_7dzm.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7DZM/display",
+      "sha256": "2def5bc92eeb60aabb72a576beb9ca0c78897f0ea42f38a13a3210019525623c",
+      "bytes": 1141,
+      "retrieved_at_utc": "2026-10-17T09:17:42.970218+00:00"
+    },
+    {
+      "file": "rcsb_7dzn.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7DZN/display",
+      "sha256": "bbae09eeb3e329b3b710ed4b1cdfc87bb789b769e7179cf41c510d46d8a44d62",
+      "bytes": 1142,
+      "retrieved_at_utc": "2026-10-17T09:17:44.595472+00:00"
+    },
+    {
+      "file": "rcsb_7l1d.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7L1D/display",
+      "sha256": "ae0388ba0def5797e60be2c29c5d900529cd89755575daa6cd7038dbd40c9aca",
+      "bytes": 1177,
+      "retrieved_at_utc": "2026-10-17T09:17:45.275991+00:00"
+    },
+    {
+      "file": "rcsb_7n1e.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N1E/display",
+      "sha256": "fb36f5f83ae843eb320e490340e0e2d170cdbd289ab4552637d9d855cac92cfe",
+      "bytes": 1197,
+      "retrieved_at_utc": "2026-10-17T09:17:45.276407+00:00"
+    },
+    {
+      "file": "rcsb_7n1f.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N1F/display",
+      "sha256": "c36b09678f4aa14642fd46ae09c18a679d6e5191a023fae0772b82f0032ac151",
+      "bytes": 1235,
+      "retrieved_at_utc": "2026-10-17T09:17:45.277218+00:00"
+    },
+    {
+      "file": "rcsb_7n2n.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2N/display",
+      "sha256": "1072d41b7ed55a7a89149e4d35dacf113461f3abeb68da445849d838a75f1c47",
+      "bytes": 1195,
+      "retrieved_at_utc": "2026-10-17T09:17:45.277611+00:00"
+    },
+    {
+      "file": "rcsb_7n2o.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2O/display",
+      "sha256": "ea4f6366194f767e9e61f47c6a7d3847bbff0a71a64192d53246c8168d1a47ac",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:17:45.801223+00:00"
+    },
+    {
+      "file": "rcsb_7n2p.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2P/display",
+      "sha256": "f1bd76f8a1407265a9a26fb87e1b68316702094aa78982d73383550d8db62bed",
+      "bytes": 1174,
+      "retrieved_at_utc": "2026-10-17T09:17:46.327858+00:00"
+    },
+    {
+      "file": "rcsb_7n2q.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2Q/display",
+      "sha256": "fcad334baa230e58c27fba40e6b8dcd14a1b43fb708791e6107cba3270c6d2cc",
+      "bytes": 1217,
+      "retrieved_at_utc": "2026-10-17T09:17:46.911892+00:00"
+    },
+    {
+      "file": "rcsb_7n2r.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2R/display",
+      "sha256": "eb9451187d09baea80f83a61f9d9ca6da9619555c2fdc7abdd40ec633a985ba0",
+      "bytes": 1209,
+      "retrieved_at_utc": "2026-10-17T09:17:46.912195+00:00"
+    },
+    {
+      "file": "rcsb_7n2s.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N2S/display",
+      "sha256": "dc064874cc61d0aa7d0a85cc8aea7a5c7af461eff35d75898a5c570fcdd0edbd",
+      "bytes": 1194,
+      "retrieved_at_utc": "2026-10-17T09:17:47.229999+00:00"
+    },
+    {
+      "file": "rcsb_7n6e.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7N6E/display",
+      "sha256": "ea6d3eb8b2f27ef0858e472e5b0dc95d3ad4ec9dcea3d5b0aed383395c6a4293",
+      "bytes": 1183,
+      "retrieved_at_utc": "2026-10-17T09:17:47.670278+00:00"
+    },
+    {
+      "file": "rcsb_7ndq.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7NDQ/display",
+      "sha256": "df598a33c9889fb8dcd1e06b874c0ebd2ca7e69169c304c33fafb28352700100",
+      "bytes": 1434,
+      "retrieved_at_utc": "2026-10-17T09:17:48.335044+00:00"
+    },
+    {
+      "file": "rcsb_7ndu.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7NDU/display",
+      "sha256": "5cba998368057cb7a5f8801878144ecf40274e3092c138c49d1e3e8c2203a341",
+      "bytes": 1375,
+      "retrieved_at_utc": "2026-10-17T09:17:48.566783+00:00"
+    },
+    {
+      "file": "rcsb_7nme.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7NME/display",
+      "sha256": "709facd79d4102b3e5091f4247676734c193a489073d8b90579a5c960cf44882",
+      "bytes": 1175,
+      "retrieved_at_utc": "2026-10-17T09:17:48.613450+00:00"
+    },
+    {
+      "file": "rcsb_7nmg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7NMG/display",
+      "sha256": "c182c86232533c6f0b294a0cfc12976be6303f0900ad81e40c22ecad7bdf87c9",
+      "bytes": 1166,
+      "retrieved_at_utc": "2026-10-17T09:17:49.764907+00:00"
+    },
+    {
+      "file": "rcsb_7ow5.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7OW5/display",
+      "sha256": "275a4982f8c120a17ba6135c415c2566a94004a5b3aaacf88e6ba07758ddbaa0",
+      "bytes": 1106,
+      "retrieved_at_utc": "2026-10-17T09:17:49.816287+00:00"
+    },
+    {
+      "file": "rcsb_7ow6.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7OW6/display",
+      "sha256": "1258cf418f69323bb9631f6252af44ea21d4a44248a2bc226140ae46bafd0370",
+      "bytes": 1111,
+      "retrieved_at_utc": "2026-10-17T09:17:50.327065+00:00"
+    },
+    {
+      "file": "rcsb_7pb2.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7PB2/display",
+      "sha256": "0b0ce6b6e18555fcf658f87946800ccc1a9ac08ab0d371c4c91c71a437025e8f",
+      "bytes": 1130,
+      "retrieved_at_utc": "2026-10-17T09:17:50.327384+00:00"
+    },
+    {
+      "file": "rcsb_7pbc.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7PBC/display",
+      "sha256": "cbf203e5108bea0d173720b4e6303e0983c2603beb5b3402cc4c1c3ca783f943",
+      "bytes": 1196,
+      "retrieved_at_utc": "2026-10-17T09:17:51.256759+00:00"
+    },
+    {
+      "file": "rcsb_7pdw.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7PDW/display",
+      "sha256": "2d4ecec773c518a1f9976d8523390b628a90df531a629c19f54a8618bf0e3128",
+      "bytes": 1289,
+      "retrieved_at_utc": "2026-10-17T09:17:51.329730+00:00"
+    },
+    {
+      "file": "rcsb_7phr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7PHR/display",
+      "sha256": "f853330a8cfe6d3a7c09a13205066d1227ade7ca45cdd2c4021e94308ce4a6af",
+      "bytes": 2370,
+      "retrieved_at_utc": "2026-10-17T09:17:51.649163+00:00"
+    },
+    {
+      "file": "rcsb_7qpj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7QPJ/display",
+      "sha256": "6e4ed0f899092728702cb29ca7d8ca3bbe1ad53339a51ff6934b288c8893b1ee",
+      "bytes": 1185,
+      "retrieved_at_utc": "2026-10-17T09:17:52.103696+00:00"
+    },
+    {
+      "file": "rcsb_7r80.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7R80/display",
+      "sha256": "9bf1a0adcbf2dfb9f9f83377c54f9962b12fba4240b2ca6564b62d3c1eb1d5ff",
+      "bytes": 1192,
+      "retrieved_at_utc": "2026-10-17T09:17:52.906236+00:00"
+    },
+    {
+      "file": "rcsb_7rm4.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7RM4/display",
+      "sha256": "e28dec7f022b92a3c2c0923ec6adb778c260dc56d4fea15dee760428a55d810d",
+      "bytes": 1246,
+      "retrieved_at_utc": "2026-10-17T09:17:53.090001+00:00"
+    },
+    {
+      "file": "rcsb_7rrg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7RRG/display",
+      "sha256": "6ef728f0d7fa6264463f874bd3a66dcd642df969f1ff2c93d940f7fde5de899d",
+      "bytes": 1198,
+      "retrieved_at_utc": "2026-10-17T09:17:53.313746+00:00"
+    },
+    {
+      "file": "rcsb_7rtr.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7RTR/display",
+      "sha256": "233a202338af55968d117c1b415cd81e68a8410aeceb250f72dcaf6f6fd91303",
+      "bytes": 1267,
+      "retrieved_at_utc": "2026-10-17T09:17:53.965842+00:00"
+    },
+    {
+      "file": "rcsb_7su9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/7SU9/display",
+      "sha256": "ca982e581abec21472ab06645ea8d60f9dcd469b0c3e4c7eced8235ad28cc2a3",
+      "bytes": 1178,
+      "retrieved_at_utc": "2026-10-17T09:17:55.720543+00:00"
+    },
+    {
+      "file": "rcsb_8cx4.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8CX4/display",
+      "sha256": "8d43e5c8a0330b8b5bb5a85cf3b82c2948af1e961301c1449c37737773b8329c",
+      "bytes": 1098,
+      "retrieved_at_utc": "2026-10-17T09:17:55.720884+00:00"
+    },
+    {
+      "file": "rcsb_8dnt.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8DNT/display",
+      "sha256": "d62b7fdf958a9f1e569c8ba9407921ebe1406140bba44a8f7bd0168c83f3fcc9",
+      "bytes": 1374,
+      "retrieved_at_utc": "2026-10-17T09:17:55.721378+00:00"
+    },
+    {
+      "file": "rcsb_8en8.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8EN8/display",
+      "sha256": "a1aaa34871bbd60595425415d7d2ec3528b8901cd7c444dc37201a71ef91c7a8",
+      "bytes": 1188,
+      "retrieved_at_utc": "2026-10-17T09:17:55.721875+00:00"
+    },
+    {
+      "file": "rcsb_8enh.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8ENH/display",
+      "sha256": "e50fa8743cc0c5a57fead2229fe60c8ae36fd2c1d9e3f8999def0ad8e8c9e046",
+      "bytes": 1208,
+      "retrieved_at_utc": "2026-10-17T09:17:56.626842+00:00"
+    },
+    {
+      "file": "rcsb_8eo8.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8EO8/display",
+      "sha256": "0f39affbcd17190fbc1bfe6649a9209122dc13198d46fdf5f5e17056500ec131",
+      "bytes": 1178,
+      "retrieved_at_utc": "2026-10-17T09:17:56.955787+00:00"
+    },
+    {
+      "file": "rcsb_8es8.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8ES8/display",
+      "sha256": "fa61378bdf1c072bc73513b50f72155d140a576879898bd2cff15ec0636227f8",
+      "bytes": 2443,
+      "retrieved_at_utc": "2026-10-17T09:17:57.297617+00:00"
+    },
+    {
+      "file": "rcsb_8es9.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8ES9/display",
+      "sha256": "256683369050f4fef9d80bb49f95b296b4d914a946fd3e8208cfd7c3e30013bf",
+      "bytes": 2424,
+      "retrieved_at_utc": "2026-10-17T09:17:57.742703+00:00"
+    },
+    {
+      "file": "rcsb_8f5a.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8F5A/display",
+      "sha256": "34f843d1f85367eec269e43c54e5500ce52b2390bd16f1f0e4ca36c7487388c5",
+      "bytes": 1135,
+      "retrieved_at_utc": "2026-10-17T09:17:58.204488+00:00"
+    },
+    {
+      "file": "rcsb_8gom.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8GOM/display",
+      "sha256": "c8aaae1a6e3e2903bc6f4e9180df5e83001b022642aa1b288c496c3139901660",
+      "bytes": 1204,
+      "retrieved_at_utc": "2026-10-17T09:17:58.543988+00:00"
+    },
+    {
+      "file": "rcsb_8gon.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8GON/display",
+      "sha256": "6c7c122886cc2226d60e81514e04217baa9267ee6f4e492f23df117d5a9ee318",
+      "bytes": 1204,
+      "retrieved_at_utc": "2026-10-17T09:17:59.198696+00:00"
+    },
+    {
+      "file": "rcsb_8gvb.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8GVB/display",
+      "sha256": "cc0ed7f51bb775c578615e124044cea0097215274216f2ecda2323e9b2dab7c6",
+      "bytes": 1166,
+      "retrieved_at_utc": "2026-10-17T09:17:59.353862+00:00"
+    },
+    {
+      "file": "rcsb_8gvg.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8GVG/display",
+      "sha256": "d5cc85019397aba9e8fcd2d3a68e60f283772c344c496a285bf3506d3b24fb65",
+      "bytes": 1191,
+      "retrieved_at_utc": "2026-10-17T09:17:59.889875+00:00"
+    },
+    {
+      "file": "rcsb_8gvi.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8GVI/display",
+      "sha256": "e1c20a5b320648bd121f45083cd8b18f2e6608c64f261f207369f82df8802430",
+      "bytes": 1187,
+      "retrieved_at_utc": "2026-10-17T09:18:00.178910+00:00"
+    },
+    {
+      "file": "rcsb_8shi.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8SHI/display",
+      "sha256": "ebf5b252bfe0e339f3c3ede9dcd86940dfb524d4e4bda3271a5aaeb82b29ab75",
+      "bytes": 1160,
+      "retrieved_at_utc": "2026-10-17T09:18:01.043152+00:00"
+    },
+    {
+      "file": "rcsb_8v4z.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8V4Z/display",
+      "sha256": "ebafb9b92e96dc48879a9e6bcb4d80112026715388e9cf29a6d0844f5e55e86d",
+      "bytes": 1179,
+      "retrieved_at_utc": "2026-10-17T09:18:01.043584+00:00"
+    },
+    {
+      "file": "rcsb_8v50.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8V50/display",
+      "sha256": "98643a8b468f42a3a15fffb0cc68349c7574a4a151361c846f4fb6721a6ef5ed",
+      "bytes": 1146,
+      "retrieved_at_utc": "2026-10-17T09:18:01.501453+00:00"
+    },
+    {
+      "file": "rcsb_8v51.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8V51/display",
+      "sha256": "d5d535143c26ea2ad66f85a1c5741f93e01ec2baa9cb788642161cdecbadd6cf",
+      "bytes": 1114,
+      "retrieved_at_utc": "2026-10-17T09:18:01.865260+00:00"
+    },
+    {
+      "file": "rcsb_8yiv.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8YIV/display",
+      "sha256": "55e341fb7869322fffa358c6a5b8b1f025ff79eb65e549b137476a003f02c5e5",
+      "bytes": 1141,
+      "retrieved_at_utc": "2026-10-17T09:18:02.902141+00:00"
+    },
+    {
+      "file": "rcsb_8yj2.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/8YJ2/display",
+      "sha256": "bc42a9b0f20ff3c6f5e1c4251a0372956b2d12e1486e5ab15d608eff0a0355c4",
+      "bytes": 1145,
+      "retrieved_at_utc": "2026-10-17T09:18:03.002673+00:00"
+    },
+    {
+      "file": "rcsb_9hlj.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/9HLJ/display",
+      "sha256": "8eea5b9d77660107990cc4b43da5e0fd40e7d5623e0bca7f84906093819b86d1",
+      "bytes": 1260,
+      "retrieved_at_utc": "2026-10-17T09:18:03.165543+00:00"
+    },
+    {
+      "file": "rcsb_9j4t.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/9J4T/display",
+      "sha256": "03555f58d9ac883a59cbc3aaed3d7c31f5ef805031c2260878f4e59d6ebf1547",
+      "bytes": 1217,
+      "retrieved_at_utc": "2026-10-17T09:18:03.622840+00:00"
+    },
+    {
+      "file": "rcsb_9j4u.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/9J4U/display",
+      "sha256": "78788095283a7e3b99ce7c6ef1aef2d98ced775951fd0588c99a4dab38dc4f1a",
+      "bytes": 1196,
+      "retrieved_at_utc": "2026-10-17T09:18:04.465406+00:00"
+    },
+    {
+      "file": "rcsb_9k2i.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/9K2I/display",
+      "sha256": "85eb19e1d65cc5051c8711c57832a0ff9f5af4fcff7cbab719cce1f6ec911b05",
+      "bytes": 1335,
+      "retrieved_at_utc": "2026-10-17T09:18:04.795577+00:00"
+    },
+    {
+      "file": "rcsb_9wbd.fasta",
+      "url": "https://www.rcsb.org/fasta/entry/9WBD/display",
+      "sha256": "122a3d6d23fc87fbd6078b154783af27303087fe4fdb13829b4fa7d767deb8de",
+      "bytes": 1276,
+      "retrieved_at_utc": "2026-10-17T09:18:04.795956+00:00"
+    }
+  ],
+  "source_snapshot": "/home/administrator/docs/meta-acdc-readiness/data/external_evidence/20261017-databases",
+  "registry_path": "/home/administrator/docs/meta-acdc-readiness/data/external_evidence/20261017-public-binding/combined_reservation_registry.json",
+  "code_files": {
+    "src/meta_acdc/data/atlas_binding.py": "6598713bbc688b580b6e5934531cc0f174370847cd1572976ad7040ff7e53e2e",
+    "src/meta_acdc/data/experimental_evidence.py": "fe9945690b34db99f6d5cb9c4890de093ff0c10b0fbe9bd8aee091606d9a5244",
+    "src/meta_acdc/data/build_release.py": "4192411099f5e100edf3c0d76fc6d8597edb1c1e6128a52fe15127f5fdbdd32f",
+    "src/meta_acdc/data/release.py": "2916a3dae16f9521a44b8add638b477fe9d007aa2d172fb8dd65a48457cb8d73",
+    "src/meta_acdc/models/affinity_baseline.py": "7cf311f63818a520a1d5d0a7b545b9a2a10965054dadaf412a378e460f236f56"
+  },
+  "files": {
+    "affinity_dataset.json": "55d5312041cf878cd4d8570d97739da8f78025f4f22913524f3ac8f0cfc14098",
+    "splits.json": "79fbd6567e5b38552a2ac71682e4c98c46c6e1a3eba33c49ed137b028904c13a",
+    "summary.json": "ab32170dd0d94faa6acd063c968c9502a80210bd9b59c1044186635b2f44d35a",
+    "measurement_ledger.json": "a63079c6b772a4a58e16eb7ab4075617d8694320d5489c85ee4d0f819a6c85eb"
+  },
+  "summary": {
+    "n_source_records": 1174,
+    "n_eligible_exact_SPR": 91,
+    "n_studies": 54,
+    "n_receptor_names": 49,
+    "fold_counts": {
+      "train": 55,
+      "validation": 18,
+      "test": 18
+    },
+    "fold_blocks": {
+      "train": 20,
+      "validation": 6,
+      "test": 6
+    },
+    "grouping": {
+      "n_blocks": 32,
+      "block_sizes": [
+        20,
+        11,
+        8,
+        6,
+        4,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "policy": "same study, exact receptor-ligand pair, near corresponding alpha OR beta variable chain; additionally peptide similarity >=0.8 when enabled",
+      "unseen_peptide": true
+    },
+    "exclusions": {
+      "not_exact_human_class_I_complex": 975,
+      "censored_or_approximate": 106,
+      "reserved_external_family:IMMREP25:670ec4ccca2d439fcd59c0cd46ad510a1423c557b981002f967abd25cab5a112,IMMREP25:bbe6ef78ae3513093e9fc12a8b089ec6ca385502b7c99635cc7b2d2351598e55,IMMREP25:d6ad75ef0dcb13a36be9414a3dddeffd54dc20a8570d6497c7daf22ebd588de0": 2,
+      "reserved_external_family:IMMREP25:240e9ea19362139c9571ea63b3985728140a241bfba50793557b50eb2adf0656,IMMREP25:fc0ff59f51897202263d7c1a45c2e01c5d49d9d80f5b208ef489fc9fbd61b6ef": 11,
+      "missing_or_unparsed": 112,
+      "allele_not_explicit_classical_HLA": 408,
+      "mutant_MHC_not_supported": 148,
+      "reserved_external_family:IMMREP25:8ba6d5af47498ccbeb4c0d850b7f30691e52e76533de40f6d96d4912a8b2684e,IMMREP25:fa883a31ebfac3f3413fac6bc12a0c4f74c470c60f2de7dec7340f51f69cb855": 7,
+      "reserved_external_family:IMMREP25:203c995e7982939b15be6fbf10fc41b59b6723b7b15f166df3498979d066d450": 2,
+      "not_SPR_endpoint": 30,
+      "missing/ambiguous human Alpha construct": 5,
+      "reserved_external_family:IMMREP25:813e43ea500b99bc701c39a6d7aa663eaf4327a146ad30c07871e920543781fd,IMMREP25:b4d4c401f8261457bc1c1df0d5c04ea1d47482521ca15f23bb6c0dcf48328839,IMMREP25:c4ae4d64159e84d3f7e469ebf08e422d358c761980dd8f66f4ad1c8a68de3a54,IMMREP25:cbd34547ad8563aa201a6f9b5f92e2a164f9d91a480e8ea005be044fff4690eb": 2,
+      "reserved_external_family:IMMREP25:26f8cf8bfc8b5758a789c0d4bf01e08ac30aed8e8831064fa0814a3910149c4a,IMMREP25:2e89426be41edb87678949f6c967f8dd61e594b6fc89a4d8a0078521671e741a,IMMREP25:cecac70daa03cad9dc378f4eee91117d25f687e53eb3757fbc921bc5a10c7157": 1,
+      "discordant_same_pair_study_conditions": 2,
+      "reserved_external_family:IMMREP25:fa883a31ebfac3f3413fac6bc12a0c4f74c470c60f2de7dec7340f51f69cb855": 3,
+      "reserved_external_family:IMMREP25:4a57c66bddb7875d0bd2a5443529829e7b6829354e307157e9952d60b664d109,IMMREP25:982890731ff9d8715bf3d497db3558f13cc5e179a39314852bef34ea5d830afd": 1,
+      "reserved_external_family:IMMREP25:c52308eae2c9f16d89acf1e53d67a4c5ddec02b97f7c2624e29d09f5959180b3,IMMREP25:efb0e6f769cc4ef9a3c932a5c12d323b0073a364dc4488295ebf7204ef860059": 1,
+      "reserved_external_family:IMMREP25:06044a9601673f470c3214767e8c02a4fbd5c788dc9f6e301c92e91fb4d0a515,IMMREP25:2772af31c1de0a0e79dbd8841d2558480fed9f4646241635cbef835bb54a76b1,IMMREP25:4462a67df68d910bd0cf5372b9930570b7154b230816cb0933fdf1fbbeee0156,IMMREP25:578326b9b8556946b4b274961353c79628f06838bb009143363f506d81f9718e,IMMREP25:9bbbaa6e88ac34f4e5fb76b291676159113e53e69a6cd7fd85d39b768920902d": 1,
+      "duplicate_measurement_not_independent": 1,
+      "reserved_external_family:IMMREP25:21faf2d0f09815b07aa3b1937800752201d626774811b8f223ff277a8490c133": 1,
+      "reserved_external_family:1a2": 1,
+      "reserved_external_family:12-6": 1,
+      "reserved_external_family:38-10,IMMREP25:67fe769bbb4d79bc1576af64e4d22a63b2f5e1578d6f4400ed8ffab38a414061,IMMREP25:cb49ff21b5f0cbbdc867fe9cf0990eb9e0c6478cea45f819c1deb93ae0bb079f,IMMREP25:e1ca6ff73c8e29e0c38821d7f5552d7a14e95a188f71860749c1474c7e25e617": 1,
+      "peptide_not_canonical": 4,
+      "reserved_external_family:IMMREP25:29bd00d20bd987a3f581ede6e218f5b6988991e8b6e2d2e5eb0e94af7760edb1,TCR4": 1,
+      "reserved_external_family:JDIa41b1": 2,
+      "reserved_external_family:IMMREP25:458539a7eb1d238eba35593bf3ecfaaedcd860e11eee3c05edea0753d9e39c95,IMMREP25:c43b65ea13074a662124693f61a206ac0442e3e23a3cd3ba2dffad188de4be4a,IMMREP25:ebd93e44adf9349073855756b6b88618924d38e675d423194f3a0eaf447e487b,JDI": 1,
+      "reserved_external_family:TCR3": 1,
+      "reserved_external_family:IMMREP25:312e4f2582e749ccf399d88278ec31c6fb67cc7f09c6e99ca6de39f7c7ba2e1c,IMMREP25:8ba6d5af47498ccbeb4c0d850b7f30691e52e76533de40f6d96d4912a8b2684e,IMMREP25:c06126cd55e19cc1f881b790bfecd754e3a893de7b904fc250685708e00fc842,IMMREP25:fa883a31ebfac3f3413fac6bc12a0c4f74c470c60f2de7dec7340f51f69cb855": 1,
+      "missing_primary_reference": 1,
+      "reserved_external_family:IMMREP25:b94429e8f48d1436792f394ae452c2e81640fc160aa86315eeb22e20b6184216": 3,
+      "reserved_external_family:IMMREP25:cec54b0588142e71ba1f8dd1b87503efcf17e8089778d5dcfa4ef7d492cd6d6d": 2,
+      "peptide sequence or complex ambiguity": 1,
+      "reserved_external_family:N17.1.2": 2
+    },
+    "task": "experimental_SPR_pKD_regression",
+    "binary_binding_training_allowed": false,
+    "clinical_training_allowed": false,
+    "scope": "exploratory database-curated measured-affinity research only; censored and unobserved pairs are not negatives; no broad affinity or binary-binding accuracy accepted"
+  },
+  "parent_manifest_sha256": "174148f8ee58c6403388e3c8a9426ed0e1e11f488940dabe2adb61b6ea2fedc0",
+  "metadata_revision_reason": "Freeze final consumer provenance and portable coefficient export; dataset and frozen folds unchanged"
+}

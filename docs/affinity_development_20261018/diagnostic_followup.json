@@ -1,0 +1,28 @@
+{
+  "scope": "source-safe original validation9 only, fixed alpha1 model; no consumed or fresh test inputs",
+  "feature_contributions": {
+    "mhc": {
+      "validation_contribution_sd": 0.285136604270307,
+      "range": [
+        -0.19529358461625626,
+        0.5707978783042814
+      ]
+    },
+    "instrument": {
+      "validation_contribution_sd": 0.052256687414496156,
+      "range": [
+        -0.11085317409940784,
+        0.0
+      ]
+    },
+    "sequence": {
+      "validation_contribution_sd": 0.05872631988260597,
+      "range": [
+        0.16156342151954148,
+        0.3178559424346425
+      ]
+    }
+  },
+  "metadata_masked_prediction_sd": 0.05872631988260597,
+  "interpretation": "Masking learned categorical contributions leaves weak sequence variation. Correlated feature contributions are descriptive, not causal feature importance; no post-hoc candidate selected."
+}

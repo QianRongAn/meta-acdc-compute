@@ -1,0 +1,10 @@
+
+# Empty terminal TSV fields and CSV-standard CRLF are data, not code whitespace.
+docs/evidence/*.tsv whitespace=-blank-at-eol
+
+# Incident originals are byte-preserved evidence, including CSV line endings.
+docs/delivery_audit_20261018/historical/** -text
+docs/delivery_audit_20261018/historical/**/*.tsv whitespace=-blank-at-eol
+docs/delivery_audit_20261018/recovered/*.tsv -text whitespace=-blank-at-eol
+docs/delivery_audit_20261018/external_review.md -text whitespace=-blank-at-eol
+tests/fixtures/delivery_audit/*.cif -text whitespace=-blank-at-eol

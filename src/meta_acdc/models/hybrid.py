@@ -44,7 +44,7 @@ class PeptideSeqEncoder(nn.Module):
 
 
 class HybridModel(nn.Module):
-    def __init__(self, node_dim: int = 25, edge_dim: int = 12,
+    def __init__(self, node_dim: int = 26, edge_dim: int = 16,
                  hidden: int = 128, egnn_depth: int = 6):
         super().__init__()
         self.egnn = EGNN(node_dim=node_dim, edge_dim=edge_dim,
@@ -58,7 +58,7 @@ class HybridModel(nn.Module):
         )
 
     def forward(self, h: Tensor, x: Tensor, edge_index: Tensor,
-                edge_attr: Tensor, batch: Tensor, seq: Tensor) -> Tensor:
-        g = self.egnn(h, x, edge_index, edge_attr, batch, embed_only=True)
+                edge_attr: Tensor, batch: Tensor, seq: Tensor, peptide_mask: Tensor | None = None) -> Tensor:
+        g = self.egnn(h, x, edge_index, edge_attr, batch, embed_only=True, peptide_mask=peptide_mask)
         s = self.seq_enc(seq)
         return self.head(torch.cat([s, g], dim=-1))

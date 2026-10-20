@@ -1,9 +1,9 @@
 """Score predicted TCR-pMHC structures with the trained EGNN (KN-5 pipeline).
 
 Input: a directory of AF3/TCRmodel2 CIF files (one per complex).
-Output: a risk table — for each job, the EGNN "compatibility" score
-(sigmoid of the logit; the model was trained to output high scores for
-native interfaces and low scores for incompatible ones).
+Output: structural synthetic-control diagnostics, never a clinical risk table.
+Sigmoid values are not binding probabilities. Accepted release, current
+per-model QC, checkpoint binding and output provenance are mandatory.
 
 Usage:
     .venv/bin/python src/meta_acdc/structure/score_predictions.py \
@@ -30,6 +30,7 @@ from meta_acdc.structure.graph import build_interface_graph_from_residues
 def graph_to_tensors(g):
     return {
         "h": torch.tensor(g.node_features, dtype=torch.float32),
+        "peptide_mask": torch.tensor(g.peptide_mask, dtype=torch.bool),
         "x": torch.tensor(g.node_coords, dtype=torch.float32),
         "edge_index": torch.tensor(g.edge_index, dtype=torch.long).t(),
         "edge_attr": torch.tensor(g.edge_features, dtype=torch.float32),
@@ -40,7 +41,8 @@ def graph_to_tensors(g):
 def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False,
                 temperature: float = 1.0) -> float:
     tensors = {k: v.to(device) for k, v in graph_to_tensors(g).items()}
-    h = tensors["h"]
+    h = tensors["h"][:, :getattr(net,"n_node_dim",tensors["h"].shape[1])]
+    tensors["edge_attr"]=tensors["edge_attr"][:,:getattr(net,"n_edge_dim",tensors["edge_attr"].shape[1])]
     if mask_plddt:
         # domain-adapted models are trained with pLDDT zeroed (col 3) —
         # scoring must apply the same masking to avoid distribution mismatch
@@ -52,7 +54,7 @@ def score_graph(net: EGNN, g, device: str, mask_plddt: bool = False,
     h = normalize_node_features(h)
     with torch.no_grad():
         logit = net(h, tensors["x"], tensors["edge_index"],
-                    tensors["edge_attr"], tensors["batch"]).squeeze(-1)
+                    tensors["edge_attr"], tensors["batch"], peptide_mask=tensors["peptide_mask"]).squeeze(-1)
     return float(torch.sigmoid(logit / temperature).item())
 
 
@@ -80,70 +82,80 @@ def main() -> int:
     ap.add_argument("--no-qc-gate", action="store_true",
                     help="score even QC-missing/failed jobs (audit/debug only; "
                          "the result then has no structure-quality basis)")
+    ap.add_argument("--release", type=Path, required=True)
     args = ap.parse_args()
+    expected_outputs=[args.out,Path(str(args.out).replace(".tsv","_ensemble.tsv"))]
+    if len(set(expected_outputs))!=2:raise ValueError("score output must have .tsv suffix")
+    if any(p.exists() or Path(str(p)+'.provenance.json').exists() for p in expected_outputs):raise ValueError("refusing to overwrite scores or provenance")
+    if not __import__("math").isfinite(args.temperature) or args.temperature<=0:raise ValueError("temperature must be finite and positive")
+    from meta_acdc.data.release import load_release, sha256
+    manifest, _ = load_release(args.release)
+    import json
+    identity_records = {x['complex_id']:x for x in json.loads((args.release.parent/'structure_records.json').read_text())}
+    if args.no_qc_gate:
+        raise ValueError("QC bypass is not allowed for accepted release scoring")
     if not args.model:
         args.model = [Path("data/processed/egnn_dataset.model.pt")]
 
-    nets = []
+    nets = []; masking=[];dimensions=[];seed_ids=[]
     for mp in args.model:
         ckpt = torch.load(mp, weights_only=False)
+        if ckpt.get("release_sha256") != sha256(args.release):
+            raise ValueError("legacy or mismatched checkpoint; retrain on the accepted release first")
         net = EGNN(node_dim=ckpt["n_node_dim"], edge_dim=ckpt["n_edge_dim"],
-                   depth=6, hidden=128).to(args.device)
+                   depth=6, hidden=128, update_coordinates=ckpt.get("update_coordinates", True)).to(args.device)
         net.load_state_dict(ckpt["model"])
         net.eval()
-        nets.append(net)
+        net.n_node_dim=ckpt["n_node_dim"];net.n_edge_dim=ckpt["n_edge_dim"]
+        seed_ids.append(ckpt.get('seed'))
+        nets.append(net);masking.append(bool(ckpt["mask_plddt"]));dimensions.append((ckpt["n_node_dim"],ckpt["n_edge_dim"]))
+    if len(set(dimensions))!=1 or len(set(masking))!=1:raise ValueError("ensemble preprocessing mismatch")
+    args.mask_plddt=masking[0]
     print(f"ensemble: {len(nets)} models", flush=True)
 
     # --- structure-quality gate -------------------------------------------
-    qc_status: dict[tuple[str, str], tuple[str, str]] = {}
-    if not args.no_qc_gate:
-        if not args.qc.exists():
-            print(f"QC gate: {args.qc} not found. Either run "
-                  f"structure/af3_qc.py first or pass --no-qc-gate to score "
-                  f"without a structure-quality basis.", file=sys.stderr)
-            return 2
-        import csv as _csv
-        with open(args.qc, newline="", encoding="utf-8", errors="replace") as fh:
-            for r in _csv.DictReader(fh, delimiter="\t"):
-                job = r.get("job_id") or ""
-                job = job.rsplit("_model_", 1)[0]
-                inst = (r.get("instance") or "").strip()
-                if not job or not inst:
-                    continue
-                flag = (r.get("flag") or "").strip()
-                basis = "qc-pass" if not flag else f"qc-flag:{flag}"
-                # (instance, job) joint key: instance B's QC row must never
-                # shadow instance A's for the same job (AUDIT.md #26)
-                qc_status[(inst, job)] = (flag, basis)
-        print(f"QC gate: {len(qc_status)} (instance, job) records")
-    else:
-        print("QC gate: DISABLED (--no-qc-gate); scores carry no "
-              "structure-quality basis")
-
-    rows = []
+    if not args.qc.exists():
+        raise ValueError("per-model QC table required")
+    with args.qc.open(newline='') as fh:
+        reader=csv.DictReader(fh,delimiter='\t')
+        if not {'source_path','file_sha256','model_id','reference_id'} <= set(reader.fieldnames or []):
+            raise ValueError("legacy job-level QC table refused; regenerate per-model QC")
+        qc_status={}
+        for row in reader:
+            key=str(Path(row['source_path']).resolve())
+            if key in qc_status:raise ValueError("duplicate per-model QC record")
+            qc_status[key]=row
+    rows = []; evaluation_context={}
     for cif in sorted(args.cifs.glob("*.cif")):
         job_id = cif.stem
         job = job_id.rsplit("_model_", 1)[0]
-        if not args.no_qc_gate:
-            key = (cif.parent.name, job)
-            if key not in qc_status:
-                rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
-                             "score": "", "std": "",
-                             "qc": "missing", "error": "no QC record"})
-                continue
-            flag, basis = qc_status[key]
-            if flag:
-                rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
-                             "score": "", "std": "",
-                             "qc": basis, "error": f"QC flagged: {flag}"})
-                continue
+        q=qc_status.get(str(cif.resolve()))
+        failure='missing'
+        if q:
+            failure=q['flag']
+            if sha256(cif)!=q['file_sha256']:failure='stale_structure_QC'
+            if not q.get('confidence_path') or not Path(q['confidence_path']).is_file() or sha256(q['confidence_path'])!=q['confidence_sha256']:failure='stale_or_missing_confidence'
+        if failure:
+            rows.append({'job_id':job_id,'n_nodes':0,'n_edges':0,'score':'','std':'','qc':failure,'error':'per-model QC rejected'})
+            continue
         try:
-            residues = parse_cif(cif)
-            g = build_interface_graph_from_residues(residues)
+            residues = parse_cif(cif, confidence_kind="af3_plddt")
+            from meta_acdc.structure.quality import annotate_prediction
+            reference=identity_records[q['reference_id']]
+            if q['reference_sha256']!=reference['source_sha256']:
+                raise ValueError("QC reference identity version mismatch")
+            annotate_prediction(residues, reference, job.split('_',1)[1])
+            from meta_acdc.structure.artifact_qc import require_construction_screen
+            require_construction_screen(residues)
+            evaluation_context[job] = dict(reference_family=reference['family_id'],
+                reference_fold=reference['fold'],
+                evaluation_scope=('seen_receptor_cross_representation' if reference['fold'] in {'train','validation'}
+                                  else 'heldout_family_structural_only_not_binding'))
+            g = build_interface_graph_from_residues(residues,electrostatics=dimensions[0][0]>26 or dimensions[0][1]>16)
         except Exception as e:
             rows.append({"job_id": job_id, "n_nodes": 0, "n_edges": 0,
                          "score": "", "std": "",
-                         "qc": "qc-pass" if not args.no_qc_gate else "not-checked",
+                         "qc": "structure_revalidation_failed",
                          "error": str(e)})
             continue
         ss = [score_graph(net, g, args.device, mask_plddt=args.mask_plddt,
@@ -153,7 +165,8 @@ def main() -> int:
         std = (sum((s - mean) ** 2 for s in ss) / max(len(ss) - 1, 1)) ** 0.5
         rows.append({"job_id": job_id, "n_nodes": g.n_nodes,
                      "n_edges": len(g.edge_index), "score": f"{mean:.4f}",
-                     "std": f"{std:.4f}",
+                     "std": f"{std:.4f}" if len(ss)>1 else "NA",
+                     **evaluation_context[job],
                      "qc": "qc-pass" if not args.no_qc_gate else "not-checked",
                      "error": ""})
         print(f"{cif.stem}: score={mean:.4f} +/- {std:.4f} "
@@ -171,28 +184,41 @@ def main() -> int:
         mean = sum(vals) / len(vals)
         sd = (sum((v - mean) ** 2 for v in vals) / max(len(vals) - 1, 1)) ** 0.5
         agg_rows.append({"job_id": job, "n_models": len(vals),
-                         "score": f"{mean:.4f}", "std": f"{sd:.4f}"})
+                         "score": f"{mean:.4f}", "std": f"{sd:.4f}" if len(vals)>1 else "NA", "qc": "qc-pass", **evaluation_context[job]})
         print(f"{job}: ensemble mean={mean:.4f} +/- {sd:.4f} over "
               f"{len(vals)} AF3 models", flush=True)
 
     with open(args.out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_nodes", "n_edges",
-                                           "score", "std", "qc", "error"],
+                                           "score", "std", "qc", "error", "reference_family", "reference_fold", "evaluation_scope"],
                             delimiter="\t")
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    n_gated = sum(1 for r in rows if r.get("qc", "").startswith("qc-flag")
-                  or r.get("qc") == "missing")
+    n_gated = sum(not r["score"] for r in rows)
     agg_out = Path(str(args.out).replace(".tsv", "_ensemble.tsv"))
     with open(agg_out, "w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=["job_id", "n_models", "score",
-                                           "std", "qc"], delimiter="\t")
+                                           "std", "qc", "reference_family", "reference_fold", "evaluation_scope"], delimiter="\t")
         w.writeheader()
         for r in agg_rows:
             w.writerow(r)
     print(f"saved {len(rows)} per-model scores to {args.out} and "
           f"{len(agg_rows)} ensemble scores to {agg_out}")
+    # Bind every output to the exact models, input structures, QC and release.
+    receipt_base = dict(schema_version=1, release_sha256=sha256(args.release),
+        task=manifest['task'], seed_ids=seed_ids,
+        checkpoint_sha256={str(p):sha256(p) for p in args.model},
+        qc_sha256=sha256(args.qc),
+        planned_jobs=sorted({p.stem.rsplit('_model_',1)[0] for p in args.cifs.glob('*.cif')}),
+        input_structures={str(p):sha256(p) for p in args.cifs.glob('*.cif')},
+        clinical_interpretation_allowed=False, qc_path=str(args.qc.resolve()),
+        all_planned_models_scored=(n_gated==0))
+    for output, axis in [(args.out,'checkpoints_within_structure'),
+                         (agg_out,'AF3_models_of_checkpoint_means')]:
+        receipt=dict(receipt_base, output_sha256=sha256(output), std_axis=axis)
+        with Path(str(output)+'.provenance.json').open('x') as fh:
+            json.dump(receipt,fh,indent=2);fh.write('\n')
     if n_gated:
         print(f"structure-QC gate held back {n_gated} jobs (see the qc/error "
               f"columns). They are NOT part of any reported ranking.")

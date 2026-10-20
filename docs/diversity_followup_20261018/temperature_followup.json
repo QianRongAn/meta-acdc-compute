@@ -1,0 +1,104 @@
+[
+  {
+    "evidence_id": "ATLAS:714",
+    "pmid": "28250417",
+    "receptor": "LS01",
+    "kd_um": 32,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/28250417_bioc.xml",
+        "locator": "MethodsSurfaceplasmonresonanceanalysis; nospecifiedassaytemperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary_supp1.pdf",
+        "locator": "Supplementaryfigures1-9; noassaytemperatureverified"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-followup-v1/LS_full.html",
+        "sha256": "97c95d64c6b77cd4148da6e734c9e125342cfc2f9ca7c1b8cda6888f6b51ddad",
+        "locator": "full primary SPR Methods; LS crystallization room temperature is not SPR; NYBR1 cites protocols without explicit current-assay temperature"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:716",
+    "pmid": "28250417",
+    "receptor": "LS10",
+    "kd_um": 30,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/28250417_bioc.xml",
+        "locator": "MethodsSurfaceplasmonresonanceanalysis; nospecifiedassaytemperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary_supp1.pdf",
+        "locator": "Supplementaryfigures1-9; noassaytemperatureverified"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-followup-v1/LS_full.html",
+        "sha256": "97c95d64c6b77cd4148da6e734c9e125342cfc2f9ca7c1b8cda6888f6b51ddad",
+        "locator": "full primary SPR Methods; LS crystallization room temperature is not SPR; NYBR1 cites protocols without explicit current-assay temperature"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:747",
+    "pmid": "32310221",
+    "receptor": "NYBR1",
+    "kd_um": 4.7e-05,
+    "temperature_K": 298.15,
+    "decision": "resolved_from_primary_author_thesis_same_study_protocol;originaljournalomissiondisclosed",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/32310221_publisher.html",
+        "locator": "MethodsSPR; 298K refers to MD, notSPR"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-primary/JCI130562_supplement.pdf",
+        "locator": "Supplementary information"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-followup-v1/NYBR1_full.html",
+        "sha256": "5e0288e1b8198f360b298b7f6032308309f2c17d6b3ba861bbe718b78ff158df",
+        "locator": "full primary SPR Methods; LS crystallization room temperature is not SPR; NYBR1 cites protocols without explicit current-assay temperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-diversity-followup-v1/NYBR1_Crean_thesis_wsl.pdf",
+        "sha256": "e5028fa3980bea6a5d47077767b94581815c7940f20653b7f37399130cf5d80e",
+        "locator": "PDF97/108 exactKDandclone;115 allSPR25C"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:751",
+    "pmid": "32310221",
+    "receptor": "a7b2",
+    "kd_um": 0.07,
+    "temperature_K": 298.15,
+    "decision": "resolved_from_primary_author_thesis_same_study_protocol;originaljournalomissiondisclosed",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/32310221_publisher.html",
+        "locator": "MethodsSPR; 298K refers to MD, notSPR"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-primary/JCI130562_supplement.pdf",
+        "locator": "Supplementary information"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-followup-v1/NYBR1_full.html",
+        "sha256": "5e0288e1b8198f360b298b7f6032308309f2c17d6b3ba861bbe718b78ff158df",
+        "locator": "full primary SPR Methods; LS crystallization room temperature is not SPR; NYBR1 cites protocols without explicit current-assay temperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-diversity-followup-v1/NYBR1_Crean_thesis_wsl.pdf",
+        "sha256": "e5028fa3980bea6a5d47077767b94581815c7940f20653b7f37399130cf5d80e",
+        "locator": "PDF97/108 exactKDandclone;115 allSPR25C"
+      }
+    ]
+  }
+]

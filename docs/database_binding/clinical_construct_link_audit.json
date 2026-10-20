@@ -1,0 +1,40 @@
+[
+  {
+    "nct": "NCT01350401",
+    "historical_reference_pmid": "23926201",
+    "historical_reference_construct": "MAGE-A3 a3a / HLA-A*01",
+    "historical_reference_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6002776/",
+    "current_interventions": [
+      {
+        "type": "GENETIC",
+        "name": "Autologous genetically modified T cells, NY-ESO-1\u1d9c\u00b2\u2075\u2079T",
+        "description": "Cytoreductive chemotherapy followed by infusion of NY-ESO-1\u1d9c\u00b2\u2075\u2079T",
+        "armGroupLabels": [
+          "NY-ESO-1/LAGE-1 and HLA-A*02 Positive Subjects"
+        ]
+      }
+    ],
+    "status": "current_intervention_mismatch_with_historical_reference",
+    "action": "Do not join current NY-ESO-1 outcome rows to historical MAGE-A3/titin cases by NCT alone; version-specific construct adjudication required",
+    "original_primary_xml_capture": "unavailable: Europe PMC HTTP500; historical reference inspected through primary web text, not counted as a locally hashed primary XML"
+  },
+  {
+    "nct": "NCT01352286",
+    "historical_reference_pmid": "23926201",
+    "historical_reference_construct": "MAGE-A3 a3a / HLA-A*01",
+    "historical_reference_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6002776/",
+    "current_interventions": [
+      {
+        "type": "GENETIC",
+        "name": "Autologous Genetically modified T cells",
+        "description": "Patients will undergo myeloma restaging at days +42, +100, 6 months, 9 months and 1 year post infusion. At this point, in accordance with FDA Guidelines, all patients will enter long term follow up (LTFU) and be followed biannually for monitoring for gene transfer delayed adverse events until year 5 post infusion. From year 5, all patients will require annual LTFU visits for monitoring for delayed adverse events until year 15 after receiving the genetically modified T cells.\n\nPatients whose disease progresses prior to year 1 will enter LTFU at time of progression; however these patients will be seen quarterly from progression until year 1 post infusion and then follow the LTFU schedule mentioned above.",
+        "armGroupLabels": [
+          "Autologous Genetically modified T cells"
+        ]
+      }
+    ],
+    "status": "current_intervention_mismatch_with_historical_reference",
+    "action": "Do not join current NY-ESO-1 outcome rows to historical MAGE-A3/titin cases by NCT alone; version-specific construct adjudication required",
+    "original_primary_xml_capture": "unavailable: Europe PMC HTTP500; historical reference inspected through primary web text, not counted as a locally hashed primary XML"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "scope": "development validation only; no clinical/independent claim",
+  "input_report_sha256": "137dc98840bcce431b7f73451befa0a1e20c51cad6aa3b5c85ebe5c3dc917190",
+  "input_manifest_sha256": "2965b1972ccd876f84af6538537a23b326304f3676e230edd9e83b69f26cc30c",
+  "values": [
+    {
+      "candidate": "anchor_raw",
+      "validation_rmse_pkd": 0.7728733692287133
+    },
+    {
+      "candidate": "sequence_balanced",
+      "validation_rmse_pkd": 0.7932438894261052
+    },
+    {
+      "candidate": "cdr3_chemical",
+      "validation_rmse_pkd": 0.9174510040538764
+    },
+    {
+      "candidate": "cdr3_words",
+      "validation_rmse_pkd": 0.9072915222688778
+    },
+    {
+      "candidate": "training_mean",
+      "validation_rmse_pkd": 0.8029128322706365
+    }
+  ],
+  "outputs": {
+    "validation_comparison.png": "9ffde47ff9f2035252a5b903c41b7b4de13c2ce07a125dbf5ca98ab27bd3934f",
+    "validation_comparison.pdf": "3f4645183c9fb33eab1d807d25f0323f092eb825a9f4d63fcbbeab66966d7930"
+  }
+}

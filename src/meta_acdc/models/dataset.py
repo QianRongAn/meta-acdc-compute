@@ -1,24 +1,16 @@
-"""EGNN dataset: interface graphs + graft-decoy negatives (KN-4 prep).
+"""Synthetic structural controls; their class labels are not experimental binding labels.
 
-Positive examples: real TCR-pMHC complex interface graphs (from STCRDab /
-RCSB, 289 complexes curated by fetch_structures.py).
-
-Negative examples ("graft decoys"): the peptide chain of complex X is
-replaced by the peptide of complex Y (different antigen), then the interface
-graph is rebuilt with the same 10A rule. The TCR and MHC geometry stay
-real; only the antigen changes — the model must learn physical compatibility
-of the interface, not sequence shortcuts. This mirrors the proposal's
-hard-negative strategy at the structural level.
-
-Usage:
-    .venv/bin/python src/meta_acdc/models/dataset.py \
-        --struct-dir data/raw/structures --out data/processed/egnn_dataset.pt
+Grafting aligns donor N/CA/C and transfers its side chain without relaxation.
+This can create clashes and local geometry artifacts. Success on this task
+only establishes discrimination of this construction protocol. Use the
+immutable release builder rather than this legacy exploratory dataset CLI.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
+import math
 import random
 import sys
 from pathlib import Path
@@ -28,6 +20,7 @@ from meta_acdc.structure.graph import (
     build_interface_graph_from_residues,
     classify_chains,
     parse_pdb,
+    AA3TO1,
     TCR,
     MHC,
     PEPTIDE,
@@ -86,7 +79,7 @@ def _transplanted_atoms(native: Residue, foreign: Residue) -> list[tuple]:
     src = _backbone_coords(foreign)
     dst = _backbone_coords(native)
     if src is None or dst is None:
-        return list(native.atoms)  # fallback: keep native atoms
+        raise ValueError("graft requires complete N/CA/C backbone in both residues")
     r, t = _kabsch(src, dst)
     out = [a for a in native.atoms if a[0] in ("N", "CA", "C", "O", "OXT")]
     for name, x, y, z in foreign.atoms:
@@ -103,187 +96,95 @@ def make_decoy(
 ) -> list[Residue]:
     """Graft a foreign peptide chain in place of the native one.
 
-    TRUE structural-mimicry decoy: the foreign peptide's side-chain chemistry
+    Synthetic construction control (not an experimentally validated nonbinder): the foreign peptide's side-chain chemistry
     is transplanted onto the NATIVE peptide's backbone via Kabsch alignment.
     Backbone coordinates, node set and chain labels are untouched; only the
     side-chain atoms (and residue identities) change — the C-alpha-invisible
-    signal that real cross-reactivity (e.g., titin vs MAGE-A3) exhibits.
-    (Peptide lengths may differ: swap the aligned prefix.)
+    signal. This does not establish realistic conformations or nonbinding.
+    Peptide lengths must match; no prefix swaps are allowed.
     """
     roles = classify_chains(residues)
     native_pep_chains = [c for c, r in roles.items() if r == PEPTIDE]
-    if not native_pep_chains:
-        return residues
+    if len(native_pep_chains) != 1:
+        raise ValueError("graft requires exactly one peptide chain")
     native_pep_chain = native_pep_chains[0]
     native_pep = [r for r in residues if r.chain == native_pep_chain]
+    if len(native_pep) != len(peptide):
+        raise ValueError("graft peptide lengths must match; prefix swaps forbidden")
     swap = {id(r): f for r, f in zip(native_pep, peptide)}
     out = []
     for r in residues:
         f = swap.get(id(r))
         if f is not None:
             atoms = _transplanted_atoms(r, f)
-            out.append(Residue(r.chain, f.resname, r.resid, r.x, r.y, r.z,
-                               r.plddt, r.icode, atoms))
+            from dataclasses import replace
+            out.append(replace(r, resname=f.resname, atoms=atoms))
         else:
             out.append(r)
     return out
+
+
+def _centroid(rs: list[Residue], atom_names: tuple[str, ...] = ("CA",)) -> np.ndarray:
+    """Centroid of the named atoms over a residue list (np.array of 3)."""
+    pts = [np.array(a[1:]) for r in rs for a in r.atoms if a[0] in atom_names]
+    if not pts:
+        raise ValueError("centroid requested over residues without the named atoms")
+    return np.mean(np.vstack(pts), axis=0)
 
 
 def make_displaced_peptide_decoy(
     residues: list[Residue],
     shift: float = 6.0,
 ) -> list[Residue]:
-    """Negative decoy: the native peptide chain rigidly translated out of the
-    groove (along +z). Shift is 6A: the peptide leaves the binding groove but
-    STAYS WITHIN the 10A interface selection, so peptide nodes remain in the
-    graph — the is-peptide flag does not leak the label. Geometry is disrupted,
-    not removed. (The graft decoy is the weaker-signal variant.)
+    """Synthetic direction-aware translation control, not an experimental nonbinder.
+
+    The peptide is translated along the peptide-centroid -> MHC-groove
+    direction (i.e. away from the groove in the deposited geometry), not
+    along a fixed global axis. The direction is data-dependent, so a
+    displacement that would move the peptide sideways (or toward the TCR)
+    for one complex is not silently produced for another.
+
+    Still a construction rule, not physics: a 6 A shift can introduce
+    peptide/environment clashes rather than remove the peptide from the
+    groove, and neither overlap-free geometry nor physical plausibility
+    follows. Node membership is pinned by the accepted builder. Apply the
+    same artifact screen as to native and graft controls and record
+    exclusions.
     """
+    if not math.isfinite(shift) or shift <= 0:
+        raise ValueError("displacement shift must be finite and positive")
     roles = classify_chains(residues)
+    pep = [r for r in residues if roles[r.chain] == PEPTIDE]
+    mhc = [r for r in residues if roles[r.chain] == MHC]
+    if not pep:
+        raise ValueError("displacement requires peptide-role residues")
+    if not mhc:
+        raise ValueError(
+            "direction-aware displacement requires MHC-role residues "
+            "(peptide->groove direction is undefined without them)")
+    p_c = _centroid(pep)
+    g_c = _centroid(mhc)
+    d = p_c - g_c
+    norm = float(np.linalg.norm(d))
+    if norm < 1e-6:
+        raise ValueError("degenerate peptide/groove centroids; direction undefined")
+    u = d / norm
     out = []
     for r in residues:
         if roles[r.chain] == PEPTIDE:
-            shifted_atoms = [(n, x, y, z + shift) for n, x, y, z in r.atoms]
-            out.append(Residue(r.chain, r.resname, r.resid, r.x, r.y, r.z + shift,
-                               r.plddt, r.icode, shifted_atoms))
+            shifted_atoms = [(n, x + shift * u[0], y + shift * u[1],
+                              z + shift * u[2]) for n, x, y, z in r.atoms]
+            from dataclasses import replace
+            out.append(replace(r, x=r.x + shift * u[0], y=r.y + shift * u[1],
+                               z=r.z + shift * u[2], atoms=shifted_atoms))
         else:
             out.append(r)
     return out
 
 
-def build_dataset(struct_dir: Path, out_path: Path, seed: int = 42,
-                  with_electrostatics: bool = False) -> dict:
-    rng = random.Random(seed)
-    with open(struct_dir / "complexes.tsv") as fh:
-        rows = list(csv.DictReader(fh, delimiter="\t"))
-
-    complexes: dict[str, list[Residue]] = {}
-    skipped = 0
-    n_split = 0
-    warnings: list[str] = []
-    for row in rows:
-        pdb = row["pdb"]
-        path = struct_dir / f"{pdb.lower()}.pdb"
-        try:
-            residues = parse_pdb(path)
-            roles = classify_chains(residues)
-        except Exception:
-            continue
-        n_tcr = sum(1 for v in roles.values() if v == TCR)
-        n_peptide = sum(1 for v in roles.values() if v == PEPTIDE)
-        n_mhc = sum(1 for v in roles.values() if v == MHC)
-        if n_tcr >= 1 and n_peptide == 1 and n_mhc >= 1:
-            complexes[pdb] = residues
-        elif (n_tcr > 2 or n_peptide > 1) and n_mhc >= 1:
-            # multi-complex asymmetric unit: split into sub-complexes.
-            # split_complex now returns (complexes, warnings); the warnings
-            # must be surfaced, because an ambiguous split is not evidence of
-            # an independent complex (AUDIT.md #27).
-            try:
-                from meta_acdc.structure.split_complexes import split_complex
-                subs, split_warnings = split_complex(residues)
-            except Exception as exc:
-                subs, split_warnings = [], [f"{pdb}: split failed ({exc})"]
-            for k, sub in enumerate(subs):
-                sub_roles = classify_chains(sub)
-                if (sum(1 for v in sub_roles.values() if v == TCR) >= 1
-                        and sum(1 for v in sub_roles.values() if v == PEPTIDE) == 1
-                        and sum(1 for v in sub_roles.values() if v == MHC) >= 1):
-                    complexes[f"{pdb}_{k}"] = sub
-                    n_split += 1
-            if split_warnings:
-                warnings.extend(f"{pdb}: {w}" for w in split_warnings)
-        else:
-            skipped += 1
-    if skipped:
-        print(f"skipped {skipped} ambiguous entries", flush=True)
-    if n_split:
-        print(f"split {n_split} sub-complexes from multi-complex files", flush=True)
-    if warnings:
-        # A split that had to guess is not an independent complex. Report it
-        # and write it out so the count of "real" complexes can be audited.
-        print(f"WARNING: {len(warnings)} assignment issues while splitting "
-              f"multi-complex entries", flush=True)
-        for w in warnings[:20]:
-            print(f"  {w}")
-        wpath = Path(str(out_path).replace(".pt", "_split_warnings.txt"))
-        wpath.write_text("\n".join(warnings) + "\n", encoding="utf-8")
-        print(f"wrote {wpath}")
-
-    graphs = []
-    labels = []
-    pdbs = []
-
-    def add(residues: list[Residue], label: int, pdb: str,
-            forced_nodes: set | None = None):
-        try:
-            g = build_interface_graph_from_residues(
-                residues, forced_nodes=forced_nodes,
-                electrostatics=with_electrostatics)
-        except ValueError:
-            return
-        if g.n_nodes < 20:
-            return
-        graphs.append((g.node_features, g.node_coords, g.edge_index, g.edge_features))
-        labels.append(label)
-        pdbs.append(pdb)
-        return g
-
-    # positives: native complexes (capture node sets for decoy pinning)
-    n_pos = 0
-    native_keys: dict[str, set] = {}
-    for pdb, residues in complexes.items():
-        g = add(residues, 1, pdb)
-        if g is not None:
-            native_keys[pdb] = set(g.node_keys)
-            n_pos += 1
-
-    # negatives: displaced-peptide decoys — SAME node set as native,
-    # only peptide coordinates move; no node-set/flag leakage possible
-    n_neg = 0
-    for pdb, residues in complexes.items():
-        if pdb not in native_keys:
-            continue
-        decoy = make_displaced_peptide_decoy(residues)
-        add(decoy, 0, f"{pdb}-disp", forced_nodes=native_keys[pdb])
-        n_neg += 1
-
-    # extra negatives: graft decoys (foreign peptide, weak signal — hard task)
-    n_graft = 0
-    pdb_list = list(complexes.keys())
-    for pdb, residues in complexes.items():
-        if pdb not in native_keys:
-            continue
-        peptides = _peptide_chains(residues)
-        if not peptides:
-            continue
-        native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
-        # pick a donor peptide with a DIFFERENT sequence (else decoy == native)
-        graft = None
-        donor_pdb = None
-        for _ in range(20):
-            donor_pdb = rng.choice(pdb_list)
-            donor_peptides = _peptide_chains(complexes[donor_pdb])
-            if not donor_peptides:
-                continue
-            candidate = rng.choice(list(donor_peptides.values()))
-            if "".join(r.resname[:1] for r in candidate) != native_seq:
-                graft = candidate
-                break
-        if graft is None:
-            continue
-        decoy = make_decoy(residues, graft)
-        add(decoy, 0, f"{pdb}<-{donor_pdb}", forced_nodes=native_keys[pdb])
-        n_graft += 1
-
-    import torch  # lazy: graph logic above is torch-free
-
-    torch.save(
-        {"graphs": graphs, "labels": labels, "pdbs": pdbs},
-        out_path,
-    )
-    return {"positives": n_pos, "negatives": n_neg + n_graft,
-            "displaced": n_neg, "graft": n_graft, "total": len(labels)}
+def build_dataset(*args,**kwargs):
+    """Historical builder retired; helpers above remain for incident reconstruction."""
+    raise ValueError('legacy structural dataset builder retired; use meta_acdc.data.build_release --previous-release-dir')
 
 
 def main() -> int:

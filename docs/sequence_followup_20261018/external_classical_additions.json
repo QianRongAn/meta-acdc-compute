@@ -1,0 +1,188 @@
+[
+  {
+    "beta_variable": "MGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSMGGTYEQYFGPGTRLTVT",
+    "cdr3_beta": "CASSMGGTYEQYF",
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNALLGNQFYFGTGTSLTVIP",
+    "cdr3_alpha": "CAVNALLGNQFYF",
+    "evidence_id": "PMID33468649:T4H2:tcr_binding_spr:IMDQVPFSV",
+    "receptor_name": "T4H2",
+    "lineage": "T4H2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "published recombinant soluble paired TCR; RCSB variable regions include expression initiator residues; not full clinical construct",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/rcsb_6VM9.fasta",
+        "sha256": "d06c6c33c266efbd856f98ddf4b6af66e318989494d91c2f1d526eb0983ca5ad",
+        "url": "https://www.rcsb.org/fasta/entry/6VM9/display",
+        "locator": "6VM9 named alpha/beta entities; truncate before constant motifsNIQNP/EDLKN; PDB-to-clone mapping primary Methods"
+      }
+    ],
+    "pmid": "33468649",
+    "study": "10.1073/pnas.2018125118",
+    "research_group": "Notre Dame Baker laboratory; shared source group across2021/2024",
+    "primary_locator": "Results Anchor Modification affects TCR binding; Figure1A; Methods Surface Plasmon Resonance",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/T4H2_2021.html",
+        "sha256": "a6b6732587bb6614b61acf759c7f8fffa9f15926795b98d8ecaf74098ff7b749",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7848747/",
+        "locator": "Results Anchor Modification affects TCR binding; Figure1A; Methods Surface Plasmon Resonance"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "IMDQVPFSV",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "1.8",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 1800.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "fold": "external_test",
+    "scope": "newly_reserved_unscored_external_quantitative_core",
+    "not_newly_discovered": false,
+    "model_scored": false,
+    "training_allowed": false,
+    "training_label": null,
+    "use": "reserved_external_only",
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "condition_limit": "assay-specific measurement; no clinical-risk or functional activation label",
+    "conditions": "TCR immobilized CM5 amine1500-3000RU; pMHC analyte5uL/min; duplicate injections; sharedRmax/global1:1equilibrium; HBS-EP10mMHEPESpH7.4/150mMNaCl/3mMEDTA/.005percentP20;25C",
+    "primary_error_um": null,
+    "error_kind": "not recovered; central value explicitly reported",
+    "max_tested_um": null,
+    "confounding_notes": [
+      "Same T4H2/peptide yields1.8uM in2021 vs6.8uM in2024; different assay orientations and study conditions; preserve both, do not count as two receptors or average into one gold KD",
+      "2024 Nle replicate8uM is noncanonical peptide; excluded from canonical dataset",
+      "SILv44 PDB6VM7 crystal is WT peptide; only paired receptor identity transferred to SPR Met ligand, not WT complex coordinates as Met structure"
+    ]
+  },
+  {
+    "beta_variable": "MGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSITLSSYNEQFFGPGTRLTVL",
+    "cdr3_beta": "CASSITLSSYNEQFF",
+    "alpha_variable": "MAQSVSQHNHHVILSEAASLELGCNYSYGGTVNLFWYVQYPGQHLQLLLKYFSGDPLVKGIKGFEAEFIKSKFSFNLRKPSVQWSDTAEYFCAVNARRNTPLVFGKGTRLSVIA",
+    "cdr3_alpha": "CAVNARRNTPLVF",
+    "evidence_id": "PMID33468649:SILv44:tcr_binding_spr:IMDQVPFSV",
+    "receptor_name": "SILv44",
+    "lineage": "SILv44",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "published recombinant soluble paired TCR; RCSB variable regions include expression initiator residues; not full clinical construct",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/rcsb_6VM7.fasta",
+        "sha256": "980c8170791c423a805605930834b316ca4e6082855362254177f6ee13434889",
+        "url": "https://www.rcsb.org/fasta/entry/6VM7/display",
+        "locator": "6VM7 named alpha/beta entities; truncate before constant motifsNIQNP/EDLKN; PDB-to-clone mapping primary Methods"
+      }
+    ],
+    "pmid": "33468649",
+    "study": "10.1073/pnas.2018125118",
+    "research_group": "Notre Dame Baker laboratory; shared source group across2021/2024",
+    "primary_locator": "Results Anchor Modification affects TCR binding; Figure1A; Methods Surface Plasmon Resonance",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/T4H2_2021.html",
+        "sha256": "a6b6732587bb6614b61acf759c7f8fffa9f15926795b98d8ecaf74098ff7b749",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7848747/",
+        "locator": "Results Anchor Modification affects TCR binding; Figure1A; Methods Surface Plasmon Resonance"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "IMDQVPFSV",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "210.0",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 210000.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "fold": "external_test",
+    "scope": "newly_reserved_unscored_external_quantitative_core",
+    "not_newly_discovered": false,
+    "model_scored": false,
+    "training_allowed": false,
+    "training_label": null,
+    "use": "reserved_external_only",
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "condition_limit": "assay-specific measurement; no clinical-risk or functional activation label",
+    "conditions": "TCR immobilized CM5 amine1500-3000RU; pMHC analyte5uL/min; duplicate injections; sharedRmax/global1:1equilibrium; HBS-EP10mMHEPESpH7.4/150mMNaCl/3mMEDTA/.005percentP20;25C",
+    "primary_error_um": null,
+    "error_kind": "not recovered; central value explicitly reported",
+    "max_tested_um": null,
+    "confounding_notes": [
+      "Same T4H2/peptide yields1.8uM in2021 vs6.8uM in2024; different assay orientations and study conditions; preserve both, do not count as two receptors or average into one gold KD",
+      "2024 Nle replicate8uM is noncanonical peptide; excluded from canonical dataset",
+      "SILv44 PDB6VM7 crystal is WT peptide; only paired receptor identity transferred to SPR Met ligand, not WT complex coordinates as Met structure"
+    ]
+  },
+  {
+    "beta_variable": "MGITQSPKYLFRKEGQNVTLSCEQNLNHDAMYWYRQDPGQGLRLIYYSQIVNDFQKGDIAEGYSVSREKKESFPLTVTSAQKNPTAFYLCASSMGGTYEQYFGPGTRLTVT",
+    "cdr3_beta": "CASSMGGTYEQYF",
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNALLGNQFYFGTGTSLTVIP",
+    "cdr3_alpha": "CAVNALLGNQFYF",
+    "evidence_id": "PMID39042676:T4H2:tcr_binding_spr:IMDQVPFSV",
+    "receptor_name": "T4H2",
+    "lineage": "T4H2",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "construct_notes": "published recombinant soluble paired TCR; RCSB variable regions include expression initiator residues; not full clinical construct",
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/rcsb_6VM9.fasta",
+        "sha256": "d06c6c33c266efbd856f98ddf4b6af66e318989494d91c2f1d526eb0983ca5ad",
+        "url": "https://www.rcsb.org/fasta/entry/6VM9/display",
+        "locator": "6VM9 named alpha/beta entities; truncate before constant motifsNIQNP/EDLKN; PDB-to-clone mapping primary Methods"
+      }
+    ],
+    "pmid": "39042676",
+    "study": "10.1073/pnas.2406615121",
+    "research_group": "Notre Dame Baker laboratory; shared source group across2021/2024",
+    "primary_locator": "Results TCR binding; Figure1A/B; Methods SPR and Statistical Analysis",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-spr-followup-v1/newT4H2.html",
+        "sha256": "981390881cf126375a4857ace88bd361bd680c6ed1afa102493879e4f15841d1",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11295079/",
+        "locator": "Results TCR binding; Figure1A/B; Methods SPR and Statistical Analysis"
+      }
+    ],
+    "mhc_allele": "HLA-A*02:01",
+    "peptide": "IMDQVPFSV",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "6.8",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 6800.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "fold": "external_test",
+    "scope": "newly_reserved_unscored_external_quantitative_core",
+    "not_newly_discovered": false,
+    "model_scored": false,
+    "training_allowed": false,
+    "training_label": null,
+    "use": "reserved_external_only",
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "condition_limit": "assay-specific measurement; no clinical-risk or functional activation label",
+    "conditions": "pMHC immobilized CM5 amine3000-4000RU; TCR analyte5uL/min; reference blank; duplicate injections; single-siteequilibrium; HBS-EP10mMHEPESpH7.4/150mMNaCl/3mMEDTA/.005percentP20;25C",
+    "primary_error_um": 0.5,
+    "error_kind": "SE of fitted KD",
+    "max_tested_um": null,
+    "confounding_notes": [
+      "Same T4H2/peptide yields1.8uM in2021 vs6.8uM in2024; different assay orientations and study conditions; preserve both, do not count as two receptors or average into one gold KD",
+      "2024 Nle replicate8uM is noncanonical peptide; excluded from canonical dataset",
+      "SILv44 PDB6VM7 crystal is WT peptide; only paired receptor identity transferred to SPR Met ligand, not WT complex coordinates as Met structure"
+    ]
+  }
+]

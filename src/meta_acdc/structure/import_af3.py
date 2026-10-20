@@ -115,9 +115,40 @@ def matches_chain_pair_tol(alpha, beta, cand: dict, max_trim: int = 2) -> bool:
                 and _eq_upto_termini(beta, a2, max_trim)))
 
 
-def load_manifest(path: Path) -> list[dict]:
+LEGACY_SWAPPED_LIST_NAME = "kn5_submission_list.tsv"
+
+
+def load_manifest(path: Path, allow_duplicates: bool = False) -> list[dict]:
+    """Read a submission manifest TSV (tab-delimited).
+
+    Guardrails (review item #34): exact duplicate rows are rejected unless
+    explicitly allowed, and the legacy `kn5_submission_list.tsv` — whose
+    `tcr_a`/`tcr_b` columns are inverted relative to the AF3 job FASTA —
+    is consumed order-independently by callers and announced on stderr so
+    silent misuse cannot recur.
+    """
     with open(path, newline="", encoding="utf-8", errors="replace") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
+        rows = list(csv.DictReader(fh, delimiter="\t"))
+    if not allow_duplicates:
+        keys: dict[tuple, int] = {}
+        for row in rows:
+            key = (row.get("pdb", ""), row.get("tcr_a", ""),
+                   row.get("tcr_b", ""), row.get("peptide", ""))
+            if key in keys:
+                raise ValueError(
+                    f"duplicate submission row in {path} "
+                    f"(lines {keys[key] + 1} and {len(keys) + 1} share "
+                    f"pdb/tcr_a/tcr_b/peptide): deduplicate the manifest "
+                    f"before consuming it")
+            keys[key] = len(keys)
+    if path.name == LEGACY_SWAPPED_LIST_NAME:
+        print(
+            f"warning: {path} is the legacy submission list: its tcr_a/tcr_b "
+            "columns are inverted relative to AF3 job FASTAs (tcr_a=beta, "
+            "tcr_b=alpha). Downstream matching is order-independent, but do "
+            "not trust the column names for chain identity.",
+            file=sys.stderr)
+    return rows
 
 
 def main() -> int:

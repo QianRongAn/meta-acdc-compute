@@ -1,0 +1,102 @@
+[
+  {
+    "receptor_name": "D1",
+    "cdr3_alpha": "CLVGGGANNLFF",
+    "cdr3_beta": "CSARQEGGLRNEQYF",
+    "trav": "TRAV4",
+    "trbv": "TRBV20-1",
+    "kd_um": 47.7,
+    "error_um": 3.3,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 500,
+    "overlap_checks": {
+      "old91": [],
+      "combined": [],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [],
+      "data/releases/20261016-structural-v2/structure_records.json": [],
+      "data/releases/20261016-structural-v3/structure_records.json": [],
+      "data/releases/20261017-structural-v4/structure_records.json": [],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": []
+    }
+  },
+  {
+    "receptor_name": "D6",
+    "cdr3_alpha": "CLAQTGANNLFF",
+    "cdr3_beta": "CSARASGEAKNIQYF",
+    "trav": "TRAV4",
+    "trbv": "TRBV20-1",
+    "kd_um": 127.1,
+    "error_um": 7.7,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 430,
+    "overlap_checks": {
+      "old91": [],
+      "combined": [],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [],
+      "data/releases/20261016-structural-v2/structure_records.json": [],
+      "data/releases/20261016-structural-v3/structure_records.json": [],
+      "data/releases/20261017-structural-v4/structure_records.json": [],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": []
+    }
+  },
+  {
+    "receptor_name": "KS1",
+    "cdr3_alpha": "CAVTLNNNAGNMLTF",
+    "cdr3_beta": "CASSVGGTEAFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV5-1",
+    "kd_um": 226.9,
+    "error_um": 8.1,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 500,
+    "overlap_checks": {
+      "old91": [
+        "KS1"
+      ],
+      "combined": [
+        "IMMREP25:2a507f3bbed9f62830b31a60d68b0ee1eea030988dd96a2d7481fabf2bef36e4",
+        "IMMREP25:91005b5fda7be131782aae364ac4c3c415a71965a8af0fa2157abb736a12917b",
+        "IMMREP25:f378cc825f1a81a32b2320dc97c2d2a66919801a1cfae87dd4aa3efa460bfa42"
+      ],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261016-structural-v2/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261016-structural-v3/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261017-structural-v4/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [
+        "8f5a"
+      ],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": [
+        "8f5a"
+      ]
+    }
+  }
+]

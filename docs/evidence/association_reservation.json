@@ -1,0 +1,12 @@
+{
+  "source_sha256": "69c9b9aae2d689c41bd09fd1fd4e81d3d08ac219b64d215d2b88fa6a63ca8c38",
+  "output_sha256": "2f825c47b5f884139c948a1b7d14794679445c3fc5b808f2dc0039e1da6288c6",
+  "quarantine_sha256": "467b7657499dc69f5c80e48e4cdb4952fae20309c996e6963971a541140e1593",
+  "registry_sha256": "32fde735dd91b4c12e33dbf5d48b61bcf32361a2ac277a285c827618e553d292",
+  "n_input": 199385,
+  "n_retained": 199362,
+  "n_quarantined": 23,
+  "rule": "either corresponding alpha/beta CDR3 core >=0.9 SequenceMatcher similarity, minimum 8 residues; conservative reservation, not specificity equivalence",
+  "training_labels_added": false,
+  "filtered_rows_rechecked": 199362
+}

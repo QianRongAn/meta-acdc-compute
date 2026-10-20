@@ -1,0 +1,48 @@
+{
+  "status": "curated_external_measurements_only",
+  "validation": {
+    "passed": true,
+    "records": 23,
+    "receptors": 8,
+    "studies": 4,
+    "endpoints": {
+      "tcr_binding_spr": 21,
+      "tcr_cellular_tnf_alpha": 2
+    },
+    "training_allowed": false,
+    "population_benchmark_allowed": false,
+    "binding_outcomes": {
+      "measured_binding": 10,
+      "not_detected": 11
+    },
+    "priority_adjudications": {
+      "blocked_primary_fulltext_conditions_unavailable": 9,
+      "provisional_not_in_strict_panel": 2,
+      "excluded_from_intrinsic_binding_panel": 9
+    },
+    "limitations": [
+      "Targeted case-selected panel, not representative benchmark",
+      "JDI parent and enhanced share lineage; do not count as independent families",
+      "Conditional NB not proof of absent binding outside measured conditions",
+      "Cellular nonresponse does not imply intrinsic nonbinding",
+      "No observed WT SPR result fabricated for PIK3CA",
+      "Missing full sequences for JDIa9bwt/JDIa96b35 and workbook Mutant IDs: excluded; pooled peptides not split into negatives"
+    ]
+  },
+  "artifacts": {
+    "primary_measurements.json": "e7f9d36562fea348d1db2e8c79eddd30f9f0304abf1c8198c472584a359608e9",
+    "holdout_registry.json": "a5803413d6ba4d7ecfada7a576dfa0190afbf3e2d684e50d77103dcc4510f905",
+    "priority_adjudications.tsv": "af66b63c20748a036973176ff480b2878584446a718512a2f60e2cb8482447e6",
+    "primary_panel_validation.json": "69a76196453aa0868f05364eb5aac9462aacf5077e18c09b8110d63ba6ad1b8e",
+    "supplementary_replicates.json": "90fe4465acd184c4d5b912bd438d023062a0f3982ae68d341573602e9dc73270"
+  },
+  "source_retrieval_manifest": {
+    "path": "data/external_evidence/20261016-expansion/retrieval_manifest.json",
+    "sha256": "9f1f14595ee41541a2548bdf8ced46ef88349ce37278d13bb5edd99a395027b5"
+  },
+  "supplementary_archive": {
+    "sha256": "f75a2792b94a7cc967727dbfc2abed9ec42d2ee6c594f84940dea2132a1cbc0d",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9464187/supplementaryFiles"
+  },
+  "training_allowed": false
+}

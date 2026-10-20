@@ -1,0 +1,51 @@
+{
+  "atomic_engineering_passed": true,
+  "training_ready": false,
+  "passed": false,
+  "errors": [
+    "training folds unusable: invalid/non-disjoint frozen folds"
+  ],
+  "n_graphs": 10,
+  "graph_kinds": {
+    "native": 5,
+    "rigid_transfer": 5
+  },
+  "n_native": 5,
+  "n_families": 3,
+  "n_vdjdb": 199279,
+  "n_iedb_assays": 4845721,
+  "iedb_endpoints": {
+    "binding-unspecified": 306616,
+    "presentation-eluted": 4539105
+  },
+  "domains": [
+    "crystal",
+    "predicted"
+  ],
+  "fold_counts": {
+    "train": 2,
+    "validation": 8,
+    "calibration": 0,
+    "test": 0
+  },
+  "folds": {
+    "train": [
+      6,
+      7
+    ],
+    "validation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9
+    ],
+    "calibration": [],
+    "test": []
+  },
+  "task": "native_vs_synthetic_decoy",
+  "binding_training_allowed": false
+}

@@ -31,6 +31,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import math
 import csv
 import sys
 from pathlib import Path
@@ -166,6 +167,13 @@ def fit_ensemble(X_tr, y_tr, X_pool, seed: int) -> np.ndarray:
     return np.vstack(probs)
 
 
+def fixed_budget_batches(pool_size: int, batch_size: int, budget: int) -> list[int]:
+    if batch_size <= 0 or not 0 < budget <= pool_size:
+        raise ValueError('invalid fixed budget or batch size')
+    full, remainder = divmod(budget, batch_size)
+    return [batch_size] * full + ([remainder] if remainder else [])
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", type=Path, default=Path("data/processed/vdjdb.clean.tsv"))
@@ -198,7 +206,17 @@ def main() -> int:
     ap.add_argument("--ablation-batches", type=str,
                     default="3600,1800,900,600,300",
                     help="comma list of batch sizes for the ablation")
+    ap.add_argument("--allow-lossy-research-prefilter", action="store_true",
+                    help="research ablation only; omitted candidates are untested, never safe")
     args = ap.parse_args()
+    if args.pool_mode == "prefiltered" and not args.allow_lossy_research_prefilter:
+        raise ValueError("hard presentation filtering is a lossy research ablation; use full pool for screening")
+    if min(args.rounds, args.batch, args.seeds) <= 0:
+        raise ValueError("rounds, batch and seeds must be positive")
+    if not 0 < args.ablation_budget <= 1:
+        raise ValueError("budget fraction must be in (0, 1]")
+    from meta_acdc.models.benchmark_baseline import load as verify_binding_labels
+    verify_binding_labels(args.data)
 
     rows = load_rows(args.data)
     cdr3s = [r["cdr3_beta"] for r in rows]
@@ -220,6 +238,8 @@ def main() -> int:
         X_pool, y_pool = X[pool_idx], y[pool_idx]
 
     n_pos_pool = int(y_pool.sum())
+    if not len(pool_idx) or not n_pos_pool:
+        raise ValueError("recall undefined for an empty pool or no experimentally labelled positives")
     print(f"pool ({args.pool_mode}, unseen epitopes): {len(pool_idx)} pairs, "
           f"{n_pos_pool} positives ({n_pos_pool / len(pool_idx) * 100:.1f}%)",
           flush=True)
@@ -242,6 +262,7 @@ def main() -> int:
         recalls = []
         spent = 0
         for rnd in range(rounds):
+            if not len(unlabeled): break
             n = min(batch, len(unlabeled))
             if fixed_budget is not None:
                 n = min(n, max(0, fixed_budget - spent))
@@ -278,16 +299,17 @@ def main() -> int:
     if args.ablation:
         # batch-size ablation at fixed total budget (KN-7+, lit: many small
         # batches beat few large ones). Reports final recall per batch size.
-        budget = int(round(args.ablation_budget * len(pool_idx)))
+        budget = max(1, int(round(args.ablation_budget * len(pool_idx))))
         batches = [int(b) for b in args.ablation_batches.split(",") if b]
         print(f"\nbatch ablation: budget {budget} samples "
               f"({args.ablation_budget * 100:.0f}% of pool), "
               f"seeds={max(args.seeds, 3)}", flush=True)
         n_seed = max(args.seeds, 3)
         for b in batches:
+            if b <= 0: raise ValueError("batch sizes must be positive")
             # Enough rounds to reach the budget, then the last round is trimmed
             # to it, so every batch size spends exactly `budget` labels.
-            rounds_b = max(1, math.ceil(budget / b))
+            rounds_b = len(fixed_budget_batches(len(pool_idx), b, budget))
             rec = [run_one(args.seed + k, rounds_b, b, args.mode,
                            fixed_budget=budget)
                    for k in range(n_seed)]
@@ -304,8 +326,8 @@ def main() -> int:
     rec = np.array(all_recalls)  # (seeds, rounds)
     print(f"\nmode={args.mode}, pool={args.pool_mode}, seeds={args.seeds}, "
           f"rounds={args.rounds}, batch={args.batch}", flush=True)
-    for rnd in range(args.rounds):
-        frac = (rnd + 1) * args.batch / len(pool_idx)
+    for rnd in range(rec.shape[1]):
+        frac = min((rnd + 1) * args.batch, len(pool_idx)) / len(pool_idx)
         mean, std = rec[:, rnd].mean(), rec[:, rnd].std()
         print(f"  {frac * 100:5.1f}% sampling: recall {mean * 100:5.1f}% "
               f"(+/- {std * 100:.1f})", flush=True)

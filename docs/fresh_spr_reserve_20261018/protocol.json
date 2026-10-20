@@ -1,0 +1,27 @@
+{
+  "status": "partial_reserved_not_formal_acceptance",
+  "evaluation_allowed": false,
+  "required_min_source_components": 3,
+  "required_min_connected_blocks": 3,
+  "counts": {
+    "observations": 2,
+    "primary_observations": 1,
+    "sensitivity_observations": 1,
+    "lineages": 1,
+    "studies": 1,
+    "research_source_components": 1,
+    "connected_blocks": 1
+  },
+  "development_path": "docs/affinity_development_20261018/development_source_safe.json",
+  "source_excluded_ids": [
+    "ATLAS:485"
+  ],
+  "preserve_parent_folds": true,
+  "no_random_reshuffle": true,
+  "independence_rule": "existing either-chain variable homology/CDR3 and connected peptide/study block criteria, plus shared coauthor/ORCID source components; NOT V-gene-disjoint",
+  "anchor_limitation": "Inherited alpha1 reference was previously selected with validation3B before IY11 reservation. Excluding3B now does not undo that configuration exposure. Do not claim strict source-independent acceptance of the retained anchor on IY11; a future freshly registered source-clean model must use this reservation.",
+  "missing": [
+    "At least two additional source components and connected blocks; number alone is not sufficient; full exact SPR evidence and paired identity required."
+  ],
+  "unit_conflict_disclosed": true
+}

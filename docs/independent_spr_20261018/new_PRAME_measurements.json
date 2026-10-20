@@ -1,0 +1,638 @@
+[
+  {
+    "evidence_id": "PMID39500929:S2-198:HLA-A*03:01:ELFSYLIEK",
+    "receptor_name": "S2-198",
+    "lineage": "S2",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*03:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "0.076",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 76.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MAQEVTQIPAALSVPEGENLVLNCSFTLRWIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVNNAGNMLTFGGGTRLMVKP",
+    "beta_variable": "MNAGVTQTPKFRILKIGQSMTLQCTQDMNHNYMYWYRQDPGMGLKLIYYSVGAGITDKGEVPNGYNVSRSTTEDFPLRLESAAPSQTSVYFCASSETRGAPYGYTFGSGTRLTVV",
+    "cdr3_alpha": "CAVNNAGNMLTF",
+    "cdr3_beta": "CASSETRGAPYGYTF",
+    "trav": "TRAV21",
+    "trbv": "TRBV6-6",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable2/SIfigure9 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": null,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab2_HTML.jpg",
+        "sha256": "3f32b384895bd5decbe6822d280b287e0be3114ff1d35349fb79bde6b5423a20",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable2 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYO.fasta",
+        "sha256": "4f2f73470f73de84696ec04f3ddfd8581aabab15a3b197ee1b2c875c7403f4a6",
+        "url": "https://www.rcsb.org/fasta/entry/8RYO/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 7.119186407719209
+  },
+  {
+    "evidence_id": "PMID39500929:S2-198:HLA-A*11:01:ELFSYLIEK",
+    "receptor_name": "S2-198",
+    "lineage": "S2",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*11:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "1.227",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 1227.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MAQEVTQIPAALSVPEGENLVLNCSFTLRWIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVNNAGNMLTFGGGTRLMVKP",
+    "beta_variable": "MNAGVTQTPKFRILKIGQSMTLQCTQDMNHNYMYWYRQDPGMGLKLIYYSVGAGITDKGEVPNGYNVSRSTTEDFPLRLESAAPSQTSVYFCASSETRGAPYGYTFGSGTRLTVV",
+    "cdr3_alpha": "CAVNNAGNMLTF",
+    "cdr3_beta": "CASSETRGAPYGYTF",
+    "trav": "TRAV21",
+    "trbv": "TRBV6-6",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable2/SIfigure9 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": null,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab2_HTML.jpg",
+        "sha256": "3f32b384895bd5decbe6822d280b287e0be3114ff1d35349fb79bde6b5423a20",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable2 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYO.fasta",
+        "sha256": "4f2f73470f73de84696ec04f3ddfd8581aabab15a3b197ee1b2c875c7403f4a6",
+        "url": "https://www.rcsb.org/fasta/entry/8RYO/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 5.9111554372729955
+  },
+  {
+    "evidence_id": "PMID39500929:S8-WT:HLA-A*03:01:ELFSYLIEK",
+    "receptor_name": "S8-WT",
+    "lineage": "S8",
+    "variant": "phage-isolated parent; natural donor pairing unproven",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*03:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "43.95",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 43950.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQRGSQGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQRGSQGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": 250,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYP.fasta",
+        "sha256": "036c28a521c0dc76345313698db573d16238a8b8753db16e0b51331b377e9c29",
+        "url": "https://www.rcsb.org/fasta/entry/8RYP/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 4.3570411205902095
+  },
+  {
+    "evidence_id": "PMID39500929:S8-WT:HLA-A*11:01:ELFSYLIEK",
+    "receptor_name": "S8-WT",
+    "lineage": "S8",
+    "variant": "phage-isolated parent; natural donor pairing unproven",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*11:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "285.9",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 285900.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQRGSQGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQRGSQGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": 250,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "sensitivity_only",
+    "metric_caveat": "285.9uM fit exceeds stated250uM WT concentration range; no plateau established; preserve reported value but exclude from prespecified primary metric",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYP.fasta",
+        "sha256": "036c28a521c0dc76345313698db573d16238a8b8753db16e0b51331b377e9c29",
+        "url": "https://www.rcsb.org/fasta/entry/8RYP/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 3.543785844642011
+  },
+  {
+    "evidence_id": "PMID39500929:S8-9F3:HLA-A*03:01:ELFSYLIEK",
+    "receptor_name": "S8-9F3",
+    "lineage": "S8",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*03:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "7.46",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 7460.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQWGSLGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQWGSLGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": 250,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYQ.fasta",
+        "sha256": "803588a77b1b8df262d4b9a46c71fbbd527fba3fff7f95520995e3c81aaa1e55",
+        "url": "https://www.rcsb.org/fasta/entry/8RYQ/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 5.127261172527332
+  },
+  {
+    "evidence_id": "PMID39500929:S8-9F3:HLA-A*11:01:ELFSYLIEK",
+    "receptor_name": "S8-9F3",
+    "lineage": "S8",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*11:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "14.48",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 14480.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQWGSLGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQWGSLGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": 250,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/8RYQ.fasta",
+        "sha256": "803588a77b1b8df262d4b9a46c71fbbd527fba3fff7f95520995e3c81aaa1e55",
+        "url": "https://www.rcsb.org/fasta/entry/8RYQ/display",
+        "locator": "named human TCRalpha andbeta entities; exact full-chain match to primary sequenceSI"
+      }
+    ],
+    "pkd": 4.839231438138872
+  },
+  {
+    "evidence_id": "PMID39500929:S8-W96:HLA-A*03:01:ELFSYLIEK",
+    "receptor_name": "S8-W96",
+    "lineage": "S8",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*03:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "52.17",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 52170.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQWGSQGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQWGSQGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": null,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      }
+    ],
+    "pkd": 4.282579163277625
+  },
+  {
+    "evidence_id": "PMID39500929:S8-W96:HLA-A*11:01:ELFSYLIEK",
+    "receptor_name": "S8-W96",
+    "lineage": "S8",
+    "variant": "affinity-engineered soluble human alpha/beta variant; not a natural independent clone",
+    "species": "Homo sapiens",
+    "receptor_type": "alphabeta",
+    "peptide": "ELFSYLIEK",
+    "mhc_allele": "HLA-A*11:01",
+    "endpoint": "tcr_binding_spr",
+    "observed_outcome": "measured_binding",
+    "raw_value": "89.71",
+    "raw_unit": "uM",
+    "qualifier": "=",
+    "kd_nm": 89710.0,
+    "temperature_K": 298.15,
+    "instrument": "Biacore T200",
+    "fit": "equilibrium",
+    "alpha_variable": "MKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRQWGSQGNLIFGKGTKLSVKP",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPGGGHNEQFFGPGTRLTVL",
+    "cdr3_alpha": "CAVRQWGSQGNLIF",
+    "cdr3_beta": "CASSPGGGHNEQFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV9",
+    "gene_annotation_source": "TCR3d discovery only; primary paired sequence, not gene-name assumption, determines identity",
+    "pmid": "39500929",
+    "study": "10.1038/s41598-024-75140-7",
+    "research_source": "source:39500929",
+    "conditions": "25C; CM5 streptavidin-coupled biotinylated monomeric pHLA about1000RU; biotin blocked surface; soluble disulfide-stabilized TCR analyte; PBS+P20;10uL/min; six two-fold dilutions; repeat triplicate injections on same surface; one-site total least-squares equilibrium fit GraphPadPrism9",
+    "primary_locator": "mainTable1/SIfigure4 numeric cells for unmutated A03 and A11; Methods Surface plasmon resonance; sequenceSI1PDF1-2",
+    "primary_error_um": null,
+    "error_kind": "central fit only; no numerical standard error recovered; triplicate repeated injections not independent preparations",
+    "max_tested_um": null,
+    "flow_rate_ul_min": 10,
+    "replicate_count": 3,
+    "replicate_scope": "repeat injections on same surface; not3 biological replicates",
+    "training_label": null,
+    "binary_binding_label": null,
+    "clinical_risk_label": null,
+    "training_allowed": false,
+    "model_scored": false,
+    "fold": "external_test",
+    "use": "reserved_external_only",
+    "metric_role": "primary",
+    "metric_caveat": "assay-specific fit; no clinical-risk or nonbinding label; do not treat engineered variants as independent receptors",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_full.xml",
+        "sha256": "4c182479a5398930a431c3bd6ff334626a60207447ffbb60c43e7fd32ec8bde3",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/fullTextXML",
+        "locator": "Methods TCR isolation, expression and SPR; Table3 maps receptor to PDB"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_Tab1_HTML.jpg",
+        "sha256": "b413a720acd4e4e2860c93f00ee3d87c43497f7a3949666b83a81b4dea9945e8",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11538495/",
+        "locator": "mainTable1 actual table image; visually checked"
+      },
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM2_ESM.pdf",
+        "sha256": "cb74ef3b1568f5158f4dd909169da5db576aa10822c805c96d49a44f32365132",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF5figure4 orPDF10figure9; normal A03/A11 values corroborate tables; mutant HLA excluded"
+      }
+    ],
+    "sequence_sources": [
+      {
+        "path": "data/external_evidence/20261018-independent-spr-v1/PRAME_supp/41598_2024_75140_MOESM1_ESM.pdf",
+        "sha256": "38ea5f3d85b744d7431ce90f3ede20c1e13950507aa1681e9ad89e5cd5c0e68e",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11538495/supplementaryFiles",
+        "locator": "PDF1-2 named fullalpha+sharedfamilybeta; visually checked; no grafting from gene assignments"
+      }
+    ],
+    "pkd": 4.047159143324299
+  }
+]

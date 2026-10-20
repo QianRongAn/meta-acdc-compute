@@ -1,0 +1,42 @@
+{
+  "tests_run": 177,
+  "tests_passed": 174,
+  "tests_skipped": 3,
+  "release_manifest_verified": true,
+  "folds": {
+    "train": 15,
+    "validation": 8,
+    "test": 0
+  },
+  "primary_eligible": 23,
+  "training_allowed": false,
+  "newly_admitted": 7,
+  "newly_quarantined_wrong_pair": [
+    "ATLAS:914"
+  ],
+  "unretrieved_SPR_records": 18,
+  "original_temperature_gaps": 4,
+  "C4_reference_coding_nt": 1809,
+  "C4_reference_protein_aa": 602,
+  "clinical_lot_certificates_added": 0,
+  "external_core_measurements": 4,
+  "external_core_families": 3,
+  "external_core_studies": 2,
+  "new_format_shift_measurements": 6,
+  "new_format_shift_families": 1,
+  "external_panels_scored": false,
+  "optimizer_started": false,
+  "schedule_enabled": false,
+  "old_freezes_file_count": 41,
+  "old_freezes_unchanged": true,
+  "original_worktree_clean": true,
+  "historical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "ATLAS_snapshot_HBV_peptide_or_name_hits": []
+}

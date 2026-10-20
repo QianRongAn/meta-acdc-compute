@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "task": "evidence_completion_without_training",
+  "training_allowed": false,
+  "code_files": {
+    "src/meta_acdc/data/evidence_completion.py": "233cbe62c1f03eb068ea0223aeed55bbcde8b3c2016492fdf23d92e77c5ef82c",
+    "src/meta_acdc/data/spr_primary.py": "ee25db41ac6854ae99e1977ff563e696ac638bce2d4c6fc1cb9de644ee9dd4b1",
+    "src/meta_acdc/data/atlas_binding.py": "34f6c346516a026d829549d53a4430a85b158eac4ab71f402169d6e19167468c",
+    "src/meta_acdc/data/experimental_evidence.py": "6271a6dc50476835c3ea0c62b5eb02d84e6a379a188b14b0598489cd7cfd80d9",
+    "tests/test_evidence_completion.py": "9680640878f6f2786617558450ed24ea52fe6ebdfd6b1d8aea12c3fb427cc281",
+    "tests/test_database_evidence.py": "4e0a05b83f9881c3a7862540e9d35fef6f7a8d6d0dac4b30fc9dfb872e65620c",
+    "tests/test_spr_primary.py": "e7149e904f34301581a3503f69aad997eeb295aee334a95aa6975ccb3c9ec7b5"
+  },
+  "artifacts": {
+    "docs/evidence_completion_20261018/C4_published_reference_cassette.json": "e6e086499139c4ba03cd163ae6c7bcda5bee46d7a2681acde1a004a600a2210e",
+    "docs/evidence_completion_20261018/C4_reference_insert.fasta": "3a32206282ec92b081722ec1129229a4fb285f19abc717eaf34ed8cb9e5c1c44",
+    "docs/evidence_completion_20261018/clinical_remaining_gaps.json": "ef2a679cb2239a54d379af85c8d9d650a583e198e08333c430cb1f4f0f6bc7d8",
+    "docs/evidence_completion_20261018/external_HLAE_challenge.json": "5fabeeb74824312aa4d04d3a51d8cda345b48075900479b485150ef5c2f5078d",
+    "docs/evidence_completion_20261018/external_classical_core.json": "b1ab09a3bd4b642332f1900bcfec910c07c6c8f674434fb25555681ac8b8d7c5",
+    "docs/evidence_completion_20261018/external_independence_audit.json": "a1ec4e0ad099065c9efe35f55ba651232325ed240416442e6b5a6c5bd8034cc5",
+    "docs/evidence_completion_20261018/external_test_protocol.json": "df7a01bef7afd024b665c9bfa6e2f7d6a8e613bbba93eda97b806ee1442cbc9b",
+    "docs/evidence_completion_20261018/integrity.json": "9c24f5f1e5088fffed839a5ed9083836ca211d3698b672882cc276b5544d0305",
+    "docs/evidence_completion_20261018/previous_freezes.json": "af5459eedf3795736607dcb63df4fd86616655e0cbee23159dccaf529f16bfb1",
+    "docs/evidence_completion_20261018/reservation_additions.json": "a703d293349c8f97cc08d777b5e750e36311650a790a8a0f16db6464d35e6ec8",
+    "docs/evidence_completion_20261018/retrieval_attempts.json": "e81a0929faa8b0639ffdd43cb98d899911a133ede959fc2deccdad13b800a412",
+    "docs/evidence_completion_20261018/retrieval_classification.json": "27e0acb3cd036924cec21db34f82f5da27d0047fbe6923037c50f79065649e68",
+    "docs/evidence_completion_20261018/review_51.tsv": "1bf89937d26c86ae202ebed23079e360d6da9b80ee62e9f4e1040c83864e8b86",
+    "docs/evidence_completion_20261018/review_ledger.json": "85ea20a9f45dd957f52a07d5e416e63506f9f3407a4c133a6c65812f3835317e",
+    "docs/evidence_completion_20261018/source_files.json": "b0cb58c55658cf81cd24c8884eb17103645217824e64d7181956a3ab8e33138a",
+    "docs/evidence_completion_20261018/summary.json": "1a19af4cacf6bf374fe08937c5c50811cd5ca11de657d30effcfb9bd68343589",
+    "docs/evidence_completion_20261018/temperature_followup.json": "fa34e576817b4f6ed0ffe3db6e9d6099cd0e455718f9787850843bef736aff12",
+    "docs/evidence_completion_20261018/unit-tests.log": "7fbadf51edb9adab2f108677c2812a293e33af8b88a36c04c519d78c02c08b96",
+    "docs/evidence_completion_20261018/unresolved_measurements.json": "d74fad9f46040a8670e4550e32054cbee15914c4c192a1a5729565fc1669a7ab"
+  }
+}

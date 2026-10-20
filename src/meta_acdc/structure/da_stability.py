@@ -1,140 +1,114 @@
-"""Cross-instance stability analysis for domain-adapted models (Rashomon fix).
+"""All-planned-seed reproducibility diagnostic, never a binding-accuracy gate.
 
-Joins per-seed AF3 prediction scores on job_id, computes pairwise Spearman
-rank correlation across model instances — the reproducibility gate that the
-original v9.1 models failed (r = 0.17 / -0.24 / NaN).
-
-The bootstrap resamples receptor groups, not jobs (candidates for one receptor
-are not independent), and the verdict is a quality check only: agreement
-between instances is not evidence that the ranking is correct, and the 0.5
-threshold is project-defined. See AUDIT.md #9.
-
-Usage:
-    .venv/bin/python src/meta_acdc/structure/da_stability.py \
-        --scores data/processed/da_scores_seed0_ensemble.tsv \
-                  data/processed/da_scores_seed1_ensemble.tsv \
-                  data/processed/da_scores_seed2_ensemble.tsv
+A constant output means absent ranking signal, not demonstrated uncertainty.
+Seed failures and missing jobs block a passing verdict; no survivor filtering.
 """
-
 from __future__ import annotations
-
 import argparse
 import csv
-import sys
+import json
 from itertools import combinations
 from pathlib import Path
-
 import numpy as np
 from scipy.stats import spearmanr
 
 
 def load_jobs(path: Path) -> dict[str, float]:
     jobs = {}
-    with open(path, newline="") as fh:
+    with path.open(newline="") as fh:
         for row in csv.DictReader(fh, delimiter="\t"):
-            if row["score"]:
-                jobs[row["job_id"]] = float(row["score"])
+            job = row["job_id"]
+            if not job or job in jobs:
+                raise ValueError("empty or duplicate job ID: " + job)
+            value = float(row["score"])
+            if not np.isfinite(value):
+                raise ValueError("non-finite score: " + job)
+            jobs[job] = value
+    if not jobs:
+        raise ValueError("empty seed result: " + str(path))
     return jobs
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--scores", type=Path, nargs="+", required=True,
-                    help="per-seed ensemble score TSVs (same jobs)")
-    args = ap.parse_args()
-
-    per_seed = [load_jobs(p) for p in args.scores]
-    common = set(per_seed[0])
-    for j in per_seed[1:]:
-        common &= set(j)
-    common = sorted(common)
+def analyse(per_seed, families, *, expected_seeds, resamples=2000):
+    if expected_seeds < 2 or len(per_seed) != expected_seeds:
+        raise ValueError("all predeclared seeds, including failures, must be accounted for")
+    common = sorted(set.intersection(*(set(s) for s in per_seed)))
+    union = set.union(*(set(s) for s in per_seed))
+    result = dict(n_planned=expected_seeds, n_received=len(per_seed),
+                  n_common_jobs=len(common), n_union_jobs=len(union),
+                  coverage_complete=all(set(s) == union for s in per_seed),
+                  task="ranking_reproducibility_only", threshold=0.5,
+                  threshold_validated_against_binding=False)
     if len(common) < 5:
-        print(f"too few common jobs ({len(common)}) for Spearman",
-              file=sys.stderr)
-        return 1
-    print(f"common jobs: {len(common)}", flush=True)
-
-    M = np.array([[j[job] for job in common] for j in per_seed])
-    # degenerate-instance guard: a model that emits a (near-)constant score
-    # on every candidate carries no ranking signal — its correlations are
-    # undefined and must not silently poison the verdict. Some DA seeds
-    # collapse this way (observed: a val-AUROC 0.804 seed emitted all-zero
-    # candidate scores while the other seeds were fine).
-    degenerate = [k for k in range(len(per_seed)) if np.std(M[k]) < 1e-6]
-    if degenerate:
-        print(f"WARNING: degenerate instances (constant output, excluded): "
-              f"{['seed' + str(k) for k in degenerate]}", flush=True)
-    keep = [k for k in range(len(per_seed)) if k not in degenerate]
-
-    rs = []
-    for i, j in combinations(keep, 2):
-        r, p = spearmanr(M[i], M[j])
-        rs.append(r)
-        print(f"  seed{i} vs seed{j}: Spearman r={r:.3f} (P={p:.3g})",
-              flush=True)
-    if not rs:
-        print("no non-degenerate pairs to compare", file=sys.stderr)
-        return 1
-    mean_r = float(np.mean(rs))
-    print(f"mean pairwise r = {mean_r:.3f}", flush=True)
-
-    # Cluster bootstrap: resample RECEPTOR GROUPS (jobs are named
-    # <pdb>_<peptide>), not individual jobs. Candidates for the same receptor
-    # are not independent, and the same complex appears as a crystal and as a
-    # re-prediction, so resampling jobs understates the uncertainty and turns
-    # "these instances agree" into "these instances are right" (AUDIT.md #9).
-    rng = np.random.default_rng(0)
-    groups: dict[str, list[int]] = {}
+        return dict(result, verdict="INSUFFICIENT_JOBS", mean_r=None)
+    M = np.array([[s[j] for j in common] for s in per_seed])
+    degenerate = [i for i, row in enumerate(M) if np.std(row) < 1e-6]
+    pairs = []
+    for i, j in combinations(range(expected_seeds), 2):
+        r = None if i in degenerate or j in degenerate else float(spearmanr(M[i], M[j]).statistic)
+        pairs.append(dict(seed_i=i, seed_j=j, r=r))
+    valid = [x['r'] for x in pairs if x['r'] is not None]
+    all_defined = len(valid) == len(pairs)
+    result.update(degenerate_seeds=degenerate, pairs=pairs,
+                  mean_r=float(np.mean(valid)) if all_defined else None,
+                  conditional_nonconstant_mean_r=float(np.mean(valid)) if valid else None,
+                  conditional_mean_is_not_primary=True)
+    groups = {}
     for k, job in enumerate(common):
-        groups.setdefault(job.split("_", 1)[0], []).append(k)
-    group_ids = sorted(groups, key=lambda g: groups[g][0])
-    n_groups = len(group_ids)
-    boot = []
-    for _ in range(2000):
-        picked = [group_ids[i] for i in rng.integers(0, n_groups, n_groups)]
-        idx = np.array(sorted(k for g in picked for k in groups[g]))
-        pair_rs = []
-        for i, j in combinations(keep, 2):
-            a, b = M[i][idx], M[j][idx]
-            if np.std(a) == 0 or np.std(b) == 0:
-                continue
-            pair_rs.append(spearmanr(a, b)[0])
-        if pair_rs:
-            boot.append(np.mean(pair_rs))
-    if boot:
-        lo, hi = np.percentile(boot, [2.5, 97.5])
-        print(f"cluster bootstrap 95% CI on mean r: [{lo:.3f}, {hi:.3f}] "
-              f"({n_groups} receptor groups resampled, {len(boot)} "
-              f"resamples)", flush=True)
-
-    # The gate is a REPRODUCIBILITY check, not evidence of correctness.
-    # Agreement between instances only shows they are consistent; they can
-    # consistently share a wrong feature, and the 0.5 threshold is
-    # project-defined with no binding labels to validate it against.
-    if mean_r >= 0.5:
-        verdict = ("STABLE as a reproducibility check (quality gate passed; "
-                   "this is NOT evidence that the ranking is correct)")
-    else:
-        verdict = ("UNSTABLE (rankings are single-instance anecdotes; do not "
-                   "report them)")
-    print("reminder: this verdict says the instances AGREE. It does not say "
-          "they are right, and the 0.5 threshold is project-defined.",
-          flush=True)
-    print(f"verdict: {verdict}", flush=True)
-    if degenerate:
-        print(f"NOTE: {len(degenerate)}/{len(per_seed)} instances were "
-              f"degenerate and excluded; report the seed-filtered ensemble",
-              flush=True)
-
-    print("\nper-TCR-group Spearman (>=4 jobs):")
-    for g, idx in sorted(groups.items()):
-        if len(idx) < 4:
-            continue
-        grs = [spearmanr(M[i][idx], M[j][idx])[0]
-               for i, j in combinations(keep, 2)]
-        print(f"  {g}: mean r={np.mean(grs):.3f} over {len(idx)} jobs")
-    return 0
+        if job not in families: raise ValueError("missing receptor family: " + job)
+        groups.setdefault(families[job], []).append(k)
+    result['n_families'] = len(groups)
+    result['verdict'] = ('INCOMPLETE_COVERAGE' if not result['coverage_complete'] else
+                         'DEGENERATE_SEED' if degenerate else
+                         'INSUFFICIENT_FAMILIES' if len(groups) < 2 else
+                         'STABLE_QUALITY_ONLY' if result['mean_r'] >= .5 else 'UNSTABLE')
+    # Undefined resamples remain in the denominator; never silently discard them.
+    if all_defined and len(groups) >= 2:
+        rng = np.random.default_rng(0); keys = sorted(groups); boot = []; invalid = 0
+        for _ in range(resamples):
+            idx = [k for n in rng.integers(0, len(keys), len(keys)) for k in groups[keys[n]]]
+            if any(np.std(row[idx]) < 1e-6 for row in M):
+                invalid += 1; continue
+            boot.append(float(np.mean([spearmanr(M[i,idx], M[j,idx]).statistic
+                                       for i,j in combinations(range(expected_seeds),2)])))
+        result['bootstrap'] = dict(requested=resamples, undefined=invalid, defined=len(boot),
+                                   conditional_ci95=np.percentile(boot,[2.5,97.5]).tolist() if boot else None,
+                                   interval_conditions_on_defined_resamples=True)
+    return result
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--scores',type=Path,nargs='+',required=True)
+    ap.add_argument('--release',type=Path,required=True)
+    ap.add_argument('--seed-plan',type=Path,required=True,
+                    help='pre-run JSON: {"score_files": ["seed0.tsv", ...]}')
+    ap.add_argument('--out',type=Path,required=True)
+    args = ap.parse_args()
+    from meta_acdc.data.release import load_release, complex_id, sha256
+    load_release(args.release)
+    plan = json.loads(args.seed_plan.read_text())['score_files']
+    received = [x.name for x in args.scores]
+    if len(set(plan)) != len(plan) or sorted(plan) != sorted(received):
+        raise ValueError('score files do not match the predeclared seed plan')
+    if args.out.exists(): raise ValueError('refusing to overwrite stability report')
+    family_by_pdb = {}
+    for row in json.loads((args.release.parent/'structure_records.json').read_text()):
+        key = complex_id(row['pdb'])
+        if key in family_by_pdb and family_by_pdb[key] != row['family_id']:
+            raise ValueError('ambiguous receptor family for PDB')
+        family_by_pdb[key] = row['family_id']
+    seeds = [load_jobs(x) for x in args.scores]
+    jobs = set.union(*(set(x) for x in seeds))
+    families = {j:family_by_pdb[complex_id(j)] for j in jobs}
+    result = analyse(seeds, families, expected_seeds=len(plan))
+    result.update(seed_plan_sha256=sha256(args.seed_plan),
+                  score_files={str(x):sha256(x) for x in args.scores})
+    args.out.parent.mkdir(parents=True,exist_ok=True)
+    args.out.write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
+    print(json.dumps(result,indent=2,allow_nan=False))
+    return 0 if result['verdict']=='STABLE_QUALITY_ONLY' else 1
+
+
+if __name__=='__main__':
+    raise SystemExit(main())

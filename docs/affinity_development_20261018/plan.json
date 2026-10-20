@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "authorization": "user requested new development-only protocol after prior test consumption; never reopen consumed test for prediction or selection",
+  "development_path": "docs/affinity_development_20261018/development_input.json",
+  "development_sha256": "faf1eb8128556c9f55ecad48555b9c56e51ad06caf349fe84b989ae5afb08f41",
+  "parent_development_path": "docs/independent_spr_20261018/development_records.json",
+  "parent_development_sha256": "faf1eb8128556c9f55ecad48555b9c56e51ad06caf349fe84b989ae5afb08f41",
+  "reference": "unmodified old raw feature map alpha1 reproduced with training and validation only",
+  "candidates": [
+    {
+      "name": "anchor_raw",
+      "features": "existing full variable sequence+MHC+instrument",
+      "preprocessing": "raw",
+      "alphas": [
+        1.0
+      ],
+      "alpha_selection": "fixed previously chosen alpha1; no search"
+    },
+    {
+      "name": "sequence_balanced",
+      "features": "full variable sequence1/2mers and interactions; omit MHC/instrument/temperature",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    },
+    {
+      "name": "cdr3_chemical",
+      "features": "fixed20AA composition+existing3chemicaldescriptors by CDR3a/CDR3b/peptide regions and complementary descriptor products; no MHC/instrument",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    },
+    {
+      "name": "cdr3_words",
+      "features": "CDR3a/CDR3b/peptide fixed20AA1mers + observed2mers + region3chemicaldescriptors and regioninteractionproducts; no MHC/instrument",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    }
+  ],
+  "inner_cv": "5fold original training split blocks; fit vectorizer/scales afresh within each inner training fold; aggregate one held-out block per fold; no validation preprocessing fit",
+  "weights": "equal total weight per original splitblock, normalized to mean1 within fitting fold",
+  "validation_selection": "rank four candidates by original validation block-weighted RMSE; tie fewer coefficients, then lexicalname; validationMAE and source/block sensitivities reported; no additional candidate search if result poor",
+  "refit_validation": false,
+  "forbidden": [
+    "consumed test JSON/labels/predictions/model report loaded by development runner",
+    "new acceptance performance used for any feature or parameter choice",
+    "rewriting parent release or old access ledgers",
+    "claiming improvement because output variance grows"
+  ],
+  "new_acceptance": "do not automatically score any new candidate; require full primary evidence, completepaired humanalphabeta/classicalMHCI/SPR identity, family and source disjointness; fresh families+sourcecomponents frozen separately; retain original >=3testconnectedblocks/>=3sources threshold; never add consumed records to replenish",
+  "model_ready_claim": "validation-only best candidate, independently unverified; test_score=null",
+  "created_before_candidate_fits": true
+}

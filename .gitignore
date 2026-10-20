@@ -4,6 +4,8 @@ data/processed/*
 *.fastq
 *.fastq.gz
 *.bam
+!data/processed/candidate_panel_registry.tsv
+!data/processed/candidate_panel_registry.summary.json
 
 # python
 __pycache__/
@@ -55,3 +57,9 @@ venv/
 data/raw/af3_instances/A/
 .github/
 logs/
+
+# Immutable local releases are large; publish only their acceptance reports.
+data/releases/
+
+# Public experimental source snapshots; provenance and curated panels are tracked.
+data/external_evidence/

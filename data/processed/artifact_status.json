@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "clinical_model_released": false,
+  "structural_model_released": false,
+  "withdrawn": [
+    {
+      "path": "data/processed/kn11_clinical_scan.tsv",
+      "sha256": "1f9026d3540559d5d34351dc41e70a72f31fc8c9de395026b438dcc924f23360",
+      "historical_copy": "docs/delivery_audit_20261018/historical/data/processed/kn11_clinical_scan.tsv",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "data/processed/clinical_gold_standard.tsv",
+      "sha256": "673d5fa95e06c9353b06128e4599be633d615cc1265fc87d1003a2ecc6792e0c",
+      "historical_copy": "docs/delivery_audit_20261018/historical/data/processed/clinical_gold_standard.tsv",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "data/processed/prediction_scores_ensemble.relabeled.tsv",
+      "sha256": "a4f077b64ad5e252156fcae1e2b8c3ffa9f80074ea1b4d6eb4a273c7e82dfa37",
+      "historical_copy": "docs/delivery_audit_20261018/historical/data/processed/prediction_scores_ensemble.relabeled.tsv",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "data/processed/prediction_scores.relabeled.tsv",
+      "sha256": "a7630809e65ad75884e0ce0258e1e1fdcb7fc53705fc5157962a56e65ea3559d",
+      "historical_copy": "docs/delivery_audit_20261018/historical/data/processed/prediction_scores.relabeled.tsv",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "scripts/make_figures.py",
+      "sha256": "4e9598fb79c6447bb2636a458b90a11d53f6a43bf51734c80321e6b7024b1bac",
+      "historical_copy": "docs/delivery_audit_20261018/historical/scripts/make_figures.py",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "src/meta_acdc/structure/clinical_scan.py",
+      "sha256": "ec425a6bc72f04c17fd12036fdba575aa4cbf76494df37d6f0c73bc22ddb1b59",
+      "historical_copy": "docs/delivery_audit_20261018/historical/src/meta_acdc/structure/clinical_scan.py",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "scripts/da_flow_gpu_20261012.sh",
+      "sha256": "31192e1b2bd2d232e4bb7a02fe5af0df7173fbeb4383d059cbdde397f4c72bb7",
+      "historical_copy": "docs/delivery_audit_20261018/historical/scripts/da_flow_gpu_20261012.sh",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "scripts/da_retrain_collatefix.sh",
+      "sha256": "bbae581975de5603c32d3bc6bf1a1a1ab5234d88aae369b199fa3653854f1b3c",
+      "historical_copy": "docs/delivery_audit_20261018/historical/scripts/da_retrain_collatefix.sh",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    },
+    {
+      "path": "scripts/run_da_af3.sh",
+      "sha256": "6223094b13d1b36d723f1c5b0cdc77d90fc27056575954646206061380a16ae9",
+      "historical_copy": "docs/delivery_audit_20261018/historical/scripts/run_da_af3.sh",
+      "reason": "Historical structural results/clinical claims withdrawn; provenance or endpoint invalid"
+    }
+  ],
+  "retained_recovered_artifacts": "docs/delivery_audit_20261018/recovered_inventory.json",
+  "active_references": "docs/delivery_audit_20261018/corrected_clinical_references.tsv",
+  "current_research_affinity_status": "separate pKD research baseline; weak validation, no broad or clinical validation; no change to frozen test",
+  "recovered_historical_hashes": {
+    "prediction_scores_ensemble.tsv": "335bfb9d6f1c3ad70dd9e9f88656616218178e036762966a2e06bb582f6d3ac5",
+    "da_scores_seed0_ensemble.tsv": "9724d93269e1360b11f5c8710b050df89b912034f12707a0fa55ca61d5f0d93a",
+    "da_scores_seed1_ensemble.tsv": "54d7d33dba04ccc62c36e5db3bfa06f15db08490d6b8b84060c86945888229d6",
+    "da_scores_seed2_ensemble.tsv": "c22b3f47fe1c013fdb11295d8158aab68727a311f76500e926f55377c65cde18",
+    "da_scores_seed3_ensemble.tsv": "d62e47674e19bceb5e544306e226d275c6cb79f1664292357f2eefdf450ad9b2",
+    "da_scores_seed4_ensemble.tsv": "b89ec0625943481c8296779946f26c0c5ad3b8a8753266cdb222f1f8e288d693",
+    "da_seed0.model.pt": "84a3ed259e5c8f0512911420c330b75acfa61618b5c1dd9c9fdbd7633f08c6b7",
+    "da_seed1.model.pt": "7062a20e2956c64137bf982ab37a854e6e87759b9f5062377fa0970a2f6029ae",
+    "da_seed2.model.pt": "ab9c5ff48ee90e0c78ec53f62e70f410ef7f1c9ff5bbbd20fb53ce677a1b6076",
+    "da_seed3.model.pt": "19ab2c93bba41eabe9ca3fdb72d016ac86f91e8d37f6192c535218b841c79bb1",
+    "da_seed4.model.pt": "7a6710c63ad9205d8978af1a13658b414984e0e17a753a091bd4e607def58205",
+    "egnn_dataset.pt": "94f50e37242374cbf63e043c0bec388c8f595bc18b16e4829bfa63483851359b"
+  },
+  "withdrawn_figures": {
+    "docs/figures/fig1_ablation.png": "7f0855cb20287e6931d682295ee6f9d3840b8bfb5d97a7a2fdd07688e41a366d",
+    "docs/figures/fig1_ablation.svg": "e10aa6c84d201e27ae3373b491e5296db76883c9dff6f1c1f7ba6a8f16e95543",
+    "docs/figures/fig2_heatmap.png": "d22ee0f1f2f0315193fbd01039abf940a4ab5347daa485e2b5f429944eb932b6",
+    "docs/figures/fig2_heatmap.svg": "c31b070aad9015012b74d9b90ec567fbe0c488debbaea2ec8d4ed034be99cb09",
+    "docs/figures/fig3_resubmission.png": "57595c1394b483698e81469023400ad0238538568d0997a0bfb4f7c01976c77c",
+    "docs/figures/fig3_resubmission.svg": "fb3d1f0c2c125938bce58ad40ffb423561b925a8b497885c516cd2a098eddb58",
+    "docs/figures/fig5_instability.png": "5d00bb9a7ef01555fde04bcbb754c2aa51bcf5a3a938dcfc22017cdd006d8be0",
+    "docs/figures/fig5_instability.svg": "bb963d802e2510f6b9dcf8d1132be76a84b02a9fcb5758d90bfae768625c2fbf",
+    "docs/figures/fig6_domain_adapt.png": "6bc949c8964f2d4166a2eda9b49f6c8090c5245095f57e52bb2ebc8d35db0392",
+    "docs/figures/fig6_domain_adapt.svg": "476b951b43dcc90f09d702d9fb9168347660afe8b847df080b5ffebb82d7d7a1",
+    "docs/figures/fig7_crossreactivity.png": "b5e81cf2cda55ba57d2687b15b52185cfd009c3c01096c7e44b26f1f0e8a16a3",
+    "docs/figures/fig7_crossreactivity.svg": "604e5c7ae992ae797dc3ba02162fd2b005e593d6426c57c08a6b9c7ecb7092dd",
+    "docs/figures/fig8_cross_method.png": "ef064a5f8cfbff2c4f5770be2279ef04862d5f493948c39386f0509b0c2e4fc3",
+    "docs/figures/fig8_cross_method.svg": "f5f1adbeb81fa7f43692291cd028797470a57016c5caea699963270008a1c749",
+    "docs/figures/figp2_prefilter.png": "f0a6924a285249db2ec121619f0f27df330edaf73273d97417058b1ea6c3a870",
+    "docs/figures/figp2_prefilter.svg": "7f3af165d223c0e73b59260b8543155dfcc1925f3a160174fdfac1944232cbd9",
+    "docs/figures/figp2_recall.png": "1a2a83acb50d80e3801776d8253725d57878039e2cbacbcd30fa81b72dfb6852",
+    "docs/figures/figp2_recall.svg": "5f8881fc7f7c25166661ebea239ecd8b05db69d6d3d5f0e5fd81efbabf319cfe"
+  }
+}

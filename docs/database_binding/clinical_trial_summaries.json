@@ -1,0 +1,284 @@
+[
+  {
+    "nct": "NCT01273181",
+    "title": "Phase I/II Study of Metastatic Cancer That Expresses MAGE-A3/12 Using Lymphodepleting Conditioning Followed by Infusion of Anti-MAGE-A3/12 TCR-Gene Engineered Lymphocytes",
+    "last_update": {
+      "date": "2015-10-28",
+      "type": "ESTIMATED"
+    },
+    "interventions": [
+      {
+        "type": "BIOLOGICAL",
+        "name": "PG13-MAGE-A3 TCR9W11 (anti-MAGE-A3/12 TCR) Transduced Autologous Peripheral Blood Lymphocytes",
+        "armGroupLabels": [
+          "Ph I:Anti-MAGE A3/12 TCR PBL 3x10e10",
+          "Ph I:Anti-MAGE A3/12 TCR PBL 5x10e9",
+          "Ph II:Anti-MAGE A3/12 TCR PBL MTD",
+          "Ph II:Anti-MAGE TCR PBL MTD+HD IL-2"
+        ]
+      },
+      {
+        "type": "DRUG",
+        "name": "Aldesleukin",
+        "description": "720,000 IU/kg every 8 hours for a maximum of 15 doses",
+        "armGroupLabels": [
+          "Ph I:Anti-MAGE A3/12 TCR PBL 3x10e10",
+          "Ph I:Anti-MAGE A3/12 TCR PBL 5x10e9",
+          "Ph II:Anti-MAGE A3/12 TCR PBL MTD",
+          "Ph II:Anti-MAGE TCR PBL MTD+HD IL-2"
+        ],
+        "otherNames": [
+          "IL-2"
+        ]
+      },
+      {
+        "type": "DRUG",
+        "name": "Cyclophosphamide",
+        "description": "60 mg/kg/day x 2 days intravenous (IV)over 1 hour.",
+        "armGroupLabels": [
+          "Ph I:Anti-MAGE A3/12 TCR PBL 3x10e10",
+          "Ph I:Anti-MAGE A3/12 TCR PBL 5x10e9",
+          "Ph II:Anti-MAGE A3/12 TCR PBL MTD",
+          "Ph II:Anti-MAGE TCR PBL MTD+HD IL-2"
+        ]
+      },
+      {
+        "type": "DRUG",
+        "name": "Fludarabine",
+        "description": "25 mg/m\\^2/day intravenous piggy back (IVPB) daily over 30 minutes for 5 days.",
+        "armGroupLabels": [
+          "Ph I:Anti-MAGE A3/12 TCR PBL 3x10e10",
+          "Ph I:Anti-MAGE A3/12 TCR PBL 5x10e9",
+          "Ph II:Anti-MAGE A3/12 TCR PBL MTD",
+          "Ph II:Anti-MAGE TCR PBL MTD+HD IL-2"
+        ]
+      }
+    ],
+    "event_groups": [
+      {
+        "id": "EG000",
+        "title": "Phase I: Anti-MAGE A3/12 TCR PBL 5x10e9",
+        "description": "Cyclophosphamide : 60 mg/kg/day x 2 days intravenous (IV)\n\nAldesleukin : 720,000 IU/kg every 8 hours for a maximum of 15 doses\n\nPG13-MAGE-A3 TCR9W11 (anti-MAGE-A3/12 TCR) Transduced Autologous Peripheral Blood Lymphocytes :\n\nFludarabine : 25 mg/m\\^2/day intravenous piggy back (IVPB) daily over 30 minutes for 5 days.",
+        "seriousNumAffected": 2,
+        "seriousNumAtRisk": 3,
+        "otherNumAffected": 3,
+        "otherNumAtRisk": 3
+      },
+      {
+        "id": "EG001",
+        "title": "Phase I:Anti-MAGE A3/12 TCR PBL 3x10e10",
+        "description": "Cyclophosphamide : 60 mg/kg/day x 2 days intravenous (IV)\n\nAldesleukin : 720,000 IU/kg every 8 hours for a maximum of 15 doses\n\nPG13-MAGE-A3 TCR9W11 (anti-MAGE-A3/12 TCR) Transduced Autologous Peripheral Blood Lymphocytes :\n\nFludarabine : 25 mg/m\\^2/day intravenous piggy back (IVPB) daily over 30 minutes for 5 days.",
+        "seriousNumAffected": 1,
+        "seriousNumAtRisk": 3,
+        "otherNumAffected": 3,
+        "otherNumAtRisk": 3
+      },
+      {
+        "id": "EG002",
+        "title": "Phase II:Anti-MAGE A3/12 TCR PBL MTD+HD IL-2, Melanoma, RCC",
+        "description": "Phase II:Anti-MAGE A3/12 TCR PBL MTD+HD IL-2, Melanoma, RCC\n\nCyclophosphamide : 60 mg/kg/day x 2 days intravenous (IV)\n\nAldesleukin : 720,000 IU/kg every 8 hours for a maximum of 15 doses\n\nPG13-MAGE-A3 TCR9W11 (anti-MAGE-A3/12 TCR) Transduced Autologous Peripheral Blood Lymphocytes :\n\nFludarabine : 25 mg/m\\^2/day intravenous piggy back (IVPB) daily over 30 minutes for 5 days.",
+        "seriousNumAffected": 2,
+        "seriousNumAtRisk": 2,
+        "otherNumAffected": 2,
+        "otherNumAtRisk": 2
+      },
+      {
+        "id": "EG003",
+        "title": "Phase II: Anti-MAGE A3/12 TCR PBL MTD +HD IL-2, Other Cancer",
+        "description": "Phase II: Anti-MAGE A3/12 TCR PBL MTD +HD IL-2, Other Cancer\n\nCyclophosphamide : 60 mg/kg/day x 2 days intravenous (IV)\n\nAldesleukin : 720,000 IU/kg every 8 hours for a maximum of 15 doses\n\nPG13-MAGE-A3 TCR9W11 (anti-MAGE-A3/12 TCR) Transduced Autologous Peripheral Blood Lymphocytes :\n\nFludarabine : 25 mg/m\\^2/day intravenous piggy back (IVPB) daily over 30 minutes for 5 days.",
+        "seriousNumAffected": 1,
+        "seriousNumAtRisk": 1,
+        "otherNumAffected": 1,
+        "otherNumAtRisk": 1
+      }
+    ],
+    "description": null,
+    "time_frame": null,
+    "source": {
+      "file": "clinical_NCT01273181.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01273181",
+      "sha256": "8fa1b2df8a3b129ad69505a346c8a15974e411cff185306a2ad7e4da69f4e45d",
+      "bytes": 61318,
+      "retrieved_at_utc": "2026-10-17T09:16:38.225896+00:00"
+    },
+    "individual_patient_data": false,
+    "paired_receptor_sequence_available_in_event_rows": false,
+    "offtarget_peptide_available_in_event_rows": false
+  },
+  {
+    "nct": "NCT01350401",
+    "title": "Phase I/II Study to Assess the Safety and Activity of Enhanced TCR Transduced Autologous T Cells in Metastatic Melanoma",
+    "last_update": {
+      "date": "2019-01-10",
+      "type": "ACTUAL"
+    },
+    "interventions": [
+      {
+        "type": "GENETIC",
+        "name": "Autologous genetically modified T cells, NY-ESO-1\u1d9c\u00b2\u2075\u2079T",
+        "description": "Cytoreductive chemotherapy followed by infusion of NY-ESO-1\u1d9c\u00b2\u2075\u2079T",
+        "armGroupLabels": [
+          "NY-ESO-1/LAGE-1 and HLA-A*02 Positive Subjects"
+        ]
+      }
+    ],
+    "event_groups": [
+      {
+        "id": "EG000",
+        "title": "NYESO-1\u1d9c\u00b2\u2075\u2079T Cells Administered IV as a Split Dose Over 2 Days",
+        "description": "Participants who received cytoreductive chemotherapy followed by infusion of lentivirus-mediated genetically engineered NY-ESO-1\u1d9c\u00b2\u2075\u2079T (Target dose: 5-10 billion cells)",
+        "deathsNumAffected": 3,
+        "deathsNumAtRisk": 4,
+        "seriousNumAffected": 4,
+        "seriousNumAtRisk": 4,
+        "otherNumAffected": 4,
+        "otherNumAtRisk": 4
+      }
+    ],
+    "description": "Participants who received NY-ESO-1\u1d9c\u00b2\u2075\u2079T",
+    "time_frame": "Start of lymphodepletion to end of intervention phase (up to 12 months post T-cell infusion)",
+    "source": {
+      "file": "clinical_NCT01350401.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01350401",
+      "sha256": "f29c84a72606637cf6c36e4fe033dda414ad7f3f9c9d9078c9cb9de68768ba90",
+      "bytes": 27996,
+      "retrieved_at_utc": "2026-10-17T09:14:43.358977+00:00"
+    },
+    "individual_patient_data": false,
+    "paired_receptor_sequence_available_in_event_rows": false,
+    "offtarget_peptide_available_in_event_rows": false
+  },
+  {
+    "nct": "NCT01352286",
+    "title": "A Phase I/IIa, Dual-cohort, Two-site, Clinical Trial Evaluating the Safety and Activity of Redirected Autologous T Cells Expressing a High Affinity TCR Specific for NY-ESO-1 Administered Post ASCT in Patients With Advanced Myeloma",
+    "last_update": {
+      "date": "2019-12-03",
+      "type": "ACTUAL"
+    },
+    "interventions": [
+      {
+        "type": "GENETIC",
+        "name": "Autologous Genetically modified T cells",
+        "description": "Patients will undergo myeloma restaging at days +42, +100, 6 months, 9 months and 1 year post infusion. At this point, in accordance with FDA Guidelines, all patients will enter long term follow up (LTFU) and be followed biannually for monitoring for gene transfer delayed adverse events until year 5 post infusion. From year 5, all patients will require annual LTFU visits for monitoring for delayed adverse events until year 15 after receiving the genetically modified T cells.\n\nPatients whose disease progresses prior to year 1 will enter LTFU at time of progression; however these patients will be seen quarterly from progression until year 1 post infusion and then follow the LTFU schedule mentioned above.",
+        "armGroupLabels": [
+          "Autologous Genetically modified T cells"
+        ]
+      }
+    ],
+    "event_groups": [
+      {
+        "id": "EG000",
+        "title": "NYESO-1\u1d9c\u00b2\u2075\u2079T Cells",
+        "description": "Participants who received NYESO-1\u1d9c\u00b2\u2075\u2079T following ASCT",
+        "deathsNumAffected": 14,
+        "deathsNumAtRisk": 25,
+        "seriousNumAffected": 17,
+        "seriousNumAtRisk": 25,
+        "otherNumAffected": 25,
+        "otherNumAtRisk": 25
+      }
+    ],
+    "description": "Participants who received NY-ESO-1\u1d9c\u00b2\u2075\u2079T following ASCT",
+    "time_frame": "Day -40 to Year 1 post-treatment",
+    "source": {
+      "file": "clinical_NCT01352286.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01352286",
+      "sha256": "d8e3378b29fab19113f1eafdf1d9220f23453c5e02ccfd4209eeeadbfbbad7af",
+      "bytes": 68167,
+      "retrieved_at_utc": "2026-10-17T09:14:44.635627+00:00"
+    },
+    "individual_patient_data": false,
+    "paired_receptor_sequence_available_in_event_rows": false,
+    "offtarget_peptide_available_in_event_rows": false
+  },
+  {
+    "nct": "NCT03070392",
+    "title": "A Phase II Randomized, Open-label, Multi-center Study of the Safety and Efficacy of IMCgp100 Compared With Investigator Choice in HLA-A*0201 Positive Patients With Previously Untreated Advanced Uveal Melanoma",
+    "last_update": {
+      "date": "2026-03-17",
+      "type": "ACTUAL"
+    },
+    "interventions": [
+      {
+        "type": "BIOLOGICAL",
+        "name": "IMCgp100",
+        "description": "IMCgp100 is to be administered at 20 mcg cycle 1 day1, then 30 mcg cycle 1 day 8, then 68 mcg cycle 1 day 15 and weekly thereafter by IV infusion over 15 minutes until confirmed disease progression or unacceptable toxicity",
+        "armGroupLabels": [
+          "IMCgp100 (tebentafusp, Kimmtrak)"
+        ]
+      },
+      {
+        "type": "DRUG",
+        "name": "Dacarbazine",
+        "description": "Dacarbazine is to be administered at 1,000 mg/m2 of body surface area IV infusion every 3 weeks until disease progression or unacceptable toxicity",
+        "armGroupLabels": [
+          "Investigator's Choice"
+        ],
+        "otherNames": [
+          "DTIC-Dome",
+          "DTIC",
+          "DIC",
+          "Imidazole Carboxamide"
+        ]
+      },
+      {
+        "type": "BIOLOGICAL",
+        "name": "Ipilimumab",
+        "description": "Ipilimumab is to be administered at 3 mg/kg IV infusion over 90 minutes every 3 weeks for a total of 4 treatments",
+        "armGroupLabels": [
+          "Investigator's Choice"
+        ],
+        "otherNames": [
+          "Yervoy"
+        ]
+      },
+      {
+        "type": "BIOLOGICAL",
+        "name": "Pembrolizumab",
+        "description": "Pembrolizumab is to be administered at 2 mg/kg IV infusion up to a maximum of 200 mg administered Intravenously over 30 minutes every 3 weeks or 200 mg fixed dose administered intravenously every 3 weeks where approved locally until confirmed disease progression or unacceptable toxicity",
+        "armGroupLabels": [
+          "Investigator's Choice"
+        ],
+        "otherNames": [
+          "Keytruda"
+        ]
+      }
+    ],
+    "event_groups": [
+      {
+        "id": "EG000",
+        "title": "Tebentafusp",
+        "description": "Tebentafusp administered at 20 mcg at Cycle 1 Day 1, 30 mcg at Cycle 1 Day 8, and 68 mcg at Cycle 1 Day 15 by IV infusion and weekly thereafter.",
+        "deathsNumAffected": 84,
+        "deathsNumAtRisk": 245,
+        "seriousNumAffected": 69,
+        "seriousNumAtRisk": 245,
+        "otherNumAffected": 245,
+        "otherNumAtRisk": 245
+      },
+      {
+        "id": "EG001",
+        "title": "Investigator's Choice",
+        "description": "1 of 3 Investigator's Choice options: Systemic Dacarbazine, Ipilimumab or Pembrolizumab. Dacarbazine: administered at 1,000 mg/m2 of body surface area IV infusion every 3 weeks until disease progression or unacceptable toxicity; Ipilimumab: administered at 3 mg/kg IV infusion over 90 minutes every 3 weeks for a total of 4 treatments; Pembrolizumab: administered at 2 mg/kg IV infusion up to a maximum of 200 mg administered Intravenously over 30 minutes every 3 weeks or 200 mg fixed dose administered intravenously every 3 weeks where approved locally until confirmed disease progression or unacceptable toxicity.",
+        "deathsNumAffected": 57,
+        "deathsNumAtRisk": 111,
+        "seriousNumAffected": 26,
+        "seriousNumAtRisk": 111,
+        "otherNumAffected": 102,
+        "otherNumAtRisk": 111
+      }
+    ],
+    "description": "The Safety Analysis Set included all randomized participants who received at least 1 full or partial dose of tebentafusp or investigator's choice. Combining participants into a single group (Investigator's Choice) was pre-specified as part of the study design and data for each treatment in that arm were not analyzed separately. Adverse events were defined as events that were new or worsened during the on-treatment period.",
+    "time_frame": "Approximately 36 months.",
+    "source": {
+      "file": "clinical_NCT03070392.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03070392",
+      "sha256": "6ccc6645f4ad7da122c06da0de8ac7b4a4ced4d5e27eb7289357d9241ccafd79",
+      "bytes": 118141,
+      "retrieved_at_utc": "2026-10-17T09:14:42.702251+00:00"
+    },
+    "individual_patient_data": false,
+    "paired_receptor_sequence_available_in_event_rows": false,
+    "offtarget_peptide_available_in_event_rows": false
+  }
+]

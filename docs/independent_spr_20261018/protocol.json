@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "status": "frozen_unscored_source_disjoint_external_test",
+  "endpoint": "assay-specific soluble human alphabeta TCR canonical-classI SPR pKD regression",
+  "test_file": "frozen_test.json",
+  "development_file": "development_records.json",
+  "source_rule": "no normalized author overlap between selecteddevelopment andtest; BakerPIK3CA/T4H2 merged. Conservative author/affiliation proxy, not proof of completely independent lab ecosystems",
+  "family_rule": "unchanged reserved_hits either-chain+CDR3 homology; no overlap with old91 or any structuralv1-v7; IMMREP-only reserved metadata matches disclosed, never training; V genes may be shared across otherwise distinct receptor sequence families",
+  "counts": {
+    "test_observations": 15,
+    "primary_metric_observations": 14,
+    "sensitivity_only_observations": 1,
+    "lineages": 7,
+    "studies": 5,
+    "research_source_components": 3,
+    "new_observations": 8,
+    "new_lineages": 2,
+    "development": {
+      "train": 10,
+      "validation": 10
+    },
+    "source_excluded_development": 8,
+    "legacy_test_unchanged": 3,
+    "test_connected_blocks": 4
+  },
+  "selection_rule": "primary-source identity/value/conditions/endpoint eligibility only; no model score inspected; no old fold reassignment",
+  "metrics": [
+    "lock estimator/hyperparameters on development only before opening this test",
+    "pKD MAE/RMSE overall, bylineage andbysource against train-meanbaseline; retain assay orientation; no averaging conflicting experiments",
+    "primary metric excludes stated-range-extrapolatedS8WT/A11; show all15reportedvalues separately",
+    "weight equal per source then equal per lineage within source; variants and replicate injections not independent samples",
+    "report leave-one-source-out sensitivity; only3sourceclusters cannot justify precise population CI; no AUROC or clinicalrisk claim"
+  ],
+  "minimum_gate": "original rule: same study or near corresponding receptor chain or peptide similarity >=0.8 forms a connected block; at least3 blocks in each split. Frozen test has4; also requires >=3 sourcecomponents and zero near peptide/test family/source overlap with development",
+  "forbidden": [
+    "training or hyperparameter selection on test or clinical reserve",
+    "merging legacytest into newtest",
+    "guessing missing sequences, temperatures or assay labels",
+    "calling3studies fromsameBaker lab3independent sources",
+    "claiming V-gene-disjointness or clinicalvalidation"
+  ],
+  "training_allowed": false,
+  "old_release_training_allowed": false,
+  "model_scored": false,
+  "optimizer_started": false,
+  "training_adapter_status": "This verified data profile is ready for a new manifest-bound release using development_records.json only. Existing affinity-v8 is not this profile and remains blocked; no training run requested or started. The frozen test must be opened only after locking the new estimator.",
+  "clinical_risk_validation_allowed": false,
+  "binary_binding_prediction_allowed": false,
+  "frozen_data_ready": true
+}

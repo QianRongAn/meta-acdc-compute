@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "authorization": "user requested new development-only protocol after prior test consumption; never reopen consumed test for prediction or selection",
+  "development_path": "docs/affinity_development_20261018/development_source_safe.json",
+  "development_sha256": "5222a5afae9ea39470bd709dc0d16df43231b545b60a9cfc6dc8fea954d71af1",
+  "parent_development_path": "docs/independent_spr_20261018/development_records.json",
+  "parent_development_sha256": "faf1eb8128556c9f55ecad48555b9c56e51ad06caf349fe84b989ae5afb08f41",
+  "reference": "unmodified old raw feature map alpha1 reproduced with training and validation only",
+  "candidates": [
+    {
+      "name": "anchor_raw",
+      "features": "existing full variable sequence+MHC+instrument",
+      "preprocessing": "raw",
+      "alphas": [
+        1.0
+      ],
+      "alpha_selection": "fixed previously chosen alpha1; no search"
+    },
+    {
+      "name": "sequence_balanced",
+      "features": "full variable sequence1/2mers and interactions; omit MHC/instrument/temperature",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    },
+    {
+      "name": "cdr3_chemical",
+      "features": "fixed20AA composition+existing3chemicaldescriptors by CDR3a/CDR3b/peptide regions and complementary descriptor products; no MHC/instrument",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    },
+    {
+      "name": "cdr3_words",
+      "features": "CDR3a/CDR3b/peptide fixed20AA1mers + observed2mers + region3chemicaldescriptors and regioninteractionproducts; no MHC/instrument",
+      "preprocessing": "training-weighted group trace normalization",
+      "alphas": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "alpha_selection": "leave-one-inherited-training-block-out CV only"
+    }
+  ],
+  "inner_cv": "5fold original training split blocks; fit vectorizer/scales afresh within each inner training fold; aggregate one held-out block per fold; no validation preprocessing fit",
+  "weights": "equal total weight per original splitblock, normalized to mean1 within fitting fold",
+  "validation_selection": "rank four candidates by original validation block-weighted RMSE; tie fewer coefficients, then lexicalname; validationMAE and source/block sensitivities reported; no additional candidate search if result poor",
+  "refit_validation": false,
+  "forbidden": [
+    "consumed test JSON/labels/predictions/model report loaded by development runner",
+    "new acceptance performance used for any feature or parameter choice",
+    "rewriting parent release or old access ledgers",
+    "claiming improvement because output variance grows"
+  ],
+  "new_acceptance": "do not automatically score any new candidate; require full primary evidence, completepaired humanalphabeta/classicalMHCI/SPR identity, family and source disjointness; fresh families+sourcecomponents frozen separately; retain original >=3testconnectedblocks/>=3sources threshold; never add consumed records to replenish",
+  "model_ready_claim": "validation-only best candidate, independently unverified; test_score=null",
+  "created_before_candidate_fits": true,
+  "supersedes": "plan.json registered before fits; no candidates were fit under v1",
+  "change_reason": "new IY11 primary study identified a shared source with validation3B. Remove this one record before new model selection; keep every remaining original fold/block",
+  "parent_record_sha256": {
+    "ATLAS:102": "e3011fcf1afd5cffb5666976c1e17751477f44b33e842f584779acbb71e12555",
+    "ATLAS:106": "37d12ead17db3f2f4dc2484662f1749efa2e5058ffe86d5691238db62c75747b",
+    "ATLAS:110": "c83d397230961e442bbef013f199e04bcb6e92b69c69701de4192568097c5af7",
+    "ATLAS:1127": "bcc9899b3c5b7865257049c1e578df96fc7655d89f6259b096a52c1dd9c8a19b",
+    "ATLAS:137": "5ed529f53e8b7b7a54bb0f24692de8fcf80ecdd4b12c4198e2e7e5b0ffc0906c",
+    "ATLAS:138": "640f443e270a7e2b8eb152ea98938896ceb2be6f5372b08f40665b8b4d430c01",
+    "ATLAS:145": "36652ce568cc04cc492cbb380cca14983e3d81e40602d03046b7b94709357edd",
+    "ATLAS:148": "7e01a7797db4ad5720ff32e1714cd0d29b9bb524c2d6c874fba7448267bcf7c0",
+    "ATLAS:159": "af51923a6d0926a14111d96994ce87b0e4f1e970ff9eb89a7e24f507f5b4155d",
+    "ATLAS:201": "e1565265dc956290676e369f42415cab8a3d9840aa6b5ac189042a178311ea49",
+    "ATLAS:438": "f56cce634fa900603b749091773eda0772adf84601aafc20458fddb8ce87cf54",
+    "ATLAS:463": "6edcc779ced370971f6a519a8418763c5479462996c3c0a4ad55c2c10a349891",
+    "ATLAS:475": "53df3f159b849c9b2291e0f784415f161871abfcc1df87d819fe6408cc7e3643",
+    "ATLAS:485": "e8fc79a8317fad9f7a67c64ace775d69898547216e09d44452a67cc8de9b457c",
+    "ATLAS:502": "581816927feca76c1ccfe61ae4409f2ba178fba91e2443fd3e3d2456a4df2dc0",
+    "ATLAS:505": "02ac116d29018d721aab1ea5606eb4f3a1821a6d71eab401d4329b0699dc35a5",
+    "ATLAS:727": "61a097af430a03bebb4db59db30722c99ebcb3be10cf736ba497573fb9c9b0ec",
+    "ATLAS:728": "a081eba2fdfa7c4ec09504161a9925a65ad2a094376f6c5756106f80c2905331",
+    "ATLAS:735": "107dd221ba5bcae1b36ba134490ae876c8244924fec23fd60ba30f1130a65447",
+    "ATLAS:744": "8d2794c421513d6dcb5604b0159bfc1d418dfa50850456b486ac263e9e36f231"
+  },
+  "source_excluded_ids": [
+    "ATLAS:485"
+  ],
+  "validation_rows": 9,
+  "training_rows": 10,
+  "validation_blocks": 4
+}

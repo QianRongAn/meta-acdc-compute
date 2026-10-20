@@ -1,0 +1,867 @@
+{
+  "schema_version": 2,
+  "task": "experimental_SPR_pKD_regression",
+  "status": "inspection_only_insufficient_independent_splits",
+  "training_allowed": false,
+  "binary_training_allowed": false,
+  "clinical_training_allowed": false,
+  "primary_review_sha256": "01903e851c6d38a3c7e8f3c4c685acaf0cb12b1beea7acf0a4f00afcd90a6134",
+  "clinical_additions_sha256": "d67b9c60baf5c694ca836e9d87d65562010ee7608237b4db4d3f04a0d3584eab",
+  "clinical_registry_sha256": "f595f323b582f36ad67c5ef35d3595a65d439b0f254efe39b273427961333c64",
+  "parent_dataset_path": "/home/administrator/docs/meta-acdc-readiness/docs/clinical_primary_20261018/affinity_dataset.json",
+  "parent_dataset_sha256": "86ddaa5b2ed4b04c82f2cd0607a08e70fb1011f255fc93614818a7e94d2ea58c",
+  "registry_path": "/home/administrator/docs/meta-acdc-readiness/docs/clinical_primary_20261018/combined_reservation_registry.json",
+  "external_registry_sha256": "a5b0fc9377f69a3007cb07e423c0347c6df8831cdfbdbd3690defb28402af87e",
+  "code_files": {
+    "src/meta_acdc/data/spr_primary.py": "f169e1ac6380547e6410607ccf734359356e82aba946196a158f3e776a6ab7da",
+    "src/meta_acdc/data/atlas_binding.py": "c19aae26b4a2464f723398c641139e8cfee1d7c3891a3842fe7d273b75750d7c",
+    "src/meta_acdc/data/experimental_evidence.py": "0166b21883f749055fc018430a9a4ed4bd79ceedf8cb2e57117a7b062774f75a",
+    "src/meta_acdc/data/build_release.py": "30ddcdfd0c9a86d73e84dffa2c3b1eb90bca151c159d129a15c134fbb7855fe9",
+    "src/meta_acdc/data/release.py": "2916a3dae16f9521a44b8add638b477fe9d007aa2d172fb8dd65a48457cb8d73",
+    "src/meta_acdc/models/affinity_baseline.py": "352b898fae2afe0debd1351e2d030ce6c2fc5306328bd892c26a858f9c45e4f1"
+  },
+  "files": {
+    "affinity_dataset.json": "a68892933484a162e98e0cca1a55ad7acb68c2d76a875cc8c320b68cde562721",
+    "splits.json": "5f960427e67c2be671c767abd85321f4d70ed5d68e3a6a605ef4177d56b78c9b",
+    "summary.json": "1baa8da6ed2e71d895f789cfa8c91a208b14512317eccc96b148d64df8e6e140",
+    "review_ledger.json": "01903e851c6d38a3c7e8f3c4c685acaf0cb12b1beea7acf0a4f00afcd90a6134"
+  },
+  "source_snapshot": "/home/administrator/docs/meta-acdc-readiness/data/external_evidence/20261018-spr-primary",
+  "sources": [
+    {
+      "file": "30575715.xml",
+      "sha256": "a3130d36a6ac97fc34c2ede439ffec0b9aae64fd6938afcc5090b1da737b244a"
+    },
+    {
+      "file": "40877317.txt",
+      "sha256": "a7498356c2cc6f8900fdc7237e1f1276e0332da3947d28f793d4b4340fbfd078"
+    },
+    {
+      "file": "37872153.txt",
+      "sha256": "70566db4f606726f5ece1f7ec5057fa9f1865fdf2ab82a559fa5965c697bcb5b"
+    },
+    {
+      "file": "publisher_manifest.json",
+      "sha256": "bfbe66cd1440168c05378d98868654bbf051d22e7ea0bff353ad7c4720bde5d0"
+    },
+    {
+      "file": "jci_direct_manifest.json",
+      "sha256": "5736bbe469127a0a3a692d1a439608e3c8114c93622a29ba34f6474b9f7d7829"
+    },
+    {
+      "file": "supplement_manifest.json",
+      "sha256": "b19d261408d375d5d1472bf43b10dd44f0c890ff8f42673e0b8b701cf3d4264e"
+    },
+    {
+      "file": "JCI130562_supplement.pdf",
+      "sha256": "d87f3d48a6d6aeea3a4df960b2501eb0ce078e34ae0bec495ebaafc962d60625"
+    },
+    {
+      "file": "GEO_C4_manifest.json",
+      "sha256": "3573fbc00791ff0bd7fba537006e9815709a423b63ec9fb4ebdd521f98cee630"
+    },
+    {
+      "file": "20566715.txt",
+      "sha256": "5779f9fd2094aeabf350c931130c44b9d0fa6ed32b87716ec7c7d3c2bb9951d5"
+    },
+    {
+      "file": "35749374_clinical_supp.zip",
+      "sha256": "d1c961027cffc469fb269bc363f08940e556858ef03d623edc78ab5e983403c0"
+    },
+    {
+      "file": "metadata.json",
+      "sha256": "0806817c6223841a07374f115c985854ad008b6938d7ea33011a3a19b5ecbd07"
+    },
+    {
+      "file": "28250417_bioc.xml",
+      "sha256": "6d8f9c32a868fe039d6f76bd4766fe6e5bee36bcbf373cca6e178ab4d9ae0ec4"
+    },
+    {
+      "file": "40877317_supplementary.zip",
+      "sha256": "7120594add0a4dd6c712411fc15178f2fbfbfa82dd1a9e5076e5aa808195dd92"
+    },
+    {
+      "file": "kfj_figure_manifest.json",
+      "sha256": "e48f298e40a3f3b2141692a1a5d84859286a42879c9ee629f9e90a1ada082af6"
+    },
+    {
+      "file": "31235963_bioc.xml",
+      "sha256": "359e864409ed4a9bd10236383a09304ad70ddbebbe09b8aa3784b1849e5ce2cd"
+    },
+    {
+      "file": "29531227.txt",
+      "sha256": "bfba5bab1cdf5cfe59042ebaf3a2ada00bb2054419d74805a1cc650025559da8"
+    },
+    {
+      "file": "oa_bioc_retry_manifest.json",
+      "sha256": "66b966758e701290e2e4c319724dd0d8b1f4b1ff38e9661228a69ce28b9e4e17"
+    },
+    {
+      "file": "37100770.txt",
+      "sha256": "35ccf725b2f1821bc12f309e8b0ac8282952b99164d18182d8c5893407db646a"
+    },
+    {
+      "file": "clinical_supp_manifest.json",
+      "sha256": "9623db6f3f5b8117968430ca6cbaebafd1d35815babc2536fedd80980d645ac7"
+    },
+    {
+      "file": "24192765.txt",
+      "sha256": "128069e1d525869431ecdf11b43a72a63e7148537f7cfa849f2326fdb38635f0"
+    },
+    {
+      "file": "35173732.xml",
+      "sha256": "0f6ede5dd793db6b153a5b909e58944142af043420ae53a4368b3ad6fea4503f"
+    },
+    {
+      "file": "20566715_supplementary.zip",
+      "sha256": "eab2fc986e629599d8cd4e983e3666313471dc34954cb1be29d2c366eefb2532"
+    },
+    {
+      "file": "23569211.txt",
+      "sha256": "aa4569565acdcd853a17c1c2deec7712010eb1b8652cd7bfa04b534b100df652"
+    },
+    {
+      "file": "21124993_supplementary.zip",
+      "sha256": "b7dc5033de434beabdee66714d5d5495bed80a2c0e64a9dbfb37e161e87c9713"
+    },
+    {
+      "file": "32532817_supplementary.zip",
+      "sha256": "8df24e7ea27864f29e1c4b0841b14f112d272d5decb0e44a78461791870e76f6"
+    },
+    {
+      "file": "37100770.xml",
+      "sha256": "94253e52ae944d0b086572cca6aadb7e629b0c3a008e35717e921dc5ed36f64f"
+    },
+    {
+      "file": "7dzm_entry.json",
+      "sha256": "d443019bd10404bcef1340fe78a06a6b1dd0c7f2f7f48ebbb7b3fa0a3dd0342b"
+    },
+    {
+      "file": "KFJ37_primary_Fig2.jpg",
+      "sha256": "578fcf46205bc20d54be667738f91cc1adc51d6cf1d677c21390514f7f02f4e8"
+    },
+    {
+      "file": "jci_supp_manifest.json",
+      "sha256": "7b5136dc02c7b2dbc4d6836b3425a6d547709f0221c0c3079be32b8053318ad6"
+    },
+    {
+      "file": "rcsb_method_audit_manifest.json",
+      "sha256": "7a4d00c310e98f5a10dbe2ed56eb8cff2e7d68d16a45922824535a9a0797a486"
+    },
+    {
+      "file": "41372155.xml",
+      "sha256": "0c36c17b42f90dfac8bf896c3cf682a90d765d5ae13e9f7af4bc555fa9d16652"
+    },
+    {
+      "file": "27903649.xml",
+      "sha256": "214d85e71fc5e09a7c378d9a5f1bf3b5b4fce18a33fed06c31a1d5e1d104f432"
+    },
+    {
+      "file": "19139173.txt",
+      "sha256": "73a655d1be74c3eb808370077df8445d61b157340174f2e7317d4e5612249335"
+    },
+    {
+      "file": "32532817.txt",
+      "sha256": "6ec972d330cb128c54867f08c20e3d3b6062fd87859f67084a4d4c90327ed489"
+    },
+    {
+      "file": "37100770_supplementary.zip",
+      "sha256": "ea5c7424c90b213c8cb118e7732e3c709960d15b647177bf9214c51bcd81107f"
+    },
+    {
+      "file": "34850325_clinical_supp.zip",
+      "sha256": "4887a78fec2ced70a399d8e8cba1deabef10a1293fdb3c767cd7a48686f6b998"
+    },
+    {
+      "file": "29531227.xml",
+      "sha256": "2b7a4d539b745683a17f7a8359b328bc533d31fe84f8e06c85a2c4a8a8b336b4"
+    },
+    {
+      "file": "24192765.xml",
+      "sha256": "44bafc19186376f16573c20333554bf7eedea102299525646cd03336afd9fd1f"
+    },
+    {
+      "file": "37872153_supplementary.zip",
+      "sha256": "081d0bf0a41be0d0f847cb6940c20ee78b09f8e920e697e196ad7770b12a35cb"
+    },
+    {
+      "file": "37872153.xml",
+      "sha256": "0e8e76e844ffbfd2e685b8f2618ca842dd54336183ea94729a6ff12e698e5830"
+    },
+    {
+      "file": "31235963_bioc.txt",
+      "sha256": "ad254b5c526bdad35f68d24957f06f7cb5536781a24f37ed10f77855c9a4f989"
+    },
+    {
+      "file": "JCI130562_supplement.txt",
+      "sha256": "4fa584cf2f474dfea8eba2fabb3f3fa2d0cba3741707043b5261e53a68a2ff7a"
+    },
+    {
+      "file": "GSE128933_series.soft.txt",
+      "sha256": "0eb638135c1cca46cee920bbc32596bdfd3e130a53a4d6d68e2548adde85f635"
+    },
+    {
+      "file": "bioc_primary_retrieval_manifest.json",
+      "sha256": "76d0bb779824ffad2d894b461d5cee641a70c08068c47e986cabcc13d421dbd9"
+    },
+    {
+      "file": "27903649.txt",
+      "sha256": "60688a2cfa214e330fcf2fcbe45babe5f3f8adc49bc7445c02d657b0e4c18a6c"
+    },
+    {
+      "file": "clinical_construct_supp_manifest.json",
+      "sha256": "e817cb8d788c058b834b34be7f69354e7eb9822530b06d1ce292d0a19fe88853"
+    },
+    {
+      "file": "21124993.xml",
+      "sha256": "472adb77b3a7d70ae6995c80f04b65296eeafaedba5b5bf8e805ca7bbf67f1c1"
+    },
+    {
+      "file": "additional_clinical_attempts.json",
+      "sha256": "a82b1efaaa1ecdbc076a9caa1f4fcbbd74545bd11f2939cd85b5ca1695a9558c"
+    },
+    {
+      "file": "19139173.xml",
+      "sha256": "c7c3d327946a3a7d424e5737f0244bafecfd5951a3f723707d7a7946de91409c"
+    },
+    {
+      "file": "21124993.txt",
+      "sha256": "d7a1345e15a48b1b9508ee0934b3b1eb6ffa8003ecf82f856f43e66cb4b8a413"
+    },
+    {
+      "file": "metadata_records.json",
+      "sha256": "ad98df4eb7fe587515653c6f10c06e6ef901afde6f2010fdabf35ab090a6eea2"
+    },
+    {
+      "file": "7dzn_entry.json",
+      "sha256": "778cbf0bb9f2532b09ea9e6894aa3fe4284b8b3914fad026e9092a6d8e7f8ffa"
+    },
+    {
+      "file": "24192765_supplementary.zip",
+      "sha256": "a2ac4e4b8aa190d799215651ce6450cc050ae435e4395377712214b38a9f153a"
+    },
+    {
+      "file": "28250417_bioc.txt",
+      "sha256": "df9a6f8cdaadf905e4faf3061e5812fc286605282d44dc16d5f65f7e2a6694e6"
+    },
+    {
+      "file": "40877317.xml",
+      "sha256": "ff04deb13d1569be13647abed8586707195f27672fb17a6e541040788ab5a798"
+    },
+    {
+      "file": "32310221_publisher.html",
+      "sha256": "0ec31d0c149eaebacd6eedfefad71cb0ff6b6983e48978566ff4ced86cd24de0"
+    },
+    {
+      "file": "19139173_supplementary.zip",
+      "sha256": "b005279cfb692a14fba7d64a62ab52de4ca8d7ace960f7c9a8d67228eedd5311"
+    },
+    {
+      "file": "32532817.xml",
+      "sha256": "0b2ff64b083aac60f86e9b66b82d6be92f339b3a875325e529554223651bcece"
+    },
+    {
+      "file": "30575715.txt",
+      "sha256": "d8b3d6de8bf6f6ea05800ae370b492daa0de17cab1fd04bad18bbeaea7f63411"
+    },
+    {
+      "file": "retrieval_manifest.json",
+      "sha256": "8de265a322611b706062fcb919138ca6f6b10b0c606971830cbb5f1c9455c0bf"
+    },
+    {
+      "file": "bioc_rate_limit_stop.json",
+      "sha256": "2dbc24a2f56a2b2bfaab3d269888fbeb632df186a7896754481621f8ab4c2446"
+    },
+    {
+      "file": "35173732.txt",
+      "sha256": "fa8550aa64bbbca92f233b5d1ab3c038995282e730040359fdbf558c6532ea02"
+    },
+    {
+      "file": "35865122_clinical_supp.zip",
+      "sha256": "c15b51212f39851c04fbbd1165a104a53df72813dde8049f906e0fe245943312"
+    },
+    {
+      "file": "23569211.xml",
+      "sha256": "42cb5c6cb2c143d1307cea0ffa386229ca6298e7244acb8ed6089c097974e340"
+    },
+    {
+      "file": "20566715.xml",
+      "sha256": "5d11c27b1fcaceff852397b9ee3128e6b7a68ae003b5a816aae38064c9705e41"
+    },
+    {
+      "file": "30575715_supplementary.zip",
+      "sha256": "74879c1c80888f8542f5be60588f22b17e1feebfc08b77c22887fe35e351899e"
+    },
+    {
+      "file": "35173732_supplementary.zip",
+      "sha256": "5a7bff343e02ab74dc73195ab1b355831941f10e7801a627d13acd42789dfce1"
+    },
+    {
+      "file": "p53_sequence_cells.json",
+      "sha256": "aab8a57c957fa1a2c4f0e5356def0910106a36657b03890fb12857371fd3826d"
+    },
+    {
+      "file": "targeted_supplements_manifest.json",
+      "sha256": "d3b134733cc8ffc8126b9daed6a4891b8cabd1b438a45500205b008703d749d7"
+    },
+    {
+      "file": "23569211_supplementary.zip",
+      "sha256": "97f35507d493205ec1f9fef02fdd5fe2c844b403653f61399465a7c84be01d9a"
+    },
+    {
+      "file": "41372155.txt",
+      "sha256": "b409ff109ac52da19ff85273415895a1b13ca4a431a023bbcabf4f010974b6a6"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.t002.jpg",
+      "sha256": "8aa709a3352afe2b8c8df7774f2514684ec67be59c1cf20d4fdcf8b0f06bc6a6"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.g001.jpg",
+      "sha256": "1d3d19f594049b992bbe2a0041659c9ff3a7e069e6759ec6cca62370eb333183"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.t003.jpg",
+      "sha256": "e6b1abe3560e827b2d0a832343376eb64f21d5e4c0f5a115fa099d3e509426af"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.g002.jpg",
+      "sha256": "94e5d1db51ebdf9946ee6a98a2c92df6f86d7099acedd4b6437b94db9858b2b8"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.g004.jpg",
+      "sha256": "55093afeac2228ceba5bb1ef0c33eea30a5b9a62a1b9ad81f26409cd771bbd2b"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.g003.jpg",
+      "sha256": "392520ff33b621fba1f051d2f4a698ec35ed5132b325f9f35f080813441cd2c6"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.g005.jpg",
+      "sha256": "d653fcf8bf4c3fad4da59396d59e4c075b6ddbca2ae982103a6c4ccf2bfba773"
+    },
+    {
+      "file": "21124993_supplements/ppat.1001198.t001.jpg",
+      "sha256": "40c035bb524b4b5fbd22fb7c7e26967d69f496739ea1e85bae8e148ece288af5"
+    },
+    {
+      "file": "32532817_supplements/SB-JBCJ200224F003.jpg",
+      "sha256": "8372f4fe6e04a42635fd96cd200b773f110d6d6efc7207bd011dd625b12b3ff1"
+    },
+    {
+      "file": "32532817_supplements/supp_RA120.014016_160350_1_supp_545754_qbphq7.pdf",
+      "sha256": "904bbb75f69336b568619cf67466cccc2394855461b68b4ea4aa91184b92695b"
+    },
+    {
+      "file": "32532817_supplements/SB-JBCJ200224F004.jpg",
+      "sha256": "b0e21e8288481f6ba9bb5873a40988d70843e5b35c0a0fbd8121835feee42d16"
+    },
+    {
+      "file": "32532817_supplements/SB-JBCJ200224F001.jpg",
+      "sha256": "5a8b72fb6b2190099bef9dfef5b23966fa42bf9bd12159facc763d66c158566f"
+    },
+    {
+      "file": "32532817_supplements/supp_RA120.014016_160350_1_supp_545754_qbphq7.txt",
+      "sha256": "b1b5e381b0ec19522cf8a0919694b2619642e231bb25702f4880633a2ebd5cb0"
+    },
+    {
+      "file": "32532817_supplements/SB-JBCJ200224F002.jpg",
+      "sha256": "5caa77e9489572e90f3acf139193486b1e0fe57af00f02db81bb069636c461b1"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980004.jpg",
+      "sha256": "87be66476d09942f0c19cc1e1f29a8dc962a249b9a20fa6fd55e3477226802cc"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980005.jpg",
+      "sha256": "2614f345742c656ca43d1d4ecf037d3f6c3c0845ab16b4b40f9f73cfbc83262c"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980006.jpg",
+      "sha256": "2575a0ac3fb79ce40c73c84f89d22a7995e619ca927ff85a50c8d13492b219c7"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980002.jpg",
+      "sha256": "f29ceb3a0b96936fbd9ed3b1c72814644125660a956ea09dc500aedeae18d095"
+    },
+    {
+      "file": "23569211_supplements/supp_M112.447185_jbc.M112.447185-1.txt",
+      "sha256": "4a8c64e1d16ddf10272550283cce7a18bf6089d68a89012d81383605847e6f01"
+    },
+    {
+      "file": "23569211_supplements/supp_M112.447185_jbc.M112.447185-1.pdf",
+      "sha256": "6229073e50aff3fe339e91441857f9043667465615b2897cff78e5233e547db4"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980003.jpg",
+      "sha256": "c08e6eca099b6dd0fed52aa1f87ff8d406407600c449e6c2a97231be5fc704ed"
+    },
+    {
+      "file": "23569211_supplements/zbc0251349980001.jpg",
+      "sha256": "dd5bbd0a8d8c61bf8bb97f06bb6046ff1847cfc90d285237d9d11d6c4d413461"
+    },
+    {
+      "file": "23569211_supplements/sbox.jpg",
+      "sha256": "e0133786ea158793eb1f30837cf5539191afe5a084df620f1ee10d3f52c0766b"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM1_ESM.txt",
+      "sha256": "87e151775ad58d93afa318786cff90755a936065bc16b8bbf79b547f32fd4409"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_Fig4_HTML.jpg",
+      "sha256": "e389b98851609b905789e4d4eaac75ad22d1a257854f9af2bcb4b79010e4e664"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_Fig5_HTML.jpg",
+      "sha256": "5a3cea8e2ed88ff9e0f38881f3c2477181961463bed64e5f9507233a879f4088"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM2_ESM.txt",
+      "sha256": "23bf9211eb03c65408401591d6dad7f29497d9960993515220d8260365f581c8"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM2_ESM.pdf",
+      "sha256": "5c4053847f81d513fe654eff509e0a7122a20f9738a485ed1ab7c3b42f3abd95"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_Fig1_HTML.jpg",
+      "sha256": "4d2ac74c30af570926df30b51e45a3e7a7246c9271ecbd8c038a8b36c9e016d3"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_Fig2_HTML.jpg",
+      "sha256": "8de8a56ab07f313be92afad7a3a2135f5aee9e7e4f580e73cd231f2f60d826f3"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_Fig3_HTML.jpg",
+      "sha256": "ad8402e9a7831dae76324a75a013ebbef2d73ec5a40f172a7a34f72570dd1ddd"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM4_ESM.xlsx",
+      "sha256": "9585771598db6657c2b1ff52300f32e437fcc47617eb8838a3bad1324941fa8f"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM1_ESM.pdf",
+      "sha256": "5cc35d6637f603586899b4b112341150bf53117e2434b8503034c9a8c2d5ea7b"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM3_ESM.pdf",
+      "sha256": "61c25fb8c2f4e8bc5efb729968d1506a05b81c12909115cb6d94130938dfb8c6"
+    },
+    {
+      "file": "37100770_supplements/41467_2023_37532_MOESM3_ESM.txt",
+      "sha256": "5e0b084da76007a2f3540d347f56e3833037f69acef82732c00d81e383233d73"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig6.jpg",
+      "sha256": "c7416f4d20cd241e1eb2ecb3c29ab2f130a9c0ac68a06ae2f6d0040eea4f4875"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig5.jpg",
+      "sha256": "128bd8a19e5703f741053ffede5838d275a697d7ec5fa73915c316644ed7f0ee"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig1.jpg",
+      "sha256": "ce622ff593c48f550f94c3f3cfe1a6ba8c63e0ffb7d1ffd126f00cb56df79e84"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig2.jpg",
+      "sha256": "69334d0fb683853968f4e354741940244f878a8c858f497c0e04e68ee82351d6"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig4.jpg",
+      "sha256": "8439e0eb93ec9f9a5645c600c3b581d6951dde8adcb12cf69fd8539ae07c52ad"
+    },
+    {
+      "file": "20566715_supplements/JEM_20100603_RGB_Fig3.jpg",
+      "sha256": "28f28b972998498d0f801a1a78135bbc4f0c70dfd498add164efacb88d610b2d"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig5_HTML.jpg",
+      "sha256": "a19d2894d4ccfa2ef1874b4aeb859bb38440d19d09550284750938b89ec8c806"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig7_HTML.jpg",
+      "sha256": "e59e8b0df3ed8132bfc060a586c0c5517748bf67a89dfbc515c1626fcf3dd490"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM3_ESM.pdf",
+      "sha256": "da962bf9ef95ed6d6d96379a291c71290f3f461557ab0dd8527dcc309643dacf"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM2_ESM.pdf",
+      "sha256": "7108b7515007d84574daf0e59b5db7e7f9a17cfe9d65a3fd056f48278a9f20af"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM2_ESM.txt",
+      "sha256": "9e42f224ca33e1e10751d3bd0875310f07baa13045de2486179eb8c90f86f036"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig6_HTML.jpg",
+      "sha256": "e292f65af66044ec2995969791c911a56924010264b4066c7351922be9ead658"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig8_HTML.jpg",
+      "sha256": "57fff08b3176d0f075fc4ebd1819cf1652faebc6040ddfc17d580ec11d2ef2f5"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig4_HTML.jpg",
+      "sha256": "c3370d39859657f86ca0d0bb464fbaaa933378e280a46b3c8f420b389b9946c6"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig1_HTML.jpg",
+      "sha256": "ad1682a5267f339ac6e2a8f316c9048d1e7b0c145ca83431ae8fe407a6bb767f"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig3_HTML.jpg",
+      "sha256": "b23b430dc0b3334192d8954002fc6a4941e5f2a480da920faa58c765e2d28c15"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM3_ESM.txt",
+      "sha256": "8d90220b171d57c1a577da940329fbb98c72a924552a5e5029998e17e4d4ebae"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_Fig2_HTML.jpg",
+      "sha256": "f90bf23d6c7ea4b6e58cf584d87281497192f8e2fbf16a3e4fe9637648eec131"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM1_ESM.pdf",
+      "sha256": "cb5ccfd1805af029f594d6c1c00836379597c9811f808572dc8c5d1ff518c6a6"
+    },
+    {
+      "file": "30575715_supplements/41467_2018_7815_MOESM1_ESM.txt",
+      "sha256": "8d604d63c045ad768dd09d746d92dadb3616c7f2a8675a7f260ccd52b6027e2d"
+    },
+    {
+      "file": "35749374_clinical/cir-22-0040_supplementary_figures_s1-s10_suppsf1-10.pdf",
+      "sha256": "f0275d6364c2841fe2e5ce35b1646b7091eaaa623ab1dc968b90bd15e71543ed"
+    },
+    {
+      "file": "35749374_clinical/cir-22-0040_supplementary_tables_s1-s7_suppst1-7.xlsx",
+      "sha256": "3409c83979c7ff6ebb0189e679cf54af072185101e02a87ef66a46f04dcccb9c"
+    },
+    {
+      "file": "35173732_supplements/fimmu-13-822210-g002.jpg",
+      "sha256": "22d4a699553afb6db8b78a63e7b837a7e68b340b52d2a826c8e711406406a0c6"
+    },
+    {
+      "file": "35173732_supplements/Image_3.txt",
+      "sha256": "834a8c18ba26e43ea1c14239da1dc6c04138644aed8cba67baeabb24234053eb"
+    },
+    {
+      "file": "35173732_supplements/Image_2.pdf",
+      "sha256": "73937a0638538bba41d29634f728807d2abe807dcbb8ed937b84e93e99d08f8c"
+    },
+    {
+      "file": "35173732_supplements/Table_3.xlsx",
+      "sha256": "6215c93ecf83c1ace86c78b88a26843a5ffaa327574484d65faa1f1844a790fe"
+    },
+    {
+      "file": "35173732_supplements/fimmu-13-822210-g004.jpg",
+      "sha256": "cd46893119c2e9d5e972625a045d56cd422d758e9dfe65538fd58dd2dad5baf8"
+    },
+    {
+      "file": "35173732_supplements/fimmu-13-822210-g001.jpg",
+      "sha256": "5e2fb9aa5b04371984c2cc3c01d599e9722c12e138290bdb733d512317e81b4d"
+    },
+    {
+      "file": "35173732_supplements/fimmu-13-822210-g005.jpg",
+      "sha256": "ee6d99401041e37bf6e0c3690a036a55919ce73b6b4758d62b55cbde07abab19"
+    },
+    {
+      "file": "35173732_supplements/Table_4.xlsx",
+      "sha256": "247d22c4dcd3655a5b0445827e7031759097342c3c15d8cfd43191e20a8cb14e"
+    },
+    {
+      "file": "35173732_supplements/Image_3.pdf",
+      "sha256": "26d93c1c0b466dd61ee4e5b400ef39c5eb3dadcafa09ff43213cf2eceb527d91"
+    },
+    {
+      "file": "35173732_supplements/Image_1.txt",
+      "sha256": "0c2a6db7f301d7e7235b3a1e3ad45efaa2b6e0773100689187bf5344c0a70ce2"
+    },
+    {
+      "file": "35173732_supplements/fimmu-13-822210-g003.jpg",
+      "sha256": "0c52febae849993d93e23fac32afd1ad8cc4ce548a8622759fd1ca1a498f7730"
+    },
+    {
+      "file": "35173732_supplements/Image_2.txt",
+      "sha256": "0f895157326a95313619c34fb61c2a1bc9045692d4a548ae75216c6dd2cacca0"
+    },
+    {
+      "file": "35173732_supplements/Image_1.pdf",
+      "sha256": "c402476a4966cd787be54037a43ae6250e995cd18c00bdc4632c389867c9b53f"
+    },
+    {
+      "file": "35865122_clinical/mmc3.pdf",
+      "sha256": "48f262056f4b7b9738f441033b3b61af7de293f9de0c60b5f4d139743ad2d496"
+    },
+    {
+      "file": "35865122_clinical/mmc2.txt",
+      "sha256": "e6987ee18d74c29120c5649846535650b46d81966ba4e9e29ce5e5b2e094f90e"
+    },
+    {
+      "file": "35865122_clinical/mmc2.pdf",
+      "sha256": "8a567580e496f7527a1336925a9f2e3f6b7a04ac500837266147ba38b9254db4"
+    },
+    {
+      "file": "35865122_clinical/mmc4.pdf",
+      "sha256": "d475353b6ca75b0858408aba02e06b94c994f599edf285dcac0ca61ea910dc65"
+    },
+    {
+      "file": "35865122_clinical/mmc5.txt",
+      "sha256": "db2a27f35fd035552c370d21239b9da3285029b429b12d47593f27ec72b3f1d4"
+    },
+    {
+      "file": "35865122_clinical/mmc1.txt",
+      "sha256": "d47f78392fa100d9ca1959550b0eddf9b5df2944a01c08bf820522aa248209b9"
+    },
+    {
+      "file": "35865122_clinical/mmc1.pdf",
+      "sha256": "0951defe32665b852842994b57884e330c0732d9930a26a121fb1244bd1ce903"
+    },
+    {
+      "file": "35865122_clinical/mmc5.docx",
+      "sha256": "90a8a490dd216ea771bb0f229910f8c3c1bac3e4133ec0e4e0672a56498c9af2"
+    },
+    {
+      "file": "35865122_clinical/mmc3.txt",
+      "sha256": "ab30503b3745bd504e84e38f4c05c1823ed632026dc79cd96a72819f8ebdb923"
+    },
+    {
+      "file": "35865122_clinical/mmc4.txt",
+      "sha256": "2aa8d6e8a45cec96423f82aa179aae259e1b35137786631950d69eb2d5935547"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f05.jpg",
+      "sha256": "63c4cdac03dd8bbf75a8048a46d72011786ddbca0039ec4614b85db3b6d1e2dc"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f06.jpg",
+      "sha256": "fccd17d1452ff734e087639090fe276f5693ecf9dc67598a02bc8fe6b2e7b00b"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f04.jpg",
+      "sha256": "b39b88b67cb31ec1e4dc69df254d8b76906ca64bd56e0f5fdaccc6a55607a694"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f02.jpg",
+      "sha256": "b8a586919a6c693a2b727018012155c318b704d78602d3f6955d38c2d5a3eb38"
+    },
+    {
+      "file": "19139173_supplements/jem.20082136_1.pdf",
+      "sha256": "6a6bb7bcae13384f850b3d83ae5847c02999f80a1ffa9f28f7268bd933f88afe"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f03.jpg",
+      "sha256": "87851aaa5217fa7eeacf7eb3c2b83c91d65a102475dff6570b6ef2cdd97ec201"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f07.jpg",
+      "sha256": "284e0fd6371fd0bd7bf401c60333e208d532d3907819c3cac207e1984abcc9e7"
+    },
+    {
+      "file": "19139173_supplements/jem2060209f01.jpg",
+      "sha256": "e969f49db1801e9aeec2546ed512990f9afdc12568cc19200d2252ac36b5459e"
+    },
+    {
+      "file": "19139173_supplements/jem.20082136_1.txt",
+      "sha256": "16fccfc57309a3761351662d09793f0522fa52eb111b567cbeaa2788989295ec"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM3_ESM.xlsx",
+      "sha256": "c6435bbd15174f75f8903b72bf69f43d04f28da71de3e1f3b09eea72829ee087"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM2_ESM.txt",
+      "sha256": "ae784236f6781df7240026372d8b00d3830f4dd06427284ef3b65d1508f6f1b0"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM5_ESM.xlsx",
+      "sha256": "f38ce0aa67cd2cf30e927d0731f2115b6ef4c3f72bf2790f5a29ab0ce7ae6ee1"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig3_HTML.jpg",
+      "sha256": "c9c71b55d0935b1fd3dcc41b33d77780d840ac956116b77a739c593fdaaab224"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM1_ESM.txt",
+      "sha256": "1e2d00e8fde62e8a23f0491fbd5d0f44b8df13c79038e264d92a5e7c86e033b2"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig5_HTML.jpg",
+      "sha256": "26c0da9f570dc32d5c4fef2d35d6836c99efd92f1431afa63a73716f95abaf30"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM4_ESM.xlsx",
+      "sha256": "e9dcdb145aaf8cde91aaca471f6eb47110470cfaa2eed336a0d165837b5cf272"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig2_HTML.jpg",
+      "sha256": "d969fc63cc134c5b95dfc7a503871fab3b8f66b05b77d3469357f07a97fdd8cd"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig4_HTML.jpg",
+      "sha256": "95f4dfef4786617601da064bf1f7f6cd672f2ec69b4dcf68d6a2599cdc4bdd76"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig6_HTML.jpg",
+      "sha256": "e52c38b6d2bcce0a9bf72b5e80ba2c8aefd8b28396f25c7a02d7de1aedf08255"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig7_HTML.jpg",
+      "sha256": "c80c051290528810568b62e0a9eb3f598ef0d6a7eca23a4ba1ce6d33ef4b675a"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM1_ESM.pdf",
+      "sha256": "7124a6b07b5b8d4f0bb7878466cc0893bae9b1db0743ec38afd2e4580598bd3f"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM2_ESM.pdf",
+      "sha256": "77ec4443c6090f8a37aa3f1c48a39395123af213b09a67618b8d9d7b3d5ea35b"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_MOESM6_ESM.xlsx",
+      "sha256": "ef0d3ace73fc9c95a462fbf53a76354281871ba2524fc23d591dc5a9d2f21e58"
+    },
+    {
+      "file": "37872153_supplements/41467_2023_42430_Fig1_HTML.jpg",
+      "sha256": "5b86239ea8532357808a23c6d30b98877c75b019677c47c91b92779b66a7db2f"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM5_ESM.pdf",
+      "sha256": "a1c1dc4cefaa479f7550297e960967e171732e61a17586d693b88b2a72bcb149"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig6_HTML.jpg",
+      "sha256": "af47d34c44f2d5c959c877c83c794137ba6d2b95c059c56864060b5bfcd12795"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig5_HTML.jpg",
+      "sha256": "b379a947dcab8d159ec20cab477e877bac61cf04d0ccf9c4c53fbb026c0a0359"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM4_ESM.xlsx",
+      "sha256": "6ba75e33ae8b461ed9d5c8b87395dca374a30703bece8f623e18e8560a15ec2c"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM1_ESM.pdf",
+      "sha256": "ce68810f1bf4fce4a410ead13d8060e87a65d8fcc56d7ff0c550b5b623571aa5"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig3_HTML.jpg",
+      "sha256": "28887e6e104b3d8a6b4eeb156bb208b0a7795590609a4a9074def63d255c4a1f"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM6_ESM.txt",
+      "sha256": "819677312910eb0a90183f6960d5c82e28bc0f5e5472b71e26ddaff25bb4f989"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM6_ESM.pdf",
+      "sha256": "64b989b0135605fba79ba81ad619db4807ee8befc3a8d35c421dcb747cb5d0ce"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM2_ESM.pdf",
+      "sha256": "5b7b9fe9cbf3e90108f518f687526018a704fcc98740df3a5427ab212da56304"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig4_HTML.jpg",
+      "sha256": "19736ee3e8f0a620418069e384019c873cbff044e043a922642b786319637c0c"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM2_ESM.txt",
+      "sha256": "dd233d4cbc2454d0f200739f043bb4b00b2ab4a4cf2dc5849b5b797921954836"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM5_ESM.txt",
+      "sha256": "2822e315dcf06c31a2708f010e15ae2193f4c75effeda5474e7f908a37ddcfe2"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM1_ESM.txt",
+      "sha256": "e1224f0dba348cde0a298e8b2e29ffd81048698cd9819efbb2bfbb950096a170"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig1_HTML.jpg",
+      "sha256": "857bc1802ffa7dbfb2109f7fdb1703b017b17e1b8d12872fad18a62dcb06c588"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM7_ESM.xlsx",
+      "sha256": "bc6e4a5f18a8471e35ec8e88af00b6764a2633bf82eb438a88f46c480530c36b"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_MOESM3_ESM.xlsx",
+      "sha256": "c585cdf33a38d3ac4dcc5afe386af1d60f088d2cae92da67a5a055937cfc07b7"
+    },
+    {
+      "file": "40877317_supplements/41467_2025_63288_Fig2_HTML.jpg",
+      "sha256": "13cd815008a6d84fd0520a7ec8246660bd610bc4ebcf41c276293a8031e0e333"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f6.jpg",
+      "sha256": "cbe7bd8759775605c617a8c539ca6cb932729c30afec1164dce03c845abd151f"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f7.jpg",
+      "sha256": "3b1b68792846ed352335419b6b2057b15bde55cf19712ae1061ffefcb288de7d"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f5.jpg",
+      "sha256": "d6ca6cc908dd59bdbdec4cfc7ccda510c4ccaea2d2fe9213024495cde5f27631"
+    },
+    {
+      "file": "24192765_supplements/srep03097-s1.pdf",
+      "sha256": "5fcc250539b7bf10b4437bbfebf7b05af3e9999a84e82c6dc0a179fbfe1aaa3f"
+    },
+    {
+      "file": "24192765_supplements/srep03097-s1.txt",
+      "sha256": "f5aa07248fe168ab88c69619d03a0873cdb573e82589696433c22d2fc9353d35"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f3.jpg",
+      "sha256": "5277ccfa1492ba79c986fbe5113902f43d8d5f59ee77511eeda6bf0993519108"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f1.jpg",
+      "sha256": "62fac9f925b4616159c3466ff3a989a1164c136f711b34edc3624b5c8ea9b389"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f2.jpg",
+      "sha256": "ada0c1b761985e2a9932a698e8d6d618e8cdf86432aff80a9689644ff6bb69d5"
+    },
+    {
+      "file": "24192765_supplements/srep03097-f4.jpg",
+      "sha256": "a698dcf2e4b54430bae613315dcc7ac554cb58b567078444e39a34d898367095"
+    }
+  ],
+  "summary": {
+    "n_input": 51,
+    "n_primary_verified": 16,
+    "n_quarantined": 35,
+    "dispositions": {
+      "quarantine_primary_unretrieved": 26,
+      "primary_verified_soluble_SPR": 16,
+      "quarantine_wrong_ligand_value": 1,
+      "separate_full_length_TCR_CD3": 1,
+      "quarantine_temperature_unverified": 4,
+      "quarantine_secondary_measurement_origin": 1,
+      "quarantine_SPR_Octet_method_conflict": 1,
+      "quarantine_citation_and_method_conflict": 1
+    },
+    "fold_counts": {
+      "train": 10,
+      "validation": 6,
+      "test": 0
+    },
+    "fold_blocks": {
+      "train": 7,
+      "validation": 4,
+      "test": 0
+    },
+    "training_allowed": false,
+    "binary_training_allowed": false,
+    "clinical_training_allowed": false,
+    "status": "inspection_only_insufficient_independent_splits",
+    "scope": "record-level source verification; original folds retained, no test replenishment by reshuffle, clinical heldout cohort never consumed",
+    "missing_condition_policy": "unreported buffer details remain explicit; unverified assay temperature fails this release policy"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "byte_identical_artifacts": {
+    "primary_measurements.json": true,
+    "holdout_registry.json": true,
+    "priority_adjudications.tsv": true,
+    "primary_panel_validation.json": true,
+    "supplementary_replicates.json": true,
+    "expanded_evidence_manifest.json": true
+  },
+  "note": "Final retrieval manifest includes additional MHC/B2M source downloads for structure inputs; curated measurements unchanged."
+}

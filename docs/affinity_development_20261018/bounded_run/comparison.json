@@ -1,0 +1,2104 @@
+{
+  "selected": "anchor_raw",
+  "selected_alpha": 1.0,
+  "validation": {
+    "rmse_pkd": 0.7728733692287133,
+    "mae_pkd": 0.5994716393783078
+  },
+  "anchor_validation": {
+    "rmse_pkd": 0.7728733692287133,
+    "mae_pkd": 0.5994716393783078
+  },
+  "train_mean_validation": {
+    "rmse_pkd": 0.8029128322706365,
+    "mae_pkd": 0.6664164706183108
+  },
+  "improves_both_validation_metrics_over_anchor": false,
+  "candidates": [
+    {
+      "name": "anchor_raw",
+      "alpha": 1.0,
+      "training_cv": [],
+      "validation": {
+        "rmse_pkd": 0.7728733692287133,
+        "mae_pkd": 0.5994716393783078
+      },
+      "n_coefficients": 1014,
+      "validation_prediction_sd": 0.26080894130393295,
+      "validation_prediction_range": [
+        4.844892320361979,
+        5.6200621675145745
+      ]
+    },
+    {
+      "name": "sequence_balanced",
+      "alpha": 100.0,
+      "training_cv": [
+        {
+          "alpha": 0.001,
+          "block_equal_rmse": 13.564302975708479,
+          "block_equal_mae": 6.701007472966689,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7670297307566738,
+                "mae_pkd": 0.6432849475022749
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6650993752509962,
+                "mae_pkd": 0.6650993752509962
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.0742286941309946,
+                "mae_pkd": 1.0419293362449764
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.8726260100592409,
+                "mae_pkd": 0.8726260100592409
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 30.282097695775953,
+                "mae_pkd": 30.282097695775953
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.01,
+          "block_equal_rmse": 8.533184356259497,
+          "block_equal_mae": 4.4741552090917285,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7668043651336005,
+                "mae_pkd": 0.6430865097945853
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4933807773697376,
+                "mae_pkd": 1.4933807773697376
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.8889728834508214,
+                "mae_pkd": 0.8496600743499618
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.4029372222136889,
+                "mae_pkd": 0.4029372222136889
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 18.98171146173067,
+                "mae_pkd": 18.98171146173067
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "block_equal_rmse": 2.9003098823152027,
+          "block_equal_mae": 2.02335281414453,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7646321886895541,
+                "mae_pkd": 0.6411695136371568
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.791399065349209,
+                "mae_pkd": 1.791399065349209
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.714465843213768,
+                "mae_pkd": 1.6944151150117293
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.046408675471452554,
+                "mae_pkd": 0.046408675471452554
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 5.9433717012531035,
+                "mae_pkd": 5.9433717012531035
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "block_equal_rmse": 1.5136524969178713,
+          "block_equal_mae": 1.264615265531296,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7489397097919087,
+                "mae_pkd": 0.6270758119927216
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.7928620319060453,
+                "mae_pkd": 1.7928620319060453
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.7920072725506853,
+                "mae_pkd": 1.772833753996144
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.016327959396656766,
+                "mae_pkd": 0.016327959396656766
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 2.1139767703649124,
+                "mae_pkd": 2.1139767703649124
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 10.0,
+          "block_equal_rmse": 1.2187986442805754,
+          "block_equal_mae": 1.0402951146898896,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7206803114434304,
+                "mae_pkd": 0.6082813185386969
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.676860207046186,
+                "mae_pkd": 1.676860207046186
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.6226073328455275,
+                "mae_pkd": 1.601406884910138
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.11031683119814062,
+                "mae_pkd": 0.11031683119814062
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.2046103317562862,
+                "mae_pkd": 1.2046103317562862
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 100.0,
+          "block_equal_rmse": 1.0958025618116898,
+          "block_equal_mae": 0.9420446257174243,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7198861813761358,
+                "mae_pkd": 0.6072481199580674
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.5938272130805267,
+                "mae_pkd": 1.5938272130805267
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.461497896232002,
+                "mae_pkd": 1.4379240435864764
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.19234906922899508,
+                "mae_pkd": 0.19234906922899508
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.8788746827330556,
+                "mae_pkd": 0.8788746827330556
+              }
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "rmse_pkd": 0.7932438894261052,
+        "mae_pkd": 0.6633909349810827
+      },
+      "n_coefficients": 1003,
+      "validation_prediction_sd": 0.026379392356349406,
+      "validation_prediction_range": [
+        5.11792499838671,
+        5.18927385602293
+      ]
+    },
+    {
+      "name": "cdr3_chemical",
+      "alpha": 0.1,
+      "training_cv": [
+        {
+          "alpha": 0.001,
+          "block_equal_rmse": 1.0204502229684513,
+          "block_equal_mae": 0.8878637821553841,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6202516075246624,
+                "mae_pkd": 0.5663180609249305
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4622172486027338,
+                "mae_pkd": 1.4622172486027338
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.3068506607479957,
+                "mae_pkd": 1.2804327799345767
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.15462893952850632,
+                "mae_pkd": 0.15462893952850632
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.975721881786173,
+                "mae_pkd": 0.975721881786173
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.01,
+          "block_equal_rmse": 1.0182373181888715,
+          "block_equal_mae": 0.8885712370794359,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6204546795653336,
+                "mae_pkd": 0.5664317409539137
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.455207614394955,
+                "mae_pkd": 1.455207614394955
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.2956410800843563,
+                "mae_pkd": 1.2689898592327964
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.16444391777174427,
+                "mae_pkd": 0.16444391777174427
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.9877830530437697,
+                "mae_pkd": 0.9877830530437697
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "block_equal_rmse": 1.0138108070064862,
+          "block_equal_mae": 0.8911836770518882,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6224600517538695,
+                "mae_pkd": 0.5675408791795602
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4390339701472978,
+                "mae_pkd": 1.4390339701472978
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.26987925092764,
+                "mae_pkd": 1.2426756480956964
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.1909206372444956,
+                "mae_pkd": 0.1909206372444956
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.0157472505923906,
+                "mae_pkd": 1.0157472505923906
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "block_equal_rmse": 1.0193195062651594,
+          "block_equal_mae": 0.897194221488615,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6399975737287028,
+                "mae_pkd": 0.5763973987820931
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4427473485416256,
+                "mae_pkd": 1.4427473485416256
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.2817200032182734,
+                "mae_pkd": 1.25477313530509
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.2019215539015864,
+                "mae_pkd": 0.2019215539015864
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.0101316709126804,
+                "mae_pkd": 1.0101316709126804
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 10.0,
+          "block_equal_rmse": 1.049716578257042,
+          "block_equal_mae": 0.9140485360317729,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6992168065120177,
+                "mae_pkd": 0.6001320007791444
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4997133726013026,
+                "mae_pkd": 1.4997133726013026
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.368733113301587,
+                "mae_pkd": 1.3435325786454788
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.2007081315791659,
+                "mae_pkd": 0.2007081315791659
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.9261565965537732,
+                "mae_pkd": 0.9261565965537732
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 100.0,
+          "block_equal_rmse": 1.0703606837794093,
+          "block_equal_mae": 0.9227479783119671,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7198083515636828,
+                "mae_pkd": 0.607058234075154
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.5646373030024723,
+                "mae_pkd": 1.5646373030024723
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4190676193447007,
+                "mae_pkd": 1.3947768146575106
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.20739931913407617,
+                "mae_pkd": 0.20739931913407617
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.8398682206906223,
+                "mae_pkd": 0.8398682206906223
+              }
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "rmse_pkd": 0.9174510040538764,
+        "mae_pkd": 0.8734169555547502
+      },
+      "n_coefficients": 333,
+      "validation_prediction_sd": 0.27875626962199795,
+      "validation_prediction_range": [
+        4.710260282662711,
+        5.541561027001795
+      ]
+    },
+    {
+      "name": "cdr3_words",
+      "alpha": 0.1,
+      "training_cv": [
+        {
+          "alpha": 0.001,
+          "block_equal_rmse": 1.0237108500734007,
+          "block_equal_mae": 0.8903402137513934,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6214123097286354,
+                "mae_pkd": 0.5669376217106447
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4589102962768266,
+                "mae_pkd": 1.4589102962768266
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.3210764443986223,
+                "mae_pkd": 1.2949488122618673
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.15275874299612902,
+                "mae_pkd": 0.15275874299612902
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.9781455955114993,
+                "mae_pkd": 0.9781455955114993
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.01,
+          "block_equal_rmse": 1.0221687245171571,
+          "block_equal_mae": 0.8908445835760992,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6216115211816179,
+                "mae_pkd": 0.5670476896340526
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4550278414306792,
+                "mae_pkd": 1.4550278414306792
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.3125164071963231,
+                "mae_pkd": 1.286214901792488
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.1598333008175281,
+                "mae_pkd": 0.1598333008175281
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.9860991842057478,
+                "mae_pkd": 0.9860991842057478
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "block_equal_rmse": 1.018626763171186,
+          "block_equal_mae": 0.8930017982977916,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6235782874331253,
+                "mae_pkd": 0.5681219535643267
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4449714177352284,
+                "mae_pkd": 1.4449714177352284
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.289980152896461,
+                "mae_pkd": 1.2632095033288389
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.18164842820691263,
+                "mae_pkd": 0.18164842820691263
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.007057688653651,
+                "mae_pkd": 1.007057688653651
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "block_equal_rmse": 1.0237035002122845,
+          "block_equal_mae": 0.898623009826189,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6407581587308757,
+                "mae_pkd": 0.5767241330626192
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.4501175654752592,
+                "mae_pkd": 1.4501175654752592
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.2991054090963416,
+                "mae_pkd": 1.2725267456430487
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.19299091384180844,
+                "mae_pkd": 0.19299091384180844
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.0007556911082096,
+                "mae_pkd": 1.0007556911082096
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 10.0,
+          "block_equal_rmse": 1.0518994841284313,
+          "block_equal_mae": 0.9145621288879175,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.6989827727883868,
+                "mae_pkd": 0.6000251730148835
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.50480585075975,
+                "mae_pkd": 1.50480585075975
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.3760850243710852,
+                "mae_pkd": 1.351021631481852
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.19651387934269593,
+                "mae_pkd": 0.19651387934269593
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.9204441098404059,
+                "mae_pkd": 0.9204441098404059
+              }
+            }
+          ]
+        },
+        {
+          "alpha": 100.0,
+          "block_equal_rmse": 1.0707461363679185,
+          "block_equal_mae": 0.9228407688784037,
+          "folds": [
+            {
+              "held_block": "B0e0b389f10661c32",
+              "fit_ids": [
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.7196963027399389,
+                "mae_pkd": 0.6070159369253995
+              }
+            },
+            {
+              "held_block": "B1efd0a602bc096d5",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505"
+              ],
+              "held_ids": [
+                "ATLAS:744"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.5657507874926475,
+                "mae_pkd": 1.5657507874926475
+              }
+            },
+            {
+              "held_block": "B77dff214dfd627bf",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:159",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:137",
+                "ATLAS:138"
+              ],
+              "metrics": {
+                "rmse_pkd": 1.420131130317901,
+                "mae_pkd": 1.39585883302414
+              }
+            },
+            {
+              "held_block": "B84176fba02de0454",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:438",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:159"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.20691041543655064,
+                "mae_pkd": 0.20691041543655064
+              }
+            },
+            {
+              "held_block": "B91b6b9adbe032dbc",
+              "fit_ids": [
+                "ATLAS:102",
+                "ATLAS:106",
+                "ATLAS:110",
+                "ATLAS:137",
+                "ATLAS:138",
+                "ATLAS:159",
+                "ATLAS:502",
+                "ATLAS:505",
+                "ATLAS:744"
+              ],
+              "held_ids": [
+                "ATLAS:438"
+              ],
+              "metrics": {
+                "rmse_pkd": 0.8386678715132811,
+                "mae_pkd": 0.8386678715132811
+              }
+            }
+          ]
+        }
+      ],
+      "validation": {
+        "rmse_pkd": 0.9072915222688778,
+        "mae_pkd": 0.8621405485764396
+      },
+      "n_coefficients": 464,
+      "validation_prediction_sd": 0.27281066796659864,
+      "validation_prediction_range": [
+        4.726538459125995,
+        5.530385130588529
+      ]
+    }
+  ],
+  "training_rows": 10,
+  "validation_rows": 9,
+  "test_used_for_selection": false,
+  "consumed_test_evaluated": false,
+  "new_test_evaluated": false,
+  "independent_acceptance_pending": true
+}

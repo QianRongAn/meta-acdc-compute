@@ -1,0 +1,389 @@
+[
+  {
+    "graph_id": "1bd2",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "F2a0709f5663a6ae9",
+    "fold": "train",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "D",
+        "resid": 53,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD",
+          "CE",
+          "CG",
+          "NZ"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "1mwa_1",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "Fbacaa0696a583c05",
+    "fold": "test",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "I",
+        "resid": 77,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "OG"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "2ak4_0",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "Fb84df172b4ed3964",
+    "fold": "test",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "D",
+        "resid": 103,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CE",
+          "NZ"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "2ak4_1",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "Fb84df172b4ed3964",
+    "fold": "test",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "I",
+        "resid": 28,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CG",
+          "OD1",
+          "OD2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "5d2l_2",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "Fb8e7596042dc6669",
+    "fold": "train",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "L",
+        "resid": 49,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD1",
+          "CD2",
+          "CE1",
+          "CE2",
+          "CG",
+          "CZ"
+        ]
+      },
+      {
+        "chain": "L",
+        "resid": 56,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CB",
+          "CG",
+          "OD1",
+          "OD2"
+        ]
+      },
+      {
+        "chain": "L",
+        "resid": 57,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CB",
+          "CD",
+          "CE",
+          "CG",
+          "NZ"
+        ]
+      },
+      {
+        "chain": "L",
+        "resid": 97,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CG2",
+          "OG1"
+        ]
+      },
+      {
+        "chain": "G",
+        "resid": 75,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CD",
+          "CG",
+          "CZ",
+          "NE",
+          "NH1",
+          "NH2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "6bj2",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "F6a41bfca383854c9",
+    "fold": "validation",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "E",
+        "resid": 52,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ]
+      },
+      {
+        "chain": "E",
+        "resid": 95,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD1",
+          "CD2",
+          "CE1",
+          "CE2",
+          "CG",
+          "CZ"
+        ]
+      },
+      {
+        "chain": "E",
+        "resid": 99,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD",
+          "CE",
+          "CG",
+          "NZ"
+        ]
+      },
+      {
+        "chain": "A",
+        "resid": 157,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CD",
+          "CG",
+          "CZ",
+          "NE",
+          "NH1",
+          "NH2"
+        ]
+      },
+      {
+        "chain": "A",
+        "resid": 161,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ]
+      },
+      {
+        "chain": "A",
+        "resid": 166,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "7qpj",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "F0ad1cc8c406ed621",
+    "fold": "train",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "C",
+        "resid": 76,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CZ",
+          "NH1",
+          "NH2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "7rtr",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "Fcbbb20ec682d40b0",
+    "fold": "calibration",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "E",
+        "resid": 28,
+        "icode": "",
+        "role": "tcr",
+        "atoms": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  },
+  {
+    "graph_id": "8ye4_1",
+    "kind": "native",
+    "domain": "crystal",
+    "family_id": "F88e51585e5b9ab4a",
+    "fold": "train",
+    "declared_source_sequence_mismatches": [],
+    "missing_nodes": [
+      {
+        "chain": "C",
+        "resid": 58,
+        "icode": "",
+        "role": "mhc",
+        "atoms": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ]
+      }
+    ],
+    "construction": {
+      "policy": "construction-screen-v1",
+      "severe_distance_A": 1.2,
+      "cross_chain_pairs_below_cutoff": 0,
+      "ca_cb_outliers": [],
+      "passed": true,
+      "validates_rotamers": false,
+      "validates_nonbinding": false
+    }
+  }
+]

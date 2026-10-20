@@ -1,0 +1,52 @@
+evidence_id	receptor_name	peptide	pmid	status	training_allowed	temperature_K	primary_kd_um	parent_fold	primary_locator
+ATLAS:1	LC13	FLRGRAYGL	15640805	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:102	TK3	HPVGEADYFEY	20566715	primary_verified_soluble_SPR	True	298.15	2.2	train	Table II, TK3WT / HPVGEADYFEY
+ATLAS:1058	5934	FSGEYIPTV	42190883	quarantine_primary_unretrieved	False			train	not_verified
+ATLAS:106	TK3	HPVGEADYFEY	20566715	primary_verified_soluble_SPR	True	298.15	5.76	train	Table II, TK3Gln55Ala / HPVGEADYFEY
+ATLAS:110	TK3	HPVGEADYFEY	20566715	primary_verified_soluble_SPR	True	298.15	34.66	train	Table II, TK3Gln55His / HPVGEADYFEY
+ATLAS:1127	GV37	KAYNVTQAF	40877317	primary_verified_soluble_SPR	True	298.15	6.53	validation	Figure3g, GV37 / HLA-C*12:02-KF9
+ATLAS:1130	Q04	SPRWYFYYL	41372155	primary_verified_soluble_SPR	True	298.15	0.43	validation	Results and Figure1a, Q04 / SPR-HLA-B7 (equilibrium .43; kinetic .40)
+ATLAS:1134	CLB	SPRWYFYYL	41372155	primary_verified_soluble_SPR	True	298.15	0.41	validation	Results and Figure1b, CLB / SPR-HLA-B7 (equilibrium .41; kinetic .36)
+ATLAS:1159	PN45545	GVYDGREHTV	37100770	quarantine_wrong_ligand_value	False		6.1	train	Figure4c MAGEA4 vs MAGEA8 curves
+ATLAS:1161	PN45428	GVYDGREHTV	37100770	separate_full_length_TCR_CD3	False		22	train	Figure4b PN45428 / MAGEA4; not MAGEA8 KD260uM
+ATLAS:137	DM1	EENLLDFVRF	19139173	primary_verified_soluble_SPR	True	298.15	0.3	train	Table I, HLA-B*4405EENL immobilized / DM1 analyte
+ATLAS:138	DM1	EENLLDFVRF	19139173	primary_verified_soluble_SPR	True	298.15	1	train	Table I, DM1 immobilized / HLA-B*4405EENL analyte
+ATLAS:145	LC13	EEYLKAWTF	20064448	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:148	LC13	EEYLQAFTY	20064448	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:149	LC13	FLRGRAYGL	20483993	quarantine_primary_value_unverified	False	298.15		validation	Results Figure1A/B and TableS2; Methods Surface Plasmon Resonance Measurement and Analysis
+ATLAS:154	SB27	LPEPLPQGQLTAY	20483993	quarantine_primary_value_unverified	False	298.15		validation	Results Figure1A/B and TableS2; Methods Surface Plasmon Resonance Measurement and Analysis
+ATLAS:159	AS01	GLCTLVAML	21124993	primary_verified_soluble_SPR	True	298.15	10.7	train	Figure 4A, AS01-GLCTLVAML-A2; NOT Figure 3 temperature series
+ATLAS:201	SB27	LPEPLPQGQLTAY	22343629	primary_verified_soluble_SPR	True	298.15	18.7	validation	Results WT SB27 paragraph; Methods Surface Plasmon Resonance
+ATLAS:438	T36-5	RFPLTFGWCF	24192765	primary_verified_soluble_SPR	True	298.15	1.6	train	Supplementary Table 3, T36-5 / Nef134-10(2F), equilibrium analysis
+ATLAS:463	SB47	LPEPLPQGQLTAY	23569211	primary_verified_soluble_SPR	True	298.15	25	validation	Table1 SB47 / HLA-B*35:08LPEP
+ATLAS:475	SB47	LPEPLPQGQLTAY	23569211	primary_verified_soluble_SPR	True	298.15	22.3	validation	Supplementary Table S2 SB47 / wild-type HLA-B*35:08LPEP control
+ATLAS:485	3B	TAFTIPSI	24600035	primary_verified_soluble_SPR	True	298.15	81.8	validation	Results 3B TCR binds weakly; Figure2A; Materials and Methods SPR experiments
+ATLAS:502	TK3	HPVGEADYFEY	24759101	primary_verified_soluble_SPR	True	298.15	93.2	train	Results TK3 TCR Binding Affinity; Figure3A; Methods SPR Measurement and Analysis
+ATLAS:505	TK3	HPVGDADYFEY	24759101	primary_verified_soluble_SPR	True	298.15	25.4	train	Results TK3 TCR Binding Affinity; Figure3D; Methods SPR Measurement and Analysis
+ATLAS:508	DD31	HSKKKCDEL	25355921	quarantine_primary_unretrieved	False			test	not_verified
+ATLAS:514	C12C	KRWIILGLNK	23521884	quarantine_primary_unretrieved	False			test	not_verified
+ATLAS:515	C12C	KRWIIMGLNK	23521884	quarantine_primary_unretrieved	False			test	not_verified
+ATLAS:532	CF34	FLRGRAYGL	19167249	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:537	LC13	FLRGRAYGL	19167249	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:542	SB27	LPEPLPQGQLTAY	15849183	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:634	B7	LLFGYPVYV	15670602	quarantine_primary_unretrieved	False			train	not_verified
+ATLAS:644	C25	NLVPMVATV	26429912	primary_verified_soluble_SPR	True	298.15	4.7	train	Results Interaction of TCRs C25 and C7; Figure1B; Methods SPR Analysis
+ATLAS:645	C7	NLVPMVATV	26429912	primary_verified_soluble_SPR	True	298.15	5.1	train	Results Interaction of TCRs C25 and C7; Figure1D; Methods SPR Analysis
+ATLAS:714	LS01	GILGFVFTL	28250417	quarantine_temperature_unverified	False		32	train	Results soluble LS01/LS10 affinities and Methods Surface plasmon resonance analysis
+ATLAS:716	LS10	GILGFVFTL	28250417	quarantine_temperature_unverified	False		30	train	Results soluble LS01/LS10 affinities and Methods Surface plasmon resonance analysis
+ATLAS:717	HCV1406	KLVALGINAV	28572406	primary_verified_soluble_SPR	True	298.15	16.0	train	Fig1C; Methods SPR and DSF
+ATLAS:718	ILA1	ILAKFLHWL	27903649	quarantine_secondary_measurement_origin	False	298.15	34	train	Table4 and Fig2A 25C control; prior published value cited by source
+ATLAS:724	F50	GILGFVFTL	28931605	primary_verified_soluble_SPR	True	298.15	76.0	train	Results interaction F50; Figure1A/B; Methods Surface plasmon resonance
+ATLAS:727	D30	GTSGSPIVNR	28945243	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:728	D30	GTSGSPIINR	28945243	quarantine_primary_unretrieved	False			validation	not_verified
+ATLAS:735	KFJ37	APRGPHGGAASGL	29531227	primary_verified_soluble_SPR	True	293.15	40.6	validation	Figure2c KFJ37 equilibrium curve
+ATLAS:736	589	IPLTEEAEL	30053426	primary_verified_soluble_SPR	True	298.15	4.0	test	Results Non-stimulatory interaction parameters; Figure2B; STAR Methods Surface plasmon resonance
+ATLAS:744	EM2	FEDLRVLSF	30575715	primary_verified_soluble_SPR	True	298.15	133	train	Supplementary Table6, EM2 / HLA-B*37:01-NP338
+ATLAS:747	NYBR1	SLSKILDTV	32310221	quarantine_temperature_unverified	False		4.7e-05	test	Results NYBR1 and Figure7, 47pM (not47nM)
+ATLAS:751	a7b2	RMFPNAPYL	32310221	quarantine_temperature_unverified	False		0.07	test	Results WT1-alpha7beta2 A2-RMF and Figure2E,70nM
+ATLAS:753	GVY01	GVYDGREHTV	32532817	primary_verified_soluble_SPR	True	298.15	160	train	Results, GVY01 A2-GVY; Figure3D
+ATLAS:772	T18A	TPQDLNTML	35173732	quarantine_SPR_Octet_method_conflict	False	298.15	4.72	train	Figure5A T18A / HLA-B*81:01-TL9; methods specify Octet QKe
+ATLAS:777	T18A	TPQDLNTML	35173732	quarantine_citation_and_method_conflict	False			train	not_verified
+ATLAS:810	LLL8	LLLDRLNQL	37872153	primary_verified_soluble_SPR	True	298.15	19.2	train	Results and Figure6a, LLL8 / LLL-HLA-A2
+ATLAS:91	RA14	NLVPMVATV	19542454	quarantine_primary_unretrieved	False			train	not_verified
+ATLAS:914	TK3	HPVGQADYFEY	24759101	quarantine_wrong_ligand_value	False		2.2	train	Results TK3 TCR Binding Affinity; 2.2uM explicitly applies to B35:01-HPVGEADYFEY, citing previous study20566715

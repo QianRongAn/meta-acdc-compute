@@ -1,0 +1,75 @@
+{
+  "total_original": 51,
+  "primary_verified": 31,
+  "newly_verified": [
+    "ATLAS:145",
+    "ATLAS:148",
+    "ATLAS:727",
+    "ATLAS:728",
+    "ATLAS:747",
+    "ATLAS:751"
+  ],
+  "unretrieved_SPR_records": 10,
+  "primary_value_table_gaps": 2,
+  "original_temperature_gaps": 2,
+  "resolved_temperatures": [
+    "ATLAS:747",
+    "ATLAS:751"
+  ],
+  "dispositions": {
+    "quarantine_primary_unretrieved": 10,
+    "primary_verified_soluble_SPR": 31,
+    "quarantine_wrong_ligand_value": 2,
+    "separate_full_length_TCR_CD3": 1,
+    "quarantine_primary_value_unverified": 2,
+    "quarantine_temperature_unverified": 2,
+    "quarantine_secondary_measurement_origin": 1,
+    "quarantine_SPR_Octet_method_conflict": 1,
+    "quarantine_citation_and_method_conflict": 1
+  },
+  "fold_counts": {
+    "train": 16,
+    "validation": 12,
+    "test": 3
+  },
+  "external_classical_measurements": 7,
+  "external_classical_lineages": 5,
+  "external_classical_papers": 4,
+  "external_research_groups": 3,
+  "new_differentV_partial_candidates": 2,
+  "new_model_ready_external_measurements": 0,
+  "clinical_reference_protein_aa": 599,
+  "clinical_full_DNA_inserts_added": 0,
+  "training_allowed": false,
+  "external_panels_scored": false,
+  "optimizer_started": false,
+  "partial_numeric_only": [
+    "ATLAS:514",
+    "ATLAS:515",
+    "ATLAS:532",
+    "ATLAS:537"
+  ],
+  "tests_run": 209,
+  "tests_passed": 206,
+  "tests_skipped": 3,
+  "release_manifest_verified": true,
+  "fold_blocks": {
+    "train": 10,
+    "validation": 6,
+    "test": 2
+  },
+  "source_files_checked": 513,
+  "old_freezes_file_count": 88,
+  "old_freezes_unchanged": true,
+  "original_worktree_clean": true,
+  "historical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "schedule_enabled": false,
+  "full_clinical_coding_inserts_added": 0
+}

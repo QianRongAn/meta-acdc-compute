@@ -1,0 +1,74 @@
+{
+  "prediction_scores_ensemble.tsv": {
+    "sha256": "335bfb9d6f1c3ad70dd9e9f88656616218178e036762966a2e06bb582f6d3ac5",
+    "bytes": 5826,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/prediction_scores_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_scores_seed0_ensemble.tsv": {
+    "sha256": "9724d93269e1360b11f5c8710b050df89b912034f12707a0fa55ca61d5f0d93a",
+    "bytes": 6211,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed0_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_scores_seed1_ensemble.tsv": {
+    "sha256": "54d7d33dba04ccc62c36e5db3bfa06f15db08490d6b8b84060c86945888229d6",
+    "bytes": 6211,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed1_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_scores_seed2_ensemble.tsv": {
+    "sha256": "c22b3f47fe1c013fdb11295d8158aab68727a311f76500e926f55377c65cde18",
+    "bytes": 6211,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed2_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_scores_seed3_ensemble.tsv": {
+    "sha256": "d62e47674e19bceb5e544306e226d275c6cb79f1664292357f2eefdf450ad9b2",
+    "bytes": 6211,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed3_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_scores_seed4_ensemble.tsv": {
+    "sha256": "b89ec0625943481c8296779946f26c0c5ad3b8a8753266cdb222f1f8e288d693",
+    "bytes": 6211,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed4_ensemble.tsv",
+    "role": "historical scoring table only, not new validation"
+  },
+  "da_seed0.model.pt": {
+    "sha256": "84a3ed259e5c8f0512911420c330b75acfa61618b5c1dd9c9fdbd7633f08c6b7",
+    "bytes": 3059861,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_seed0.model.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  },
+  "da_seed1.model.pt": {
+    "sha256": "7062a20e2956c64137bf982ab37a854e6e87759b9f5062377fa0970a2f6029ae",
+    "bytes": 3059861,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_seed1.model.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  },
+  "da_seed2.model.pt": {
+    "sha256": "ab9c5ff48ee90e0c78ec53f62e70f410ef7f1c9ff5bbbd20fb53ce677a1b6076",
+    "bytes": 3059861,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_seed2.model.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  },
+  "da_seed3.model.pt": {
+    "sha256": "19ab2c93bba41eabe9ca3fdb72d016ac86f91e8d37f6192c535218b841c79bb1",
+    "bytes": 3059861,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_seed3.model.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  },
+  "da_seed4.model.pt": {
+    "sha256": "7a6710c63ad9205d8978af1a13658b414984e0e17a753a091bd4e607def58205",
+    "bytes": 3059861,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_seed4.model.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  },
+  "egnn_dataset.pt": {
+    "sha256": "94f50e37242374cbf63e043c0bec388c8f595bc18b16e4829bfa63483851359b",
+    "bytes": 100845835,
+    "local_source": "/home/administrator/docs/meta-acdc/data/processed/egnn_dataset.pt",
+    "role": "retained old model/cache; not eligible for new scoring or training; hash does not prove which checkpoint generated a table"
+  }
+}

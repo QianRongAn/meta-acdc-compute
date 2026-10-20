@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCR-Safety-Radar — 交叉反应风险看板</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --fg:#e2e8f0; --muted:#94a3b8;
+          --ok:#22c55e; --warn:#eab308; --bad:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, sans-serif; background:var(--bg);
+         color:var(--fg); padding: 1.5rem; }
+  h1 { font-size:1.4rem; margin:.2rem 0; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:1.5rem; }
+  .card { background:var(--card); border-radius:10px; padding:1.2rem;
+          margin-bottom:1.5rem; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; }
+  th, td { padding:.45rem .6rem; text-align:left; border-bottom:1px solid #334155; }
+  th { color:var(--muted); font-weight:500; font-size:.8rem; text-transform:uppercase; }
+  .dot { display:inline-block; width:10px; height:10px; border-radius:50%;
+         margin-right:.5rem; }
+  .ok { background:var(--ok); } .warn { background:var(--warn); } .bad { background:var(--bad); }
+  .bar { height:8px; border-radius:4px; background:#334155; width:120px;
+         display:inline-block; vertical-align:middle; margin-left:.6rem; }
+  .bar > div { height:100%; border-radius:4px; }
+  .tag { font-size:.75rem; padding:.15rem .5rem; border-radius:999px;
+         background:#334155; color:var(--muted); margin-left:.5rem; }
+  .tag.native { background:#1d4ed8; color:#dbeafe; }
+  .fatal { color:var(--bad); font-weight:600; }
+  .grid { display:flex; flex-wrap:wrap; gap:1.5rem; }
+  .grid .card { flex:1 1 420px; }
+  .banner { background:#451a03; border:1px solid #92400e; color:#fde68a;
+            border-radius:10px; padding:1rem 1.2rem; margin-bottom:1.5rem;
+            font-size:.9rem; }
+  .banner b { color:#fbbf24; }
+  .pill { display:inline-block; background:#334155; color:var(--muted);
+          border-radius:999px; padding:.1rem .55rem; font-size:.75rem;
+          margin:.1rem .15rem; }
+</style>
+</head>
+<body>
+<h1>🛡️ TCR-Safety-Radar</h1>
+<div class="sub">Meta-ACDC · 交叉反应风险看板 v1 · EGNN 相容性打分(AF3 预测结构)</div>
+<div id="app">加载中…</div>
+<script>
+async function main() {
+  const d = await (await fetch('/api/data')).json();
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+
+  // honesty banner (single-instance caveat, Rashomon crisis)
+  if (d.caveats && d.caveats.length) {
+    let b = '<div class="banner"><b>⚠ 结果状态说明</b><ul style="margin:.5rem 0 0; padding-left:1.2rem">';
+    for (const c of d.caveats) b += `<li>${c}</li>`;
+    b += '</ul></div>';
+    app.insertAdjacentHTML('beforeend', b);
+  }
+
+  // AF3 submission progress
+  if (d.submission_status) {
+    const s = d.submission_status;
+    let sp = `<div class="card"><h3>AF3 提交进度</h3>
+      <div class="sub">天然(域适应正样本): ${s.native_done} / ${s.native_total} 已导入,
+      <b>剩 ${s.native_remaining}</b> 待提交 · 交叉反应候选(安全排名):
+      ${s.candidate_done} / ${s.candidate_total} 已打分,
+      <b>剩 ${s.candidate_remaining}</b></div></div>`;
+    app.insertAdjacentHTML('beforeend', sp);
+  }
+
+  // domain adaptation status (native AF3 positives)
+  if (d.domain_adaptation) {
+    const da = d.domain_adaptation;
+    const verdictCls = da.candidate_verdict === 'STABLE' ? 'ok' : 'warn';
+    let daHtml = `<div class="card"><h3>域适应状态(真实 native AF3 正样本)</h3>
+      <div class="sub">天然正样本 ${da.n_native_positives} 个 ·
+      3-seed val AUROC ${da.val_auroc.map(x => x.toFixed(3)).join(' / ')} ·
+      val 跨 seed Spearman ${da.val_cross_seed_spearman.map(x => x.toFixed(2)).join(' / ')}</div>
+      <div style="margin-top:.5rem">候选跨实例判决:
+      <span class="dot ${verdictCls}"></span><b>${da.candidate_verdict}</b>
+      ${da.candidate_mean_spearman != null ? `<span class="tag">mean r=${da.candidate_mean_spearman.toFixed(3)}</span>` : ''}
+      ${da.candidate_mean_spearman_73 != null ? `<span class="tag">73 实例 r=${da.candidate_mean_spearman_73.toFixed(3)}</span>` : ''}</div>
+      <div class="sub" style="margin-top:.4rem">${da.note}</div></div>`;
+    app.insertAdjacentHTML('beforeend', daHtml);
+  }
+
+  // heatmap: TCR x peptide scores
+  const tcrs = Object.keys(d.groups);
+  const peps = [...new Set(tcrs.flatMap(t => d.groups[t].rows.map(r => r.peptide)))];
+  let hm = '<div class="card"><h3>热度图(TCR × 肽)</h3><table><tr><th>TCR</th>';
+  for (const p of peps) hm += `<th>${p}</th>`;
+  hm += '</tr>';
+  for (const t of tcrs) {
+    hm += `<tr><td><b>${t}</b></td>`;
+    for (const p of peps) {
+      const row = d.groups[t].rows.find(r => r.peptide === p);
+      const s = row ? row.score : null;
+      const col = s === null ? 'transparent'
+        : s >= 0.75 ? 'var(--ok)' : s >= 0.5 ? 'var(--warn)' : 'var(--bad)';
+      hm += `<td style="background:${col};color:#0f172a;text-align:center;font-size:.75rem">
+        ${s === null ? '·' : s.toFixed(2)}</td>`;
+    }
+    hm += '</tr>';
+  }
+  hm += '</table></div>';
+  app.insertAdjacentHTML('beforeend', hm);
+
+  // per-TCR ranking tables
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  for (const t of tcrs) {
+    const g = d.groups[t];
+    let html = `<div class="card"><h3>${t} <span class="tag">天然肽 ${g.native || '?'}</span></h3>
+      <table><tr><th>#</th><th>肽</th><th>相容性得分</th></tr>`;
+    g.rows.forEach((r, i) => {
+      const cls = r.score >= 0.75 ? 'ok' : r.score >= 0.5 ? 'warn' : 'bad';
+      const pct = Math.round(r.score * 100);
+      const nat = r.peptide === g.native ? '<span class="tag native">天然</span>' : '';
+      html += `<tr><td>${i + 1}</td><td>${r.peptide}${nat}</td>
+        <td><span class="dot ${cls}"></span>${r.score.toFixed(3)}
+        <span class="bar"><div style="width:${pct}%;background:var(--${cls})"></div></span>
+        ${r.std != null ? `<span class="tag">±${r.std.toFixed(3)}</span>` : ''}</td></tr>`;
+    });
+    html += '</table></div>';
+    grid.insertAdjacentHTML('beforeend', html);
+  }
+  app.appendChild(grid);
+
+  // clinical gold standard
+  let cl = '<div class="card"><h3>金标准临床案例</h3><table><tr><th>TCR</th><th>靶肽</th><th>脱靶肽</th><th>致死</th><th>证据</th></tr>';
+  for (const c of d.clinical) {
+    cl += `<tr><td>${c.tcr}</td><td>${c.target}</td>
+      <td>${c.off_targets.join('; ')}</td>
+      <td>${c.fatal === 'yes' ? '<span class="fatal">致死</span>' : '否'}</td>
+      <td><span class="tag">${c.evidence}</span></td></tr>`;
+  }
+  cl += '</table></div>';
+  app.insertAdjacentHTML('beforeend', cl);
+
+  // structure <-> VDJdb cross-reactivity evidence (KN-4+ map)
+  if (d.cross_evidence) {
+    const pepsOf = Object.values(d.cross_evidence).flat();
+    const pdbsWith = Object.keys(d.cross_evidence);
+    let ev = `<div class="card"><h3>结构 ↔ VDJdb 交叉反应证据(KN-4+ 映射)</h3>
+      <div class="sub" style="margin-bottom:.8rem">${pdbsWith.length} 个复合物的 TCR 在 VDJdb 中有
+      <b>${pepsOf.length}</b> 条异表位(非结晶肽)验证记录 —— 文献证实的潜在脱靶谱</div>
+      <table><tr><th>复合物 (PDB)</th><th>结晶肽(同表位验证)</th><th>VDJdb 异表位(交叉反应证据)</th></tr>`;
+    for (const pdb of pdbsWith) {
+      const same = (d.same_evidence[pdb] || []).join(', ') || '—';
+      const cross = d.cross_evidence[pdb];
+      ev += `<tr><td><b>${pdb}</b></td><td>${same}</td><td>`;
+      for (const p of cross.slice(0, 8)) ev += `<span class="pill">${p}</span>`;
+      if (cross.length > 8) ev += `<span class="pill">+${cross.length - 8}</span>`;
+      ev += `</td></tr>`;
+    }
+    ev += '</table></div>';
+    app.insertAdjacentHTML('beforeend', ev);
+  }
+  // KN-11 clinical structural safety scan (stable DA model)
+  if (d.clinical_scan && d.clinical_scan.length) {
+    let cs = `<div class="card"><h3>KN-11 临床结构安全扫描(稳定 DA 模型)</h3>
+      <div class="sub" style="margin-bottom:.6rem">按家族内兼容性得分排序;
+      <b>FATAL-mimicry at target level</b> = 致死性脱靶肽得分不低于靶肽(须警惕)</div>
+      <table><tr><th>家族</th><th>肽</th><th>角色</th><th>得分</th><th>排名</th><th>致命</th><th>标记</th></tr>`;
+    for (const r of d.clinical_scan) {
+      const cls = r.flag === 'FATAL-mimicry at target level' ? 'fatal' : '';
+      cs += `<tr><td>${r.family}</td><td>${r.peptide}</td><td>${r.role}</td>
+        <td>${r.score != null ? r.score.toFixed(3) : '·'}</td>
+        <td>${r.rank}</td><td>${r.fatal === 'yes' ? '<span class="fatal">是</span>' : '否'}</td>
+        <td>${r.flag ? `<span class="${cls}">${r.flag}</span>` : ''}</td></tr>`;
+    }
+    cs += '</table></div>';
+    app.insertAdjacentHTML('beforeend', cs);
+  }
+
+  // AF3 structural reliability gate (ipTM + chain completeness)
+  if (d.reliability && d.reliability.n) {
+    const r = d.reliability;
+    let q = `<div class="card"><h3>结构可靠性闸门(AF3 QC)</h3>
+      <div class="sub" style="margin-bottom:.8rem">${r.n} 条结构记录,<b>${r.n_flagged}</b> 条被标记
+      (低 ipTM ${r.n_low_iptm} · TCR 截断 ${r.n_truncated});闸门:${r.gate}</div>
+      <table><tr><th>实例</th><th>任务</th><th>ipTM</th><th>TCR Cα</th><th>标记</th></tr>`;
+    for (const e of r.examples) {
+      q += `<tr><td>${e.instance}</td><td>${e.job}</td><td>${e.iptm || '·'}</td>
+        <td>${e.tcr_ca}</td><td><span class="tag">${e.flag}</span></td></tr>`;
+    }
+    q += '</table></div>';
+    app.insertAdjacentHTML('beforeend', q);
+  }
+}
+main();
+</script>
+</body>
+</html>

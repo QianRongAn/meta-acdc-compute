@@ -1,0 +1,47 @@
+[
+  {
+    "receptor": "4196-AV6/BV11",
+    "source_pmid": "35749374",
+    "donor": "4196",
+    "treated_patient": "4349",
+    "variable_fragment_pair_cdr3_match": true,
+    "engineered_clinical_cassette_complete": false,
+    "limit": "S5 includes leaders/variable sequence/short constant flanks; murine final constants and vector not supplied as a complete sequence"
+  },
+  {
+    "receptor": "1D3HMCys",
+    "source_pmid": "35865122",
+    "trial": "NCT02654821",
+    "treated_patients": 12,
+    "source_locator": "Methods TCR optimization and autologous cell production; Results patient1 and cited original case report",
+    "vector": "MP71",
+    "engineering": "mouse constant domains; added cysteine pair; P2A-linked alpha/beta",
+    "complete_final_sequence": false,
+    "duplicate_case_rule": "Fatal case cited in this cohort is patient1, not an additional independently treated patient",
+    "examined_supplements": "mmc1-4 are phenotype/cytokine/survival figures; mmc5.docx is supplementary tables/figures, not a full sequence/vector deposit"
+  },
+  {
+    "receptor": "WT1-TCR-C4",
+    "source_pmid": "31235963",
+    "trial": "NCT01640301",
+    "arm": "prophylactic after allogeneic HCT; no evaluable disease before infusion",
+    "treated_patients": 12,
+    "n_infusions": 21,
+    "followup_months_median": 44,
+    "followup_months_range": [
+      21,
+      57
+    ],
+    "reported_relapse_free_survival": 1.0,
+    "comparator_n": 88,
+    "comparator_type": "concurrent nonrandomized cohort; not 88 receptor-negative controls",
+    "reported_patient_outcome": "all12 NED and alive at reported follow-up; follow-up varies by patient",
+    "engineering": "codon-optimized single ORF beta-P2A-alpha; constant-domain alphaT48C and betaS57C; pRRLSIN.cPPT.MSCV/GFP.wPRE with GFP excised",
+    "source_locator": "BioC passages Methods Isolation of TCRC4 and lentiviral vector construction; Results RFS; Table1",
+    "complete_final_sequence": false,
+    "full_sequence_access_limit": "Data availability states material transfer agreement and IP/confidentiality review; GSE128933 lists only raw_countMatrix.csv.gz, not a transgene FASTA",
+    "clinical_training_allowed": false,
+    "clinical_risk_label": null,
+    "not_equivalent_to": "affinity-engineered WT1-alpha7beta2 biochemical reagent in PMID32310221"
+  }
+]

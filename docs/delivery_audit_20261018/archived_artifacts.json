@@ -1,0 +1,78 @@
+{
+  "data/processed/kn11_clinical_scan.tsv": {
+    "path": "docs/delivery_audit_20261018/historical/data/processed/kn11_clinical_scan.tsv",
+    "sha256": "1f9026d3540559d5d34351dc41e70a72f31fc8c9de395026b438dcc924f23360",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "data/processed/clinical_gold_standard.tsv": {
+    "path": "docs/delivery_audit_20261018/historical/data/processed/clinical_gold_standard.tsv",
+    "sha256": "673d5fa95e06c9353b06128e4599be633d615cc1265fc87d1003a2ecc6792e0c",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "data/processed/prediction_scores_ensemble.relabeled.tsv": {
+    "path": "docs/delivery_audit_20261018/historical/data/processed/prediction_scores_ensemble.relabeled.tsv",
+    "sha256": "a4f077b64ad5e252156fcae1e2b8c3ffa9f80074ea1b4d6eb4a273c7e82dfa37",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "data/processed/prediction_scores.relabeled.tsv": {
+    "path": "docs/delivery_audit_20261018/historical/data/processed/prediction_scores.relabeled.tsv",
+    "sha256": "a7630809e65ad75884e0ce0258e1e1fdcb7fc53705fc5157962a56e65ea3559d",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "scripts/make_figures.py": {
+    "path": "docs/delivery_audit_20261018/historical/scripts/make_figures.py",
+    "sha256": "4e9598fb79c6447bb2636a458b90a11d53f6a43bf51734c80321e6b7024b1bac",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "src/meta_acdc/structure/clinical_scan.py": {
+    "path": "docs/delivery_audit_20261018/historical/src/meta_acdc/structure/clinical_scan.py",
+    "sha256": "ec425a6bc72f04c17fd12036fdba575aa4cbf76494df37d6f0c73bc22ddb1b59",
+    "status": "WITHDRAWN_HISTORICAL_ARTIFACT",
+    "clinical_interpretation_allowed": false
+  },
+  "scripts/da_flow_gpu_20261012.sh": {
+    "path": "docs/delivery_audit_20261018/historical/scripts/da_flow_gpu_20261012.sh",
+    "sha256": "31192e1b2bd2d232e4bb7a02fe5af0df7173fbeb4383d059cbdde397f4c72bb7",
+    "status": "RETIRED_LEGACY_DRIVER"
+  },
+  "scripts/da_retrain_collatefix.sh": {
+    "path": "docs/delivery_audit_20261018/historical/scripts/da_retrain_collatefix.sh",
+    "sha256": "bbae581975de5603c32d3bc6bf1a1a1ab5234d88aae369b199fa3653854f1b3c",
+    "status": "RETIRED_LEGACY_DRIVER"
+  },
+  "scripts/run_da_af3.sh": {
+    "path": "docs/delivery_audit_20261018/historical/scripts/run_da_af3.sh",
+    "sha256": "6223094b13d1b36d723f1c5b0cdc77d90fc27056575954646206061380a16ae9",
+    "status": "RETIRED_LEGACY_DRIVER"
+  },
+  "src/meta_acdc/structure/ensemble_mean.py": {
+    "path": "docs/delivery_audit_20261018/historical/src/meta_acdc/structure/ensemble_mean.py",
+    "sha256": "f80b1f3c79efc45e295581303a002d9cfb794fbfdedd376e557225e16cef2e6a",
+    "status": "HISTORICAL_CODE_BEFORE_PROVENANCE_GATE"
+  },
+  "src/meta_acdc/structure/score_predictions.py": {
+    "path": "docs/delivery_audit_20261018/historical/src/meta_acdc/structure/score_predictions.py",
+    "sha256": "87b7eed8151e1a0faf106ee12dbb64fe520a8c391e4bb2a6c73fd618971a2773",
+    "status": "HISTORICAL_CODE_BEFORE_PROVENANCE_GATE"
+  },
+  "tests/test_structure_pipeline.py": {
+    "path": "docs/delivery_audit_20261018/historical/tests/test_structure_pipeline.py",
+    "sha256": "958b2f11f2ba2f1bc41ff2149d94a5c874ea2e09ac5926eaec84326c7cd045d6",
+    "status": "HISTORICAL_TEST_EXPECTED_UNSUPPORTED_HAZARD_RULE"
+  },
+  "src/meta_acdc/dashboard/server.py": {
+    "path": "docs/delivery_audit_20261018/historical/src/meta_acdc/dashboard/server.py",
+    "sha256": "0c3516e17067814d6f83a69e833a6ebbd6be062ba8f3c45658551fb926d27a80",
+    "status": "HISTORICAL_DASHBOARD_CONSUMER"
+  },
+  "src/meta_acdc/data/clinical_cases.py": {
+    "path": "docs/delivery_audit_20261018/historical/src/meta_acdc/data/clinical_cases.py",
+    "sha256": "049c740b0e0559f8ebc107f60cafb30be185639de922ee47374072524c0aaf55",
+    "status": "HISTORICAL_CLINICAL_IDENTITY_AND_LABEL_GENERATOR"
+  }
+}

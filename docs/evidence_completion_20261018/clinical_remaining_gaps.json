@@ -1,0 +1,154 @@
+{
+  "still_unretrieved_fulltexts": [
+    {
+      "pmid": "19451549",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/19451549/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Human DMF5 versus murine gp100154: quarantine TRAIT rows 3 and 6 rather than transfer DMF4 CDR3s."
+    },
+    {
+      "pmid": "21282551",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/21282551/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "1G4 alpha95LY; follow-up PMID25538264 overlaps cohort: do not add denominators."
+    },
+    {
+      "pmid": "23770775",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/23770775/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "A*01 affinity-enhanced MAGE-A3 a3a; 2 fatal cardiac cases linked to titin investigation. Historically exposed receptor family."
+    },
+    {
+      "pmid": "24634374",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/24634374/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "DMF5 plus dendritic vaccine and IL2; 14 enrolled, 13 treated. Historically exposed family."
+    },
+    {
+      "pmid": "25538264",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/25538264/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Long-term NYESO1 follow-up; 18 sarcoma plus20 melanoma; overlaps PMID21282551, not an independent validation cohort."
+    },
+    {
+      "pmid": "28809608",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28809608/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "MHC-II restricted6F9 MAGE-A3 receptor;17patients. Keep separate from both class-I toxicity receptors."
+    },
+    {
+      "pmid": "28860210",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/28860210/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "WT1 TAK1 with endogenous-TCR siRNA and post-transfer peptide vaccination;8patients; no observed normal tissue toxicity is not proof of nonbinding."
+    },
+    {
+      "pmid": "29052782",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29052782/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "Tyrosinase TIL1383I;3patients; later high-dose IL2 response not initial TCR-alone response. Historically exposed family."
+    },
+    {
+      "pmid": "29891538",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/29891538/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 c259 NCT01343043; overlaps subsequent mechanistic and biomarker analyses."
+    },
+    {
+      "pmid": "30573690",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/30573690/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 plus dendritic vaccine with/without ipilimumab; retain combination arms."
+    },
+    {
+      "pmid": "32029687",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/32029687/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "NYESO1 engineered T cells also edited at endogenous TCR and PDCD1;3patients. Not interchangeable with unedited1G4."
+    },
+    {
+      "pmid": "33558725",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33558725/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "HPV16 E7;12patients,6responses;patient11 DLT with baseline pulmonary progression. Complete preclinical coding insert source29669936; no public clinical-lot sequence certificate."
+    },
+    {
+      "pmid": "36054234",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/36054234/",
+      "status": "full text unavailable through attempted public endpoints; metadata/abstract only; not a claim paper itself is unavailable",
+      "decision": "CMVpp65 donor TCRs;7entered and6completed; C22/C27/C45 do not imply3independent trials. Full text not retrieved in this audit."
+    }
+  ],
+  "remaining_final_constructs": [
+    {
+      "receptor": "p53 4196-AV6/BV11",
+      "available": "paired published fragments + source patient4196 to treatment patient4349",
+      "missing": "exact final murine constant domains, P2A and complete clinical MSGV1 coding cassette"
+    },
+    {
+      "receptor": "WT1 C4",
+      "available": "complete published1809nt/602aa beta-P2A-alpha reference insert; explicit source and translation/protein cross-check",
+      "missing": "clinical-lot sequencecertificate and completevector; no substitution of affinityenhancedC4-DLT"
+    },
+    {
+      "receptor": "1D3HMCys",
+      "available": "MP71, mouse constants, cysteine pair, P2A; clinical12patient cohort and same fatalcase attribution",
+      "missing": "full coding insert not in retrieved paper/supplements"
+    },
+    {
+      "receptor": "KRAS9mer/10mer",
+      "available": "published combination treatment identity",
+      "missing": "NEJM appendix currently HTTP403; full clinical construct not verified"
+    },
+    {
+      "receptor": "Foy37",
+      "available": "prior36concordant variable pairs;1conflict",
+      "missing": "full engineered cassette and clinical lot sequence proof; old freeze unchanged"
+    }
+  ],
+  "scope": "unavailable through current lawful public sources, access failures and rate limits are logged; not a claim all underlying information is permanently unobtainable",
+  "new_evidence": [
+    {
+      "receptor": "WT1:C4",
+      "status": "complete_published_reference_insert",
+      "coding_nt": 1809,
+      "protein_aa": 602,
+      "missing": "clinical-lot certificate and completevector; no risk label derived",
+      "file": "C4_published_reference_cassette.json"
+    },
+    {
+      "receptor": "E7",
+      "clinical_protocol_source": "data/external_evidence/20261018-evidence-completion-v1/E7_clinical_supp1.pdf",
+      "source_sha256": "9bc4e813cb40f711787936a2a65abdeb65a45de00b66ad4ea389015f3c34ab47",
+      "locator": "PDFpages16-17 and E7TCR TransducedPBL section; clinicalprotocol version2020-03-05",
+      "findings": [
+        "MSGV1;7310bp fullretroviralvector; PG13 packaging; codonoptimized humanvariable/mouseconstants; cysteine and hydrophobicTM; beta-furin2A-alpha diagram",
+        "preclinical1800nt insert has stronger reference link, but is not entire7310bp vector or clinical-lot certificate",
+        "protocol assertion human thymicselection/no artificially introducedcrossreactivity is a rationale, not experimentalproof of no off-target risk"
+      ]
+    },
+    {
+      "receptor": "DMF4_original",
+      "pmid": "16946036",
+      "source_file": "data/external_evidence/20261018-evidence-completion-v1/16946036_full.html",
+      "source_sha256": "842f2f29e63fbc0aa480971292b0779be28127c5e2548022905f9b7762582889",
+      "locator": "Figure1B;Table1;Results17patients",
+      "findings": [
+        "MSGV1AIB alpha-IRES-beta in original2006 trial; do not replace with laterP2Aconstruct",
+        "17patients with2objective regressions reported; TCRtransfer follows lymphodepletion and IL2, not receptor-alonecausality",
+        "exactpairedfinalengineeredDNA stillunverified"
+      ]
+    },
+    {
+      "receptor": "afami-cel",
+      "pmid": "38554725",
+      "source_file": "data/external_evidence/20261018-evidence-completion-v1/38554725_repo_b55f48.pdf",
+      "source_sha256": "640a1def4e4086f00c76eca9607bd0b96f9b520b78167afd4d3eb673d3fe8af9",
+      "locator": "SPEARHEAD1 acceptedmanuscript Methods and Results",
+      "findings": [
+        "52treatedpatients;19responses;37CRS; sameengineeredreceptor lineage asphase1, notindependentnew receptor",
+        "fullengineeredcassette and clinical-lot sequencecertificate notprovided in recoveredmainmanuscript"
+      ]
+    }
+  ]
+}

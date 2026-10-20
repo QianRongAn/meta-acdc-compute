@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "source_manifest_sha256": "7fd189364b2e92d79b2db5b9454b278a5ec24969d95c79c92bcc3dc65ee835a1",
+  "clinical_training_allowed": false,
+  "clinical_candidates_scored": false,
+  "code_files": {
+    "src/meta_acdc/data/clinical_primary.py": "9e81c5e36a60321737aba2cc508701f2d1c46c66de17d6bdf35c8fdad9a0e5d8",
+    "src/meta_acdc/data/atlas_binding.py": "f17b76c21f27e89477b050a01d67326739e3aefd44fc8d0f72d8319bbf04cc2b",
+    "src/meta_acdc/data/experimental_evidence.py": "a3e3cc42f0d71b7d4f61dbb28882e75077e9c8853930341c8cd3cff24bcea62d",
+    "scripts/build_clinical_primary.py": "90f6647c317592210b5b0210c71a21187e19c75145e1185cdc29ab7d77e49299"
+  },
+  "artifacts": {
+    "docs/clinical_primary_20261018/acceptance_family_audit.json": "b4b8a665bff0654b4c8a15527842229d418810be6487a15418a55941eedd5b94",
+    "docs/clinical_primary_20261018/affinity_dataset.json": "86ddaa5b2ed4b04c82f2cd0607a08e70fb1011f255fc93614818a7e94d2ea58c",
+    "docs/clinical_primary_20261018/affinity_manifest.json": "f32ec365d6d98325d05d0fe3cccdbd3845edef191cf7e5dd56c1b7584c75961b",
+    "docs/clinical_primary_20261018/affinity_splits.json": "a02eb0292a20f98146333271652c697d68ad5625bf24fd8dccd691dc12a2d289",
+    "docs/clinical_primary_20261018/affinity_summary.json": "a4ac8fabed80ccead9f6d2522a07aaac2bd54eeee7a8084d2e491bb379a88eaf",
+    "docs/clinical_primary_20261018/clinical_bundle.json": "0aefc4ac752ca5650dbe713b1527519ca841246a72844104f03334d0d3a98a50",
+    "docs/clinical_primary_20261018/clinical_reservations.json": "f595f323b582f36ad67c5ef35d3595a65d439b0f254efe39b273427961333c64",
+    "docs/clinical_primary_20261018/combined_reservation_registry.json": "a5b0fc9377f69a3007cb07e423c0347c6df8831cdfbdbd3690defb28402af87e",
+    "docs/clinical_primary_20261018/exposure_audit.json": "b1e939f4740c4d90a3ce25615e1cc5e2262ac152fa72d512a33101196f79c824",
+    "docs/clinical_primary_20261018/functional_facts.json": "33edf45d57e946882d4a5eff8e429ecf582a5556a816d1f48dc185ba28ebf3e1",
+    "docs/clinical_primary_20261018/hbv_patient_outcomes.json": "29b3c71ee18e415795b9a1692982dfa625d2e2c012a62f11775551a11f35dbdf",
+    "docs/clinical_primary_20261018/integrity.json": "6cb85255d9cd34412c66bcccb1d9534b7aaf248adc9fbeca33552537960cb43b",
+    "docs/clinical_primary_20261018/patient_facts.json": "1b2149d63a42f1554d1d747a9eca4292ffdcf55b5c85a354fb4d99af688960ca",
+    "docs/clinical_primary_20261018/primary_review_ledger.json": "cdf11429f9bcab96be439d323c5aff86311057271781737f8e4b0a44c6406208",
+    "docs/clinical_primary_20261018/reserved_acceptance_candidates.json": "8566ca4ed4899718f3cce69a525a7e8943096f7f104f4f79596d86b58901f41b",
+    "docs/clinical_primary_20261018/source_manifest.json": "7fd189364b2e92d79b2db5b9454b278a5ec24969d95c79c92bcc3dc65ee835a1",
+    "docs/clinical_primary_20261018/trait_row_dispositions.json": "d440e5833340871112ebe80c6c9429a84e9d8af823a84bd910d83214c16c781c",
+    "docs/clinical_primary_20261018/unit-tests.log": "1dd1d226b58e5c400284db0d2b1d91c1dc3754e93bd5f5b930c5b5b86c0d900c",
+    "docs/clinical_primary_20261018/unresolved_gaps.json": "707ca5b4bedbb5e72d22f5c9b918eba182937a5c383bcd3d3fd890de2361db68",
+    "docs/clinical_primary_20261018/unretrieved_fulltexts.json": "2bb2c1dbf1b3ae001037f4510bddeb601b7ea31ae9fb4b3bcb8dde06a895bb0b"
+  }
+}

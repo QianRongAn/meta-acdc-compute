@@ -1,0 +1,38 @@
+{
+  "artifacts": {
+    "unit-tests.log": "8c3df70a24a45fc93f537ad02943d025b7259d4d425dcc8e1d29993933f90f3a",
+    "clinical_construct_link_audit.json": "606d448ab10b87f14ed33e9ce4895c7c93e2a069a40671781ca9fc8d08dd90c8",
+    "functional_manifest.json": "5a07a58ba18d87c233d7f7f2d791cb9cd9bf9521e43e8b36ee1f6c8f3b58c747",
+    "external_per_peptide_metrics.json": "d8f7dcae54b71055e09c20a6d90f5579ac03e80e6b22a176936d7c81ef7d3b95",
+    "affinity_summary.json": "ab32170dd0d94faa6acd063c968c9502a80210bd9b59c1044186635b2f44d35a",
+    "affinity_manifest.json": "4a4f5dfd1b26f357be8b0facd91da9b589d39d0e41ab397f3af43659b83ba3f6",
+    "affinity_dataset.json": "55d5312041cf878cd4d8570d97739da8f78025f4f22913524f3ac8f0cfc14098",
+    "clinical_manifest.json": "14be4c7c7c75882b0409479f1fce229867698d094a3c3f9f85685247687db241",
+    "functional_summary.json": "df2c99056294dfa900410e225c77475643edb5bc588f88862406ac6e8072f4b7",
+    "external_report.json": "ea77b54ff992bf629129c5711c89d0944284fe9d5c26c623e9b71082f44629a2",
+    "clinical_trial_summaries.json": "089d615b57632a8fa97b213bfa0af3c6171780b3f62f9b26efe08dffe4a5b6ab",
+    "baseline_report.json": "49887444e425361fab3f72c1e472fd6e1167044eae6682869a224028ae94f6c1",
+    "cross_panel_peptide_audit.json": "385676b40b07cd64aa87e0ef2dd76dc765e7993211b12486b1c9deccbc72d9a7",
+    "clinical_summary.json": "fde6ffd45b29ec37e7a32218ecc1ec19c7dec24152345fdfcb8acdb752eef2d1",
+    "baseline_test_predictions.json": "a4a13de14157f98b314cc33cd4783d1a9e4bb3087eeeb315b23f0cdb57d07765",
+    "source_admission_decisions.json": "6c051c7d17bfd4b8e0411a681c455e53c4ee9caa2b6cab32db4c6d98f6fdb261",
+    "pilot_report.json": "45b80e4848c6601f6e524ee04629314c7f8ddeea53ba42f548005e617bfd5f1f",
+    "source_index.json": "10ff33dc554558bdb8100cec8dab17dd0ec2a708c686b407375e12c4de5df831",
+    "baseline_model.json": "18d974695240de163bb08ca2651af20d83ad06ce41616e8f6e2410f533dbbc82",
+    "affinity_splits.json": "79fbd6567e5b38552a2ac71682e4c98c46c6e1a3eba33c49ed137b028904c13a",
+    "functional_exposure_audit.json": "e6b560fab11366b63d369ecff1bd1249dfdc63190466cc0d21925b25dcd5c199",
+    "integrity.json": "cc60da1dc0d5173cb260f76722a76357bd44ab047813c67ea6a18446600e3efb",
+    "combined_reservation_registry.json": "9e54cee8d222a1b3a968daea06396b1187531e70f182a4ebc9a49dfa5f05a7b7"
+  },
+  "new_code_files": {
+    "src/meta_acdc/data/atlas_binding.py": "6598713bbc688b580b6e5934531cc0f174370847cd1572976ad7040ff7e53e2e",
+    "src/meta_acdc/data/clinical_database.py": "c3f5728b3a954a1dd49f4a9145a597193fc99471a9d4393e20cb51e922c10bf0",
+    "src/meta_acdc/data/functional_benchmark.py": "4b74b855311c818fb7f43813211d35290033e3a808a0274a06cc52c6d9d5c772",
+    "src/meta_acdc/models/affinity_baseline.py": "7cf311f63818a520a1d5d0a7b545b9a2a10965054dadaf412a378e460f236f56",
+    "scripts/fetch_database_snapshot.py": "5b03106a113474cc70f03c13a6595a9e262fe32f94465ef565de78988baa352a",
+    "scripts/validate_affinity_on_activation.py": "1063f3eecc6ae159a6986e99a363bb33b91bac73b5e1977a581127857b5b1882",
+    "tests/test_database_evidence.py": "f7362fc69596b38bf485a2b22f79d87a32cf0fb8b8ebcb85ff050716c6ad7825"
+  },
+  "binding_model_release_approved": false,
+  "clinical_model_release_approved": false
+}

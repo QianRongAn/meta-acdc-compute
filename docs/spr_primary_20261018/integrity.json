@@ -1,0 +1,57 @@
+{
+  "tests_run": 158,
+  "tests_passed": 155,
+  "tests_skipped": 3,
+  "primary_review_coverage": 51,
+  "primary_verified_pool": 16,
+  "quarantined_or_separate": 35,
+  "source_check_passed": true,
+  "release_manifest_verified": true,
+  "whole_previous_clinical_freeze_unchanged": {
+    "docs/clinical_primary_20261018/acceptance_family_audit.json": true,
+    "docs/clinical_primary_20261018/affinity_dataset.json": true,
+    "docs/clinical_primary_20261018/affinity_manifest.json": true,
+    "docs/clinical_primary_20261018/affinity_splits.json": true,
+    "docs/clinical_primary_20261018/affinity_summary.json": true,
+    "docs/clinical_primary_20261018/clinical_bundle.json": true,
+    "docs/clinical_primary_20261018/clinical_reservations.json": true,
+    "docs/clinical_primary_20261018/combined_reservation_registry.json": true,
+    "docs/clinical_primary_20261018/exposure_audit.json": true,
+    "docs/clinical_primary_20261018/functional_facts.json": true,
+    "docs/clinical_primary_20261018/hbv_patient_outcomes.json": true,
+    "docs/clinical_primary_20261018/integrity.json": true,
+    "docs/clinical_primary_20261018/patient_facts.json": true,
+    "docs/clinical_primary_20261018/primary_review_ledger.json": true,
+    "docs/clinical_primary_20261018/reserved_acceptance_candidates.json": true,
+    "docs/clinical_primary_20261018/source_manifest.json": true,
+    "docs/clinical_primary_20261018/trait_row_dispositions.json": true,
+    "docs/clinical_primary_20261018/unit-tests.log": true,
+    "docs/clinical_primary_20261018/unresolved_gaps.json": true,
+    "docs/clinical_primary_20261018/unretrieved_fulltexts.json": true
+  },
+  "clinical_reserved_candidates_scored": false,
+  "known_reserved_family_hits_in_primary_pool": 0,
+  "original_worktree_clean": true,
+  "historical_artifacts_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "fold_counts": {
+    "train": 10,
+    "validation": 6,
+    "test": 0
+  },
+  "training_allowed": false,
+  "optimizer_started_by_this_task": false,
+  "scheduling_enabled_by_this_task": false,
+  "clinical_new_paired_fragments": 39,
+  "clinical_complete_new_engineered_cassettes": 0,
+  "clinical_fulltext_recovered": [
+    "31235963"
+  ],
+  "clinical_fulltexts_still_unretrieved": 15
+}

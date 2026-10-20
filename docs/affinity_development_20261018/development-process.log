@@ -1,0 +1,26 @@
+{
+  "selected": "anchor_raw",
+  "selected_alpha": 1.0,
+  "validation": {
+    "rmse_pkd": 0.7728733692287133,
+    "mae_pkd": 0.5994716393783078
+  },
+  "anchor_validation": {
+    "rmse_pkd": 0.7728733692287133,
+    "mae_pkd": 0.5994716393783078
+  },
+  "train_mean_validation": {
+    "rmse_pkd": 0.8029128322706365,
+    "mae_pkd": 0.6664164706183108
+  },
+  "improves_both_validation_metrics_over_anchor": false,
+  "training_rows": 10,
+  "validation_rows": 9,
+  "test_used_for_selection": false,
+  "consumed_test_evaluated": false,
+  "new_test_evaluated": false,
+  "independent_acceptance_pending": true,
+  "data_reads": [
+    "docs/affinity_development_20261018/development_source_safe.json"
+  ]
+}

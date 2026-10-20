@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "status": "frozen_unscored_external_panels",
+  "core": {
+    "file": "external_classical_panel.json",
+    "n_measurements": 7,
+    "n_receptor_lineages": 5,
+    "n_studies": 4,
+    "n_research_source_groups": 3,
+    "endpoint": "SPR pKD regression",
+    "history": "previous4measurements remain unchanged;3new measurements from2newreceptorlineages; papers2021/2024 sharelabandT4H2 so notindependentlabreplicates",
+    "no_average_across_studies": true
+  },
+  "format_shift": {
+    "file": "external_HLAE_challenge.json",
+    "n_pairs": 6,
+    "n_lineages": 1,
+    "n_studies": 1,
+    "scope": "engineeredTCR-antiCD3 + HLA-E; analyse separately, do notpoolwithcore"
+  },
+  "allowed_evaluation": "future locked freshlytrainedexperimentalKDmodel only; noevaluationperformednow",
+  "forbidden": [
+    "modelselectionortrainingonexternalrecords",
+    "countingreplicatesasnewreceptors",
+    "clinicalriskbinarylabels",
+    "callingformatshiftpairsclassicalsolubleTCRbenchmark",
+    "reassigningoldtrainorvalidationfoldstoatestfold"
+  ],
+  "metrics": [
+    "pKD RMSE and MAE versus trainingmean, overall and bystudy/lineage",
+    "retainreceptorandstudy dependence; fewclusterscannotprovideprecisegeneralizationCI",
+    "source-specific and assay-orientation sensitivity analysis; cluster at receptor and research-source level; no precise CI claim from few clusters"
+  ],
+  "broad_validation_allowed": false,
+  "training_release_allowed": false,
+  "remaining": "7quantitativepoints,5lineages,4papersbut3researchsourcegroups remain too few forrobustgeneralization; originaltestfold hasonly1verifiedpoint/1block; noreshuffle; condition sensitivityT4H2 1.8vs6.8uM must be reported"
+}

@@ -23,14 +23,15 @@ from torch import Tensor
 
 # graph.py node layout: [3 physicochemical, pLDDT, 20 identity one-hot,
 # is-peptide flag, side-chain extent] -> the flag sits at index 24.
-PEPTIDE_FLAG_INDEX = 24
+from meta_acdc.structure.feature_schema import PEPTIDE_FLAG_INDEX
 
 
 class EGCL(nn.Module):
     """One equivariant graph convolution layer."""
 
-    def __init__(self, node_dim: int, edge_dim: int, hidden: int = 64):
+    def __init__(self, node_dim: int, edge_dim: int, hidden: int = 64, update_coordinates: bool = True):
         super().__init__()
+        self.update_coordinates = update_coordinates
         self.edge_mlp = nn.Sequential(
             nn.Linear(2 * node_dim + 1 + edge_dim, hidden),
             nn.SiLU(),
@@ -77,7 +78,7 @@ class EGCL(nn.Module):
         coord_update = (eps * coord_scale).float()
         agg_x = torch.zeros(x.shape[0], 3, device=x.device, dtype=coord_update.dtype)
         agg_x.index_add_(0, row, coord_update)
-        x_new = x + agg_x / counts
+        x_new = x + agg_x / counts if self.update_coordinates else x
 
         h_new = self.node_mlp(torch.cat([h, agg], dim=-1))
         return h_new, x_new
@@ -93,11 +94,12 @@ class EGNN(nn.Module):
         depth: int = 4,
         hidden: int = 64,
         dropout: float = 0.1,
+        update_coordinates: bool = True,
     ):
         super().__init__()
         self.embed = nn.Linear(node_dim, hidden)
         self.layers = nn.ModuleList(
-            [EGCL(hidden, edge_dim, hidden) for _ in range(depth)]
+            [EGCL(hidden, edge_dim, hidden, update_coordinates=update_coordinates) for _ in range(depth)]
         )
         self.dropout = nn.Dropout(dropout)
         # pooled = global mean | global max | peptide mean | coord-norm
@@ -115,20 +117,22 @@ class EGNN(nn.Module):
         edge_attr: Tensor,
         batch: Tensor,
         embed_only: bool = False,
+        peptide_mask: Tensor | None = None,
     ) -> Tensor:
         """Return graph-level logits (num_graphs, 1); with embed_only=True
         return the pooled graph features (num_graphs, 3*hidden+1) instead."""
         # The is-peptide flag is node-feature index 24: graph.py appends
         # [3 phys + pLDDT + 20 identity] = 24 columns, then the peptide flag,
         # then side-chain extent. Reading h[:, 4] selected one amino-acid
-        # identity column (index 4 = 'E') instead, so "peptide pooling" actually
-        # pooled glutamate residues. See AUDIT.md #3.
-        self.peptide_mask = None
-        if h.shape[1] > PEPTIDE_FLAG_INDEX:
+        # identity column (index 4 = 'A') instead, so "peptide pooling" actually
+        # pooled alanine residues. See AUDIT.md #3.
+        self.peptide_mask = peptide_mask
+        if peptide_mask is None:
+            if h.shape[1] <= PEPTIDE_FLAG_INDEX:
+                raise ValueError("explicit peptide mask required for reduced features")
             self.peptide_mask = h[:, PEPTIDE_FLAG_INDEX] > 0.5
-        elif h.shape[1] > 4:
-            # legacy 5-column inputs (phys + conf + flags): keep old behaviour
-            self.peptide_mask = h[:, 4] > 0.5
+        if self.peptide_mask.shape != (h.shape[0],):
+            raise ValueError("invalid peptide mask")
 
         # center each graph's coordinates at its centroid (translation invariance)
         centroid = torch.zeros(batch.max().item() + 1, 3, device=x.device, dtype=x.dtype)

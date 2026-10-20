@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-10-18T09:13:42.940148+00:00",
+  "n_train": 10,
+  "n_validation": 10,
+  "candidate_selection": [
+    {
+      "alpha": 1.0,
+      "validation": {
+        "rmse_pkd": 0.8074753683215673,
+        "mae_pkd": 0.6662052164663448
+      }
+    },
+    {
+      "alpha": 10.0,
+      "validation": {
+        "rmse_pkd": 0.8426597464431821,
+        "mae_pkd": 0.7250948448574448
+      }
+    },
+    {
+      "alpha": 100.0,
+      "validation": {
+        "rmse_pkd": 0.8567119603490398,
+        "mae_pkd": 0.7414234435951068
+      }
+    }
+  ],
+  "selected_alpha": 1.0,
+  "selected_validation": {
+    "rmse_pkd": 0.8074753683215673,
+    "mae_pkd": 0.6662052164663448
+  },
+  "validation_train_mean": {
+    "rmse_pkd": 0.8587502639803555,
+    "mae_pkd": 0.7437118092694133
+  },
+  "training": {
+    "rmse_pkd": 0.44385996263255234,
+    "mae_pkd": 0.35729151604938525
+  },
+  "selection": "validation only; train-only vectorizer and fit; no validation refit",
+  "test_labels_loaded": false,
+  "test_predictions_created": false,
+  "uses_pretrained_checkpoint": false,
+  "pid": 602,
+  "runtime": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1"
+    }
+  }
+}

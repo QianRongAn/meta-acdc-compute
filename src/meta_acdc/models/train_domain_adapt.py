@@ -1,23 +1,11 @@
-"""Domain-adaptation training: crystals + TCRmodel2-predicted structures.
+"""Train on an accepted crystal/predicted structural-decoy release.
 
-Fixes the Rashomon-effect instability: the model must see "predicted-style"
-inputs during training. TCRmodel2 PDBs (data/raw/tcrmodel/) are added as
-extra POSITIVE examples alongside the crystal natives, with the SAME decoy
-protocol (displaced + graft) applied to them.
-
-pLDDT is zeroed in training AND scoring (the AF3 B-factor confound).
-
-After training 3 seeds, reports pairwise Spearman rank correlation on the
-held-out decoy set across seeds (the stability metric).
-
-Usage:
-    .venv/bin/python src/meta_acdc/models/train_domain_adapt.py \
-        --base data/processed/egnn_dataset.pt \
-        --tcrmodel data/raw/tcrmodel \
-        --epochs 150
+Requires --release and a new --out-dir. Ad hoc positive directories and
+legacy caches are refused; folds and per-model QC come from the release.
 """
 
 from __future__ import annotations
+from meta_acdc.structure.graph import AA3TO1
 
 import argparse
 import random
@@ -129,7 +117,7 @@ def add_complex_set(graphs, labels, pdbs, complexes: dict, tag: str):
         peptides = _peptide_chains(residues)
         if not peptides:
             continue
-        native_seq = "".join(r.resname[:1] for r in next(iter(peptides.values())))
+        native_seq = "".join(AA3TO1.get(r.resname.upper(), "X") for r in next(iter(peptides.values())))
         graft = None
         donor = stem
         for _ in range(20):
@@ -142,7 +130,7 @@ def add_complex_set(graphs, labels, pdbs, complexes: dict, tag: str):
             if not donor_peps:
                 continue
             cand = rng.choice(list(donor_peps.values()))
-            if "".join(r.resname[:1] for r in cand) != native_seq:
+            if "".join(AA3TO1.get(r.resname.upper(), "X") for r in cand) != native_seq:
                 graft = cand
                 break
         if graft is not None:
@@ -192,16 +180,17 @@ def add_af3_graphs(graphs, labels, pdbs, af3_dir: Path,
 
 
 def pdb_group(name: str) -> str:
-    return name.split("-disp")[0].split("<-")[0]
+    from meta_acdc.data.release import complex_id
+    return complex_id(name)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", type=Path,
-                    default=Path("data/processed/egnn_dataset.pt"))
-    ap.add_argument("--tcrmodel", type=Path, default=Path("data/raw/tcrmodel"),
+                    default=None)
+    ap.add_argument("--tcrmodel", type=Path, default=None,
                     help="legacy route: TCRmodel2 PDB positives")
-    ap.add_argument("--af3", type=Path, default=Path("data/raw/af3_native"),
+    ap.add_argument("--af3", type=Path, default=None,
                     help="current route: AF3-predicted native CIFs "
                          "(style-matched positives)")
     ap.add_argument("--af3-manifest", type=Path, default=None,
@@ -212,49 +201,39 @@ def main() -> int:
     ap.add_argument("--seeds", type=int, nargs="+", default=SEEDS,
                     help="random seeds to train (default 0 1 2); the stability "
                          "gate is a function of the ensemble size")
-    ap.add_argument("--out-dir", type=Path, default=Path("data/processed"),
+    ap.add_argument("--out-dir", type=Path, required=True,
                     help="where da_seed{0,1,2}.model.pt are written")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     ap.add_argument("--batch-size", type=int, default=32,
                     help="per-step graph count (lower for small-GPU machines)")
+    ap.add_argument("--release", type=Path, required=True)
     args = ap.parse_args()
+    from meta_acdc.data.release import load_release, frozen_indices, sha256
+    manifest, approved = load_release(args.release, data_path=args.base)
+    if any(x is not None for x in (args.af3_manifest,args.af3,args.tcrmodel)):
+        raise ValueError("ad hoc manifests are disabled; add verified predictions through data.build_release")
+    if not {"crystal", "predicted"} <= set(manifest.get("domains", [])):
+        raise ValueError("domain adaptation requires an accepted multi-domain release")
+    args.base = approved
     seeds = list(args.seeds)
+    if args.out_dir.resolve().is_relative_to(args.release.resolve().parent):raise ValueError("output must be outside immutable release")
+    if any((args.out_dir/f"da_seed{seed}.model.pt").exists() for seed in seeds):raise ValueError("refusing to overwrite checkpoint")
+    args.out_dir.mkdir(parents=True,exist_ok=True)
 
     d = torch.load(args.base, weights_only=False)
     graphs = list(d["graphs"])
     labels = list(d["labels"])
     pdbs = list(d["pdbs"])
 
-    native_ids = None
-    if args.af3_manifest is not None and args.af3_manifest.exists():
-        with open(args.af3_manifest) as fh:
-            next(fh, None)  # header
-            native_ids = {ln.split("\t")[0] for ln in fh if ln.strip()}
-    if args.af3.is_dir() and any(args.af3.glob("*_model_0.cif")):
-        print(f"adding AF3 predicted positives from {args.af3} "
-              f"(native filter: {len(native_ids) if native_ids else 'off'})",
-              flush=True)
-        graphs, labels, pdbs = add_af3_graphs(
-            graphs, labels, pdbs, args.af3, native_ids=native_ids)
-    elif args.tcrmodel.is_dir():
-        graphs, labels, pdbs = add_tcrmodel_graphs(
-            graphs, labels, pdbs, args.tcrmodel)
+    # Inputs already have identity/QC provenance in the release; never append
+    # an arbitrary positives directory or repartition a frozen held-out set.
     labels_t = torch.tensor(labels, dtype=torch.float32)
     graphs_masked = mask_plddt(graphs)
     print(f"DA dataset: {len(graphs)} graphs "
           f"({sum(labels)} pos / {len(labels) - sum(labels)} neg)", flush=True)
 
-    groups: dict[str, list[int]] = {}
-    for i, p in enumerate(pdbs):
-        groups.setdefault(pdb_group(p), []).append(i)
-    rng = random.Random(42)
-    gids = list(groups.keys())
-    rng.shuffle(gids)
-    n_val = max(1, int(0.2 * len(gids)))
-    val_g = set(gids[:n_val])
-    tr = [i for g in gids if g not in val_g for i in groups[g]]
-    va = [i for g in gids if g in val_g for i in groups[g]]
-
+    frozen = frozen_indices(manifest, d)
+    tr, va = frozen['train'], frozen['validation']
     device = args.device
     bs = args.batch_size
     all_probs = []
@@ -286,7 +265,7 @@ def main() -> int:
         auc = roc_auc_score(y, p)
         print(f"seed {seed}: val AUROC {auc:.3f}", flush=True)
         all_probs.append(p)
-        torch.save({"model": net.state_dict(), "n_node_dim": 26,
+        torch.save({"release_sha256": sha256(args.release), "task": manifest["task"], "mask_plddt": True, "model": net.state_dict(), "n_node_dim": 26,
                     "n_edge_dim": 16, "val_auroc": float(auc),
                     "seed": seed},
                    args.out_dir / f"da_seed{seed}.model.pt")

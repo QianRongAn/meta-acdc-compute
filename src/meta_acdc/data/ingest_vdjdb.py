@@ -119,6 +119,9 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
             rec.confidence = rec.score
             rec.v_segm = rec.j_segm = None
             rec.label = None
+            rec.endpoint = "tcr_association"
+            rec.evidence_status = "association_only"
+            rec.label_scope = "unlabeled"
             chain = rec.cdr3_beta or rec.cdr3_alpha or ""
             key = (chain, gene, rec.peptide, rec.mhc_allele or "")
             prev = best.get(key)
@@ -127,11 +130,12 @@ def ingest(path: Path, out_path: Path) -> DatasetStats:
 
     rows = [r.to_row() for r in best.values()]
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", newline="") as fh:
+    with open(out_path.with_suffix(out_path.suffix + ".tmp"), "w", newline="") as fh:
         fh.write(SCHEMA_TSV + "\n")
         for row in rows:
             fh.write("\t".join(row) + "\n")
 
+    out_path.with_suffix(out_path.suffix + ".tmp").replace(out_path)
     stats.n_records = len(rows)
     stats.n_unique_tcr_beta = len({r[2] for r in rows if r[2]})
     stats.n_unique_tcr_alpha = len({r[1] for r in rows if r[1]})

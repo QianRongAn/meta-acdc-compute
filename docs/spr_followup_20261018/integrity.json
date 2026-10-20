@@ -1,0 +1,65 @@
+{
+  "total_original": 51,
+  "primary_verified": 25,
+  "newly_verified": [
+    "ATLAS:724",
+    "ATLAS:736"
+  ],
+  "fulltext_recovered_not_exact_value": [
+    "ATLAS:149",
+    "ATLAS:154"
+  ],
+  "unretrieved_SPR_records": 14,
+  "original_temperature_gaps": 4,
+  "dispositions": {
+    "quarantine_primary_unretrieved": 14,
+    "primary_verified_soluble_SPR": 25,
+    "quarantine_wrong_ligand_value": 2,
+    "separate_full_length_TCR_CD3": 1,
+    "quarantine_primary_value_unverified": 2,
+    "quarantine_temperature_unverified": 4,
+    "quarantine_secondary_measurement_origin": 1,
+    "quarantine_SPR_Octet_method_conflict": 1,
+    "quarantine_citation_and_method_conflict": 1
+  },
+  "new_external_measurements": 3,
+  "new_external_lineages": 2,
+  "new_external_papers": 2,
+  "new_external_research_groups": 1,
+  "external_classical_measurements": 7,
+  "external_classical_lineages": 5,
+  "external_classical_papers": 4,
+  "external_research_groups": 3,
+  "training_allowed": false,
+  "external_panels_scored": false,
+  "optimizer_started": false,
+  "clinical_full_engineered_cassettes_added": 0,
+  "fold_counts": {
+    "train": 16,
+    "validation": 8,
+    "test": 1
+  },
+  "fold_blocks": {
+    "train": 10,
+    "validation": 5,
+    "test": 1
+  },
+  "lineage_definition": "existing conservative paired-chain/CDR3 exclusion; new T4H2 and SILv44 shareTRBV19, not two different Vgene families",
+  "tests_run": 193,
+  "tests_passed": 190,
+  "tests_skipped": 3,
+  "release_manifest_verified": true,
+  "old_freezes_file_count": 61,
+  "old_freezes_unchanged": true,
+  "original_worktree_clean": true,
+  "historical_inputs_unchanged": {
+    "data/processed/vdjdb.clean.tsv": true,
+    "data/processed/iedb.clean.tsv": true,
+    "data/processed/egnn_dataset.pt": true,
+    "data/processed/pdb_family_map.tsv": true,
+    "data/processed/clinical_index_cases.tsv": true,
+    "data/processed/af3_qc.tsv": true
+  },
+  "schedule_enabled": false,
+  "full_clinical_coding_inserts_added": 0
+}

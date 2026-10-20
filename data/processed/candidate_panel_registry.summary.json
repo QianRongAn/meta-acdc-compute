@@ -1,0 +1,41 @@
+{
+  "generated_from": {
+    "cifs": "data/raw/af3_predictions",
+    "fastas": "af3_pending_upload"
+  },
+  "canonical_scope": {
+    "scored_panel": "188 model_0 CIFs; receptor unit = unordered {chain A, chain B} pair (AF3 labels)",
+    "pending_panel": "347 submission FASTAs; no role assignment; receptor unit = full chain-set",
+    "warning": "these counts describe corpus redundancy, not independent biological observations; stability CIs must cluster by true receptor, not PDB prefix"
+  },
+  "panels": [
+    {
+      "panel": "scored",
+      "files": 188,
+      "pdb_prefixes": 72,
+      "unique_peptides": 67,
+      "exact_receptor_units": 59,
+      "receptor_unit": "unordered {chain A, chain B} sequence pair",
+      "receptor_units_with_multiple_candidates": 28,
+      "largest_receptor_cluster": 12,
+      "percent98_clusters": 49,
+      "percent98_cluster_identity_note": ">=98% identity over the receptor unit; single-linkage; descriptive only",
+      "parse_errors": 0
+    },
+    {
+      "panel": "pending",
+      "files": 347,
+      "pdb_prefixes": 111,
+      "unique_peptides": 91,
+      "exact_receptor_units": 96,
+      "receptor_unit": "unordered pair of chains in the 110-260 length window (heuristic, not identity)",
+      "receptor_units_with_multiple_candidates": 58,
+      "largest_receptor_cluster": 24,
+      "percent98_clusters": 78,
+      "percent98_cluster_identity_note": ">=98% identity over the receptor unit; single-linkage; descriptive only",
+      "parse_errors": 0,
+      "exact_chain_sets": 312,
+      "chain_set_identity_note": "frozenset of all 5 submitted sequences per FASTA; assumption-free (no role assignment)"
+    }
+  ]
+}

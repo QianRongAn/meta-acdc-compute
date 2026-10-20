@@ -23,39 +23,22 @@ NODE_DIM = 26
 EDGE_DIM = 16
 
 
-def collate(graphs: list[tuple]) -> tuple[dict, torch.Tensor]:
-    hs, xs, eis, eas, batch = [], [], [], [], []
+def collate(graphs: list[tuple]) -> dict:
+    from meta_acdc.models.train_egnn import collate as collate_graphs
+    from meta_acdc.structure.feature_schema import PEPTIDE_FLAG_INDEX, AA_START, AA_STOP, AA_ORDER
+    batch = collate_graphs(graphs, NODE_DIM, EDGE_DIM)
     seqs = []
-    offset = 0
-    for nf, coords, ei, ef in graphs:
-        nf = torch.tensor(nf, dtype=torch.float32)
-        n = len(nf)
-        hs.append(nf)
-        xs.append(torch.tensor(coords, dtype=torch.float32))
-        eis.append(torch.tensor(ei, dtype=torch.long).t() + offset)
-        eas.append(torch.tensor(ef, dtype=torch.float32))
-        batch.append(torch.full((n,), len(batch), dtype=torch.long))
-        offset += n
-        # peptide sequence from node one-hot (nodes are in file order)
-        pep = nf[nf[:, 4] > 0.5]
-        if len(pep):
-            seq = pep[:, 5:25].argmax(-1).tolist()
-        else:
-            seq = []
-        onehot = torch.zeros(PEPTIDE_MAXLEN, N_AA)
-        for i, aa in enumerate(seq[:PEPTIDE_MAXLEN]):
-            onehot[i, aa] = 1.0
-        seqs.append(onehot)
-    h = torch.cat(hs)
-    h = (h - h.mean(0, keepdim=True)) / (h.std(0, keepdim=True) + 1e-6)
-    return {
-        "h": h,
-        "x": torch.cat(xs),
-        "edge_index": torch.cat(eis, dim=1),
-        "edge_attr": torch.cat(eas),
-        "batch": torch.cat(batch),
-        "seq": torch.stack(seqs),
-    }
+    for nf, *_ in graphs:
+        pep = [row for row in nf if row[PEPTIDE_FLAG_INDEX] == 1]
+        if not pep or len(pep) > PEPTIDE_MAXLEN:
+            raise ValueError("unsupported or missing peptide length; refusing truncation")
+        seq = torch.zeros(PEPTIDE_MAXLEN, N_AA)
+        for i, row in enumerate(pep):
+            aa = AA_ORDER[int(np.argmax(row[AA_START:AA_STOP]))]
+            seq[i, AA_IDX[aa]] = 1
+        seqs.append(seq)
+    batch["seq"] = torch.stack(seqs)
+    return batch
 
 
 def pdb_group(name: str) -> str:
@@ -64,26 +47,26 @@ def pdb_group(name: str) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--data", type=Path, default=Path("data/processed/egnn_dataset.pt"))
+    ap.add_argument("--data", type=Path, default=None)
+    ap.add_argument("--release", type=Path, required=True)
+    ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--epochs", type=int, default=200)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
-    data = torch.load(args.data, weights_only=False)
+    from meta_acdc.data.release import load_release, frozen_indices, sha256
+    manifest, dataset = load_release(args.release, data_path=args.data)
+    if args.out.exists(): raise ValueError("refusing to overwrite checkpoint")
+    if args.out.resolve().is_relative_to(args.release.resolve().parent):
+        raise ValueError("checkpoint must be outside immutable release")
+    data = torch.load(dataset, weights_only=False)
     graphs, labels = data["graphs"], torch.tensor(data["labels"], dtype=torch.float32)
     pdbs = data["pdbs"]
     print(f"dataset: {len(graphs)} graphs", flush=True)
 
-    groups: dict[str, list[int]] = {}
-    for i, p in enumerate(pdbs):
-        groups.setdefault(pdb_group(p), []).append(i)
-    rng = random.Random(42)
-    gids = list(groups.keys())
-    rng.shuffle(gids)
-    n_val = max(1, int(0.2 * len(gids)))
-    val_g = set(gids[:n_val])
-    tr_idx = [i for g in gids if g not in val_g for i in groups[g]]
-    va_idx = [i for g in gids if g in val_g for i in groups[g]]
+    split = frozen_indices(manifest, data)
+    tr_idx, va_idx = split['train'], split['validation']
+    rng = random.Random(0)
     print(f"split: train={len(tr_idx)} val={len(va_idx)}", flush=True)
 
     def to_dev(b: dict) -> dict:
@@ -109,7 +92,7 @@ def main() -> int:
             y = labels[idx].to(args.device)
             opt.zero_grad()
             logits = net(b["h"], b["x"], b["edge_index"], b["edge_attr"],
-                         b["batch"], b["seq"]).squeeze(-1)
+                         b["batch"], b["seq"], peptide_mask=b["peptide_mask"]).squeeze(-1)
             loss = loss_fn(logits, y)
             loss.backward()
             opt.step()
@@ -126,6 +109,9 @@ def main() -> int:
     net.eval()
     for dtype, name in (("disp", "displaced"), ("<-", "graft")):
         sel = [i for i in va_idx if dtype in pdbs[i]] + [i for i in va_idx if labels[i] == 1]
+        if len({float(labels[i]) for i in sel}) < 2:
+            print("per-control AUROC unavailable: both classes required", flush=True)
+            continue
         b = to_dev(collate([graphs[i] for i in sel]))
         with torch.no_grad():
             p = torch.sigmoid(net(**b).squeeze(-1)).cpu().numpy()
@@ -133,8 +119,11 @@ def main() -> int:
         print(f"val [{name}] AUROC={roc_auc_score(y, p):.3f} "
               f"AUPRC={average_precision_score(y, p):.3f} (n={len(sel)})", flush=True)
 
-    out = Path(args.data).with_suffix(".hybrid.model.pt")
-    torch.save({"model": net.state_dict()}, out)
+    out = args.out
+    out.parent.mkdir(parents=True, exist_ok=True)
+    torch.save({"model": net.state_dict(), "release_sha256": sha256(args.release),
+                "task": manifest["task"], "mask_plddt": bool(manifest.get("mask_plddt_required",False)),
+                "n_node_dim": NODE_DIM, "n_edge_dim": EDGE_DIM}, out)
     print(f"saved to {out}", flush=True)
     return 0
 

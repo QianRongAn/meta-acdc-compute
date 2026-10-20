@@ -5,7 +5,7 @@ Plan-of-record decisions (lit review 02):
 - Node = amino-acid residue (per chain). Node features: physicochemical
   properties (charge, hydrophobicity, side-chain volume) + AlphaFold-derived
   confidence (pLDDT) when available.
-- Interface extraction: residues within INTERFACE_RADIUS (10 A) of ANY atom of
+- Interface extraction: residues within INTERFACE_RADIUS (10 A), measured between heavy-atom centroids, of
   the opposite complex side (TCR chains vs pMHC chains), per the proposal.
 - Edges: Euclidean distance between residue centroids < EDGE_CUTOFF (8 A).
   Edge features: RBF-encoded distance (GVP-style) + sequence separation.
@@ -23,6 +23,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
+from .feature_schema import AA_ORDER, validate_node_features
 
 # Physicochemical features per standard amino acid (indexed by 1-letter code)
 # order: [charge, hydrophobicity (Kyte-Doolittle), side-chain volume (A^3)]
@@ -49,9 +50,11 @@ class Residue:
     x: float
     y: float
     z: float
-    plddt: float | None = None  # from B-factor column when available
+    plddt: float | None = None  # only for an explicitly identified predicted structure
     icode: str = ""  # insertion code (CDR3 regions: resid 100A/100B...)
     atoms: list[tuple[str, float, float, float]] = field(default_factory=list)
+    role: str | None = None
+    chain_kind: str | None = None
     # (atom name, x, y, z) — ALL heavy atoms (backbone N/CA/C/O + side chains)
 
 
@@ -65,15 +68,24 @@ class InterfaceGraph:
     edge_index: list[tuple[int, int]] = field(default_factory=list)
     edge_features: list[list[float]] = field(default_factory=list)  # RBF distances
     residue_info: list[tuple[str, str, int]] = field(default_factory=list)
+    peptide_mask: list[bool] = field(default_factory=list)
+    node_roles: list[str] = field(default_factory=list)
+    # Diagnostic mode may retain incomplete nodes; accepted builds reject these.
+    missing_atom_nodes: list[dict] = field(default_factory=list)
     node_keys: list[tuple[str, int, str]] = field(default_factory=list)  # (chain, resid, icode)
 
     def summary(self) -> str:
-        n_tcr = sum(1 for c, _, _ in self.residue_info if is_tcr_chain(c))
-        n_pmhc = self.n_nodes - n_tcr
+        if len(self.node_roles) != self.n_nodes:
+            raise ValueError("explicit node roles required for graph summary")
+        n_tcr = self.node_roles.count(TCR)
+        n_pmhc = sum(r in {MHC, B2M, PEPTIDE} for r in self.node_roles)
+        if n_tcr + n_pmhc != self.n_nodes:
+            raise ValueError("unknown node role")
         return f"nodes={self.n_nodes} (TCR={n_tcr}, pMHC={n_pmhc}), edges={len(self.edge_index)}"
 
 
 # --- chain classification -------------------------------------------------
+# Historical heuristics removed; chain letters and motifs do not prove roles.
 # Chain LETTERS are unreliable across PDB entries (1AO7: TCR on D/E, MHC on A;
 # 1BD2: TCR on A/B). Classify by sequence content instead:
 #   - TCR chains carry the conserved "YFC" motif immediately before CDR3
@@ -97,56 +109,43 @@ PEPTIDE = "peptide"
 OTHER = "other"
 
 
-def is_tcr_chain(chain: str) -> bool:
-    """Legacy chain-letter heuristic (kept for backward compat; prefer
-    classify_chains for correctness)."""
-    return chain in {"A", "B"}
+def is_tcr_chain(chain: str, roles: dict[str, str] | None = None) -> bool:
+    """Require verified roles; chain letters carry no biological identity."""
+    if roles is None or chain not in roles:
+        raise ValueError("explicit chain roles required")
+    return roles[chain] == TCR
 
 
-def is_pmhc_chain(chain: str) -> bool:
-    return not is_tcr_chain(chain)
+def is_pmhc_chain(chain: str, roles: dict[str, str] | None = None) -> bool:
+    if roles is None or chain not in roles:
+        raise ValueError("explicit chain roles required")
+    return roles[chain] in {MHC, B2M, PEPTIDE}
 
 
 def classify_chains(residues: list[Residue]) -> dict[str, str]:
-    """Content-based chain role classification."""
-    # per-chain sequence in file order (insertions included)
-    last: dict[str, tuple[int, str]] = {}
-    seqs: dict[str, list[str]] = {}
-    for r in residues:
-        key = (r.resid, r.icode)
-        if last.get(r.chain) == key:
-            continue
-        last[r.chain] = key
-        seqs.setdefault(r.chain, []).append(AA3TO1.get(r.resname[:3].upper(), "X"))
-    seqs = {c: "".join(s) for c, s in seqs.items()}
-
-    roles: dict[str, str] = {}
-    for chain, seq in seqs.items():
-        n = len(seq)
-        if "YFC" in seq or "YLC" in seq:
-            roles[chain] = TCR
-        elif n > 250:
-            roles[chain] = MHC
-        elif 90 <= n <= 105:
-            roles[chain] = B2M
-        elif 5 <= n <= 20:
-            roles[chain] = PEPTIDE
-        elif 150 <= n <= 250:
-            roles[chain] = MHC  # class II
-        else:
-            roles[chain] = OTHER
+    """Use depositor/reference annotations; motifs and lengths cannot prove identity."""
+    roles = {}
+    for chain in {r.chain for r in residues}:
+        explicit = {r.role for r in residues if r.chain == chain and r.role is not None}
+        if len(explicit) > 1:
+            raise ValueError("conflicting chain role annotations")
+        role = next(iter(explicit), OTHER)
+        if role not in {TCR, MHC, B2M, PEPTIDE, OTHER}:
+            raise ValueError("invalid chain role")
+        roles[chain] = role
     return roles
 
 
 # --- PDB parsing (minimal, stdlib) ----------------------------------------
 
 def parse_pdb(path: Path) -> list[Residue]:
-    """Extract one record per residue (centroid of ATOM lines; CA preferred)."""
+    """Extract one record per residue; experimental B factors are not pLDDT."""
     atoms: dict[tuple[str, int, str], list[tuple[float, float, float]]] = {}
     plddt: dict[tuple[str, int, str], float | None] = {}
     resname: dict[tuple[str, int, str], str] = {}
     with open(path) as fh:
         for line in fh:
+            if line.startswith("ENDMDL"): break
             if not line.startswith(("ATOM", "HETATM")):
                 continue
             resn = line[17:20].strip()
@@ -170,8 +169,8 @@ def parse_pdb(path: Path) -> list[Residue]:
             atoms.setdefault(key, []).append((name, x, y, z))
             resname.setdefault(key, resn)
             # treat B-factor as pLDDT when it looks like a confidence score
-            if bfac > 0:
-                plddt[key] = min(bfac, 100.0)
+            # Crystallographic B factors are not pLDDT.
+            plddt[key] = None
 
     residues = []
     for (chain, resid, icode), coords in atoms.items():
@@ -182,6 +181,8 @@ def parse_pdb(path: Path) -> list[Residue]:
         heavy = [(n, x, y, z) for n, x, y, z in coords if not n.startswith("H")]
         residues.append(Residue(chain, resname[(chain, resid, icode)], resid, cx, cy, cz,
                                 plddt.get((chain, resid, icode)), icode, heavy))
+    from .identity import annotate
+    annotate(residues, path)
     return residues
 
 
@@ -230,7 +231,6 @@ def _contact_hist(a_atoms: list[tuple], b_atoms: list[tuple]) -> list[float]:
     return [float(cc), float(ch), float(hh), float(cc + ch + hh)]
 
 
-AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"  # 20 canonical residues
 
 
 def _sidechain_extent(res: Residue) -> float:
@@ -317,6 +317,7 @@ def build_interface_graph_from_residues(
     edge_cutoff: float = EDGE_CUTOFF,
     forced_nodes: set[tuple[str, int, str]] | None = None,
     electrostatics: bool = False,
+    require_complete_atoms: bool = True,
 ) -> InterfaceGraph:
     """Build an interface graph from an explicit residue list.
 
@@ -331,43 +332,56 @@ def build_interface_graph_from_residues(
     if len(residues) < 10:
         raise ValueError(f"{pdb_path or '<residues>'}: too few residues ({len(residues)})")
 
-    # split complex sides by CONTENT-based chain roles
+    residues = sorted(residues, key=lambda r: (r.chain, r.resid, r.icode))
+    identities = [(r.chain, r.resid, r.icode) for r in residues]
+    if len(set(identities)) != len(identities):
+        raise ValueError("duplicate residue identity")
+    # split complex sides by explicit chain roles
     roles = classify_chains(residues)
+    if OTHER in roles.values():
+        raise ValueError("unverified chain identity: isolate an explicitly annotated complex first")
     tcr = [r for r in residues if roles[r.chain] == TCR]
     pmhc = [r for r in residues if roles[r.chain] != TCR]
     if not tcr or not pmhc:
         raise ValueError(f"{pdb_path or '<residues>'}: cannot split TCR/pMHC chains "
                          f"(tcr={len(tcr)}, pmhc={len(pmhc)}); roles={roles}")
 
+    centers = np.asarray([residue_centroid(r) for r in residues])
+    distances = np.linalg.norm(centers[:, None, :] - centers[None, :, :], axis=-1)
+
     def dist(a: Residue, b: Residue) -> float:
         # current-atom centroids: stale stored coords would disagree with
         # the node coordinates reported in the output graph (AUDIT.md #5)
         return residue_dist(a, b)
 
+    by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
     if forced_nodes is not None:
-        by_key = {(r.chain, r.resid, r.icode): i for i, r in enumerate(residues)}
-        keep = {by_key[k] for k in forced_nodes if k in by_key}
-        if len(keep) < 5:
-            keep = set(range(len(residues)))
+        if not forced_nodes or not forced_nodes <= set(by_key):
+            raise ValueError("pinned node identities missing from perturbed structure")
+        keep = {by_key[k] for k in forced_nodes}
     else:
-        # interface selection: within interface_radius of the opposite side
-        keep = set()
-        for i, r in enumerate(residues):
-            is_t = roles[r.chain] == TCR
-            other = pmhc if is_t else tcr
-            if any(dist(r, o) <= interface_radius for o in other):
-                keep.add(i)
+        is_t = np.asarray([roles[r.chain] == TCR for r in residues])
+        keep = set(np.where(np.where(is_t, distances[:, ~is_t].min(1), distances[:, is_t].min(1)) <= interface_radius)[0].tolist())
         if len(keep) < 5:
-            # fall back to the full complex if the interface is too small
-            keep = set(range(len(residues)))
+            raise ValueError("no valid interface; full-complex fallback forbidden")
+    if not any(roles[residues[i].chain] == PEPTIDE for i in keep):
+        raise ValueError("interface contains no peptide nodes")
 
     idx = sorted(keep)
+    from .identity import missing_heavy_atoms
+    incomplete = [(residues[i].chain, residues[i].resid, missing_heavy_atoms(residues[i]))
+                  for i in idx if missing_heavy_atoms(residues[i])]
+    if incomplete and require_complete_atoms:
+        raise ValueError(f"incomplete interface heavy atoms: {incomplete[:5]}")
     pos = {old: new for new, old in enumerate(idx)}
     graph = InterfaceGraph(n_nodes=len(idx))
     graph.residue_info = [(residues[i].chain, residues[i].resname, residues[i].resid)
                           for i in idx]
+    graph.missing_atom_nodes = [{"chain": c, "resid": r, "missing": m} for c, r, m in incomplete]
     graph.node_keys = [(residues[i].chain, residues[i].resid, residues[i].icode)
                        for i in idx]
+    graph.node_roles = [roles[residues[i].chain] for i in idx]
+    graph.peptide_mask = [x == PEPTIDE for x in graph.node_roles]
     # peptide-chain flag from role classification
     peptide_chains = {c for c, r in roles.items() if r == PEPTIDE}
 
@@ -381,6 +395,7 @@ def build_interface_graph_from_residues(
          _sidechain_extent(residues[i])]
         for i in idx
     ]
+    validate_node_features(graph.node_features)
     graph.node_coords = [_centroid(residues[i]) for i in idx]
 
     # --- v11 atom-level electrostatics (opt-in, appended features) --------
@@ -425,7 +440,7 @@ def build_interface_graph_from_residues(
         for new_j, old_j in enumerate(idx):
             if new_j <= new_i:
                 continue
-            d = dist(residues[old_i], residues[old_j])
+            d = float(distances[old_i, old_j])
             if d <= edge_cutoff:
                 contact = _contact_hist(residues[old_i].atoms,
                                         residues[old_j].atoms)

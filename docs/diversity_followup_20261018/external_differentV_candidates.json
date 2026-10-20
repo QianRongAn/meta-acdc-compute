@@ -1,0 +1,222 @@
+[
+  {
+    "receptor_name": "D1",
+    "cdr3_alpha": "CLVGGGANNLFF",
+    "cdr3_beta": "CSARQEGGLRNEQYF",
+    "trav": "TRAV4",
+    "trbv": "TRBV20-1",
+    "kd_um": 47.7,
+    "error_um": 3.3,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 500,
+    "overlap_checks": {
+      "old91": [],
+      "combined": [],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [],
+      "data/releases/20261016-structural-v2/structure_records.json": [],
+      "data/releases/20261016-structural-v3/structure_records.json": [],
+      "data/releases/20261017-structural-v4/structure_records.json": [],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": []
+    },
+    "evidence_id": "PMID39083376:D1:TW10",
+    "pmid": "39083376",
+    "study": "10.1016/j.celrep.2024.114555",
+    "research_group": "Gras/LaTrobe-Monash/UWA",
+    "peptide": "TSTLQEQIGW",
+    "mhc_allele": "HLA-B*57:01",
+    "endpoint": "tcr_binding_spr",
+    "error_kind": "SEM from at least2independentexperiments eachinduplicate",
+    "fit": "equilibrium",
+    "instrument": "Biacore T100/T200",
+    "conditions": "25C;10mMTrisHClpH8;150mMNaCl;.005percentP20;1percentBSA;pMHC onSA~2000RU;HLA-A02M1reference",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_full.pdf",
+        "sha256": "5f0890e20231dda91ca0f847ef57e717e35c5b8fcccceeac4a3da96b8eb9c046",
+        "url": "https://ndownloader.figshare.com/files/48843463",
+        "locator": "STARMethods SPR;Table2;actualmicroMunitcheckedbyPDFimage"
+      },
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_supp_wsl.pdf",
+        "sha256": "40b34dd2b2b9048747c275a57c4aa11dfdfbecc7a58482ff549db4a5e5459274",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc1.pdf",
+        "locator": "PDF16 TableS2 pairedCDR3/VJ;18TableS4 KD SEM;imagesreviewed"
+      }
+    ],
+    "training_allowed": false,
+    "model_scored": false,
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "fold": "external_pending",
+    "full_variable_sequences_verified": false,
+    "scope": "reserved_partial_identity_not_model_ready",
+    "counterligand": {
+      "peptide": "TSNLQEQIGW",
+      "source_outcome": "NB",
+      "kd_um": null,
+      "binary_binding_label": null,
+      "max_tested_um": null,
+      "reason": "no binding as reported; exactmutantassaydetectionlimitnotverified; notinfiniteKD orabsoluteexperimentalnegative"
+    }
+  },
+  {
+    "receptor_name": "D6",
+    "cdr3_alpha": "CLAQTGANNLFF",
+    "cdr3_beta": "CSARASGEAKNIQYF",
+    "trav": "TRAV4",
+    "trbv": "TRBV20-1",
+    "kd_um": 127.1,
+    "error_um": 7.7,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 430,
+    "overlap_checks": {
+      "old91": [],
+      "combined": [],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [],
+      "data/releases/20261016-structural-v2/structure_records.json": [],
+      "data/releases/20261016-structural-v3/structure_records.json": [],
+      "data/releases/20261017-structural-v4/structure_records.json": [],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": []
+    },
+    "evidence_id": "PMID39083376:D6:TW10",
+    "pmid": "39083376",
+    "study": "10.1016/j.celrep.2024.114555",
+    "research_group": "Gras/LaTrobe-Monash/UWA",
+    "peptide": "TSTLQEQIGW",
+    "mhc_allele": "HLA-B*57:01",
+    "endpoint": "tcr_binding_spr",
+    "error_kind": "SEM from at least2independentexperiments eachinduplicate",
+    "fit": "equilibrium",
+    "instrument": "Biacore T100/T200",
+    "conditions": "25C;10mMTrisHClpH8;150mMNaCl;.005percentP20;1percentBSA;pMHC onSA~2000RU;HLA-A02M1reference",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_full.pdf",
+        "sha256": "5f0890e20231dda91ca0f847ef57e717e35c5b8fcccceeac4a3da96b8eb9c046",
+        "url": "https://ndownloader.figshare.com/files/48843463",
+        "locator": "STARMethods SPR;Table2;actualmicroMunitcheckedbyPDFimage"
+      },
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_supp_wsl.pdf",
+        "sha256": "40b34dd2b2b9048747c275a57c4aa11dfdfbecc7a58482ff549db4a5e5459274",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc1.pdf",
+        "locator": "PDF16 TableS2 pairedCDR3/VJ;18TableS4 KD SEM;imagesreviewed"
+      }
+    ],
+    "training_allowed": false,
+    "model_scored": false,
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "fold": "external_pending",
+    "full_variable_sequences_verified": false,
+    "scope": "reserved_partial_identity_not_model_ready",
+    "counterligand": {
+      "peptide": "TSNLQEQIGW",
+      "source_outcome": "NB",
+      "kd_um": null,
+      "binary_binding_label": null,
+      "max_tested_um": null,
+      "reason": "no binding as reported; exactmutantassaydetectionlimitnotverified; notinfiniteKD orabsoluteexperimentalnegative"
+    }
+  },
+  {
+    "receptor_name": "KS1",
+    "cdr3_alpha": "CAVTLNNNAGNMLTF",
+    "cdr3_beta": "CASSVGGTEAFF",
+    "trav": "TRAV21",
+    "trbv": "TRBV5-1",
+    "kd_um": 226.9,
+    "error_um": 8.1,
+    "temperature_K": 298.15,
+    "alpha_variable": null,
+    "beta_variable": null,
+    "max_TCR_WT_um": 500,
+    "overlap_checks": {
+      "old91": [
+        "KS1"
+      ],
+      "combined": [
+        "IMMREP25:2a507f3bbed9f62830b31a60d68b0ee1eea030988dd96a2d7481fabf2bef36e4",
+        "IMMREP25:91005b5fda7be131782aae364ac4c3c415a71965a8af0fa2157abb736a12917b",
+        "IMMREP25:f378cc825f1a81a32b2320dc97c2d2a66919801a1cfae87dd4aa3efa460bfa42"
+      ],
+      "clinical": [],
+      "additions": [],
+      "data/releases/20261016-structural-v1/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261016-structural-v2/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261016-structural-v3/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261017-structural-v4/structure_records.json": [
+        "8f5a",
+        "af3-8f5a_TSTLQEQIGW_model_0"
+      ],
+      "data/releases/20261017-structural-v5-atomic-repair/structure_records.json": [],
+      "data/releases/20261017-structural-v6-atomic-repair/structure_records.json": [
+        "8f5a"
+      ],
+      "data/releases/20261017-structural-v7-atomic-repair/structure_records.json": [
+        "8f5a"
+      ]
+    },
+    "evidence_id": "PMID39083376:KS1:TW10",
+    "pmid": "39083376",
+    "study": "10.1016/j.celrep.2024.114555",
+    "research_group": "Gras/LaTrobe-Monash/UWA",
+    "peptide": "TSTLQEQIGW",
+    "mhc_allele": "HLA-B*57:01",
+    "endpoint": "tcr_binding_spr",
+    "error_kind": "SEM from at least2independentexperiments eachinduplicate",
+    "fit": "equilibrium",
+    "instrument": "Biacore T100/T200",
+    "conditions": "25C;10mMTrisHClpH8;150mMNaCl;.005percentP20;1percentBSA;pMHC onSA~2000RU;HLA-A02M1reference",
+    "sources": [
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_full.pdf",
+        "sha256": "5f0890e20231dda91ca0f847ef57e717e35c5b8fcccceeac4a3da96b8eb9c046",
+        "url": "https://ndownloader.figshare.com/files/48843463",
+        "locator": "STARMethods SPR;Table2;actualmicroMunitcheckedbyPDFimage"
+      },
+      {
+        "path": "data/external_evidence/20261018-diversity-followup-v1/TW10_supp_wsl.pdf",
+        "sha256": "40b34dd2b2b9048747c275a57c4aa11dfdfbecc7a58482ff549db4a5e5459274",
+        "url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124724008842-mmc1.pdf",
+        "locator": "PDF16 TableS2 pairedCDR3/VJ;18TableS4 KD SEM;imagesreviewed"
+      }
+    ],
+    "training_allowed": false,
+    "model_scored": false,
+    "clinical_risk_label": null,
+    "binary_binding_label": null,
+    "fold": "external_pending",
+    "full_variable_sequences_verified": false,
+    "scope": "historically_exposed_not_external_test",
+    "counterligand": {
+      "peptide": "TSNLQEQIGW",
+      "source_outcome": "NB",
+      "kd_um": null,
+      "binary_binding_label": null,
+      "max_tested_um": null,
+      "reason": "no binding as reported; exactmutantassaydetectionlimitnotverified; notinfiniteKD orabsoluteexperimentalnegative"
+    }
+  }
+]

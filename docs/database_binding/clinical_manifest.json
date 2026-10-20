@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "file": "clinical_NCT03070392.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT03070392",
+      "sha256": "6ccc6645f4ad7da122c06da0de8ac7b4a4ced4d5e27eb7289357d9241ccafd79",
+      "bytes": 118141,
+      "retrieved_at_utc": "2026-10-17T09:14:42.702251+00:00"
+    },
+    {
+      "file": "clinical_NCT01350401.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01350401",
+      "sha256": "f29c84a72606637cf6c36e4fe033dda414ad7f3f9c9d9078c9cb9de68768ba90",
+      "bytes": 27996,
+      "retrieved_at_utc": "2026-10-17T09:14:43.358977+00:00"
+    },
+    {
+      "file": "clinical_NCT01352286.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01352286",
+      "sha256": "d8e3378b29fab19113f1eafdf1d9220f23453c5e02ccfd4209eeeadbfbbad7af",
+      "bytes": 68167,
+      "retrieved_at_utc": "2026-10-17T09:14:44.635627+00:00"
+    },
+    {
+      "file": "clinical_NCT01273181.json",
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT01273181",
+      "sha256": "8fa1b2df8a3b129ad69505a346c8a15974e411cff185306a2ad7e4da69f4e45d",
+      "bytes": 61318,
+      "retrieved_at_utc": "2026-10-17T09:16:38.225896+00:00"
+    }
+  ],
+  "files": {
+    "trial_summaries.json": "089d615b57632a8fa97b213bfa0af3c6171780b3f62f9b26efe08dffe4a5b6ab",
+    "construct_link_audit.json": "606d448ab10b87f14ed33e9ce4895c7c93e2a069a40671781ca9fc8d08dd90c8",
+    "summary.json": "fde6ffd45b29ec37e7a32218ecc1ec19c7dec24152345fdfcb8acdb752eef2d1",
+    "arm_event_observations.json": "e634ca3f6ab9bf43f1278854e9e3f86cddde4529630eb81f4265ca2e6d5fea48"
+  },
+  "clinical_model_validation_allowed": false
+}

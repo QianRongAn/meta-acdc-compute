@@ -1,0 +1,24 @@
+{
+  "records": 10000,
+  "n_peptides": 20,
+  "model_run": "data/external_evidence/20261017-affinity-baseline-v3",
+  "model_sha256": "18d974695240de163bb08ca2651af20d83ad06ce41616e8f6e2410f533dbbc82",
+  "external_manifest_sha256": "5a07a58ba18d87c233d7f7f2d791cb9cd9bf9521e43e8b36ee1f6c8f3b58c747",
+  "macro_peptide_auroc": 0.5000777777777778,
+  "macro_peptide_average_precision": 0.11969145958618004,
+  "macro_auroc_peptide_bootstrap_95ci": [
+    0.45857200000000004,
+    0.543136111111111
+  ],
+  "ci_scope": "Peptide resampling conditional on these 1000 TCRs/platform; not a receptor-family/study-independent clinical CI",
+  "score": "predicted pKD under a fixed hypothetical Biacore 3000 / 298.15 K reference profile; not an activation probability",
+  "external_panel_used_for_training_or_tuning": false,
+  "physical_binding_validation_passed": false,
+  "clinical_validation_passed": false,
+  "limitations": [
+    "Cross-endpoint SPR-to-MIRA association only",
+    "One selected viral-panel source; HLA partly inferred; multiplex nonactivation conditional",
+    "No clinical outcomes and no probability calibration",
+    "No test-driven model changes or threshold tuning permitted after this evaluation"
+  ]
+}

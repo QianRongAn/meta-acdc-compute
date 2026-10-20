@@ -1,0 +1,59 @@
+{
+  "receptor": {
+    "beta_variable": "GSMNAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSESGGYEQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+    "cdr3_beta": "CASSESGGYEQYF",
+    "alpha_variable": "MRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVNMLRNSGYALNFGKGTSLLVTPHIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSP",
+    "cdr3_alpha": "CVVNMLRNSGYALNF"
+  },
+  "checks": {
+    "docs/database_binding/affinity_dataset.json": [],
+    "docs/clinical_primary_20261018/combined_reservation_registry.json": [],
+    "docs/evidence_completion_20261018/reservation_additions.json": [],
+    "history": [
+      {
+        "file": "data/releases/20261016-structural-v1/structure_records.json",
+        "hits": [
+          "8ye4_0",
+          "8ye4_1",
+          "af3-8ye4_NYNYLYRLF_model_0"
+        ]
+      },
+      {
+        "file": "data/releases/20261016-structural-v2/structure_records.json",
+        "hits": [
+          "8ye4_0",
+          "8ye4_1",
+          "af3-8ye4_NYNYLYRLF_model_0"
+        ]
+      },
+      {
+        "file": "data/releases/20261016-structural-v3/structure_records.json",
+        "hits": [
+          "8ye4_0",
+          "8ye4_1",
+          "af3-8ye4_NYNYLYRLF_model_0"
+        ]
+      },
+      {
+        "file": "data/releases/20261017-structural-v4/structure_records.json",
+        "hits": [
+          "8ye4_0",
+          "8ye4_1",
+          "af3-8ye4_NYNYLYRLF_model_0"
+        ]
+      },
+      {
+        "file": "data/releases/20261017-structural-v5-atomic-repair/structure_records.json",
+        "hits": []
+      },
+      {
+        "file": "data/releases/20261017-structural-v6-atomic-repair/structure_records.json",
+        "hits": []
+      },
+      {
+        "file": "data/releases/20261017-structural-v7-atomic-repair/structure_records.json",
+        "hits": []
+      }
+    ]
+  }
+}

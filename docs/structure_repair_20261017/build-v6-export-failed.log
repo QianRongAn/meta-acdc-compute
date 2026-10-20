@@ -1,0 +1,23 @@
+source records checked; accepted inventory 40
+source records checked; accepted inventory 80
+source records checked; accepted inventory 120
+source records checked; accepted inventory 160
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/administrator/docs/meta-acdc-readiness/src/meta_acdc/data/build_release.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/administrator/docs/meta-acdc-readiness/src/meta_acdc/data/build_release.py", line 79, in main
+    rebuild(args.previous_release_dir,args.out)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/administrator/docs/meta-acdc-readiness/src/meta_acdc/data/repair_release.py", line 142, in rebuild
+    w=csv.DictWriter(f,fieldnames=list(qc_rows[0]),delimiter='\t');w.writeheader();w.writerows(qc_rows)
+                                                                                   ~~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.14/csv.py", line 228, in writerows
+    return self.writer.writerows(map(self._dict_to_list, rowdicts))
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/csv.py", line 220, in _dict_to_list
+    raise ValueError("dict contains fields not in fieldnames: "
+                     + ", ".join([repr(x) for x in wrong_fields]))
+ValueError: dict contains fields not in fieldnames: 'error'

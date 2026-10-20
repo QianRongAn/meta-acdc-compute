@@ -1,0 +1,42 @@
+{
+  "exposure_matches": [
+    {
+      "receptor_name": "Foy:TCR691",
+      "history": "historical_structure_v4",
+      "hits": [
+        "6zkw",
+        "6zkx",
+        "6zky",
+        "6zkz",
+        "af3-6zkw_RLPAKAPLL_model_0",
+        "af3-6zkx_RLPAKAPLLGCG_model_0"
+      ]
+    },
+    {
+      "receptor_name": "Foy:TCR913",
+      "history": "historical_structure_v4",
+      "hits": [
+        "1oga",
+        "2vlj",
+        "2vlk",
+        "2vlr_0",
+        "2vlr_1",
+        "5hhm_0",
+        "5hhm_1",
+        "5hho",
+        "af3-1oga_GILGFVFTL_model_0",
+        "af3-2vlj_GILGFVFTL_model_0",
+        "af3-2vlr_GILGFVFTL_model_0"
+      ]
+    }
+  ],
+  "history_sources": {
+    "data/releases/20261017-structural-v4/structure_records.json": "7b04ec9bf56b4e2df30a74a633495b6950cb6fce85d5395e5b656ba87b4f6544",
+    "docs/database_binding/affinity_dataset.json": "55d5312041cf878cd4d8570d97739da8f78025f4f22913524f3ac8f0cfc14098"
+  },
+  "prior_reserved_source_sha256": "9e54cee8d222a1b3a968daea06396b1187531e70f182a4ebc9a49dfa5f05a7b7",
+  "comparison": "conservative either corresponding variable chain similar OR CDR3-core identity >=0.9; known lineage aliases reserved separately",
+  "family_isolated_variable_pair_candidates": 18,
+  "clinical_independence_proven": false,
+  "scope": "audit against available recorded releases; historical untracked data exposure cannot be excluded; no prospective/blinded claim"
+}

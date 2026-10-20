@@ -1,0 +1,31 @@
+{
+  "n_input": 51,
+  "n_primary_verified": 16,
+  "n_quarantined": 35,
+  "dispositions": {
+    "quarantine_primary_unretrieved": 26,
+    "primary_verified_soluble_SPR": 16,
+    "quarantine_wrong_ligand_value": 1,
+    "separate_full_length_TCR_CD3": 1,
+    "quarantine_temperature_unverified": 4,
+    "quarantine_secondary_measurement_origin": 1,
+    "quarantine_SPR_Octet_method_conflict": 1,
+    "quarantine_citation_and_method_conflict": 1
+  },
+  "fold_counts": {
+    "train": 10,
+    "validation": 6,
+    "test": 0
+  },
+  "fold_blocks": {
+    "train": 7,
+    "validation": 4,
+    "test": 0
+  },
+  "training_allowed": false,
+  "binary_training_allowed": false,
+  "clinical_training_allowed": false,
+  "status": "inspection_only_insufficient_independent_splits",
+  "scope": "record-level source verification; original folds retained, no test replenishment by reshuffle, clinical heldout cohort never consumed",
+  "missing_condition_policy": "unreported buffer details remain explicit; unverified assay temperature fails this release policy"
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "numeric_primary_evidence_only; exactassayedfullpairsnotindependentlylinked",
+  "measurements": [
+    {
+      "variant": "S32Ealpha",
+      "kd_um": 40,
+      "kinetic_derived_kd_um": 45
+    },
+    {
+      "variant": "S30Ealpha",
+      "kd_um": 68,
+      "kinetic_derived_kd_um": 25
+    }
+  ],
+  "training_allowed": false,
+  "model_scored": false,
+  "classical_core_eligible": false,
+  "clinical_risk_label": null,
+  "binary_binding_label": null,
+  "source": "PAP_SPR_pending.json primaryFigS6A; do notimputefullsequencefromWT"
+}

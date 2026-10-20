@@ -1,0 +1,74 @@
+[
+  {
+    "evidence_id": "ATLAS:714",
+    "pmid": "28250417",
+    "receptor": "LS01",
+    "kd_um": 32,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/28250417_bioc.xml",
+        "locator": "MethodsSurfaceplasmonresonanceanalysis; nospecifiedassaytemperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary_supp1.pdf",
+        "locator": "Supplementaryfigures1-9; noassaytemperatureverified"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:716",
+    "pmid": "28250417",
+    "receptor": "LS10",
+    "kd_um": 30,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/28250417_bioc.xml",
+        "locator": "MethodsSurfaceplasmonresonanceanalysis; nospecifiedassaytemperature"
+      },
+      {
+        "file": "data/external_evidence/20261018-evidence-completion-v1/LS_primary_supp1.pdf",
+        "locator": "Supplementaryfigures1-9; noassaytemperatureverified"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:747",
+    "pmid": "32310221",
+    "receptor": "NYBR1",
+    "kd_um": 4.7e-05,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/32310221_publisher.html",
+        "locator": "MethodsSPR; 298K refers to MD, notSPR"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-primary/JCI130562_supplement.pdf",
+        "locator": "Supplementary information"
+      }
+    ]
+  },
+  {
+    "evidence_id": "ATLAS:751",
+    "pmid": "32310221",
+    "receptor": "a7b2",
+    "kd_um": 0.07,
+    "temperature_K": null,
+    "decision": "remainsquarantined under stricttemperaturepolicy; literaturevalue notinvalidated",
+    "checked_sources": [
+      {
+        "file": "data/external_evidence/20261018-spr-primary/32310221_publisher.html",
+        "locator": "MethodsSPR; 298K refers to MD, notSPR"
+      },
+      {
+        "file": "data/external_evidence/20261018-spr-primary/JCI130562_supplement.pdf",
+        "locator": "Supplementary information"
+      }
+    ]
+  }
+]

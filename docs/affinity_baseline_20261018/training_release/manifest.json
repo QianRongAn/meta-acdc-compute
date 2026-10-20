@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "task": "experimental_SPR_pKD_regression",
+  "training_allowed": true,
+  "scope": "research-only affinity baseline; not structural, binary or clinical training",
+  "created_utc": "2026-10-18T09:13:20.076401+00:00",
+  "parent_freeze": "docs/independent_spr_20261018",
+  "parent_manifest_sha256": "3770b5f15c8ae7b3690ff185de9dfd55e46e576c3258253cf723c3d93c3e010c",
+  "test_path": "docs/independent_spr_20261018/frozen_test.json",
+  "test_sha256": "35fcd46990c8a56bc62f4d9bbc7647940d4d4851b1bd9c50a534f23b449a2b7f",
+  "test_access_ledger": "docs/affinity_baseline_20261018/test_access_ledger.json",
+  "fit_access_ledger": "docs/affinity_baseline_20261018/fit_access_ledger.json",
+  "code_files": {
+    "src/meta_acdc/data/affinity_training_release.py": "549455b38f832290f5f6a7164f43936ec30fd6db469be50dbea33deeb008757d",
+    "src/meta_acdc/models/frozen_affinity_baseline.py": "1cf3d37844e4ce53e8beceda5adde407c468430c34a901798138f3bb5d04d5f1",
+    "src/meta_acdc/models/affinity_acceptance.py": "0acd426bcbdbbe6f28700e58d0d1452cf33f90da17dfadc0d4f2f11968c10d6b",
+    "src/meta_acdc/models/affinity_baseline.py": "352b898fae2afe0debd1351e2d030ce6c2fc5306328bd892c26a858f9c45e4f1",
+    "src/meta_acdc/data/independent_spr.py": "35dd7ec9465a2c62530fb9944f22f500a357075c550660f920469d4b838b19a0",
+    "src/meta_acdc/data/experimental_evidence.py": "5822f8d52e51a715f0c6f86a25f1245bb07df3ebdaa4d35add30d9004fc05128",
+    "src/meta_acdc/data/build_release.py": "30ddcdfd0c9a86d73e84dffa2c3b1eb90bca151c159d129a15c134fbb7855fe9",
+    "src/meta_acdc/data/evidence_completion.py": "c409dd9be2c97b43dc573fdd35b678eae0184aafe6765205e6837a4746b04eee",
+    "src/meta_acdc/data/release.py": "2916a3dae16f9521a44b8add638b477fe9d007aa2d172fb8dd65a48457cb8d73"
+  },
+  "files": {
+    "plan.json": "606a1a938eda536edcbe72eb497cdfc3a7d8e60dcc8bd9341c8b160ee71b03a5",
+    "preflight.json": "1e4b23f5711075d3ca6e69093651a0fcd140171aec812619b7155f5ce05f252b",
+    "development.json": "faf1eb8128556c9f55ecad48555b9c56e51ad06caf349fe84b989ae5afb08f41"
+  },
+  "counts": {
+    "observations": 15,
+    "primary": 14,
+    "lineages": 7,
+    "studies": 5,
+    "research_source_components": 3,
+    "development": {
+      "train": 10,
+      "validation": 10
+    },
+    "development_blocks": {
+      "train": 5,
+      "validation": 5
+    },
+    "test_connected_blocks": 4
+  },
+  "approval_basis": "new user-authorized development-only profile; parent inspection state is immutable"
+}

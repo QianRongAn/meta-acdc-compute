@@ -105,6 +105,8 @@ def load(path: Path) -> tuple[list[str], list[str], np.ndarray]:
             if not row["label"]:
                 n_missing += 1
                 continue
+            if row.get("source") == "vdjdb" or row.get("label_scope") not in {"tcr_binding", "tcr_activation"} or not row.get("assay_id"):
+                raise ValueError("Unverified/legacy or non-TCR labels: assay_id and TCR endpoint provenance required; VDJdb confidence is not a label")
             cdr3s.append(row["cdr3_beta"])
             peptides.append(row["peptide"])
             labels.append(int(row["label"]))

@@ -1,0 +1,20 @@
+[
+  {
+    "module": "train_egnn",
+    "exit_code": 1,
+    "refused_pending_acceptance": true,
+    "last_error": "ValueError: release task not eligible for this training endpoint"
+  },
+  {
+    "module": "train_domain_adapt",
+    "exit_code": 1,
+    "refused_pending_acceptance": true,
+    "last_error": "ValueError: release task not eligible for this training endpoint"
+  },
+  {
+    "module": "calibrate",
+    "exit_code": 1,
+    "refused_pending_acceptance": true,
+    "last_error": "ValueError: release task not eligible for this training endpoint"
+  }
+]
