@@ -88,10 +88,23 @@ class TestDataFixtures(unittest.TestCase):
              / "1ao7_LLFGYPVYV_model_0.cif")
         self._require(f)
         from meta_acdc.structure.cif import parse_cif
-        from meta_acdc.structure.graph import PEPTIDE
+        from meta_acdc.structure.identity import chain_sequence
+        from meta_acdc.structure.quality import annotate_prediction
         from meta_acdc.structure.relabel_instances_by_chains import (
             peptide_of, tcr_signature)
         res = parse_cif(f)
+        # This historical instance stores the AF3 chain layout
+        # A=tcr alpha, B=tcr beta, C=peptide, D=MHC, E=b2m. Since the
+        # review (item #17) chain roles are only assigned from explicit
+        # annotations — here via annotate_prediction with the release-style
+        # reference, as the current scoring path does.
+        seqs = {c: chain_sequence([r for r in res if r.chain == c])
+                for c in {r.chain for r in res}}
+        self.assertEqual(seqs["C"], "LLFGYPVYV")
+        self.assertEqual(len(seqs), 5)
+        reference = {"alpha": seqs["A"], "beta": seqs["B"],
+                     "mhc_sequence": seqs["D"], "b2m_sequence": seqs["E"]}
+        annotate_prediction(res, reference, "LLFGYPVYV")
         self.assertEqual(peptide_of(res), "LLFGYPVYV")
         sig = tcr_signature(res)
         self.assertEqual(len(sig), 2)
@@ -265,20 +278,33 @@ class TestAttribution(unittest.TestCase):
         with self.assertRaises(ValueError):
             to_mutant(r, "ARG")
 
-    def test_attribution_runs(self):
+    def test_attribution_refuses_legacy_checkpoint(self):
         import subprocess
         import sys
+        import tempfile
         cif = ROOT / "data/raw/af3_predictions/5brz_ESDPIVAQY_model_0.cif"
         model = ROOT / "data/processed/da_seed0.model.pt"
         if not (cif.exists() and model.exists()):
             self.skipTest("attribution fixtures missing")
-        r = subprocess.run(
-            [sys.executable, "-m", "meta_acdc.structure.attribute",
-             "--cif", str(cif), "--model", str(model), "--mask-plddt",
-             "--top", "5"],
-            check=True, cwd=str(ROOT), capture_output=True, text=True)
-        self.assertIn("peptide-involving contacts", r.stdout)
-        self.assertIn("score=", r.stdout)
+        # The legacy checkpoint has no release fingerprint; since the
+        # delivery review, attribution must not run on it (and must not
+        # guess chain identity). A valid run needs --reference-json +
+        # --peptide and a release-bound checkpoint, none of which exist
+        # while structural retraining is unreleased.
+        with tempfile.TemporaryDirectory() as td:
+            ref = Path(td) / "ref.json"
+            ref.write_text(json.dumps({"alpha": "A" * 100,
+                                       "beta": "B" * 100,
+                                       "mhc_sequence": "M" * 270,
+                                       "b2m_sequence": "K" * 100}))
+            r = subprocess.run(
+                [sys.executable, "-m", "meta_acdc.structure.attribute",
+                 "--cif", str(cif), "--model", str(model), "--mask-plddt",
+                 "--top", "5", "--reference-json", str(ref),
+                 "--peptide", "ESDPIVAQY"],
+                cwd=str(ROOT), capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("release-bound model", r.stderr)
 
 
 class TestCandidateRouting(unittest.TestCase):
