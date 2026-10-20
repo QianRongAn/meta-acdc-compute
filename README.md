@@ -28,7 +28,9 @@
 > 逐项处置与两轮修复记录见 [`docs/delivery_audit_20261018/README.md`](docs/delivery_audit_20261018/README.md)
 > 与 [`external_review.md`](docs/delivery_audit_20261018/external_review.md)（原文）。
 > 2026-10-21 第二轮补齐残余工程缺口：家族分层 Fisher、方向感知位移对照、面板注册表
-> （188/72/59 与 347/111/91 口径冻结）、随机肽基线/分辨率下限机制、清单护栏、bib 核实。
+> （已打分 188/72/59；待传 347/111/91，精确 αβ 对 98、MHC 45、B2M 11，经
+> [`forensic_followup_20261021`](docs/forensic_followup_20261021/README.md) 逐字核验）、
+> 随机肽基线/分辨率下限机制、清单护栏、bib 核实。
 > 未恢复任何已撤回数字，也未伪造旧运行的复现证据。
 
 > 2026-10-18 续查：[近常数预测诊断与限定改进](docs/affinity_development_20261018/README.md)。仅训练／验证比较，三种预登记改法均未超过原基线，不晋级新模型；旧测试未重新用于选模。新增[未打分SPR预留池](docs/fresh_spr_reserve_20261018/README.md)含1个新受体/2条测量，独立来源与连接块数量仍不足，验收继续阻断。
