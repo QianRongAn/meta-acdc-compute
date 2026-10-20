@@ -12,11 +12,12 @@ be read as biologically assigned roles: chain letters are AF3 output labels;
 role assignment requires the local release metadata
 (data/releases/*/structure_records.json, not in Git).
 
-For the pending panel, no role assignment is made at all (review item #17:
-NA/GS/MG prefixes must not be silently trimmed or role-guessed). The unit is
-the frozenset of all five submitted chain sequences, plus the unordered pair
-of chains whose length falls in the TCR window — reported explicitly as a
-heuristic, never as identity.
+For the pending panel, roles come from the FASTA role headers
+(>alpha/>beta/>peptide/>mhc/>b2m) — the same rule verified in
+docs/forensic_followup_20261021, which reproduces the review counts
+(347 files / 111 PDB prefixes / 91 peptides / 98 exact alpha-beta pairs /
+45 MHC / 11 B2M sequences). Role headers are metadata, not sequence-truth:
+NA/GS/MG prefixes are reported, never trimmed (review item #17).
 
 Usage:
     .venv/bin/python scripts/build_panel_registry.py \
@@ -94,6 +95,39 @@ def read_fasta(path: Path) -> list[str]:
             if ln.strip() and not ln.startswith(">")]
 
 
+_ROLES = {"alpha", "beta", "peptide", "mhc", "b2m"}
+
+
+def read_fasta_roles(path: Path) -> dict[str, str]:
+    """Parse a role-annotated FASTA (>alpha/>beta/>peptide/>mhc/>b2m).
+
+    The pending panel FASTAs carry explicit role headers; this is the same
+    rule verified in docs/forensic_followup_20261021 (98 exact alpha/beta
+    pairs, 45 MHC, 11 B2M sequences). Role headers are metadata, not
+    sequence-truth: NA/GS/MG prefixes are reported, never trimmed.
+    """
+    records: dict[str, str] = {}
+    key = None
+    for line in open(path, encoding="utf-8", errors="replace"):
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith(">"):
+            key = line[1:]
+            if key in records:
+                raise ValueError(f"{path}: duplicate role header {key}")
+            records[key] = ""
+        else:
+            if key is None:
+                raise ValueError(f"{path}: sequence before any role header")
+            records[key] += line
+    if set(records) != _ROLES:
+        raise ValueError(
+            f"{path}: expected role headers {sorted(_ROLES)}, "
+            f"got {sorted(records)}")
+    return records
+
+
 def build_scored_registry(cifs_dir: Path, qc_path: Path | None) -> list[dict]:
     rows = []
     files = sorted(cifs_dir.glob("*_model_0.cif"))
@@ -145,27 +179,40 @@ def build_pending_registry(fasta_dir: Path) -> list[dict]:
     for fasta in sorted(fasta_dir.rglob("*.fasta")):
         job = fasta.stem
         pdb, _, peptide = job.partition("_")
-        seqs = read_fasta(fasta)
-        tcr_window = [s for s in seqs if 110 <= len(s) <= 260]
-        pair = tuple(sorted(tcr_window)) if len(tcr_window) == 2 else ()
+        try:
+            seqs = read_fasta_roles(fasta)
+        except ValueError as exc:
+            # keep the row, mark the failure; roles stay empty
+            seqs = {}
+            parse_error = f"{type(exc).__name__}: {exc}"
+        else:
+            parse_error = ""
+        pair = (seqs.get("alpha", ""), seqs.get("beta", ""))
+        ok = all(pair) and set("".join(pair)) <= set("ACDEFGHIKLMNPQRSTVWY")
+        receptor_key = ("|".join(sorted(seq_hash(s) for s in pair))
+                        if ok else "")
         rows.append({
             "panel": "pending",
             "job_id": job,
             "pdb": pdb,
             "peptide": peptide,
-            "chain_lengths": ";".join(f"seq{i + 1}:{len(s)}"
-                                      for i, s in enumerate(seqs)),
+            "chain_lengths": ";".join(
+                f"{k}:{len(v)}" for k, v in sorted(seqs.items())),
             "chain_set_sha256": sha256_bytes(
-                "\x00".join(sorted(seqs)).encode()),
-            "tcr_window_pair": "|".join(seq_hash(s) for s in pair) if pair else "",
-            "_receptor_seqs": "|".join(pair) if pair else "",
+                "\x00".join(sorted(seqs.values())).encode()) if seqs else "",
+            "tcr_window_pair": "",
+            "receptor_key": receptor_key,
+            "_receptor_seqs": "|".join(sorted(pair)) if ok else "",
+            "_receptor_key": receptor_key,
+            "_mhc_seqs": seqs.get("mhc", ""),
+            "_b2m_seqs": seqs.get("b2m", ""),
             "receptor_identity_note":
-                "no role assignment: NA/GS/MG prefixes and construct tags "
-                "must be verified against primary sources before any chain "
-                "is called alpha/beta/MHC (review item #17); the tcr window "
-                "pair is a length heuristic, never identity",
+                "roles come from the FASTA role headers (alpha/beta/peptide/"
+                "mhc/b2m), verified in docs/forensic_followup_20261021; "
+                "NA/GS/MG prefixes are reported, never trimmed; role "
+                "headers are metadata, not sequence-truth",
             "qc_flag": "",
-            "parse_error": "",
+            "parse_error": parse_error,
             "file_sha256": sha256(fasta),
         })
     return rows
@@ -177,7 +224,7 @@ def sha256_bytes(b: bytes) -> str:
 
 def summarize(rows: list[dict], panel: str) -> dict:
     sub = [r for r in rows if r["panel"] == panel]
-    key_col = "receptor_key" if panel == "scored" else "tcr_window_pair"
+    key_col = "receptor_key" if panel == "scored" else "_receptor_key"
     exact = Counter(r[key_col] for r in sub if r[key_col])
     seqs = {r[key_col]: r.get("_receptor_seqs", "") for r in sub
             if r[key_col] and r.get("_receptor_seqs")}
@@ -187,10 +234,19 @@ def summarize(rows: list[dict], panel: str) -> dict:
     if panel == "pending":
         chain_sets = Counter(r["chain_set_sha256"] for r in sub
                              if r["chain_set_sha256"])
+        mhc = Counter(r["_mhc_seqs"] for r in sub if r["_mhc_seqs"])
+        b2m = Counter(r["_b2m_seqs"] for r in sub if r["_b2m_seqs"])
         extra["exact_chain_sets"] = len(chain_sets)
+        extra["unique_mhc_sequences"] = len(mhc)
+        extra["unique_b2m_sequences"] = len(b2m)
         extra["chain_set_identity_note"] = (
-            "frozenset of all 5 submitted sequences per FASTA; assumption-"
-            "free (no role assignment)")
+            "frozenset of all 5 role sequences per FASTA; roles from FASTA "
+            "headers, verified in docs/forensic_followup_20261021")
+        extra["percent98_cluster_identity_note"] = (
+            ">=98% single-linkage over the concatenated alpha|beta pair is "
+            "ONE descriptive rule, not a biological family; the forensic "
+            "follow-up shows rule sensitivity (89 vs 57 groups under two "
+            "both-chains rules), so no single cluster count is canonical")
     return {
         "panel": panel,
         "files": len(sub),
@@ -199,8 +255,8 @@ def summarize(rows: list[dict], panel: str) -> dict:
         "exact_receptor_units": len(exact),
         "receptor_unit": ("unordered {chain A, chain B} sequence pair"
                           if panel == "scored"
-                          else "unordered pair of chains in the 110-260 "
-                               "length window (heuristic, not identity)"),
+                          else "unordered (alpha, beta) pair from FASTA "
+                               "role headers"),
         "receptor_units_with_multiple_candidates":
             sum(1 for v in exact.values() if v > 1),
         "largest_receptor_cluster": max(exact.values(), default=0),

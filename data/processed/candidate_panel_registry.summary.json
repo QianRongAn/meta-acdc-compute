@@ -27,15 +27,17 @@
       "files": 347,
       "pdb_prefixes": 111,
       "unique_peptides": 91,
-      "exact_receptor_units": 96,
-      "receptor_unit": "unordered pair of chains in the 110-260 length window (heuristic, not identity)",
-      "receptor_units_with_multiple_candidates": 58,
+      "exact_receptor_units": 98,
+      "receptor_unit": "unordered (alpha, beta) pair from FASTA role headers",
+      "receptor_units_with_multiple_candidates": 60,
       "largest_receptor_cluster": 24,
-      "percent98_clusters": 78,
-      "percent98_cluster_identity_note": ">=98% identity over the receptor unit; single-linkage; descriptive only",
+      "percent98_clusters": 80,
+      "percent98_cluster_identity_note": ">=98% single-linkage over the concatenated alpha|beta pair is ONE descriptive rule, not a biological family; the forensic follow-up shows rule sensitivity (89 vs 57 groups under two both-chains rules), so no single cluster count is canonical",
       "parse_errors": 0,
       "exact_chain_sets": 312,
-      "chain_set_identity_note": "frozenset of all 5 submitted sequences per FASTA; assumption-free (no role assignment)"
+      "unique_mhc_sequences": 45,
+      "unique_b2m_sequences": 11,
+      "chain_set_identity_note": "frozenset of all 5 role sequences per FASTA; roles from FASTA headers, verified in docs/forensic_followup_20261021"
     }
   ]
 }
