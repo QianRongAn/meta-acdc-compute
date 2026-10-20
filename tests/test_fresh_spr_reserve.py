@@ -4,6 +4,9 @@ from meta_acdc.data.fresh_spr_reserve import ROOT,read,verify,assert_development
 from meta_acdc.data.independent_spr import validate_partition
 class FreshSPRReserveTests(unittest.TestCase):
  def test_partial_reserve_cannot_be_scored(self):
+  required=json.loads((ROOT/'docs/fresh_spr_reserve_20261018/required_sources.json').read_text())
+  if any(not (ROOT/n).exists() for n in required):
+   self.skipTest('local primary source snapshots not available')
   result=verify();self.assertFalse(result['evaluation_allowed']);self.assertEqual(result['counts']['lineages'],1)
   with self.assertRaisesRegex(ValueError,'new acceptance blocked'):require_acceptance_ready()
  def test_shared_author_validation_is_excluded(self):

@@ -80,7 +80,9 @@
 | #22 提交号审计 | AUDIT 引用的 6 个提交号在当前仓库全部可定位：`98773bd`（28 项主修复）、`f59dd45`（P1 修复）、`a3b8715`（跟进对齐）、`21926a9`（QC 表重建）、`60fb071`（二线修复）、`58df6ab`（复核回执）。 |
 | #21/#23 | 5 张 per-seed 表 + 21 行集成表继续以原字节交付于 `recovered/`；第二轮新增回归测试 21 项（全部不 skip），覆盖 Fisher 分层、位移方向、清单护栏、面板计数复现、resolution_floor 与基线拒绝路径。 |
 
-第二轮验证：`python -m unittest discover -s tests` 共 300 项——第二轮新增 21 项全部通过（不 skip），
-另并入 `e4d68de` 的 7 项取证测试（`tests/test_forensic_followup.py`，无跳过）；
-3 项既有失败（`test_fresh_spr_reserve` 本地原始快照缺失、`test_attribution_runs` 旧 checkpoint 无 release 指纹被拒、
-`test_cif_parse_and_identity` 本地 fixture 与期望不符）在第二轮改动之前即存在，均与第二轮代码无关。
+第二轮验证：`python -m unittest discover -s tests` 共 307 项全部通过（9 项既有可选 fixture 测试按
+仓库惯例在本地原始数据缺失时跳过；第二轮 21 项 + 取证 7 项无跳过）。
+另修复 3 项与第二轮无关的既有测试/入口缺陷：`test_cif_parse_and_identity` 改为当前身份分配路径
+（`annotate_prediction`，审查 #17 后不再按链长/字母猜角色）；`attribute.py` 旧 CLI 拒绝无 release
+指纹的旧 checkpoint 并要求显式 `--reference-json`/`--peptide`（测试改为断言拒绝）；
+`test_fresh_spr_reserve` 在本地原始快照缺失时按既有模式跳过而非报错。
