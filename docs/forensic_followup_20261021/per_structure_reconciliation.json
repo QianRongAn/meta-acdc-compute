@@ -1,0 +1,68 @@
+{
+  "record_status": "FORENSIC_WITHDRAWN",
+  "clinical_interpretation_allowed": false,
+  "tables": {
+    "da_scores_seed0.tsv": {
+      "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed0.tsv",
+      "sha256": "1ca43aba2e793ecd0fbe3aea57e51153c01d4387a344090037b1bec822d48afa",
+      "bytes": 41404,
+      "rows": 884,
+      "record_status": "WITHDRAWN_HISTORICAL_RAW"
+    },
+    "da_scores_seed1.tsv": {
+      "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed1.tsv",
+      "sha256": "a00e8910c8d0aeef8b4a1feaa7f4c8a3560440bdd5f1f1f3e858445b7c7d884a",
+      "bytes": 41404,
+      "rows": 884,
+      "record_status": "WITHDRAWN_HISTORICAL_RAW"
+    },
+    "da_scores_seed2.tsv": {
+      "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed2.tsv",
+      "sha256": "63603e8104afb1e6001efe22a6ed582bcb661324e6b4cedb9a08b90fd0bde2c9",
+      "bytes": 41404,
+      "rows": 884,
+      "record_status": "WITHDRAWN_HISTORICAL_RAW"
+    },
+    "da_scores_seed3.tsv": {
+      "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed3.tsv",
+      "sha256": "3f539c8f07ad7c04ec05a51efb3df27eea883f4eb89d0a4469a34958fb4ea1d2",
+      "bytes": 41404,
+      "rows": 884,
+      "record_status": "WITHDRAWN_HISTORICAL_RAW"
+    },
+    "da_scores_seed4.tsv": {
+      "local_source": "/home/administrator/docs/meta-acdc/data/processed/da_scores_seed4.tsv",
+      "sha256": "9830d4355b72e7e4aafcb95182aab9f13d18e1323c463a710578a43d7c7afec1",
+      "bytes": 41404,
+      "rows": 884,
+      "record_status": "WITHDRAWN_HISTORICAL_RAW"
+    }
+  },
+  "comparisons": 4420,
+  "matches": 4417,
+  "mismatches": [
+    {
+      "job_model": "5hho_GILGFVFTL_model_4",
+      "seed": 2,
+      "replay": "0.8404",
+      "historical": "0.8405",
+      "absolute_difference": 9.999999999998899e-05
+    },
+    {
+      "job_model": "4jff_ELAAIGILTV_model_3",
+      "seed": 4,
+      "replay": "0.9802",
+      "historical": "0.9803",
+      "absolute_difference": 9.999999999998899e-05
+    },
+    {
+      "job_model": "5m00_KAPANFATM_model_1",
+      "seed": 4,
+      "replay": "0.7868",
+      "historical": "0.7867",
+      "absolute_difference": 0.00010000000000010001
+    }
+  ],
+  "max_rounded_absolute_difference": 0.00010000000000010001,
+  "uncovered_historical_rows": 0
+}

@@ -1,0 +1,37 @@
+{
+  "original_worktree_clean": true,
+  "prior_scientific_code_data_audit_and_freezes_unchanged": true,
+  "recovered_historical_artifacts_unchanged": {
+    "prediction_scores_ensemble.tsv": true,
+    "da_scores_seed0_ensemble.tsv": true,
+    "da_scores_seed1_ensemble.tsv": true,
+    "da_scores_seed2_ensemble.tsv": true,
+    "da_scores_seed3_ensemble.tsv": true,
+    "da_scores_seed4_ensemble.tsv": true,
+    "da_seed0.model.pt": true,
+    "da_seed1.model.pt": true,
+    "da_seed2.model.pt": true,
+    "da_seed3.model.pt": true,
+    "da_seed4.model.pt": true,
+    "egnn_dataset.pt": true,
+    "da_scores_seed0.tsv": true,
+    "da_scores_seed1.tsv": true,
+    "da_scores_seed2.tsv": true,
+    "da_scores_seed3.tsv": true,
+    "da_scores_seed4.tsv": true
+  },
+  "all_884_scoring_inputs_unchanged": true,
+  "input_count": 884,
+  "fit_or_tuning_performed": false,
+  "new_holdout_scored": false,
+  "historical_forensic_inference_performed": true,
+  "clinical_prediction_published": false,
+  "biological_training_release_allowed": false,
+  "verification": {
+    "new_tests": 7,
+    "new_tests_passed": 7,
+    "consumer_regression_tests": 14,
+    "consumer_regression_tests_passed": 14,
+    "skipped": 0
+  }
+}
