@@ -73,12 +73,14 @@
 | #17 链分类无测试 | 角色标注路径（`classify_chains` 只信 depositor/reference 注释）补边界与冲突单测；长度窗口启发式已从当前代码移除，不做序列裁剪。 |
 | #20 无随机肽基线 | 新增 `meta_acdc.analysis.random_peptide_baseline`：构造匹配的随机 9 肽嫁接对照打分。仅在“已验收 release + 指纹匹配 checkpoint”下可运行；无有效模型时硬拒绝，绝不产出假数字。 |
 | #2 delta 与 SD | 新增 `meta_acdc.analysis.resolution_floor`：种子轴与 AF3 模型轴分开报告 per-job SD 与对参考的 delta，只给描述性统计并显式声明“delta<SD 不是显著性/等效性检验”。 |
-| #16/#33 面板口径 | 新增 `scripts/build_panel_registry.py` + `data/processed/candidate_panel_registry.tsv(+summary.json)`：已打分面板复现独立复核计数 188/72/59/28/12（逐项一致）；待传面板复现 347/111/91，受体单元明确标注为“无序链对/链集”，不做角色推断。 |
+| #16/#33 面板口径 | 新增 `scripts/build_panel_registry.py` + `data/processed/candidate_panel_registry.tsv(+summary.json)`：已打分面板复现独立复核计数 188/72/59/28/12（逐项一致）。待传面板随后由 [`docs/forensic_followup_20261021`](forensic_followup_20261021/README.md) 定位并逐字核验为仓库 `af3_pending_upload/`（347 FASTA 与首加入提交 `4f730d2` 字节一致）：347/111/91、精确 αβ 对 98、MHC 45、B2M 11、NA 前缀 53、GS 前缀 279——与外部报告一致。本注册表待传面板改用 FASTA 角色头（alpha/beta/peptide/mhc/b2m），现输出 98/45/11 与核验一致。 |
+| #1/#21 五种子来源 | [`docs/forensic_followup_20261021`](forensic_followup_20261021/README.md) 在隔离环境用原始源码 `5c70164` + 5 个旧 checkpoint + 884 份 CIF 重放 940 个 job×seed 均值：938 个与旧表四位小数一致（2 个末位差 0.0001）；另找回 5 份逐结构 per-seed 原表（4420 个结构×seed，4417 个一致）。分数保持 FORENSIC_WITHDRAWN；21 行表的原 checkpoint 仍未闭环（0/3 探测匹配），两套结果继续撤回。 |
 | #34 清单反列+重复 | `load_manifest` 单点加护栏：重复行直接拒绝；旧 `kn5_submission_list.tsv`（tcr_a/tcr_b 反列）消费时强制 stderr 声明。`da_rescore_gpu_20261012.sh` 退役（会覆盖已找回的历史种子表）。 |
 | #39 bib 占位 | ZeroBind 条目逐字核实（DOI `10.1038/s41467-023-43597-1`，PMID 38030641，标题/作者/卷页修正，注明其为 DTI 方法）；ADR 2026 综述 DOI 核实（`10.1016/j.addr.2025.115762`，PMID 41421504）；`xxxxx` 占位清除。 |
 | #22 提交号审计 | AUDIT 引用的 6 个提交号在当前仓库全部可定位：`98773bd`（28 项主修复）、`f59dd45`（P1 修复）、`a3b8715`（跟进对齐）、`21926a9`（QC 表重建）、`60fb071`（二线修复）、`58df6ab`（复核回执）。 |
 | #21/#23 | 5 张 per-seed 表 + 21 行集成表继续以原字节交付于 `recovered/`；第二轮新增回归测试 21 项（全部不 skip），覆盖 Fisher 分层、位移方向、清单护栏、面板计数复现、resolution_floor 与基线拒绝路径。 |
 
-第二轮验证：`python -m unittest discover -s tests` 共 300 项——第二轮新增 21 项全部通过（不 skip）；
+第二轮验证：`python -m unittest discover -s tests` 共 300 项——第二轮新增 21 项全部通过（不 skip），
+另并入 `e4d68de` 的 7 项取证测试（`tests/test_forensic_followup.py`，无跳过）；
 3 项既有失败（`test_fresh_spr_reserve` 本地原始快照缺失、`test_attribution_runs` 旧 checkpoint 无 release 指纹被拒、
 `test_cif_parse_and_identity` 本地 fixture 与期望不符）在第二轮改动之前即存在，均与第二轮代码无关。

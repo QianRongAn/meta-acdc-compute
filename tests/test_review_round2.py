@@ -204,14 +204,23 @@ class TestPanelRegistry(unittest.TestCase):
                 if r["receptor_key"]:
                     receptors[r["panel"]].add(r["receptor_key"])
         # 188 scored CIFs / 72 pdb prefixes / 59 exact A+B pairs,
-        # 347 pending FASTAs / 111 pdb prefixes / 91 unique peptides —
-        # exactly the independent review counts.
+        # 347 pending FASTAs / 111 pdb prefixes / 91 unique peptides /
+        # 98 exact alpha-beta pairs / 45 MHC / 11 B2M —
+        # exactly the independent review counts, and the pending counts
+        # match the forensic follow-up (docs/forensic_followup_20261021).
         self.assertEqual(by_panel["scored"], 188)
         self.assertEqual(len(pdbs["scored"]), 72)
         self.assertEqual(len(receptors["scored"]), 59)
         self.assertEqual(by_panel["pending"], 347)
         self.assertEqual(len(pdbs["pending"]), 111)
         self.assertEqual(len(peptides["pending"]), 91)
+        self.assertEqual(len(receptors["pending"]), 98)
+        summary = json.loads(REGISTRY_SUMMARY.read_text())
+        pending = next(p for p in summary["panels"]
+                       if p["panel"] == "pending")
+        self.assertEqual(pending["exact_receptor_units"], 98)
+        self.assertEqual(pending["unique_mhc_sequences"], 45)
+        self.assertEqual(pending["unique_b2m_sequences"], 11)
 
     def test_summary_matches_rows(self):
         summary = json.loads(REGISTRY_SUMMARY.read_text())
