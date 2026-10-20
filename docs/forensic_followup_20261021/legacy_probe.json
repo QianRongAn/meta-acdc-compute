@@ -1,0 +1,250 @@
+{
+  "record_status": "FORENSIC_WITHDRAWN",
+  "clinical_interpretation_allowed": false,
+  "historical_causal_attestation": false,
+  "source_commit": "5c70164de873c0a1b818cb807efda9c32d2dc3de",
+  "torch_version": "2.9.1+cu126",
+  "device": "cpu",
+  "mask_plddt": true,
+  "temperature": 1.0,
+  "selection": "three prespecified disputed jobs; all 5 AF3 models and all 5 retained seeds",
+  "checkpoints": {
+    "da_seed0.model.pt": "84a3ed259e5c8f0512911420c330b75acfa61618b5c1dd9c9fdbd7633f08c6b7",
+    "da_seed1.model.pt": "7062a20e2956c64137bf982ab37a854e6e87759b9f5062377fa0970a2f6029ae",
+    "da_seed2.model.pt": "ab9c5ff48ee90e0c78ec53f62e70f410ef7f1c9ff5bbbd20fb53ce677a1b6076",
+    "da_seed3.model.pt": "19ab2c93bba41eabe9ca3fdb72d016ac86f91e8d37f6192c535218b841c79bb1",
+    "da_seed4.model.pt": "7a6710c63ad9205d8978af1a13658b414984e0e17a753a091bd4e607def58205"
+  },
+  "input_sha256": {
+    "data/raw/af3_predictions/5brz_EVDPIGHLY_model_0.cif": "65c2fc4694a541ca51641cbfd4782fa907656df928826b6f34d2772870244eb4",
+    "data/raw/af3_predictions/5brz_EVDPIGHLY_model_1.cif": "015ba7515e668e91b4b8dbbf67b65b64e3433d0440ccd9af891c098afca0f791",
+    "data/raw/af3_predictions/5brz_EVDPIGHLY_model_2.cif": "b81b6e210c068e579fd9f9bc3d34b28d3dfc4706b3b6364236680aaaed95741a",
+    "data/raw/af3_predictions/5brz_EVDPIGHLY_model_3.cif": "1891700c305a1010ab3213d2cdeab4a2cf5426c1aed490377ee6cbcd357fb17b",
+    "data/raw/af3_predictions/5brz_EVDPIGHLY_model_4.cif": "3316ec4db2acdf9a608151a9bc2cdb41f0befec7c5344b8265e1bb55e2e3b78d",
+    "data/raw/af3_predictions/5brz_ESDPIVAQY_model_0.cif": "12475573fdd2233aa7855df75815d1f7d600d84eadacb92126f0f1bce0e72b52",
+    "data/raw/af3_predictions/5brz_ESDPIVAQY_model_1.cif": "be12ba81610b214a935272d8c631a4e861ed60c087c8c3402b4e0f27f95def6b",
+    "data/raw/af3_predictions/5brz_ESDPIVAQY_model_2.cif": "5e0b14edc9fd53aba359f9d501632347dfc06a45a2ba66bfa09f711ac0fac722",
+    "data/raw/af3_predictions/5brz_ESDPIVAQY_model_3.cif": "81244b7c89891a2c4b585722975ba6c4840ec29b8c5dab89deee105ab2ee8810",
+    "data/raw/af3_predictions/5brz_ESDPIVAQY_model_4.cif": "0e2d6d3ff7028156692aec0350d03fe94d14f13ae532ed6d81cf143a5bd54dee",
+    "data/raw/af3_predictions/5brz_ILAKFLHWL_model_0.cif": "3cd4d09860d1c845d04618361a83e365893705708164b6e1eaac2f324d898e28",
+    "data/raw/af3_predictions/5brz_ILAKFLHWL_model_1.cif": "1927025c3db322a7cb2698e0c31dbc678af4bcfc5508e6ef6ea91193d1213273",
+    "data/raw/af3_predictions/5brz_ILAKFLHWL_model_2.cif": "2ce1b558cc467717bf0dfffc9d64b83ef3f893fe2f9032eb2ef8789829feb2c3",
+    "data/raw/af3_predictions/5brz_ILAKFLHWL_model_3.cif": "4beff82d5d4132d247e6416b0e43f5f4d7a235e7b31e7c579824cecd32a7fcc6",
+    "data/raw/af3_predictions/5brz_ILAKFLHWL_model_4.cif": "65a98c2e94be6a77e68d30b303836e649d2a5412ff056ee41e262b53e701ef7a"
+  },
+  "source_archive_sha256": "d7460687f1fc94ea3ad150be6991b4c12b016bdc1e3897198de9150a20cf54d7",
+  "results": [
+    {
+      "job_id": "5brz_EVDPIGHLY",
+      "seed": 0,
+      "per_af3_model_scores": [
+        0.8973129987716675,
+        0.8866065144538879,
+        0.5322707891464233,
+        0.6270897388458252,
+        0.645929217338562
+      ],
+      "replay_mean": "0.7178",
+      "historical_mean": "0.7178",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_EVDPIGHLY",
+      "seed": 1,
+      "per_af3_model_scores": [
+        0.9696550369262695,
+        0.9946582913398743,
+        0.9719681143760681,
+        0.9624118804931641,
+        0.9489083886146545
+      ],
+      "replay_mean": "0.9695",
+      "historical_mean": "0.9695",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_EVDPIGHLY",
+      "seed": 2,
+      "per_af3_model_scores": [
+        0.9951661825180054,
+        0.9993425011634827,
+        0.991768479347229,
+        0.9982903599739075,
+        0.9936417937278748
+      ],
+      "replay_mean": "0.9956",
+      "historical_mean": "0.9956",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_EVDPIGHLY",
+      "seed": 3,
+      "per_af3_model_scores": [
+        0.982644259929657,
+        0.983012855052948,
+        0.9117311835289001,
+        0.8371047973632812,
+        0.9062618613243103
+      ],
+      "replay_mean": "0.9241",
+      "historical_mean": "0.9241",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_EVDPIGHLY",
+      "seed": 4,
+      "per_af3_model_scores": [
+        0.9249999523162842,
+        0.9585318565368652,
+        0.9645242094993591,
+        0.6862537264823914,
+        0.7217912077903748
+      ],
+      "replay_mean": "0.8512",
+      "historical_mean": "0.8512",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "seed": 0,
+      "per_af3_model_scores": [
+        0.7711962461471558,
+        0.7517162561416626,
+        0.9770491719245911,
+        0.9708325862884521,
+        0.948203980922699
+      ],
+      "replay_mean": "0.8838",
+      "historical_mean": "0.8838",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "seed": 1,
+      "per_af3_model_scores": [
+        0.9851565361022949,
+        0.9882307052612305,
+        0.9650030136108398,
+        0.9434148669242859,
+        0.977055549621582
+      ],
+      "replay_mean": "0.9718",
+      "historical_mean": "0.9718",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "seed": 2,
+      "per_af3_model_scores": [
+        0.9862509965896606,
+        0.9917607307434082,
+        0.9993215799331665,
+        0.9991748929023743,
+        0.999082088470459
+      ],
+      "replay_mean": "0.9951",
+      "historical_mean": "0.9951",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "seed": 3,
+      "per_af3_model_scores": [
+        0.8597453832626343,
+        0.8236418962478638,
+        0.9503748416900635,
+        0.9738091230392456,
+        0.926154375076294
+      ],
+      "replay_mean": "0.9067",
+      "historical_mean": "0.9067",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY",
+      "seed": 4,
+      "per_af3_model_scores": [
+        0.9733158349990845,
+        0.9784032106399536,
+        0.9952840209007263,
+        0.9954538345336914,
+        0.978396475315094
+      ],
+      "replay_mean": "0.9842",
+      "historical_mean": "0.9842",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "seed": 0,
+      "per_af3_model_scores": [
+        0.9962946772575378,
+        0.9947726130485535,
+        0.920830249786377,
+        0.06626922637224197,
+        0.9206811785697937
+      ],
+      "replay_mean": "0.7798",
+      "historical_mean": "0.7798",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "seed": 1,
+      "per_af3_model_scores": [
+        0.9754419922828674,
+        0.977068305015564,
+        0.6539619565010071,
+        0.005146298557519913,
+        0.3714888095855713
+      ],
+      "replay_mean": "0.5966",
+      "historical_mean": "0.5966",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "seed": 2,
+      "per_af3_model_scores": [
+        0.9980247020721436,
+        0.9982744455337524,
+        0.8630778193473816,
+        0.326379656791687,
+        0.839001476764679
+      ],
+      "replay_mean": "0.8050",
+      "historical_mean": "0.8050",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "seed": 3,
+      "per_af3_model_scores": [
+        0.9940577745437622,
+        0.9986261129379272,
+        0.05614768713712692,
+        0.0001532332826172933,
+        0.047966450452804565
+      ],
+      "replay_mean": "0.4194",
+      "historical_mean": "0.4194",
+      "matches_legacy_four_decimals": true
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL",
+      "seed": 4,
+      "per_af3_model_scores": [
+        0.9964185953140259,
+        0.9803471565246582,
+        0.7618468999862671,
+        0.49061375856399536,
+        0.6686205267906189
+      ],
+      "replay_mean": "0.7795",
+      "historical_mean": "0.7795",
+      "matches_legacy_four_decimals": true
+    }
+  ],
+  "matches": 15,
+  "comparisons": 15
+}

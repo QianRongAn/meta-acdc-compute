@@ -1,0 +1,48 @@
+{
+  "previous_audit": "docs/delivery_audit_20261018/adjudication.json",
+  "previous_audit_preserved": true,
+  "updates": [
+    {
+      "review_item": 1,
+      "status": "legacy_188_job_five_seed_replay_supported_with_two_rounding_differences_21_job_model_binding_unresolved",
+      "evidence": [
+        "legacy_full_replay.json",
+        "legacy_21_probe.json"
+      ]
+    },
+    {
+      "review_item": 16,
+      "status": "347_input_panel_located_exact_bytes_verified_73_cluster_method_unavailable",
+      "evidence": [
+        "pending_panel.json"
+      ]
+    },
+    {
+      "review_item": 17,
+      "status": "prefix_counts_reproduced_no_basis_for_automatic_trimming",
+      "evidence": [
+        "pending_panel.json"
+      ]
+    },
+    {
+      "review_item": 33,
+      "status": "347_input_set_frozen_by_original_commit_different_historical_score_sets_not_interchangeable",
+      "evidence": [
+        "pending_panel.json",
+        "legacy_full_replay.json"
+      ]
+    },
+    {
+      "review_item": 37,
+      "status": "current_and_historical_git_source_available_original_reviewed_code_tar_unavailable",
+      "evidence": [
+        "legacy_full_replay.json"
+      ]
+    }
+  ],
+  "structural_training_allowed": false,
+  "clinical_model_released": false,
+  "new_experimental_binding_negatives": 0,
+  "new_independent_clinical_validation": 0,
+  "new_published_same_task_tool_comparisons": 0
+}

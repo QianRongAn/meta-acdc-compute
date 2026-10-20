@@ -1,0 +1,39 @@
+{
+  "record_status": "FORENSIC_WITHDRAWN_FAILED_CANDIDATE",
+  "clinical_interpretation_allowed": false,
+  "historical_causal_attestation": false,
+  "source_commit": "67978635df44a0fe23b1412d32beafc90cd672f7",
+  "source_archive_sha256": "c47ce8f6c3bb8f6280dbbd4ef1dd15a5b7c325786617f60e6d39b859e9f9d107",
+  "checkpoint_path": "/home/administrator/docs/meta-acdc/data/processed/egnn_dataset.model.pt",
+  "checkpoint_sha256": "1329cdd3775fff6d718eb7ee49508cf70e011e24367d847c7d5dd40952a9e7df",
+  "torch_version": "2.9.1+cu126",
+  "device": "cpu",
+  "mask_plddt": false,
+  "temperature": 1.0,
+  "selection": "Historical scorer default checkpoint, three prespecified disputed jobs model_0; bounded diagnostic, not a model selection search",
+  "results": [
+    {
+      "job_id": "5brz_EVDPIGHLY_model_0",
+      "input_sha256": "65c2fc4694a541ca51641cbfd4782fa907656df928826b6f34d2772870244eb4",
+      "replay_score": 0.08933722227811813,
+      "historical_score": "0.8984",
+      "matches_legacy_four_decimals": false
+    },
+    {
+      "job_id": "5brz_ESDPIVAQY_model_0",
+      "input_sha256": "12475573fdd2233aa7855df75815d1f7d600d84eadacb92126f0f1bce0e72b52",
+      "replay_score": 0.08987858891487122,
+      "historical_score": "0.5717",
+      "matches_legacy_four_decimals": false
+    },
+    {
+      "job_id": "5brz_ILAKFLHWL_model_0",
+      "input_sha256": "3cd4d09860d1c845d04618361a83e365893705708164b6e1eaac2f324d898e28",
+      "replay_score": 0.02161259949207306,
+      "historical_score": "0.8954",
+      "matches_legacy_four_decimals": false
+    }
+  ],
+  "matches": 0,
+  "comparisons": 3
+}
