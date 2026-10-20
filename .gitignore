@@ -4,6 +4,8 @@ data/processed/*
 *.fastq
 *.fastq.gz
 *.bam
+!data/processed/candidate_panel_registry.tsv
+!data/processed/candidate_panel_registry.summary.json
 
 # python
 __pycache__/

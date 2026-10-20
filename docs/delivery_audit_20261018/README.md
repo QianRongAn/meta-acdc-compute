@@ -60,3 +60,25 @@
 原工作树清洁，6个关键历史输入、旧亲和力模型及其两份manifest、新旧冻结验收集均未变，见`integrity.json`。复用现有venv，在本独立工作树用`PYTHONPATH=src`运行，避免共享venv的旧editable路径指向原工作树；未重复安装。
 
 代码和评分表随Git提交；旧权重/100MB缺陷cache作为本地追溯补充包交付，不伪装成新release，哈希与12项成员验证见`historical_package.json`。新代码快照与完整Git历史bundle另附本地输出，原314MB数据zip不覆盖。
+
+## 第二轮修复（2026-10-21）：39 项中残余的工程缺口
+
+第一轮（2026-10-18）完成撤回、身份、QC、追溯与测试主修复；以下为第二轮补上的
+可执行工程项。没有恢复任何已撤回数字，也没有补造旧运行的证据。
+
+| 复核项 | 第二轮处置 |
+|---|---|
+| #32 Fisher 非独立 | `rank_stats.py` 新增 `--families`：先按受体家族池化、再跨家族合并；原“按独立结构”口径保留但明确为上界。纯函数 + 单测锁定（`tests/test_review_round2.py`）。 |
+| #14 固定 +z 位移 | `make_displaced_peptide_decoy` 改为沿“肽质心→MHC 沟槽质心”方向平移；缺 MHC 或质心退化即报错；docstring 仍明确这只是构造规则。方向依赖性与报错路径有单测。 |
+| #17 链分类无测试 | 角色标注路径（`classify_chains` 只信 depositor/reference 注释）补边界与冲突单测；长度窗口启发式已从当前代码移除，不做序列裁剪。 |
+| #20 无随机肽基线 | 新增 `meta_acdc.analysis.random_peptide_baseline`：构造匹配的随机 9 肽嫁接对照打分。仅在“已验收 release + 指纹匹配 checkpoint”下可运行；无有效模型时硬拒绝，绝不产出假数字。 |
+| #2 delta 与 SD | 新增 `meta_acdc.analysis.resolution_floor`：种子轴与 AF3 模型轴分开报告 per-job SD 与对参考的 delta，只给描述性统计并显式声明“delta<SD 不是显著性/等效性检验”。 |
+| #16/#33 面板口径 | 新增 `scripts/build_panel_registry.py` + `data/processed/candidate_panel_registry.tsv(+summary.json)`：已打分面板复现独立复核计数 188/72/59/28/12（逐项一致）；待传面板复现 347/111/91，受体单元明确标注为“无序链对/链集”，不做角色推断。 |
+| #34 清单反列+重复 | `load_manifest` 单点加护栏：重复行直接拒绝；旧 `kn5_submission_list.tsv`（tcr_a/tcr_b 反列）消费时强制 stderr 声明。`da_rescore_gpu_20261012.sh` 退役（会覆盖已找回的历史种子表）。 |
+| #39 bib 占位 | ZeroBind 条目逐字核实（DOI `10.1038/s41467-023-43597-1`，PMID 38030641，标题/作者/卷页修正，注明其为 DTI 方法）；ADR 2026 综述 DOI 核实（`10.1016/j.addr.2025.115762`，PMID 41421504）；`xxxxx` 占位清除。 |
+| #22 提交号审计 | AUDIT 引用的 6 个提交号在当前仓库全部可定位：`98773bd`（28 项主修复）、`f59dd45`（P1 修复）、`a3b8715`（跟进对齐）、`21926a9`（QC 表重建）、`60fb071`（二线修复）、`58df6ab`（复核回执）。 |
+| #21/#23 | 5 张 per-seed 表 + 21 行集成表继续以原字节交付于 `recovered/`；第二轮新增回归测试 21 项（全部不 skip），覆盖 Fisher 分层、位移方向、清单护栏、面板计数复现、resolution_floor 与基线拒绝路径。 |
+
+第二轮验证：`python -m unittest discover -s tests` 共 300 项——第二轮新增 21 项全部通过（不 skip）；
+3 项既有失败（`test_fresh_spr_reserve` 本地原始快照缺失、`test_attribution_runs` 旧 checkpoint 无 release 指纹被拒、
+`test_cif_parse_and_identity` 本地 fixture 与期望不符）在第二轮改动之前即存在，均与第二轮代码无关。

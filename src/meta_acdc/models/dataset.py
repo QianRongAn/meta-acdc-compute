@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import math
 import random
 import sys
 from pathlib import Path
@@ -123,25 +124,59 @@ def make_decoy(
     return out
 
 
+def _centroid(rs: list[Residue], atom_names: tuple[str, ...] = ("CA",)) -> np.ndarray:
+    """Centroid of the named atoms over a residue list (np.array of 3)."""
+    pts = [np.array(a[1:]) for r in rs for a in r.atoms if a[0] in atom_names]
+    if not pts:
+        raise ValueError("centroid requested over residues without the named atoms")
+    return np.mean(np.vstack(pts), axis=0)
+
+
 def make_displaced_peptide_decoy(
     residues: list[Residue],
     shift: float = 6.0,
 ) -> list[Residue]:
-    """Synthetic fixed-axis translation control, not an experimental nonbinder.
+    """Synthetic direction-aware translation control, not an experimental nonbinder.
 
-    A 6 A shift can introduce peptide/environment clashes rather than remove
-    the peptide from the groove. Node membership is pinned by the accepted
-    builder; neither overlap-free geometry nor physical plausibility follows
-    from this construction rule. Apply the same artifact screen as to native
-    and graft controls and record exclusions.
+    The peptide is translated along the peptide-centroid -> MHC-groove
+    direction (i.e. away from the groove in the deposited geometry), not
+    along a fixed global axis. The direction is data-dependent, so a
+    displacement that would move the peptide sideways (or toward the TCR)
+    for one complex is not silently produced for another.
+
+    Still a construction rule, not physics: a 6 A shift can introduce
+    peptide/environment clashes rather than remove the peptide from the
+    groove, and neither overlap-free geometry nor physical plausibility
+    follows. Node membership is pinned by the accepted builder. Apply the
+    same artifact screen as to native and graft controls and record
+    exclusions.
     """
+    if not math.isfinite(shift) or shift <= 0:
+        raise ValueError("displacement shift must be finite and positive")
     roles = classify_chains(residues)
+    pep = [r for r in residues if roles[r.chain] == PEPTIDE]
+    mhc = [r for r in residues if roles[r.chain] == MHC]
+    if not pep:
+        raise ValueError("displacement requires peptide-role residues")
+    if not mhc:
+        raise ValueError(
+            "direction-aware displacement requires MHC-role residues "
+            "(peptide->groove direction is undefined without them)")
+    p_c = _centroid(pep)
+    g_c = _centroid(mhc)
+    d = p_c - g_c
+    norm = float(np.linalg.norm(d))
+    if norm < 1e-6:
+        raise ValueError("degenerate peptide/groove centroids; direction undefined")
+    u = d / norm
     out = []
     for r in residues:
         if roles[r.chain] == PEPTIDE:
-            shifted_atoms = [(n, x, y, z + shift) for n, x, y, z in r.atoms]
+            shifted_atoms = [(n, x + shift * u[0], y + shift * u[1],
+                              z + shift * u[2]) for n, x, y, z in r.atoms]
             from dataclasses import replace
-            out.append(replace(r, z=r.z+shift, atoms=shifted_atoms))
+            out.append(replace(r, x=r.x + shift * u[0], y=r.y + shift * u[1],
+                               z=r.z + shift * u[2], atoms=shifted_atoms))
         else:
             out.append(r)
     return out

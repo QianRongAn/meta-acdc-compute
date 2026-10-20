@@ -39,7 +39,7 @@
 
 ## 3. 元学习:方法谱系与陷阱
 
-- **ZeroBind**(Nat Commun 2023):MAML + MAML++ 稳定化(多步损失、逐层学习率),ESM-2 特征 + AlphaFold2 图,少/零样本 DTI 预测——我们的直接方法论前身
+- **ZeroBind**(Nat Commun 2023):MAML + MAML++ 稳定化(多步损失、逐层学习率),ESM-2 特征 + AlphaFold2 图,少/零样本 DTI 预测——方法论参考(MAML++ 策略),注意其为药物-靶点方法、非 TCR-pMHC 方法
 - **MCGLPPI++**(JCIM 2025):几何 GNN + 簇切分 + Lennard-Jones/Coulomb 显式能量建模的少样本 PPI 亲和力预测,**在 TCR-pMHC 测试簇上验证**——与 EGNN 设计最接近的已发表工作,🔴 **应作为我们的直接对照基线**
 - **BioBridge**(Adv Sci 2025):归纳-联想元学习,5-shot BindingDB 全面超越 MAML++/原型网络/ANIL
 - **RR-ADS**(J Med Chem 2025):报告 vanilla MAML 的**任务冲突**与**过度记忆**问题;解法:内部衰减器 + 元正则化 + 难度感知调整
