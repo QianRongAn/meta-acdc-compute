@@ -1,0 +1,137 @@
+{
+  "task_id": "STRUCT-FINGERPRINT-20261021",
+  "n_graphs": 331,
+  "seed": 20261021,
+  "epochs": 60,
+  "batch_size": 16,
+  "device": "cuda",
+  "fixed_coordinates": true,
+  "fold_results": [
+    {
+      "retrieval": {
+        "rank1": 0.2857142857142857,
+        "mrr": 0.38141132931347616,
+        "chance_rank1": 0.010533910533910534,
+        "n_queries_with_same_receptor_in_gallery": 42,
+        "auroc": 0.7580025211712459,
+        "n_pairs": 13860
+      },
+      "family": {
+        "1": 0.3050847457627119,
+        "3": 0.3220338983050847,
+        "5": 0.3559322033898305,
+        "chance_top1": 0.06985294117647059
+      },
+      "domain": {
+        "accuracy": 0.559322033898305,
+        "n": 59
+      },
+      "fold": 0,
+      "n_train": 272,
+      "n_test": 59
+    },
+    {
+      "retrieval": {
+        "rank1": 0.11666666666666667,
+        "mrr": 0.24538061620576043,
+        "chance_rank1": 0.016161616161616165,
+        "n_queries_with_same_receptor_in_gallery": 60,
+        "auroc": 0.7517619032340862,
+        "n_pairs": 19800
+      },
+      "family": {
+        "1": 0.19767441860465115,
+        "3": 0.13953488372093023,
+        "5": 0.19767441860465115,
+        "chance_top1": 0.07755102040816327
+      },
+      "domain": {
+        "accuracy": 0.45348837209302323,
+        "n": 86
+      },
+      "fold": 1,
+      "n_train": 245,
+      "n_test": 86
+    },
+    {
+      "retrieval": {
+        "rank1": 0.25316455696202533,
+        "mrr": 0.367166197740932,
+        "chance_rank1": 0.019409282700421946,
+        "n_queries_with_same_receptor_in_gallery": 79,
+        "auroc": 0.7589085101764277,
+        "n_pairs": 26070
+      },
+      "family": {
+        "1": 0.27835051546391754,
+        "3": 0.29896907216494845,
+        "5": 0.27835051546391754,
+        "chance_top1": 0.07264957264957266
+      },
+      "domain": {
+        "accuracy": 0.31958762886597936,
+        "n": 97
+      },
+      "fold": 2,
+      "n_train": 234,
+      "n_test": 97
+    },
+    {
+      "retrieval": {
+        "rank1": 0.125,
+        "mrr": 0.23887845260849772,
+        "chance_rank1": 0.0101010101010101,
+        "n_queries_with_same_receptor_in_gallery": 24,
+        "auroc": 0.707562181122449,
+        "n_pairs": 7920
+      },
+      "family": {
+        "1": 0.13333333333333333,
+        "3": 0.15555555555555556,
+        "5": 0.13333333333333333,
+        "chance_top1": 0.06643356643356643
+      },
+      "domain": {
+        "accuracy": 0.5111111111111111,
+        "n": 45
+      },
+      "fold": 3,
+      "n_train": 286,
+      "n_test": 45
+    },
+    {
+      "retrieval": {
+        "rank1": 0.047619047619047616,
+        "mrr": 0.18948803763904362,
+        "chance_rank1": 0.005483405483405483,
+        "n_queries_with_same_receptor_in_gallery": 21,
+        "auroc": 0.8569279408620216,
+        "n_pairs": 6930
+      },
+      "family": {
+        "1": 0.20454545454545456,
+        "3": 0.20454545454545456,
+        "5": 0.20454545454545456,
+        "chance_top1": 0.06620209059233449
+      },
+      "domain": {
+        "accuracy": 0.6363636363636364,
+        "n": 44
+      },
+      "fold": 4,
+      "n_train": 287,
+      "n_test": 44
+    }
+  ],
+  "means": {
+    "retrieval_rank1": 0.16563291139240505,
+    "retrieval_mrr": 0.28446492670154194,
+    "retrieval_chance_rank1": 0.012337844996072846,
+    "retrieval_auroc": 0.7666326113132461,
+    "family_top1_k1": 0.22379769354201368,
+    "family_chance_top1": 0.07053783825202149,
+    "domain_accuracy": 0.495974556466411
+  },
+  "binding_labels": false,
+  "interpretation_scope": "representation-quality benchmark only; receptor identity is verified metadata, not a binding label; no binding prediction or clinical claim follows"
+}
