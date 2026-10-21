@@ -6,6 +6,7 @@ data/processed/*
 *.bam
 !data/processed/candidate_panel_registry.tsv
 !data/processed/candidate_panel_registry.summary.json
+!data/processed/fingerprint_dataset.manifest.json
 
 # python
 __pycache__/
