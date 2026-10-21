@@ -1,0 +1,76 @@
+{
+  "status": "primary_followup_candidates_not_frozen_test",
+  "candidates": [
+    {
+      "construct_id": "064e7ed96a781781fdde",
+      "tcr_name": "A3V",
+      "pmid": "39287991",
+      "cdr3_alpha": "CALSEAGTYKYIF",
+      "cdr3_beta": "CASSVAGGGQETQY",
+      "canonical_pair_with_CDR3": false
+    },
+    {
+      "construct_id": "d09544cbcbd983a1c3b1",
+      "tcr_name": "A11Va",
+      "pmid": "39287991",
+      "cdr3_alpha": "CAVNPPDTGFQKLV",
+      "cdr3_beta": "CASSLSFRQGLREQYF",
+      "canonical_pair_with_CDR3": false
+    },
+    {
+      "construct_id": "a917747122184e4527d2",
+      "tcr_name": "A11Vb",
+      "pmid": "39287991",
+      "cdr3_alpha": "CAVDKDGGYQKVTF",
+      "cdr3_beta": "CSASPRAGQLSSYNSPLHF",
+      "canonical_pair_with_CDR3": false
+    },
+    {
+      "construct_id": "cab2863312cb908fe579",
+      "tcr_name": "A11Vc",
+      "pmid": "39287991",
+      "cdr3_alpha": "CATDPGGFKTIF",
+      "cdr3_beta": "CASSLYGGSISYEQYF",
+      "canonical_pair_with_CDR3": false
+    },
+    {
+      "construct_id": "d0e6a1f2e3d0d2576292",
+      "tcr_name": "A3-05",
+      "pmid": "36174557",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "canonical_pair_with_CDR3": false
+    },
+    {
+      "construct_id": "99ac0c783553ca064379",
+      "tcr_name": "A3-10",
+      "pmid": "36174557",
+      "cdr3_alpha": "NA",
+      "cdr3_beta": "NA",
+      "canonical_pair_with_CDR3": false
+    }
+  ],
+  "priority_pmid": "39287991",
+  "primary_url": "https://www.jci.org/articles/view/175790",
+  "primary_doi": "10.1172/JCI175790",
+  "full_variable_sequences_verified": false,
+  "training_allowed": false,
+  "model_scored": false,
+  "clinical_validation": false,
+  "clinical_design": "Dendritic-cell peptide vaccine trial; do not assign vaccine patient outcomes as outcomes of administered engineered TCR products.",
+  "verified_functional_conditions": {
+    "primary_locator": "Methods: Jurkat reporter system to assess TCR antigen specificity and avidity",
+    "endpoint": "16h_NFAT_EGFP_flow_cytometry_JASP90_CD8_matched_K562",
+    "incubation_hours": 16,
+    "dose_response_range": "10 uM to 1 pM",
+    "dose_response_ec50_is_SPR_KD": false
+  },
+  "normalization_review": "Methods dose-response maximum uses 10 uM cognate peptide; Figure 2C caption describes PMA/Ionomycin maximum. Resolve by individual panel; no universal normalization assigned.",
+  "pending": [
+    "Verify full corresponding alpha/beta variable sequences from primary attachments or exact published construct accession, no germline reconstruction.",
+    "Resolve Figure 2C and figure-specific normalization against source cells.",
+    "Verify panel-specific peptide doses, source replicate mapping and assay controls.",
+    "Recheck full paired sequence and primary-team ancestry before independent acceptance; current CDR3-only no-hit is insufficient.",
+    "PMID36174557 has missing CDR3 and full variable pairs in secondary intake; absence of a sequence match cannot establish independence."
+  ]
+}

@@ -14,3 +14,6 @@ docs/forensic_followup_20261021/recovered_per_structure/*.tsv -text whitespace=-
 
 # Published source fixtures retain original bytes and upstream whitespace.
 docs/six_blockers_20261021/sources/** -text whitespace=-blank-at-eol
+
+# Preserve original published metadata and assay attachments.
+docs/measured_intake_20261021/source_metadata/** -text whitespace=-blank-at-eol
