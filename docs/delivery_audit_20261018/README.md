@@ -82,8 +82,8 @@
 | #19 同任务外部工具 | 由 [`docs/six_blockers_20261021`](six_blockers_20261021/README.md)（`15eb5c6`）落地：官方 ERGO-I（固定 McPAS LSTM checkpoint，源码/权重 Git blob 与固定提交一致）在同一已消费 MIRA 功能观测面板运行 10,000 行并完整保留，逐肽宏平均 AUROC 0.5112（原 SPR 基线 0.5001）、宏平均 AP 0.1166（0.1197）。明确为共同功能终点的关联对照：不是同一 SPR 回归任务、不做显著性主张、不恢复“结构优于序列”结论；TCRMatch 因原始 VDJdb 快照无该面板人源 TRB 行而判不适用并如实记录。 |
 | #21 21 行权重 | `15eb5c6` 预先限定 8 个不同哈希的兼容旧 checkpoint 对全部 105 份结构逐一重放：节点/边计数 105/105 一致，但分数仅 0 或 1/105 四位小数匹配——无完整匹配，不从偶然吻合认领原模型；旧表继续撤回。原审查 tar 仍未找到，用评分提交 `6797863` 重建源码包并记录哈希，明确重建包≠原档。 |
 
-第二轮验证：`python -m unittest discover -s tests` 共 307 项全部通过（9 项既有可选 fixture 测试按
-仓库惯例在本地原始数据缺失时跳过；第二轮 21 项 + 取证 7 项无跳过）。
+第二轮验证：`python -m unittest discover -s tests` 共 317 项全部通过（9 项既有可选 fixture 测试按
+仓库惯例在本地原始数据缺失时跳过；第二轮 21 项、取证 7 项、六项阻断 10 项均无跳过）。
 另修复 3 项与第二轮无关的既有测试/入口缺陷：`test_cif_parse_and_identity` 改为当前身份分配路径
 （`annotate_prediction`，审查 #17 后不再按链长/字母猜角色）；`attribute.py` 旧 CLI 拒绝无 release
 指纹的旧 checkpoint 并要求显式 `--reference-json`/`--peptide`（测试改为断言拒绝）；
