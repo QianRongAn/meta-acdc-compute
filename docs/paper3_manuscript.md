@@ -1,186 +1,184 @@
-# Receptor fingerprinting from TCR–pMHC structure: the first verifiable positive result of an audit-reconstructed modeling pipeline
+# What an audit teaches: pre-registered, family-disjoint benchmarking of structure-based TCR representations — a reconstruction case study
 
-**Status**: preprint draft v0.1 (2026-10-21). All numbers derive from committed,
-hash-pinned artifacts (`docs/fingerprint_retrieval_20261021/`). This manuscript
-claims **no binding prediction and no clinical utility**; it reports one
-pre-registered representation-quality benchmark, one honest negative comparison,
-and the audit-driven engineering that made both possible.
+**Status**: preprint draft v0.2 (2026-10-21). All numbers derive from committed,
+hash-pinned artifacts. This manuscript claims **no binding prediction and no
+clinical utility**. Sections marked [TCRen] are pending the external-baseline
+run documented in Sec. 6.2.
 
 ---
 
 ## Abstract
 
-Structural models of TCR–pMHC interaction promise to capture geometric and
-chemical complementarity that sequence-only methods miss, but pipelines in this
-space are fragile: our own previous results were fully withdrawn after external
-review identified 28 audit items and a further 39-item delivery review found
-input-encoding, splitting, QC-gate and receptor-identity defects whose fixes had
-not reached the code that produced the reported numbers. Here we report the
-reconstruction: after byte-level, hash-pinned repair of the pipeline, we
-pre-registered and ran a representation-quality benchmark that requires no
-experimental binding labels and whose labels are verified metadata. On a
-hash-manifested corpus of 331 interface graphs (168 atom-screened native
-structures, 145 crystal and 23 predicted, plus 163 identity-verified predicted
-candidates; 160 receptors, 110 families), an EGNN embedding trained with a
-supervised-contrastive objective retrieves the correct receptor among all other
-structures at **rank-1 accuracy 0.166 vs a per-query chance level of 0.0123
-(13.4×, minimum 7.2× across five family-grouped cross-validation folds; 226
-queries)**, with mean reciprocal rank 0.284 and a same-vs-different-receptor
-pair AUROC of 0.767. Family classification by k-nearest neighbours reaches 0.224
-top-1 accuracy vs 0.071 chance. A domain diagnostic confirms the representations
-do not separate crystal from predicted structures (accuracy 0.496, chance 0.5),
-i.e. the result is not a domain or confidence artifact. We also report the
-equivariant coordinate-update branch diverges numerically under the contrastive
-objective on this corpus — a stability finding documented in a protocol
-amendment. In parallel, an official-weight ERGO-I control on 10,000 measured
-MIRA functional observations scores at chance for the functional endpoint
-(per-peptide macro-AUROC 0.511 vs 0.500 for our SPR-derived baseline), an
-honest negative that bounds what sequence-only inputs carry on this endpoint.
-Together these results establish that the reconstructed pipeline now demonstrably
-encodes receptor identity in its structure representations — a necessary
-prerequisite for any downstream binding or off-target application, which remains
-gated on real experimental labels.
+Structure-based models of TCR–pMHC interaction are increasingly common, yet the
+field's validation practice is under scrutiny: recent structure-based tools
+have themselves reported that structural inputs have "not demonstrated
+significant gains" over sequence methods, and reviews of TCR binding models
+repeatedly identify validation-design biases. Here we present a case study in
+what rigorous validation actually requires, and the price of not doing it. Our
+pipeline's previous quantitative results were fully withdrawn after an
+external audit of 28 items and a second delivery review of 39 items (5 fatal)
+found that input-encoding, splitting, QC-gating and receptor-identity defects
+survived into the code paths that produced the reported numbers — including a
+clinical case where an engineered ImmTAC reagent (MAG-IC3) had been scored and
+reported as the lethal clinical construct (a3a). We report (i) the
+reconstruction: byte-level, hash-pinned repair of the pipeline, with
+identity-verified inputs, atomic screening, provenance receipts and
+family-aware splitting; (ii) a pre-registered representation-quality benchmark
+whose labels are verified structural metadata — receptor identity — on 331
+interface graphs (160 receptors, 110 families) from a hash-manifested corpus.
+An EGNN embedding trained with a supervised-contrastive objective retrieves the
+correct receptor at rank-1 accuracy 0.166 versus a per-query chance level of
+0.0123 (13.4×; minimum 7.2× over five family-grouped cross-validation folds;
+226 queries), with family classification at 3.2× chance, no crystal/predicted
+domain leakage (0.496 vs 0.5 chance), and a same-vs-different-receptor pair
+AUROC of 0.767 — below our pre-registered 0.9 bar, reported as a limitation.
+We also report a numerical stability finding: the equivariant
+coordinate-update branch of the EGNN diverges under the contrastive objective
+on this corpus (bifurcation-edge dynamics), documented in a protocol
+amendment. Two external controls bound the result: official-weight ERGO-I
+performs at chance on 10,000 measured functional observations
+(per-peptide macro-AUROC 0.511 vs 0.500 baseline), and [TCRen — pending]. We
+argue that the primary transferable contributions are not the numbers but the
+protocol elements — pre-registration, family-disjoint splits, per-query chance
+calibration, identity verification against role-annotated references, and
+compulsory negative reporting — which the field should adopt before
+interpreting any structure-derived score.
 
 ## 1. Introduction
 
-### 1.1 Motivation
+### 1.1 The reproducibility problem in TCR–pMHC modeling
 
-Adoptive TCR therapies carry the risk of cross-reactive off-target killing
-(Cameron et al. 2013; Linette et al. 2013; Morgan et al. 2013). Predicting which
-peptide–MHC complexes a given TCR will bind remains open; sequence-based tools
-are the workhorse but operate without explicit interface geometry or chemistry.
-Structure-based discriminators were the motivation of our pipeline (ACDC
-project), but our reported results — graft/decoy discrimination (AUROC 0.933),
-cross-instance ranking stability (0.644), and clinical index scans — were all
-withdrawn after external review found defects in residue encoding, peptide-node
-pooling, batch normalization, split grouping, decoy construction, QC gating and
-clinical receptor identity, and further found that several claimed fixes had not
-reached the code that produced the reported numbers.
+Binding prediction for T cell receptors is dominated by sequence-based
+supervised models (TITAN, NetTCR, ERGO, pMTnet, MixTCRpred and many others).
+Structure-based approaches promise access to interface geometry and chemistry
+(TCRen, STAG, NetTCR-struc, SageTCR, t2pmhc), yet the field's own assessments
+are candid: structure inputs have not yet shown clear gains over sequence
+methods, and published reviews repeatedly identify validation-design biases —
+dataset leakage, optimistic splits, missing negatives, and performance reported
+on protocols that cannot distinguish learned binding rules from learned
+artifacts of data construction.
 
 ### 1.2 This paper
 
-We report the reconstruction and its first verifiable positive result:
+This paper is a case study of that problem, conducted on ourselves. We do not
+present a new architecture (ours is a standard EGNN), and we do not claim
+binding prediction. We report:
 
-1. a **pre-registered representation-quality benchmark** — receptor
-   fingerprinting — whose labels are verified structural metadata, not binding
-   data (Sec. 3–5);
-2. the **engineering that made the benchmark possible**: hash-pinned input
-   manifests, identity verification against role-annotated references, atomic
-   screening, family-grouped splits, and provenance receipts (Sec. 2);
-3. an **honest negative**: an official-weight ERGO-I control at chance on a
-   measured functional endpoint (Sec. 6);
-4. a **stability finding**: divergence of the equivariant coordinate-update
-   branch under the contrastive objective, reported as a protocol amendment
-   (Sec. 4.4).
+1. the **audit**: how 28 + 39 externally identified defects invalidated every
+   quantitative claim of a TCR–pMHC structural pipeline (Sec. 2);
+2. the **reconstruction**: what byte-level repair and identity verification
+   actually require (Sec. 3);
+3. the **benchmark**: a pre-registered, family-disjoint, chance-calibrated
+   representation-quality protocol, run exactly as registered, including its
+   partial failure against our own criteria (Sec. 4–5);
+4. the **controls**: an official-weight published tool at chance on measured
+   functional data, and a second structure-based tool on the same corpus
+   [TCRen — pending] (Sec. 6);
+5. the **recommendations**: which protocol elements the field should adopt
+   (Sec. 7).
 
-No binding or clinical claim is made anywhere in this manuscript; withdrawn
-historical numbers are cited only as history.
+## 2. The audit: 67 findings that invalidated everything
 
-## 2. Audit-driven reconstruction
+### 2.1 Round one (28 items)
 
-### 2.1 What the reviews found
+Label semantics (VDJdb evidence confidence treated as binding labels,
+fabricating 185,117 "negatives"; IEDB endpoints conflated), model-input
+defects (three-letter residue names mapped by first character, collapsing
+ARG/ASN/ASP to A; peptide-node pooling reading an amino-acid identity column
+instead of the peptide flag; batch-wide coordinate normalization making a
+graph's features depend on its batchmates), splitting without complex
+grouping, decoy construction with stale centroids and fixed-axis displacement,
+and clinical reference errors (wrong PMIDs; wrong structure attribution).
 
-The first external audit (28 items) covered label semantics (VDJdb confidence
-used as binding labels, IEDB endpoint conflation), model-input defects (three-
-letter-to-one-letter residue mapping collapsing ARG/ASN/ASP to A, peptide
-pooling reading the wrong feature column, batch-wide coordinate normalization),
-splitting (no complex grouping), decoy construction (stale centroids, fixed-axis
-displacement, unproven non-binding), and clinical reference errors (wrong PMIDs,
-receptor construct confusion). A second, independent delivery review raised 39
-items (5 fatal, 18 severe), including two delivered result tables contradicting
-each other, effect sizes below measurement dispersion (median per-job SD 0.2512
-vs interpreted deltas 0.02–0.06), receptor identity substitution (MAG-IC3 scored
-and labelled as the clinical a3a construct), QC flags bypassed in delivered
-clinical rows, and several "fixed" defects still present in the code paths that
-had produced the reported numbers.
+### 2.2 Round two (39 items; 5 fatal)
 
-### 2.2 What was rebuilt
+An independent delivery review found, among others: two delivered result tables
+contradicting each other for the same jobs with reversed qualitative
+conclusions; interpreted score differences (0.02–0.06) an order of magnitude
+below the scores' own dispersion (median per-job SD 0.2512); a clinical index
+case where the structure of the ImmTAC reagent MAG-IC3 was scored and labelled
+as the clinical a3a construct that caused patient deaths; QC flags bypassed in
+4 of 7 delivered clinical rows; and at least eight "fixed" defects still
+present in the exact code paths that had produced the reported numbers.
 
-All fixes were implemented and verified at the byte level: identity assignment
-now requires explicit role annotations from reference records; decoy
-construction raises on length mismatch or incomplete backbones and translates
-peptides along the peptide-to-groove direction; scoring requires per-model QC,
-release fingerprints and provenance receipts; family-aware splitting and
-family-stratified Fisher pooling are enforced. Five-seed replay of the withdrawn
-run reproduced 938/940 job×seed means to four decimals, and the 347-item pending
-panel was verified byte-identical to its first-commit state (98 exact αβ pairs,
-45 MHC, 11 β2m sequences). These audits establish that the inputs of the current
-benchmark are what they claim to be.
+### 2.3 Why this happens
 
-### 2.3 Data integrity policy carried into the benchmark
+The audit's consistent finding was a mismatch between methodological intent
+(correct, well documented) and engineering delivery (fixes not rerun, reruns
+not delivered, deliveries not reconciled). The same review praised the honesty
+of the self-audit while concluding that no quantitative result survived. This
+is the failure mode our protocol elements (Sec. 4) are designed to prevent.
 
-Every input of the benchmark is hash-pinned; fold assignment was persisted
-before training; results were written verbatim; success criteria were fixed
-before training and are evaluated as-is below.
+## 3. Reconstruction
 
-## 3. Corpus
+- **Identity verification**: chain roles are never inferred from chain letters,
+  lengths, or motifs. Predicted structures are annotated only by exact sequence
+  matching against role-annotated reference records (alpha/beta/mhc/b2m).
+- **Input hygiene**: every input file is hash-pinned into manifests; releases
+  carry fingerprint receipts; scoring requires per-model QC, release and
+  checkpoint hashes; manifests reject duplicates and announce legacy
+  swapped-column files.
+- **Construction screening**: synthetic controls pass the same heavy-atom and
+  van-der-Waals overlap screens as native structures; decoy builders raise on
+  length mismatch, incomplete backbones, or degenerate geometry instead of
+  silently falling back.
+- **Splitting and statistics**: family-aware splits; family-stratified Fisher
+  pooling; bootstrap clustering by receptor, not PDB prefix.
+- **Forensic verification of the reconstruction**: five-seed replay of the
+  withdrawn run reproduces 938/940 job×seed means to four decimals; the
+  347-item pending panel is byte-identical to its first-commit state (98 exact
+  αβ receptor pairs, 45 MHC, 11 β2m sequences). These confirm the repaired
+  pipeline's inputs are what they claim to be.
 
-### 3.1 Verified native inventory
+## 4. The pre-registered benchmark
 
-168 native interface graphs from the atomic-repaired inventory (v7 release):
-145 crystal structures and 23 AF3-predicted re-predictions, each passing the
-heavy-atom completeness screen, the construction screen, and reference-sequence
-identity verification. Confidence (pLDDT) features are masked everywhere so the
-domain of a structure cannot leak through confidence patterns.
+### 4.1 Task design rationale
 
-### 3.2 Identity-verified predicted candidates
+Receptor identity is the one label that is simultaneously (a) consequential —
+any binding model must at minimum distinguish receptors; (b) verifiable — it is
+structural metadata, not experimental binding data; and (c) abundant — 55 of
+160 receptors in our corpus have multiple structures. The benchmark therefore
+asks the minimal question whose answer any structure-based TCR model must get
+right before its scores can be interpreted: **does the representation encode
+who the receptor is?**
 
-From the 188 scored candidate CIFs, 179 chain A/B sequence pairs matched an
-exact role-annotated reference (alpha,beta) pair; after peptide annotation and
-graph construction, 163 entered the corpus, 16 were excluded and recorded.
-Receptor identity is therefore assigned only by exact sequence match to
-references, never by chain letter, length, or motif heuristics.
+### 4.2 Corpus
 
-### 3.3 Composition
+331 interface graphs: 168 atom-screened native structures (145 crystal, 23
+AF3-predicted) from the verified inventory, plus 163 predicted candidates
+admitted only on exact αβ sequence match to role-annotated references (16
+excluded and recorded). 160 receptors; 110 families; peptide lengths 8–13;
+confidence features masked everywhere. No binding labels exist anywhere in the
+corpus.
 
-331 graphs; 160 receptors; 110 families; 55 receptors with ≥2 structures (max
-11); peptide lengths 8–13 (181 nine-mers, 95 ten-mers). Receptors with multiple
-structures are what make retrieval evaluation possible.
+### 4.3 Protocol (registered before training)
 
-## 4. Pre-registered benchmark
+Model: EGNN (6 layers, hidden 128, feature dims 26/16 — the scoring-path
+schema) + 64-dim projection head; supervised-contrastive objective (positives =
+same receptor), temperature 0.1; Adam (3e-4, wd 1e-4); 60 epochs; batch 16.
+Splits: 5-fold CV grouped by receptor family. Tasks: (A) receptor retrieval
+(rank-1, MRR, pair AUROC, per-query chance); (B) family k-NN classification;
+(C) domain diagnostic. Success criteria, fixed in advance: rank-1 ≥ 2× chance;
+AUROC ≥ 0.9; family top-1 ≥ 2× chance; same-seed reproducibility. Failures are
+reported as-is.
 
-The protocol (PLAN.md, plan.json, committed 2026-10-21, before any training)
-specifies:
+### 4.4 Protocol amendment: a stability finding
 
-- **Model**: EGNN (6 layers, hidden 128, node/edge feature dims 26/16 — the same
-  feature schema as the scoring path) + a 64-dim projection head with
-  LayerNorm.
-- **Objective**: supervised contrastive (SupCon) with positives = same receptor
-  identity, temperature 0.1; Adam (lr 3e-4, weight decay 1e-4); 60 epochs;
-  batch 16.
-- **Splits**: 5-fold cross-validation grouped by receptor family (a family never
-  spans train and test).
-- **Task A (primary)**: receptor retrieval — each test graph queries against all
-  other graphs by cosine similarity of embeddings; correct if the nearest
-  neighbour shares the receptor identity. Metrics: rank-1 hit rate, MRR,
-  same-vs-different-receptor pair AUROC; the per-query chance level is computed
-  from the gallery composition.
-- **Task B (secondary)**: family classification by k-NN (k ∈ {1,3,5}).
-- **Task C (diagnostic)**: nearest-centroid domain (crystal/predicted)
-  classification, to detect residual domain/confidence leakage.
-- **Pre-registered success criteria**: (i) retrieval rank-1 ≥ 2× chance;
-  (ii) pair AUROC ≥ 0.9; (iii) family top-1 ≥ 2× chance; (iv) same-seed
-  reproducibility. Failures are reported as-is.
-
-### 4.4 Protocol amendment (stability finding)
-
-During the first complete run, the equivariant variant (coordinate-update branch
-enabled, matching the scoring path) completed fold 0 (rank-1 0.238, AUROC 0.710)
-but diverged deterministically in fold 1 around epoch 13–15 (non-finite loss).
-Isolated replays showed the divergence point is sensitive to CUDA reduction
-noise (same seed: one replay diverged, one completed 20 epochs), i.e. the
-training dynamics sit at a bifurcation edge; the mechanism is a feedback loop
-in which contrastive gradients flow back through the pooled coordinate-norm
-feature into the coordinate-update branch, amplifying inter-atomic distances and
-edge messages. We did not tune around this; we adopted the pipeline's own
-sanctioned invariant variant (coordinate updates disabled, an existing
-first-class mode) for the full benchmark and record the amendment and both
+The equivariant variant (coordinate-update branch on, matching the scoring
+path) completed fold 0 (rank-1 0.238, AUROC 0.710) then diverged
+deterministically in fold 1 (non-finite loss at epoch ~13–15). Isolated
+replays with identical seeds diverged or survived depending on CUDA reduction
+noise — the dynamics sit at a bifurcation edge; the mechanism is contrastive
+gradients flowing back through the pooled coordinate-norm feature into the
+coordinate-update branch, amplifying distances and messages. We did not tune
+around the failure; we adopted the pipeline's sanctioned invariant variant
+(coordinate updates off) for the benchmark and record the amendment and both
 variants' outputs verbatim. The instability of the equivariant branch under
-contrastive training is itself reported as a finding.
+contrastive training is itself a finding.
 
 ## 5. Results
 
-### 5.1 Receptor retrieval (Task A, primary)
+### 5.1 Receptor retrieval (Task A)
 
 | Fold | rank-1 | chance | ratio | MRR | AUROC | queries |
 |---|---:|---:|---:|---:|---:|---:|
@@ -191,85 +189,90 @@ contrastive training is itself reported as a finding.
 | 4 | 0.0476 | 0.0055 | 8.7× | 0.1895 | 0.8569 | 21 |
 | mean | **0.1656** | **0.0123** | **13.4×** | **0.2845** | **0.7666** | 226 |
 
-Across all folds and 226 queries, the embedding retrieves the correct receptor
-at 13.4× the chance level (minimum 7.2× in any fold). Criterion (i) passes.
-Criterion (ii) does not: the pair AUROC is 0.767 (fold range 0.708–0.857),
-below the conservative 0.9 bar — reported as a limitation, not redefined away.
-
 ### 5.2 Family classification (Task B)
 
-k-NN family classification reaches top-1 accuracy 0.224 (chance 0.071, 3.2×);
-k=3 gives 0.246, k=5 0.224. Criterion (iii) passes.
+Top-1 accuracy 0.224 (chance 0.071, 3.2×); k=3: 0.246; k=5: 0.224.
 
 ### 5.3 Domain diagnostic (Task C)
 
-Nearest-centroid crystal-vs-predicted accuracy is 0.496 (chance 0.5): under
-confidence masking, the representations do not separate structure provenance.
-This is a leakage check, and it passes.
+Crystal-vs-predicted nearest-centroid accuracy 0.496 (chance 0.5): no
+detectable domain signature under confidence masking.
 
-### 5.4 Pre-registration verdict
+### 5.4 Verdict against the pre-registered criteria
 
-2 of 3 quantitative criteria met (13.4× retrieval; 3.2× family classification);
-the AUROC criterion (≥0.9) not met (0.767); reproducibility criterion met for
-the invariant variant, with the equivariant divergence recorded as an amendment.
-The benchmark's headline is therefore the retrieval result, reported exactly as
-pre-registered.
+Two of three quantitative criteria met (13.4× retrieval; 3.2× family
+classification); the AUROC criterion (≥0.9) not met (0.767) and reported as a
+limitation rather than redefined; reproducibility met for the invariant
+variant with the equivariant divergence recorded as an amendment. The
+interpretation we defend is narrow: the reconstructed pipeline demonstrably
+encodes receptor identity in structure-derived representations, under a
+family-disjoint protocol with no domain leakage — the necessary, but not
+sufficient, precondition for structure-based binding claims.
 
-## 6. Honest negative control: ERGO-I on measured functional data
+## 6. External controls
 
-As part of the same reconstruction effort, the official ERGO-I model (fixed
-McPAS LSTM checkpoint, git-blob-verified) was run on 10,000 measured MIRA
-functional observations under a pre-registered protocol (input-order controls,
-per-peptide metrics, no threshold search). Per-peptide macro-AUROC is 0.5112
-versus 0.5001 for the SPR-derived baseline; macro-AP 0.1166 versus 0.1197.
-Both are at chance for this endpoint. This bounds what the sequence-only input
-carries on the functional endpoint — it neither supports nor undermines the
-fingerprinting result, and we do not claim a method comparison across tasks.
+### 6.1 ERGO-I on measured functional data (committed, 2026-10-21)
 
-## 7. Discussion
+Official ERGO-I weights (fixed McPAS LSTM checkpoint, git-blob-verified) on
+10,000 measured MIRA functional observations, under a pre-registered protocol
+(input-order controls, per-peptide metrics, no threshold search):
+per-peptide macro-AUROC 0.5112 vs 0.5001 for the SPR-derived baseline;
+macro-AP 0.1166 vs 0.1197. Both are at chance for this endpoint. We do not
+claim a cross-task method comparison; we report the bound on what
+sequence-only inputs carry here.
 
-The reconstruction is now in a state where a pre-registered experiment can
-produce a verifiable positive result: structure-derived representations encode
-receptor identity well beyond chance, in a family-disjoint protocol, without
-domain leakage. This matters for the original research question in two ways.
-First, it demonstrates that the repaired pipeline actually extracts
-structure-content features — the precondition for any structure-vs-sequence
-argument. Second, it provides a representation-quality gate that future binding
-models must pass before their scores can be interpreted.
+### 6.2 TCRen on the verified corpus [pending]
 
-Limitations. Receptor identity is metadata, not binding: success here does not
-imply binding prediction. The corpus is redundant (55 of 160 receptors carry
-the 226 queries; the panel over-represents a few MHC sequences), and the AUROC
-of 0.767 shows same-family receptors remain confusable. The invariant variant
-was adopted after the equivariant branch proved numerically unstable under the
-contrastive objective — the benchmark is of the invariant architecture. No
-experimental binding labels are used anywhere; downstream binding work remains
-gated on real negatives and is outside this manuscript.
+[TCRen — see Sec. 8 reproducibility for the protocol. To be filled when the
+run completes: cognate-vs-candidate ranking per receptor on the verified
+corpus, reported either way.]
+
+## 7. What the field should adopt
+
+The transferable output of this case study is not the 13.4× number — a working
+structure model should be able to identify receptors — but the protocol
+elements whose absence caused our own failures and which we now demonstrate are
+operationally feasible:
+
+1. **Pre-registration with fixed success criteria**, evaluated as-is;
+2. **family-disjoint splitting** (receptor families never span train/test);
+3. **per-query chance calibration** (performance reported against the
+   composition-correct chance level, not against 0.5 or 1/N);
+4. **identity verification against role-annotated references**, never chain
+   letters, lengths or motifs;
+5. **compulsory negative reporting**, including numerical-instability findings
+   and at-chance published baselines;
+6. **hash-pinned delivery** so audits can verify which code produced which
+   number.
 
 ## 8. Reproducibility
 
-All artifacts are committed with hashes: dataset manifest
-(`data/processed/fingerprint_dataset.manifest.json`), fold assignment,
-pre-registration (`docs/fingerprint_retrieval_20261021/plan.json`), protocol
-amendment, per-fold and per-query results (`results.json`), weights and logs
-(`model_run/`). Commands:
+All artifacts committed with hashes: corpus manifest
+(`data/processed/fingerprint_dataset.manifest.json`), pre-registration
+(`docs/fingerprint_retrieval_20261021/plan.json`), protocol amendment, fold
+assignment, per-query results (`results.json`), weights and logs (`model_run/`),
+ERGO protocol and outputs (`docs/six_blockers_20261021/`).
 
 ```bash
+# fingerprint benchmark
 PYTHONPATH=src .venv/bin/python scripts/build_fingerprint_dataset.py \
     --inventory data/releases/20261017-structural-v7-atomic-repair/native_inventory_graphs.pt
 PYTHONPATH=src .venv/bin/python -m meta_acdc.models.train_fingerprint \
     --epochs 60 --batch-size 16 --fixed-coordinates
+# [TCRen comparison: command and outputs to be added]
 ```
 
 ## References (to complete)
 
-- Cameron et al., Sci Transl Med 2013 (PMID 23926201)
-- Linette et al., Blood 2013 (PMID 23999400 — note: corrected to 23926201 in
-  project data; verify before citation)
-- Morgan et al., Cancer Immunol Immunother 2013 (PMID 23377668)
-- Raman et al., Sci Rep 2016 (PMID 26758806; 5BRZ/MAG-IC3 structure)
-- Ma et al., Nat Commun 2025 (TCR4 SPR, DOI 10.1038/s41467-025-56004-8)
-- ERGO-I (Springer & Besser et al.); ZeroBind (Nat Commun 2023,
-  DOI 10.1038/s41467-023-43597-1); external delivery review
-  (`docs/delivery_audit_20261018/external_review.md`); six-blocker audit
-  (`docs/six_blockers_20261021/README.md`).
+- Karnaukhov et al., TCRen, Nat Comput Sci 2024 (DOI 10.1038/s43588-024-00653-0)
+- STAG (IEEE/ACM TCBB 2025); NetTCR-struc (Front Immunol 2025); SageTCR (Brief
+  Bioinform 2025); t2pmhc (bioRxiv 2026)
+- "T-cell receptor binding prediction: a machine learning revolution",
+  ImmunoInformatics 2024 (validation-design critique)
+- ERGO-I (Springer et al.); ZeroBind (Nat Commun 2023, DOI
+  10.1038/s41467-023-43597-1)
+- Cameron et al. (PMID 23926201); Linette et al. (Blood 2013); Morgan et al.
+  (PMID 23377668); Raman et al. 2016 (5BRZ/MAG-IC3, PMID 26758806); Ma et al.
+  Nat Commun 2025 (TCR4 SPR, DOI 10.1038/s41467-025-56004-8)
+- External delivery review (docs/delivery_audit_20261018/external_review.md);
+  six-blocker audit (docs/six_blockers_20261021/README.md)
