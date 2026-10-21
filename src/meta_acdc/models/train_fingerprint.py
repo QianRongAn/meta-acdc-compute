@@ -252,7 +252,7 @@ def main(argv: list[str] | None = None) -> int:
               f"test_families={len(set(families[i] for i in test_idx))}",
               flush=True)
         model = Embedder(26, 16).to(device)
-        opt = torch.optim.Adam(model.parameters(), lr=1e-3)
+        opt = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-4)
         model.train()
         for epoch in range(args.epochs):
             order = train_idx[:]
@@ -264,8 +264,13 @@ def main(argv: list[str] | None = None) -> int:
                     graphs, records, bidx, device, model)
                 embs = model(h, x, ei, ea, bt, pm)
                 loss = supcon_loss(embs, rids, TEMPERATURE)
+                if not torch.isfinite(loss):
+                    raise RuntimeError(
+                        f"fold {fold} epoch {epoch} batch {s}: "
+                        f"non-finite SupCon loss; training diverged")
                 opt.zero_grad()
                 loss.backward()
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 10.0)
                 opt.step()
                 total += float(loss.item())
                 nb += 1
@@ -280,6 +285,10 @@ def main(argv: list[str] | None = None) -> int:
         res["n_train"] = len(train_idx)
         res["n_test"] = len(test_idx)
         fold_results.append(res)
+        partial = args.out_dir / "results_partial.json"
+        partial.write_text(json.dumps(
+            {"task_id": "STRUCT-FINGERPRINT-20261021",
+             "fold_results": fold_results}, indent=2, allow_nan=False) + "\n")
         print(json.dumps({k: v for k, v in res.items() if k in
                           ("fold", "retrieval", "family")}, indent=2))
 
