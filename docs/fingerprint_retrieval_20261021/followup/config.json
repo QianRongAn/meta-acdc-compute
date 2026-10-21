@@ -1,0 +1,27 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "parent_task": "STRUCT-FINGERPRINT-20261021",
+  "n_graphs": 331,
+  "recipe_v2": {
+    "batch_size": 64,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "temperature": 0.07,
+    "emb_dim": 128,
+    "family_neg_weight": 1.0,
+    "lr_base": 0.0003,
+    "lr_min": 3e-06,
+    "wd": 0.0001,
+    "grad_clip": 10.0,
+    "egnn": "6 layers hidden 128, node/edge 26/16, invariant",
+    "head": "385->256->128, no LayerNorm; unit-sphere before loss/eval",
+    "fold_assignment": "v1 family-grouped, seed 20261021"
+  },
+  "seeds": [
+    20261021,
+    1101,
+    4242
+  ],
+  "device": "cuda",
+  "binding_labels": false
+}

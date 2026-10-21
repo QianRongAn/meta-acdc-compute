@@ -1,0 +1,63 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "parent_task": "STRUCT-FINGERPRINT-20261021",
+  "preregistered": "2026-10-21",
+  "training_started_after": true,
+  "dataset": "data/processed/fingerprint_dataset.pt",
+  "dataset_n_graphs": 331,
+  "fold_assignment": "docs/fingerprint_retrieval_20261021/fold_assignment.json (v1, unchanged)",
+  "recipe_v1": {
+    "batch_size": 16,
+    "epochs": 60,
+    "temperature": 0.1,
+    "emb_dim": 64,
+    "head": "Linear(385,128) SiLU Linear(128,64) LayerNorm(64)",
+    "lr": 3e-4,
+    "wd": 1e-4,
+    "family_neg_weight": 0.0
+  },
+  "recipe_v2": {
+    "batch_size": 64,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "lr_base": 3e-4,
+    "lr_min": 3e-6,
+    "schedule": "cosine",
+    "wd": 1e-4,
+    "grad_clip": 10.0,
+    "temperature": 0.07,
+    "emb_dim": 128,
+    "head": "Linear(385,256) SiLU Linear(256,128), no LayerNorm; unit-sphere normalization before loss and evaluation",
+    "family_neg_weight": 1.0,
+    "egnn": "6 layers, hidden 128, node/edge feats 26/16, dropout 0.1, invariant variant (coordinates updates off)",
+    "splits": "family-grouped 5-fold, seed 20261021 (v1 assignment)",
+    "determinism": "cudnn.deterministic=True, cudnn.benchmark=False"
+  },
+  "success_criteria": [
+    "pooled same/diff pair AUROC >= 0.9",
+    "retrieval rank-1 >= 2x chance",
+    "median pairwise cosine over all graphs <= 0.95 (collapse resolved)",
+    "domain diagnostic accuracy <= 0.6",
+    "same-seed determinism on >= 1 fold replay"
+  ],
+  "rashomon": {
+    "seeds": [20261021, 1101, 4242],
+    "instances_per_fold": 3,
+    "seed_20261021_doubles_as_main_result": true,
+    "metrics": [
+      "performance_band",
+      "ranking_stability_spearman",
+      "retrieval_agreement_rank1_topk_jaccard",
+      "pair_flip_rate",
+      "embedding_agreement_cosine",
+      "pooled_auroc"
+    ],
+    "reporting": "descriptive, no pass/fail bar"
+  },
+  "prohibited": [
+    "changing evaluation protocol or threshold-searching to inflate metrics",
+    "using upstream result numbers as evidence of improvement in the verdict",
+    "training on reserved families",
+    "interpreting results as binding prediction"
+  ]
+}
