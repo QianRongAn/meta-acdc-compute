@@ -1,0 +1,84 @@
+{
+  "task_id": "STRUCT-FINGERPRINT-20261021",
+  "task_type": "representation_quality_benchmark",
+  "registered_at": "2026-10-21",
+  "binding_prediction": false,
+  "clinical_risk": false,
+  "restores_withdrawn_results": false,
+  "inputs": {
+    "native_inventory_graphs": {
+      "path": "data/releases/20261017-structural-v7-atomic-repair/native_inventory_graphs.pt",
+      "n_assets": 168,
+      "confidence_masked": true,
+      "atomic_screen_passed": true
+    },
+    "candidate_cifs": {
+      "path": "data/raw/af3_predictions",
+      "pattern": "*_model_0.cif",
+      "n_total": 188,
+      "identity_rule": "exact chain A/B sequence pair match to af3_pending_upload role-header FASTAs (alpha,beta)",
+      "unmatched_excluded": true
+    },
+    "graph_pipeline": "parse_cif(confidence_kind=af3_plddt) -> confidence masked -> annotate_prediction(pending reference) -> build_interface_graph_from_residues (same as v7 inventory)"
+  },
+  "labels": {
+    "receptor_id": "sha256 of exact (alpha,beta) sequence pair",
+    "family_id": "v7 structure_records family when matched; otherwise the exact receptor itself",
+    "labels_are_experimental": false
+  },
+  "splits": {
+    "method": "GroupKFold by family_id",
+    "n_splits": 5,
+    "seed": 20261021,
+    "shuffle": true,
+    "assignment_persisted_before_training": true
+  },
+  "model": {
+    "architecture": "EGNN depth=6 hidden=128 node_dim=26 edge_dim=16 + projection 128->64 LayerNorm",
+    "objective": "supervised contrastive (SupCon), positives = same receptor_id",
+    "temperature": 0.1,
+    "optimizer": "Adam lr=1e-3",
+    "epochs": 60,
+    "batch_size": 16,
+    "device": "cuda if available else cpu",
+    "no_early_stopping_on_test_folds": true
+  },
+  "tasks": {
+    "A_primary_receptor_retrieval": {
+      "query": "each test-fold graph",
+      "gallery": "all other graphs",
+      "correct": "cosine nearest neighbour has same receptor_id",
+      "metrics": ["macro rank-1 hit rate", "MRR", "same-vs-diff pair AUROC"],
+      "chance": "computed per query from gallery receptor composition, averaged"
+    },
+    "B_secondary_family_classification": {
+      "method": "k-NN vote k in {1,3,5}",
+      "metrics": ["macro top-1 accuracy"],
+      "chance": "train-fold family composition"
+    },
+    "C_diagnostic_domain_check": {
+      "method": "nearest-centroid crystal vs predicted",
+      "reported_as": "diagnostic only, no conclusion"
+    }
+  },
+  "success_criteria": {
+    "A_rank1_ge_2x_chance": true,
+    "A_auroc_ge_0.9": true,
+    "B_top1_ge_2x_chance": true,
+    "reproducible_same_seed": true,
+    "any_failure_reported_honestly_as_negative": true
+  },
+  "forbidden": [
+    "tuning thresholds/features/loss to raise metrics",
+    "merging withdrawn historical scores or per-seed tables into this task",
+    "claiming binding prediction",
+    "training on reserved families (assert_reserved_absent)"
+  ],
+  "artifacts_to_persist": [
+    "dataset + label map + input hashes",
+    "fold assignment",
+    "training logs and weights",
+    "per-query predictions",
+    "evaluation JSON"
+  ]
+}
