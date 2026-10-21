@@ -1,0 +1,981 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "seeds": [
+    20261021,
+    1101,
+    4242
+  ],
+  "seed_pairs": [
+    [
+      20261021,
+      1101
+    ],
+    [
+      20261021,
+      4242
+    ],
+    [
+      1101,
+      4242
+    ]
+  ],
+  "fold_results": [
+    {
+      "fold": 0,
+      "n_test": 59,
+      "n_pairs": 19470,
+      "performance_band": {
+        "auroc": {
+          "min": 0.7627489456829437,
+          "max": 0.7891987689812031,
+          "spread": 0.0264498232982594,
+          "per_seed": {
+            "20261021": 0.7627489456829437,
+            "1101": 0.7891987689812031,
+            "4242": 0.7852407099234658
+          }
+        },
+        "rank1": {
+          "min": 0.16666666666666666,
+          "max": 0.21428571428571427,
+          "spread": 0.047619047619047616,
+          "per_seed": {
+            "20261021": 0.16666666666666666,
+            "1101": 0.19047619047619047,
+            "4242": 0.21428571428571427
+          }
+        }
+      },
+      "ranking_stability": {
+        "pooled": {
+          "mean": 0.9563732303089875,
+          "ci95": [
+            0.9526329598417973,
+            0.959782263045091
+          ],
+          "n": 177
+        },
+        "per_pair": {
+          "20261021_1101": {
+            "mean": 0.9422855040489962,
+            "ci95": [
+              0.9354837409548784,
+              0.9486739288488841
+            ],
+            "n": 59
+          },
+          "20261021_4242": {
+            "mean": 0.9520568237915737,
+            "ci95": [
+              0.9460578432748805,
+              0.9576407453278815
+            ],
+            "n": 59
+          },
+          "1101_4242": {
+            "mean": 0.9747773630863924,
+            "ci95": [
+              0.9724585770216322,
+              0.9770128710752555
+            ],
+            "n": 59
+          }
+        }
+      },
+      "retrieval_agreement": {
+        "rank1_agreement": {
+          "mean": 0.9661016949152543,
+          "ci95": [
+            0.9491525423728814,
+            0.9830508474576272
+          ],
+          "n": 3
+        },
+        "rank1_hit_rate": {
+          "20261021": 0.11864406779661017,
+          "1101": 0.13559322033898305,
+          "4242": 0.15254237288135594
+        },
+        "top5_jaccard": {
+          "mean": 0.6448748991121872,
+          "ci95": [
+            0.6127247556272981,
+            0.6754792171105731
+          ],
+          "n": 177
+        },
+        "top10_jaccard": {
+          "mean": 0.6838491075779212,
+          "ci95": [
+            0.6628267213012975,
+            0.7056450141195904
+          ],
+          "n": 177
+        }
+      },
+      "pair_flip_rate": {
+        "mean": 0.08587570621468928,
+        "per_pair": {
+          "20261021_1101": 0.10143810991268619,
+          "20261021_4242": 0.08911145351823319,
+          "1101_4242": 0.06707755521314844
+        },
+        "n": 19470
+      },
+      "pair_flip_rate_same_family": {
+        "mean": 0.021739130434782608,
+        "per_pair": {
+          "20261021_1101": 0.021739130434782608,
+          "20261021_4242": 0.021739130434782608,
+          "1101_4242": 0.021739130434782608
+        },
+        "n": 184
+      },
+      "embedding_agreement": {
+        "same_graph_across_instances": {
+          "mean": -0.06840124934346538,
+          "ci95": [
+            -0.07114348413237655,
+            -0.06583038499499062
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9998650954061707,
+          "ci95": [
+            0.9998604739443661,
+            0.9998694759452419
+          ],
+          "n": 993
+        },
+        "caveat": "raw cross-instance cosine; the contrastive objective is invariant to global rotations of the embedding space, so this metric is dominated by arbitrary per-instance rotation, not semantic disagreement (see aligned supplement below)"
+      },
+      "embedding_agreement_aligned": {
+        "method": "orthogonal Procrustes alignment of each instance's full embedding matrix to the reference instance before comparing; removes the arbitrary global rotation degree of freedom of the contrastive objective",
+        "same_graph_across_instances": {
+          "mean": 0.999997371047641,
+          "ci95": [
+            0.9999971623950884,
+            0.9999975708746266
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9998650954061707,
+          "ci95": [
+            0.9998605056556203,
+            0.9998694640532443
+          ],
+          "n": 993
+        },
+        "pooled_auroc": 0.7803483779131919
+      },
+      "pooled": {
+        "auroc": 0.7803237439141617,
+        "rank1": 0.16666666666666666
+      }
+    },
+    {
+      "fold": 1,
+      "n_test": 86,
+      "n_pairs": 28380,
+      "performance_band": {
+        "auroc": {
+          "min": 0.7734075012833675,
+          "max": 0.8115809484086243,
+          "spread": 0.03817344712525672,
+          "per_seed": {
+            "20261021": 0.8115809484086243,
+            "1101": 0.7734075012833675,
+            "4242": 0.7849568467659137
+          }
+        },
+        "rank1": {
+          "min": 0.13333333333333333,
+          "max": 0.15,
+          "spread": 0.016666666666666663,
+          "per_seed": {
+            "20261021": 0.15,
+            "1101": 0.13333333333333333,
+            "4242": 0.13333333333333333
+          }
+        }
+      },
+      "ranking_stability": {
+        "pooled": {
+          "mean": 0.9731517558797373,
+          "ci95": [
+            0.9707226005605056,
+            0.9755000807090667
+          ],
+          "n": 258
+        },
+        "per_pair": {
+          "20261021_1101": {
+            "mean": 0.9648252615151877,
+            "ci95": [
+              0.9596641107125204,
+              0.9697113422978623
+            ],
+            "n": 86
+          },
+          "20261021_4242": {
+            "mean": 0.9848574605624286,
+            "ci95": [
+              0.9822695669885815,
+              0.9872647958071066
+            ],
+            "n": 86
+          },
+          "1101_4242": {
+            "mean": 0.9697725455615956,
+            "ci95": [
+              0.9661622058156227,
+              0.9731610681481611
+            ],
+            "n": 86
+          }
+        }
+      },
+      "retrieval_agreement": {
+        "rank1_agreement": {
+          "mean": 0.9612403100775193,
+          "ci95": [
+            0.9418604651162791,
+            0.9883720930232558
+          ],
+          "n": 3
+        },
+        "rank1_hit_rate": {
+          "20261021": 0.10465116279069768,
+          "1101": 0.09302325581395349,
+          "4242": 0.09302325581395349
+        },
+        "top5_jaccard": {
+          "mean": 0.5353605266395964,
+          "ci95": [
+            0.5064403377630122,
+            0.5657857296665437
+          ],
+          "n": 258
+        },
+        "top10_jaccard": {
+          "mean": 0.5451095175787378,
+          "ci95": [
+            0.5236196297242809,
+            0.565642568848793
+          ],
+          "n": 258
+        }
+      },
+      "pair_flip_rate": {
+        "mean": 0.08047921071176885,
+        "per_pair": {
+          "20261021_1101": 0.09400986610288936,
+          "20261021_4242": 0.07899929527836505,
+          "1101_4242": 0.06842847075405215
+        },
+        "n": 28380
+      },
+      "pair_flip_rate_same_family": {
+        "mean": 0.11074918566775245,
+        "per_pair": {
+          "20261021_1101": 0.14332247557003258,
+          "20261021_4242": 0.07166123778501629,
+          "1101_4242": 0.11726384364820847
+        },
+        "n": 614
+      },
+      "embedding_agreement": {
+        "same_graph_across_instances": {
+          "mean": -0.012835978007810493,
+          "ci95": [
+            -0.018868754242108654,
+            -0.0064092001993478935
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9210066596846584,
+          "ci95": [
+            0.9156488085488025,
+            0.9264053980661063
+          ],
+          "n": 993
+        },
+        "caveat": "raw cross-instance cosine; the contrastive objective is invariant to global rotations of the embedding space, so this metric is dominated by arbitrary per-instance rotation, not semantic disagreement (see aligned supplement below)"
+      },
+      "embedding_agreement_aligned": {
+        "method": "orthogonal Procrustes alignment of each instance's full embedding matrix to the reference instance before comparing; removes the arbitrary global rotation degree of freedom of the contrastive objective",
+        "same_graph_across_instances": {
+          "mean": 0.9696919356567302,
+          "ci95": [
+            0.9660479357391251,
+            0.9732447342864761
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9210066596846583,
+          "ci95": [
+            0.9154019619756177,
+            0.926473804712365
+          ],
+          "n": 993
+        },
+        "pooled_auroc": 0.797431619743407
+      },
+      "pooled": {
+        "auroc": 0.7974309515324305,
+        "rank1": 0.15
+      }
+    },
+    {
+      "fold": 2,
+      "n_test": 97,
+      "n_pairs": 32010,
+      "performance_band": {
+        "auroc": {
+          "min": 0.7895633403693312,
+          "max": 0.8170085248338975,
+          "spread": 0.02744518446456634,
+          "per_seed": {
+            "20261021": 0.7895633403693312,
+            "1101": 0.793280199490019,
+            "4242": 0.8170085248338975
+          }
+        },
+        "rank1": {
+          "min": 0.24050632911392406,
+          "max": 0.25316455696202533,
+          "spread": 0.012658227848101278,
+          "per_seed": {
+            "20261021": 0.24050632911392406,
+            "1101": 0.25316455696202533,
+            "4242": 0.24050632911392406
+          }
+        }
+      },
+      "ranking_stability": {
+        "pooled": {
+          "mean": 0.9330939316617665,
+          "ci95": [
+            0.9272368241113692,
+            0.9387201116321693
+          ],
+          "n": 291
+        },
+        "per_pair": {
+          "20261021_1101": {
+            "mean": 0.8949949291450284,
+            "ci95": [
+              0.8830347625809838,
+              0.9044749450650388
+            ],
+            "n": 97
+          },
+          "20261021_4242": {
+            "mean": 0.9702012706506824,
+            "ci95": [
+              0.9666361158251671,
+              0.97369921220776
+            ],
+            "n": 97
+          },
+          "1101_4242": {
+            "mean": 0.9340855951895884,
+            "ci95": [
+              0.9263659312681359,
+              0.9408604502517036
+            ],
+            "n": 97
+          }
+        }
+      },
+      "retrieval_agreement": {
+        "rank1_agreement": {
+          "mean": 0.9381443298969071,
+          "ci95": [
+            0.9072164948453608,
+            0.9587628865979382
+          ],
+          "n": 3
+        },
+        "rank1_hit_rate": {
+          "20261021": 0.1958762886597938,
+          "1101": 0.20618556701030927,
+          "4242": 0.1958762886597938
+        },
+        "top5_jaccard": {
+          "mean": 0.4271941308023782,
+          "ci95": [
+            0.40219788087056124,
+            0.45175537282496037
+          ],
+          "n": 291
+        },
+        "top10_jaccard": {
+          "mean": 0.47147918941829126,
+          "ci95": [
+            0.44973721604554484,
+            0.4933352693873424
+          ],
+          "n": 291
+        }
+      },
+      "pair_flip_rate": {
+        "mean": 0.10092679371029888,
+        "per_pair": {
+          "20261021_1101": 0.12989690721649486,
+          "20261021_4242": 0.07453920649796938,
+          "1101_4242": 0.09834426741643236
+        },
+        "n": 32010
+      },
+      "pair_flip_rate_same_family": {
+        "mean": 0.14173228346456693,
+        "per_pair": {
+          "20261021_1101": 0.1837270341207349,
+          "20261021_4242": 0.13123359580052493,
+          "1101_4242": 0.11023622047244094
+        },
+        "n": 762
+      },
+      "embedding_agreement": {
+        "same_graph_across_instances": {
+          "mean": 0.010697965325681928,
+          "ci95": [
+            0.004861984017687335,
+            0.016453267761026128
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9870186632253111,
+          "ci95": [
+            0.9858962960999832,
+            0.988055520424043
+          ],
+          "n": 993
+        },
+        "caveat": "raw cross-instance cosine; the contrastive objective is invariant to global rotations of the embedding space, so this metric is dominated by arbitrary per-instance rotation, not semantic disagreement (see aligned supplement below)"
+      },
+      "embedding_agreement_aligned": {
+        "method": "orthogonal Procrustes alignment of each instance's full embedding matrix to the reference instance before comparing; removes the arbitrary global rotation degree of freedom of the contrastive objective",
+        "same_graph_across_instances": {
+          "mean": 0.9965578880272808,
+          "ci95": [
+            0.9959869475003326,
+            0.9970705893287451
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9870186632253111,
+          "ci95": [
+            0.985986824381306,
+            0.9879987884327025
+          ],
+          "n": 993
+        },
+        "pooled_auroc": 0.8031874238442901
+      },
+      "pooled": {
+        "auroc": 0.8031857301011528,
+        "rank1": 0.22784810126582278
+      }
+    },
+    {
+      "fold": 3,
+      "n_test": 45,
+      "n_pairs": 14850,
+      "performance_band": {
+        "auroc": {
+          "min": 0.7292713647959184,
+          "max": 0.7814636479591837,
+          "spread": 0.052192283163265296,
+          "per_seed": {
+            "20261021": 0.7292713647959184,
+            "1101": 0.7814636479591837,
+            "4242": 0.7786989795918368
+          }
+        },
+        "rank1": {
+          "min": 0.041666666666666664,
+          "max": 0.20833333333333334,
+          "spread": 0.16666666666666669,
+          "per_seed": {
+            "20261021": 0.08333333333333333,
+            "1101": 0.20833333333333334,
+            "4242": 0.041666666666666664
+          }
+        }
+      },
+      "ranking_stability": {
+        "pooled": {
+          "mean": 0.9200993975768893,
+          "ci95": [
+            0.9092391450854308,
+            0.9306412377767229
+          ],
+          "n": 135
+        },
+        "per_pair": {
+          "20261021_1101": {
+            "mean": 0.8631350753544192,
+            "ci95": [
+              0.8464752333633276,
+              0.8786684689437095
+            ],
+            "n": 45
+          },
+          "20261021_4242": {
+            "mean": 0.9177670414240903,
+            "ci95": [
+              0.9057245712537711,
+              0.9294324896147645
+            ],
+            "n": 45
+          },
+          "1101_4242": {
+            "mean": 0.9793960759521586,
+            "ci95": [
+              0.9767526668408828,
+              0.9819392611473254
+            ],
+            "n": 45
+          }
+        }
+      },
+      "retrieval_agreement": {
+        "rank1_agreement": {
+          "mean": 0.9259259259259259,
+          "ci95": [
+            0.9111111111111111,
+            0.9333333333333332
+          ],
+          "n": 3
+        },
+        "rank1_hit_rate": {
+          "20261021": 0.044444444444444446,
+          "1101": 0.1111111111111111,
+          "4242": 0.022222222222222223
+        },
+        "top5_jaccard": {
+          "mean": 0.48930041152263365,
+          "ci95": [
+            0.4505283656672545,
+            0.5303711052322162
+          ],
+          "n": 135
+        },
+        "top10_jaccard": {
+          "mean": 0.49729424533346106,
+          "ci95": [
+            0.4684268445788053,
+            0.5258083945829044
+          ],
+          "n": 135
+        }
+      },
+      "pair_flip_rate": {
+        "mean": 0.11560044893378228,
+        "per_pair": {
+          "20261021_1101": 0.16208754208754209,
+          "20261021_4242": 0.1222895622895623,
+          "1101_4242": 0.062424242424242424
+        },
+        "n": 14850
+      },
+      "pair_flip_rate_same_family": {
+        "mean": 0.14925373134328357,
+        "per_pair": {
+          "20261021_1101": 0.208955223880597,
+          "20261021_4242": 0.14925373134328357,
+          "1101_4242": 0.08955223880597014
+        },
+        "n": 134
+      },
+      "embedding_agreement": {
+        "same_graph_across_instances": {
+          "mean": 0.012819835591746646,
+          "ci95": [
+            0.00801309420598081,
+            0.017494836865191526
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9988513791657258,
+          "ci95": [
+            0.9987769004247099,
+            0.9989231617181388
+          ],
+          "n": 993
+        },
+        "caveat": "raw cross-instance cosine; the contrastive objective is invariant to global rotations of the embedding space, so this metric is dominated by arbitrary per-instance rotation, not semantic disagreement (see aligned supplement below)"
+      },
+      "embedding_agreement_aligned": {
+        "method": "orthogonal Procrustes alignment of each instance's full embedding matrix to the reference instance before comparing; removes the arbitrary global rotation degree of freedom of the contrastive objective",
+        "same_graph_across_instances": {
+          "mean": 0.9998204093264106,
+          "ci95": [
+            0.9997972372342636,
+            0.9998427159370343
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.9988513791657258,
+          "ci95": [
+            0.9987783407514533,
+            0.9989209443789754
+          ],
+          "n": 993
+        },
+        "pooled_auroc": 0.7808970886932972
+      },
+      "pooled": {
+        "auroc": 0.7808953960731212,
+        "rank1": 0.08333333333333333
+      }
+    },
+    {
+      "fold": 4,
+      "n_test": 44,
+      "n_pairs": 14520,
+      "performance_band": {
+        "auroc": {
+          "min": 0.8510324709044812,
+          "max": 0.8787381250572747,
+          "spread": 0.02770565415279347,
+          "per_seed": {
+            "20261021": 0.8787381250572747,
+            "1101": 0.8671075541436295,
+            "4242": 0.8510324709044812
+          }
+        },
+        "rank1": {
+          "min": 0.19047619047619047,
+          "max": 0.19047619047619047,
+          "spread": 0.0,
+          "per_seed": {
+            "20261021": 0.19047619047619047,
+            "1101": 0.19047619047619047,
+            "4242": 0.19047619047619047
+          }
+        }
+      },
+      "ranking_stability": {
+        "pooled": {
+          "mean": 0.9491695830060508,
+          "ci95": [
+            0.9406223425023316,
+            0.9574534800508807
+          ],
+          "n": 132
+        },
+        "per_pair": {
+          "20261021_1101": {
+            "mean": 0.9316318828388571,
+            "ci95": [
+              0.918489881785077,
+              0.9431211346159972
+            ],
+            "n": 44
+          },
+          "20261021_4242": {
+            "mean": 0.9261065412247906,
+            "ci95": [
+              0.9077495666622118,
+              0.9403056311600031
+            ],
+            "n": 44
+          },
+          "1101_4242": {
+            "mean": 0.9897703249545047,
+            "ci95": [
+              0.9878212332994694,
+              0.9917182109879598
+            ],
+            "n": 44
+          }
+        }
+      },
+      "retrieval_agreement": {
+        "rank1_agreement": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n": 3
+        },
+        "rank1_hit_rate": {
+          "20261021": 0.09090909090909091,
+          "1101": 0.09090909090909091,
+          "4242": 0.09090909090909091
+        },
+        "top5_jaccard": {
+          "mean": 0.5847162097162096,
+          "ci95": [
+            0.5411518458393457,
+            0.6254561988936989
+          ],
+          "n": 132
+        },
+        "top10_jaccard": {
+          "mean": 0.6071597371731063,
+          "ci95": [
+            0.577650059944512,
+            0.6355355660753387
+          ],
+          "n": 132
+        }
+      },
+      "pair_flip_rate": {
+        "mean": 0.07690541781450873,
+        "per_pair": {
+          "20261021_1101": 0.09352617079889808,
+          "20261021_4242": 0.09669421487603305,
+          "1101_4242": 0.04049586776859504
+        },
+        "n": 14520
+      },
+      "pair_flip_rate_same_family": {
+        "mean": 0.13333333333333333,
+        "per_pair": {
+          "20261021_1101": 0.2,
+          "20261021_4242": 0.15,
+          "1101_4242": 0.05
+        },
+        "n": 80
+      },
+      "embedding_agreement": {
+        "same_graph_across_instances": {
+          "mean": 0.006617128296629012,
+          "ci95": [
+            0.005470513207536061,
+            0.0077693651750667635
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.992952776794808,
+          "ci95": [
+            0.9924337860754143,
+            0.9934544689410891
+          ],
+          "n": 993
+        },
+        "caveat": "raw cross-instance cosine; the contrastive objective is invariant to global rotations of the embedding space, so this metric is dominated by arbitrary per-instance rotation, not semantic disagreement (see aligned supplement below)"
+      },
+      "embedding_agreement_aligned": {
+        "method": "orthogonal Procrustes alignment of each instance's full embedding matrix to the reference instance before comparing; removes the arbitrary global rotation degree of freedom of the contrastive objective",
+        "same_graph_across_instances": {
+          "mean": 0.9983069706099489,
+          "ci95": [
+            0.9980900878859956,
+            0.9985194913838719
+          ],
+          "n": 993
+        },
+        "cross_graph_within_instance": {
+          "mean": 0.992952776794808,
+          "ci95": [
+            0.9924332857473707,
+            0.9934285555856752
+          ],
+          "n": 993
+        },
+        "pooled_auroc": 0.8623808866178705
+      },
+      "pooled": {
+        "auroc": 0.8623845208934503,
+        "rank1": 0.19047619047619047
+      }
+    }
+  ],
+  "pooled": {
+    "auroc_band_spread": 0.03439327844082825,
+    "auroc_band_min": 0.7812047246072085,
+    "auroc_band_max": 0.8155980030480366,
+    "rank1_band_spread": 0.04872212176009645,
+    "ranking_stability_rho": 0.9463775796866862,
+    "rank1_agreement": 0.9582824521631214,
+    "top5_jaccard": 0.5362892355586011,
+    "top10_jaccard": 0.5609783594163036,
+    "pair_flip_rate": 0.0919575154770096,
+    "pair_flip_rate_same_family": 0.11136153284874377,
+    "embedding_agreement_same_graph": -0.010220459627443656,
+    "embedding_agreement_baseline": 0.9799389148553347,
+    "embedding_agreement_aligned_same_graph": 0.9928749149336022,
+    "embedding_agreement_aligned_baseline": 0.9799389148553347,
+    "pooled_aligned_auroc": 0.8048490793624113,
+    "pooled_auroc": 0.8048440685028633,
+    "pooled_rank1": 0.16366485834840266
+  },
+  "main_results": {
+    "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+    "parent_task": "STRUCT-FINGERPRINT-20261021",
+    "n_graphs": 331,
+    "recipe_v2": {
+      "batch_size": 64,
+      "epochs": 120,
+      "warmup_epochs": 5,
+      "temperature": 0.07,
+      "emb_dim": 128,
+      "family_neg_weight": 1.0,
+      "lr_base": 0.0003,
+      "lr_min": 3e-06,
+      "wd": 0.0001,
+      "grad_clip": 10.0,
+      "egnn": "6 layers hidden 128, node/edge 26/16, invariant",
+      "head": "385->256->128, no LayerNorm; unit-sphere before loss/eval",
+      "fold_assignment": "v1 family-grouped, seed 20261021"
+    },
+    "seeds": [
+      20261021,
+      1101,
+      4242
+    ],
+    "device": "cuda",
+    "binding_labels": false,
+    "fold_results": [
+      {
+        "retrieval": {
+          "rank1": 0.16666666666666666,
+          "mrr": 0.30565043836046024,
+          "chance_rank1": 0.010533910533910534,
+          "n_queries_with_same_receptor_in_gallery": 42,
+          "auroc": 0.7627489456829437,
+          "n_pairs": 13860
+        },
+        "family": {
+          "1": 0.23728813559322035,
+          "3": 0.23728813559322035,
+          "5": 0.2711864406779661,
+          "chance_top1": 0.06985294117647059
+        },
+        "domain": {
+          "accuracy": 0.4576271186440678,
+          "n": 59
+        },
+        "fold": 0,
+        "seed": 20261021,
+        "n_train": 272,
+        "n_test": 59,
+        "median_pairwise_cosine": 0.9999015927314758
+      },
+      {
+        "retrieval": {
+          "rank1": 0.15,
+          "mrr": 0.2709981286789028,
+          "chance_rank1": 0.016161616161616165,
+          "n_queries_with_same_receptor_in_gallery": 60,
+          "auroc": 0.8115809484086243,
+          "n_pairs": 19800
+        },
+        "family": {
+          "1": 0.1744186046511628,
+          "3": 0.1511627906976744,
+          "5": 0.1511627906976744,
+          "chance_top1": 0.07755102040816327
+        },
+        "domain": {
+          "accuracy": 0.5697674418604651,
+          "n": 86
+        },
+        "fold": 1,
+        "seed": 20261021,
+        "n_train": 245,
+        "n_test": 86,
+        "median_pairwise_cosine": 0.9484657049179077
+      },
+      {
+        "retrieval": {
+          "rank1": 0.24050632911392406,
+          "mrr": 0.3647415181978702,
+          "chance_rank1": 0.019409282700421946,
+          "n_queries_with_same_receptor_in_gallery": 79,
+          "auroc": 0.7895633403693312,
+          "n_pairs": 26070
+        },
+        "family": {
+          "1": 0.28865979381443296,
+          "3": 0.29896907216494845,
+          "5": 0.27835051546391754,
+          "chance_top1": 0.07264957264957266
+        },
+        "domain": {
+          "accuracy": 0.25773195876288657,
+          "n": 97
+        },
+        "fold": 2,
+        "seed": 20261021,
+        "n_train": 234,
+        "n_test": 97,
+        "median_pairwise_cosine": 0.9919530749320984
+      },
+      {
+        "retrieval": {
+          "rank1": 0.08333333333333333,
+          "mrr": 0.19479485010864295,
+          "chance_rank1": 0.0101010101010101,
+          "n_queries_with_same_receptor_in_gallery": 24,
+          "auroc": 0.7292713647959184,
+          "n_pairs": 7920
+        },
+        "family": {
+          "1": 0.06666666666666667,
+          "3": 0.044444444444444446,
+          "5": 0.13333333333333333,
+          "chance_top1": 0.06643356643356643
+        },
+        "domain": {
+          "accuracy": 0.4222222222222222,
+          "n": 45
+        },
+        "fold": 3,
+        "seed": 20261021,
+        "n_train": 286,
+        "n_test": 45,
+        "median_pairwise_cosine": 0.9992859363555908
+      },
+      {
+        "retrieval": {
+          "rank1": 0.19047619047619047,
+          "mrr": 0.26715666462906335,
+          "chance_rank1": 0.005483405483405483,
+          "n_queries_with_same_receptor_in_gallery": 21,
+          "auroc": 0.8787381250572747,
+          "n_pairs": 6930
+        },
+        "family": {
+          "1": 0.2727272727272727,
+          "3": 0.25,
+          "5": 0.20454545454545456,
+          "chance_top1": 0.06620209059233449
+        },
+        "domain": {
+          "accuracy": 0.4090909090909091,
+          "n": 44
+        },
+        "fold": 4,
+        "seed": 20261021,
+        "n_train": 287,
+        "n_test": 44,
+        "median_pairwise_cosine": 0.9950644373893738
+      }
+    ],
+    "means": {
+      "retrieval_rank1": 0.1661965039180229,
+      "retrieval_mrr": 0.28066831999498787,
+      "retrieval_chance_rank1": 0.012337844996072846,
+      "retrieval_auroc": 0.7943805448628184,
+      "family_top1_k1": 0.2079520946905511,
+      "domain_accuracy": 0.4232879301161102,
+      "median_pairwise_cosine": 0.9869341492652893
+    }
+  }
+}

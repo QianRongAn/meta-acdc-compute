@@ -165,6 +165,50 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
     emb_agree = {
         "same_graph_across_instances": bootstrap_ci(np.array(agree_graph)),
         "cross_graph_within_instance": bootstrap_ci(np.array(baseline)),
+        "caveat": ("raw cross-instance cosine; the contrastive objective is "
+                   "invariant to global rotations of the embedding space, so "
+                   "this metric is dominated by arbitrary per-instance "
+                   "rotation, not semantic disagreement (see aligned "
+                   "supplement below)"),
+    }
+
+    # --- 5b. supplement: Procrustes-aligned cross-instance agreement ---------
+    # Align each instance's embedding matrix to the reference instance by the
+    # orthogonal Procrustes rotation; then recompute same-graph agreement and
+    # instance-pooled discrimination. Documented as a supplement to the
+    # pre-registered raw metric (which remains reported as-is above).
+    ref = embs[SEEDS[0]]
+    aligned = {SEEDS[0]: ref}
+    for s in SEEDS[1:]:
+        u, _, vt = np.linalg.svd(embs[s].T @ ref, full_matrices=False)
+        rot = u @ vt
+        aligned[s] = embs[s] @ rot
+    agree_aligned, baseline_aligned = [], []
+    for i in range(n):
+        for (a, b) in SEED_PAIRS:
+            agree_aligned.append(float(aligned[a][i] @ aligned[b][i]))
+            others = aligned[a][[j for j in range(n) if j != i]]
+            baseline_aligned.append(
+                float((aligned[a][i][None, :] @ others.T).mean()))
+    S_aligned = {s: aligned[s] @ aligned[s].T for s in SEEDS}
+    pair_scores_al, pair_labels_al = [], []
+    for q, j in pair_population:
+        pair_scores_al.append(float(np.mean([S_aligned[s][q, j]
+                                             for s in SEEDS])))
+        pair_labels_al.append(1.0 if records[j]["receptor_id"]
+                              == records[q]["receptor_id"] else 0.0)
+    pooled_aligned_auroc = auroc(np.array(pair_scores_al),
+                                 np.array(pair_labels_al))
+    aligned_supplement = {
+        "method": ("orthogonal Procrustes alignment of each instance's full "
+                   "embedding matrix to the reference instance before "
+                   "comparing; removes the arbitrary global rotation degree "
+                   "of freedom of the contrastive objective"),
+        "same_graph_across_instances": bootstrap_ci(
+            np.array(agree_aligned)),
+        "cross_graph_within_instance": bootstrap_ci(
+            np.array(baseline_aligned)),
+        "pooled_auroc": float(pooled_aligned_auroc),
     }
 
     # --- 6. pooled similarities (instance-mean) -----------------------------
@@ -197,6 +241,7 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
         "pair_flip_rate": flips_all,
         "pair_flip_rate_same_family": flips_samefam,
         "embedding_agreement": emb_agree,
+        "embedding_agreement_aligned": aligned_supplement,
         "pooled": pooled,
     }
 
@@ -229,6 +274,12 @@ def pool_folds(fold_results: list[dict]) -> dict:
             ["embedding_agreement", "same_graph_across_instances"]),
         "embedding_agreement_baseline": gather(
             ["embedding_agreement", "cross_graph_within_instance"]),
+        "embedding_agreement_aligned_same_graph": gather(
+            ["embedding_agreement_aligned", "same_graph_across_instances"]),
+        "embedding_agreement_aligned_baseline": gather(
+            ["embedding_agreement_aligned", "cross_graph_within_instance"]),
+        "pooled_aligned_auroc": gather(
+            ["embedding_agreement_aligned", "pooled_auroc"]),
         "pooled_auroc": gather(["pooled", "auroc"]),
         "pooled_rank1": gather(["pooled", "rank1"]),
     }
@@ -320,6 +371,24 @@ def markdown(fold_results: list[dict], pooled: dict,
     for k, v in pooled.items():
         lines.append(f"| {k} | {v:.4f} |")
     lines.append("")
+    lines.append("## 补充（协议修订注记：嵌入一致率的全局旋转自由度）")
+    lines.append("")
+    lines.append("预注册的\"嵌入一致率\"按跨实例原始余弦计算。对比学习目标对嵌入空间的"
+                 "**全局正交旋转不变**：不同实例收敛到互异旋转的等价空间，原始余弦因此"
+                 "被旋转自由度支配，不作语义解读（实测原始同图余弦 ≈ 0.00，见上表）。"
+                 "本注记补充对齐口径：各实例嵌入矩阵先经正交 Procrustes 对齐到参考实例"
+                 "（无监督、不使用标签），再重算同图一致率与池化 AUROC。预注册的原始"
+                 "指标照旧保留并报告，不因补充口径改动任何判定。")
+    lines.append("")
+    lines.append("| 折 | 对齐同图余弦 | 对齐跨图基线 | 对齐池化 AUROC |")
+    lines.append("|---|---:|---:|---:|")
+    for fr in fold_results:
+        al = fr["embedding_agreement_aligned"]
+        lines.append(
+            f"| {fr['fold']} | {al['same_graph_across_instances']['mean']:.3f} | "
+            f"{al['cross_graph_within_instance']['mean']:.3f} | "
+            f"{al['pooled_auroc']:.3f} |")
+    lines.append("")
     lines.append("## 预注册标准核对")
     lines.append("")
     m = main["means"]
@@ -337,10 +406,11 @@ def markdown(fold_results: list[dict], pooled: dict,
     ]
     for name, ok, value in crit:
         lines.append(f"- [{'x' if ok else ' '}] {name}（实测 {value}）")
-    lines.append("- [ ] 同 seed 确定性（另跑验证，结果见 README）")
+    lines.append("- [ ] 同 seed 确定性（scripts/check_replay.py 外部验证，结果见 "
+                 "followup/STATUS.md 与 replay/）")
     lines.append("")
     lines.append("以上判定按训练前固定的标准原样给出，不据结果调整。")
-    out_path.write_text("".join(lines))
+    out_path.write_text("\n".join(lines) + "\n")
 
 
 def main(argv: list[str] | None = None) -> int:

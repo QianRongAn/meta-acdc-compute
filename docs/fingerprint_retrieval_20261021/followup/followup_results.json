@@ -1,0 +1,163 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "parent_task": "STRUCT-FINGERPRINT-20261021",
+  "n_graphs": 331,
+  "recipe_v2": {
+    "batch_size": 64,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "temperature": 0.07,
+    "emb_dim": 128,
+    "family_neg_weight": 1.0,
+    "lr_base": 0.0003,
+    "lr_min": 3e-06,
+    "wd": 0.0001,
+    "grad_clip": 10.0,
+    "egnn": "6 layers hidden 128, node/edge 26/16, invariant",
+    "head": "385->256->128, no LayerNorm; unit-sphere before loss/eval",
+    "fold_assignment": "v1 family-grouped, seed 20261021"
+  },
+  "seeds": [
+    20261021,
+    1101,
+    4242
+  ],
+  "device": "cuda",
+  "binding_labels": false,
+  "fold_results": [
+    {
+      "retrieval": {
+        "rank1": 0.16666666666666666,
+        "mrr": 0.30565043836046024,
+        "chance_rank1": 0.010533910533910534,
+        "n_queries_with_same_receptor_in_gallery": 42,
+        "auroc": 0.7627489456829437,
+        "n_pairs": 13860
+      },
+      "family": {
+        "1": 0.23728813559322035,
+        "3": 0.23728813559322035,
+        "5": 0.2711864406779661,
+        "chance_top1": 0.06985294117647059
+      },
+      "domain": {
+        "accuracy": 0.4576271186440678,
+        "n": 59
+      },
+      "fold": 0,
+      "seed": 20261021,
+      "n_train": 272,
+      "n_test": 59,
+      "median_pairwise_cosine": 0.9999015927314758
+    },
+    {
+      "retrieval": {
+        "rank1": 0.15,
+        "mrr": 0.2709981286789028,
+        "chance_rank1": 0.016161616161616165,
+        "n_queries_with_same_receptor_in_gallery": 60,
+        "auroc": 0.8115809484086243,
+        "n_pairs": 19800
+      },
+      "family": {
+        "1": 0.1744186046511628,
+        "3": 0.1511627906976744,
+        "5": 0.1511627906976744,
+        "chance_top1": 0.07755102040816327
+      },
+      "domain": {
+        "accuracy": 0.5697674418604651,
+        "n": 86
+      },
+      "fold": 1,
+      "seed": 20261021,
+      "n_train": 245,
+      "n_test": 86,
+      "median_pairwise_cosine": 0.9484657049179077
+    },
+    {
+      "retrieval": {
+        "rank1": 0.24050632911392406,
+        "mrr": 0.3647415181978702,
+        "chance_rank1": 0.019409282700421946,
+        "n_queries_with_same_receptor_in_gallery": 79,
+        "auroc": 0.7895633403693312,
+        "n_pairs": 26070
+      },
+      "family": {
+        "1": 0.28865979381443296,
+        "3": 0.29896907216494845,
+        "5": 0.27835051546391754,
+        "chance_top1": 0.07264957264957266
+      },
+      "domain": {
+        "accuracy": 0.25773195876288657,
+        "n": 97
+      },
+      "fold": 2,
+      "seed": 20261021,
+      "n_train": 234,
+      "n_test": 97,
+      "median_pairwise_cosine": 0.9919530749320984
+    },
+    {
+      "retrieval": {
+        "rank1": 0.08333333333333333,
+        "mrr": 0.19479485010864295,
+        "chance_rank1": 0.0101010101010101,
+        "n_queries_with_same_receptor_in_gallery": 24,
+        "auroc": 0.7292713647959184,
+        "n_pairs": 7920
+      },
+      "family": {
+        "1": 0.06666666666666667,
+        "3": 0.044444444444444446,
+        "5": 0.13333333333333333,
+        "chance_top1": 0.06643356643356643
+      },
+      "domain": {
+        "accuracy": 0.4222222222222222,
+        "n": 45
+      },
+      "fold": 3,
+      "seed": 20261021,
+      "n_train": 286,
+      "n_test": 45,
+      "median_pairwise_cosine": 0.9992859363555908
+    },
+    {
+      "retrieval": {
+        "rank1": 0.19047619047619047,
+        "mrr": 0.26715666462906335,
+        "chance_rank1": 0.005483405483405483,
+        "n_queries_with_same_receptor_in_gallery": 21,
+        "auroc": 0.8787381250572747,
+        "n_pairs": 6930
+      },
+      "family": {
+        "1": 0.2727272727272727,
+        "3": 0.25,
+        "5": 0.20454545454545456,
+        "chance_top1": 0.06620209059233449
+      },
+      "domain": {
+        "accuracy": 0.4090909090909091,
+        "n": 44
+      },
+      "fold": 4,
+      "seed": 20261021,
+      "n_train": 287,
+      "n_test": 44,
+      "median_pairwise_cosine": 0.9950644373893738
+    }
+  ],
+  "means": {
+    "retrieval_rank1": 0.1661965039180229,
+    "retrieval_mrr": 0.28066831999498787,
+    "retrieval_chance_rank1": 0.012337844996072846,
+    "retrieval_auroc": 0.7943805448628184,
+    "family_top1_k1": 0.2079520946905511,
+    "domain_accuracy": 0.4232879301161102,
+    "median_pairwise_cosine": 0.9869341492652893
+  }
+}
