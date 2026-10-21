@@ -50,10 +50,11 @@ def set_seed():
 
 
 class Embedder(nn.Module):
-    def __init__(self, node_dim: int, edge_dim: int):
+    def __init__(self, node_dim: int, edge_dim: int,
+                 update_coordinates: bool = True):
         super().__init__()
         self.egnn = EGNN(node_dim=node_dim, edge_dim=edge_dim, depth=6,
-                         hidden=128, update_coordinates=True)
+                         hidden=128, update_coordinates=update_coordinates)
         pooled_dim = 3 * 128 + 1
         self.proj = nn.Sequential(
             nn.Linear(pooled_dim, 128), nn.SiLU(),
@@ -222,6 +223,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--batch-size", type=int, default=16)
     ap.add_argument("--device", default=None)
     ap.add_argument("--folds", type=int, default=5)
+    ap.add_argument("--fixed-coordinates", action="store_true",
+                    help="invariant variant (EGNN without the coordinate "
+                         "update branch); used when the equivariant branch "
+                         "diverges numerically")
     args = ap.parse_args(argv)
 
     set_seed()
@@ -251,7 +256,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"fold {fold}: train={len(train_idx)} test={len(test_idx)} "
               f"test_families={len(set(families[i] for i in test_idx))}",
               flush=True)
-        model = Embedder(26, 16).to(device)
+        model = Embedder(26, 16,
+                         update_coordinates=not args.fixed_coordinates).to(device)
         opt = torch.optim.Adam(model.parameters(), lr=3e-4, weight_decay=1e-4)
         model.train()
         for epoch in range(args.epochs):
@@ -299,6 +305,7 @@ def main(argv: list[str] | None = None) -> int:
         "epochs": args.epochs,
         "batch_size": args.batch_size,
         "device": device,
+        "fixed_coordinates": bool(args.fixed_coordinates),
         "fold_results": fold_results,
         "means": {
             "retrieval_rank1": float(np.nanmean(

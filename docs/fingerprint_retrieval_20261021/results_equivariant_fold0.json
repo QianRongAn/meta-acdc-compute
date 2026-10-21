@@ -1,0 +1,28 @@
+{
+  "task_id": "STRUCT-FINGERPRINT-20261021",
+  "fold_results": [
+    {
+      "retrieval": {
+        "rank1": 0.23809523809523808,
+        "mrr": 0.33566312546421423,
+        "chance_rank1": 0.010533910533910534,
+        "n_queries_with_same_receptor_in_gallery": 42,
+        "auroc": 0.7097314313340432,
+        "n_pairs": 13860
+      },
+      "family": {
+        "1": 0.2711864406779661,
+        "3": 0.3050847457627119,
+        "5": 0.2542372881355932,
+        "chance_top1": 0.06985294117647059
+      },
+      "domain": {
+        "accuracy": 0.559322033898305,
+        "n": 59
+      },
+      "fold": 0,
+      "n_train": 272,
+      "n_test": 59
+    }
+  ]
+}
