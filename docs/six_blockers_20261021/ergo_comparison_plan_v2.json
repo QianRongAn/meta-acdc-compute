@@ -1,0 +1,34 @@
+{
+  "task": "retrospective_common_MIRA_activation_ranking_not_SPR_affinity_or_clinical_acceptance",
+  "tool": "ERGO-I LSTM McPAS pretrained official model",
+  "tool_commit": "5c6fc3719df08c84be83a7f365009cf49b2f23b7",
+  "choice": "one fixed official McPAS LSTM checkpoint; no comparison among weights",
+  "source_sha256": {
+    "ergo_ae_utils.py": "a6335734f2160030bcb970f7d4ff82928e31ef4f7b23db70ed7321d1c4677da0",
+    "ergo_ERGO.py": "e61369b3b97ccd088fdd6bff5045388e1e0cccf802728219cab561898519c7bb",
+    "ergo_ergo_data_loader.py": "7882c51d462a7ebfa7139c9374f579365902306597842bd46dd4a96f231f9343",
+    "ergo_ERGO_models.py": "c694ea115c6ae62a80f653dec7e4024efdeb96ab29a082dbb23772051653d40b",
+    "ergo_LICENSE": "5baa9cc0344c676a39f698df7496af774d37f04f692cc66bd6d4188d2c3246eb",
+    "ergo_lstm_mcpas1.pt": "238a6f44b15eb499013cd76a439cf82853bd601fc784cd375907c8cc65eb915b",
+    "ergo_lstm_mcpas_train1.pickle": "6eb8cca209e66823e2aaf7c197af9851220a082c608aa195cece6d9d04d24c4e",
+    "ergo_lstm_utils.py": "a3b08cf36bd9de8ea4b4addd5fa438605ae7c7729337a4fd85119dfdff17cf3d",
+    "ergo_README.md": "a44479f7a1924281391e834dfc1559ebb1591fd3a55eca2247f7fa2c97e90f38"
+  },
+  "panel_sha256": "5af77db359c390edf5e381aa2275424fd2f1ba3079e2cfe2909c05ddb8af885f",
+  "prior_baseline_predictions_sha256": "8455a4c29397609e7e5b0bcbdf196c5e20e185d893ee6edbc47d0989d69b7bd9",
+  "prediction": "unmodified official ERGO.py CLI, 10000 scientific observations plus one declared repeated execution control; batch size 50; CPU, 2 threads",
+  "metrics": [
+    "macro_per_peptide_AUROC",
+    "macro_per_peptide_AP"
+  ],
+  "threshold_tuning": false,
+  "refit": false,
+  "no_hit_means_negative": false,
+  "training_exposure": "audit official published training file for exact beta-CDR3 and beta/peptide matches; no retraining, exclusion or post-score model changes",
+  "claim_limit": "already consumed MIRA activation association panel, not fresh independent acceptance; full alpha/beta family and study independence not established; scores not calibrated activation probabilities",
+  "failure_policy": "preserve errors; never substitute labels for missing predictions",
+  "amends_sha256": "0b2fb302113abe79c2f8535c3ceaf7cf3df5a6ae78796b13a8a1bba115ff3750",
+  "technical_amendment": "Upstream lstm_utils.predict always interprets the last batch as padded and truncates 41 valid rows for 10000 length-9 pairs. Append a repeat of the first real query as an explicit execution control, making 10001 inputs; require all 10001 output pairs in exact order, validate the repeated score, exclude only that declared final repeat from all metrics. No upstream source/model change.",
+  "n_scientific_observations": 10000,
+  "n_execution_controls": 1
+}

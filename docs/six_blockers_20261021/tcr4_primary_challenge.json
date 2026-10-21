@@ -1,0 +1,308 @@
+{
+  "status": "unscored_primary_assay_challenge_not_training_release",
+  "doi": "10.1038/s41467-025-56004-8",
+  "pmid": "39833157",
+  "pdb_identity": "7L1D TCR4 per main text reference and original RCSB chain definitions; not any other paper named TCR4",
+  "observations": [
+    {
+      "construct_id": "PMID:39833157:TCR4:PDB:7L1D",
+      "receptor_name": "TCR4",
+      "alpha_pdb_construct": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQVTLNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS",
+      "beta_pdb_construct": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLTVLEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFFPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYSLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+      "cdr3_alpha": "CAGNTGTASKLTF",
+      "cdr3_beta": "CASSGLAGGPVSGANVLTF",
+      "species": "human",
+      "method": "SPR",
+      "instrument": "Biacore T200",
+      "temperature_K": 277.15,
+      "temperature_basis": "published Figure 1 caption, panels c/d, 4 C",
+      "orientation": "TCR immobilized; soluble peptide-HLA analyte",
+      "chip": "CM5 Series S",
+      "immobilization_RU_general_method_range": [
+        400,
+        6000
+      ],
+      "flow_uL_min": 5,
+      "buffer": "HBS-EP, pH 7.4",
+      "fit": "1:1 steady-state; OriginPro 2024",
+      "clinical_risk_label": null,
+      "full_clinical_engineered_DNA_verified": false,
+      "model_scored": false,
+      "training_allowed": false,
+      "formal_independent_acceptance_allowed": false,
+      "evidence_id": "PMID:39833157:TCR4:PDB:7L1D:ALHGGWTTK:HLA-A0301",
+      "peptide": "ALHGGWTTK",
+      "mhc_allele": "HLA-A*03:01",
+      "endpoint": "SPR_affinity",
+      "assay_result": "binding_detected",
+      "reported_KD_uM": 62,
+      "reported_KD_sd_uM": 6,
+      "n_published_affinity_replicates": 6,
+      "point_regression_target_available": true,
+      "assay_binding_detected": true,
+      "universal_binding_label": null
+    },
+    {
+      "construct_id": "PMID:39833157:TCR4:PDB:7L1D",
+      "receptor_name": "TCR4",
+      "alpha_pdb_construct": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQVTLNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS",
+      "beta_pdb_construct": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLTVLEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFFPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYSLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+      "cdr3_alpha": "CAGNTGTASKLTF",
+      "cdr3_beta": "CASSGLAGGPVSGANVLTF",
+      "species": "human",
+      "method": "SPR",
+      "instrument": "Biacore T200",
+      "temperature_K": 277.15,
+      "temperature_basis": "published Figure 1 caption, panels c/d, 4 C",
+      "orientation": "TCR immobilized; soluble peptide-HLA analyte",
+      "chip": "CM5 Series S",
+      "immobilization_RU_general_method_range": [
+        400,
+        6000
+      ],
+      "flow_uL_min": 5,
+      "buffer": "HBS-EP, pH 7.4",
+      "fit": "1:1 steady-state; OriginPro 2024",
+      "clinical_risk_label": null,
+      "full_clinical_engineered_DNA_verified": false,
+      "model_scored": false,
+      "training_allowed": false,
+      "formal_independent_acceptance_allowed": false,
+      "evidence_id": "PMID:39833157:TCR4:PDB:7L1D:AHHGGWTTK:HLA-A0301",
+      "peptide": "AHHGGWTTK",
+      "mhc_allele": "HLA-A*03:01",
+      "endpoint": "SPR_detectability",
+      "assay_result": "no_detectable_binding_under_reported_conditions",
+      "reported_KD_uM": null,
+      "reported_KD_sd_uM": null,
+      "assayed_analyte_max_uM": 208.24,
+      "quantified_detection_limit_RU": null,
+      "valid_KD_lower_bound_uM": null,
+      "point_regression_target_available": false,
+      "assay_binding_detected": false,
+      "universal_binding_label": null
+    }
+  ],
+  "measured_source_curves": {
+    "WT": [
+      {
+        "concentration_uM": 208.24,
+        "response_RU": -9.68758
+      },
+      {
+        "concentration_uM": 103.8,
+        "response_RU": -6.85387
+      },
+      {
+        "concentration_uM": 53.29,
+        "response_RU": -4.28988
+      },
+      {
+        "concentration_uM": 27.22,
+        "response_RU": -3.03662
+      },
+      {
+        "concentration_uM": 13.84,
+        "response_RU": -2.34844
+      },
+      {
+        "concentration_uM": 6.86,
+        "response_RU": -1.59216
+      },
+      {
+        "concentration_uM": 3.34,
+        "response_RU": -1.08097
+      },
+      {
+        "concentration_uM": 1.59,
+        "response_RU": -0.63012
+      },
+      {
+        "concentration_uM": 0.67,
+        "response_RU": -0.14254
+      },
+      {
+        "concentration_uM": 0.0,
+        "response_RU": 0.0
+      }
+    ],
+    "WT_repeat": [
+      {
+        "concentration_uM": 208.24,
+        "response_RU": -8.16971
+      },
+      {
+        "concentration_uM": 103.8,
+        "response_RU": -6.06801
+      },
+      {
+        "concentration_uM": 53.29,
+        "response_RU": -3.65899
+      },
+      {
+        "concentration_uM": 27.22,
+        "response_RU": -2.3937
+      },
+      {
+        "concentration_uM": 13.84,
+        "response_RU": -1.90014
+      },
+      {
+        "concentration_uM": 6.86,
+        "response_RU": -1.19303
+      },
+      {
+        "concentration_uM": 3.34,
+        "response_RU": -0.70328
+      },
+      {
+        "concentration_uM": 1.59,
+        "response_RU": -0.30722
+      },
+      {
+        "concentration_uM": 0.67,
+        "response_RU": -0.23365
+      },
+      {
+        "concentration_uM": 0.0,
+        "response_RU": 0.0
+      }
+    ],
+    "neo": [
+      {
+        "concentration_uM": 316.83,
+        "response_RU": 36.2415
+      },
+      {
+        "concentration_uM": 160.78,
+        "response_RU": 31.2213
+      },
+      {
+        "concentration_uM": 81.1,
+        "response_RU": 23.8664
+      },
+      {
+        "concentration_uM": 40.69,
+        "response_RU": 17.0427
+      },
+      {
+        "concentration_uM": 20.97,
+        "response_RU": 10.442
+      },
+      {
+        "concentration_uM": 10.69,
+        "response_RU": 5.97434
+      },
+      {
+        "concentration_uM": 5.34,
+        "response_RU": 3.34994
+      },
+      {
+        "concentration_uM": 2.74,
+        "response_RU": 1.82232
+      },
+      {
+        "concentration_uM": 1.38,
+        "response_RU": 1.01372
+      },
+      {
+        "concentration_uM": 0.0,
+        "response_RU": 0.0
+      }
+    ],
+    "neo_repeat": [
+      {
+        "concentration_uM": 316.83,
+        "response_RU": 36.9247
+      },
+      {
+        "concentration_uM": 160.78,
+        "response_RU": 31.7241
+      },
+      {
+        "concentration_uM": 81.1,
+        "response_RU": 24.1481
+      },
+      {
+        "concentration_uM": 40.69,
+        "response_RU": 17.3848
+      },
+      {
+        "concentration_uM": 20.97,
+        "response_RU": 10.6425
+      },
+      {
+        "concentration_uM": 10.69,
+        "response_RU": 6.22051
+      },
+      {
+        "concentration_uM": 5.34,
+        "response_RU": 3.50459
+      },
+      {
+        "concentration_uM": 2.74,
+        "response_RU": 1.98273
+      },
+      {
+        "concentration_uM": 1.38,
+        "response_RU": 1.22375
+      },
+      {
+        "concentration_uM": 0.0,
+        "response_RU": 0.0
+      }
+    ],
+    "irrelevant_gp100": [
+      {
+        "concentration_uM": 206.31,
+        "response_RU": -4.24045
+      },
+      {
+        "concentration_uM": 101.39,
+        "response_RU": -1.30746
+      },
+      {
+        "concentration_uM": 51.23,
+        "response_RU": 0.91637
+      },
+      {
+        "concentration_uM": 25.76,
+        "response_RU": 1.2121
+      },
+      {
+        "concentration_uM": 12.93,
+        "response_RU": 0.89693
+      },
+      {
+        "concentration_uM": 6.49,
+        "response_RU": 0.70092
+      },
+      {
+        "concentration_uM": 0.0,
+        "response_RU": 0.0
+      }
+    ]
+  },
+  "positive_sample_integrity_control": {
+    "reagent": "s3-4 scTv",
+    "WT_KD_uM": 1.8,
+    "WT_KD_sd_uM": 0.1,
+    "neo_KD_uM": 1.7,
+    "neo_KD_sd_uM": 0.2,
+    "n_published_affinity_replicates": 3
+  },
+  "irrelevant_MHC_control_included_in_model_dataset": false,
+  "limits": [
+    "No numeric KD invented for undetectable binding; maximum analyte concentration is not a KD lower bound without Rmax/LOD assumptions",
+    "Full PDB construct proteins are available; no inferred clinical engineering DNA or patient outcome",
+    "One receptor lineage and one research source; not a sufficient independent acceptance cohort",
+    "Figure 1b source spreadsheet says ug/mL while published axis says uM; cellular numeric dose-response not admitted or converted here"
+  ],
+  "sources": {
+    "PMC11756396.xml": "67c20b20dcf8b401093faf76bd8f89e2b26dd962730566ca3047fbd26134ab89",
+    "rcsb_7L1D.fasta": "43331820c68141065da4cc60c39fa5287a7925906e59712ac52abca0bdd703ae",
+    "rcsb_7L1D.json": "406ac85687afdca2990594edcdd21b645d56d3174127b5ec16332940f84de4e8",
+    "pi3kca_source_data.xlsx": "6d44883cb221375c66c11c28842fcd1df8e130bfa534065473feacdbac0313cd",
+    "pi3kca_figure1.png": "923b35a1f656f7e3696f50c17929d1d0cc9936c5dc018218cca63e1049cb987d"
+  }
+}

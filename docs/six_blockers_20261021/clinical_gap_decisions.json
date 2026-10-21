@@ -1,0 +1,26 @@
+{
+  "status": "no_new_independent_clinical_validation",
+  "a3a_tcr_map": {
+    "pmid": "38956325",
+    "source": "sources/PMC11994455.xml",
+    "finding": "same a3a lineage in engineered Jurkat TCR-MAP experiments, not a new administered clinical receptor or new clinical outcome cohort",
+    "product_availability": "paper material availability says plasmids/cell lines available on request subject to MTA",
+    "complete_clinical_administered_DNA_verified": false,
+    "request_or_email_sent": false
+  },
+  "pteam": {
+    "pmid": "39151427",
+    "finding": "human research TCR nucleotide/functional data; not clinical administered product sequences or patient risk outcomes",
+    "clinical_training_allowed": false
+  },
+  "TIL1383I": {
+    "finding": "secondary binding/functional records and research protein sequences do not establish final clinical vector DNA or product-to-patient outcome bridge",
+    "clinical_training_allowed": false
+  },
+  "required_missing": [
+    "complete final clinical engineered receptor/product sequence and provenance bridge",
+    "independent administered receptor lineages with adjudicated clinical outcomes and denominators",
+    "matching clinical endpoint and locked model/prospective evaluation protocol"
+  ],
+  "clinical_model_released": false
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "pteam_zenodo.json",
+    "url": "https://zenodo.org/api/records/11197941",
+    "status": 200,
+    "sha256": "539197b8cd2739f8db92c7c9b8bdc55047c82f663430737ec167d04f2cbe7427",
+    "bytes": 4380,
+    "retrieved_at_utc": "2026-10-20T23:48:13.438199+00:00"
+  },
+  {
+    "file": "pubmed_39833157_core.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:39833157%20AND%20SRC:MED&resultType=core&format=json",
+    "status": 200,
+    "sha256": "741faa252df4eecfb873700ae1ed1ddd49b5fcafd2f69607c61bbd6a6949c623",
+    "bytes": 11970,
+    "retrieved_at_utc": "2026-10-20T23:48:15.392963+00:00"
+  },
+  {
+    "file": "pubmed_38956325_core.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:38956325%20AND%20SRC:MED&resultType=core&format=json",
+    "status": 200,
+    "sha256": "15cc3927d547b18a777f698dcd6064d18cf8fc8f20755db79693b03c40f7cecb",
+    "bytes": 10229,
+    "retrieved_at_utc": "2026-10-20T23:48:17.283293+00:00"
+  }
+]

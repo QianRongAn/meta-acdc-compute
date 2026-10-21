@@ -11,3 +11,6 @@ tests/fixtures/delivery_audit/*.cif -text whitespace=-blank-at-eol
 
 # Recovered per-structure originals retain exact CSV bytes.
 docs/forensic_followup_20261021/recovered_per_structure/*.tsv -text whitespace=-blank-at-eol
+
+# Published source fixtures retain original bytes and upstream whitespace.
+docs/six_blockers_20261021/sources/** -text whitespace=-blank-at-eol
