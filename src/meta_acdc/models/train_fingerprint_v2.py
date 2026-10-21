@@ -180,6 +180,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--folds", type=int, default=5)
     ap.add_argument("--device", default=None)
     ap.add_argument("--only-fold", type=int, default=None)
+    ap.add_argument("--resume", action="store_true",
+                    help="skip (fold, seed) instances whose full artifact set "
+                         "already exists (weights + embeddings + similarity + "
+                         "rankings + metrics); training math is unchanged")
     ap.add_argument("--max-epochs-probe", type=int, default=None,
                     help="internal: stop after N epochs (timing probe only)")
     args = ap.parse_args(argv)
@@ -230,6 +234,18 @@ def main(argv: list[str] | None = None) -> int:
     for seed in args.seeds:
         set_seed(seed)
         for fold in fold_list:
+            tag = f"fold{fold}_seed{seed}"
+            complete = all(
+                p.exists() for p in (
+                    run_dir / f"{tag}.pt",
+                    run_dir / f"emb_{tag}.npy",
+                    run_dir / f"sim_{tag}.npy",
+                    args.out_dir / f"rankings_{tag}.json",
+                    args.out_dir / f"metrics_{tag}.json"))
+            if args.resume and complete:
+                print(f"seed {seed} fold {fold}: complete, skipping "
+                      f"(--resume)", flush=True)
+                continue
             test_idx = [i for i, f in enumerate(fold_of) if f == fold]
             train_idx = [i for i in range(len(graphs)) if i not in test_idx]
             print(f"seed {seed} fold {fold}: train={len(train_idx)} "
@@ -283,7 +299,6 @@ def main(argv: list[str] | None = None) -> int:
             if args.max_epochs_probe is not None:
                 print("probe mode: stopping without artifacts", flush=True)
                 return 0
-            tag = f"fold{fold}_seed{seed}"
             torch.save({"model": model.state_dict(), "fold": fold,
                         "seed": seed, "config": config},
                        run_dir / f"{tag}.pt")
