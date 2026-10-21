@@ -1,0 +1,29 @@
+{
+  "analysis": "descriptive report assembly",
+  "source_manifest_sha256": "61d308587855978eaa3b40bcf005a84000732547d0ffc6d816044b91e825979f",
+  "builder_sha256": "e41aa8d716c14f41d33291ab66558147f74cd7af0975e7ce4091e98d310b7b06",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "outputs": {
+    "affinity_metrics.csv": "4a0a58fce3110cd4584be43fc40f3f463bcb2d1e2d5c3d19d52b693f43bacd89",
+    "development_comparison.csv": "fe289758433acf20a98d5b8e391af84c0c74582fb5a99c451f22fc7409c8c46b",
+    "family_qc.csv": "7384a44a45e2a2621866d9f6f6b7abb3f1dacafd161b0abfdaa5de4da753eebf",
+    "figure1_structural_qc.pdf": "79736739f2493cc8bbbc9cbead5541893202c3ab98c62d7ed29bb927f4916a3d",
+    "figure1_structural_qc.png": "3af4068fc03f7b8f79dd96fe6a26e8b8a786165e79681033ab7c92878cf423cf",
+    "figure2_input_units.pdf": "56f4f84c0d39e2b3e611d41b11d235ac61906f7c4226cabe155a8d11bb34542d",
+    "figure2_input_units.png": "d4d1dd6fcc624135116a1f2082e0b381279594ecd6ee5b644ce842276a8757ce",
+    "figure3_affinity.pdf": "7f8b0df312d8cdb3a3304eefd489925386e7980c71d6a3851498070d36131c05",
+    "figure3_affinity.png": "12633c5d2eaa64b26fcc9474a31dea6fcd06589f64c72e2b0d04a5cd5b71df7c",
+    "figure4_development.pdf": "3d217e77a88272a5f4f5afc8480c9062072d46344b778752904cdd0f15f3a5ae",
+    "figure4_development.png": "71d6ec627cf000d60498730570bb8734b9c033bb31ae5472e0817d4d8bfe2cef",
+    "input_units.csv": "5e2903924bf1ab8bc15fe410e37f2831bcb31259e19bbaaeedee5da76ceb1ad2",
+    "paired_qc.csv": "4d0fcf09c9b9a9c66597aecfa061ae846886c9ccdf6da78ad361d7c6df5e1ccb",
+    "qc_only_discriminator.csv": "7771c8f0ea3d3196916b45fbca4e1692b4d5f1bffaa118ede5cd33daac03114b",
+    "structural_qc.csv": "95e5be6bbcaae99904cb64c12b83d7725553ed706bb0fc3126afc3d905b1dd35",
+    "summary.json": "b0bb734f9b70711db92fbe7f6d12cc24601c5c24736bb9130dc717a248693a72"
+  },
+  "training_performed": false,
+  "new_test_scoring": false,
+  "individual_test_predictions_loaded": false,
+  "fresh_reserve_loaded": false
+}

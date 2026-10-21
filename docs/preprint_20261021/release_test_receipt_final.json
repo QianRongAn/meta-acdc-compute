@@ -1,0 +1,32 @@
+{
+  "base_test_commit": "15eb5c60b6907b9ba4f472dad3da612d7366c559",
+  "modules": [
+    "tests/test_atomic_repair.py",
+    "tests/test_clinical_primary.py",
+    "tests/test_database_evidence.py",
+    "tests/test_delivery_audit.py",
+    "tests/test_development_affinity.py",
+    "tests/test_evidence_completion.py",
+    "tests/test_evidence_diversity.py",
+    "tests/test_evidence_sequence.py",
+    "tests/test_experimental_evidence.py",
+    "tests/test_forensic_followup.py",
+    "tests/test_fresh_spr_reserve.py",
+    "tests/test_frozen_affinity_baseline.py",
+    "tests/test_independent_spr.py",
+    "tests/test_n_review.py",
+    "tests/test_primary_panel.py",
+    "tests/test_release_safety.py",
+    "tests/test_six_blockers.py",
+    "tests/test_spr_followup.py",
+    "tests/test_spr_primary.py",
+    "tests/test_structure_pipeline.py",
+    "tests/test_preprint_evidence.py"
+  ],
+  "tests_run": 304,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 3,
+  "concurrent_uncommitted_test_modules_excluded": true,
+  "passed": true
+}

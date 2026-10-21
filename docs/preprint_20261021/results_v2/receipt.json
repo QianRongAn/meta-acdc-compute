@@ -1,0 +1,31 @@
+{
+  "analysis": "descriptive report assembly",
+  "source_manifest_sha256": "61d308587855978eaa3b40bcf005a84000732547d0ffc6d816044b91e825979f",
+  "context_manifest_sha256": "7f2535b3c393a731ca17cdd1693ca2a7ceb8d2459a63b6bfdcf722641a6ed0fd",
+  "builder_sha256": "61942baf388bd5a702667276d9edd0078e3df9a85b2447512f39e699196ca4c0",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "outputs": {
+    "affinity_metrics.csv": "4a0a58fce3110cd4584be43fc40f3f463bcb2d1e2d5c3d19d52b693f43bacd89",
+    "development_comparison.csv": "fe289758433acf20a98d5b8e391af84c0c74582fb5a99c451f22fc7409c8c46b",
+    "family_qc.csv": "7384a44a45e2a2621866d9f6f6b7abb3f1dacafd161b0abfdaa5de4da753eebf",
+    "figure1_structural_qc.pdf": "415bb06ff12fbc5b896139f8d0ca6950c584d1fa1e4e6d853ee70f4efe8aa8f9",
+    "figure1_structural_qc.png": "3af4068fc03f7b8f79dd96fe6a26e8b8a786165e79681033ab7c92878cf423cf",
+    "figure2_input_units.pdf": "fc2168f8a400722ee0b623de9df9151dbfd37dc266398dc3e918b778f672322a",
+    "figure2_input_units.png": "d4d1dd6fcc624135116a1f2082e0b381279594ecd6ee5b644ce842276a8757ce",
+    "figure3_affinity.pdf": "90d3b16e2bb4f6848827e1ff9bb210b01c1d7ba4969f678c5c330cfda3e6ed50",
+    "figure3_affinity.png": "12633c5d2eaa64b26fcc9474a31dea6fcd06589f64c72e2b0d04a5cd5b71df7c",
+    "figure4_development.pdf": "091d70a5ef663f7c2c5fe27fa5dd45401f7a96926924908f16bc28e301eebeff",
+    "figure4_development.png": "71d6ec627cf000d60498730570bb8734b9c033bb31ae5472e0817d4d8bfe2cef",
+    "functional_context.csv": "1d294863ec6a6dccd0dec00d486660e518d48a2b8bbe10bea26d702a5607a485",
+    "input_units.csv": "5e2903924bf1ab8bc15fe410e37f2831bcb31259e19bbaaeedee5da76ceb1ad2",
+    "paired_qc.csv": "4d0fcf09c9b9a9c66597aecfa061ae846886c9ccdf6da78ad361d7c6df5e1ccb",
+    "qc_only_discriminator.csv": "7771c8f0ea3d3196916b45fbca4e1692b4d5f1bffaa118ede5cd33daac03114b",
+    "structural_qc.csv": "95e5be6bbcaae99904cb64c12b83d7725553ed706bb0fc3126afc3d905b1dd35",
+    "summary.json": "b0bb734f9b70711db92fbe7f6d12cc24601c5c24736bb9130dc717a248693a72"
+  },
+  "training_performed": false,
+  "new_test_scoring": false,
+  "individual_test_predictions_loaded": false,
+  "fresh_reserve_loaded": false
+}

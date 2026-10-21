@@ -1,0 +1,116 @@
+{
+  "user_requested_commits": [
+    "6d79c0e4fce6beeab3234b37e7ff3a4a214c2732",
+    "dff57e3cd94bbd9cd597926a236c0a919d8b60be"
+  ],
+  "all19_paper_source_files_unchanged": true,
+  "checks": [
+    {
+      "path": "docs/affinity_baseline_20261018/acceptance/report.json",
+      "matches_current_paper_input": true,
+      "sha256": "359361f24c8b2c0f4ff8a7fe5f58dfff1bcb13d63eaf3fa78c46c763d000fb43"
+    },
+    {
+      "path": "docs/affinity_baseline_20261018/model_run/fit_report.json",
+      "matches_current_paper_input": true,
+      "sha256": "6b9f912092108b3e812811520973a6d21f3c352ba17971325e6f8d2a500ec745"
+    },
+    {
+      "path": "docs/affinity_baseline_20261018/training_release/plan.json",
+      "matches_current_paper_input": true,
+      "sha256": "606a1a938eda536edcbe72eb497cdfc3a7d8e60dcc8bd9341c8b160ee71b03a5"
+    },
+    {
+      "path": "docs/affinity_development_20261018/bounded_run/comparison.json",
+      "matches_current_paper_input": true,
+      "sha256": "137dc98840bcce431b7f73451befa0a1e20c51cad6aa3b5c85ebe5c3dc917190"
+    },
+    {
+      "path": "docs/affinity_development_20261018/diagnostic_followup.json",
+      "matches_current_paper_input": true,
+      "sha256": "ee4617ca903fabdbf03bda94e487d3599d37653c92d5dbe78bd5c419d413dcc0"
+    },
+    {
+      "path": "docs/affinity_development_20261018/diagnostic_initial.json",
+      "matches_current_paper_input": true,
+      "sha256": "74b1e5362fcc6ade9f96d0b0f954a79ff5630ba1f992c3b757f1d058c9292929"
+    },
+    {
+      "path": "docs/forensic_followup_20261021/legacy_full_replay.json",
+      "matches_current_paper_input": true,
+      "sha256": "6f93f17b88302879085563325747ddb3f07059072dc0bc87810598ef6b0184d9"
+    },
+    {
+      "path": "docs/forensic_followup_20261021/pending_panel.json",
+      "matches_current_paper_input": true,
+      "sha256": "991a268b9a3c95c5f0baeab5931241e7086d5be07fde5bbd7d7ba45238edee7f"
+    },
+    {
+      "path": "docs/forensic_followup_20261021/per_structure_reconciliation.json",
+      "matches_current_paper_input": true,
+      "sha256": "eb5c71fae132871ade52e58d0e4bf33711d8e4ab4d4f7bdb6274b8fe82e80db1"
+    },
+    {
+      "path": "docs/independent_spr_20261018/development_study_sources.json",
+      "matches_current_paper_input": true,
+      "sha256": "bbeacb297747242dba4941e736955b73e5fcb5e2152d773762ef56079118edb6"
+    },
+    {
+      "path": "docs/independent_spr_20261018/protocol.json",
+      "matches_current_paper_input": true,
+      "sha256": "d4ac39ef3e6b556f15fcaa22415bf19c00a07573956654c19782c8fa2b903719"
+    },
+    {
+      "path": "docs/independent_spr_20261018/test_study_sources.json",
+      "matches_current_paper_input": true,
+      "sha256": "7b9d20d21848c46e3178009d8c24dfefb2f123951e1a52e87edc8a69534bf8aa"
+    },
+    {
+      "path": "docs/n_review/structural_atom_audit.json",
+      "matches_current_paper_input": true,
+      "sha256": "f7e14e5b29567c2d89d3e6ef2eac06f57952d9b3dbd5ccb4a404da3576aba6f2"
+    },
+    {
+      "path": "docs/six_blockers_20261021/ergo_comparison/report.json",
+      "matches_current_paper_input": true,
+      "sha256": "68836ade7e345c2e61a6891b70720e82bdd8350d0dc417d3f58394a3eba07cfe"
+    },
+    {
+      "path": "docs/six_blockers_20261021/ergo_comparison_plan_v2.json",
+      "matches_current_paper_input": true,
+      "sha256": "7ab2748f9820cd6440c20c35e575d4b89ebee704732444e0cbe0ee95dea214a2"
+    },
+    {
+      "path": "docs/six_blockers_20261021/tcr4_exposure_audit.json",
+      "matches_current_paper_input": true,
+      "sha256": "944fe2e6f863fd96c07ba3116a5fbfe13c3af7d1fa0c7a0c5719b306c5e3cf03"
+    },
+    {
+      "path": "docs/six_blockers_20261021/tcr4_primary_challenge.json",
+      "matches_current_paper_input": true,
+      "sha256": "1534f7b06092b5fd564555fb8ab0fd1b78d82b87e169b05b1b332a02d29ff939"
+    },
+    {
+      "path": "docs/structure_repair_20261017/historical_graph_disposition.json",
+      "matches_current_paper_input": true,
+      "sha256": "59bdcb3e1932e363510d98895e409631a04689ad7dc33f9ce23e69c751720fbc"
+    },
+    {
+      "path": "docs/structure_repair_20261017/native_inventory_validation.json",
+      "matches_current_paper_input": true,
+      "sha256": "1adb8899fe45ff0627cd6eccc55a24e9d0591d31a93c61e6caf2150ec28045b1"
+    }
+  ],
+  "scientific_result_change": false,
+  "changes": "39-item review integration and documentation/test bookkeeping; six-blocker/ERGO reports already included separately at15eb5c6",
+  "test_counts": "317 in the updated main-branch report is a different tree/environment from303 tests in this paper preparation; neither count establishes biological validation",
+  "later_representation_benchmark": "7338145 is a registered plan, not an observed result; not counted as positive evidence",
+  "scope": "report source hashes checked; no claim that all main-branch code changes were independently reviewed",
+  "new_manuscript_experiment_required": false,
+  "code_change_relevant_to_interpretation": "New main-branch dataset.py uses a peptide-minus-MHC-centroid direction, whereas the audited historical protocol uses a fixed global z-axis. The300/300 result is not assigned to the new generator.",
+  "other_main_changes_not_audited_in_full": [
+    "rank/statistical helper changes",
+    "attribution/import guards",
+    "additional regression checks"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Decoy artifacts and limited source-disjoint affinity prediction in a TCR-pMHC computational workflow",
+  "abstract": "Predicting T cell receptor (TCR) recognition requires an explicit distinction between synthetic structural discrimination, measured binding affinity, cellular activation and clinical toxicity. We examined these distinctions in a retrospective case study of the Meta-ACDC computational workflow. An atomic audit covered 300 native structural records and 588 reconstructed synthetic controls. A fixed severe-overlap screen, using peptide-environment heavy-atom distances of at most 1.2 A, flagged 146 of 288 grafted controls and all 300 displaced controls, compared with none of the native records. The graft flag rate was 50.7% per record and 58.0% with equal weight per inherited audit family. These observations identify a potential construction shortcut; they do not establish whether a trained model used it. A separate panel of 347 structure-prediction inputs contained 98 exact paired receptor sequences, illustrating the difference between file counts and receptor units. In a previously locked, source-separated SPR affinity experiment, a Ridge model trained on ten observations achieved a source/lineage-weighted test RMSE of 0.9962 pKD, versus 1.0036 for the training-mean comparator, across fourteen primary observations from seven lineages and three source components. Three bounded development alternatives did not improve both validation metrics over the reference model. Retained weights and inputs reproduced 938 of 940 historical seed-level means to four decimal places, while the underlying biological claims remained withdrawn. Public coordinate extracts, analysis code, tables and provenance records support inspection of the case study. The results motivate explicit endpoint contracts, construction controls and source-aware evaluation; they do not validate a general binding predictor or clinical safety model.",
+  "suggested_subject": "Bioinformatics",
+  "suggested_article_category": "New Results",
+  "keywords": [
+    "T cell receptor",
+    "pMHC",
+    "structural decoys",
+    "data provenance",
+    "binding affinity",
+    "reproducibility"
+  ],
+  "author_count": 1,
+  "author_details_pending": true,
+  "license_pending": true,
+  "submitted": false,
+  "eligibility_check_required": true
+}

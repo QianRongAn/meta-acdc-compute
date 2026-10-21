@@ -1,0 +1,80 @@
+[
+  {
+    "id": "C1",
+    "claim": "Severe overlaps in the audited construction collection",
+    "supported": true,
+    "source": "docs/n_review/structural_atom_audit.json",
+    "derived": "results_v2/structural_qc.csv",
+    "independent_coordinate_check": "atomic_bundle_v1/independent_grid_verification.json",
+    "limit": "one project; no neural-shortcut causality or experimental nonbinding"
+  },
+  {
+    "id": "C2",
+    "claim": "Graft overlap prevalence changes with record versus audit-family weighting",
+    "supported": true,
+    "values": {
+      "record_fraction": 0.5069444444444444,
+      "family_fraction": 0.5798573080199586
+    },
+    "derived": "results_v2/family_qc.csv",
+    "limit": "finite collection; inherited audit families are not population-independent samples"
+  },
+  {
+    "id": "C3",
+    "claim": "347 files contain98 exact paired construct sequences",
+    "supported": true,
+    "source": "docs/forensic_followup_20261021/pending_panel.json",
+    "limit": "not98 verified biological families"
+  },
+  {
+    "id": "C4",
+    "claim": "Locked affinity experiment yields minimal reduction in aggregate error",
+    "supported": true,
+    "source": "docs/affinity_baseline_20261018/acceptance/report.json",
+    "limit": "14 primary observations,7lineages,3sourcecomponents; no practical efficacy or significance claim"
+  },
+  {
+    "id": "C5",
+    "claim": "Three bounded alternatives did not improve both validation metrics",
+    "supported": true,
+    "source": "docs/affinity_development_20261018/bounded_run/comparison.json",
+    "limit": "one small validation collection; not a global representation ranking"
+  },
+  {
+    "id": "C6",
+    "claim": "Historical numeric results are substantially reconstructible",
+    "supported": true,
+    "source": "docs/forensic_followup_20261021/legacy_full_replay.json",
+    "limit": "reconstruction is not scientific validation or historical causal attestation"
+  },
+  {
+    "id": "X1",
+    "claim": "Model predicts clinically dangerous off-targets",
+    "supported": false,
+    "disposition": "excluded"
+  },
+  {
+    "id": "X2",
+    "claim": "Synthetic controls are genuine nonbinders",
+    "supported": false,
+    "disposition": "excluded"
+  },
+  {
+    "id": "X3",
+    "claim": "Structure outperforms sequence on the same measured biological task",
+    "supported": false,
+    "disposition": "excluded"
+  },
+  {
+    "id": "X4",
+    "claim": "Active learning achieves a validated twofold gain",
+    "supported": false,
+    "disposition": "excluded"
+  },
+  {
+    "id": "X5",
+    "claim": "Constant prediction proves no sequence information exists",
+    "supported": false,
+    "disposition": "excluded"
+  }
+]

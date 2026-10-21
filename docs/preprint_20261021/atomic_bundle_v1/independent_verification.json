@@ -1,0 +1,22 @@
+{
+  "all_counts_match": true,
+  "n_graphs": 888,
+  "counts": {
+    "native": {
+      "n": 300,
+      "n_overlap": 0
+    },
+    "displaced": {
+      "n": 300,
+      "n_overlap": 300
+    },
+    "graft": {
+      "n": 288,
+      "n_overlap": 146
+    }
+  },
+  "method": "scipy.spatial.distance.cdist; <=1.2 A; heavy-atom peptide versus environment",
+  "coordinates_sha256": "cf6cc1d307e516d558ed532217b693d6266817cfe6429ac8eb7afb29f40b6478",
+  "source_audit_sha256": "f7e14e5b29567c2d89d3e6ef2eac06f57952d9b3dbd5ccb4a404da3576aba6f2",
+  "training_or_scoring": false
+}

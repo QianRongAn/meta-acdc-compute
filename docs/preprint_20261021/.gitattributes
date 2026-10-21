@@ -1,0 +1,6 @@
+# Preserve generated evidence bytes and treat rendered assets as binary.
+* -text whitespace=cr-at-eol
+*.md whitespace=cr-at-eol,-blank-at-eof
+*.pdf binary
+*.png binary
+*.gz binary

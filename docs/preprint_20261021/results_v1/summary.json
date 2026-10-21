@@ -1,0 +1,208 @@
+{
+  "atom": [
+    {
+      "kind": "native",
+      "n_records": 300,
+      "n_audit_families": 86,
+      "n_severe_overlap": 0,
+      "severe_overlap_fraction": 0.0,
+      "equal_family_overlap_fraction": 0.0,
+      "n_incomplete_interface": 9
+    },
+    {
+      "kind": "graft",
+      "n_records": 288,
+      "n_audit_families": 83,
+      "n_severe_overlap": 146,
+      "severe_overlap_fraction": 0.5069444444444444,
+      "equal_family_overlap_fraction": 0.5798573080199586,
+      "n_incomplete_interface": 9
+    },
+    {
+      "kind": "displaced",
+      "n_records": 300,
+      "n_audit_families": 86,
+      "n_severe_overlap": 300,
+      "severe_overlap_fraction": 1.0,
+      "equal_family_overlap_fraction": 1.0,
+      "n_incomplete_interface": 9
+    }
+  ],
+  "qc_only_discriminator": [
+    {
+      "control": "graft",
+      "n_pairs": 288,
+      "sensitivity": 0.5069444444444444,
+      "specificity": 1.0,
+      "balanced_accuracy": 0.7534722222222222,
+      "interpretation": "in-sample retrospective finite-collection description; no biological or held-out performance"
+    },
+    {
+      "control": "displaced",
+      "n_pairs": 300,
+      "sensitivity": 1.0,
+      "specificity": 1.0,
+      "balanced_accuracy": 1.0,
+      "interpretation": "in-sample retrospective finite-collection description; no biological or held-out performance"
+    }
+  ],
+  "panel": [
+    {
+      "label": "FASTA files",
+      "count": 347
+    },
+    {
+      "label": "PDB prefixes",
+      "count": 111
+    },
+    {
+      "label": "Exact receptor pairs",
+      "count": 98
+    },
+    {
+      "label": "Hamming components",
+      "count": 89
+    },
+    {
+      "label": "Matching-block components",
+      "count": 57
+    }
+  ],
+  "affinity": [
+    {
+      "analysis": "primary",
+      "method": "Ridge",
+      "n": 14,
+      "n_sources": 3,
+      "n_lineages": 7,
+      "rmse_pkd": 0.9962149031371532,
+      "mae_pkd": 0.8485966954001063
+    },
+    {
+      "analysis": "primary",
+      "method": "Training mean",
+      "n": 14,
+      "n_sources": 3,
+      "n_lineages": 7,
+      "rmse_pkd": 1.0036320119550348,
+      "mae_pkd": 0.8530823037321458
+    },
+    {
+      "analysis": "sensitivity",
+      "method": "Ridge",
+      "n": 15,
+      "n_sources": 3,
+      "n_lineages": 7,
+      "rmse_pkd": 1.0241211416883111,
+      "mae_pkd": 0.876009374071735
+    },
+    {
+      "analysis": "sensitivity",
+      "method": "Training mean",
+      "n": 15,
+      "n_sources": 3,
+      "n_lineages": 7,
+      "rmse_pkd": 1.031228116048797,
+      "mae_pkd": 0.8804953193690807
+    },
+    {
+      "analysis": "source:33468649,35484264,39042676",
+      "method": "Ridge",
+      "n": 5,
+      "n_sources": 1,
+      "n_lineages": 4,
+      "rmse_pkd": 1.1168051668896821,
+      "mae_pkd": 1.014952984928109
+    },
+    {
+      "analysis": "source:33468649,35484264,39042676",
+      "method": "Training mean",
+      "n": 5,
+      "n_sources": 1,
+      "n_lineages": 4,
+      "rmse_pkd": 1.127836399256133,
+      "mae_pkd": 1.0124585954816612
+    },
+    {
+      "analysis": "source:39500929",
+      "method": "Ridge",
+      "n": 7,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "rmse_pkd": 1.1785064055601469,
+      "mae_pkd": 0.9925691058705121
+    },
+    {
+      "analysis": "source:39500929",
+      "method": "Training mean",
+      "n": 7,
+      "n_sources": 1,
+      "n_lineages": 2,
+      "rmse_pkd": 1.1794786227284135,
+      "mae_pkd": 0.9922582574622173
+    },
+    {
+      "analysis": "source:39576860",
+      "method": "Ridge",
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "rmse_pkd": 0.584124362580362,
+      "mae_pkd": 0.5382679954016982
+    },
+    {
+      "analysis": "source:39576860",
+      "method": "Training mean",
+      "n": 2,
+      "n_sources": 1,
+      "n_lineages": 1,
+      "rmse_pkd": 0.5988713395232552,
+      "mae_pkd": 0.554530058252559
+    }
+  ],
+  "validation": [
+    {
+      "method": "anchor_raw",
+      "alpha": 1.0,
+      "rmse_pkd": 0.7728733692287133,
+      "mae_pkd": 0.5994716393783078,
+      "prediction_sd": 0.26080894130393295
+    },
+    {
+      "method": "sequence_balanced",
+      "alpha": 100.0,
+      "rmse_pkd": 0.7932438894261052,
+      "mae_pkd": 0.6633909349810827,
+      "prediction_sd": 0.026379392356349406
+    },
+    {
+      "method": "cdr3_chemical",
+      "alpha": 0.1,
+      "rmse_pkd": 0.9174510040538764,
+      "mae_pkd": 0.8734169555547502,
+      "prediction_sd": 0.27875626962199795
+    },
+    {
+      "method": "cdr3_words",
+      "alpha": 0.1,
+      "rmse_pkd": 0.9072915222688778,
+      "mae_pkd": 0.8621405485764396,
+      "prediction_sd": 0.27281066796659864
+    },
+    {
+      "method": "Training mean",
+      "alpha": null,
+      "rmse_pkd": 0.8029128322706365,
+      "mae_pkd": 0.6664164706183108,
+      "prediction_sd": 0.0
+    }
+  ],
+  "rmse_relative_improvement": 0.007390267278774191,
+  "forensic": {
+    "job_seed_matches": 938,
+    "job_seed_comparisons": 940,
+    "structure_seed_matches": 4417,
+    "structure_seed_comparisons": 4420
+  },
+  "scope": "retrospective single-project case study; no new biological labels, model fits, or reserved-test scoring"
+}

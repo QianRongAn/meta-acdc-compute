@@ -1,0 +1,14 @@
+[
+  {
+    "attempt": 1,
+    "report_aggregation": "passed",
+    "coordinate_check": "failed: bundled Windows Python has no scipy",
+    "resolution": "replace optional scipy check with standard-library cell-grid implementation; retain earlier successful WSL cdist evidence; no packages installed"
+  },
+  {
+    "attempt": 2,
+    "report_aggregation": "passed with exact summary match",
+    "coordinate_check": "all888 matched in isolated directory",
+    "new_training_or_test_scoring": false
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-21",
+  "stage": "complete scientific author-review draft; not submitted",
+  "single_author_confirmed": true,
+  "manuscript": "manuscript.md",
+  "supplement": "supplement.md",
+  "scientific_scope": "retrospective construction/provenance case study and small-sample affinity limitations",
+  "scope_does_not_require_new_wet_lab_data": true,
+  "validated_binding_or_clinical_model": false,
+  "public_full_neural_replay_available": false,
+  "pending": [
+    "author critical review and intellectual revision of all interpretations",
+    "author name, correspondence and true affiliation",
+    "funding/conflicts/contribution confirmation",
+    "bioRxiv eligibility for unaffiliated status if applicable",
+    "author choice of preprint license",
+    "final package commit and final submission preview"
+  ],
+  "policy": {
+    "url": "https://openrxiv.org/approach-to-ai",
+    "published": "2026-10-20",
+    "verified": "2026-10-21",
+    "finding": "verifiable human authors and affiliation with an accountable organization are required; unaffiliated eligibility must be clarified",
+    "source": "official page read directly by HTTPS; no third-party interpretation used"
+  },
+  "submission_ready": false,
+  "submission_performed": false,
+  "preprint_acceptance_guaranteed": false,
+  "remaining_research_limits": [
+    "single workflow",
+    "severe-distance cutoff lacks full physical validation",
+    "no causal demonstration of learned artifacts",
+    "small SPR experiment and only3sourcecomponents",
+    "no matched published-model comparison on the SPR affinity endpoint",
+    "full neural replay inputs not all distributed"
+  ],
+  "context_commit": "15eb5c60b6907b9ba4f472dad3da612d7366c559"
+}
