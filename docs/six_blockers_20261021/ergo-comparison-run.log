@@ -1,0 +1,37 @@
+{
+  "task": "retrospective_common_MIRA_activation_ranking_not_SPR_affinity_or_clinical_acceptance",
+  "plan_sha256": "7ab2748f9820cd6440c20c35e575d4b89ebee704732444e0cbe0ee95dea214a2",
+  "checkpoint_sha256": "238a6f44b15eb499013cd76a439cf82853bd601fc784cd375907c8cc65eb915b",
+  "tool_commit": "5c6fc3719df08c84be83a7f365009cf49b2f23b7",
+  "n_observations": 10000,
+  "n_receptors": 1000,
+  "n_peptides": 20,
+  "n_execution_controls": 1,
+  "control_excluded_from_metrics": true,
+  "all_input_pairs_verified_in_original_order": true,
+  "repeated_control_absolute_difference": 0.0,
+  "official_source_modified": false,
+  "official_training_exact_beta_observations": 120,
+  "official_training_exact_beta_peptide_observations": 0,
+  "metrics": {
+    "ergo_score": {
+      "macro_auroc": 0.5112466666666666,
+      "macro_average_precision": 0.1166259286217173
+    },
+    "spr_reference_pkd_score": {
+      "macro_auroc": 0.5000777777777777,
+      "macro_average_precision": 0.11969145958618004
+    }
+  },
+  "panel_previously_consumed": true,
+  "model_fit_or_tuning_performed": false,
+  "new_independent_acceptance": false,
+  "physical_binding_validation_passed": false,
+  "clinical_validation_passed": false,
+  "limitations": [
+    "Common MIRA activation ranking endpoint only; classifiers/SPR scores are not calibrated activation probabilities",
+    "No new independent holdout; alpha-chain, family and study overlap for external model not fully excluded",
+    "ERGO uses beta CDR3 and peptide; SPR score uses a different training endpoint and more features",
+    "No claim that synthetic decoys are real negatives or that a clinical model is validated"
+  ]
+}

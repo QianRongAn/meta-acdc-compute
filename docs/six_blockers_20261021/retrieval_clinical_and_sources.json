@@ -1,0 +1,25 @@
+[
+  {
+    "file": "pubmed_sources_core.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:(39833157%20OR%2038956325%20OR%20391251427%20OR%2039151427)%20AND%20SRC:MED&resultType=core&format=json&pageSize=10",
+    "error": "<urlopen error [WinError 10054] \u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002>"
+  },
+  {
+    "file": "PMC11480844.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11480844/fullTextXML",
+    "status": 200,
+    "sha256": "411aa99db906df5fd9c6425fd4a3ae197aeb85834cee721998580729eab16e28",
+    "bytes": 185264,
+    "retrieved_at_utc": "2026-10-20T23:45:38.459090+00:00"
+  },
+  {
+    "file": "PMC9691722.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9691722/fullTextXML",
+    "error": "<urlopen error [WinError 10054] \u8fdc\u7a0b\u4e3b\u673a\u5f3a\u8feb\u5173\u95ed\u4e86\u4e00\u4e2a\u73b0\u6709\u7684\u8fde\u63a5\u3002>"
+  },
+  {
+    "file": "PMC6002776.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6002776/fullTextXML",
+    "error": "HTTP Error 500: "
+  }
+]

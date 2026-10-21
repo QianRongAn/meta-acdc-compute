@@ -1,0 +1,65 @@
+[
+  {
+    "file": "batman_readme.md",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/README.md",
+    "status": 200,
+    "sha256": "aa12824fa3fbf36b0675f66c4cd4b6f25d18ba62988f5093d80f4192d0c75dfb",
+    "bytes": 4944,
+    "retrieved_at_utc": "2026-10-20T23:26:31.375693+00:00"
+  },
+  {
+    "file": "batman_LICENSE",
+    "status": "retained_existing",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/LICENSE",
+    "sha256": "ba4f40b5f2f9fbf042009198eac87075914272414936d4d17c3932595bf764fb",
+    "bytes": 2381
+  },
+  {
+    "file": "batcave_mhci.xlsx",
+    "status": "retained_existing",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/results_batman/tcr_epitope_datasets/mutational_scan_datasets/database/TCR_pMHCI_mutational_scan_database.xlsx",
+    "sha256": "9b1292a95b287b94ccf94a4f6888349fd26f02cb55112c43ed5760f1a32cde91",
+    "bytes": 1356746
+  },
+  {
+    "file": "batcave_mhcii.xlsx",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/results_batman/tcr_epitope_datasets/mutational_scan_datasets/database/TCR_pMHCII_mutational_scan_database.xlsx",
+    "status": 200,
+    "sha256": "9edc0e8ceb82afa5b4402a573282d3a5f3e5d3f38e794039ed5857e6feef86fc",
+    "bytes": 330155,
+    "retrieved_at_utc": "2026-10-20T23:26:33.099140+00:00"
+  },
+  {
+    "file": "batcave_kd.xlsx",
+    "status": "retained_existing",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/results_batman/paper_figures/figure_1/1e/tcr_pmhc_binding_datasets/tcr_pmhc_kd.xlsx",
+    "sha256": "54035b32257768295c443e39c33cdbb6cef10b80f5bf7761bc79f4fb3368e093",
+    "bytes": 26877
+  },
+  {
+    "file": "batcave_kd_notes.docx",
+    "url": "https://raw.githubusercontent.com/meyer-lab-cshl/BATMAN-paper/37d8d1ba23921d90736418b7b6cd62a5cdf68a91/results_batman/paper_figures/figure_1/1e/tcr_pmhc_binding_dataset_notes.docx",
+    "status": 200,
+    "sha256": "a86cc925a43c30ef793f3de18152c4717bb0d2082c07cadf07e8e43c37c90446",
+    "bytes": 16812,
+    "retrieved_at_utc": "2026-10-20T23:26:34.156509+00:00"
+  },
+  {
+    "file": "PMC11160895.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11160895/fullTextXML",
+    "status": 200,
+    "sha256": "93a6b48640bcb72dc49de3df24a6f001c80d5a326de4f6581f24d345c3b771fb",
+    "bytes": 240586,
+    "retrieved_at_utc": "2026-10-20T23:27:04.570271+00:00"
+  },
+  {
+    "file": "PMC13224026.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13224026/fullTextXML",
+    "error": "HTTP Error 500: "
+  },
+  {
+    "file": "jina_tcr4.txt",
+    "url": "https://r.jina.ai/https://pmc.ncbi.nlm.nih.gov/articles/PMC11160895/",
+    "error": "HTTP Error 401: Unauthorized"
+  }
+]
