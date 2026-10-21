@@ -1,0 +1,100 @@
+{
+  "purpose": "finite historical fingerprint search; not model development or validation",
+  "source_commit": "67978635df44a0fe23b1412d32beafc90cd672f7",
+  "scoring": "historical default unmasked features, temperature 1; no parameter search",
+  "input_rows": "all 105 rows of original prediction_scores.relabeled.tsv",
+  "eligible_candidates": [
+    {
+      "file": "egnn_dataset.autodl3080.model.pt",
+      "sha256": "1329cdd3775fff6d718eb7ee49508cf70e011e24367d847c7d5dd40952a9e7df",
+      "bytes": 3060149,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_noplddt.model.pt",
+      "sha256": "21bfc42f81d5c7773daa6de6260aa74e522d3faeb9c4cb1f59c0082625feee14",
+      "bytes": 3060149,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_noplddt_s10.model.pt",
+      "sha256": "2e848a1ac9b82644d22dc8f3fc922232c3dd7310ee5a8ef7f892a95dae206d30",
+      "bytes": 3060501,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_noplddt_s20.model.pt",
+      "sha256": "d9adcc293c94055e24b19a80c19de9acdb5ac025809bd16782413fa460a496c7",
+      "bytes": 3060501,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_noplddt_s30.model.pt",
+      "sha256": "ea231dcb322d5f2ba9653a0ad4f7d573b184afcc80dd87109538281ab099eef8",
+      "bytes": 3060501,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_seed0.model.pt",
+      "sha256": "93cbb9b4a80eaa0d166c03c9397835eed80d94ce2c60b9881281a05bc9483e0a",
+      "bytes": 3060005,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_seed1.model.pt",
+      "sha256": "e0093f67868c56c30f4cd2e80cf37797042367f0a59489d9e8283cb2e06b36d7",
+      "bytes": 3060005,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    },
+    {
+      "file": "egnn_seed2.model.pt",
+      "sha256": "f3593162ab922722aba6ad3e364b33d2c218276e170e4124ebf3428952541d20",
+      "bytes": 3060005,
+      "metadata": {
+        "n_node_dim": 26,
+        "n_edge_dim": 16
+      },
+      "node_dim": 26,
+      "edge_dim": 16
+    }
+  ],
+  "excluded": "DA checkpoints postdate the September table; hybrid incompatible; duplicate hash tested once",
+  "success_rule": "all original per-structure score digits and graph node/edge counts; partial agreement never establishes binding",
+  "historical_causal_attestation": false,
+  "scientific_model_promotion_allowed": false
+}

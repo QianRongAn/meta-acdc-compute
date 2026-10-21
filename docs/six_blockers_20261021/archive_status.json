@@ -1,0 +1,18 @@
+{
+  "requested_original": "meta-acdc-code.tar.gz",
+  "original_archive_located": false,
+  "original_archive_byte_identity_verified": false,
+  "searched": [
+    "Windows Desktop, Downloads, Documents; exact archive filename patterns only",
+    "WSL /home/administrator/docs and autodl-tmp max depth 6",
+    "WSL /tmp and legacy /root project prefixes max depth 5"
+  ],
+  "known_historical_source_commit": "67978635df44a0fe23b1412d32beafc90cd672f7",
+  "reconstruction": {
+    "filename": "meta-acdc-legacy-6797863-source-reconstruction.tar.gz",
+    "bytes": 50076,
+    "sha256": "a4c0007ad206214414fee55497a0dfbe44920c328171c5447276c8ca665f526e",
+    "scope": "Git source reconstruction of known scoring commit; src and pyproject.toml only; not the missing external review tar"
+  },
+  "resolution": "Original reviewed tar remains unavailable; withdrawn results stay withdrawn. A named reconstruction supports source replay without impersonating the original archive."
+}

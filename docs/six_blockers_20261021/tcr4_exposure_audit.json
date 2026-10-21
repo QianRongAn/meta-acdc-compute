@@ -1,0 +1,38 @@
+{
+  "construct_id": "PMID:39833157:TCR4:PDB:7L1D",
+  "identity_fields": {
+    "alpha_variable": "MQKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAGNTGTASKLTFGTGTRLQ",
+    "beta_variable": "MDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSGLAGGPVSGANVLTFGAGSRLT",
+    "cdr3_alpha": "CAGNTGTASKLTF",
+    "cdr3_beta": "CASSGLAGGPVSGANVLTF"
+  },
+  "registry_hits": {
+    "old91": [],
+    "clinical": [],
+    "combined_prior_reservations": [
+      "IMMREP25:29bd00d20bd987a3f581ede6e218f5b6988991e8b6e2d2e5eb0e94af7760edb1",
+      "TCR4"
+    ],
+    "consumed_frozen_test_identity_only": [
+      "TCR4"
+    ]
+  },
+  "development_source_overlap": [
+    {
+      "pmid": "28572406",
+      "shared_author_keys": [
+        "bakerbm"
+      ]
+    }
+  ],
+  "previous_measurement_pmid": "35484264",
+  "new_measurement_pmid": "39833157",
+  "new_receptor_lineages": 0,
+  "new_fresh_independent_acceptance_records": 0,
+  "old_consumed_test_identity_projected_for_exposure_audit": true,
+  "old_consumed_test_labels_used_for_tuning": false,
+  "new_measurements_model_scored": false,
+  "training_allowed": false,
+  "formal_independent_acceptance_allowed": false,
+  "reason": "Existing TCR4 lineage is in consumed independent registry. New SPR non-detection/4 C measurement extends evidence only; never count same receptor from new paper as a fresh independent family."
+}

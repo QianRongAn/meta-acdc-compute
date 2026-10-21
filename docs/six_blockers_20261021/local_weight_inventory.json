@@ -1,0 +1,174 @@
+[
+  {
+    "file": "da_seed0.model.pt",
+    "sha256": "84a3ed259e5c8f0512911420c330b75acfa61618b5c1dd9c9fdbd7633f08c6b7",
+    "bytes": 3059861,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16,
+      "val_auroc": 0.9515747475460774,
+      "seed": 0
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "da_seed1.model.pt",
+    "sha256": "7062a20e2956c64137bf982ab37a854e6e87759b9f5062377fa0970a2f6029ae",
+    "bytes": 3059861,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16,
+      "val_auroc": 0.9463667820069204,
+      "seed": 1
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "da_seed2.model.pt",
+    "sha256": "ab9c5ff48ee90e0c78ec53f62e70f410ef7f1c9ff5bbbd20fb53ce677a1b6076",
+    "bytes": 3059861,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16,
+      "val_auroc": 0.9500035308240944,
+      "seed": 2
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "da_seed3.model.pt",
+    "sha256": "19ab2c93bba41eabe9ca3fdb72d016ac86f91e8d37f6192c535218b841c79bb1",
+    "bytes": 3059861,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16,
+      "val_auroc": 0.951963138196455,
+      "seed": 3
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "da_seed4.model.pt",
+    "sha256": "7a6710c63ad9205d8978af1a13658b414984e0e17a753a091bd4e607def58205",
+    "bytes": 3059861,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16,
+      "val_auroc": 0.9529341148223995,
+      "seed": 4
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_dataset.autodl3080.model.pt",
+    "sha256": "1329cdd3775fff6d718eb7ee49508cf70e011e24367d847c7d5dd40952a9e7df",
+    "bytes": 3060149,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_dataset.hybrid.model.pt",
+    "sha256": "e7e81607f31434be3b19d0688fbc5ec3012a9e4e115458d15968349a71882426",
+    "bytes": 3556389,
+    "metadata": {},
+    "node_dim": null,
+    "edge_dim": null
+  },
+  {
+    "file": "egnn_dataset.model.pt",
+    "sha256": "1329cdd3775fff6d718eb7ee49508cf70e011e24367d847c7d5dd40952a9e7df",
+    "bytes": 3060149,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_noplddt.model.pt",
+    "sha256": "21bfc42f81d5c7773daa6de6260aa74e522d3faeb9c4cb1f59c0082625feee14",
+    "bytes": 3060149,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_noplddt_s10.model.pt",
+    "sha256": "2e848a1ac9b82644d22dc8f3fc922232c3dd7310ee5a8ef7f892a95dae206d30",
+    "bytes": 3060501,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_noplddt_s20.model.pt",
+    "sha256": "d9adcc293c94055e24b19a80c19de9acdb5ac025809bd16782413fa460a496c7",
+    "bytes": 3060501,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_noplddt_s30.model.pt",
+    "sha256": "ea231dcb322d5f2ba9653a0ad4f7d573b184afcc80dd87109538281ab099eef8",
+    "bytes": 3060501,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_seed0.model.pt",
+    "sha256": "93cbb9b4a80eaa0d166c03c9397835eed80d94ce2c60b9881281a05bc9483e0a",
+    "bytes": 3060005,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_seed1.model.pt",
+    "sha256": "e0093f67868c56c30f4cd2e80cf37797042367f0a59489d9e8283cb2e06b36d7",
+    "bytes": 3060005,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  },
+  {
+    "file": "egnn_seed2.model.pt",
+    "sha256": "f3593162ab922722aba6ad3e364b33d2c218276e170e4124ebf3428952541d20",
+    "bytes": 3060005,
+    "metadata": {
+      "n_node_dim": 26,
+      "n_edge_dim": 16
+    },
+    "node_dim": 26,
+    "edge_dim": 16
+  }
+]

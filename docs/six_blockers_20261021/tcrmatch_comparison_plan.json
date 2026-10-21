@@ -1,0 +1,23 @@
+{
+  "task": "retrospective_same_MIRA_activation_ranking_comparison_not_SPR_affinity_or_clinical_validation",
+  "tool": "IEDB/TCRMatch",
+  "tool_commit": "e2c1bf824553810799a11432dca922de5abb6beb",
+  "threshold": 0.97,
+  "score": "maximum reported similarity among references with exactly matching peptide; no hit -> 0 (abstention tie), not binding probability",
+  "reference": "Existing original raw VDJdb snapshot; HomoSapiens, gene TRB, confidence >=2, canonical CDR3; queried peptide panel only",
+  "family_exclusion": "remove reference CDR3s if any query has >=90% SequenceMatcher ratio and length ratio >=90%; exact matches also excluded; CDR3beta screen is not full paired receptor family proof",
+  "reference_sha256": "3f5823f01d954751567a8d40870a284e384625242bce870b6390c3222a46568a",
+  "panel_sha256": "5af77db359c390edf5e381aa2275424fd2f1ba3079e2cfe2909c05ddb8af885f",
+  "prior_baseline_predictions_sha256": "8455a4c29397609e7e5b0bcbdf196c5e20e185d893ee6edbc47d0989d69b7bd9",
+  "query_labels_used_for_reference_or_threshold_selection": false,
+  "metrics": [
+    "macro_per_peptide_AUROC",
+    "macro_per_peptide_AP"
+  ],
+  "missing_prediction_policy": "all 10000 original observations retained; no-hit pairs score 0",
+  "tuning_allowed": false,
+  "new_independent_acceptance_claim_allowed": false,
+  "endpoint": "MIRA_pool_activation",
+  "ci_scope": "descriptive per-peptide metrics only; no independent study or clinical CI",
+  "binary_installation": "compile unmodified pinned source in temporary directory with existing g++; no package install"
+}

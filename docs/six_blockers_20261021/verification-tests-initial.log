@@ -1,0 +1,24 @@
+test_batcave_assays_species_and_censoring_stay_separate (test_six_blockers.SixBlockerTests.test_batcave_assays_species_and_censoring_stay_separate) ... ok
+test_clinical_and_historical_archive_limits_remain_explicit (test_six_blockers.SixBlockerTests.test_clinical_and_historical_archive_limits_remain_explicit) ... ok
+test_ergo_keeps_all_pairs_control_and_fixed_baseline (test_six_blockers.SixBlockerTests.test_ergo_keeps_all_pairs_control_and_fixed_baseline) ... ok
+test_finite_checkpoint_search_cannot_restore_21_row_claim (test_six_blockers.SixBlockerTests.test_finite_checkpoint_search_cannot_restore_21_row_claim) ... ok
+test_mandatory_original_source_bytes (test_six_blockers.SixBlockerTests.test_mandatory_original_source_bytes) ... ok
+test_name_collision_and_consumed_family_not_relabelled_independent (test_six_blockers.SixBlockerTests.test_name_collision_and_consumed_family_not_relabelled_independent) ... ok
+test_non_detection_has_no_invented_affinity_or_safety_label (test_six_blockers.SixBlockerTests.test_non_detection_has_no_invented_affinity_or_safety_label) ... ok
+test_official_training_exposure_audit_and_blob_identity (test_six_blockers.SixBlockerTests.test_official_training_exposure_audit_and_blob_identity) ... ok
+test_primary_research_DNA_exact_cells_and_author_exclusion (test_six_blockers.SixBlockerTests.test_primary_research_DNA_exact_cells_and_author_exclusion) ... ok
+test_primary_response_and_temperature_match_real_source (test_six_blockers.SixBlockerTests.test_primary_response_and_temperature_match_real_source) ... FAIL
+
+======================================================================
+FAIL: test_primary_response_and_temperature_match_real_source (test_six_blockers.SixBlockerTests.test_primary_response_and_temperature_match_real_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/administrator/docs/meta-acdc-readiness/tests/test_six_blockers.py", line 47, in test_primary_response_and_temperature_match_real_source
+    self.assertTrue(any('4' in x and '°C' in x and 'six' in x for x in captions))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.281s
+
+FAILED (failures=1)
