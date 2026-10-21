@@ -1,3 +1,6 @@
+> **当前近期目标（2026-10-21）**：在终点明确、受体和来源严格隔离的实测数据上，现有方法能否比简单基线提供稳定、具有实际意义的预测增益？
+> 后续工作按[近期研究计划](../NEAR_TERM_GOAL.md)执行；下列撤回和放行限制继续有效。
+
 # Current status: previous document withdrawn / superseded
 
 **2026-10-17: NO GO for structural retraining on the old release. Binding and clinical claims remain unvalidated.**
