@@ -3,8 +3,8 @@ instances for cross-instance stability analysis.
 
 Pre-registered in docs/fingerprint_retrieval_20261021/FOLLOWUP_AUROC_RASHOMON_20261021.md
 and followup_plan.json. Parent benchmark: STRUCT-FINGERPRINT-20261021
-(meta_acdc.models.train_fingerprint). The v1 trainer is left byte-identical;
-this module implements recipe v2:
+(meta_acdc.models.train_fingerprint). Historical v2 used the following recipe. The shared batch assembler and
+instance seed isolation were corrected on 2026-10-23; old artifacts remain archived:
 
 - batch 16 -> 64
 - projection head without the trailing LayerNorm (unit-sphere normalization
@@ -18,7 +18,8 @@ this module implements recipe v2:
 Everything else stays identical to v1: EGNN 6x128, feature schema 26/16,
 invariant variant (coordinate updates off), family-grouped 5-fold assignment
 (seed 20261021, v1 fold_assignment.json), Task A/B/C metric definitions,
-dropout 0.1, grad clip 10, deterministic CUDA settings.
+dropout 0.1, grad clip 10. Deterministic algorithms are required (unsupported
+CUDA operations fail); reproducibility must still be checked on the actual device.
 
 Each (fold, seed) instance saves: weights, embeddings of all 331 graphs
 (unit-normalized), the full similarity matrix, per-query retrieval rankings,
@@ -27,11 +28,13 @@ and its metrics fragment. These artifacts feed scripts/rashomon_fingerprint.py.
 Usage:
     .venv/bin/python -m meta_acdc.models.train_fingerprint_v2 \
         --out-dir docs/fingerprint_retrieval_20261021/followup \
-        --epochs 120 --batch-size 64 --seed 20261021 [--seed 1101 --seed 4242]
+        --epochs 120 --batch-size 64 --seeds 20261021 1101 4242
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
+import os
 import json
 import math
 import random
@@ -54,9 +57,16 @@ from meta_acdc.models.train_fingerprint import (
 SEED = 20261021
 TEMPERATURE = 0.07
 EMB_DIM = 128
+EXECUTION_PROTOCOL = "isolated-fold-seed-and-offset-edges-v1"
+
+
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def set_seed(seed: int):
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
+    torch.use_deterministic_algorithms(True)
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -187,6 +197,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--max-epochs-probe", type=int, default=None,
                     help="internal: stop after N epochs (timing probe only)")
     args = ap.parse_args(argv)
+    if (args.folds < 2 or args.epochs < 1 or args.batch_size < 1
+            or len(set(args.seeds)) != len(args.seeds)
+            or (args.only_fold is not None and not 0 <= args.only_fold < args.folds)):
+        ap.error("invalid folds, epochs, batch size, duplicate seeds or fold index")
 
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
     print(f"device: {device}", flush=True)
@@ -195,17 +209,25 @@ def main(argv: list[str] | None = None) -> int:
     graphs, records = data["graphs"], data["records"]
     families = [r["family_id"] for r in records]
     # same family-grouped fold assignment as v1 (seed fixed in group_folds)
+    if len(set(families)) < args.folds:
+        raise ValueError("fewer families than folds; empty test partitions are forbidden")
     folds = group_folds(families, args.folds)
     family_to_fold = {f: i for i, fs in enumerate(folds) for f in fs}
     fold_of = [family_to_fold[f] for f in families]
 
     run_dir = args.out_dir / "model_run_v2"
-    run_dir.mkdir(parents=True, exist_ok=True)
 
     config = {
         "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
         "parent_task": "STRUCT-FINGERPRINT-20261021",
         "n_graphs": len(graphs),
+        "execution_protocol": EXECUTION_PROTOCOL,
+        "dataset_sha256": file_sha256(args.dataset),
+        "probe_only": args.max_epochs_probe is not None,
+        "source_sha256": {name: file_sha256(Path(__file__).with_name(name))
+                          for name in ("train_fingerprint_v2.py", "train_fingerprint.py",
+                                       "egnn.py", "train_egnn.py")},
+        "torch_version": torch.__version__,
         "recipe_v2": {
             "batch_size": args.batch_size,
             "epochs": args.epochs,
@@ -225,27 +247,43 @@ def main(argv: list[str] | None = None) -> int:
         "device": device,
         "binding_labels": False,
     }
-    (args.out_dir / "config.json").write_text(
-        json.dumps(config, indent=2, allow_nan=False) + "\n")
+    config_path = args.out_dir / "config.json"
+    if config_path.exists():
+        previous = json.loads(config_path.read_text())
+        compatible = config
+        old_compatible = previous
+        if not args.resume or old_compatible != compatible:
+            raise ValueError("refusing legacy/incompatible or non-resume output; use a fresh directory")
+    else:
+        if args.out_dir.exists() and any(args.out_dir.iterdir()):
+            raise ValueError("output directory is nonempty without a compatible config")
+        args.out_dir.mkdir(parents=True, exist_ok=True)
+        config_path.write_text(json.dumps(config, indent=2, allow_nan=False) + "\n")
+    run_dir.mkdir(parents=True, exist_ok=True)
 
     fold_list = range(args.folds) if args.only_fold is None \
         else [args.only_fold]
 
     for seed in args.seeds:
-        set_seed(seed)
         for fold in fold_list:
             tag = f"fold{fold}_seed{seed}"
-            complete = all(
-                p.exists() for p in (
-                    run_dir / f"{tag}.pt",
-                    run_dir / f"emb_{tag}.npy",
-                    run_dir / f"sim_{tag}.npy",
-                    args.out_dir / f"rankings_{tag}.json",
-                    args.out_dir / f"metrics_{tag}.json"))
+            artifacts = (run_dir / f"{tag}.pt", run_dir / f"emb_{tag}.npy",
+                         run_dir / f"sim_{tag}.npy", args.out_dir / f"rankings_{tag}.json")
+            metric_path = args.out_dir / f"metrics_{tag}.json"
+            complete = all(p.exists() for p in (*artifacts, metric_path))
             if args.resume and complete:
-                print(f"seed {seed} fold {fold}: complete, skipping "
-                      f"(--resume)", flush=True)
+                saved = json.loads(metric_path.read_text())
+                hashes = {str(p.relative_to(args.out_dir)): file_sha256(p) for p in artifacts}
+                if (saved.get("fold") != fold or saved.get("seed") != seed
+                        or saved.get("execution_protocol") != EXECUTION_PROTOCOL
+                        or saved.get("artifact_sha256") != hashes):
+                    raise ValueError("resume artifacts are legacy, incomplete or modified; use a fresh directory")
+                print(f"seed {seed} fold {fold}: verified complete, skipping (--resume)", flush=True)
                 continue
+            if any(p.exists() for p in (*artifacts, metric_path)):
+                raise ValueError("refusing to overwrite existing/partial instance artifacts")
+            # Each instance must be independent of earlier folds and skipped instances.
+            set_seed(seed)
             test_idx = [i for i, f in enumerate(fold_of) if f == fold]
             train_idx = [i for i in range(len(graphs)) if i not in test_idx]
             print(f"seed {seed} fold {fold}: train={len(train_idx)} "
@@ -313,12 +351,16 @@ def main(argv: list[str] | None = None) -> int:
             res["n_test"] = len(test_idx)
             res["median_pairwise_cosine"] = med_pair
             frag = args.out_dir / f"metrics_{tag}.json"
-            frag.write_text(json.dumps(res, indent=2, allow_nan=False) + "\n")
             np.save(run_dir / f"emb_{tag}.npy", embs.numpy().astype(np.float32))
             np.save(run_dir / f"sim_{tag}.npy", sim_np)
             rankings = per_query_rankings(embs, test_idx)
             (args.out_dir / f"rankings_{tag}.json").write_text(
                 json.dumps(rankings) + "\n")
+            res["execution_protocol"] = EXECUTION_PROTOCOL
+            res["artifact_sha256"] = {str(p.relative_to(args.out_dir)): file_sha256(p)
+                                      for p in artifacts}
+            # Completion marker is written last; resume verifies all four bound artifacts.
+            frag.write_text(json.dumps(res, indent=2, allow_nan=False) + "\n")
             print(json.dumps(
                 {k: v for k, v in res.items()
                  if k in ("fold", "seed", "retrieval", "family", "domain",

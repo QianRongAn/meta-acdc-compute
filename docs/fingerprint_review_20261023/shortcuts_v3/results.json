@@ -1,0 +1,1092 @@
+{
+  "scope": "retrospective defective cached training, not new validation",
+  "source_sha256": {
+    "/home/administrator/docs/meta-acdc/data/processed/fingerprint_dataset.pt": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/fold_assignment.json": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+    "docs/fingerprint_review_20261023/analysis_plan.json": "67e33a089de8395627950d1338583f5f065a742b08503c239a580f56bf8fcafb",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed20261021.npy": "5bee04a2aa577c660408b18c6905b46c6268a77d7381a860ee825fb2d530f5d8",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed20261021.npy": "80ed5d3d1822a625b5fbf2595e23de627c560c0e2e100c6a6a5dbffb247d4f64",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed20261021.npy": "5475f9b606e8c4e5f107caba857e4447e0759c2d998e92c0bd1b75a45d2f0138",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed20261021.npy": "4f8498441f3c71b90b7fb824cb5f02da4eb39a916691f94d429fc7fa815b3e15",
+    "/home/administrator/docs/meta-acdc/docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed20261021.npy": "f7a18a04e5e523e20984f453aee57dad2249e798aade2cc959585d7cab5d5917"
+  },
+  "input_hashes_unchanged": true,
+  "confidence_audit": {
+    "crystal": {
+      "n_graphs": 145,
+      "minimum": 0.5,
+      "maximum": 0.5,
+      "variable_graphs": 0
+    },
+    "predicted": {
+      "n_graphs": 186,
+      "minimum": 0.5,
+      "maximum": 0.5,
+      "variable_graphs": 0
+    }
+  },
+  "results": {
+    "composition_cosine": {
+      "all": {
+        "mean": 0.9872480343422646,
+        "ci95": [
+          0.9826727844276748,
+          0.9918872891910896
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.9806256753217423,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.9806256753217423,
+        "pooled_pair_auroc_defined_queries": 0.9778570634961257,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.979939053755329,
+        "per_fold_pooled_pair_auroc": [
+          0.9751433891174103,
+          0.9814222920944559,
+          0.9753913760890284,
+          0.9776658163265306,
+          0.9900723951492195
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.5474711682972928,
+        "ci95": [
+          0.36551443072258377,
+          0.7345612656998902
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5493939666437296,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5493939666437294,
+        "pooled_pair_auroc_defined_queries": 0.5387168883424611,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.46887277436666996,
+        "per_fold_pooled_pair_auroc": [
+          0.4166666666666667,
+          0.5853683353683353,
+          0.459211986681465,
+          0.8831168831168831,
+          0.0
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.6093931260252325,
+        "ci95": [
+          0.501865670517472,
+          0.7187013138983495
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5392771457846841,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5392771457846841,
+        "pooled_pair_auroc_defined_queries": 0.642967886084348,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.7089513654111402,
+        "per_fold_pooled_pair_auroc": [
+          0.656776263031275,
+          0.6874942145700268,
+          0.550866656129814,
+          0.9054336468129571,
+          0.7441860465116279
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.9822410699635934,
+        "ci95": [
+          0.9754801351117435,
+          0.9890420219428737
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.9734202329894595,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.9734202329894595,
+        "pooled_pair_auroc_defined_queries": 0.968341964017758,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.9733293606543615,
+        "per_fold_pooled_pair_auroc": [
+          0.9708347197392241,
+          0.9723202096538274,
+          0.9622255630347799,
+          0.9773154021821873,
+          0.983950908661789
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    },
+    "size_scalar_cosine": {
+      "all": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.5,
+        "per_fold_pooled_pair_auroc": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.5,
+        "per_fold_pooled_pair_auroc": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.5,
+        "per_fold_pooled_pair_auroc": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.5,
+        "per_fold_pooled_pair_auroc": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    },
+    "size_log_distance": {
+      "all": {
+        "mean": 0.8112406622911089,
+        "ci95": [
+          0.76431116140239,
+          0.8485206626880396
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.8147240469034049,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.8147240469034049,
+        "pooled_pair_auroc_defined_queries": 0.8156912567521513,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.8100240367731134,
+        "per_fold_pooled_pair_auroc": [
+          0.7854312461418289,
+          0.8063202643737166,
+          0.8286398764814403,
+          0.7629496173469388,
+          0.8667791795216422
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.4649998982178914,
+        "ci95": [
+          0.3371482683982684,
+          0.5876118326118327
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5079496418087499,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5079496418087499,
+        "pooled_pair_auroc_defined_queries": 0.5475801944785962,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.5211809477954733,
+        "per_fold_pooled_pair_auroc": [
+          0.3619791666666667,
+          0.6406186406186406,
+          0.47451905290418056,
+          0.6287878787878788,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.605782046359626,
+        "ci95": [
+          0.5189110833793676,
+          0.690390791614687
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5510797809204129,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5510797809204129,
+        "pooled_pair_auroc_defined_queries": 0.6146233717626644,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.6259161373680329,
+        "per_fold_pooled_pair_auroc": [
+          0.5938502405773858,
+          0.5482331296861983,
+          0.6508811443021969,
+          0.6909613375130617,
+          0.6456548347613219
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.7998447083406255,
+        "ci95": [
+          0.7543969864592976,
+          0.837816316990035
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.8042282475926498,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.8042282475926498,
+        "pooled_pair_auroc_defined_queries": 0.8058878206316202,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.8023330639107586,
+        "per_fold_pooled_pair_auroc": [
+          0.7842132076074676,
+          0.7966513286201853,
+          0.8125741811793108,
+          0.7562959908652627,
+          0.8619306112815671
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    },
+    "radius_distance": {
+      "all": {
+        "mean": 0.7636305487866636,
+        "ci95": [
+          0.7107595248876065,
+          0.8070984886722243
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.771051484798372,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.7710514847983719,
+        "pooled_pair_auroc_defined_queries": 0.7773836295520454,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.7721863447985549,
+        "per_fold_pooled_pair_auroc": [
+          0.7474423696612401,
+          0.7812676463039014,
+          0.7820137384402349,
+          0.7300350765306123,
+          0.8201728930567859
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.47097653403881773,
+        "ci95": [
+          0.3378409090909091,
+          0.6003055383678219
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5208332174888152,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5208332174888152,
+        "pooled_pair_auroc_defined_queries": 0.579054431653068,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.5559488851213323,
+        "per_fold_pooled_pair_auroc": [
+          0.4322916666666667,
+          0.7549857549857549,
+          0.46476137624861263,
+          0.6277056277056277,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.5652383066275805,
+        "ci95": [
+          0.4856070106479392,
+          0.639468232479669
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5228620056217196,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5228620056217197,
+        "pooled_pair_auroc_defined_queries": 0.6277235583330025,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.6450293322923547,
+        "per_fold_pooled_pair_auroc": [
+          0.6625400962309543,
+          0.6483962788114412,
+          0.5790659080132764,
+          0.6656217345872518,
+          0.6695226438188494
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.7638474906706784,
+        "ci95": [
+          0.7116895400346205,
+          0.8076291817256812
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.7684269540565517,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.7684269540565518,
+        "pooled_pair_auroc_defined_queries": 0.7725087731674393,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.7694499045004783,
+        "per_fold_pooled_pair_auroc": [
+          0.7481346966167937,
+          0.7780192588980985,
+          0.770885471680973,
+          0.7209972088302461,
+          0.8292128864762804
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    },
+    "domain_metadata": {
+      "all": {
+        "mean": 0.5667800551649295,
+        "ci95": [
+          0.5052957111245682,
+          0.6239574714230108
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5886241881445387,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5886241881445387,
+        "pooled_pair_auroc_defined_queries": 0.6343909362941472,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.6159627858528882,
+        "per_fold_pooled_pair_auroc": [
+          0.6247335489580691,
+          0.5961563141683778,
+          0.674377351302443,
+          0.5486607142857143,
+          0.6358860005498366
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.40038139964610553,
+        "ci95": [
+          0.3326660104601281,
+          0.47532989885931065
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.44172574737090864,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.4417257473709087,
+        "pooled_pair_auroc_defined_queries": 0.5108304459595395,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.4765494786998672,
+        "per_fold_pooled_pair_auroc": [
+          0.3541666666666667,
+          0.561050061050061,
+          0.5162319644839067,
+          0.4512987012987013,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.4738179893443133,
+        "ci95": [
+          0.4170679622859244,
+          0.5297199527503094
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.4813040551190023,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.4813040551190024,
+        "pooled_pair_auroc_defined_queries": 0.5576235815834094,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.5268237049732608,
+        "per_fold_pooled_pair_auroc": [
+          0.5929230152365678,
+          0.4941509302971397,
+          0.6025762604709973,
+          0.4276384535005225,
+          0.5168298653610771
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.3215968773873185,
+        "ci95": [
+          0.2597648292271454,
+          0.37869246562261266
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.3497155499367889,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.3497155499367888,
+        "pooled_pair_auroc_defined_queries": 0.39541284403669724,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.375861081941005,
+        "per_fold_pooled_pair_auroc": [
+          0.3904109589041096,
+          0.359375,
+          0.43478260869565216,
+          0.3,
+          0.39473684210526316
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    },
+    "historical_v2_seed20261021": {
+      "all": {
+        "mean": 0.7849752693631921,
+        "ci95": [
+          0.7230148595882623,
+          0.8357369655534362
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.787610240683764,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.787610240683764,
+        "pooled_pair_auroc_defined_queries": 0.6506023848966532,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.7943805448628184,
+        "per_fold_pooled_pair_auroc": [
+          0.7627489456829437,
+          0.8115809484086243,
+          0.7895633403693312,
+          0.7292713647959184,
+          0.8787381250572747
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_family": {
+        "mean": 0.4399815918414534,
+        "ci95": [
+          0.2844717620182586,
+          0.595936147186147
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.4962040792330167,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.49620407923301657,
+        "pooled_pair_auroc_defined_queries": 0.5712976416675981,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269,
+        "fold_mean_pooled_pair_auroc": 0.5360996780842786,
+        "per_fold_pooled_pair_auroc": [
+          0.3385416666666667,
+          0.7551892551892552,
+          0.47854236034036257,
+          0.6082251082251082,
+          0.5
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_peptide": {
+        "mean": 0.5700973833279811,
+        "ci95": [
+          0.485928069496256,
+          0.6484936459351245
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5256542126326942,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5256542126326942,
+        "pooled_pair_auroc_defined_queries": 0.5398228432412201,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138,
+        "fold_mean_pooled_pair_auroc": 0.6527374911980114,
+        "per_fold_pooled_pair_auroc": [
+          0.6881265036086608,
+          0.6717694159029899,
+          0.5797244613034087,
+          0.6374085684430512,
+          0.6866585067319462
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      },
+      "same_domain": {
+        "mean": 0.7829066995649218,
+        "ci95": [
+          0.7222192904553358,
+          0.8344457382179831
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.7834963369122347,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.7834963369122347,
+        "pooled_pair_auroc_defined_queries": 0.6453675284597367,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105,
+        "fold_mean_pooled_pair_auroc": 0.7908907068929948,
+        "per_fold_pooled_pair_auroc": [
+          0.7684504775815818,
+          0.8068877986348123,
+          0.7777508117996391,
+          0.7203755392032479,
+          0.8809889072456927
+        ],
+        "cross_fold_pooling_caveat": "Different fold models have uncalibrated score scales; use fold mean or query macro, not cross-fold pooled pair AUROC."
+      }
+    }
+  },
+  "paired_model_minus_baseline": {
+    "composition_cosine": {
+      "all": {
+        "mean": -0.20227276497907246,
+        "ci95": [
+          -0.2635377636121291,
+          -0.1515318051880655
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.19301543463797818,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": -0.10748957645583944,
+        "ci95": [
+          -0.4215399531024531,
+          0.16682680161053862
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.053189887410712844,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": -0.039295742697251466,
+        "ci95": [
+          -0.17862681317847814,
+          0.09086763694925189
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.013622933151989994,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": -0.19933437039867163,
+        "ci95": [
+          -0.2616625985119341,
+          -0.14712752494562736
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.18992389607722476,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "size_scalar_cosine": {
+      "all": {
+        "mean": 0.28497526936319195,
+        "ci95": [
+          0.22301485958826234,
+          0.3357369655534363
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.287610240683764,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": -0.06001840815854656,
+        "ci95": [
+          -0.21552823798174145,
+          0.09593614718614693
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.0037959207669833873,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": 0.07009738332798114,
+        "ci95": [
+          -0.0140719305037439,
+          0.14849364593512449
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0256542126326942,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": 0.2829066995649218,
+        "ci95": [
+          0.22221929045533595,
+          0.334445738217983
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.2834963369122348,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "size_log_distance": {
+      "all": {
+        "mean": -0.026265392927916964,
+        "ci95": [
+          -0.07268895271754698,
+          0.018662551670572004
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.027113806219640928,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": -0.02501830637643786,
+        "ci95": [
+          -0.11728761494656824,
+          0.0652056277056276
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.011745562575733356,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": -0.03568466303164477,
+        "ci95": [
+          -0.14257432434258865,
+          0.06324133807563427
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.02542556828771869,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": -0.01693800877570369,
+        "ci95": [
+          -0.06245221282810973,
+          0.02630012150496197
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.020731910680414977,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "radius_distance": {
+      "all": {
+        "mean": 0.021344720576528375,
+        "ci95": [
+          -0.010158203333192069,
+          0.050983394403329656
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.01655875588539203,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": -0.030994942197364338,
+        "ci95": [
+          -0.16363955572973737,
+          0.11061581908575847
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": -0.024629138255798592,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": 0.00485907670040073,
+        "ci95": [
+          -0.040423146688360244,
+          0.04821616377841301
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.002792207010974557,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": 0.019059208894243597,
+        "ci95": [
+          -0.011129770652830981,
+          0.046530278884395385
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.015069382855683116,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "domain_metadata": {
+      "all": {
+        "mean": 0.2181952141982625,
+        "ci95": [
+          0.1464756209328915,
+          0.2893497491187484
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.19898605253922544,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": 0.039600192195347904,
+        "ci95": [
+          -0.07545639289583926,
+          0.17082541245279126
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.05447833186210794,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": 0.0962793939836679,
+        "ci95": [
+          -0.010034033939706507,
+          0.19946881485181334
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.04435015751369178,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": 0.4613098221776033,
+        "ci95": [
+          0.3915115457784037,
+          0.5340602787340978
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.433780786975446,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    }
+  },
+  "composition_identical_instance_rho": {
+    "mean": 1.0,
+    "ci95": [
+      1.0,
+      1.0
+    ],
+    "n": 331,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 110,
+    "n_undefined_values": 0,
+    "seed_pair_columns": 1,
+    "query_weighted_mean": 1.0,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "composition_null_scope": "deterministic identical copies, NOT shuffled-label training",
+  "missing": [
+    "audited MHC for same-MHC stratum",
+    "shuffled-label trained null",
+    "corrected full training E15"
+  ]
+}

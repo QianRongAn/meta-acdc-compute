@@ -135,7 +135,7 @@ class TestRashomonHelpers(unittest.TestCase):
 
     def test_bootstrap_ci(self):
         vals = np.arange(100, dtype=float)
-        ci = rashomon.bootstrap_ci(vals, n=200)
+        ci = rashomon.bootstrap_ci(vals, [str(i) for i in range(100)], n=200)
         self.assertEqual(ci["n"], 100)
         self.assertLess(ci["ci95"][0], ci["mean"])
         self.assertLess(ci["mean"], ci["ci95"][1])
@@ -165,7 +165,7 @@ class TestRashomonHelpers(unittest.TestCase):
                           "family": {"1": 1.0}, "domain": {"accuracy": 0.5}}
         with patch.object(rashomon, "SEEDS", [20261021, 1101, 4242]), \
                 patch.object(rashomon, "SEED_PAIRS", [(20261021, 1101)]):
-            fr = rashomon.fold_rashomon(0, [0, 1, 2, 3], recs, sims, embs,
+            fr = rashomon.fold_rashomon(0, [0, 1], recs, sims, embs,
                                         rankings, metrics)
         self.assertEqual(fr["ranking_stability"]["pooled"]["mean"], 1.0)
         self.assertEqual(fr["retrieval_agreement"]["rank1_agreement"]["mean"],

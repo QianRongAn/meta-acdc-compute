@@ -1,0 +1,19 @@
+{
+  "base_commit": "8f517798f68e8782c28cac381b889fdb22c0944c",
+  "branch": "fix/fingerprint-review-20261023",
+  "source_sha256": {
+    "scripts/fingerprint_shortcut_audit.py": "9e21dca71016944f39868769caec83397fb34591a6ac17e69a4093ec84f66663",
+    "scripts/rashomon_fingerprint.py": "f91c2c940d8f1b27e0a1ab513b264499afdf61b9eddefcacde875f7a902bb80b",
+    "src/meta_acdc/models/train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+    "src/meta_acdc/models/train_fingerprint_v2.py": "83f25b027b13449ab3e75f9d9af6d58e59e8d6239bd1ec5ce2ace29419cf6602",
+    "tests/test_fingerprint_review.py": "af94516702308cc0620b31f2b6cc4f628bfebb8be81c208d15ddf9df8faca002",
+    "tests/test_fingerprint_followup.py": "a8cf4ee02e5d3dce4068b03b9faffd71c356c356667db608420a7d708a37587e",
+    "docs/fingerprint_review_20261023/analysis_plan.json": "67e33a089de8395627950d1338583f5f065a742b08503c239a580f56bf8fcafb"
+  },
+  "final_outputs": [
+    "shortcuts_v3/results.json",
+    "corrected_rashomon_v3/rashomon_results.json"
+  ],
+  "tests": "27 passed, 0 skipped; CPU regression and cached-data diagnostics only",
+  "measured_acceptance_sets_read": false
+}

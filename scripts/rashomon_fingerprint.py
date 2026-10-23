@@ -17,12 +17,13 @@ FOLLOWUP_AUROC_RASHOMON_20261021.md):
                                 cross-graph baseline
   6. pooled AUROC / rank-1      instance-averaged similarities (descriptive)
 
-Also rebuilds followup_results.json from the seed-20261021 fragments if it is
-missing or incomplete. Descriptive reporting only; no pass/fail bar.
+Reconstructs historical summary in memory only. Writes corrected retrospective
+analysis to a fresh output directory, never to the source artifact directory.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from itertools import combinations
@@ -37,7 +38,6 @@ from meta_acdc.models.train_fingerprint import auroc
 SEEDS = [20261021, 1101, 4242]
 FOLDS = [0, 1, 2, 3, 4]
 SEED_PAIRS = list(combinations(SEEDS, 2))
-RNG = np.random.default_rng(20261021)
 
 
 def spearman_rho(a: np.ndarray, b: np.ndarray) -> float:
@@ -79,17 +79,47 @@ def flip_rate(sims: dict[int, np.ndarray], pair_population: list[tuple[int, int]
             "n": n_pairs_total}
 
 
-def bootstrap_ci(vals: np.ndarray, n: int = 2000) -> dict:
-    vals = np.asarray(vals, dtype=float)
-    vals = vals[~np.isnan(vals)]
-    if vals.size == 0:
-        return {"mean": None, "ci95": [None, None], "n": 0}
-    means = [vals[RNG.integers(0, vals.size, vals.size)].mean()
-             for _ in range(n)]
-    return {"mean": float(vals.mean()),
-            "ci95": [float(np.percentile(means, 2.5)),
-                     float(np.percentile(means, 97.5))],
-            "n": int(vals.size)}
+def bootstrap_ci(vals: np.ndarray, groups: list[str], n: int = 2000,
+                 seed: int = 20261023) -> dict:
+    """Average seed-pair values within query, then query means within family.
+
+    Families, rather than repeated query/seed pairs, are the sampling units.
+    Uncertainty is conditional on the cached models and fixed gallery.
+    """
+    values = np.asarray(vals, dtype=float)
+    if values.ndim == 1:
+        values = values[:, None]
+    if values.ndim != 2 or len(groups) != len(values):
+        raise ValueError("one family ID required per query row")
+    finite = np.isfinite(values)
+    counts = finite.sum(axis=1)
+    query_means = np.divide(np.where(finite, values, 0).sum(axis=1),
+                            np.maximum(counts, 1)).astype(float)
+    query_means[counts == 0] = np.nan
+    labels = sorted(set(groups))
+    family_means = []
+    for label in labels:
+        selected = query_means[np.asarray(groups) == label]
+        selected = selected[np.isfinite(selected)]
+        if len(selected):
+            family_means.append(float(selected.mean()))
+    out = {"mean": float(np.mean(family_means)) if family_means else None,
+           "ci95": [None, None], "n": int(np.count_nonzero(counts)),
+           "n_query_rows": len(values), "n_family_groups": len(labels),
+           "n_defined_family_groups": len(family_means),
+           "n_undefined_values": int(np.size(values) - finite.sum()),
+           "seed_pair_columns": values.shape[1],
+           "query_weighted_mean": float(np.mean(query_means[np.isfinite(query_means)]))
+                                  if np.any(np.isfinite(query_means)) else None,
+           "scope": "family-equal, conditional on fixed cached models and gallery",
+           "status": "insufficient_family_groups"}
+    if len(family_means) >= 2:
+        rng = np.random.default_rng(seed)
+        a = np.asarray(family_means)
+        means = a[rng.integers(0, len(a), (n, len(a)))].mean(axis=1)
+        out["ci95"] = [float(x) for x in np.quantile(means, [0.025, 0.975])]
+        out["status"] = "conditional_cluster_bootstrap"
+    return out
 
 
 def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
@@ -98,6 +128,10 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
                   rankings: dict[int, dict],
                   metrics: dict[int, dict]) -> dict:
     n = len(records)
+    groups = [records[q]["family_id"] for q in test_idx]
+    train_idx = [i for i in range(n) if i not in set(test_idx)]
+    if not train_idx:
+        raise ValueError("training-only alignment requires a nonempty training partition")
     gallery_of = {q: [j for j in range(n) if j != q] for q in test_idx}
     pair_population = [(q, j) for q in test_idx for j in gallery_of[q]]
 
@@ -120,9 +154,9 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
         for q in test_idx:
             g = gallery_of[q]
             pair_rhos.append(spearman_rho(sims[a][q, g], sims[b][q, g]))
-        rho_by_pair[f"{a}_{b}"] = bootstrap_ci(np.array(pair_rhos))
+        rho_by_pair[f"{a}_{b}"] = bootstrap_ci(np.array(pair_rhos), groups)
         rho_vals.extend(pair_rhos)
-    stability = {"pooled": bootstrap_ci(np.array(rho_vals)),
+    stability = {"pooled": bootstrap_ci(np.array(rho_vals).reshape(len(SEED_PAIRS), -1).T, groups),
                  "per_pair": rho_by_pair}
 
     # --- 3. retrieval agreement ---------------------------------------------
@@ -133,20 +167,20 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
             hit[s][q] = records[top1]["receptor_id"] == records[q]["receptor_id"]
     agree_rate, jac5, jac10 = [], [], []
     for (a, b) in SEED_PAIRS:
-        agree = np.mean([1.0 if hit[a][q] == hit[b][q] else 0.0
-                         for q in test_idx])
-        agree_rate.append(agree)
+        agree_rate.extend([1.0 if hit[a][q] == hit[b][q] else 0.0
+                           for q in test_idx])
         for q in test_idx:
             ga = rankings[a][str(q)]["gallery_order"]
             gb = rankings[b][str(q)]["gallery_order"]
             jac5.append(jaccard(ga[:5], gb[:5]))
             jac10.append(jaccard(ga[:10], gb[:10]))
     retrieval = {
-        "rank1_agreement": bootstrap_ci(np.array(agree_rate)),
+        "rank1_agreement": bootstrap_ci(np.array(agree_rate).reshape(len(SEED_PAIRS), -1).T, groups),
+        "rank1_agreement_definition": "binary hit-status agreement (includes both wrong); not identical retrieved identity",
         "rank1_hit_rate": {str(s): float(np.mean(list(hit[s].values())))
                            for s in SEEDS},
-        "top5_jaccard": bootstrap_ci(np.array(jac5)),
-        "top10_jaccard": bootstrap_ci(np.array(jac10)),
+        "top5_jaccard": bootstrap_ci(np.array(jac5).reshape(len(SEED_PAIRS), -1).T, groups),
+        "top10_jaccard": bootstrap_ci(np.array(jac10).reshape(len(SEED_PAIRS), -1).T, groups),
     }
 
     # --- 4. pair flip rate --------------------------------------------------
@@ -157,14 +191,14 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
 
     # --- 5. embedding agreement ---------------------------------------------
     agree_graph, baseline = [], []
-    for i in range(n):
+    for i in test_idx:
         for (a, b) in SEED_PAIRS:
             agree_graph.append(float(embs[a][i] @ embs[b][i]))
             others = embs[a][[j for j in range(n) if j != i]]
             baseline.append(float((embs[a][i][None, :] @ others.T).mean()))
     emb_agree = {
-        "same_graph_across_instances": bootstrap_ci(np.array(agree_graph)),
-        "cross_graph_within_instance": bootstrap_ci(np.array(baseline)),
+        "same_graph_across_instances": bootstrap_ci(np.array(agree_graph).reshape(len(test_idx), -1), groups),
+        "cross_graph_within_instance": bootstrap_ci(np.array(baseline).reshape(len(test_idx), -1), groups),
         "caveat": ("raw cross-instance cosine; the contrastive objective is "
                    "invariant to global rotations of the embedding space, so "
                    "this metric is dominated by arbitrary per-instance "
@@ -180,11 +214,11 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
     ref = embs[SEEDS[0]]
     aligned = {SEEDS[0]: ref}
     for s in SEEDS[1:]:
-        u, _, vt = np.linalg.svd(embs[s].T @ ref, full_matrices=False)
+        u, _, vt = np.linalg.svd(embs[s][train_idx].T @ ref[train_idx], full_matrices=False)
         rot = u @ vt
         aligned[s] = embs[s] @ rot
     agree_aligned, baseline_aligned = [], []
-    for i in range(n):
+    for i in test_idx:
         for (a, b) in SEED_PAIRS:
             agree_aligned.append(float(aligned[a][i] @ aligned[b][i]))
             others = aligned[a][[j for j in range(n) if j != i]]
@@ -200,15 +234,21 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
     pooled_aligned_auroc = auroc(np.array(pair_scores_al),
                                  np.array(pair_labels_al))
     aligned_supplement = {
-        "method": ("orthogonal Procrustes alignment of each instance's full "
-                   "embedding matrix to the reference instance before "
+        "method": ("orthogonal Procrustes fitted on training graphs only; "
+                   "agreement evaluated on held-out queries; "
                    "comparing; removes the arbitrary global rotation degree "
                    "of freedom of the contrastive objective"),
         "same_graph_across_instances": bootstrap_ci(
-            np.array(agree_aligned)),
+            np.array(agree_aligned).reshape(len(test_idx), -1), groups),
         "cross_graph_within_instance": bootstrap_ci(
-            np.array(baseline_aligned)),
+            np.array(baseline_aligned).reshape(len(test_idx), -1), groups),
         "pooled_auroc": float(pooled_aligned_auroc),
+        "maximum_cosine_change_float64": max(float(np.max(np.abs(
+            S_aligned[s] - embs[s] @ embs[s].T))) for s in SEEDS),
+        "precision_note": "cached float32 similarities and recomputed float64 dots can differ at ties; no gain from rotation",
+        "fit_graph_indices": train_idx,
+        "evaluation_graph_indices": test_idx,
+        "orthogonal_alignment_changes_within_instance_cosines": False,
     }
 
     # --- 6. pooled similarities (instance-mean) -----------------------------
@@ -234,6 +274,10 @@ def fold_rashomon(fold: int, test_idx: list[int], records: list[dict],
     return {
         "fold": fold,
         "n_test": len(test_idx),
+        "query_statistics": {
+            "query_indices": test_idx, "family_ids": groups,
+            "ranking_rhos": np.array(rho_vals).reshape(len(SEED_PAIRS), -1).T.tolist(),
+        },
         "n_pairs": len(pair_population),
         "performance_band": band,
         "ranking_stability": stability,
@@ -315,102 +359,43 @@ def rebuild_main_results(followup_dir: Path, config: dict) -> dict:
     agg = dict(config)
     agg["fold_results"] = fold_results
     agg["means"] = means
-    out = followup_dir / "followup_results.json"
-    out.write_text(json.dumps(agg, indent=2, allow_nan=False) + "\n")
     return agg
 
 
 def markdown(fold_results: list[dict], pooled: dict,
              main: dict, out_path: Path) -> None:
-    lines = []
-    lines.append("# FOLLOWUP-AUROC-RASHOMON-20261021 结果")
-    lines.append("")
-    lines.append("预注册：FOLLOWUP_AUROC_RASHOMON_20261021.md；"
-                 "逐折/逐查询数据：rashomon_results.json；"
-                 "权重/嵌入/相似度矩阵：model_run_v2/。")
-    lines.append("")
-    lines.append("## 主结果（seed 20261021，5 折，v2 配方）")
-    lines.append("")
-    lines.append("| 折 | rank-1 | 机会 | 倍数 | MRR | AUROC | 家族 top-1 | "
-                 "域诊断 | 两两余弦中位数 |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|")
-    for fr in main["fold_results"]:
-        r, f, d = fr["retrieval"], fr["family"], fr["domain"]
-        lines.append(
-            f"| {fr['fold']} | {r['rank1']:.4f} | {r['chance_rank1']:.4f} | "
-            f"{r['rank1'] / r['chance_rank1']:.1f}× | {r['mrr']:.4f} | "
-            f"{r['auroc']:.4f} | {f['1']:.4f} | {d['accuracy']:.4f} | "
-            f"{fr['median_pairwise_cosine']:.4f} |")
-    m = main["means"]
-    lines.append(f"| **均值** | **{m['retrieval_rank1']:.4f}** | "
-                 f"**{m['retrieval_chance_rank1']:.4f}** | "
-                 f"**{m['retrieval_rank1'] / m['retrieval_chance_rank1']:.1f}×** | "
-                 f"**{m['retrieval_mrr']:.4f}** | **{m['retrieval_auroc']:.4f}** | "
-                 f"**{m['family_top1_k1']:.4f}** | **{m['domain_accuracy']:.4f}** | "
-                 f"**{m['median_pairwise_cosine']:.4f}** |")
-    lines.append("")
-    lines.append("## Rashomon（每折 3 实例 × 3 种子对，池化）")
-    lines.append("")
-    lines.append("| 折 | AUROC 带(min–max) | rank-1 带 | 排名 ρ | rank-1 一致率 | "
-                 "top-5 J | top-10 J | 判决翻转率 | 同家族翻转率 | 池化 AUROC |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
+    def fmt(x):
+        return "undefined" if x is None else f"{x:.4f}"
+    lines = ["# Cached fingerprint artifacts: corrected retrospective analysis", "",
+             "Historical v2 did not meet the preregistered AUROC >= 0.9 target. "
+             "The six-change v1/v2 point difference is unverified; determinism replay failed. "
+             "Training also used incorrect batched edge offsets. These scores are not validated gains.", "",
+             "Family-cluster intervals average seed pairs within query, then queries within family. "
+             "They are conditional on fixed cached models/gallery, not model-population uncertainty. "
+             "Procrustes is fitted only on training graphs and evaluated only on test queries. "
+             "Orthogonal alignment cannot improve within-instance cosine AUROC.", "",
+             "| Fold | Families | Ranking rho | Conditional 95% CI | Held-out aligned cosine |",
+             "|---|---:|---:|---|---:|"]
     for fr in fold_results:
-        b, st, ra, fl, em, po = (fr["performance_band"], fr["ranking_stability"],
-                                 fr["retrieval_agreement"], fr["pair_flip_rate"],
-                                 fr["embedding_agreement"], fr["pooled"])
-        lines.append(
-            f"| {fr['fold']} | {b['auroc']['min']:.3f}–{b['auroc']['max']:.3f} | "
-            f"{b['rank1']['min']:.3f}–{b['rank1']['max']:.3f} | "
-            f"{st['pooled']['mean']:.3f} | {ra['rank1_agreement']['mean']:.3f} | "
-            f"{ra['top5_jaccard']['mean']:.3f} | {ra['top10_jaccard']['mean']:.3f} | "
-            f"{fl['mean']:.3f} | {fr['pair_flip_rate_same_family']['mean']:.3f} | "
-            f"{po['auroc']:.3f} |")
-    lines.append("")
-    lines.append("| 池化量 | 值 |")
-    lines.append("|---|---:|")
-    for k, v in pooled.items():
-        lines.append(f"| {k} | {v:.4f} |")
-    lines.append("")
-    lines.append("## 补充（协议修订注记：嵌入一致率的全局旋转自由度）")
-    lines.append("")
-    lines.append("预注册的\"嵌入一致率\"按跨实例原始余弦计算。对比学习目标对嵌入空间的"
-                 "**全局正交旋转不变**：不同实例收敛到互异旋转的等价空间，原始余弦因此"
-                 "被旋转自由度支配，不作语义解读（实测原始同图余弦 ≈ 0.00，见上表）。"
-                 "本注记补充对齐口径：各实例嵌入矩阵先经正交 Procrustes 对齐到参考实例"
-                 "（无监督、不使用标签），再重算同图一致率与池化 AUROC。预注册的原始"
-                 "指标照旧保留并报告，不因补充口径改动任何判定。")
-    lines.append("")
-    lines.append("| 折 | 对齐同图余弦 | 对齐跨图基线 | 对齐池化 AUROC |")
-    lines.append("|---|---:|---:|---:|")
-    for fr in fold_results:
-        al = fr["embedding_agreement_aligned"]
-        lines.append(
-            f"| {fr['fold']} | {al['same_graph_across_instances']['mean']:.3f} | "
-            f"{al['cross_graph_within_instance']['mean']:.3f} | "
-            f"{al['pooled_auroc']:.3f} |")
-    lines.append("")
-    lines.append("## 预注册标准核对")
-    lines.append("")
-    m = main["means"]
-    crit = [
-        ("池化同/异 AUROC ≥ 0.9",
-         m["retrieval_auroc"] >= 0.9, f"{m['retrieval_auroc']:.4f}"),
-        ("检索 rank-1 ≥ 2× 机会",
-         m["retrieval_rank1"] >= 2 * m["retrieval_chance_rank1"],
-         f"{m['retrieval_rank1'] / m['retrieval_chance_rank1']:.1f}×"),
-        ("两两余弦中位数 ≤ 0.95（表征展开）",
-         m["median_pairwise_cosine"] <= 0.95,
-         f"{m['median_pairwise_cosine']:.4f}"),
-        ("域诊断 ≤ 0.6",
-         m["domain_accuracy"] <= 0.6, f"{m['domain_accuracy']:.4f}"),
-    ]
-    for name, ok, value in crit:
-        lines.append(f"- [{'x' if ok else ' '}] {name}（实测 {value}）")
-    lines.append("- [ ] 同 seed 确定性（scripts/check_replay.py 外部验证，结果见 "
-                 "followup/STATUS.md 与 replay/）")
-    lines.append("")
-    lines.append("以上判定按训练前固定的标准原样给出，不据结果调整。")
+        st = fr["ranking_stability"]["pooled"]
+        al = fr["embedding_agreement_aligned"]["same_graph_across_instances"]
+        lines.append(f"| {fr['fold']} | {st['n_defined_family_groups']} | {fmt(st['mean'])} | "
+                     f"{[fmt(x) for x in st['ci95']]} | {fmt(al['mean'])} |")
+    lines += ["", "Historical seed-20261021 mean AUROC: " + fmt(main["means"]["retrieval_auroc"]),
+              "This is a retained historical observation, not a restored result or new independent test.", "",
+              "| Descriptive fold mean | Value |", "|---|---:|"]
+    lines += [f"| {k} | {fmt(v)} |" for k,v in pooled.items()]
     out_path.write_text("\n".join(lines) + "\n")
+
+
+def finite_json(value):
+    if isinstance(value, dict):
+        return {k: finite_json(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [finite_json(v) for v in value]
+    if isinstance(value, float) and not np.isfinite(value):
+        return None
+    return value
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -422,18 +407,30 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--fold-assignment", type=Path,
                     default=Path("docs/fingerprint_retrieval_20261021/"
                                  "fold_assignment.json"))
+    ap.add_argument("--out-dir", type=Path, required=True,
+                    help="new output directory; source artifacts are never overwritten")
     args = ap.parse_args(argv)
+    if args.out_dir.exists():
+        raise FileExistsError(args.out_dir)
 
     data = torch.load(args.dataset, map_location="cpu", weights_only=False)
     records = data["records"]
     fa = json.loads(args.fold_assignment.read_text())
     fold_of = fa["per_graph_fold"]
+    if (len(fold_of) != len(records) or set(fold_of) != set(FOLDS)
+            or fa["graph_records"] != [r["complex_id"] for r in records]):
+        raise ValueError("fold assignment does not match dataset graph identities")
+    for family in {r["family_id"] for r in records}:
+        if len({f for f, r in zip(fold_of, records) if r["family_id"] == family}) != 1:
+            raise ValueError("family crosses folds")
 
     config_path = args.followup_dir / "config.json"
     if not config_path.exists():
         raise SystemExit(f"missing {config_path}; run train_fingerprint_v2 first")
     config = json.loads(config_path.read_text())
 
+    input_hashes = {str(path): hashlib.sha256(path.read_bytes()).hexdigest()
+                    for path in [args.dataset, args.fold_assignment, config_path]}
     fold_results = []
     for fold in FOLDS:
         test_idx = [i for i, f in enumerate(fold_of) if f == fold]
@@ -447,14 +444,35 @@ def main(argv: list[str] | None = None) -> int:
             if not (sim_path.exists() and emb_path.exists()
                     and rank_path.exists() and met_path.exists()):
                 raise SystemExit(f"missing artifacts for {tag}")
-            sims[s] = np.load(sim_path)
-            embs[s] = np.load(emb_path).astype(np.float64)
+            sims[s] = np.load(sim_path, allow_pickle=False)
+            embs[s] = np.load(emb_path, allow_pickle=False).astype(np.float64)
+            for path in [sim_path, emb_path, rank_path, met_path]:
+                input_hashes[str(path)] = hashlib.sha256(path.read_bytes()).hexdigest()
+            if (sims[s].shape != (len(records), len(records))
+                    or embs[s].shape[0] != len(records)
+                    or not np.isfinite(sims[s]).all() or not np.isfinite(embs[s]).all()
+                    or not np.allclose(sims[s], embs[s] @ embs[s].T, atol=2e-6, rtol=0)):
+                raise ValueError("cached similarities/embeddings fail input binding checks")
             rankings[s] = json.loads(rank_path.read_text())
             metrics[s] = json.loads(met_path.read_text())
+            if metrics[s].get("fold") != fold or metrics[s].get("seed") != s:
+                raise ValueError("metric fragment instance identity mismatch")
+            for q in test_idx:
+                order = rankings[s][str(q)]["gallery_order"]
+                if sorted(order) != [j for j in range(len(records)) if j != q]:
+                    raise ValueError("ranking gallery identity mismatch")
+                if np.any(np.diff(sims[s][q, order]) > 2e-6):
+                    raise ValueError("ranking order conflicts with saved similarities")
         fold_results.append(fold_rashomon(
             fold, test_idx, records, sims, embs, rankings, metrics))
 
+    for source, expected in input_hashes.items():
+        if hashlib.sha256(Path(source).read_bytes()).hexdigest() != expected:
+            raise RuntimeError("source changed during analysis")
     pooled = pool_folds(fold_results)
+    all_q = [row for fr in fold_results for row in fr["query_statistics"]["ranking_rhos"]]
+    all_groups = [g for fr in fold_results for g in fr["query_statistics"]["family_ids"]]
+    overall_ranking = bootstrap_ci(np.asarray(all_q), all_groups)
     main = rebuild_main_results(args.followup_dir, config)
     out = {
         "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
@@ -462,12 +480,16 @@ def main(argv: list[str] | None = None) -> int:
         "seed_pairs": [[a, b] for a, b in SEED_PAIRS],
         "fold_results": fold_results,
         "pooled": pooled,
+        "overall_family_equal_ranking": overall_ranking,
         "main_results": main,
+        "source_sha256": input_hashes,
+        "input_hashes_unchanged": True,
+        "analysis_scope": "retrospective diagnostics of defective cached training; no new acceptance",
     }
-    (args.followup_dir / "rashomon_results.json").write_text(
-        json.dumps(out, indent=2, allow_nan=False) + "\n")
-    markdown(fold_results, pooled, main,
-             args.followup_dir / "rashomon.md")
+    args.out_dir.mkdir(parents=True)
+    (args.out_dir / "rashomon_results.json").write_text(
+        json.dumps(finite_json(out), indent=2, allow_nan=False) + "\n")
+    markdown(fold_results, pooled, main, args.out_dir / "rashomon.md")
     print(json.dumps(pooled, indent=2))
     return 0
 

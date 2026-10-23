@@ -93,15 +93,19 @@ def supcon_loss(embs: torch.Tensor, receptor_ids: list[str],
 
 def batch_graphs(graphs, records, idx, device, model):
     hs, xs, eis, eas, bts, pms, rids = [], [], [], [], [], [], []
+    node_offset = 0
     for i in idx:
         nf, coords, ei, ef = graphs[i]
         h = torch.tensor(nf, dtype=torch.float32)
         x = torch.tensor(coords, dtype=torch.float32)
-        ei_t = torch.tensor(ei, dtype=torch.long).t()
+        ei_t = torch.tensor(ei, dtype=torch.long).reshape(-1, 2).t()
+        if ei_t.numel() and (ei_t.min() < 0 or ei_t.max() >= h.shape[0]):
+            raise ValueError("graph edge index outside its own node range")
         ea = torch.tensor(ef, dtype=torch.float32)
         pm = torch.tensor(records[i]["peptide_mask"], dtype=torch.bool)
         h = normalize_node_features(h)
-        hs.append(h); xs.append(x); eis.append(ei_t); eas.append(ea)
+        hs.append(h); xs.append(x); eis.append(ei_t + node_offset); eas.append(ea)
+        node_offset += h.shape[0]
         bts.append(torch.full((h.shape[0],), len(hs) - 1, dtype=torch.long))
         pms.append(pm)
         rids.append(records[i]["receptor_id"])

@@ -1,0 +1,43 @@
+{
+  "status": "retrospective_analysis_plan_not_preregistration",
+  "date": "2026-10-23",
+  "known_results": [
+    "historical v1 AUROC 0.7666, v2 0.7944, ranking rho 0.946; all exposed before plan",
+    "331 graphs: confidence column masked at 0.5 in both domains",
+    "incorrect historical batch edge offsets and per-instance seed reset absent"
+  ],
+  "scope": "cached identity retrieval only; no measured binding/clinical/SPR acceptance data",
+  "E12": {
+    "features": [
+      "mean raw residue one-hot columns 4:24; cosine",
+      "node count scalar cosine (degenerate positive scalars)",
+      "negative absolute log-node-count distance (sensitivity)",
+      "negative absolute centered mean coordinate-norm distance",
+      "domain metadata one-hot cosine (confound diagnostic, not model feature)"
+    ]
+  },
+  "E13": {
+    "queries": "held-out fold query, original all-graph gallery excluding self",
+    "strata": "all positives retained; negatives restricted to all/same_family/same_peptide/same_domain",
+    "metrics": "pooled pair AUROC; per-query macro AUROC; family-equal mean with cluster CI",
+    "undefined": "queries lacking either class excluded from defined mean and counted explicitly",
+    "MHC": "unavailable: no audited MHC field in current records; no proxy substitution"
+  },
+  "E14": {
+    "composition_null": "fixed composition scores copied across instances: expected rho 1 if nonconstant",
+    "shuffled_training": "not executed; requires new frozen label-permutation recipe and rerun",
+    "CI": "average seed pairs within query, average queries within family, resample family means; conditional on caches/gallery"
+  },
+  "E15": {
+    "regression": "toy CPU training: full vs only-fold vs resumed exact equality; batched vs single graph invariance",
+    "real_effect": "not estimated; requires corrected training in new output directory, not old/new uncontrolled comparison"
+  },
+  "uncertainty": {
+    "bootstrap_replicates": 2000,
+    "seed": 20261023,
+    "unit": "family",
+    "weight": "equal family",
+    "note": "descriptive conditional intervals, not independence proof; family IDs not source isolation"
+  },
+  "no_acceptance_reuse": true
+}
