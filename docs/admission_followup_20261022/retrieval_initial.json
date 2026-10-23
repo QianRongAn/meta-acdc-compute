@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://www.jci.org/articles/view/175790/sd/pdf/render/1",
+    "name": "JCI175790_supplement.pdf",
+    "status": "unavailable",
+    "errors": [
+      "URLError:<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>",
+      "URLError:<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+    ]
+  },
+  {
+    "path": "docs/admission_followup_20261022/sources/US20220088190A1.html",
+    "url": "https://patents.google.com/patent/US20220088190A1/en",
+    "sha256": "b749e06eac00bfae8ad6610fdcd344b8618f74fc6ae81b01cff71a31f2b5de55",
+    "bytes": 1546063,
+    "errors_before_success": [],
+    "status": "retrieved"
+  },
+  {
+    "path": "docs/admission_followup_20261022/sources/WO2021074249A1.html",
+    "url": "https://patents.google.com/patent/WO2021074249A1/en",
+    "sha256": "0c6f323cca199fccc7a7602b94c78e7291199953847bdcf9b015033cbd1c9d2a",
+    "bytes": 916590,
+    "errors_before_success": [],
+    "status": "retrieved"
+  },
+  {
+    "path": "docs/admission_followup_20261022/sources/PMC8285372.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8285372/fullTextXML",
+    "sha256": "96f21bc861e27ca55092f5781cd97bf2a7ca27f9142bdb7eff973caea4d3104c",
+    "bytes": 182170,
+    "errors_before_success": [],
+    "status": "retrieved"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "base_commit": "fda514a9a5b0509986b57d74b2b4360e902be440",
+  "completed_local_date": "2026-10-23",
+  "attachment": {
+    "name": "Meta-ACDC 评估陷阱研究：E1–E7 预登记模板.md",
+    "sha256": "0bfe8b39d9b23349012b73949c6dc8a8f625c8c93e2ad445b75e66aefe1187c4",
+    "original_unchanged": true,
+    "treated_as": "proposal for critical review; not execution authority"
+  },
+  "files": {
+    "docs/admission_followup_20261022/admission_decision.json": "90d0d6488e43863d8bea600479405affff7f2cbf509d828324c0b710e9460774",
+    "docs/admission_followup_20261022/derived/identity_overlay.json": "364c5d4fcfb43d8565cc3fd76d1b869470912c4332ec83ad53259a91aefdf759",
+    "docs/admission_followup_20261022/derived/kras_raw_cell_ledger.json": "081bb5b6086f9c5b4a5962fd3e1667d209494c21d4c087ab0413cb3a0d2df1a2",
+    "docs/admission_followup_20261022/derived/sequence_evidence.json": "4b285b190bb6bea8b64522b740033ed61298a59e5b70432af10700611902f29d",
+    "docs/admission_followup_20261022/derived/source_checks.json": "000e6e0f4be0ac67dd17c865fd43e4dbb4faf0ea6642af458c04ef5b73fac3b4",
+    "docs/admission_followup_20261022/EVALUATION_TRAPS_REVIEW.md": "2f4b3ab5fc73e6c9165e0c33735ec3e751288e76d5e2b4fb7cdec3cdb40a3859",
+    "docs/admission_followup_20261022/README.md": "0559a854f4303ddd8b937c9914a84588f734092d8d46772956d1dded8332b519",
+    "docs/admission_followup_20261022/retrieval_engineering.json": "8005bc701702851c99b8ab20cc22e501e606a5a11efa8af0743cd2959789d69b",
+    "docs/admission_followup_20261022/retrieval_initial.json": "48ad9fbd053723e9dd5cce44c39a699943e00dfe6188f5b62a6cd2a134d522b2",
+    "docs/admission_followup_20261022/retrieval_jci_main.json": "d3da98fda1fdde69c282f5e12e0c2679519f2421b63200ae7423d6add37ef6b4",
+    "docs/admission_followup_20261022/retrieval_pteam_archive.json": "b2506a1eb027ecf26e9f4ee68f42cb7a3499b006db3ca5374a34543b8339a8c7",
+    "docs/admission_followup_20261022/retrieval_pteam_primary.json": "cb859a73a545c007ee04be65f3be5215fe0f9fe28131de19dc572049a0af87c2",
+    "docs/admission_followup_20261022/retrieval_sequences.json": "2de124f6e985c770679bebad30dc3e10f02168e21ea29d3bc86bf8c2d53f5e69",
+    "docs/admission_followup_20261022/sources/EP4045530A1.html": "9750afda0d3429c6cb15901351e642fcb35e96937bbeaba47583ea68429db3d1",
+    "docs/admission_followup_20261022/sources/JCI175790_main.pdf": "e3e9f47f358a9fadc24c3146bb3c73a520f5d6e16c21ea507830ae6a9c0553fb",
+    "docs/admission_followup_20261022/sources/KR20220082046A.html": "799b518234d703a364ade9e80e5d4ef5abaec079755d819b1d7ebf773b6d5e4a",
+    "docs/admission_followup_20261022/sources/KR20220082046A.pdf": "18612cf87f4a93971cecfee586c0950817f6f511d903c1f96eb9dd227fad2285",
+    "docs/admission_followup_20261022/sources/PMC8285372.xml": "96f21bc861e27ca55092f5781cd97bf2a7ca27f9142bdb7eff973caea4d3104c",
+    "docs/admission_followup_20261022/sources/PTEAM_publisher_mmc1.pdf": "61cb06b81f4ea554eccfddeeaccb679f0dd626f1e9ce201d277da43d02b89b99",
+    "docs/admission_followup_20261022/sources/PTEAM_publisher_mmc4.xlsx": "86da31b1c96148e3de54987f93a086581749705557947eae07b9146a46a82ef1",
+    "docs/admission_followup_20261022/sources/PTEAM_publisher_mmc5.xlsx": "3cdbeadacf4755a15d0538a6fe37dbe9740991d57cd3cc17375655826ddb4428",
+    "docs/admission_followup_20261022/sources/US20220088190A1.html": "b749e06eac00bfae8ad6610fdcd344b8618f74fc6ae81b01cff71a31f2b5de55",
+    "docs/admission_followup_20261022/sources/US20260083847A1.html": "9bb408e2d29cec33a6d26cbe9a4f688d62a40cd5f86302ab261918a5ed97c104",
+    "docs/admission_followup_20261022/sources/WO2021074249A1.html": "0c6f323cca199fccc7a7602b94c78e7291199953847bdcf9b015033cbd1c9d2a",
+    "docs/admission_followup_20261022/sources/WO2021074249A1.pdf": "e542c20697122c01f906c3d10173b447a425345216c5cb80ac914261b5860e74",
+    "docs/admission_followup_20261022/verification.log": "e6d8e02f0c63f4a925b21d6a5aa2b098a9dfe28808a536fb62358a3272b16afc",
+    "scripts/audit_followup_identities.py": "a3760a451639fface7372697d2182d69e20c5f15f6658c4b095828a8b506888a",
+    "scripts/curate_admission_followup.py": "1b5fdf159baacd2918ff708d4a6fc5f5c7a5ece4c49d13b63d0af5723eaafc33",
+    "tests/test_admission_followup.py": "b96146c2d823f9f9a21798cc23c4084bc11f6d9096a43e997b692dcc9069ac5d"
+  },
+  "verification": "21 targeted mandatory tests passed, zero skipped; not biological model validation"
+}

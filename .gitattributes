@@ -17,3 +17,6 @@ docs/six_blockers_20261021/sources/** -text whitespace=-blank-at-eol
 
 # Preserve original published metadata and assay attachments.
 docs/measured_intake_20261021/source_metadata/** -text whitespace=-blank-at-eol
+
+# Byte-preserved primary evidence, separate from derived analysis.
+docs/admission_followup_20261022/sources/** -text whitespace=-blank-at-eol

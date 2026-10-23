@@ -1,0 +1,118 @@
+{
+  "receptors": [
+    {
+      "receptor_name": "A3V",
+      "pmid": "39287991",
+      "alpha_published": "MLTASLLRAVIASICVVSSMAQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSEAGTYKYIFGTGTRLKVLANIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKTVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCDVKLVEKSFETDTNLNFQNLSVIGFRILLLKVAGFNLLMTLRLWSS",
+      "beta_published": "MGFRLLCCVAFCLLGAGPVDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVAGGGQETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVSTDPQPLKEQPALNDSRYCLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCGFTSESYQQGVLSATILYEILLGKATLYAVLVSALVLMAMVKRKDSRG",
+      "cdr3_alpha": "CALSEAGTYKYIF",
+      "cdr3_beta": "CASSVAGGGQETQYF",
+      "source": "US20220088190A1",
+      "alpha_seq_id": 61,
+      "beta_seq_id": 66,
+      "paired_seq_id": 68,
+      "sequence_scope": "published full chains including leader and constant; no mature-domain trimming",
+      "identity_bridge": "paired CDR3 matches primary Table 1; terminal CDR conventions differ; exact experimental construct equivalence not established",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    },
+    {
+      "receptor_name": "A11Va",
+      "pmid": "39287991",
+      "alpha_published": "MISLRVLLVILWLQLSWVWSQRKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCAVNPPDTGFQKLVFGTGTRLLVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKTVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCDVKLVEKSFETDTNLNFQNLSVIGFRILLLKVAGFNLLMTLRLWSS",
+      "beta_published": "MGIRLLCRVAFCFLAVGLVDVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASSLSFRQGLREQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVSTDPQPLKEQPALNDSRYCLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCGFTSESYQQGVLSATILYEILLGKATLYAVLVSALVLMAMVKRKDSRG",
+      "cdr3_alpha": "CAVNPPDTGFQKLVF",
+      "cdr3_beta": "CASSLSFRQGLREQYF",
+      "source": "US20220088190A1",
+      "alpha_seq_id": 36,
+      "beta_seq_id": 42,
+      "paired_seq_id": 44,
+      "sequence_scope": "published full chains including leader and constant; no mature-domain trimming",
+      "identity_bridge": "paired CDR3 matches primary Table 1; terminal CDR conventions differ; exact experimental construct equivalence not established",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    },
+    {
+      "receptor_name": "A11Vb",
+      "pmid": "39287991",
+      "alpha_published": "MKKLLAMILWLQLDRLSGELKVEQNPLFLSMQEGKNYTIYCNYSTTSDRLYWYRQDPGKSLESLFVLLSNGAVKQEGRLMASLDTKARLSTLHITAAVHDLSATYFCAVDKDGGYQKVTFGTGTKLQVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKTVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCDVKLVEKSFETDTNLNFQNLSVIGFRILLLKVAGFNLLMTLRLWSS",
+      "beta_published": "MLLLLLLLGPGISLLLPGSLAGSGLGAVVSQHPSWVICKSGTSVKIECRSLDFQATTMFWYRQFPKQSLMLMATSNEGSKATYEQGVEKDKFLINHASLTLSTLTVTSAHPEDSSFYICSASPRAGQLSSYNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFFPDHVELSWWVNGKEVHSGVSTDPQPLKEQPALNDSRYCLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCGFTSVSYQQGVLSATILYEILLGKATLYAVLVSALVLMAMVKRKDF",
+      "cdr3_alpha": "CAVDKDGGYQKVTF",
+      "cdr3_beta": "CSASPRAGQLSSYNSPLHF",
+      "source": "US20220088190A1",
+      "alpha_seq_id": 22,
+      "beta_seq_id": 28,
+      "paired_seq_id": 30,
+      "sequence_scope": "published full chains including leader and constant; no mature-domain trimming",
+      "identity_bridge": "paired CDR3 matches primary Table 1; terminal CDR conventions differ; exact experimental construct equivalence not established",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    },
+    {
+      "receptor_name": "A11Vc",
+      "pmid": "39287991",
+      "alpha_published": "METLLGVSLVILWLQLARVNSQQGEEDPQALSIQEGENATMNCSYKTSINNLQWYRQNSGRGLVHLILIRSNEREKHSGRLRVTLDTSKKSSSLLITASRAADTASYFCATDPGGFKTIFGAGTRLFVKANIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKTVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCDVKLVEKSFETDTNLNFQNLSVIGFRILLLKVAGFNLLMTLRLWSS",
+      "beta_published": "MGTRLLCWAALCLLGAELTEAGVAQSPRYKIIEKRQSVAFWCNPISGHATLYWYQQILGQGPKLLIQFQNNGVVDDSQLPKDRFSAERLKGVDSTLKIQPAKLEDSAVYLCASSLYGGSISYEQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVSTDPQPLKEQPALNDSRYCLSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCGFTSESYQQGVLSATILYEILLGKATLYAVLVSALVLMAMVKRKDSRG",
+      "cdr3_alpha": "CATDPGGFKTIF",
+      "cdr3_beta": "CASSLYGGSISYEQYF",
+      "source": "US20260083847A1",
+      "alpha_seq_id": 49,
+      "beta_seq_id": 54,
+      "paired_seq_id": 56,
+      "sequence_scope": "published full chains including leader and constant; no mature-domain trimming",
+      "identity_bridge": "paired CDR3 matches primary Table 1; terminal CDR conventions differ; exact experimental construct equivalence not established",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    },
+    {
+      "receptor_name": "A3-05",
+      "pmid": "36174557",
+      "alpha_published": "METLLGLLILWLQLQWVSSKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRPGGAGSYQLTFGKGTKLSVIP",
+      "beta_published": "MGSRLLCWVLLCLLGAGPVKAGVTQTPRYLIKTRGQQVTLSCSPISGHRSVSWYQQTPGQGLQFLFEYFSETQRNKGNFPGRFSGRQFSNSRSEMNVSTLELGDSALYLCASGINLASGQFFGPGTRLTVT",
+      "cdr3_alpha": "CAVRPGGAGSYQLTF",
+      "cdr3_beta": "CASGINLASGQFF",
+      "source": "KR20220082046A; alias/pair mapping WO2021074249A1",
+      "alpha_seq_id": 9,
+      "beta_seq_id": 256,
+      "source_pdf_pages": [
+        109,
+        110,
+        179
+      ],
+      "sequence_scope": "published variable-domain entries include leaders; no mature-domain trimming",
+      "identity_bridge": "WO alias-to-sequence mapping plus KR same-family ST25 entries; not a clinical dosing construct",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    },
+    {
+      "receptor_name": "A3-10",
+      "pmid": "36174557",
+      "alpha_published": "METLLGLLILWLQLQWVSSKQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVRPGGAGSYQLTFGKGTKLSVIP",
+      "beta_published": "MGSRLLCWVLLCLLGAGPVKAGVTQTPRYLIKTRGQQVTLSCSPISGHRSVSWYQQTPGQGLQFLFEYFSETQRNKGNFPGRFSGRQFSNSRSEMNVSTLELGDSALYLCASSKNLVDEQYFGPGTRLTVT",
+      "cdr3_alpha": "CAVRPGGAGSYQLTF",
+      "cdr3_beta": "CASSKNLVDEQYF",
+      "source": "KR20220082046A; alias/pair mapping WO2021074249A1",
+      "alpha_seq_id": 9,
+      "beta_seq_id": 261,
+      "source_pdf_pages": [
+        109,
+        110,
+        183
+      ],
+      "sequence_scope": "published variable-domain entries include leaders; no mature-domain trimming",
+      "identity_bridge": "WO alias-to-sequence mapping plus KR same-family ST25 entries; not a clinical dosing construct",
+      "training_allowed": false,
+      "independent_acceptance_allowed": false
+    }
+  ],
+  "selected_ST25_text": {
+    "9": "<210> 9\n<211> 133\n<212> PRT\n<213> Homo sapiens\n<220> \n<223> Wild type MAGE-A3 TCR alpha variable domain\n<400> 9\nMet Glu Thr Leu Leu Gly Leu Leu Ile Leu Trp Leu Gln Leu Gln Trp \n1               5                   10                  15      \nVal Ser Ser Lys Gln Glu Val Thr Gln Ile Pro Ala Ala Leu Ser Val \n            20                  25                  30          \nPro Glu Gly Glu Asn Leu Val Leu Asn Cys Ser Phe Thr Asp Ser Ala \n        35                  40                  45              \nIle Tyr Asn Leu Gln Trp Phe Arg Gln Asp Pro Gly Lys Gly Leu Thr \n    50                  55                  60                  \nSer Leu Leu Leu Ile Gln Ser Ser Gln Arg Glu Gln Thr Ser Gly Arg \n65                  70                  75                  80  \nLeu Asn Ala Ser Leu Asp Lys Ser Ser Gly Arg Ser Thr Leu Tyr Ile \n                85                  90                  95      \nAla Ala Ser Gln Pro Gly Asp Ser Ala Thr Tyr Leu Cys Ala Val Arg \n\uacf5\uac1c\ud2b9\ud5c8 10-2022-0082046\n- 109 -\n===PDF_PAGE_110===\n            100                 105                 110         \nPro Gly Gly Ala Gly Ser Tyr Gln Leu Thr Phe Gly Lys Gly Thr Lys \n        115                 120                 125             \nLeu Ser Val Ile Pro \n    130             \n",
+    "256": "<210> 256\n<211> 131\n<212> PRT\n<213> Artificial Sequence\n<220> \n<223> TCR beta variable domain comprising A3-05\n<400> 256\nMet Gly Ser Arg Leu Leu Cys Trp Val Leu Leu Cys Leu Leu Gly Ala \n1               5                   10                  15      \nGly Pro Val Lys Ala Gly Val Thr Gln Thr Pro Arg Tyr Leu Ile Lys \n            20                  25                  30          \nThr Arg Gly Gln Gln Val Thr Leu Ser Cys Ser Pro Ile Ser Gly His \n        35                  40                  45              \nArg Ser Val Ser Trp Tyr Gln Gln Thr Pro Gly Gln Gly Leu Gln Phe \n    50                  55                  60                  \nLeu Phe Glu Tyr Phe Ser Glu Thr Gln Arg Asn Lys Gly Asn Phe Pro \n65                  70                  75                  80  \nGly Arg Phe Ser Gly Arg Gln Phe Ser Asn Ser Arg Ser Glu Met Asn \n                85                  90                  95      \nVal Ser Thr Leu Glu Leu Gly Asp Ser Ala Leu Tyr Leu Cys Ala Ser \n            100                 105                 110         \nGly Ile Asn Leu Ala Ser Gly Gln Phe Phe Gly Pro Gly Thr Arg Leu \n        115                 120                 125             \nThr Val Thr \n    130     \n\uacf5\uac1c\ud2b9\ud5c8 10-2022-0082046\n- 179 -\n===PDF_PAGE_180===\n",
+    "261": "<210> 261\n<211> 131\n<212> PRT\n<213> Artificial Sequence\n<220> \n<223> TCR beta variable domain comprising A3-10\n<400> 261\nMet Gly Ser Arg Leu Leu Cys Trp Val Leu Leu Cys Leu Leu Gly Ala \n1               5                   10                  15      \nGly Pro Val Lys Ala Gly Val Thr Gln Thr Pro Arg Tyr Leu Ile Lys \n            20                  25                  30          \nThr Arg Gly Gln Gln Val Thr Leu Ser Cys Ser Pro Ile Ser Gly His \n        35                  40                  45              \nArg Ser Val Ser Trp Tyr Gln Gln Thr Pro Gly Gln Gly Leu Gln Phe \n    50                  55                  60                  \nLeu Phe Glu Tyr Phe Ser Glu Thr Gln Arg Asn Lys Gly Asn Phe Pro \n65                  70                  75                  80  \nGly Arg Phe Ser Gly Arg Gln Phe Ser Asn Ser Arg Ser Glu Met Asn \n                85                  90                  95      \nVal Ser Thr Leu Glu Leu Gly Asp Ser Ala Leu Tyr Leu Cys Ala Ser \n            100                 105                 110         \nSer Lys Asn Leu Val Asp Glu Gln Tyr Phe Gly Pro Gly Thr Arg Leu \n        115                 120                 125             \nThr Val Thr \n    130     \n"
+  },
+  "training_release_created": false,
+  "caveats": [
+    "Research/public patent sequences are not clinical manufacturing DNA.",
+    "SEQ171 in US20220088190A1 is incomplete; SEQ26 omits a terminal residue relative to the full beta chain; neither was silently repaired."
+  ]
+}
