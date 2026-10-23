@@ -1,0 +1,154 @@
+{
+  "scope": "retrospective pair-mask diagnostic; no biological identity repair, no new test",
+  "known_same_negative_pairs": 68,
+  "composition_raw": {
+    "mean": 0.5474711682972929,
+    "ci95": [
+      0.36551443072258377,
+      0.7345612656998902
+    ],
+    "n": 62,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 11,
+    "n_undefined_values": 269,
+    "seed_pair_columns": 1,
+    "query_weighted_mean": 0.5493939666437296,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap",
+    "n_excluded_known_same_negative_pairs": 0,
+    "query_macro_mean": 0.5493939666437296
+  },
+  "composition_masked": {
+    "mean": 0.6092924873569336,
+    "ci95": [
+      0.4449708734172402,
+      0.780853329934915
+    ],
+    "n": 59,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 10,
+    "n_undefined_values": 272,
+    "seed_pair_columns": 1,
+    "query_weighted_mean": 0.567816125798429,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap",
+    "n_excluded_known_same_negative_pairs": 68,
+    "query_macro_mean": 0.567816125798429
+  },
+  "model_raw": {
+    "mean": 0.43852505305792505,
+    "ci95": [
+      0.3055548019118521,
+      0.5700220105010328
+    ],
+    "n": 62,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 11,
+    "n_undefined_values": 807,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": 0.483615245795037,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "model_masked": {
+    "mean": 0.4649579761517478,
+    "ci95": [
+      0.32225589384823816,
+      0.5993114494037937
+    ],
+    "n": 59,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 10,
+    "n_undefined_values": 816,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": 0.5021130189001575,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "model_mask_minus_raw_on_common_queries": {
+    "mean": -0.0007529155453030898,
+    "ci95": [
+      -0.002777777777777782,
+      0.0005190311418685123
+    ],
+    "n": 59,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 10,
+    "n_undefined_values": 816,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": -0.0004431150991470047,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "composition_mask_minus_raw_on_common_queries": {
+    "mean": 0.007074202229911572,
+    "ci95": [
+      0.0,
+      0.02096309111880046
+    ],
+    "n": 59,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 10,
+    "n_undefined_values": 272,
+    "seed_pair_columns": 1,
+    "query_weighted_mean": 0.007436025257560651,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "raw_model_minus_composition": {
+    "mean": -0.10894611523936786,
+    "ci95": [
+      -0.37058784234876363,
+      0.12198534182801046
+    ],
+    "n": 62,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 11,
+    "n_undefined_values": 807,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": -0.06577872084869237,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "masked_model_minus_composition": {
+    "mean": -0.14433451120518592,
+    "ci95": [
+      -0.4142196159100895,
+      0.11362725229923537
+    ],
+    "n": 59,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 10,
+    "n_undefined_values": 816,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": -0.0657031068982714,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "source_sha256": {
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed20261021.npy": "7562dcb1dfb2e6dd015feb036773cc1b0b9f2bbe9a36b327deedc630b77c5636",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed20261021.npy": "aaab42902af1060d0f2e679fe402848090a753cc17a93912dfb5e0552fca58e6",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed20261021.npy": "0971c1ca70c4cb62d1839930abe25aa91923c9dcef986f58dcbb0b4f05981767",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed20261021.npy": "b707d0dd1d732896917d24edb00a6699d6b7383ab536f7cb3508fa73c4d110c8",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed1101.npy": "83640f5d7e25a2d3bbf29ec0d4782ba85420e7f272a08a096ec65acd0c5e3027",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed1101.npy": "c1efa90434c25c8ebd60a567900098589cccde2e5d9689cbc809b7ecbd9284c7",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed1101.npy": "716486ed90303e47300a23a2745446cfed400256150cdf191b569eeeca5feb61",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed1101.npy": "25038cef9bae02c39620a788074eb4b65f17891336567ae66cbb92650a968a08",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed1101.npy": "4d6b1324ac2758865841f084f95fc1514ce21ac69f38293f06dbf0626c4ace2b",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed4242.npy": "799583dcbbe0a26e53aa0533439f9c699aa389847f9f88f83f5c2ec9fa3dfa7e",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed4242.npy": "3b4243d4fef28058ccf4a3f77a96ecd94aa248fd16680b4ddfdb2b60f8b053c3",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed4242.npy": "a623cec307570a2a79644d059793a62175a77f82a6d0424b95eef9ea6a0c47aa",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed4242.npy": "b221532defdb2ba471202c69d42094c93535f5fb6aeefb831b5f6c764a2cdcd0"
+  },
+  "caveat": "Only primary-backed identical full-alpha/beta crystal pairs are masked. AF3 full-construct identities and cross-PDB variable-region equivalence are not imputed. Undefined queries/families are counted; no selected-family deletion."
+}

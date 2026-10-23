@@ -1,0 +1,711 @@
+{
+  "status": "pass",
+  "n_models": 13,
+  "checks": [
+    {
+      "arm": "reference",
+      "seed": 20261021,
+      "location": "reference/20261021",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_preserved",
+      "seed": 20261021,
+      "location": "identity_preserved/20261021",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "family_batches",
+      "seed": 20261021,
+      "location": "family_batches/20261021",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_and_family",
+      "seed": 20261021,
+      "location": "identity_and_family/20261021",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "reference",
+      "seed": 1101,
+      "location": "reference/1101",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_preserved",
+      "seed": 1101,
+      "location": "identity_preserved/1101",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "family_batches",
+      "seed": 1101,
+      "location": "family_batches/1101",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_and_family",
+      "seed": 1101,
+      "location": "identity_and_family/1101",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "reference",
+      "seed": 4242,
+      "location": "reference/4242",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_preserved",
+      "seed": 4242,
+      "location": "identity_preserved/4242",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "family_batches",
+      "seed": 4242,
+      "location": "family_batches/4242",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "identity_and_family",
+      "seed": 4242,
+      "location": "identity_and_family/4242",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    },
+    {
+      "arm": "reference",
+      "seed": 20261021,
+      "location": "replay",
+      "weight_to_embedding_exact": true,
+      "similarity_exact": true,
+      "metrics_exact": true,
+      "interventions_exact": true,
+      "fit_sampling_exact": true,
+      "diagnostic_gate_preserved": true
+    }
+  ],
+  "common_query_pair_mask_sensitivity": {
+    "fit": {
+      "composition_mask_minus_raw_common": {
+        "mean": 0.00032439446366782054,
+        "ci95": [
+          0.0,
+          0.0009731833910034617
+        ],
+        "n": 28,
+        "n_query_rows": 186,
+        "n_family_groups": 66,
+        "n_defined_family_groups": 4,
+        "n_undefined_values": 158,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0007878151260504214,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "reference": {
+        "mean": 0.0003063725490196084,
+        "ci95": [
+          0.0,
+          0.0009191176470588251
+        ],
+        "n": 28,
+        "n_query_rows": 186,
+        "n_family_groups": 66,
+        "n_defined_family_groups": 4,
+        "n_undefined_values": 474,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0007440476190476204,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "identity_preserved": {
+        "mean": 0.00034241637831603216,
+        "ci95": [
+          0.0,
+          0.0010272491349480966
+        ],
+        "n": 28,
+        "n_query_rows": 186,
+        "n_family_groups": 66,
+        "n_defined_family_groups": 4,
+        "n_undefined_values": 474,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0008315826330532209,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "family_batches": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 28,
+        "n_query_rows": 186,
+        "n_family_groups": 66,
+        "n_defined_family_groups": 4,
+        "n_undefined_values": 474,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "identity_and_family": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 28,
+        "n_query_rows": 186,
+        "n_family_groups": 66,
+        "n_defined_family_groups": 4,
+        "n_undefined_values": 474,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "validation": {
+      "composition_mask_minus_raw_common": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 21,
+        "n_query_rows": 86,
+        "n_family_groups": 22,
+        "n_defined_family_groups": 3,
+        "n_undefined_values": 65,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "reference": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 21,
+        "n_query_rows": 86,
+        "n_family_groups": 22,
+        "n_defined_family_groups": 3,
+        "n_undefined_values": 195,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "identity_preserved": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 21,
+        "n_query_rows": 86,
+        "n_family_groups": 22,
+        "n_defined_family_groups": 3,
+        "n_undefined_values": 195,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "family_batches": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 21,
+        "n_query_rows": 86,
+        "n_family_groups": 22,
+        "n_defined_family_groups": 3,
+        "n_undefined_values": 195,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "identity_and_family": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 21,
+        "n_query_rows": 86,
+        "n_family_groups": 22,
+        "n_defined_family_groups": 3,
+        "n_undefined_values": 195,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    }
+  },
+  "per_family_errors": [
+    {
+      "partition": "fit",
+      "arm": "reference",
+      "family_id": "F10427fd8efdc9dae",
+      "n_queries": 2,
+      "mean": 0.6666666666666666,
+      "per_seed": [
+        1.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "reference",
+      "family_id": "F17560cbffb9e57b9",
+      "n_queries": 3,
+      "mean": 0.9444444444444444,
+      "per_seed": [
+        1.0,
+        1.0,
+        0.8333333333333334
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "reference",
+      "family_id": "F19ed30cfb37ad7f2",
+      "n_queries": 17,
+      "mean": 0.8013241948363057,
+      "per_seed": [
+        0.6159568804897525,
+        0.9219656640936917,
+        0.8660500399254725
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "reference",
+      "family_id": "F293012a14526fbc3",
+      "n_queries": 2,
+      "mean": 0.0,
+      "per_seed": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "reference",
+      "family_id": "Fef92facf2b304718",
+      "n_queries": 7,
+      "mean": 0.8452380952380952,
+      "per_seed": [
+        0.9285714285714286,
+        0.761904761904762,
+        0.8452380952380952
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_preserved",
+      "family_id": "F10427fd8efdc9dae",
+      "n_queries": 2,
+      "mean": 0.5,
+      "per_seed": [
+        0.0,
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_preserved",
+      "family_id": "F17560cbffb9e57b9",
+      "n_queries": 3,
+      "mean": 0.9722222222222222,
+      "per_seed": [
+        1.0,
+        1.0,
+        0.9166666666666666
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_preserved",
+      "family_id": "F19ed30cfb37ad7f2",
+      "n_queries": 17,
+      "mean": 0.6370330937804988,
+      "per_seed": [
+        0.5966562416821932,
+        0.6401151184455683,
+        0.6743279212137343
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_preserved",
+      "family_id": "F293012a14526fbc3",
+      "n_queries": 2,
+      "mean": 0.0,
+      "per_seed": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_preserved",
+      "family_id": "Fef92facf2b304718",
+      "n_queries": 7,
+      "mean": 0.9087301587301588,
+      "per_seed": [
+        0.9642857142857144,
+        0.880952380952381,
+        0.880952380952381
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "family_batches",
+      "family_id": "F10427fd8efdc9dae",
+      "n_queries": 2,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "family_batches",
+      "family_id": "F17560cbffb9e57b9",
+      "n_queries": 3,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "family_batches",
+      "family_id": "F19ed30cfb37ad7f2",
+      "n_queries": 17,
+      "mean": 0.6739441930618401,
+      "per_seed": [
+        0.7127262443438914,
+        0.6576357466063348,
+        0.651470588235294
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "family_batches",
+      "family_id": "F293012a14526fbc3",
+      "n_queries": 2,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "family_batches",
+      "family_id": "Fef92facf2b304718",
+      "n_queries": 7,
+      "mean": 0.9841269841269842,
+      "per_seed": [
+        1.0,
+        0.9761904761904763,
+        0.9761904761904763
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_and_family",
+      "family_id": "F10427fd8efdc9dae",
+      "n_queries": 2,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_and_family",
+      "family_id": "F17560cbffb9e57b9",
+      "n_queries": 3,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_and_family",
+      "family_id": "F19ed30cfb37ad7f2",
+      "n_queries": 17,
+      "mean": 0.6574061751397392,
+      "per_seed": [
+        0.6894230769230769,
+        0.6158271227042853,
+        0.6669683257918553
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_and_family",
+      "family_id": "F293012a14526fbc3",
+      "n_queries": 2,
+      "mean": 1.0,
+      "per_seed": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "partition": "fit",
+      "arm": "identity_and_family",
+      "family_id": "Fef92facf2b304718",
+      "n_queries": 7,
+      "mean": 0.9603174603174603,
+      "per_seed": [
+        1.0,
+        0.9761904761904763,
+        0.9047619047619048
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "reference",
+      "family_id": "F0465ecc03c008240",
+      "n_queries": 8,
+      "mean": 0.4047619047619048,
+      "per_seed": [
+        0.42063492063492064,
+        0.376984126984127,
+        0.4166666666666667
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "reference",
+      "family_id": "F333328a21e5ae331",
+      "n_queries": 8,
+      "mean": 0.46527777777777785,
+      "per_seed": [
+        0.48750000000000004,
+        0.4708333333333333,
+        0.4375
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "reference",
+      "family_id": "F82d0ec93a01b1081",
+      "n_queries": 5,
+      "mean": 0.41666666666666674,
+      "per_seed": [
+        0.4333333333333334,
+        0.4,
+        0.4166666666666667
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_preserved",
+      "family_id": "F0465ecc03c008240",
+      "n_queries": 8,
+      "mean": 0.42989417989417983,
+      "per_seed": [
+        0.3829365079365079,
+        0.4186507936507937,
+        0.48809523809523814
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_preserved",
+      "family_id": "F333328a21e5ae331",
+      "n_queries": 8,
+      "mean": 0.5527777777777777,
+      "per_seed": [
+        0.5875,
+        0.55,
+        0.5208333333333334
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_preserved",
+      "family_id": "F82d0ec93a01b1081",
+      "n_queries": 5,
+      "mean": 0.39444444444444454,
+      "per_seed": [
+        0.38333333333333336,
+        0.4333333333333334,
+        0.3666666666666667
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "family_batches",
+      "family_id": "F0465ecc03c008240",
+      "n_queries": 8,
+      "mean": 0.3776455026455026,
+      "per_seed": [
+        0.36507936507936506,
+        0.40674603174603174,
+        0.36111111111111116
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "family_batches",
+      "family_id": "F333328a21e5ae331",
+      "n_queries": 8,
+      "mean": 0.5555555555555556,
+      "per_seed": [
+        0.6083333333333333,
+        0.5166666666666667,
+        0.5416666666666666
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "family_batches",
+      "family_id": "F82d0ec93a01b1081",
+      "n_queries": 5,
+      "mean": 0.46111111111111114,
+      "per_seed": [
+        0.65,
+        0.4333333333333334,
+        0.3
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_and_family",
+      "family_id": "F0465ecc03c008240",
+      "n_queries": 8,
+      "mean": 0.4146825396825397,
+      "per_seed": [
+        0.4384920634920635,
+        0.48809523809523814,
+        0.3174603174603175
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_and_family",
+      "family_id": "F333328a21e5ae331",
+      "n_queries": 8,
+      "mean": 0.5763888888888888,
+      "per_seed": [
+        0.7125,
+        0.6208333333333333,
+        0.3958333333333333
+      ]
+    },
+    {
+      "partition": "validation",
+      "arm": "identity_and_family",
+      "family_id": "F82d0ec93a01b1081",
+      "n_queries": 5,
+      "mean": 0.46111111111111114,
+      "per_seed": [
+        0.55,
+        0.45,
+        0.38333333333333336
+      ]
+    }
+  ],
+  "source_quarantine_count": 59,
+  "protocol_sha256": "32917ce2d36a24350b46cb9a586b82b7906b19bea3475e3210d7d3d9f572cbe1",
+  "measured_acceptance_sets_read": false,
+  "biological_candidate_promotable": false,
+  "verifier_scope": "post-training computational acceptance only",
+  "environment": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "torch": "2.9.1+cu126",
+    "numpy": "2.5.3"
+  }
+}

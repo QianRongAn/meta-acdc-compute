@@ -30,3 +30,8 @@
 ```bash
 PYTHONPATH=src:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 /home/administrator/docs/meta-acdc/.venv/bin/python -u scripts/run_fingerprint_factorial.py --protocol docs/fingerprint_hard_family_20261024/protocol.json --out-dir docs/fingerprint_hard_family_20261024/run
 ```
+
+
+## 已完成结果
+
+[完整结果与限制](RESULTS.md)、[13套模型重计算验收](verification.json)、[身份核验队列](IDENTITY_REPAIR_QUEUE.json)。组合组开发验证0.4841，组成0.5321；不挑种子，不放行生物学候选。

@@ -17,3 +17,7 @@ docs/six_blockers_20261021/sources/** -text whitespace=-blank-at-eol
 
 # Preserve original published metadata and assay attachments.
 docs/measured_intake_20261021/source_metadata/** -text whitespace=-blank-at-eol
+
+# Fixed-width primary PDB evidence and raw network receipts preserve their bytes.
+docs/fingerprint_hard_family_20261024/identity_audit/headers/*.txt -whitespace
+docs/fingerprint_hard_family_20261024/web_sources/*.txt -whitespace
