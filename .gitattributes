@@ -21,3 +21,6 @@ docs/measured_intake_20261021/source_metadata/** -text whitespace=-blank-at-eol
 # Fixed-width primary PDB evidence and raw network receipts preserve their bytes.
 docs/fingerprint_hard_family_20261024/identity_audit/headers/*.txt -whitespace
 docs/fingerprint_hard_family_20261024/web_sources/*.txt -whitespace
+
+# Preserve raw identity annotation/source snapshots.
+docs/fingerprint_paired_identity_20261024/sources/** -whitespace

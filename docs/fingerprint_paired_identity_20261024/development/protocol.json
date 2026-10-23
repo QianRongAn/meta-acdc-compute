@@ -1,0 +1,253 @@
+{
+  "protocol_id": "PAIRED-VARIABLE-DEV-20261024-v1",
+  "scope": "historical exposed structural panel only; no binding labels, no independent acceptance; new metadata-defined development cross-validation",
+  "dataset": "docs/fingerprint_paired_identity_20261024/development/dataset.pt",
+  "registry": "docs/fingerprint_paired_identity_20261024/curation_v3/identity_registry.json",
+  "n_graphs": 25,
+  "n_paired_variable_ids": 16,
+  "contexts": [
+    {
+      "family_id": "Ge0c8b8fd61057084",
+      "indices": [
+        0
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G357ad723d10f96d8",
+      "indices": [
+        1,
+        2,
+        3
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G73813c3e28a259b8",
+      "indices": [
+        4
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G2bd0547050ede643",
+      "indices": [
+        5,
+        6,
+        16,
+        17,
+        18,
+        19
+      ],
+      "n_paired_variable_ids": 2,
+      "n_eligible_hard_queries": 6
+    },
+    {
+      "family_id": "Ga55b01fbc424ff3a",
+      "indices": [
+        7,
+        8,
+        12
+      ],
+      "n_paired_variable_ids": 2,
+      "n_eligible_hard_queries": 2
+    },
+    {
+      "family_id": "G50b15cca2bb77b21",
+      "indices": [
+        9
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G1ff28d733b44281f",
+      "indices": [
+        10,
+        11
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G89afed1288df68eb",
+      "indices": [
+        13
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "Ga2ae1cc182b6449b",
+      "indices": [
+        14,
+        15
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G971c5a6046713029",
+      "indices": [
+        20
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "Gca92fc7068da6bd8",
+      "indices": [
+        21
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G56e420bc1c0a1633",
+      "indices": [
+        22
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G84438e1d0e9e5633",
+      "indices": [
+        23
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    },
+    {
+      "family_id": "G840d6c856df18a55",
+      "indices": [
+        24
+      ],
+      "n_paired_variable_ids": 1,
+      "n_eligible_hard_queries": 0
+    }
+  ],
+  "folds": [
+    {
+      "fold_id": "G2bd0547050ede643",
+      "fit_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_indices": [
+        5,
+        6,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "fold_id": "Ga55b01fbc424ff3a",
+      "fit_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "validation_indices": [
+        7,
+        8,
+        12
+      ]
+    }
+  ],
+  "seeds": [
+    20261021,
+    1101,
+    4242
+  ],
+  "arms": [
+    "reference",
+    "identity_preserved",
+    "identity_preserved_shuffled"
+  ],
+  "recipe": {
+    "threads": 2,
+    "emb_dim": 128,
+    "lr": 0.0003,
+    "lr_min": 3e-06,
+    "weight_decay": 0.0001,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "batch_size": 64,
+    "temperature": 0.07
+  },
+  "epochs_selected": "fixed final 120; no seed, fold, epoch or arm selection",
+  "batch_factor": "not tested: every fit partition fits in one batch, so structured ordering cannot change pair exposure",
+  "partition_change": "old fixed fit/validation has zero defined same-family hard queries after identity repair; newly freeze leave-one-eligible-V-gene-context-out DEVELOPMENT folds from old folds1-4 only; not a new test set; no performance-driven reassignment",
+  "family_definition": "union of original curated-family links, identical full single variable chains and exact species+alpha/beta V-gene pair; no same complete chain/V-pair crossing fit/validation",
+  "hard_metric": "per-query AUROC against same context, equal query mean within context, then equal context mean; positive=identical complete paired variable amino acids; negative=different paired variable sequence, NOT nonbinding",
+  "baselines": [
+    "constant 0.5",
+    "raw residue composition cosine",
+    "graph-size negative Euclidean after training-only standardization"
+  ],
+  "label_shuffle": "permute fit graph identity labels only, preserve counts, deterministic local RNG(seed+9173); validation truth unchanged; one fixed identity-preserved control",
+  "promotion": false,
+  "limitations": [
+    "few contexts; descriptive conditional intervals only",
+    "positives may be multiple copies of one crystal, not independent experiments",
+    "engineering and constant-region differences tracked separately; no native-clone or clinical identity inferred"
+  ],
+  "independent_acceptance_accessed": false,
+  "frozen_sha256": {
+    "src/meta_acdc/structure/paired_variable_identity.py": "f24547c7cc834f093a7a820f4c0a5a1a496f6bc661bdce05e06fb36de34d4050",
+    "scripts/curate_fingerprint_paired_identity.py": "5a92459558fd6bb1e91dded7c089d6a289ad2786561559d32577d211ba5887da",
+    "scripts/freeze_paired_identity_development.py": "333805a67abe7d692cc913716787291b2ca1e76a57f46b20219a999f9d35e694",
+    "scripts/run_paired_identity_development.py": "e64015b132df2cf31ad4f60f95a4ccbe8d46aaf67cb2aa3c30dbeb094e3d9f9d",
+    "src/meta_acdc/models/fingerprint_factorial.py": "6fc84a6749d785b51b2dc40485843350dc768dbc13b6443651e9ddf90a37898a",
+    "src/meta_acdc/models/train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+    "src/meta_acdc/models/train_fingerprint_v2.py": "56a4d857e1a7999208c6910b2facbda023bde2720f7c09edfc1ac78821182477",
+    "src/meta_acdc/models/egnn.py": "f1d4ef0708a0ef0f221c1de7a8a33b2f932c436d4160ac7cc78e8c7a091fdc3c",
+    "scripts/rashomon_fingerprint.py": "f91c2c940d8f1b27e0a1ab513b264499afdf61b9eddefcacde875f7a902bb80b",
+    "scripts/diagnose_fingerprint_hard_family.py": "ff031bb011fbbe0b165800e7490c6733932c3722cd493650b89d985a2e5c43af",
+    "src/meta_acdc/structure/feature_schema.py": "b82a7c0b0ad6cc01a4c7ecbc175051cb4b68c9dd175cc0f6c3bc926377e60e22",
+    "docs/fingerprint_paired_identity_20261024/curation_v3/identity_registry.json": "5e51921ec7aad7d9ca2df8b694d860d666c05b2f191a9725f1317d58935c394b",
+    "docs/fingerprint_paired_identity_20261024/development/dataset.pt": "9f27e86584cab8c944ca5d0446a74750c7f78f0d163c1a55d1f29b8bf42aa762"
+  }
+}

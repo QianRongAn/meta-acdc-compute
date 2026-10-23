@@ -1,0 +1,20 @@
+test_cif_declaration_rejects_gap (tests.test_paired_variable_identity.PairedVariableTests.test_cif_declaration_rejects_gap) ... ok
+test_development_fold_isolation_and_control (tests.test_paired_variable_identity.PairedVariableTests.test_development_fold_isolation_and_control) ... ok
+test_exact_pair_order_and_mutation (tests.test_paired_variable_identity.PairedVariableTests.test_exact_pair_order_and_mutation) ... ok
+test_germline_translation (tests.test_paired_variable_identity.PairedVariableTests.test_germline_translation) ... ok
+test_missing_terminal_residue_not_imputed (tests.test_paired_variable_identity.PairedVariableTests.test_missing_terminal_residue_not_imputed) ... ok
+test_real_numbered_padding (tests.test_paired_variable_identity.PairedVariableTests.test_real_numbered_padding) ... ok
+test_same_construct_observed_split_repaired (tests.test_paired_variable_identity.PairedVariableTests.test_same_construct_observed_split_repaired) ... ok
+test_unmatched_padding_fails (tests.test_paired_variable_identity.PairedVariableTests.test_unmatched_padding_fails) ... ok
+test_batch_order_preserves_population_and_steps (tests.test_fingerprint_factorial.FactorialChecks.test_batch_order_preserves_population_and_steps) ... ok
+test_identity_only_restores_named_block (tests.test_fingerprint_factorial.FactorialChecks.test_identity_only_restores_named_block) ... ok
+test_numeric_geometry_mask_keeps_topology (tests.test_fingerprint_factorial.FactorialChecks.test_numeric_geometry_mask_keeps_topology) ... ok
+test_tiny_factorial_replay_and_no_biological_promotion (tests.test_fingerprint_factorial.FactorialChecks.test_tiny_factorial_replay_and_no_biological_promotion) ... ok
+test_builder_requires_explicit_diagnostic_mode (tests.test_fingerprint_factorial.IdentityEvidenceChecks.test_builder_requires_explicit_diagnostic_mode) ... ok
+test_equivalence_requires_both_complete_chains (tests.test_fingerprint_factorial.IdentityEvidenceChecks.test_equivalence_requires_both_complete_chains) ... ok
+test_seqres_rejects_incomplete_or_unknown (tests.test_fingerprint_factorial.IdentityEvidenceChecks.test_seqres_rejects_incomplete_or_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 23.775s
+
+OK
