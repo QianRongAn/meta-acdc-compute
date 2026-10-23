@@ -1,0 +1,395 @@
+HEADER    PROTEIN BINDING                         15-OCT-15   5E9D              
+TITLE     RD-1 MART-1 HIGH BOUND TO MART-1 DECAMERIC PEPTIDE (ELA) IN COMPLEX   
+TITLE    2 WITH HLA-A2                                                          
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: HLA CLASS I HISTOCOMPATIBILITY ANTIGEN, A-2 ALPHA CHAIN;   
+COMPND   3 CHAIN: A, F;                                                         
+COMPND   4 SYNONYM: MHC CLASS I ANTIGEN A*2;                                    
+COMPND   5 ENGINEERED: YES;                                                     
+COMPND   6 MOL_ID: 2;                                                           
+COMPND   7 MOLECULE: BETA-2-MICROGLOBULIN;                                      
+COMPND   8 CHAIN: B, G;                                                         
+COMPND   9 ENGINEERED: YES;                                                     
+COMPND  10 MOL_ID: 3;                                                           
+COMPND  11 MOLECULE: MELANOMA DERIVED MART-1 PEPTIDE;                           
+COMPND  12 CHAIN: C, H;                                                         
+COMPND  13 ENGINEERED: YES;                                                     
+COMPND  14 MUTATION: YES;                                                       
+COMPND  15 MOL_ID: 4;                                                           
+COMPND  16 MOLECULE: A6-TCR VALPHA;                                             
+COMPND  17 CHAIN: D, I;                                                         
+COMPND  18 ENGINEERED: YES;                                                     
+COMPND  19 MOL_ID: 5;                                                           
+COMPND  20 MOLECULE: A6-TCR VBETA;                                              
+COMPND  21 CHAIN: E, J;                                                         
+COMPND  22 ENGINEERED: YES                                                      
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE   3 ORGANISM_COMMON: HUMAN;                                              
+SOURCE   4 ORGANISM_TAXID: 9606;                                                
+SOURCE   5 GENE: HLA-A, HLAA;                                                   
+SOURCE   6 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+SOURCE   7 EXPRESSION_SYSTEM_TAXID: 562;                                        
+SOURCE   8 MOL_ID: 2;                                                           
+SOURCE   9 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  10 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  11 ORGANISM_TAXID: 9606;                                                
+SOURCE  12 GENE: B2M, CDABP0092, HDCMA22P;                                      
+SOURCE  13 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+SOURCE  14 EXPRESSION_SYSTEM_TAXID: 562;                                        
+SOURCE  15 MOL_ID: 3;                                                           
+SOURCE  16 SYNTHETIC: YES;                                                      
+SOURCE  17 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  18 ORGANISM_TAXID: 9606;                                                
+SOURCE  19 MOL_ID: 4;                                                           
+SOURCE  20 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  21 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  22 ORGANISM_TAXID: 9606;                                                
+SOURCE  23 GENE: TRAV12-2;                                                      
+SOURCE  24 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+SOURCE  25 EXPRESSION_SYSTEM_TAXID: 562;                                        
+SOURCE  26 MOL_ID: 5;                                                           
+SOURCE  27 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  28 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  29 ORGANISM_TAXID: 9606;                                                
+SOURCE  30 GENE: TRBV6-5;                                                       
+SOURCE  31 EXPRESSION_SYSTEM: ESCHERICHIA COLI;                                 
+SOURCE  32 EXPRESSION_SYSTEM_TAXID: 562                                         
+DBREF  5E9D A    1   275  UNP    P01892   1A02_HUMAN      25    299             
+DBREF  5E9D B    1    99  UNP    P61769   B2MG_HUMAN      21    119             
+DBREF  5E9D C    1    10  PDB    5E9D     5E9D             1     10             
+DBREF1 5E9D D    0    90  UNP                  A0A075B6T6_HUMAN                 
+DBREF2 5E9D D     A0A075B6T6                         22         112             
+DBREF1 5E9D E    1    93  UNP                  A0A0K0K1A5_HUMAN                 
+DBREF2 5E9D E     A0A0K0K1A5                         20         112             
+DBREF  5E9D F    1   275  UNP    P01892   1A02_HUMAN      25    299             
+DBREF  5E9D G    1    99  UNP    P61769   B2MG_HUMAN      21    119             
+DBREF  5E9D H    1    10  PDB    5E9D     5E9D             1     10             
+DBREF1 5E9D I    0    90  UNP                  A0A075B6T6_HUMAN                 
+DBREF2 5E9D I     A0A075B6T6                         22         112             
+DBREF1 5E9D J    1    93  UNP                  A0A0K0K1A5_HUMAN                 
+DBREF2 5E9D J     A0A0K0K1A5                         20         112             
+SEQADV 5E9D MET B    0  UNP  P61769              INITIATING METHIONINE          
+SEQADV 5E9D THR D   30  UNP  A0A075B6T GLN    52 ENGINEERED MUTATION            
+SEQADV 5E9D SER D   48  UNP  A0A075B6T PHE    70 ENGINEERED MUTATION            
+SEQADV 5E9D THR D   91  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LYS D   92  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D TYR D   93  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D SER D   94  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D TRP D   95  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY D   96  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LYS D   97  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LEU D   98  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLN D   99  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D PHE D  100  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY D  101  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D ALA D  102  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY D  103  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D THR D  104  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLN D  105  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL D  106  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL D  107  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL D  108  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D THR D  109  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D PRO D  110  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D ASP D  111  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY D  112  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLY D  113  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLY D  114  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D LEU D  115  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ASN D  116  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ASP D  117  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ILE D  118  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D PHE D  119  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU D  120  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ALA D  121  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLN D  122  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D LYS D  123  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ILE D  124  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU D  125  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D TRP D  126  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D HIS D  127  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU D  128  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D MET E  -18  UNP  A0A0K0K1A           INITIATING METHIONINE          
+SEQADV 5E9D GLY E  -17  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER E  -16  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER E  -15  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E  -14  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E  -13  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E  -12  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E  -11  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E  -10  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS E   -9  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER E   -8  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER E   -7  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E   -6  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU E   -5  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL E   -4  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO E   -3  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ARG E   -2  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E   -1  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER E    0  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ALA E   33  UNP  A0A0K0K1A SER    52 ENGINEERED MUTATION            
+SEQADV 5E9D VAL E   52  UNP  A0A0K0K1A ALA    71 ENGINEERED MUTATION            
+SEQADV 5E9D ASP E   59  UNP  A0A0K0K1A GLU    78 ENGINEERED MUTATION            
+SEQADV 5E9D ASP E   62  UNP  A0A0K0K1A ASN    81 ENGINEERED MUTATION            
+SEQADV 5E9D LYS E   65  UNP  A0A0K0K1A ASN    84 ENGINEERED MUTATION            
+SEQADV 5E9D ARG E   94  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO E   95  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E   96  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D TRP E   97  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D MET E   98  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ALA E   99  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E  100  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E  101  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL E  102  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLU E  103  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU E  104  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D TYR E  105  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PHE E  106  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E  107  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO E  108  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY E  109  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR E  110  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ARG E  111  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU E  112  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR E  113  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL E  114  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR E  115  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLU E  116  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ASP E  117  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU E  118  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ILE E  119  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASN E  120  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D GLY E  121  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D SER E  122  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA E  123  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP E  124  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP E  125  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA E  126  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS E  127  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS E  128  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP E  129  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA E  130  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA E  131  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS E  132  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS E  133  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP E  134  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D GLY E  135  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS E  136  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D SER E  137  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D MET G    0  UNP  P61769              INITIATING METHIONINE          
+SEQADV 5E9D THR I   30  UNP  A0A075B6T GLN    52 ENGINEERED MUTATION            
+SEQADV 5E9D SER I   48  UNP  A0A075B6T PHE    70 ENGINEERED MUTATION            
+SEQADV 5E9D THR I   91  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LYS I   92  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D TYR I   93  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D SER I   94  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D TRP I   95  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY I   96  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LYS I   97  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D LEU I   98  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLN I   99  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D PHE I  100  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY I  101  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D ALA I  102  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY I  103  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D THR I  104  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLN I  105  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL I  106  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL I  107  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D VAL I  108  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D THR I  109  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D PRO I  110  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D ASP I  111  UNP  A0A075B6T           LINKER                         
+SEQADV 5E9D GLY I  112  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLY I  113  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLY I  114  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D LEU I  115  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ASN I  116  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ASP I  117  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ILE I  118  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D PHE I  119  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU I  120  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ALA I  121  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLN I  122  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D LYS I  123  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D ILE I  124  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU I  125  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D TRP I  126  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D HIS I  127  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D GLU I  128  UNP  A0A075B6T           EXPRESSION TAG                 
+SEQADV 5E9D MET J  -18  UNP  A0A0K0K1A           INITIATING METHIONINE          
+SEQADV 5E9D GLY J  -17  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER J  -16  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER J  -15  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J  -14  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J  -13  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J  -12  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J  -11  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J  -10  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D HIS J   -9  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER J   -8  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER J   -7  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J   -6  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU J   -5  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL J   -4  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO J   -3  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ARG J   -2  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J   -1  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D SER J    0  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ALA J   33  UNP  A0A0K0K1A SER    52 ENGINEERED MUTATION            
+SEQADV 5E9D VAL J   52  UNP  A0A0K0K1A ALA    71 ENGINEERED MUTATION            
+SEQADV 5E9D ASP J   59  UNP  A0A0K0K1A GLU    78 ENGINEERED MUTATION            
+SEQADV 5E9D ASP J   62  UNP  A0A0K0K1A ASN    81 ENGINEERED MUTATION            
+SEQADV 5E9D LYS J   65  UNP  A0A0K0K1A ASN    84 ENGINEERED MUTATION            
+SEQADV 5E9D ARG J   94  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO J   95  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J   96  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D TRP J   97  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D MET J   98  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ALA J   99  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J  100  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J  101  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL J  102  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLU J  103  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU J  104  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D TYR J  105  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PHE J  106  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J  107  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D PRO J  108  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLY J  109  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR J  110  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ARG J  111  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU J  112  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR J  113  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D VAL J  114  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D THR J  115  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D GLU J  116  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ASP J  117  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D LEU J  118  UNP  A0A0K0K1A           EXPRESSION TAG                 
+SEQADV 5E9D ILE J  119  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASN J  120  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D GLY J  121  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D SER J  122  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA J  123  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP J  124  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP J  125  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA J  126  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS J  127  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS J  128  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP J  129  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA J  130  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ALA J  131  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS J  132  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS J  133  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D ASP J  134  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D GLY J  135  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D LYS J  136  UNP  A0A0K0K1A           LINKER                         
+SEQADV 5E9D SER J  137  UNP  A0A0K0K1A           LINKER                         
+SEQRES   1 A  275  GLY SER HIS SER MET ARG TYR PHE PHE THR SER VAL SER          
+SEQRES   2 A  275  ARG PRO GLY ARG GLY GLU PRO ARG PHE ILE ALA VAL GLY          
+SEQRES   3 A  275  TYR VAL ASP ASP THR GLN PHE VAL ARG PHE ASP SER ASP          
+SEQRES   4 A  275  ALA ALA SER GLN ARG MET GLU PRO ARG ALA PRO TRP ILE          
+SEQRES   5 A  275  GLU GLN GLU GLY PRO GLU TYR TRP ASP GLY GLU THR ARG          
+SEQRES   6 A  275  LYS VAL LYS ALA HIS SER GLN THR HIS ARG VAL ASP LEU          
+SEQRES   7 A  275  GLY THR LEU ARG GLY TYR TYR ASN GLN SER GLU ALA GLY          
+SEQRES   8 A  275  SER HIS THR VAL GLN ARG MET TYR GLY CYS ASP VAL GLY          
+SEQRES   9 A  275  SER ASP TRP ARG PHE LEU ARG GLY TYR HIS GLN TYR ALA          
+SEQRES  10 A  275  TYR ASP GLY LYS ASP TYR ILE ALA LEU LYS GLU ASP LEU          
+SEQRES  11 A  275  ARG SER TRP THR ALA ALA ASP MET ALA ALA GLN THR THR          
+SEQRES  12 A  275  LYS HIS LYS TRP GLU ALA ALA HIS VAL ALA GLU GLN LEU          
+SEQRES  13 A  275  ARG ALA TYR LEU GLU GLY THR CYS VAL GLU TRP LEU ARG          
+SEQRES  14 A  275  ARG TYR LEU GLU ASN GLY LYS GLU THR LEU GLN ARG THR          
+SEQRES  15 A  275  ASP ALA PRO LYS THR HIS MET THR HIS HIS ALA VAL SER          
+SEQRES  16 A  275  ASP HIS GLU ALA THR LEU ARG CYS TRP ALA LEU SER PHE          
+SEQRES  17 A  275  TYR PRO ALA GLU ILE THR LEU THR TRP GLN ARG ASP GLY          
+SEQRES  18 A  275  GLU ASP GLN THR GLN ASP THR GLU LEU VAL GLU THR ARG          
+SEQRES  19 A  275  PRO ALA GLY ASP GLY THR PHE GLN LYS TRP ALA ALA VAL          
+SEQRES  20 A  275  VAL VAL PRO SER GLY GLN GLU GLN ARG TYR THR CYS HIS          
+SEQRES  21 A  275  VAL GLN HIS GLU GLY LEU PRO LYS PRO LEU THR LEU ARG          
+SEQRES  22 A  275  TRP GLU                                                      
+SEQRES   1 B  100  MET ILE GLN ARG THR PRO LYS ILE GLN VAL TYR SER ARG          
+SEQRES   2 B  100  HIS PRO ALA GLU ASN GLY LYS SER ASN PHE LEU ASN CYS          
+SEQRES   3 B  100  TYR VAL SER GLY PHE HIS PRO SER ASP ILE GLU VAL ASP          
+SEQRES   4 B  100  LEU LEU LYS ASN GLY GLU ARG ILE GLU LYS VAL GLU HIS          
+SEQRES   5 B  100  SER ASP LEU SER PHE SER LYS ASP TRP SER PHE TYR LEU          
+SEQRES   6 B  100  LEU TYR TYR THR GLU PHE THR PRO THR GLU LYS ASP GLU          
+SEQRES   7 B  100  TYR ALA CYS ARG VAL ASN HIS VAL THR LEU SER GLN PRO          
+SEQRES   8 B  100  LYS ILE VAL LYS TRP ASP ARG ASP MET                          
+SEQRES   1 C   10  GLU LEU ALA GLY ILE GLY ILE LEU THR VAL                      
+SEQRES   1 D  129  GLN LYS GLU VAL GLU GLN ASN SER GLY PRO LEU SER VAL          
+SEQRES   2 D  129  PRO GLU GLY ALA ILE ALA SER LEU ASN CYS THR TYR SER          
+SEQRES   3 D  129  ASP ARG GLY SER THR SER PHE PHE TRP TYR ARG GLN TYR          
+SEQRES   4 D  129  SER GLY LYS SER PRO GLU LEU ILE MET SER ILE TYR SER          
+SEQRES   5 D  129  ASN GLY ASP LYS GLU ASP GLY ARG PHE THR ALA GLN LEU          
+SEQRES   6 D  129  ASN LYS ALA SER GLN TYR VAL SER LEU LEU ILE ARG ASP          
+SEQRES   7 D  129  SER GLN PRO SER ASP SER ALA THR TYR LEU CYS ALA VAL          
+SEQRES   8 D  129  THR LYS TYR SER TRP GLY LYS LEU GLN PHE GLY ALA GLY          
+SEQRES   9 D  129  THR GLN VAL VAL VAL THR PRO ASP GLY GLY GLY LEU ASN          
+SEQRES  10 D  129  ASP ILE PHE GLU ALA GLN LYS ILE GLU TRP HIS GLU              
+SEQRES   1 E  156  MET GLY SER SER HIS HIS HIS HIS HIS HIS SER SER GLY          
+SEQRES   2 E  156  LEU VAL PRO ARG GLY SER ASN ALA GLY VAL THR GLN THR          
+SEQRES   3 E  156  PRO LYS PHE GLN VAL LEU LYS THR GLY GLN SER MET THR          
+SEQRES   4 E  156  LEU GLN CYS ALA GLN ASP MET ASN HIS GLU TYR MET ALA          
+SEQRES   5 E  156  TRP TYR ARG GLN ASP PRO GLY MET GLY LEU ARG LEU ILE          
+SEQRES   6 E  156  HIS TYR SER VAL GLY VAL GLY ILE THR ASP GLN GLY ASP          
+SEQRES   7 E  156  VAL PRO ASP GLY TYR LYS VAL SER ARG SER THR THR GLU          
+SEQRES   8 E  156  ASP PHE PRO LEU ARG LEU LEU SER ALA ALA PRO SER GLN          
+SEQRES   9 E  156  THR SER VAL TYR PHE CYS ALA SER ARG PRO GLY TRP MET          
+SEQRES  10 E  156  ALA GLY GLY VAL GLU LEU TYR PHE GLY PRO GLY THR ARG          
+SEQRES  11 E  156  LEU THR VAL THR GLU ASP LEU ILE ASN GLY SER ALA ASP          
+SEQRES  12 E  156  ASP ALA LYS LYS ASP ALA ALA LYS LYS ASP GLY LYS SER          
+SEQRES   1 F  275  GLY SER HIS SER MET ARG TYR PHE PHE THR SER VAL SER          
+SEQRES   2 F  275  ARG PRO GLY ARG GLY GLU PRO ARG PHE ILE ALA VAL GLY          
+SEQRES   3 F  275  TYR VAL ASP ASP THR GLN PHE VAL ARG PHE ASP SER ASP          
+SEQRES   4 F  275  ALA ALA SER GLN ARG MET GLU PRO ARG ALA PRO TRP ILE          
+SEQRES   5 F  275  GLU GLN GLU GLY PRO GLU TYR TRP ASP GLY GLU THR ARG          
+SEQRES   6 F  275  LYS VAL LYS ALA HIS SER GLN THR HIS ARG VAL ASP LEU          
+SEQRES   7 F  275  GLY THR LEU ARG GLY TYR TYR ASN GLN SER GLU ALA GLY          
+SEQRES   8 F  275  SER HIS THR VAL GLN ARG MET TYR GLY CYS ASP VAL GLY          
+SEQRES   9 F  275  SER ASP TRP ARG PHE LEU ARG GLY TYR HIS GLN TYR ALA          
+SEQRES  10 F  275  TYR ASP GLY LYS ASP TYR ILE ALA LEU LYS GLU ASP LEU          
+SEQRES  11 F  275  ARG SER TRP THR ALA ALA ASP MET ALA ALA GLN THR THR          
+SEQRES  12 F  275  LYS HIS LYS TRP GLU ALA ALA HIS VAL ALA GLU GLN LEU          
+SEQRES  13 F  275  ARG ALA TYR LEU GLU GLY THR CYS VAL GLU TRP LEU ARG          
+SEQRES  14 F  275  ARG TYR LEU GLU ASN GLY LYS GLU THR LEU GLN ARG THR          
+SEQRES  15 F  275  ASP ALA PRO LYS THR HIS MET THR HIS HIS ALA VAL SER          
+SEQRES  16 F  275  ASP HIS GLU ALA THR LEU ARG CYS TRP ALA LEU SER PHE          
+SEQRES  17 F  275  TYR PRO ALA GLU ILE THR LEU THR TRP GLN ARG ASP GLY          
+SEQRES  18 F  275  GLU ASP GLN THR GLN ASP THR GLU LEU VAL GLU THR ARG          
+SEQRES  19 F  275  PRO ALA GLY ASP GLY THR PHE GLN LYS TRP ALA ALA VAL          
+SEQRES  20 F  275  VAL VAL PRO SER GLY GLN GLU GLN ARG TYR THR CYS HIS          
+SEQRES  21 F  275  VAL GLN HIS GLU GLY LEU PRO LYS PRO LEU THR LEU ARG          
+SEQRES  22 F  275  TRP GLU                                                      
+SEQRES   1 G  100  MET ILE GLN ARG THR PRO LYS ILE GLN VAL TYR SER ARG          
+SEQRES   2 G  100  HIS PRO ALA GLU ASN GLY LYS SER ASN PHE LEU ASN CYS          
+SEQRES   3 G  100  TYR VAL SER GLY PHE HIS PRO SER ASP ILE GLU VAL ASP          
+SEQRES   4 G  100  LEU LEU LYS ASN GLY GLU ARG ILE GLU LYS VAL GLU HIS          
+SEQRES   5 G  100  SER ASP LEU SER PHE SER LYS ASP TRP SER PHE TYR LEU          
+SEQRES   6 G  100  LEU TYR TYR THR GLU PHE THR PRO THR GLU LYS ASP GLU          
+SEQRES   7 G  100  TYR ALA CYS ARG VAL ASN HIS VAL THR LEU SER GLN PRO          
+SEQRES   8 G  100  LYS ILE VAL LYS TRP ASP ARG ASP MET                          
+SEQRES   1 H   10  GLU LEU ALA GLY ILE GLY ILE LEU THR VAL                      
+SEQRES   1 I  129  GLN LYS GLU VAL GLU GLN ASN SER GLY PRO LEU SER VAL          
+SEQRES   2 I  129  PRO GLU GLY ALA ILE ALA SER LEU ASN CYS THR TYR SER          
+SEQRES   3 I  129  ASP ARG GLY SER THR SER PHE PHE TRP TYR ARG GLN TYR          
+SEQRES   4 I  129  SER GLY LYS SER PRO GLU LEU ILE MET SER ILE TYR SER          
+SEQRES   5 I  129  ASN GLY ASP LYS GLU ASP GLY ARG PHE THR ALA GLN LEU          
+SEQRES   6 I  129  ASN LYS ALA SER GLN TYR VAL SER LEU LEU ILE ARG ASP          
+SEQRES   7 I  129  SER GLN PRO SER ASP SER ALA THR TYR LEU CYS ALA VAL          
+SEQRES   8 I  129  THR LYS TYR SER TRP GLY LYS LEU GLN PHE GLY ALA GLY          
+SEQRES   9 I  129  THR GLN VAL VAL VAL THR PRO ASP GLY GLY GLY LEU ASN          
+SEQRES  10 I  129  ASP ILE PHE GLU ALA GLN LYS ILE GLU TRP HIS GLU              
+SEQRES   1 J  156  MET GLY SER SER HIS HIS HIS HIS HIS HIS SER SER GLY          
+SEQRES   2 J  156  LEU VAL PRO ARG GLY SER ASN ALA GLY VAL THR GLN THR          
+SEQRES   3 J  156  PRO LYS PHE GLN VAL LEU LYS THR GLY GLN SER MET THR          
+SEQRES   4 J  156  LEU GLN CYS ALA GLN ASP MET ASN HIS GLU TYR MET ALA          
+SEQRES   5 J  156  TRP TYR ARG GLN ASP PRO GLY MET GLY LEU ARG LEU ILE          
+SEQRES   6 J  156  HIS TYR SER VAL GLY VAL GLY ILE THR ASP GLN GLY ASP          
+SEQRES   7 J  156  VAL PRO ASP GLY TYR LYS VAL SER ARG SER THR THR GLU          
+SEQRES   8 J  156  ASP PHE PRO LEU ARG LEU LEU SER ALA ALA PRO SER GLN          
+SEQRES   9 J  156  THR SER VAL TYR PHE CYS ALA SER ARG PRO GLY TRP MET          
+SEQRES  10 J  156  ALA GLY GLY VAL GLU LEU TYR PHE GLY PRO GLY THR ARG          
+SEQRES  11 J  156  LEU THR VAL THR GLU ASP LEU ILE ASN GLY SER ALA ASP          
+SEQRES  12 J  156  ASP ALA LYS LYS ASP ALA ALA LYS LYS ASP GLY LYS SER          

@@ -1,0 +1,3479 @@
+{
+  "scope": "retrospective diagnostics only; no fitting or new independent data",
+  "source_sha256": {
+    "docs/fingerprint_retrain_20261023/input/fingerprint_dataset.pt": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed20261021.npy": "7562dcb1dfb2e6dd015feb036773cc1b0b9f2bbe9a36b327deedc630b77c5636",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed20261021.npy": "aaab42902af1060d0f2e679fe402848090a753cc17a93912dfb5e0552fca58e6",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed20261021.npy": "0971c1ca70c4cb62d1839930abe25aa91923c9dcef986f58dcbb0b4f05981767",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed20261021.npy": "b707d0dd1d732896917d24edb00a6699d6b7383ab536f7cb3508fa73c4d110c8",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed1101.npy": "83640f5d7e25a2d3bbf29ec0d4782ba85420e7f272a08a096ec65acd0c5e3027",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed1101.npy": "c1efa90434c25c8ebd60a567900098589cccde2e5d9689cbc809b7ecbd9284c7",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed1101.npy": "716486ed90303e47300a23a2745446cfed400256150cdf191b569eeeca5feb61",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed1101.npy": "25038cef9bae02c39620a788074eb4b65f17891336567ae66cbb92650a968a08",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed1101.npy": "4d6b1324ac2758865841f084f95fc1514ce21ac69f38293f06dbf0626c4ace2b",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed4242.npy": "799583dcbbe0a26e53aa0533439f9c699aa389847f9f88f83f5c2ec9fa3dfa7e",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed4242.npy": "3b4243d4fef28058ccf4a3f77a96ecd94aa248fd16680b4ddfdb2b60f8b053c3",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed4242.npy": "a623cec307570a2a79644d059793a62175a77f82a6d0424b95eef9ea6a0c47aa",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed4242.npy": "b221532defdb2ba471202c69d42094c93535f5fb6aeefb831b5f6c764a2cdcd0"
+  },
+  "families": [
+    {
+      "family_id": "F0465ecc03c008240",
+      "fold": 1,
+      "n_graphs": 17,
+      "n_receptors": 10,
+      "n_eligible_queries": 8,
+      "domain_counts": {
+        "crystal": 11,
+        "predicted": 6
+      },
+      "peptide_counts": {
+        "YQFGPDFPIA": 2,
+        "RQWGPDPAAV": 3,
+        "YLGGPDFPTI": 1,
+        "MVWGPDPLYV": 3,
+        "RQFGPDFPTI": 3,
+        "RQFGPDWIVA": 3,
+        "ALWGPDPAAA": 1,
+        "AQWGPDPAAA": 1
+      },
+      "composition_auc": 0.5922619047619048,
+      "model_auc": 0.457010582010582,
+      "delta": -0.1352513227513228
+    },
+    {
+      "family_id": "F10427fd8efdc9dae",
+      "fold": 4,
+      "n_graphs": 3,
+      "n_receptors": 2,
+      "n_eligible_queries": 2,
+      "domain_counts": {
+        "crystal": 3
+      },
+      "peptide_counts": {
+        "FLRGRAYGL": 3
+      },
+      "composition_auc": 0.0,
+      "model_auc": 0.16666666666666666,
+      "delta": 0.16666666666666666
+    },
+    {
+      "family_id": "F17560cbffb9e57b9",
+      "fold": 3,
+      "n_graphs": 5,
+      "n_receptors": 3,
+      "n_eligible_queries": 3,
+      "domain_counts": {
+        "crystal": 3,
+        "predicted": 2
+      },
+      "peptide_counts": {
+        "HPVGEADYFEY": 3,
+        "HPVGDADYFEY": 1,
+        "HPVGQADYFEY": 1
+      },
+      "composition_auc": 0.4166666666666667,
+      "model_auc": 0.7777777777777778,
+      "delta": 0.36111111111111116
+    },
+    {
+      "family_id": "F19ed30cfb37ad7f2",
+      "fold": 2,
+      "n_graphs": 19,
+      "n_receptors": 5,
+      "n_eligible_queries": 17,
+      "domain_counts": {
+        "crystal": 7,
+        "predicted": 12
+      },
+      "peptide_counts": {
+        "GILGFVFTL": 9,
+        "GILGLVFTL": 5,
+        "GILEFVFTL": 3,
+        "PKYVKQNTLKLAT": 2
+      },
+      "composition_auc": 0.44162729571466597,
+      "model_auc": 0.44315389051548226,
+      "delta": 0.001526594800816252
+    },
+    {
+      "family_id": "F293012a14526fbc3",
+      "fold": 2,
+      "n_graphs": 3,
+      "n_receptors": 2,
+      "n_eligible_queries": 2,
+      "domain_counts": {
+        "crystal": 2,
+        "predicted": 1
+      },
+      "peptide_counts": {
+        "ELAGIGILTV": 3
+      },
+      "composition_auc": 1.0,
+      "model_auc": 0.0,
+      "delta": -1.0
+    },
+    {
+      "family_id": "F333328a21e5ae331",
+      "fold": 1,
+      "n_graphs": 8,
+      "n_receptors": 3,
+      "n_eligible_queries": 8,
+      "domain_counts": {
+        "crystal": 3,
+        "predicted": 5
+      },
+      "peptide_counts": {
+        "SMLGIGIVPV": 2,
+        "MMWDRGLGMM": 2,
+        "ELAGIGILTV": 4
+      },
+      "composition_auc": 0.7375,
+      "model_auc": 0.5125,
+      "delta": -0.22499999999999998
+    },
+    {
+      "family_id": "F5a0a5df565e94dcb",
+      "fold": 0,
+      "n_graphs": 4,
+      "n_receptors": 3,
+      "n_eligible_queries": 2,
+      "domain_counts": {
+        "crystal": 3,
+        "predicted": 1
+      },
+      "peptide_counts": {
+        "QLPRLFPLL": 3,
+        "LWMRLLPLL": 1
+      },
+      "composition_auc": 0.25,
+      "model_auc": 0.5833333333333333,
+      "delta": 0.3333333333333333
+    },
+    {
+      "family_id": "F82d0ec93a01b1081",
+      "fold": 1,
+      "n_graphs": 5,
+      "n_receptors": 2,
+      "n_eligible_queries": 5,
+      "domain_counts": {
+        "crystal": 2,
+        "predicted": 3
+      },
+      "peptide_counts": {
+        "AAGIGILTV": 2,
+        "EAAGIGILTV": 2,
+        "ELAGIGILTV": 1
+      },
+      "composition_auc": 0.26666666666666666,
+      "model_auc": 0.5222222222222223,
+      "delta": 0.25555555555555554
+    },
+    {
+      "family_id": "Fb9d23d7d026efae5",
+      "fold": 0,
+      "n_graphs": 3,
+      "n_receptors": 2,
+      "n_eligible_queries": 2,
+      "domain_counts": {
+        "crystal": 2,
+        "predicted": 1
+      },
+      "peptide_counts": {
+        "LLFGYPVYV": 1,
+        "LLFGYAVYV": 2
+      },
+      "composition_auc": 1.0,
+      "model_auc": 0.16666666666666666,
+      "delta": -0.8333333333333334
+    },
+    {
+      "family_id": "Fde4a656c257aa9b3",
+      "fold": 0,
+      "n_graphs": 6,
+      "n_receptors": 2,
+      "n_eligible_queries": 6,
+      "domain_counts": {
+        "crystal": 2,
+        "predicted": 4
+      },
+      "peptide_counts": {
+        "RYPLTFGWCF": 3,
+        "RYPLTLGWCF": 3
+      },
+      "composition_auc": 0.38888888888888884,
+      "model_auc": 0.4444444444444444,
+      "delta": 0.055555555555555546
+    },
+    {
+      "family_id": "Fef92facf2b304718",
+      "fold": 3,
+      "n_graphs": 8,
+      "n_receptors": 3,
+      "n_eligible_queries": 7,
+      "domain_counts": {
+        "crystal": 4,
+        "predicted": 4
+      },
+      "peptide_counts": {
+        "SLLMWITQV": 2,
+        "SLLMWITQC": 6
+      },
+      "composition_auc": 0.9285714285714286,
+      "model_auc": 0.75,
+      "delta": -0.17857142857142858
+    }
+  ],
+  "queries": [
+    {
+      "query_index": 9,
+      "complex_id": "1qrn",
+      "family_id": "Fb9d23d7d026efae5",
+      "receptor_id": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "domain": "crystal",
+      "peptide": "LLFGYAVYV",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 1.0,
+      "model_auc": 0.0,
+      "model_minus_composition": -1.0,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 0,
+      "highest_scoring_wrong_complex": "1ao7",
+      "highest_scoring_positive_index": 146,
+      "wrong_alpha_edit": 85,
+      "wrong_beta_edit": 34
+    },
+    {
+      "query_index": 10,
+      "complex_id": "2bnq",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "domain": "crystal",
+      "peptide": "SLLMWITQV",
+      "n_positive": 4,
+      "n_hard_negative": 3,
+      "composition_auc": 0.75,
+      "model_auc": 0.7222222222222222,
+      "model_minus_composition": -0.02777777777777779,
+      "per_seed_auc": [
+        0.75,
+        0.75,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 14,
+      "highest_scoring_wrong_complex": "2f54_0",
+      "highest_scoring_positive_index": 11,
+      "wrong_alpha_edit": 7,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 11,
+      "complex_id": "2bnr",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "domain": "crystal",
+      "peptide": "SLLMWITQC",
+      "n_positive": 4,
+      "n_hard_negative": 3,
+      "composition_auc": 1.0,
+      "model_auc": 0.6944444444444445,
+      "model_minus_composition": -0.30555555555555547,
+      "per_seed_auc": [
+        0.75,
+        0.75,
+        0.5833333333333334
+      ],
+      "highest_scoring_wrong_index": 14,
+      "highest_scoring_wrong_complex": "2f54_0",
+      "highest_scoring_positive_index": 188,
+      "wrong_alpha_edit": 7,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 13,
+      "complex_id": "2f53",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "domain": "crystal",
+      "peptide": "SLLMWITQC",
+      "n_positive": 1,
+      "n_hard_negative": 6,
+      "composition_auc": 1.0,
+      "model_auc": 0.7777777777777778,
+      "model_minus_composition": -0.2222222222222222,
+      "per_seed_auc": [
+        1.0,
+        0.5,
+        0.8333333333333334
+      ],
+      "highest_scoring_wrong_index": 148,
+      "highest_scoring_wrong_complex": "af3-2bnr_SLLMWITQC_model_0",
+      "highest_scoring_positive_index": 149,
+      "wrong_alpha_edit": 17,
+      "wrong_beta_edit": 5
+    },
+    {
+      "query_index": 24,
+      "complex_id": "2vlj",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "crystal",
+      "peptide": "GILGFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.45,
+      "model_auc": 0.425,
+      "model_minus_composition": -0.025000000000000022,
+      "per_seed_auc": [
+        0.425,
+        0.4125,
+        0.4375
+      ],
+      "highest_scoring_wrong_index": 26,
+      "highest_scoring_wrong_complex": "2vlr_0",
+      "highest_scoring_positive_index": 25,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 25,
+      "complex_id": "2vlk",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "crystal",
+      "peptide": "GILGFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.40625,
+      "model_auc": 0.4291666666666667,
+      "model_minus_composition": 0.022916666666666696,
+      "per_seed_auc": [
+        0.4,
+        0.45,
+        0.4375
+      ],
+      "highest_scoring_wrong_index": 26,
+      "highest_scoring_wrong_complex": "2vlr_0",
+      "highest_scoring_positive_index": 24,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 26,
+      "complex_id": "2vlr_0",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "crystal",
+      "peptide": "GILGFVFTL",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.5384615384615384,
+      "model_auc": 0.38974358974358975,
+      "model_minus_composition": -0.1487179487179487,
+      "per_seed_auc": [
+        0.27692307692307694,
+        0.47692307692307695,
+        0.4153846153846154
+      ],
+      "highest_scoring_wrong_index": 24,
+      "highest_scoring_wrong_complex": "2vlj",
+      "highest_scoring_positive_index": 27,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 27,
+      "complex_id": "2vlr_1",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "crystal",
+      "peptide": "GILGFVFTL",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.5538461538461539,
+      "model_auc": 0.4461538461538462,
+      "model_minus_composition": -0.1076923076923077,
+      "per_seed_auc": [
+        0.38461538461538464,
+        0.49230769230769234,
+        0.46153846153846156
+      ],
+      "highest_scoring_wrong_index": 24,
+      "highest_scoring_wrong_complex": "2vlj",
+      "highest_scoring_positive_index": 26,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 42,
+      "complex_id": "3sjv_0",
+      "family_id": "F10427fd8efdc9dae",
+      "receptor_id": "9ebe713f83904337f045836ba6e16949daf56321a26adef815180044ccd2e4f7",
+      "domain": "crystal",
+      "peptide": "FLRGRAYGL",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 0.0,
+      "model_auc": 0.0,
+      "model_minus_composition": 0.0,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 43,
+      "highest_scoring_wrong_complex": "3sjv_1",
+      "highest_scoring_positive_index": 44,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 44,
+      "complex_id": "3sjv_2",
+      "family_id": "F10427fd8efdc9dae",
+      "receptor_id": "9ebe713f83904337f045836ba6e16949daf56321a26adef815180044ccd2e4f7",
+      "domain": "crystal",
+      "peptide": "FLRGRAYGL",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 0.0,
+      "model_auc": 0.3333333333333333,
+      "model_minus_composition": 0.3333333333333333,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "highest_scoring_wrong_index": 43,
+      "highest_scoring_wrong_complex": "3sjv_1",
+      "highest_scoring_positive_index": 42,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 46,
+      "complex_id": "3vxr",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "domain": "crystal",
+      "peptide": "RYPLTFGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.5,
+      "model_auc": 0.6666666666666666,
+      "model_minus_composition": 0.16666666666666663,
+      "per_seed_auc": [
+        0.8333333333333334,
+        0.5,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 154,
+      "highest_scoring_wrong_complex": "af3-3vxs_RYPLTLGWCF_model_0",
+      "highest_scoring_positive_index": 257,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 47,
+      "complex_id": "3vxs",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "domain": "crystal",
+      "peptide": "RYPLTLGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.3333333333333333,
+      "model_auc": 0.38888888888888884,
+      "model_minus_composition": 0.055555555555555525,
+      "per_seed_auc": [
+        0.3333333333333333,
+        0.16666666666666666,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 257,
+      "highest_scoring_wrong_complex": "3vxr_RYPLTLGWCF",
+      "highest_scoring_positive_index": 258,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 51,
+      "complex_id": "4pri",
+      "family_id": "F17560cbffb9e57b9",
+      "receptor_id": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "domain": "crystal",
+      "peptide": "HPVGEADYFEY",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.5,
+      "model_auc": 0.75,
+      "model_minus_composition": 0.25,
+      "per_seed_auc": [
+        1.0,
+        0.5,
+        0.75
+      ],
+      "highest_scoring_wrong_index": 36,
+      "highest_scoring_wrong_complex": "3mv7",
+      "highest_scoring_positive_index": 234,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 56,
+      "complex_id": "5c07_0",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "crystal",
+      "peptide": "YQFGPDFPIA",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.6031746031746031,
+      "model_auc": 0.4338624338624338,
+      "model_minus_composition": -0.16931216931216936,
+      "per_seed_auc": [
+        0.36507936507936506,
+        0.42857142857142855,
+        0.5079365079365079
+      ],
+      "highest_scoring_wrong_index": 64,
+      "highest_scoring_wrong_complex": "5c0b_1",
+      "highest_scoring_positive_index": 299,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 57,
+      "complex_id": "5c07_1",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "crystal",
+      "peptide": "YQFGPDFPIA",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.6031746031746031,
+      "model_auc": 0.5291005291005292,
+      "model_minus_composition": -0.07407407407407396,
+      "per_seed_auc": [
+        0.47619047619047616,
+        0.5238095238095238,
+        0.5873015873015873
+      ],
+      "highest_scoring_wrong_index": 63,
+      "highest_scoring_wrong_complex": "5c0b_0",
+      "highest_scoring_positive_index": 299,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 69,
+      "complex_id": "5e9d_1",
+      "family_id": "F293012a14526fbc3",
+      "receptor_id": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "domain": "crystal",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 1.0,
+      "model_auc": 0.0,
+      "model_minus_composition": -1.0,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 68,
+      "highest_scoring_wrong_complex": "5e9d_0",
+      "highest_scoring_positive_index": 157,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 73,
+      "complex_id": "5hhm_0",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "domain": "crystal",
+      "peptide": "GILGLVFTL",
+      "n_positive": 1,
+      "n_hard_negative": 17,
+      "composition_auc": 0.35294117647058826,
+      "model_auc": 0.4705882352941176,
+      "model_minus_composition": 0.11764705882352933,
+      "per_seed_auc": [
+        0.47058823529411764,
+        0.35294117647058826,
+        0.5882352941176471
+      ],
+      "highest_scoring_wrong_index": 199,
+      "highest_scoring_wrong_complex": "2vlj_GILGLVFTL",
+      "highest_scoring_positive_index": 307,
+      "wrong_alpha_edit": 5,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 89,
+      "complex_id": "6am5",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "domain": "crystal",
+      "peptide": "SMLGIGIVPV",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 1.0,
+      "model_auc": 0.4666666666666666,
+      "model_minus_composition": -0.5333333333333334,
+      "per_seed_auc": [
+        0.6,
+        0.4,
+        0.4
+      ],
+      "highest_scoring_wrong_index": 95,
+      "highest_scoring_wrong_complex": "6dkp",
+      "highest_scoring_positive_index": 159,
+      "wrong_alpha_edit": 20,
+      "wrong_beta_edit": 7
+    },
+    {
+      "query_index": 90,
+      "complex_id": "6amu",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "domain": "crystal",
+      "peptide": "MMWDRGLGMM",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 0.6,
+      "model_auc": 0.6,
+      "model_minus_composition": 0.0,
+      "per_seed_auc": [
+        0.7,
+        0.5,
+        0.6
+      ],
+      "highest_scoring_wrong_index": 159,
+      "highest_scoring_wrong_complex": "af3-6am5_SMLGIGIVPV_model_0",
+      "highest_scoring_positive_index": 160,
+      "wrong_alpha_edit": 13,
+      "wrong_beta_edit": 7
+    },
+    {
+      "query_index": 95,
+      "complex_id": "6dkp",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "domain": "crystal",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 6,
+      "composition_auc": 1.0,
+      "model_auc": 0.7222222222222222,
+      "model_minus_composition": -0.2777777777777778,
+      "per_seed_auc": [
+        0.6666666666666666,
+        0.8333333333333334,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 89,
+      "highest_scoring_wrong_complex": "6am5",
+      "highest_scoring_positive_index": 161,
+      "wrong_alpha_edit": 20,
+      "wrong_beta_edit": 7
+    },
+    {
+      "query_index": 96,
+      "complex_id": "6eqb",
+      "family_id": "F82d0ec93a01b1081",
+      "receptor_id": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "domain": "crystal",
+      "peptide": "AAGIGILTV",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.25,
+      "model_auc": 0.4166666666666667,
+      "model_minus_composition": 0.16666666666666669,
+      "per_seed_auc": [
+        0.25,
+        1.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 105,
+      "highest_scoring_wrong_complex": "6tmo",
+      "highest_scoring_positive_index": 320,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 105,
+      "complex_id": "6tmo",
+      "family_id": "F82d0ec93a01b1081",
+      "receptor_id": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "domain": "crystal",
+      "peptide": "EAAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 3,
+      "composition_auc": 0.3333333333333333,
+      "model_auc": 1.0,
+      "model_minus_composition": 0.6666666666666667,
+      "per_seed_auc": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "highest_scoring_wrong_index": 96,
+      "highest_scoring_wrong_complex": "6eqb",
+      "highest_scoring_positive_index": 163,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 124,
+      "complex_id": "7nmf",
+      "family_id": "F5a0a5df565e94dcb",
+      "receptor_id": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "domain": "crystal",
+      "peptide": "QLPRLFPLL",
+      "n_positive": 1,
+      "n_hard_negative": 2,
+      "composition_auc": 0.0,
+      "model_auc": 0.5,
+      "model_minus_composition": 0.5,
+      "per_seed_auc": [
+        0.0,
+        1.0,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 123,
+      "highest_scoring_wrong_complex": "7nme",
+      "highest_scoring_positive_index": 165,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 145,
+      "complex_id": "af3-1oga_GILGFVFTL_model_0",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILGFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.4625,
+      "model_auc": 0.45416666666666666,
+      "model_minus_composition": -0.00833333333333336,
+      "per_seed_auc": [
+        0.5375,
+        0.4375,
+        0.3875
+      ],
+      "highest_scoring_wrong_index": 8,
+      "highest_scoring_wrong_complex": "1oga",
+      "highest_scoring_positive_index": 151,
+      "wrong_alpha_edit": 1,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 146,
+      "complex_id": "af3-1qrn_LLFGYAVYV_model_0",
+      "family_id": "Fb9d23d7d026efae5",
+      "receptor_id": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "domain": "predicted",
+      "peptide": "LLFGYAVYV",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 1.0,
+      "model_auc": 0.3333333333333333,
+      "model_minus_composition": -0.6666666666666667,
+      "per_seed_auc": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 0,
+      "highest_scoring_wrong_complex": "1ao7",
+      "highest_scoring_positive_index": 9,
+      "wrong_alpha_edit": 85,
+      "wrong_beta_edit": 34
+    },
+    {
+      "query_index": 147,
+      "complex_id": "af3-2bnq_SLLMWITQV_model_0",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "domain": "predicted",
+      "peptide": "SLLMWITQV",
+      "n_positive": 4,
+      "n_hard_negative": 3,
+      "composition_auc": 0.75,
+      "model_auc": 0.8611111111111112,
+      "model_minus_composition": 0.11111111111111116,
+      "per_seed_auc": [
+        1.0,
+        0.8333333333333334,
+        0.75
+      ],
+      "highest_scoring_wrong_index": 14,
+      "highest_scoring_wrong_complex": "2f54_0",
+      "highest_scoring_positive_index": 148,
+      "wrong_alpha_edit": 7,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 148,
+      "complex_id": "af3-2bnr_SLLMWITQC_model_0",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "domain": "predicted",
+      "peptide": "SLLMWITQC",
+      "n_positive": 4,
+      "n_hard_negative": 3,
+      "composition_auc": 1.0,
+      "model_auc": 0.8888888888888888,
+      "model_minus_composition": -0.11111111111111116,
+      "per_seed_auc": [
+        1.0,
+        1.0,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 149,
+      "highest_scoring_wrong_complex": "af3-2f53_SLLMWITQC_model_0",
+      "highest_scoring_positive_index": 147,
+      "wrong_alpha_edit": 17,
+      "wrong_beta_edit": 5
+    },
+    {
+      "query_index": 149,
+      "complex_id": "af3-2f53_SLLMWITQC_model_0",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "domain": "predicted",
+      "peptide": "SLLMWITQC",
+      "n_positive": 1,
+      "n_hard_negative": 6,
+      "composition_auc": 1.0,
+      "model_auc": 0.5,
+      "model_minus_composition": -0.5,
+      "per_seed_auc": [
+        1.0,
+        0.3333333333333333,
+        0.16666666666666666
+      ],
+      "highest_scoring_wrong_index": 148,
+      "highest_scoring_wrong_complex": "af3-2bnr_SLLMWITQC_model_0",
+      "highest_scoring_positive_index": 13,
+      "wrong_alpha_edit": 17,
+      "wrong_beta_edit": 5
+    },
+    {
+      "query_index": 151,
+      "complex_id": "af3-2vlj_GILGFVFTL_model_0",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILGFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.4625,
+      "model_auc": 0.43333333333333335,
+      "model_minus_composition": -0.029166666666666674,
+      "per_seed_auc": [
+        0.525,
+        0.4375,
+        0.3375
+      ],
+      "highest_scoring_wrong_index": 8,
+      "highest_scoring_wrong_complex": "1oga",
+      "highest_scoring_positive_index": 145,
+      "wrong_alpha_edit": 1,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 152,
+      "complex_id": "af3-2vlr_GILGFVFTL_model_0",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "predicted",
+      "peptide": "GILGFVFTL",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.4153846153846154,
+      "model_auc": 0.3076923076923077,
+      "model_minus_composition": -0.1076923076923077,
+      "per_seed_auc": [
+        0.23076923076923078,
+        0.3230769230769231,
+        0.36923076923076925
+      ],
+      "highest_scoring_wrong_index": 151,
+      "highest_scoring_wrong_complex": "af3-2vlj_GILGFVFTL_model_0",
+      "highest_scoring_positive_index": 26,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 153,
+      "complex_id": "af3-3vxr_RYPLTFGWCF_model_0",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "domain": "predicted",
+      "peptide": "RYPLTFGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.3333333333333333,
+      "model_auc": 0.4444444444444444,
+      "model_minus_composition": 0.1111111111111111,
+      "per_seed_auc": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 258,
+      "highest_scoring_wrong_complex": "3vxs_RYPLTFGWCF",
+      "highest_scoring_positive_index": 257,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 154,
+      "complex_id": "af3-3vxs_RYPLTLGWCF_model_0",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "domain": "predicted",
+      "peptide": "RYPLTLGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.6666666666666666,
+      "model_auc": 0.2222222222222222,
+      "model_minus_composition": -0.4444444444444444,
+      "per_seed_auc": [
+        0.16666666666666666,
+        0.3333333333333333,
+        0.16666666666666666
+      ],
+      "highest_scoring_wrong_index": 257,
+      "highest_scoring_wrong_complex": "3vxr_RYPLTLGWCF",
+      "highest_scoring_positive_index": 47,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 157,
+      "complex_id": "af3-5e9d_ELAGIGILTV_model_0",
+      "family_id": "F293012a14526fbc3",
+      "receptor_id": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "domain": "predicted",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 1,
+      "composition_auc": 1.0,
+      "model_auc": 0.0,
+      "model_minus_composition": -1.0,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 68,
+      "highest_scoring_wrong_complex": "5e9d_0",
+      "highest_scoring_positive_index": 69,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 159,
+      "complex_id": "af3-6am5_SMLGIGIVPV_model_0",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "domain": "predicted",
+      "peptide": "SMLGIGIVPV",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 1.0,
+      "model_auc": 0.7000000000000001,
+      "model_minus_composition": -0.29999999999999993,
+      "per_seed_auc": [
+        0.7,
+        0.9,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 95,
+      "highest_scoring_wrong_complex": "6dkp",
+      "highest_scoring_positive_index": 89,
+      "wrong_alpha_edit": 20,
+      "wrong_beta_edit": 7
+    },
+    {
+      "query_index": 160,
+      "complex_id": "af3-6amu_MMWDRGLGMM_model_0",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "domain": "predicted",
+      "peptide": "MMWDRGLGMM",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 0.6,
+      "model_auc": 0.5666666666666668,
+      "model_minus_composition": -0.033333333333333215,
+      "per_seed_auc": [
+        0.6,
+        0.5,
+        0.6
+      ],
+      "highest_scoring_wrong_index": 95,
+      "highest_scoring_wrong_complex": "6dkp",
+      "highest_scoring_positive_index": 90,
+      "wrong_alpha_edit": 9,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 161,
+      "complex_id": "af3-6dkp_ELAGIGILTV_model_0",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "domain": "predicted",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 6,
+      "composition_auc": 1.0,
+      "model_auc": 0.611111111111111,
+      "model_minus_composition": -0.38888888888888895,
+      "per_seed_auc": [
+        0.6666666666666666,
+        0.5,
+        0.6666666666666666
+      ],
+      "highest_scoring_wrong_index": 322,
+      "highest_scoring_wrong_complex": "6eqb_ELAGIGILTV",
+      "highest_scoring_positive_index": 95,
+      "wrong_alpha_edit": 9,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 162,
+      "complex_id": "af3-6eqb_AAGIGILTV_model_0",
+      "family_id": "F82d0ec93a01b1081",
+      "receptor_id": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "domain": "predicted",
+      "peptide": "AAGIGILTV",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.25,
+      "model_auc": 0.16666666666666666,
+      "model_minus_composition": -0.08333333333333334,
+      "per_seed_auc": [
+        0.0,
+        0.5,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 163,
+      "highest_scoring_wrong_complex": "af3-6tmo_EAAGIGILTV_model_0",
+      "highest_scoring_positive_index": 96,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 163,
+      "complex_id": "af3-6tmo_EAAGIGILTV_model_0",
+      "family_id": "F82d0ec93a01b1081",
+      "receptor_id": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "domain": "predicted",
+      "peptide": "EAAGIGILTV",
+      "n_positive": 1,
+      "n_hard_negative": 3,
+      "composition_auc": 0.0,
+      "model_auc": 0.7777777777777777,
+      "model_minus_composition": 0.7777777777777777,
+      "per_seed_auc": [
+        0.6666666666666666,
+        0.6666666666666666,
+        1.0
+      ],
+      "highest_scoring_wrong_index": 320,
+      "highest_scoring_wrong_complex": "6amu_ELAGIGILTV",
+      "highest_scoring_positive_index": 105,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 165,
+      "complex_id": "af3-7nmf_QLPRLFPLL_model_0",
+      "family_id": "F5a0a5df565e94dcb",
+      "receptor_id": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "domain": "predicted",
+      "peptide": "QLPRLFPLL",
+      "n_positive": 1,
+      "n_hard_negative": 2,
+      "composition_auc": 0.5,
+      "model_auc": 0.6666666666666666,
+      "model_minus_composition": 0.16666666666666663,
+      "per_seed_auc": [
+        0.5,
+        1.0,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 123,
+      "highest_scoring_wrong_complex": "7nme",
+      "highest_scoring_positive_index": 124,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 188,
+      "complex_id": "2bnq_SLLMWITQC",
+      "family_id": "Fef92facf2b304718",
+      "receptor_id": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "domain": "predicted",
+      "peptide": "SLLMWITQC",
+      "n_positive": 4,
+      "n_hard_negative": 3,
+      "composition_auc": 1.0,
+      "model_auc": 0.8055555555555555,
+      "model_minus_composition": -0.19444444444444453,
+      "per_seed_auc": [
+        0.6666666666666666,
+        1.0,
+        0.75
+      ],
+      "highest_scoring_wrong_index": 14,
+      "highest_scoring_wrong_complex": "2f54_0",
+      "highest_scoring_positive_index": 147,
+      "wrong_alpha_edit": 7,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 198,
+      "complex_id": "2vlj_GILEFVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILEFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.5375,
+      "model_auc": 0.5,
+      "model_minus_composition": -0.03749999999999998,
+      "per_seed_auc": [
+        0.425,
+        0.625,
+        0.45
+      ],
+      "highest_scoring_wrong_index": 203,
+      "highest_scoring_wrong_complex": "2vlr_GILEFVFTL",
+      "highest_scoring_positive_index": 201,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 199,
+      "complex_id": "2vlj_GILGLVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILGLVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.4125,
+      "model_auc": 0.3,
+      "model_minus_composition": -0.11249999999999999,
+      "per_seed_auc": [
+        0.2875,
+        0.325,
+        0.2875
+      ],
+      "highest_scoring_wrong_index": 204,
+      "highest_scoring_wrong_complex": "2vlr_GILGLVFTL",
+      "highest_scoring_positive_index": 202,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 200,
+      "complex_id": "2vlj_PKYVKQNTLKLAT",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "PKYVKQNTLKLAT",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.5875,
+      "model_auc": 0.5125000000000001,
+      "model_minus_composition": -0.07499999999999996,
+      "per_seed_auc": [
+        0.55,
+        0.45,
+        0.5375
+      ],
+      "highest_scoring_wrong_index": 205,
+      "highest_scoring_wrong_complex": "2vlr_PKYVKQNTLKLAT",
+      "highest_scoring_positive_index": 201,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 201,
+      "complex_id": "2vlk_GILEFVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILEFVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.5125,
+      "model_auc": 0.5208333333333334,
+      "model_minus_composition": 0.008333333333333415,
+      "per_seed_auc": [
+        0.525,
+        0.55,
+        0.4875
+      ],
+      "highest_scoring_wrong_index": 203,
+      "highest_scoring_wrong_complex": "2vlr_GILEFVFTL",
+      "highest_scoring_positive_index": 198,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 202,
+      "complex_id": "2vlk_GILGLVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "domain": "predicted",
+      "peptide": "GILGLVFTL",
+      "n_positive": 8,
+      "n_hard_negative": 10,
+      "composition_auc": 0.4375,
+      "model_auc": 0.4041666666666666,
+      "model_minus_composition": -0.03333333333333338,
+      "per_seed_auc": [
+        0.4125,
+        0.3875,
+        0.4125
+      ],
+      "highest_scoring_wrong_index": 73,
+      "highest_scoring_wrong_complex": "5hhm_0",
+      "highest_scoring_positive_index": 199,
+      "wrong_alpha_edit": 5,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 203,
+      "complex_id": "2vlr_GILEFVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "predicted",
+      "peptide": "GILEFVFTL",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.27692307692307694,
+      "model_auc": 0.4205128205128205,
+      "model_minus_composition": 0.14358974358974358,
+      "per_seed_auc": [
+        0.49230769230769234,
+        0.3384615384615385,
+        0.4307692307692308
+      ],
+      "highest_scoring_wrong_index": 201,
+      "highest_scoring_wrong_complex": "2vlk_GILEFVFTL",
+      "highest_scoring_positive_index": 205,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 204,
+      "complex_id": "2vlr_GILGLVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "predicted",
+      "peptide": "GILGLVFTL",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.4307692307692308,
+      "model_auc": 0.39487179487179486,
+      "model_minus_composition": -0.035897435897435936,
+      "per_seed_auc": [
+        0.3230769230769231,
+        0.47692307692307695,
+        0.38461538461538464
+      ],
+      "highest_scoring_wrong_index": 199,
+      "highest_scoring_wrong_complex": "2vlj_GILGLVFTL",
+      "highest_scoring_positive_index": 26,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 205,
+      "complex_id": "2vlr_PKYVKQNTLKLAT",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "domain": "predicted",
+      "peptide": "PKYVKQNTLKLAT",
+      "n_positive": 5,
+      "n_hard_negative": 13,
+      "composition_auc": 0.2,
+      "model_auc": 0.49743589743589745,
+      "model_minus_composition": 0.29743589743589743,
+      "per_seed_auc": [
+        0.36923076923076925,
+        0.6307692307692307,
+        0.49230769230769234
+      ],
+      "highest_scoring_wrong_index": 200,
+      "highest_scoring_wrong_complex": "2vlj_PKYVKQNTLKLAT",
+      "highest_scoring_positive_index": 27,
+      "wrong_alpha_edit": 0,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 233,
+      "complex_id": "3mv9_HPVGDADYFEY",
+      "family_id": "F17560cbffb9e57b9",
+      "receptor_id": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "domain": "predicted",
+      "peptide": "HPVGDADYFEY",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.5,
+      "model_auc": 0.75,
+      "model_minus_composition": 0.25,
+      "per_seed_auc": [
+        1.0,
+        0.75,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 36,
+      "highest_scoring_wrong_complex": "3mv7",
+      "highest_scoring_positive_index": 234,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 234,
+      "complex_id": "3mv9_HPVGQADYFEY",
+      "family_id": "F17560cbffb9e57b9",
+      "receptor_id": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "domain": "predicted",
+      "peptide": "HPVGQADYFEY",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.25,
+      "model_auc": 0.8333333333333334,
+      "model_minus_composition": 0.5833333333333334,
+      "per_seed_auc": [
+        1.0,
+        0.75,
+        0.75
+      ],
+      "highest_scoring_wrong_index": 36,
+      "highest_scoring_wrong_complex": "3mv7",
+      "highest_scoring_positive_index": 233,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 257,
+      "complex_id": "3vxr_RYPLTLGWCF",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "domain": "predicted",
+      "peptide": "RYPLTLGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.0,
+      "model_auc": 0.5555555555555556,
+      "model_minus_composition": 0.5555555555555556,
+      "per_seed_auc": [
+        0.8333333333333334,
+        0.3333333333333333,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 154,
+      "highest_scoring_wrong_complex": "af3-3vxs_RYPLTLGWCF_model_0",
+      "highest_scoring_positive_index": 46,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 258,
+      "complex_id": "3vxs_RYPLTFGWCF",
+      "family_id": "Fde4a656c257aa9b3",
+      "receptor_id": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "domain": "predicted",
+      "peptide": "RYPLTFGWCF",
+      "n_positive": 2,
+      "n_hard_negative": 3,
+      "composition_auc": 0.5,
+      "model_auc": 0.38888888888888884,
+      "model_minus_composition": -0.11111111111111116,
+      "per_seed_auc": [
+        0.6666666666666666,
+        0.16666666666666666,
+        0.3333333333333333
+      ],
+      "highest_scoring_wrong_index": 153,
+      "highest_scoring_wrong_complex": "af3-3vxr_RYPLTFGWCF_model_0",
+      "highest_scoring_positive_index": 47,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 295,
+      "complex_id": "5c07_ALWGPDPAAA",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "ALWGPDPAAA",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.6507936507936508,
+      "model_auc": 0.4444444444444444,
+      "model_minus_composition": -0.2063492063492064,
+      "per_seed_auc": [
+        0.5079365079365079,
+        0.4603174603174603,
+        0.36507936507936506
+      ],
+      "highest_scoring_wrong_index": 58,
+      "highest_scoring_wrong_complex": "5c08_0",
+      "highest_scoring_positive_index": 296,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 296,
+      "complex_id": "5c07_AQWGPDPAAA",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "AQWGPDPAAA",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.6825396825396826,
+      "model_auc": 0.3650793650793651,
+      "model_minus_composition": -0.31746031746031744,
+      "per_seed_auc": [
+        0.42857142857142855,
+        0.31746031746031744,
+        0.3492063492063492
+      ],
+      "highest_scoring_wrong_index": 58,
+      "highest_scoring_wrong_complex": "5c08_0",
+      "highest_scoring_positive_index": 295,
+      "wrong_alpha_edit": 10,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 297,
+      "complex_id": "5c07_MVWGPDPLYV",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "MVWGPDPLYV",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.5555555555555556,
+      "model_auc": 0.4497354497354497,
+      "model_minus_composition": -0.10582010582010587,
+      "per_seed_auc": [
+        0.30158730158730157,
+        0.47619047619047616,
+        0.5714285714285714
+      ],
+      "highest_scoring_wrong_index": 65,
+      "highest_scoring_wrong_complex": "5c0c_0",
+      "highest_scoring_positive_index": 299,
+      "wrong_alpha_edit": 1,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 298,
+      "complex_id": "5c07_RQFGPDFPTI",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "RQFGPDFPTI",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.5079365079365079,
+      "model_auc": 0.5396825396825397,
+      "model_minus_composition": 0.031746031746031744,
+      "per_seed_auc": [
+        0.6190476190476191,
+        0.4126984126984127,
+        0.5873015873015873
+      ],
+      "highest_scoring_wrong_index": 64,
+      "highest_scoring_wrong_complex": "5c0b_1",
+      "highest_scoring_positive_index": 299,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 2
+    },
+    {
+      "query_index": 299,
+      "complex_id": "5c07_RQFGPDWIVA",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "RQFGPDWIVA",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.5873015873015873,
+      "model_auc": 0.4656084656084656,
+      "model_minus_composition": -0.12169312169312174,
+      "per_seed_auc": [
+        0.4126984126984127,
+        0.42857142857142855,
+        0.5555555555555556
+      ],
+      "highest_scoring_wrong_index": 65,
+      "highest_scoring_wrong_complex": "5c0c_0",
+      "highest_scoring_positive_index": 297,
+      "wrong_alpha_edit": 1,
+      "wrong_beta_edit": 1
+    },
+    {
+      "query_index": 300,
+      "complex_id": "5c07_RQWGPDPAAV",
+      "family_id": "F0465ecc03c008240",
+      "receptor_id": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "domain": "predicted",
+      "peptide": "RQWGPDPAAV",
+      "n_positive": 7,
+      "n_hard_negative": 9,
+      "composition_auc": 0.5476190476190477,
+      "model_auc": 0.42857142857142855,
+      "model_minus_composition": -0.11904761904761912,
+      "per_seed_auc": [
+        0.42857142857142855,
+        0.38095238095238093,
+        0.47619047619047616
+      ],
+      "highest_scoring_wrong_index": 61,
+      "highest_scoring_wrong_complex": "5c0a_0",
+      "highest_scoring_positive_index": 296,
+      "wrong_alpha_edit": 2,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 307,
+      "complex_id": "5hhm_GILGFVFTL",
+      "family_id": "F19ed30cfb37ad7f2",
+      "receptor_id": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "domain": "predicted",
+      "peptide": "GILGFVFTL",
+      "n_positive": 1,
+      "n_hard_negative": 17,
+      "composition_auc": 0.47058823529411764,
+      "model_auc": 0.6274509803921569,
+      "model_minus_composition": 0.1568627450980392,
+      "per_seed_auc": [
+        0.8823529411764706,
+        0.47058823529411764,
+        0.5294117647058824
+      ],
+      "highest_scoring_wrong_index": 152,
+      "highest_scoring_wrong_complex": "af3-2vlr_GILGFVFTL_model_0",
+      "highest_scoring_positive_index": 73,
+      "wrong_alpha_edit": 5,
+      "wrong_beta_edit": 3
+    },
+    {
+      "query_index": 319,
+      "complex_id": "6am5_ELAGIGILTV",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "domain": "predicted",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 0.7,
+      "model_auc": 0.43333333333333335,
+      "model_minus_composition": -0.2666666666666666,
+      "per_seed_auc": [
+        0.4,
+        0.4,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 322,
+      "highest_scoring_wrong_complex": "6eqb_ELAGIGILTV",
+      "highest_scoring_positive_index": 89,
+      "wrong_alpha_edit": 13,
+      "wrong_beta_edit": 7
+    },
+    {
+      "query_index": 320,
+      "complex_id": "6amu_ELAGIGILTV",
+      "family_id": "F82d0ec93a01b1081",
+      "receptor_id": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "domain": "predicted",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 2,
+      "n_hard_negative": 2,
+      "composition_auc": 0.5,
+      "model_auc": 0.25,
+      "model_minus_composition": -0.25,
+      "per_seed_auc": [
+        0.0,
+        0.25,
+        0.5
+      ],
+      "highest_scoring_wrong_index": 163,
+      "highest_scoring_wrong_complex": "af3-6tmo_EAAGIGILTV_model_0",
+      "highest_scoring_positive_index": 96,
+      "wrong_alpha_edit": 3,
+      "wrong_beta_edit": 0
+    },
+    {
+      "query_index": 322,
+      "complex_id": "6eqb_ELAGIGILTV",
+      "family_id": "F333328a21e5ae331",
+      "receptor_id": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "domain": "predicted",
+      "peptide": "ELAGIGILTV",
+      "n_positive": 2,
+      "n_hard_negative": 5,
+      "composition_auc": 0.0,
+      "model_auc": 0.0,
+      "model_minus_composition": 0.0,
+      "per_seed_auc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "highest_scoring_wrong_index": 319,
+      "highest_scoring_wrong_complex": "6am5_ELAGIGILTV",
+      "highest_scoring_positive_index": 160,
+      "wrong_alpha_edit": 13,
+      "wrong_beta_edit": 7
+    }
+  ],
+  "node_normalization": [
+    {
+      "index": 0,
+      "raw_identity_mean_l2": 0.2716182470321655,
+      "normalized_identity_mean_max_abs": 4.550895127408694e-08
+    },
+    {
+      "index": 1,
+      "raw_identity_mean_l2": 0.26791295409202576,
+      "normalized_identity_mean_max_abs": 3.725290298461914e-08
+    },
+    {
+      "index": 2,
+      "raw_identity_mean_l2": 0.2933926582336426,
+      "normalized_identity_mean_max_abs": 4.596020630742714e-08
+    },
+    {
+      "index": 3,
+      "raw_identity_mean_l2": 0.3015584349632263,
+      "normalized_identity_mean_max_abs": 2.9802322387695312e-08
+    },
+    {
+      "index": 4,
+      "raw_identity_mean_l2": 0.27000921964645386,
+      "normalized_identity_mean_max_abs": 5.432321970033627e-08
+    },
+    {
+      "index": 5,
+      "raw_identity_mean_l2": 0.26809513568878174,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 6,
+      "raw_identity_mean_l2": 0.27680718898773193,
+      "normalized_identity_mean_max_abs": 6.357829107628277e-08
+    },
+    {
+      "index": 7,
+      "raw_identity_mean_l2": 0.2777459919452667,
+      "normalized_identity_mean_max_abs": 6.811959707420101e-08
+    },
+    {
+      "index": 8,
+      "raw_identity_mean_l2": 0.27512186765670776,
+      "normalized_identity_mean_max_abs": 4.207386794519152e-08
+    },
+    {
+      "index": 9,
+      "raw_identity_mean_l2": 0.2749593257904053,
+      "normalized_identity_mean_max_abs": 4.550895127408694e-08
+    },
+    {
+      "index": 10,
+      "raw_identity_mean_l2": 0.27099353075027466,
+      "normalized_identity_mean_max_abs": 3.4272670035306874e-08
+    },
+    {
+      "index": 11,
+      "raw_identity_mean_l2": 0.2710501253604889,
+      "normalized_identity_mean_max_abs": 4.9428241055693434e-08
+    },
+    {
+      "index": 12,
+      "raw_identity_mean_l2": 0.2828427255153656,
+      "normalized_identity_mean_max_abs": 8.174351506795574e-08
+    },
+    {
+      "index": 13,
+      "raw_identity_mean_l2": 0.25925925374031067,
+      "normalized_identity_mean_max_abs": 4.1208149781368775e-08
+    },
+    {
+      "index": 14,
+      "raw_identity_mean_l2": 0.27019837498664856,
+      "normalized_identity_mean_max_abs": 4.1208149781368775e-08
+    },
+    {
+      "index": 15,
+      "raw_identity_mean_l2": 0.2749693691730499,
+      "normalized_identity_mean_max_abs": 4.432140343624269e-08
+    },
+    {
+      "index": 16,
+      "raw_identity_mean_l2": 0.27600231766700745,
+      "normalized_identity_mean_max_abs": 4.391921137880672e-08
+    },
+    {
+      "index": 17,
+      "raw_identity_mean_l2": 0.27086561918258667,
+      "normalized_identity_mean_max_abs": 3.715614127486333e-08
+    },
+    {
+      "index": 18,
+      "raw_identity_mean_l2": 0.2677001953125,
+      "normalized_identity_mean_max_abs": 7.947286206899662e-08
+    },
+    {
+      "index": 19,
+      "raw_identity_mean_l2": 0.2749593257904053,
+      "normalized_identity_mean_max_abs": 5.477183506741312e-08
+    },
+    {
+      "index": 20,
+      "raw_identity_mean_l2": 0.2741960883140564,
+      "normalized_identity_mean_max_abs": 6.044414391226383e-08
+    },
+    {
+      "index": 21,
+      "raw_identity_mean_l2": 0.2626909613609314,
+      "normalized_identity_mean_max_abs": 4.9428241055693434e-08
+    },
+    {
+      "index": 22,
+      "raw_identity_mean_l2": 0.2692582309246063,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 23,
+      "raw_identity_mean_l2": 0.26867732405662537,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 24,
+      "raw_identity_mean_l2": 0.2820066213607788,
+      "normalized_identity_mean_max_abs": 4.6260321795443815e-08
+    },
+    {
+      "index": 25,
+      "raw_identity_mean_l2": 0.28020066022872925,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 26,
+      "raw_identity_mean_l2": 0.2793801426887512,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 27,
+      "raw_identity_mean_l2": 0.280742883682251,
+      "normalized_identity_mean_max_abs": 7.335956553333745e-08
+    },
+    {
+      "index": 28,
+      "raw_identity_mean_l2": 0.2648990750312805,
+      "normalized_identity_mean_max_abs": 7.116972255971632e-08
+    },
+    {
+      "index": 29,
+      "raw_identity_mean_l2": 0.2803588807582855,
+      "normalized_identity_mean_max_abs": 3.921358171510292e-08
+    },
+    {
+      "index": 30,
+      "raw_identity_mean_l2": 0.26633313298225403,
+      "normalized_identity_mean_max_abs": 5.7220457705398076e-08
+    },
+    {
+      "index": 31,
+      "raw_identity_mean_l2": 0.27613404393196106,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 32,
+      "raw_identity_mean_l2": 0.27702245116233826,
+      "normalized_identity_mean_max_abs": 3.0963452246624e-08
+    },
+    {
+      "index": 33,
+      "raw_identity_mean_l2": 0.27628445625305176,
+      "normalized_identity_mean_max_abs": 6.443745093065445e-08
+    },
+    {
+      "index": 34,
+      "raw_identity_mean_l2": 0.2728479206562042,
+      "normalized_identity_mean_max_abs": 4.078212612057541e-08
+    },
+    {
+      "index": 35,
+      "raw_identity_mean_l2": 0.2756865918636322,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 36,
+      "raw_identity_mean_l2": 0.2755664885044098,
+      "normalized_identity_mean_max_abs": 4.890637583798707e-08
+    },
+    {
+      "index": 37,
+      "raw_identity_mean_l2": 0.27294325828552246,
+      "normalized_identity_mean_max_abs": 3.5109586349335586e-08
+    },
+    {
+      "index": 38,
+      "raw_identity_mean_l2": 0.26594480872154236,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 39,
+      "raw_identity_mean_l2": 0.2861548662185669,
+      "normalized_identity_mean_max_abs": 4.352085269943018e-08
+    },
+    {
+      "index": 40,
+      "raw_identity_mean_l2": 0.2891014814376831,
+      "normalized_identity_mean_max_abs": 5.4719016873150395e-08
+    },
+    {
+      "index": 41,
+      "raw_identity_mean_l2": 0.2812192738056183,
+      "normalized_identity_mean_max_abs": 3.845460838647341e-08
+    },
+    {
+      "index": 42,
+      "raw_identity_mean_l2": 0.289527952671051,
+      "normalized_identity_mean_max_abs": 3.667978276666872e-08
+    },
+    {
+      "index": 43,
+      "raw_identity_mean_l2": 0.28821277618408203,
+      "normalized_identity_mean_max_abs": 7.064254248234647e-08
+    },
+    {
+      "index": 44,
+      "raw_identity_mean_l2": 0.2861380875110626,
+      "normalized_identity_mean_max_abs": 4.17232506322307e-08
+    },
+    {
+      "index": 45,
+      "raw_identity_mean_l2": 0.28219616413116455,
+      "normalized_identity_mean_max_abs": 6.337709379522494e-08
+    },
+    {
+      "index": 46,
+      "raw_identity_mean_l2": 0.2652728259563446,
+      "normalized_identity_mean_max_abs": 6.205414848636792e-08
+    },
+    {
+      "index": 47,
+      "raw_identity_mean_l2": 0.2689155340194702,
+      "normalized_identity_mean_max_abs": 5.154996429723724e-08
+    },
+    {
+      "index": 48,
+      "raw_identity_mean_l2": 0.2719641625881195,
+      "normalized_identity_mean_max_abs": 4.2793079302327897e-08
+    },
+    {
+      "index": 49,
+      "raw_identity_mean_l2": 0.263523131608963,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 50,
+      "raw_identity_mean_l2": 0.28439095616340637,
+      "normalized_identity_mean_max_abs": 4.8990120404823756e-08
+    },
+    {
+      "index": 51,
+      "raw_identity_mean_l2": 0.2741185426712036,
+      "normalized_identity_mean_max_abs": 3.900057166106308e-08
+    },
+    {
+      "index": 52,
+      "raw_identity_mean_l2": 0.2692582607269287,
+      "normalized_identity_mean_max_abs": 4.17232506322307e-08
+    },
+    {
+      "index": 53,
+      "raw_identity_mean_l2": 0.2652193307876587,
+      "normalized_identity_mean_max_abs": 5.1305264037182496e-08
+    },
+    {
+      "index": 54,
+      "raw_identity_mean_l2": 0.2744056284427643,
+      "normalized_identity_mean_max_abs": 7.224805642636056e-08
+    },
+    {
+      "index": 55,
+      "raw_identity_mean_l2": 0.259552001953125,
+      "normalized_identity_mean_max_abs": 5.225612653703138e-08
+    },
+    {
+      "index": 56,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 3.914334811838671e-08
+    },
+    {
+      "index": 57,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 3.914334811838671e-08
+    },
+    {
+      "index": 58,
+      "raw_identity_mean_l2": 0.2721816301345825,
+      "normalized_identity_mean_max_abs": 3.667978276666872e-08
+    },
+    {
+      "index": 59,
+      "raw_identity_mean_l2": 0.2718842327594757,
+      "normalized_identity_mean_max_abs": 6.502325078372451e-08
+    },
+    {
+      "index": 60,
+      "raw_identity_mean_l2": 0.2605208158493042,
+      "normalized_identity_mean_max_abs": 4.470348358154297e-08
+    },
+    {
+      "index": 61,
+      "raw_identity_mean_l2": 0.26178228855133057,
+      "normalized_identity_mean_max_abs": 4.2993512749944784e-08
+    },
+    {
+      "index": 62,
+      "raw_identity_mean_l2": 0.2614562511444092,
+      "normalized_identity_mean_max_abs": 4.470348358154297e-08
+    },
+    {
+      "index": 63,
+      "raw_identity_mean_l2": 0.2578931450843811,
+      "normalized_identity_mean_max_abs": 4.401573860945973e-08
+    },
+    {
+      "index": 64,
+      "raw_identity_mean_l2": 0.26063188910484314,
+      "normalized_identity_mean_max_abs": 5.868765029504175e-08
+    },
+    {
+      "index": 65,
+      "raw_identity_mean_l2": 0.26243194937705994,
+      "normalized_identity_mean_max_abs": 6.14108444096928e-08
+    },
+    {
+      "index": 66,
+      "raw_identity_mean_l2": 0.2578931450843811,
+      "normalized_identity_mean_max_abs": 4.401573860945973e-08
+    },
+    {
+      "index": 67,
+      "raw_identity_mean_l2": 0.2649947702884674,
+      "normalized_identity_mean_max_abs": 6.67572024326546e-08
+    },
+    {
+      "index": 68,
+      "raw_identity_mean_l2": 0.2784302532672882,
+      "normalized_identity_mean_max_abs": 5.191372309809594e-08
+    },
+    {
+      "index": 69,
+      "raw_identity_mean_l2": 0.2790221571922302,
+      "normalized_identity_mean_max_abs": 6.811959707420101e-08
+    },
+    {
+      "index": 70,
+      "raw_identity_mean_l2": 0.27413174510002136,
+      "normalized_identity_mean_max_abs": 6.035913457935749e-08
+    },
+    {
+      "index": 71,
+      "raw_identity_mean_l2": 0.2617119550704956,
+      "normalized_identity_mean_max_abs": 3.143532723015596e-08
+    },
+    {
+      "index": 72,
+      "raw_identity_mean_l2": 0.2606392204761505,
+      "normalized_identity_mean_max_abs": 6.443745093065445e-08
+    },
+    {
+      "index": 73,
+      "raw_identity_mean_l2": 0.2738324999809265,
+      "normalized_identity_mean_max_abs": 4.837478329022815e-08
+    },
+    {
+      "index": 74,
+      "raw_identity_mean_l2": 0.28101876378059387,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 75,
+      "raw_identity_mean_l2": 0.25685057044029236,
+      "normalized_identity_mean_max_abs": 4.22199555316638e-08
+    },
+    {
+      "index": 76,
+      "raw_identity_mean_l2": 0.27658408880233765,
+      "normalized_identity_mean_max_abs": 4.883272097799818e-08
+    },
+    {
+      "index": 77,
+      "raw_identity_mean_l2": 0.2594153881072998,
+      "normalized_identity_mean_max_abs": 5.5734211912294995e-08
+    },
+    {
+      "index": 78,
+      "raw_identity_mean_l2": 0.25896167755126953,
+      "normalized_identity_mean_max_abs": 4.890637583798707e-08
+    },
+    {
+      "index": 79,
+      "raw_identity_mean_l2": 0.2785312235355377,
+      "normalized_identity_mean_max_abs": 4.4151587275109705e-08
+    },
+    {
+      "index": 80,
+      "raw_identity_mean_l2": 0.2757816016674042,
+      "normalized_identity_mean_max_abs": 4.1208149781368775e-08
+    },
+    {
+      "index": 81,
+      "raw_identity_mean_l2": 0.2728733718395233,
+      "normalized_identity_mean_max_abs": 5.298190686175985e-08
+    },
+    {
+      "index": 82,
+      "raw_identity_mean_l2": 0.27809157967567444,
+      "normalized_identity_mean_max_abs": 5.815087433802546e-08
+    },
+    {
+      "index": 83,
+      "raw_identity_mean_l2": 0.2718842029571533,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 84,
+      "raw_identity_mean_l2": 0.2705545425415039,
+      "normalized_identity_mean_max_abs": 5.372812950099615e-08
+    },
+    {
+      "index": 85,
+      "raw_identity_mean_l2": 0.27429434657096863,
+      "normalized_identity_mean_max_abs": 5.154996429723724e-08
+    },
+    {
+      "index": 86,
+      "raw_identity_mean_l2": 0.2695602476596832,
+      "normalized_identity_mean_max_abs": 2.9343825147520874e-08
+    },
+    {
+      "index": 87,
+      "raw_identity_mean_l2": 0.2741454243659973,
+      "normalized_identity_mean_max_abs": 3.926894365235967e-08
+    },
+    {
+      "index": 88,
+      "raw_identity_mean_l2": 0.2727312743663788,
+      "normalized_identity_mean_max_abs": 3.288532113288056e-08
+    },
+    {
+      "index": 89,
+      "raw_identity_mean_l2": 0.2730320394039154,
+      "normalized_identity_mean_max_abs": 5.108969602929392e-08
+    },
+    {
+      "index": 90,
+      "raw_identity_mean_l2": 0.280651718378067,
+      "normalized_identity_mean_max_abs": 7.431228254972666e-08
+    },
+    {
+      "index": 91,
+      "raw_identity_mean_l2": 0.2839809060096741,
+      "normalized_identity_mean_max_abs": 4.999099090241543e-08
+    },
+    {
+      "index": 92,
+      "raw_identity_mean_l2": 0.2771103084087372,
+      "normalized_identity_mean_max_abs": 7.947286206899662e-08
+    },
+    {
+      "index": 93,
+      "raw_identity_mean_l2": 0.2771103084087372,
+      "normalized_identity_mean_max_abs": 7.947286206899662e-08
+    },
+    {
+      "index": 94,
+      "raw_identity_mean_l2": 0.2799416780471802,
+      "normalized_identity_mean_max_abs": 6.471361757576233e-08
+    },
+    {
+      "index": 95,
+      "raw_identity_mean_l2": 0.28063201904296875,
+      "normalized_identity_mean_max_abs": 5.329356511651895e-08
+    },
+    {
+      "index": 96,
+      "raw_identity_mean_l2": 0.27555352449417114,
+      "normalized_identity_mean_max_abs": 3.7930227847482456e-08
+    },
+    {
+      "index": 97,
+      "raw_identity_mean_l2": 0.2614562511444092,
+      "normalized_identity_mean_max_abs": 3.725290298461914e-08
+    },
+    {
+      "index": 98,
+      "raw_identity_mean_l2": 0.273861289024353,
+      "normalized_identity_mean_max_abs": 6.357829107628277e-08
+    },
+    {
+      "index": 99,
+      "raw_identity_mean_l2": 0.28350114822387695,
+      "normalized_identity_mean_max_abs": 4.3993903631189823e-08
+    },
+    {
+      "index": 100,
+      "raw_identity_mean_l2": 0.2680180072784424,
+      "normalized_identity_mean_max_abs": 3.6281086579492694e-08
+    },
+    {
+      "index": 101,
+      "raw_identity_mean_l2": 0.2682417929172516,
+      "normalized_identity_mean_max_abs": 5.693577875831579e-08
+    },
+    {
+      "index": 102,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 4.2701834956915263e-08
+    },
+    {
+      "index": 103,
+      "raw_identity_mean_l2": 0.26446792483329773,
+      "normalized_identity_mean_max_abs": 4.837478329022815e-08
+    },
+    {
+      "index": 104,
+      "raw_identity_mean_l2": 0.26446792483329773,
+      "normalized_identity_mean_max_abs": 4.837478329022815e-08
+    },
+    {
+      "index": 105,
+      "raw_identity_mean_l2": 0.27800890803337097,
+      "normalized_identity_mean_max_abs": 3.8366209764717496e-08
+    },
+    {
+      "index": 106,
+      "raw_identity_mean_l2": 0.2889569103717804,
+      "normalized_identity_mean_max_abs": 4.0046870708465576e-08
+    },
+    {
+      "index": 107,
+      "raw_identity_mean_l2": 0.2777225077152252,
+      "normalized_identity_mean_max_abs": 5.374189271378782e-08
+    },
+    {
+      "index": 108,
+      "raw_identity_mean_l2": 0.29285696148872375,
+      "normalized_identity_mean_max_abs": 4.44810765998227e-08
+    },
+    {
+      "index": 109,
+      "raw_identity_mean_l2": 0.28580719232559204,
+      "normalized_identity_mean_max_abs": 4.614553006376809e-08
+    },
+    {
+      "index": 110,
+      "raw_identity_mean_l2": 0.2851288616657257,
+      "normalized_identity_mean_max_abs": 4.8491912707504525e-08
+    },
+    {
+      "index": 111,
+      "raw_identity_mean_l2": 0.2695602476596832,
+      "normalized_identity_mean_max_abs": 5.318568341294849e-08
+    },
+    {
+      "index": 112,
+      "raw_identity_mean_l2": 0.2930402159690857,
+      "normalized_identity_mean_max_abs": 5.019338544798302e-08
+    },
+    {
+      "index": 113,
+      "raw_identity_mean_l2": 0.2866634428501129,
+      "normalized_identity_mean_max_abs": 7.947286206899662e-08
+    },
+    {
+      "index": 114,
+      "raw_identity_mean_l2": 0.2589237689971924,
+      "normalized_identity_mean_max_abs": 4.207386794519152e-08
+    },
+    {
+      "index": 115,
+      "raw_identity_mean_l2": 0.272274374961853,
+      "normalized_identity_mean_max_abs": 8.900960324353946e-08
+    },
+    {
+      "index": 116,
+      "raw_identity_mean_l2": 0.27105236053466797,
+      "normalized_identity_mean_max_abs": 6.130763807732365e-08
+    },
+    {
+      "index": 117,
+      "raw_identity_mean_l2": 0.26243194937705994,
+      "normalized_identity_mean_max_abs": 6.502325078372451e-08
+    },
+    {
+      "index": 118,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 4.2701834956915263e-08
+    },
+    {
+      "index": 119,
+      "raw_identity_mean_l2": 0.275240957736969,
+      "normalized_identity_mean_max_abs": 6.502325078372451e-08
+    },
+    {
+      "index": 120,
+      "raw_identity_mean_l2": 0.2730042636394501,
+      "normalized_identity_mean_max_abs": 3.5321271241173235e-08
+    },
+    {
+      "index": 121,
+      "raw_identity_mean_l2": 0.2575094401836395,
+      "normalized_identity_mean_max_abs": 6.993611378902642e-08
+    },
+    {
+      "index": 122,
+      "raw_identity_mean_l2": 0.2715124487876892,
+      "normalized_identity_mean_max_abs": 3.467906495302486e-08
+    },
+    {
+      "index": 123,
+      "raw_identity_mean_l2": 0.25819888710975647,
+      "normalized_identity_mean_max_abs": 6.357829107628277e-08
+    },
+    {
+      "index": 124,
+      "raw_identity_mean_l2": 0.25896164774894714,
+      "normalized_identity_mean_max_abs": 6.724626899767827e-08
+    },
+    {
+      "index": 125,
+      "raw_identity_mean_l2": 0.26457512378692627,
+      "normalized_identity_mean_max_abs": 5.364417887676609e-08
+    },
+    {
+      "index": 126,
+      "raw_identity_mean_l2": 0.2739613354206085,
+      "normalized_identity_mean_max_abs": 3.715614127486333e-08
+    },
+    {
+      "index": 127,
+      "raw_identity_mean_l2": 0.27763062715530396,
+      "normalized_identity_mean_max_abs": 3.715614127486333e-08
+    },
+    {
+      "index": 128,
+      "raw_identity_mean_l2": 0.2533121705055237,
+      "normalized_identity_mean_max_abs": 5.151018811488939e-08
+    },
+    {
+      "index": 129,
+      "raw_identity_mean_l2": 0.2670256197452545,
+      "normalized_identity_mean_max_abs": 5.1305264037182496e-08
+    },
+    {
+      "index": 130,
+      "raw_identity_mean_l2": 0.27094510197639465,
+      "normalized_identity_mean_max_abs": 7.088119957643357e-08
+    },
+    {
+      "index": 131,
+      "raw_identity_mean_l2": 0.2670254707336426,
+      "normalized_identity_mean_max_abs": 4.5413063531896114e-08
+    },
+    {
+      "index": 132,
+      "raw_identity_mean_l2": 0.2656647861003876,
+      "normalized_identity_mean_max_abs": 4.609425729995564e-08
+    },
+    {
+      "index": 133,
+      "raw_identity_mean_l2": 0.2682230472564697,
+      "normalized_identity_mean_max_abs": 4.8287308374028726e-08
+    },
+    {
+      "index": 134,
+      "raw_identity_mean_l2": 0.3149152398109436,
+      "normalized_identity_mean_max_abs": 5.868765029504175e-08
+    },
+    {
+      "index": 135,
+      "raw_identity_mean_l2": 0.27317020297050476,
+      "normalized_identity_mean_max_abs": 4.2793079302327897e-08
+    },
+    {
+      "index": 136,
+      "raw_identity_mean_l2": 0.26227644085884094,
+      "normalized_identity_mean_max_abs": 3.926894365235967e-08
+    },
+    {
+      "index": 137,
+      "raw_identity_mean_l2": 0.28205129504203796,
+      "normalized_identity_mean_max_abs": 4.2793079302327897e-08
+    },
+    {
+      "index": 138,
+      "raw_identity_mean_l2": 0.2828426957130432,
+      "normalized_identity_mean_max_abs": 3.4272670035306874e-08
+    },
+    {
+      "index": 139,
+      "raw_identity_mean_l2": 0.28240448236465454,
+      "normalized_identity_mean_max_abs": 3.266007908564461e-08
+    },
+    {
+      "index": 140,
+      "raw_identity_mean_l2": 0.27348169684410095,
+      "normalized_identity_mean_max_abs": 5.019338544798302e-08
+    },
+    {
+      "index": 141,
+      "raw_identity_mean_l2": 0.2783890664577484,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 142,
+      "raw_identity_mean_l2": 0.279214471578598,
+      "normalized_identity_mean_max_abs": 3.693808992011327e-08
+    },
+    {
+      "index": 143,
+      "raw_identity_mean_l2": 0.2805418074131012,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 144,
+      "raw_identity_mean_l2": 0.2799416780471802,
+      "normalized_identity_mean_max_abs": 6.811959707420101e-08
+    },
+    {
+      "index": 145,
+      "raw_identity_mean_l2": 0.2744055986404419,
+      "normalized_identity_mean_max_abs": 4.334883385581634e-08
+    },
+    {
+      "index": 146,
+      "raw_identity_mean_l2": 0.2747911810874939,
+      "normalized_identity_mean_max_abs": 7.493155607107838e-08
+    },
+    {
+      "index": 147,
+      "raw_identity_mean_l2": 0.27099353075027466,
+      "normalized_identity_mean_max_abs": 4.023313593393141e-08
+    },
+    {
+      "index": 148,
+      "raw_identity_mean_l2": 0.2696337103843689,
+      "normalized_identity_mean_max_abs": 2.9434392700977696e-08
+    },
+    {
+      "index": 149,
+      "raw_identity_mean_l2": 0.2585560083389282,
+      "normalized_identity_mean_max_abs": 4.487879223802338e-08
+    },
+    {
+      "index": 150,
+      "raw_identity_mean_l2": 0.2609870135784149,
+      "normalized_identity_mean_max_abs": 5.233578548313744e-08
+    },
+    {
+      "index": 151,
+      "raw_identity_mean_l2": 0.2744055986404419,
+      "normalized_identity_mean_max_abs": 4.334883385581634e-08
+    },
+    {
+      "index": 152,
+      "raw_identity_mean_l2": 0.2766895294189453,
+      "normalized_identity_mean_max_abs": 4.9086178677271164e-08
+    },
+    {
+      "index": 153,
+      "raw_identity_mean_l2": 0.262116014957428,
+      "normalized_identity_mean_max_abs": 4.2793079302327897e-08
+    },
+    {
+      "index": 154,
+      "raw_identity_mean_l2": 0.2632874548435211,
+      "normalized_identity_mean_max_abs": 3.560796812962508e-08
+    },
+    {
+      "index": 155,
+      "raw_identity_mean_l2": 0.2657296657562256,
+      "normalized_identity_mean_max_abs": 6.811959707420101e-08
+    },
+    {
+      "index": 156,
+      "raw_identity_mean_l2": 0.2804039716720581,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 157,
+      "raw_identity_mean_l2": 0.2885034382343292,
+      "normalized_identity_mean_max_abs": 5.7549311094362565e-08
+    },
+    {
+      "index": 158,
+      "raw_identity_mean_l2": 0.2786833643913269,
+      "normalized_identity_mean_max_abs": 4.8251379780595016e-08
+    },
+    {
+      "index": 159,
+      "raw_identity_mean_l2": 0.27156952023506165,
+      "normalized_identity_mean_max_abs": 7.152557657263969e-08
+    },
+    {
+      "index": 160,
+      "raw_identity_mean_l2": 0.26423749327659607,
+      "normalized_identity_mean_max_abs": 3.303389917164168e-08
+    },
+    {
+      "index": 161,
+      "raw_identity_mean_l2": 0.2776317596435547,
+      "normalized_identity_mean_max_abs": 4.4523950748498464e-08
+    },
+    {
+      "index": 162,
+      "raw_identity_mean_l2": 0.2655300498008728,
+      "normalized_identity_mean_max_abs": 4.334883385581634e-08
+    },
+    {
+      "index": 163,
+      "raw_identity_mean_l2": 0.2664647698402405,
+      "normalized_identity_mean_max_abs": 3.926894365235967e-08
+    },
+    {
+      "index": 164,
+      "raw_identity_mean_l2": 0.251492440700531,
+      "normalized_identity_mean_max_abs": 5.5734211912294995e-08
+    },
+    {
+      "index": 165,
+      "raw_identity_mean_l2": 0.2578410506248474,
+      "normalized_identity_mean_max_abs": 5.7251828167181884e-08
+    },
+    {
+      "index": 166,
+      "raw_identity_mean_l2": 0.2553286850452423,
+      "normalized_identity_mean_max_abs": 5.676632852669172e-08
+    },
+    {
+      "index": 167,
+      "raw_identity_mean_l2": 0.26457512378692627,
+      "normalized_identity_mean_max_abs": 3.278255533700758e-08
+    },
+    {
+      "index": 168,
+      "raw_identity_mean_l2": 0.27628442645072937,
+      "normalized_identity_mean_max_abs": 7.813041236204299e-08
+    },
+    {
+      "index": 169,
+      "raw_identity_mean_l2": 0.27362778782844543,
+      "normalized_identity_mean_max_abs": 5.839644146021783e-08
+    },
+    {
+      "index": 170,
+      "raw_identity_mean_l2": 0.269593745470047,
+      "normalized_identity_mean_max_abs": 5.839644146021783e-08
+    },
+    {
+      "index": 171,
+      "raw_identity_mean_l2": 0.27771419286727905,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 172,
+      "raw_identity_mean_l2": 0.26982036232948303,
+      "normalized_identity_mean_max_abs": 5.372812950099615e-08
+    },
+    {
+      "index": 173,
+      "raw_identity_mean_l2": 0.2756796181201935,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 174,
+      "raw_identity_mean_l2": 0.2763853967189789,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 175,
+      "raw_identity_mean_l2": 0.26823559403419495,
+      "normalized_identity_mean_max_abs": 5.839644146021783e-08
+    },
+    {
+      "index": 176,
+      "raw_identity_mean_l2": 0.2749859690666199,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 177,
+      "raw_identity_mean_l2": 0.2971976697444916,
+      "normalized_identity_mean_max_abs": 4.06395308516494e-08
+    },
+    {
+      "index": 178,
+      "raw_identity_mean_l2": 0.28272244334220886,
+      "normalized_identity_mean_max_abs": 5.108969602929392e-08
+    },
+    {
+      "index": 179,
+      "raw_identity_mean_l2": 0.27610141038894653,
+      "normalized_identity_mean_max_abs": 3.8366209764717496e-08
+    },
+    {
+      "index": 180,
+      "raw_identity_mean_l2": 0.29237911105155945,
+      "normalized_identity_mean_max_abs": 3.7930227847482456e-08
+    },
+    {
+      "index": 181,
+      "raw_identity_mean_l2": 0.27072176337242126,
+      "normalized_identity_mean_max_abs": 7.472821295095855e-08
+    },
+    {
+      "index": 182,
+      "raw_identity_mean_l2": 0.27306437492370605,
+      "normalized_identity_mean_max_abs": 7.601752116670468e-08
+    },
+    {
+      "index": 183,
+      "raw_identity_mean_l2": 0.2797985076904297,
+      "normalized_identity_mean_max_abs": 6.311080369414412e-08
+    },
+    {
+      "index": 184,
+      "raw_identity_mean_l2": 0.2785572409629822,
+      "normalized_identity_mean_max_abs": 7.224805642636056e-08
+    },
+    {
+      "index": 185,
+      "raw_identity_mean_l2": 0.2753623127937317,
+      "normalized_identity_mean_max_abs": 7.601752116670468e-08
+    },
+    {
+      "index": 186,
+      "raw_identity_mean_l2": 0.2720170021057129,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 187,
+      "raw_identity_mean_l2": 0.2756147086620331,
+      "normalized_identity_mean_max_abs": 6.405275598808657e-08
+    },
+    {
+      "index": 188,
+      "raw_identity_mean_l2": 0.2682230472564697,
+      "normalized_identity_mean_max_abs": 5.432321970033627e-08
+    },
+    {
+      "index": 189,
+      "raw_identity_mean_l2": 0.266340970993042,
+      "normalized_identity_mean_max_abs": 3.278255533700758e-08
+    },
+    {
+      "index": 190,
+      "raw_identity_mean_l2": 0.27087289094924927,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 191,
+      "raw_identity_mean_l2": 0.2673865854740143,
+      "normalized_identity_mean_max_abs": 4.327460345621148e-08
+    },
+    {
+      "index": 192,
+      "raw_identity_mean_l2": 0.27428358793258667,
+      "normalized_identity_mean_max_abs": 7.61614913358244e-08
+    },
+    {
+      "index": 193,
+      "raw_identity_mean_l2": 0.2716182768344879,
+      "normalized_identity_mean_max_abs": 5.7993709390302683e-08
+    },
+    {
+      "index": 194,
+      "raw_identity_mean_l2": 0.2690841257572174,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 195,
+      "raw_identity_mean_l2": 0.2741960883140564,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 196,
+      "raw_identity_mean_l2": 0.2729265093803406,
+      "normalized_identity_mean_max_abs": 4.1325886712684223e-08
+    },
+    {
+      "index": 197,
+      "raw_identity_mean_l2": 0.2749859690666199,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 198,
+      "raw_identity_mean_l2": 0.28038060665130615,
+      "normalized_identity_mean_max_abs": 3.725290298461914e-08
+    },
+    {
+      "index": 199,
+      "raw_identity_mean_l2": 0.2739934027194977,
+      "normalized_identity_mean_max_abs": 3.914334811838671e-08
+    },
+    {
+      "index": 200,
+      "raw_identity_mean_l2": 0.2822897434234619,
+      "normalized_identity_mean_max_abs": 4.17232506322307e-08
+    },
+    {
+      "index": 201,
+      "raw_identity_mean_l2": 0.2872363328933716,
+      "normalized_identity_mean_max_abs": 3.908501255978081e-08
+    },
+    {
+      "index": 202,
+      "raw_identity_mean_l2": 0.27154335379600525,
+      "normalized_identity_mean_max_abs": 3.558486127985816e-08
+    },
+    {
+      "index": 203,
+      "raw_identity_mean_l2": 0.2747912108898163,
+      "normalized_identity_mean_max_abs": 6.811959707420101e-08
+    },
+    {
+      "index": 204,
+      "raw_identity_mean_l2": 0.2759068012237549,
+      "normalized_identity_mean_max_abs": 4.9086178677271164e-08
+    },
+    {
+      "index": 205,
+      "raw_identity_mean_l2": 0.26982033252716064,
+      "normalized_identity_mean_max_abs": 5.037012229536231e-08
+    },
+    {
+      "index": 206,
+      "raw_identity_mean_l2": 0.2729595899581909,
+      "normalized_identity_mean_max_abs": 7.813041236204299e-08
+    },
+    {
+      "index": 207,
+      "raw_identity_mean_l2": 0.2661189138889313,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 208,
+      "raw_identity_mean_l2": 0.27216553688049316,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 209,
+      "raw_identity_mean_l2": 0.2712867558002472,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 210,
+      "raw_identity_mean_l2": 0.2727453112602234,
+      "normalized_identity_mean_max_abs": 6.044414391226383e-08
+    },
+    {
+      "index": 211,
+      "raw_identity_mean_l2": 0.2680874764919281,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 212,
+      "raw_identity_mean_l2": 0.268598347902298,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 213,
+      "raw_identity_mean_l2": 0.2721655070781708,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 214,
+      "raw_identity_mean_l2": 0.268598347902298,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 215,
+      "raw_identity_mean_l2": 0.2631203234195709,
+      "normalized_identity_mean_max_abs": 6.737003843682032e-08
+    },
+    {
+      "index": 216,
+      "raw_identity_mean_l2": 0.2685983180999756,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 217,
+      "raw_identity_mean_l2": 0.27216553688049316,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 218,
+      "raw_identity_mean_l2": 0.2729265093803406,
+      "normalized_identity_mean_max_abs": 4.7683716530855236e-08
+    },
+    {
+      "index": 219,
+      "raw_identity_mean_l2": 0.27255403995513916,
+      "normalized_identity_mean_max_abs": 7.493155607107838e-08
+    },
+    {
+      "index": 220,
+      "raw_identity_mean_l2": 0.2694837749004364,
+      "normalized_identity_mean_max_abs": 4.000859732400386e-08
+    },
+    {
+      "index": 221,
+      "raw_identity_mean_l2": 0.2728733718395233,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 222,
+      "raw_identity_mean_l2": 0.27093765139579773,
+      "normalized_identity_mean_max_abs": 2.509669272399151e-08
+    },
+    {
+      "index": 223,
+      "raw_identity_mean_l2": 0.2664647698402405,
+      "normalized_identity_mean_max_abs": 4.487879223802338e-08
+    },
+    {
+      "index": 224,
+      "raw_identity_mean_l2": 0.272274374961853,
+      "normalized_identity_mean_max_abs": 5.563100202721216e-08
+    },
+    {
+      "index": 225,
+      "raw_identity_mean_l2": 0.2715647518634796,
+      "normalized_identity_mean_max_abs": 4.2458104587694834e-08
+    },
+    {
+      "index": 226,
+      "raw_identity_mean_l2": 0.2652609348297119,
+      "normalized_identity_mean_max_abs": 7.601752116670468e-08
+    },
+    {
+      "index": 227,
+      "raw_identity_mean_l2": 0.26762914657592773,
+      "normalized_identity_mean_max_abs": 7.224805642636056e-08
+    },
+    {
+      "index": 228,
+      "raw_identity_mean_l2": 0.27304983139038086,
+      "normalized_identity_mean_max_abs": 5.135169445225074e-08
+    },
+    {
+      "index": 229,
+      "raw_identity_mean_l2": 0.2648990750312805,
+      "normalized_identity_mean_max_abs": 6.405275598808657e-08
+    },
+    {
+      "index": 230,
+      "raw_identity_mean_l2": 0.27086561918258667,
+      "normalized_identity_mean_max_abs": 4.334883385581634e-08
+    },
+    {
+      "index": 231,
+      "raw_identity_mean_l2": 0.2743709683418274,
+      "normalized_identity_mean_max_abs": 4.5849727570157484e-08
+    },
+    {
+      "index": 232,
+      "raw_identity_mean_l2": 0.2715758681297302,
+      "normalized_identity_mean_max_abs": 4.705630018975171e-08
+    },
+    {
+      "index": 233,
+      "raw_identity_mean_l2": 0.275228351354599,
+      "normalized_identity_mean_max_abs": 4.1208149781368775e-08
+    },
+    {
+      "index": 234,
+      "raw_identity_mean_l2": 0.2781931757926941,
+      "normalized_identity_mean_max_abs": 5.432321970033627e-08
+    },
+    {
+      "index": 235,
+      "raw_identity_mean_l2": 0.271455854177475,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 236,
+      "raw_identity_mean_l2": 0.264596551656723,
+      "normalized_identity_mean_max_abs": 1.0785602455598564e-07
+    },
+    {
+      "index": 237,
+      "raw_identity_mean_l2": 0.26884645223617554,
+      "normalized_identity_mean_max_abs": 6.105841521275579e-08
+    },
+    {
+      "index": 238,
+      "raw_identity_mean_l2": 0.2679325342178345,
+      "normalized_identity_mean_max_abs": 4.7095028321564314e-08
+    },
+    {
+      "index": 239,
+      "raw_identity_mean_l2": 0.27156952023506165,
+      "normalized_identity_mean_max_abs": 3.278255533700758e-08
+    },
+    {
+      "index": 240,
+      "raw_identity_mean_l2": 0.26832816004753113,
+      "normalized_identity_mean_max_abs": 5.404154634902625e-08
+    },
+    {
+      "index": 241,
+      "raw_identity_mean_l2": 0.2748052477836609,
+      "normalized_identity_mean_max_abs": 3.113675361987589e-08
+    },
+    {
+      "index": 242,
+      "raw_identity_mean_l2": 0.2638876140117645,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 243,
+      "raw_identity_mean_l2": 0.2614174783229828,
+      "normalized_identity_mean_max_abs": 4.207386794519152e-08
+    },
+    {
+      "index": 244,
+      "raw_identity_mean_l2": 0.2615136504173279,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 245,
+      "raw_identity_mean_l2": 0.2693392336368561,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 246,
+      "raw_identity_mean_l2": 0.2733258605003357,
+      "normalized_identity_mean_max_abs": 4.0046870708465576e-08
+    },
+    {
+      "index": 247,
+      "raw_identity_mean_l2": 0.2633422017097473,
+      "normalized_identity_mean_max_abs": 4.401573860945973e-08
+    },
+    {
+      "index": 248,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 249,
+      "raw_identity_mean_l2": 0.27356773614883423,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 250,
+      "raw_identity_mean_l2": 0.26330527663230896,
+      "normalized_identity_mean_max_abs": 6.502325078372451e-08
+    },
+    {
+      "index": 251,
+      "raw_identity_mean_l2": 0.2598043978214264,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 252,
+      "raw_identity_mean_l2": 0.2589455246925354,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 253,
+      "raw_identity_mean_l2": 0.2693392336368561,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 254,
+      "raw_identity_mean_l2": 0.27131062746047974,
+      "normalized_identity_mean_max_abs": 4.401573860945973e-08
+    },
+    {
+      "index": 255,
+      "raw_identity_mean_l2": 0.26321181654930115,
+      "normalized_identity_mean_max_abs": 6.405275598808657e-08
+    },
+    {
+      "index": 256,
+      "raw_identity_mean_l2": 0.2615136504173279,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 257,
+      "raw_identity_mean_l2": 0.2624991834163666,
+      "normalized_identity_mean_max_abs": 5.6467559517159316e-08
+    },
+    {
+      "index": 258,
+      "raw_identity_mean_l2": 0.2652328610420227,
+      "normalized_identity_mean_max_abs": 4.2793079302327897e-08
+    },
+    {
+      "index": 259,
+      "raw_identity_mean_l2": 0.26870280504226685,
+      "normalized_identity_mean_max_abs": 4.158463440262494e-08
+    },
+    {
+      "index": 260,
+      "raw_identity_mean_l2": 0.26432302594184875,
+      "normalized_identity_mean_max_abs": 5.7220457705398076e-08
+    },
+    {
+      "index": 261,
+      "raw_identity_mean_l2": 0.26236528158187866,
+      "normalized_identity_mean_max_abs": 6.716016542895886e-08
+    },
+    {
+      "index": 262,
+      "raw_identity_mean_l2": 0.26205503940582275,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 263,
+      "raw_identity_mean_l2": 0.26649653911590576,
+      "normalized_identity_mean_max_abs": 6.130763807732365e-08
+    },
+    {
+      "index": 264,
+      "raw_identity_mean_l2": 0.26931554079055786,
+      "normalized_identity_mean_max_abs": 5.62932740422184e-08
+    },
+    {
+      "index": 265,
+      "raw_identity_mean_l2": 0.2652728259563446,
+      "normalized_identity_mean_max_abs": 4.2458104587694834e-08
+    },
+    {
+      "index": 266,
+      "raw_identity_mean_l2": 0.26726123690605164,
+      "normalized_identity_mean_max_abs": 7.493155607107838e-08
+    },
+    {
+      "index": 267,
+      "raw_identity_mean_l2": 0.26686328649520874,
+      "normalized_identity_mean_max_abs": 5.372812950099615e-08
+    },
+    {
+      "index": 268,
+      "raw_identity_mean_l2": 0.261711984872818,
+      "normalized_identity_mean_max_abs": 5.552213622195268e-08
+    },
+    {
+      "index": 269,
+      "raw_identity_mean_l2": 0.2678791880607605,
+      "normalized_identity_mean_max_abs": 4.635916894812908e-08
+    },
+    {
+      "index": 270,
+      "raw_identity_mean_l2": 0.26535406708717346,
+      "normalized_identity_mean_max_abs": 2.5636406775220166e-08
+    },
+    {
+      "index": 271,
+      "raw_identity_mean_l2": 0.26617494225502014,
+      "normalized_identity_mean_max_abs": 4.435694478388541e-08
+    },
+    {
+      "index": 272,
+      "raw_identity_mean_l2": 0.2674682140350342,
+      "normalized_identity_mean_max_abs": 4.60581333072696e-08
+    },
+    {
+      "index": 273,
+      "raw_identity_mean_l2": 0.2666824162006378,
+      "normalized_identity_mean_max_abs": 4.435694478388541e-08
+    },
+    {
+      "index": 274,
+      "raw_identity_mean_l2": 0.268432080745697,
+      "normalized_identity_mean_max_abs": 4.876743631143654e-08
+    },
+    {
+      "index": 275,
+      "raw_identity_mean_l2": 0.2629848122596741,
+      "normalized_identity_mean_max_abs": 5.108969602929392e-08
+    },
+    {
+      "index": 276,
+      "raw_identity_mean_l2": 0.26617494225502014,
+      "normalized_identity_mean_max_abs": 4.158463440262494e-08
+    },
+    {
+      "index": 277,
+      "raw_identity_mean_l2": 0.2695632874965668,
+      "normalized_identity_mean_max_abs": 5.329356511651895e-08
+    },
+    {
+      "index": 278,
+      "raw_identity_mean_l2": 0.26853442192077637,
+      "normalized_identity_mean_max_abs": 5.329356511651895e-08
+    },
+    {
+      "index": 279,
+      "raw_identity_mean_l2": 0.2610458433628082,
+      "normalized_identity_mean_max_abs": 4.435694478388541e-08
+    },
+    {
+      "index": 280,
+      "raw_identity_mean_l2": 0.27094778418540955,
+      "normalized_identity_mean_max_abs": 5.676632852669172e-08
+    },
+    {
+      "index": 281,
+      "raw_identity_mean_l2": 0.2665756940841675,
+      "normalized_identity_mean_max_abs": 6.405275598808657e-08
+    },
+    {
+      "index": 282,
+      "raw_identity_mean_l2": 0.2663348615169525,
+      "normalized_identity_mean_max_abs": 6.311080369414412e-08
+    },
+    {
+      "index": 283,
+      "raw_identity_mean_l2": 0.2652609348297119,
+      "normalized_identity_mean_max_abs": 7.601752116670468e-08
+    },
+    {
+      "index": 284,
+      "raw_identity_mean_l2": 0.2638876140117645,
+      "normalized_identity_mean_max_abs": 6.311080369414412e-08
+    },
+    {
+      "index": 285,
+      "raw_identity_mean_l2": 0.2652609348297119,
+      "normalized_identity_mean_max_abs": 7.601752116670468e-08
+    },
+    {
+      "index": 286,
+      "raw_identity_mean_l2": 0.26698368787765503,
+      "normalized_identity_mean_max_abs": 5.048864082368709e-08
+    },
+    {
+      "index": 287,
+      "raw_identity_mean_l2": 0.26851212978363037,
+      "normalized_identity_mean_max_abs": 6.887648140718738e-08
+    },
+    {
+      "index": 288,
+      "raw_identity_mean_l2": 0.26805534958839417,
+      "normalized_identity_mean_max_abs": 4.021518051899875e-08
+    },
+    {
+      "index": 289,
+      "raw_identity_mean_l2": 0.27356773614883423,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 290,
+      "raw_identity_mean_l2": 0.26456451416015625,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 291,
+      "raw_identity_mean_l2": 0.2583482563495636,
+      "normalized_identity_mean_max_abs": 4.635916894812908e-08
+    },
+    {
+      "index": 292,
+      "raw_identity_mean_l2": 0.2642427384853363,
+      "normalized_identity_mean_max_abs": 6.705522537231445e-08
+    },
+    {
+      "index": 293,
+      "raw_identity_mean_l2": 0.272745281457901,
+      "normalized_identity_mean_max_abs": 4.722198809758993e-08
+    },
+    {
+      "index": 294,
+      "raw_identity_mean_l2": 0.25664377212524414,
+      "normalized_identity_mean_max_abs": 3.919209490277353e-08
+    },
+    {
+      "index": 295,
+      "raw_identity_mean_l2": 0.275240957736969,
+      "normalized_identity_mean_max_abs": 6.502325078372451e-08
+    },
+    {
+      "index": 296,
+      "raw_identity_mean_l2": 0.2718842327594757,
+      "normalized_identity_mean_max_abs": 5.779844514108845e-08
+    },
+    {
+      "index": 297,
+      "raw_identity_mean_l2": 0.2633422017097473,
+      "normalized_identity_mean_max_abs": 2.567584722612537e-08
+    },
+    {
+      "index": 298,
+      "raw_identity_mean_l2": 0.2615136504173279,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 299,
+      "raw_identity_mean_l2": 0.2615136504173279,
+      "normalized_identity_mean_max_abs": 5.5156537115408355e-08
+    },
+    {
+      "index": 300,
+      "raw_identity_mean_l2": 0.27036434412002563,
+      "normalized_identity_mean_max_abs": 4.9086178677271164e-08
+    },
+    {
+      "index": 301,
+      "raw_identity_mean_l2": 0.30800479650497437,
+      "normalized_identity_mean_max_abs": 5.374189271378782e-08
+    },
+    {
+      "index": 302,
+      "raw_identity_mean_l2": 0.2828182280063629,
+      "normalized_identity_mean_max_abs": 4.705630018975171e-08
+    },
+    {
+      "index": 303,
+      "raw_identity_mean_l2": 0.2926570475101471,
+      "normalized_identity_mean_max_abs": 5.960464477539063e-08
+    },
+    {
+      "index": 304,
+      "raw_identity_mean_l2": 0.27912232279777527,
+      "normalized_identity_mean_max_abs": 5.196302410581666e-08
+    },
+    {
+      "index": 305,
+      "raw_identity_mean_l2": 0.2751898467540741,
+      "normalized_identity_mean_max_abs": 3.715614127486333e-08
+    },
+    {
+      "index": 306,
+      "raw_identity_mean_l2": 0.26099395751953125,
+      "normalized_identity_mean_max_abs": 3.266007908564461e-08
+    },
+    {
+      "index": 307,
+      "raw_identity_mean_l2": 0.2727534770965576,
+      "normalized_identity_mean_max_abs": 7.012311442622376e-08
+    },
+    {
+      "index": 308,
+      "raw_identity_mean_l2": 0.27195942401885986,
+      "normalized_identity_mean_max_abs": 7.36292662395499e-08
+    },
+    {
+      "index": 309,
+      "raw_identity_mean_l2": 0.2707080841064453,
+      "normalized_identity_mean_max_abs": 4.712925516514588e-08
+    },
+    {
+      "index": 310,
+      "raw_identity_mean_l2": 0.27362778782844543,
+      "normalized_identity_mean_max_abs": 4.8328089974347677e-08
+    },
+    {
+      "index": 311,
+      "raw_identity_mean_l2": 0.2673865854740143,
+      "normalized_identity_mean_max_abs": 4.000859732400386e-08
+    },
+    {
+      "index": 312,
+      "raw_identity_mean_l2": 0.26573869585990906,
+      "normalized_identity_mean_max_abs": 5.693577875831579e-08
+    },
+    {
+      "index": 313,
+      "raw_identity_mean_l2": 0.2695632874965668,
+      "normalized_identity_mean_max_abs": 4.487879223802338e-08
+    },
+    {
+      "index": 314,
+      "raw_identity_mean_l2": 0.2669997811317444,
+      "normalized_identity_mean_max_abs": 6.357829107628277e-08
+    },
+    {
+      "index": 315,
+      "raw_identity_mean_l2": 0.26965659856796265,
+      "normalized_identity_mean_max_abs": 3.7645037309630425e-08
+    },
+    {
+      "index": 316,
+      "raw_identity_mean_l2": 0.26642706990242004,
+      "normalized_identity_mean_max_abs": 5.019338544798302e-08
+    },
+    {
+      "index": 317,
+      "raw_identity_mean_l2": 0.2695632576942444,
+      "normalized_identity_mean_max_abs": 7.71354251583034e-08
+    },
+    {
+      "index": 318,
+      "raw_identity_mean_l2": 0.2727453112602234,
+      "normalized_identity_mean_max_abs": 5.372812950099615e-08
+    },
+    {
+      "index": 319,
+      "raw_identity_mean_l2": 0.2739473879337311,
+      "normalized_identity_mean_max_abs": 4.883272097799818e-08
+    },
+    {
+      "index": 320,
+      "raw_identity_mean_l2": 0.26805534958839417,
+      "normalized_identity_mean_max_abs": 5.1705235648569214e-08
+    },
+    {
+      "index": 321,
+      "raw_identity_mean_l2": 0.27867549657821655,
+      "normalized_identity_mean_max_abs": 3.734266940114139e-08
+    },
+    {
+      "index": 322,
+      "raw_identity_mean_l2": 0.2748641073703766,
+      "normalized_identity_mean_max_abs": 4.6520696628249425e-08
+    },
+    {
+      "index": 323,
+      "raw_identity_mean_l2": 0.2515573501586914,
+      "normalized_identity_mean_max_abs": 6.044414391226383e-08
+    },
+    {
+      "index": 324,
+      "raw_identity_mean_l2": 0.26884645223617554,
+      "normalized_identity_mean_max_abs": 3.779806689863108e-08
+    },
+    {
+      "index": 325,
+      "raw_identity_mean_l2": 0.2545126974582672,
+      "normalized_identity_mean_max_abs": 4.1208149781368775e-08
+    },
+    {
+      "index": 326,
+      "raw_identity_mean_l2": 0.25649458169937134,
+      "normalized_identity_mean_max_abs": 3.7645037309630425e-08
+    },
+    {
+      "index": 327,
+      "raw_identity_mean_l2": 0.2675539255142212,
+      "normalized_identity_mean_max_abs": 5.678550607512989e-08
+    },
+    {
+      "index": 328,
+      "raw_identity_mean_l2": 0.2661985754966736,
+      "normalized_identity_mean_max_abs": 4.5413063531896114e-08
+    },
+    {
+      "index": 329,
+      "raw_identity_mean_l2": 0.2659792900085449,
+      "normalized_identity_mean_max_abs": 5.87881423541603e-08
+    },
+    {
+      "index": 330,
+      "raw_identity_mean_l2": 0.2723531126976013,
+      "normalized_identity_mean_max_abs": 4.021518051899875e-08
+    }
+  ],
+  "exact_graph_collisions_across_receptors": [],
+  "random_training_pair_coverage": [
+    {
+      "fold": 0,
+      "seed": 20261021,
+      "anchors": 32640,
+      "positive_pairs": 25024,
+      "hard_negative_pairs": 17040,
+      "anchors_with_positive": 13703,
+      "active_anchors_with_hard_negative": 2719
+    },
+    {
+      "fold": 0,
+      "seed": 1101,
+      "anchors": 32640,
+      "positive_pairs": 25172,
+      "hard_negative_pairs": 17170,
+      "anchors_with_positive": 13854,
+      "active_anchors_with_hard_negative": 2718
+    },
+    {
+      "fold": 0,
+      "seed": 4242,
+      "anchors": 32640,
+      "positive_pairs": 24708,
+      "hard_negative_pairs": 17156,
+      "anchors_with_positive": 13725,
+      "active_anchors_with_hard_negative": 2772
+    },
+    {
+      "fold": 1,
+      "seed": 20261021,
+      "anchors": 29400,
+      "positive_pairs": 22522,
+      "hard_negative_pairs": 11680,
+      "anchors_with_positive": 12812,
+      "active_anchors_with_hard_negative": 2108
+    },
+    {
+      "fold": 1,
+      "seed": 1101,
+      "anchors": 29400,
+      "positive_pairs": 22842,
+      "hard_negative_pairs": 11630,
+      "anchors_with_positive": 12851,
+      "active_anchors_with_hard_negative": 2161
+    },
+    {
+      "fold": 1,
+      "seed": 4242,
+      "anchors": 29400,
+      "positive_pairs": 22844,
+      "hard_negative_pairs": 11642,
+      "anchors_with_positive": 12806,
+      "active_anchors_with_hard_negative": 2084
+    },
+    {
+      "fold": 2,
+      "seed": 20261021,
+      "anchors": 28080,
+      "positive_pairs": 17534,
+      "hard_negative_pairs": 12794,
+      "anchors_with_positive": 10312,
+      "active_anchors_with_hard_negative": 1802
+    },
+    {
+      "fold": 2,
+      "seed": 1101,
+      "anchors": 28080,
+      "positive_pairs": 17704,
+      "hard_negative_pairs": 13010,
+      "anchors_with_positive": 10264,
+      "active_anchors_with_hard_negative": 1791
+    },
+    {
+      "fold": 2,
+      "seed": 4242,
+      "anchors": 28080,
+      "positive_pairs": 17680,
+      "hard_negative_pairs": 12880,
+      "anchors_with_positive": 10293,
+      "active_anchors_with_hard_negative": 1785
+    },
+    {
+      "fold": 3,
+      "seed": 20261021,
+      "anchors": 34320,
+      "positive_pairs": 24948,
+      "hard_negative_pairs": 15902,
+      "anchors_with_positive": 14524,
+      "active_anchors_with_hard_negative": 2461
+    },
+    {
+      "fold": 3,
+      "seed": 1101,
+      "anchors": 34320,
+      "positive_pairs": 25138,
+      "hard_negative_pairs": 15500,
+      "anchors_with_positive": 14587,
+      "active_anchors_with_hard_negative": 2463
+    },
+    {
+      "fold": 3,
+      "seed": 4242,
+      "anchors": 34320,
+      "positive_pairs": 25354,
+      "hard_negative_pairs": 15790,
+      "anchors_with_positive": 14671,
+      "active_anchors_with_hard_negative": 2601
+    },
+    {
+      "fold": 4,
+      "seed": 20261021,
+      "anchors": 34440,
+      "positive_pairs": 26478,
+      "hard_negative_pairs": 16092,
+      "anchors_with_positive": 15131,
+      "active_anchors_with_hard_negative": 2724
+    },
+    {
+      "fold": 4,
+      "seed": 1101,
+      "anchors": 34440,
+      "positive_pairs": 26298,
+      "hard_negative_pairs": 16088,
+      "anchors_with_positive": 15273,
+      "active_anchors_with_hard_negative": 2768
+    },
+    {
+      "fold": 4,
+      "seed": 4242,
+      "anchors": 34440,
+      "positive_pairs": 26318,
+      "hard_negative_pairs": 16002,
+      "anchors_with_positive": 15021,
+      "active_anchors_with_hard_negative": 2753
+    }
+  ],
+  "developmental_partition": {
+    "fit_original_folds": [
+      2,
+      3,
+      4
+    ],
+    "validation_original_folds": [
+      1
+    ],
+    "quarantine_original_folds": [
+      0
+    ],
+    "counts": {
+      "0": 59,
+      "1": 86,
+      "2": 97,
+      "3": 45,
+      "4": 44
+    },
+    "eligible_families_by_fold": {
+      "1": 3,
+      "4": 1,
+      "3": 2,
+      "2": 2,
+      "0": 3
+    }
+  }
+}

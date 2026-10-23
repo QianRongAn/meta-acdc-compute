@@ -2,15 +2,16 @@
 
 Pool: v7 native inventory graphs (168, confidence-masked) + scored candidate
 CIFs whose chain A/B sequence pair exactly matches an af3_pending_upload
-role-header reference (alpha,beta). Identity-verified receptor labels only;
-no binding labels anywhere.
+role-header reference (alpha,beta). Chain assignment is checked, but the stored
+sequence hash uses observed residues, not canonical paired variable regions.
+Only explicit diagnostic builds are permitted; no binding labels anywhere.
 
 Usage:
     .venv/bin/python scripts/build_fingerprint_dataset.py \
         --inventory data/releases/20261017-structural-v7-atomic-repair/native_inventory_graphs.pt \
         --cifs data/raw/af3_predictions \
         --refs af3_pending_upload \
-        --out data/processed/fingerprint_dataset.pt
+        --out data/processed/fingerprint_dataset.pt --diagnostic-observed-labels
 """
 from __future__ import annotations
 
@@ -27,6 +28,7 @@ from meta_acdc.data.release import sha256
 from meta_acdc.structure.cif import parse_cif
 from meta_acdc.structure.graph import build_interface_graph_from_residues
 from meta_acdc.structure.identity import chain_sequence
+from meta_acdc.structure.receptor_identity_audit import IDENTITY_SEMANTICS
 from meta_acdc.structure.quality import annotate_prediction
 
 
@@ -71,7 +73,11 @@ def main() -> int:
     ap.add_argument("--refs", type=Path, default=Path("af3_pending_upload"))
     ap.add_argument("--out", type=Path,
                     default=Path("data/processed/fingerprint_dataset.pt"))
+    ap.add_argument('--diagnostic-observed-labels',action='store_true',
+                    help='explicitly acknowledge observed-sequence keys are not validated receptor identities')
     args = ap.parse_args()
+    if not args.diagnostic_observed_labels:
+        ap.error('canonical paired-variable identity is unverified; only explicit diagnostic-observed-labels builds are allowed')
     if args.out.exists():
         raise ValueError("refusing to overwrite an existing dataset")
 
@@ -184,7 +190,8 @@ def main() -> int:
     torch.save({"graphs": graphs, "records": records, "labels": labels,
                 "graph_hashes": graph_hashes,
                 "task_id": "STRUCT-FINGERPRINT-20261021",
-                "binding_labels": False}, args.out)
+                "binding_labels": False, "identity_semantics": IDENTITY_SEMANTICS,
+                "paired_variable_identity_validated": False}, args.out)
     manifest = {
         "task_id": "STRUCT-FINGERPRINT-20261021",
         "n_graphs": len(graphs),
@@ -199,6 +206,9 @@ def main() -> int:
                 r["receptor_id"] for r in records).values() if v >= 2),
         "input_sha256_of_dataset_file": sha256(args.out),
         "binding_labels": False,
+        "identity_semantics": IDENTITY_SEMANTICS,
+        "paired_variable_identity_validated": False,
+        "count_label": "n_receptors is a legacy name for observed sequence keys, not confirmed biological receptors",
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.with_suffix(".manifest.json").write_text(

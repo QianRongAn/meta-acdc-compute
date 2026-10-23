@@ -1,0 +1,133 @@
+HEADER    IMMUNE SYSTEM                           25-JAN-21   7DZN              
+TITLE     CRYSTAL STRUCTURE OF THE CROSS-RESTRICTED T18A TCR AND HLAB4201 BOUND 
+TITLE    2 TO HIV-1 GAG TL9 PEPTIDE                                             
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: MHC CLASS I ANTIGEN;                                       
+COMPND   3 CHAIN: A;                                                            
+COMPND   4 ENGINEERED: YES;                                                     
+COMPND   5 MOL_ID: 2;                                                           
+COMPND   6 MOLECULE: BETA-2-MICROGLOBULIN;                                      
+COMPND   7 CHAIN: B;                                                            
+COMPND   8 ENGINEERED: YES;                                                     
+COMPND   9 MOL_ID: 3;                                                           
+COMPND  10 MOLECULE: GAG-POL POLYPROTEIN;                                       
+COMPND  11 CHAIN: C;                                                            
+COMPND  12 ENGINEERED: YES;                                                     
+COMPND  13 MOL_ID: 4;                                                           
+COMPND  14 MOLECULE: BETA CHAIN T18A TCR;                                       
+COMPND  15 CHAIN: D;                                                            
+COMPND  16 ENGINEERED: YES;                                                     
+COMPND  17 MOL_ID: 5;                                                           
+COMPND  18 MOLECULE: ALPHA CHAIN T18A TCR;                                      
+COMPND  19 CHAIN: E;                                                            
+COMPND  20 ENGINEERED: YES                                                      
+SOURCE    MOL_ID: 1;                                                            
+SOURCE   2 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE   3 ORGANISM_COMMON: HUMAN;                                              
+SOURCE   4 ORGANISM_TAXID: 9606;                                                
+SOURCE   5 GENE: HLA-B;                                                         
+SOURCE   6 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE   7 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE   8 EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 
+SOURCE   9 MOL_ID: 2;                                                           
+SOURCE  10 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  11 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  12 ORGANISM_TAXID: 9606;                                                
+SOURCE  13 GENE: B2M, CDABP0092, HDCMA22P;                                      
+SOURCE  14 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE  15 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE  16 EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 
+SOURCE  17 MOL_ID: 3;                                                           
+SOURCE  18 ORGANISM_SCIENTIFIC: HUMAN IMMUNODEFICIENCY VIRUS 1;                 
+SOURCE  19 ORGANISM_TAXID: 11676;                                               
+SOURCE  20 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE  21 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE  22 EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 
+SOURCE  23 MOL_ID: 4;                                                           
+SOURCE  24 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  25 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  26 ORGANISM_TAXID: 9606;                                                
+SOURCE  27 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE  28 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE  29 EXPRESSION_SYSTEM_STRAIN: BL21(DE3);                                 
+SOURCE  30 MOL_ID: 5;                                                           
+SOURCE  31 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+SOURCE  32 ORGANISM_COMMON: HUMAN;                                              
+SOURCE  33 ORGANISM_TAXID: 9606;                                                
+SOURCE  34 EXPRESSION_SYSTEM: ESCHERICHIA COLI BL21(DE3);                       
+SOURCE  35 EXPRESSION_SYSTEM_TAXID: 469008;                                     
+SOURCE  36 EXPRESSION_SYSTEM_STRAIN: BL21(DE3)                                  
+DBREF  7DZN A    3   279  UNP    V6E0U6   V6E0U6_HUMAN    25    301             
+DBREF  7DZN B    1    99  UNP    P61769   B2MG_HUMAN      21    119             
+DBREF  7DZN C    1     9  UNP    P03367   POL_HV1BR      180    188             
+DBREF  7DZN D    0   243  PDB    7DZN     7DZN             0    243             
+DBREF  7DZN E    1   204  PDB    7DZN     7DZN             1    204             
+SEQADV 7DZN MET A    1  UNP  V6E0U6              EXPRESSION TAG                 
+SEQADV 7DZN GLY A    2  UNP  V6E0U6              EXPRESSION TAG                 
+SEQADV 7DZN MET B    0  UNP  P61769              EXPRESSION TAG                 
+SEQRES   1 A  279  MET GLY GLY SER HIS SER MET ARG TYR PHE TYR THR SER          
+SEQRES   2 A  279  VAL SER ARG PRO GLY ARG GLY GLU PRO ARG PHE ILE SER          
+SEQRES   3 A  279  VAL GLY TYR VAL ASP ASP THR GLN PHE VAL ARG PHE ASP          
+SEQRES   4 A  279  SER ASP ALA ALA SER PRO ARG GLU GLU PRO ARG ALA PRO          
+SEQRES   5 A  279  TRP ILE GLU GLN GLU GLY PRO GLU TYR TRP ASP ARG ASN          
+SEQRES   6 A  279  THR GLN ILE TYR LYS ALA GLN ALA GLN THR ASP ARG GLU          
+SEQRES   7 A  279  SER LEU ARG ASN LEU ARG GLY TYR TYR ASN GLN SER GLU          
+SEQRES   8 A  279  ALA GLY SER HIS THR LEU GLN SER MET TYR GLY CYS ASP          
+SEQRES   9 A  279  VAL GLY PRO ASP GLY ARG LEU LEU ARG GLY HIS ASN GLN          
+SEQRES  10 A  279  TYR ALA TYR ASP GLY LYS ASP TYR ILE ALA LEU ASN GLU          
+SEQRES  11 A  279  ASP LEU ARG SER TRP THR ALA ALA ASP THR ALA ALA GLN          
+SEQRES  12 A  279  ILE THR GLN ARG LYS TRP GLU ALA ALA ARG VAL ALA GLU          
+SEQRES  13 A  279  GLN ASP ARG ALA TYR LEU GLU GLY THR CYS VAL GLU TRP          
+SEQRES  14 A  279  LEU ARG ARG TYR LEU GLU ASN GLY LYS ASP THR LEU GLU          
+SEQRES  15 A  279  ARG ALA ASP PRO PRO LYS THR HIS VAL THR HIS HIS PRO          
+SEQRES  16 A  279  ILE SER ASP HIS GLU ALA THR LEU ARG CYS TRP ALA LEU          
+SEQRES  17 A  279  GLY PHE TYR PRO ALA GLU ILE THR LEU THR TRP GLN ARG          
+SEQRES  18 A  279  ASP GLY GLU ASP GLN THR GLN ASP THR GLU LEU VAL GLU          
+SEQRES  19 A  279  THR ARG PRO ALA GLY ASP ARG THR PHE GLN LYS TRP ALA          
+SEQRES  20 A  279  ALA VAL VAL VAL PRO SER GLY GLU GLU GLN ARG TYR THR          
+SEQRES  21 A  279  CYS HIS VAL GLN HIS GLU GLY LEU PRO LYS PRO LEU THR          
+SEQRES  22 A  279  LEU ARG TRP GLU PRO SER                                      
+SEQRES   1 B  100  MET ILE GLN ARG THR PRO LYS ILE GLN VAL TYR SER ARG          
+SEQRES   2 B  100  HIS PRO ALA GLU ASN GLY LYS SER ASN PHE LEU ASN CYS          
+SEQRES   3 B  100  TYR VAL SER GLY PHE HIS PRO SER ASP ILE GLU VAL ASP          
+SEQRES   4 B  100  LEU LEU LYS ASN GLY GLU ARG ILE GLU LYS VAL GLU HIS          
+SEQRES   5 B  100  SER ASP LEU SER PHE SER LYS ASP TRP SER PHE TYR LEU          
+SEQRES   6 B  100  LEU TYR TYR THR GLU PHE THR PRO THR GLU LYS ASP GLU          
+SEQRES   7 B  100  TYR ALA CYS ARG VAL ASN HIS VAL THR LEU SER GLN PRO          
+SEQRES   8 B  100  LYS ILE VAL LYS TRP ASP ARG ASP MET                          
+SEQRES   1 C    9  THR PRO GLN ASP LEU ASN THR MET LEU                          
+SEQRES   1 D  244  MET GLY ASP ALA GLY VAL ILE GLN SER PRO ARG HIS GLU          
+SEQRES   2 D  244  VAL THR GLU MET GLY GLN GLU VAL THR LEU ARG CYS LYS          
+SEQRES   3 D  244  PRO ILE SER GLY HIS ASN SER LEU PHE TRP TYR ARG GLN          
+SEQRES   4 D  244  THR MET MET ARG GLY LEU GLU LEU LEU ILE TYR PHE ASN          
+SEQRES   5 D  244  ASN ASN VAL PRO ILE ASP ASP SER GLY MET PRO GLU ASP          
+SEQRES   6 D  244  ARG PHE SER ALA LYS MET PRO ASN ALA SER PHE SER THR          
+SEQRES   7 D  244  LEU LYS ILE GLN PRO SER GLU PRO ARG ASP SER ALA VAL          
+SEQRES   8 D  244  TYR PHE CYS ALA SER SER LEU GLY ILE ASP ALA ILE TYR          
+SEQRES   9 D  244  PHE GLY GLU GLY SER TRP LEU THR VAL VAL GLU ASP LEU          
+SEQRES  10 D  244  LYS ASN VAL PHE PRO PRO GLU VAL ALA VAL PHE GLU PRO          
+SEQRES  11 D  244  SER GLU ALA GLU ILE SER HIS THR GLN LYS ALA THR LEU          
+SEQRES  12 D  244  VAL CYS LEU ALA THR GLY PHE TYR PRO ASP HIS VAL GLU          
+SEQRES  13 D  244  LEU SER TRP TRP VAL ASN GLY LYS GLU VAL HIS SER GLY          
+SEQRES  14 D  244  VAL CYS THR ASP PRO GLN PRO LEU LYS GLU GLN PRO ALA          
+SEQRES  15 D  244  LEU ASN ASP SER ARG TYR ALA LEU SER SER ARG LEU ARG          
+SEQRES  16 D  244  VAL SER ALA THR PHE TRP GLN ASN PRO ARG ASN HIS PHE          
+SEQRES  17 D  244  ARG CYS GLN VAL GLN PHE TYR GLY LEU SER GLU ASN ASP          
+SEQRES  18 D  244  GLU TRP THR GLN ASP ARG ALA LYS PRO VAL THR GLN ILE          
+SEQRES  19 D  244  VAL SER ALA GLU ALA TRP GLY ARG ALA ASP                      
+SEQRES   1 E  204  MET GLY ASP ALA LYS THR THR GLN PRO PRO SER MET ASP          
+SEQRES   2 E  204  CYS ALA GLU GLY ARG ALA ALA ASN LEU PRO CYS ASN HIS          
+SEQRES   3 E  204  SER THR ILE SER GLY ASN GLU TYR VAL TYR TRP TYR ARG          
+SEQRES   4 E  204  GLN ILE HIS SER GLN GLY PRO GLN TYR ILE ILE HIS GLY          
+SEQRES   5 E  204  LEU LYS ASN ASN GLU THR ASN GLU MET ALA SER LEU ILE          
+SEQRES   6 E  204  ILE THR GLU ASP ARG LYS SER SER THR LEU ILE LEU PRO          
+SEQRES   7 E  204  HIS ALA THR LEU ARG ASP THR ALA VAL TYR TYR CYS ILE          
+SEQRES   8 E  204  VAL ARG GLY LEU ASN ASN ALA GLY ASN MET LEU THR PHE          
+SEQRES   9 E  204  GLY GLY GLY THR ARG LEU MET VAL LYS PRO ASP ILE GLN          
+SEQRES  10 E  204  ASN PRO ASP PRO ALA VAL TYR GLN LEU ARG ASP SER LYS          
+SEQRES  11 E  204  SER SER ASP LYS SER VAL CYS LEU PHE THR ASP PHE ASP          
+SEQRES  12 E  204  SER GLN THR ASN VAL SER GLN SER LYS ASP SER ASP VAL          
+SEQRES  13 E  204  TYR ILE THR ASP LYS CYS VAL LEU ASP MET ARG SER MET          
+SEQRES  14 E  204  ASP PHE LYS SER ASN SER ALA VAL ALA TRP SER ASN LYS          
+SEQRES  15 E  204  SER ASP PHE ALA CYS ALA ASN ALA PHE ASN ASN SER ILE          
+SEQRES  16 E  204  ILE PRO GLU ASP THR PHE PHE PRO SER                          
