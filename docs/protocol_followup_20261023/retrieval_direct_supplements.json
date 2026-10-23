@@ -1,0 +1,26 @@
+[
+  {
+    "name": "kras2021_pmc_supp.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/8285372/bin/41467_2021_24562_MOESM1_ESM.pdf",
+    "status": "unavailable",
+    "reason": "ValueError: Not PDF; no challenge/HTML admitted"
+  },
+  {
+    "name": "kras2021_oa_package_metadata.xml",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC8285372",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (22) The requested URL returned error: 404"
+  },
+  {
+    "name": "jci_supp_sd1.pdf",
+    "url": "https://www.jci.org/articles/view/175790/sd/1",
+    "status": "unavailable",
+    "reason": "ValueError: Not PDF; no challenge/HTML admitted"
+  },
+  {
+    "name": "jci_supp_doi.pdf",
+    "url": "https://doi.org/10.1172/JCI175790DS1",
+    "status": "unavailable",
+    "reason": "ValueError: Not PDF; no challenge/HTML admitted"
+  }
+]

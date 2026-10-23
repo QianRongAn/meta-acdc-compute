@@ -1,0 +1,20 @@
+[
+  {
+    "name": "a3_primary_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:36174557%20AND%20SRC:MED&format=json",
+    "status": "unavailable",
+    "reason": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "name": "kras_2021_supplement.pdf",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41467-021-24562-2/MediaObjects/41467_2021_24562_MOESM1_ESM.pdf",
+    "status": "unavailable",
+    "reason": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "name": "jci_supplement_archive.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11529987/supplementaryFiles",
+    "status": "unavailable",
+    "reason": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  }
+]

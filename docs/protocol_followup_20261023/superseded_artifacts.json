@@ -1,0 +1,31 @@
+[
+  {
+    "path": "docs/admission_followup_20261022/derived/kras_raw_cell_ledger.json",
+    "sha256": "081bb5b6086f9c5b4a5962fd3e1667d209494c21d4c087ab0413cb3a0d2df1a2",
+    "withdrawn_interpretations": [
+      "744 unique pair interpretation",
+      "20 parent-control interpretation",
+      "unverified cell-to-peptide assignments"
+    ],
+    "retained_evidence": [
+      "raw cell values",
+      "raw control values",
+      "source coordinates"
+    ],
+    "allowed_as_training_input": false,
+    "replacement": "docs/protocol_followup_20261023/construct_condition_audit_v2.json"
+  },
+  {
+    "path": "docs/protocol_followup_20261023/construct_condition_audit.json",
+    "sha256": "c4aebd801eeecee26b7a1839861eeaa317dca31538764344faa5e00029de32e7",
+    "withdrawn_interpretations": [
+      "initial interpretation of every KRAS peptide field"
+    ],
+    "retained_evidence": [
+      "PTEAM constant audit",
+      "raw normalization controls"
+    ],
+    "allowed_as_training_input": false,
+    "replacement": "docs/protocol_followup_20261023/construct_condition_audit_v2.json"
+  }
+]

@@ -40,7 +40,7 @@ class AdmissionFollowupTests(unittest.TestCase):
             with self.assertRaises(ValueError):patent_tables(path,[1])
         with self.assertRaises(ValueError):st25('<210> 9\n<211> 3\n<400> 9\nAla Gly\n',9)
 
-    def test_all_760_raw_cells_controls_and_derived_values(self):
+    def test_historical_literal_mapping_raw_cells_are_preserved_not_admitted(self):
         d=load('kras_raw_cell_ledger.json');source=cells(ROOT/d['source_file'],d['sheet'])
         wt='VVVGAVGVGK'
         for row in d['observations']:

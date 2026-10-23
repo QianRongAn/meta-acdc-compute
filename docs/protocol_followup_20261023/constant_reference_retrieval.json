@@ -1,0 +1,22 @@
+[
+  {
+    "name": "human_TRAC_uniprot.fasta",
+    "url": "https://rest.uniprot.org/uniprotkb/P01848.fasta",
+    "status": "retrieved",
+    "bytes": 244,
+    "sha256": "d80aa135f1541edc55818d3f06c69dcf2b97cabea8f6e3ee8fc21bbf8f240c1c"
+  },
+  {
+    "name": "mouse_TRAC_uniprot.fasta",
+    "url": "https://rest.uniprot.org/uniprotkb/P01849.fasta",
+    "status": "retrieved",
+    "bytes": 241,
+    "sha256": "1850a2fe9db374fd4e5b859193b513667dacec63081ce1c158bf8698989c8bc4"
+  },
+  {
+    "name": "jci_supp_tls12.pdf",
+    "url": "https://dm5migu4zj3pb.cloudfront.net/manuscripts/175000/175790/JCI175790.sd.pdf",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (35) Recv failure: Connection was reset"
+  }
+]

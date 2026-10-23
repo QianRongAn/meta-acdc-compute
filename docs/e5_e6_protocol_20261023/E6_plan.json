@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "date": "2026-10-23",
+  "status": "prospective_protocol_prepared_before_study_runs",
+  "registration": "Git commit fixes this plan; no external registry submission is claimed",
+  "data_mode": "synthetic_only",
+  "biological_data_read": false,
+  "heldout_labels_read": false,
+  "heldout_scores_read": false,
+  "study_runs_executed": false,
+  "base_commit": "ec8db200e2399b3584adb3a0831b4758e0805ed9",
+  "rng": "NumPy Generator PCG64; seed=int(SHA256(UTF8(experiment|version|scenario_id|replicate|stream))[:16],16)",
+  "repetitions": 5000,
+  "failures": "Do not replace seeds or remove failed replicates. Any nonfinite/missing output blocks the cell from a confirmatory summary until a logged code repair and same-seed full-cell rerun.",
+  "access_boundary": "No SPR, MIRA, clinical, fresh reservation, candidate response or structural score file is an analysis input.",
+  "multiplicity": "One named primary estimand. All grids and additional methods are labeled sensitivity/descriptive; no search for a positive result.",
+  "reporting": "Retain all cell/replicate results and failed runs; report mean, MCSE and 95% Monte Carlo intervals. Biological generalization is not inferred.",
+  "experiment": "E6",
+  "title": "Coverage and power with few independent source blocks",
+  "primary": {
+    "scenario": "primary_n14_b3",
+    "effect": 0.0,
+    "estimand": "Two-sided 95% source-bootstrap interval coverage"
+  },
+  "scenarios": [
+    {
+      "id": "primary_n14_b2",
+      "n": 14,
+      "blocks": 2,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "primary_n14_b3",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "primary_n14_b5",
+      "n": 14,
+      "blocks": 5,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "primary_n14_b8",
+      "n": 14,
+      "blocks": 8,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_n50_b3",
+      "n": 50,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_n50_b8",
+      "n": 50,
+      "blocks": 8,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_n200_b3",
+      "n": 200,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_n200_b8",
+      "n": 200,
+      "blocks": 8,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_source_0.0",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.0,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_source_0.8",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.8,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_technical_0.0",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.0,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_technical_0.5",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.5,
+      "paired_latent_error_correlation": 0.9
+    },
+    {
+      "id": "sensitivity_pair_correlation_0.5",
+      "n": 14,
+      "blocks": 3,
+      "prediction_error_source_fraction": 0.5,
+      "technical_SD": 0.3,
+      "paired_latent_error_correlation": 0.5
+    }
+  ],
+  "effect_grid_pKD_RMSE": [
+    0.0,
+    0.01,
+    0.03,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "bootstrap_draws": 1999,
+  "grouping": "Allocate n rows to b source blocks, sizes floor(n/b) or ceil(n/b), remainder to lowest source indices. Within each source allocate rows round-robin to min(2,source_size) receptor families. No real receptor or study identity is imported.",
+  "baseline_population_RMSE": 1.0,
+  "generator": {
+    "prediction_error_SD": "sqrt(1-technical_SD**2)",
+    "error0": "sigma_pred*(sqrt(rho_source)*A0_source + sqrt((1-rho_source)/2)*F0_family + sqrt((1-rho_source)/2)*R0_row)",
+    "independent_error": "Same construction with independent A1,F1,R1, using the identical group layout and variances.",
+    "scaling": "c=sqrt(((1-effect)**2-technical_SD**2)/(1-technical_SD**2)); reject infeasible combinations, never clip radicands.",
+    "error1": "c*(gamma*error0 + sqrt(1-gamma**2)*independent_error)",
+    "observed_errors": "E0=error0+technical_SD*T_row; E1=error1+technical_SD*T_row, the same technical draw for the same measured row.",
+    "distributions": "All A,F,R,T independent standard normals except the explicitly shared terms. Sources independent. rho_source concerns latent prediction-error variance, not observed-label ICC.",
+    "truth": "Population RMSE0=1 and RMSE1=1-effect, so population improvement equals effect. This is an error-level simulation, not a trained/oracle biological predictor."
+  },
+  "point_estimate": "sqrt(mean(E0**2))-sqrt(mean(E1**2)), pooled row-weighted RMSE difference; positive favors model1.",
+  "methods": {
+    "source_bootstrap": "Resample b source blocks with replacement, retaining every nested family and row and paired errors. Recompute pooled RMSE difference on selected rows. 1999 draws; NumPy quantile(method=linear): 2.5/97.5 percentiles for coverage, 5th percentile for the one-sided improvement rule.",
+    "row_bootstrap": "Same draw count, resample n paired rows ignoring blocks; explicitly a misspecified comparator, never a recommended acceptance procedure.",
+    "source_swap": "Enumerate all 2**b within-source swaps of the entire model0/model1 paired error vectors. One-sided p=count(permuted_delta >= observed_delta-1e-12)/2**b, including identity. Validity relies on model-label exchangeability under this synthetic null; no unverified exactness claim for biological data."
+  },
+  "primary_false_pass_alpha": 0.05,
+  "coverage_target": 0.95,
+  "outputs": [
+    "replicate point difference",
+    "both bootstrap intervals and one-sided lower bounds",
+    "source-swap p",
+    "coverage",
+    "false-pass rate under effect=0",
+    "power under effect>0",
+    "interval width",
+    "Monte Carlo intervals",
+    "qualified and unqualified grid MDE"
+  ],
+  "interval_reporting": "Coverage, power and false-pass probabilities use Wilson 95% Monte Carlo intervals; bounded indicators are averaged over all 5000 independent datasets. Do not treat bootstrap draws as independent datasets.",
+  "mde": "Smallest positive grid effect whose Wilson lower bound for power is >=0.80. Qualify a method only when its null false-pass Wilson upper bound <=0.07; bootstrap additionally requires two-sided coverage Wilson lower bound >=0.93 at null and every effect up to that grid point. Report unqualified apparent power separately. If none qualifies report >0.20 or not estimable; no interpolation or post-hoc grid extension.",
+  "quality_tolerance_note": "0.07/0.93 are predeclared 2-percentage-point methodological tolerances around 0.05/0.95, not biological benefit thresholds.",
+  "discrete_test_limit": "For enumerated b blocks the smallest one-sided source-swap p is 1/2**b; b=2 or 3 cannot reject at 0.05. This arithmetic is a design constraint, not a study result.",
+  "application_gate": {
+    "status": "not_authorized_by_this_simulation",
+    "actual_minimum_benefit_delta": null,
+    "reason": "No verified development-only repeatability/use-case basis yet fixes an actual clinical or affinity benefit threshold. Synthetic SD/effect grids are declared stress tests, not estimates from consumed tests. Real-data power mapping requires a separate amendment before new outcome access."
+  },
+  "inference_boundary": "No universal receptor-count cutoff or claim that current n=14 measured gain is proven zero. Conclusions conditional on the specified Gaussian hierarchical error generator.",
+  "planned_git_tag": "protocol/e5-e6-v1-20261023",
+  "stream_keys": "E5 scenario excludes k, so all k share prefixes. E6 scenario excludes effect, so effects share latent draws and resampling indices. Distinct streams for labels, common/candidate scores, shadow and resampling.",
+  "mandatory_secondary": "False-pass probability of one-sided 95% lower bound > 0, co-reported without replacing the primary coverage endpoint"
+}

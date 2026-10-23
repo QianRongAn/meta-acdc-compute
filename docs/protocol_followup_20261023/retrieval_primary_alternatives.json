@@ -1,0 +1,24 @@
+[
+  {
+    "name": "a3_repository_locations.json",
+    "url": "https://api.openalex.org/works/https://doi.org/10.1016/j.immuni.2022.09.004",
+    "transport": "native curl direct TLS verified",
+    "bytes": 31753,
+    "sha256": "c3ff779073b08983c2b1dc624d100920741e6776af50aae7ebbc41f920872e6f",
+    "status": "retrieved"
+  },
+  {
+    "name": "kras2021_archive",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8285372/supplementaryFiles",
+    "transport": "native curl direct TLS verified",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (28) Operation timed out after 150002 milliseconds with 2274764 bytes received"
+  },
+  {
+    "name": "jci_archive",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11529987/supplementaryFiles",
+    "transport": "native curl direct TLS verified",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (28) Operation timed out after 150010 milliseconds with 7070587 bytes received"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "status": "new_functional_confirmatory_release_blocked",
+  "training_release_created": false,
+  "new_test_created": false,
+  "models_trained": false,
+  "models_scored": false,
+  "source_response_audit_only": true,
+  "current_cell_ledger": "docs/protocol_followup_20261023/kras_raw_cell_ledger_v2.json",
+  "current_construct_audit": "docs/protocol_followup_20261023/construct_condition_audit_v2.json",
+  "blockers": [
+    "20 CMV alpha constant segments conflict with Methods human-TRAC statement; 19 prior DNA-consistent pairs remain blocked.",
+    "360 KRAS main-matrix cell-to-peptide identities remain ambiguous; 62 primary library amino-acid annotations conflict with full sequences.",
+    "KRAS Methods/caption normalization and background choices are not reconciled with actual analysis files.",
+    "PTEAM human panel peptide dose and CMV raw normalization denominators not established in examined primary sources.",
+    "Exact experimental construct bridge and enough independently sourced acceptance blocks not established."
+  ],
+  "existing_eligible_SPR_development_exploration_remains_allowed": true,
+  "clinical_manufacturing_bridge_is_separate_not_universal_SPR_prerequisite": true,
+  "biological_acceptance_delta_not_estimated_from_consumed_tests": true,
+  "simulation_protocols_prepared": true,
+  "simulation_study_runs_executed": false
+}

@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "date": "2026-10-23",
+  "status": "prospective_protocol_prepared_before_study_runs",
+  "registration": "Git commit fixes this plan; no external registry submission is claimed",
+  "data_mode": "synthetic_only",
+  "biological_data_read": false,
+  "heldout_labels_read": false,
+  "heldout_scores_read": false,
+  "study_runs_executed": false,
+  "base_commit": "ec8db200e2399b3584adb3a0831b4758e0805ed9",
+  "rng": "NumPy Generator PCG64; seed=int(SHA256(UTF8(experiment|version|scenario_id|replicate|stream))[:16],16)",
+  "repetitions": 5000,
+  "failures": "Do not replace seeds or remove failed replicates. Any nonfinite/missing output blocks the cell from a confirmatory summary until a logged code repair and same-seed full-cell rerun.",
+  "access_boundary": "No SPR, MIRA, clinical, fresh reservation, candidate response or structural score file is an analysis input.",
+  "multiplicity": "One named primary estimand. All grids and additional methods are labeled sensitivity/descriptive; no search for a positive result.",
+  "reporting": "Retain all cell/replicate results and failed runs; report mean, MCSE and 95% Monte Carlo intervals. Biological generalization is not inferred.",
+  "experiment": "E5",
+  "title": "Selection optimism on correlated null candidate scores",
+  "primary": {
+    "n_selection": 14,
+    "n_positive": 7,
+    "k": 20,
+    "rho": 0.5,
+    "n_shadow": 200,
+    "n_shadow_positive": 100,
+    "estimand": "Mean(selection_AUROC_selected - shadow_AUROC_selected)"
+  },
+  "grid": {
+    "n_selection": [
+      14,
+      50,
+      200
+    ],
+    "k": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      50
+    ],
+    "rho": [
+      0.0,
+      0.5,
+      0.9,
+      1.0
+    ]
+  },
+  "generator": "For each independent panel draw labels balanced, then permute their order. Scores Z[i,j]=sqrt(rho)*G_common[i]+sqrt(1-rho)*G_candidate[i,j]; all G independent N(0,1), independent of labels. Selection/shadow streams are independent. No model fitting.",
+  "nesting": "Within each n,rho,replicate generate 50 candidates once; k uses the first k columns. The shared selection panel and shadow panel remain fixed across k.",
+  "selection": "Choose the largest selection AUROC; exact ties choose the lowest candidate index. Shadow data never select candidates or k.",
+  "auc": "Mann-Whitney rank AUROC, average ranks for ties; both classes required.",
+  "shadow": "200 balanced independently generated observations for all cells; apply the selected candidate column only.",
+  "outputs": [
+    "selected_index",
+    "selection_AUROC",
+    "shadow_AUROC",
+    "optimism",
+    "paired_increment_vs_k1",
+    "naive_one_sided_p",
+    "false_pass_rate",
+    "failed_replicates"
+  ],
+  "naive_test": "scipy.stats.mannwhitneyu(positive_scores,negative_scores,alternative=greater,method=exact) for n=14 without ties; method=asymptotic,use_continuity=True otherwise. All-constant control has p=1. Report naive p<=0.05 after selection as a false-pass event, not a corrected inferential claim.",
+  "mc_intervals": "Mean optimism: mean +/- 1.96*sample_SD/sqrt(5000). Event rates: Wilson 95% intervals. Also report replicate 2.5/97.5 percentiles separately as spread, not CI for the mean.",
+  "controls": [
+    "rho=1: all candidate columns exactly identical; k cannot improve AUROC or change tie-selected index.",
+    "all_constant: every score zero on both panels, AUROC=0.5, p=1, retained rather than filtered."
+  ],
+  "interpretation": "Estimate finite-panel selection optimism under specified dependence; no biological performance threshold, no claim of methodological novelty by itself.",
+  "planned_git_tag": "protocol/e5-e6-v1-20261023",
+  "stream_keys": "E5 scenario excludes k, so all k share prefixes. E6 scenario excludes effect, so effects share latent draws and resampling indices. Distinct streams for labels, common/candidate scores, shadow and resampling."
+}

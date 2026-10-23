@@ -1,0 +1,22 @@
+[
+  {
+    "name": "a3_primary_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:36174557%20AND%20SRC:MED&format=json",
+    "transport": "system curl, certificate verification enabled, direct connection",
+    "status": "retrieved",
+    "bytes": 1144,
+    "sha256": "065ce8371b46c05481178de1d091aefb21c47eb6b7da26bf246244aaf3137f25"
+  },
+  {
+    "name": "kras_2021_supplement.pdf",
+    "url": "https://static-content.springer-cdn.com/esm/art%3A10.1038%2Fs41467-021-24562-2/MediaObjects/41467_2021_24562_MOESM1_ESM.pdf",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (6) Could not resolve host: static-content.springer-cdn.com"
+  },
+  {
+    "name": "jci_supplement_archive.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11529987/supplementaryFiles",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (28) Operation timed out after 45001 milliseconds with 7332475 bytes received"
+  }
+]

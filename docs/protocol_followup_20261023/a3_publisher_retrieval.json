@@ -1,0 +1,17 @@
+[
+  {
+    "name": "a3_publisher.pdf",
+    "url": "https://www.cell.com/article/S1074761322004988/pdf",
+    "status": "unavailable",
+    "reason": "RuntimeError: curl: (22) The requested URL returned error: 403"
+  },
+  {
+    "name": "a3_publisher_api.xml",
+    "url": "https://api.elsevier.com/content/article/pii/S1074761322004988?httpAccept=text/xml",
+    "status": "retrieved",
+    "sha256": "65b6c651d8bd4750104abd49cd6247d0281c8afcb30c58744b62f7ea2baa4ef8",
+    "bytes": 1987,
+    "usable_full_text": false,
+    "content_scope": "core publication metadata only; no article body or supplementary sequences"
+  }
+]
