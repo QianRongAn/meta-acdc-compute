@@ -1,0 +1,102 @@
+{
+  "protocol_id": "FINGERPRINT-CORRECTED-RETRAIN-20261023-v1",
+  "frozen_before_new_training": true,
+  "scope": "developmental replication on previously exposed 331-graph identity retrieval panel; NOT independent binding validation",
+  "historical_exposure": [
+    "0.7666/0.7944 and shortcut/stratified diagnostics known before protocol"
+  ],
+  "dataset": "/home/administrator/docs/meta-acdc/data/processed/fingerprint_dataset.pt",
+  "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+  "fold_assignment": "docs/fingerprint_retrain_20261023/fold_assignment.json",
+  "fold_assignment_sha256": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+  "n_folds": 5,
+  "seeds": [
+    20261021,
+    1101,
+    4242
+  ],
+  "arms": {
+    "true": "true",
+    "shuffled": "train-shuffle"
+  },
+  "recipe_cli": {
+    "epochs": 120,
+    "warmup-epochs": 5,
+    "batch-size": 64,
+    "temperature": 0.07,
+    "emb-dim": 128,
+    "family-neg-weight": 1.0,
+    "lr": 0.0003,
+    "lr-min": 3e-06,
+    "wd": 0.0001,
+    "grad-clip": 10.0,
+    "folds": 5,
+    "cpu-threads": 2,
+    "permutation-seed": 20261023
+  },
+  "architecture": "6-layer hidden128 invariant EGNN; unchanged historical v2 recipe, corrected edges/seeds; head385->256->128",
+  "epoch_selection": "fixed final epoch120 only; no tuning, checkpoint selection, early stopping or best-seed selection",
+  "validation_policy": "No parameter search. Original 5 historically exposed family folds used for descriptive out-of-fold queries. Actual independent measured acceptance sets remain unopened.",
+  "baselines": [
+    "raw residue composition cosine columns4:24",
+    "scalar node-count cosine (degenerate diagnostic)",
+    "negative absolute log node-count distance",
+    "negative absolute centered mean-radius distance (secondary)"
+  ],
+  "gallery": "all331 graphs excluding query, historical transductive-gallery identity retrieval; positive identity matches may be in held-out fold",
+  "primary": {
+    "metric": "family-equal mean of per-query AUROC(model)-AUROC(composition), same-family negative restriction, seed-averaged within query",
+    "eligible": "all same-receptor positives retained, only same-family different-receptor negatives; both classes required; undefined counts reported",
+    "expected_available_from_metadata": "62 queries, 11 families; not an independent 331-sample test",
+    "evidence_rule": "conditional family-cluster CI lower>0; each of3 seed family-mean deltas>0; true-minus-shuffled same-family CI lower>0",
+    "practical_claim": "no biological or practical significance claim; no justified application-level margin exists"
+  },
+  "secondary": [
+    "all-negative query macro/family equal AUROC",
+    "per-fold pooled AUROC and rank1; no cross-fold pooled scoring",
+    "same-peptide/same-domain negatives",
+    "full and same-family ranking Spearman",
+    "collapse median cosine",
+    "per-seed effect sizes, no dropping collapsed seeds"
+  ],
+  "uncertainty": {
+    "replicates": 2000,
+    "seed": 20261023,
+    "unit": "family; equal-family estimand after seed averaging within query",
+    "scope": "conditional on cached trained models and fixed gallery; family groups do not ensure source independence; not full model-population uncertainty"
+  },
+  "shuffle": {
+    "unit": "joint(receptor_id,family_id) tuple permuted across training graph positions only; graph features and original evaluation labels unchanged",
+    "preserved": "training graph positions, fold boundaries, class counts, family counts and class-family mapping; mini-batch positive patterns may change",
+    "seed": "local NumPy RNG base20261023 +1000003*fold + initialization seed",
+    "interpretation": "3 label permutations per fold: descriptive negative control, not calibrated permutation p-value; no permutation selection"
+  },
+  "determinism": {
+    "device": "CPU",
+    "threads": 2,
+    "strict_algorithms": true,
+    "replay": "full fold0 seed20261021 repeated once; exact state tensor and embedding equality required"
+  },
+  "failure_policy": "Stop on nonfinite loss/gradient or failed binding/replay; retain logs and partial files. Any recipe/data/source changes require explicit new frozen amendment before rerun. No shortening epochs after inspecting results.",
+  "protection": "Exclusive flock prevents duplicate runner. No SPR/MIRA/clinical/reserved acceptance dataset paths are read.",
+  "environment": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "torch": "2.9.1+cu126",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1"
+  },
+  "source_sha256": {
+    "src/meta_acdc/models/train_fingerprint_v2.py": "56a4d857e1a7999208c6910b2facbda023bde2720f7c09edfc1ac78821182477",
+    "src/meta_acdc/models/train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+    "src/meta_acdc/models/egnn.py": "f1d4ef0708a0ef0f221c1de7a8a33b2f932c436d4160ac7cc78e8c7a091fdc3c",
+    "src/meta_acdc/models/train_egnn.py": "99f19022a60baccdb7d80a5e1f4df8b740f3003458301c9e1a0b56035bfb994d",
+    "src/meta_acdc/structure/feature_schema.py": "b82a7c0b0ad6cc01a4c7ecbc175051cb4b68c9dd175cc0f6c3bc926377e60e22",
+    "scripts/run_fingerprint_retrain.py": "47b820654e66c4ab7b2a37961207d19e937eec699ceaed65c322376164e3dd3a",
+    "scripts/evaluate_fingerprint_retrain.py": "aef5365ac2dbb100c74569b85c8ced9dae161cb2615e808184399fd32ecbb80f",
+    "scripts/fingerprint_shortcut_audit.py": "9e21dca71016944f39868769caec83397fb34591a6ac17e69a4093ec84f66663",
+    "scripts/rashomon_fingerprint.py": "f91c2c940d8f1b27e0a1ab513b264499afdf61b9eddefcacde875f7a902bb80b",
+    "tests/test_fingerprint_retrain.py": "ef04fbcc3ae8d5339c518d8ff94b1802a7b5c8139c3026acb95baffe99ebbe26",
+    "tests/test_fingerprint_review.py": "c4649672ecd7b7a70c24dd5b887f510aad3e0483057887dd9943149176e34b9f"
+  }
+}

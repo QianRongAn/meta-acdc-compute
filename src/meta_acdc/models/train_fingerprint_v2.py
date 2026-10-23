@@ -57,7 +57,7 @@ from meta_acdc.models.train_fingerprint import (
 SEED = 20261021
 TEMPERATURE = 0.07
 EMB_DIM = 128
-EXECUTION_PROTOCOL = "isolated-fold-seed-and-offset-edges-v1"
+EXECUTION_PROTOCOL = "isolated-fold-seed-offset-edges-label-control-v2"
 
 
 def file_sha256(path: Path) -> str:
@@ -74,6 +74,26 @@ def set_seed(seed: int):
         torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
+
+
+def training_supervision(records, train_idx, mode, permutation_seed):
+    """Permute joint receptor/family labels only among training graph positions."""
+    if mode not in ("true", "train-shuffle"):
+        raise ValueError("unknown supervision mode")
+    out = [dict(r) for r in records]
+    source = list(train_idx)
+    if mode == "train-shuffle":
+        source = np.random.default_rng(permutation_seed).permutation(source).tolist()
+    mapping = []
+    for target, origin in zip(train_idx, source):
+        for key in ("receptor_id", "family_id"):
+            out[target][key] = records[origin][key]
+        mapping.append({"target_graph": target, "source_graph": origin,
+                        "original_receptor": records[target]["receptor_id"],
+                        "training_receptor": out[target]["receptor_id"],
+                        "original_family": records[target]["family_id"],
+                        "training_family": out[target]["family_id"]})
+    return out, mapping
 
 
 class EmbedderV2(nn.Module):
@@ -196,13 +216,18 @@ def main(argv: list[str] | None = None) -> int:
                          "rankings + metrics); training math is unchanged")
     ap.add_argument("--max-epochs-probe", type=int, default=None,
                     help="internal: stop after N epochs (timing probe only)")
+    ap.add_argument("--label-mode", choices=("true", "train-shuffle"), default="true")
+    ap.add_argument("--permutation-seed", type=int, default=20261023)
+    ap.add_argument("--cpu-threads", type=int, default=2)
     args = ap.parse_args(argv)
-    if (args.folds < 2 or args.epochs < 1 or args.batch_size < 1
+    if (args.folds < 2 or args.epochs < 1 or args.batch_size < 1 or args.cpu_threads < 1
             or len(set(args.seeds)) != len(args.seeds)
             or (args.only_fold is not None and not 0 <= args.only_fold < args.folds)):
         ap.error("invalid folds, epochs, batch size, duplicate seeds or fold index")
 
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
+    if device == "cpu":
+        torch.set_num_threads(args.cpu_threads)
     print(f"device: {device}", flush=True)
 
     data = torch.load(args.dataset, map_location="cpu", weights_only=False)
@@ -245,6 +270,10 @@ def main(argv: list[str] | None = None) -> int:
         },
         "seeds": args.seeds,
         "device": device,
+        "cpu_threads": args.cpu_threads,
+        "label_mode": args.label_mode,
+        "permutation_seed": args.permutation_seed,
+        "permutation_rule": "local RNG seed = base + 1000003*fold + initialization seed; joint labels, training only",
         "binding_labels": False,
     }
     config_path = args.out_dir / "config.json"
@@ -268,7 +297,8 @@ def main(argv: list[str] | None = None) -> int:
         for fold in fold_list:
             tag = f"fold{fold}_seed{seed}"
             artifacts = (run_dir / f"{tag}.pt", run_dir / f"emb_{tag}.npy",
-                         run_dir / f"sim_{tag}.npy", args.out_dir / f"rankings_{tag}.json")
+                         run_dir / f"sim_{tag}.npy", args.out_dir / f"rankings_{tag}.json",
+                         run_dir / f"labels_{tag}.json")
             metric_path = args.out_dir / f"metrics_{tag}.json"
             complete = all(p.exists() for p in (*artifacts, metric_path))
             if args.resume and complete:
@@ -286,6 +316,9 @@ def main(argv: list[str] | None = None) -> int:
             set_seed(seed)
             test_idx = [i for i, f in enumerate(fold_of) if f == fold]
             train_idx = [i for i in range(len(graphs)) if i not in test_idx]
+            permutation_seed = args.permutation_seed + 1000003 * fold + seed
+            train_records, label_mapping = training_supervision(
+                records, train_idx, args.label_mode, permutation_seed)
             print(f"seed {seed} fold {fold}: train={len(train_idx)} "
                   f"test={len(test_idx)}", flush=True)
             model = EmbedderV2(26, 16, emb_dim=args.emb_dim).to(device)
@@ -312,8 +345,8 @@ def main(argv: list[str] | None = None) -> int:
                 for s in range(0, len(order), args.batch_size):
                     bidx = order[s:s + args.batch_size]
                     h, x, ei, ea, bt, pm, rids = batch_graphs(
-                        graphs, records, bidx, device, model)
-                    fams_b = [records[i]["family_id"] for i in bidx]
+                        graphs, train_records, bidx, device, model)
+                    fams_b = [train_records[i]["family_id"] for i in bidx]
                     embs = model(h, x, ei, ea, bt, pm)
                     embs = embs / embs.norm(dim=1, keepdim=True).clamp(min=1e-8)
                     loss = supcon_loss_v2(embs, rids, fams_b,
@@ -326,7 +359,7 @@ def main(argv: list[str] | None = None) -> int:
                     opt.zero_grad()
                     loss.backward()
                     torch.nn.utils.clip_grad_norm_(
-                        model.parameters(), args.grad_clip)
+                        model.parameters(), args.grad_clip, error_if_nonfinite=True)
                     opt.step()
                     total += float(loss.item())
                     nb += 1
@@ -337,6 +370,11 @@ def main(argv: list[str] | None = None) -> int:
             if args.max_epochs_probe is not None:
                 print("probe mode: stopping without artifacts", flush=True)
                 return 0
+            (run_dir / f"labels_{tag}.json").write_text(json.dumps({
+                "mode": args.label_mode, "permutation_seed": permutation_seed,
+                "train_indices": train_idx, "test_indices_untouched": test_idx,
+                "n_changed_receptor_labels": sum(m["original_receptor"] != m["training_receptor"] for m in label_mapping),
+                "mapping": label_mapping}, indent=2, allow_nan=False) + "\n")
             torch.save({"model": model.state_dict(), "fold": fold,
                         "seed": seed, "config": config},
                        run_dir / f"{tag}.pt")
@@ -359,7 +397,7 @@ def main(argv: list[str] | None = None) -> int:
             res["execution_protocol"] = EXECUTION_PROTOCOL
             res["artifact_sha256"] = {str(p.relative_to(args.out_dir)): file_sha256(p)
                                       for p in artifacts}
-            # Completion marker is written last; resume verifies all four bound artifacts.
+            # Completion marker is written last; resume verifies all five bound artifacts.
             frag.write_text(json.dumps(res, indent=2, allow_nan=False) + "\n")
             print(json.dumps(
                 {k: v for k, v in res.items()

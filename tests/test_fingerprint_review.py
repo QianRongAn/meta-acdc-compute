@@ -35,7 +35,7 @@ def data_fixture():
                        rng.normal(size=(4, 16)).astype('float32')))
         records.append(dict(family_id=f'F{i//4}', receptor_id=f'R{i//2}',
                             complex_id=str(i), domain='crystal' if i % 2 else 'predicted',
-                            peptide_mask=[False, False, True, True]))
+                            peptide_mask=[False, False, True, True], peptide='PEPTIDE'))
     return dict(graphs=graphs, records=records)
 
 class BatchChecks(unittest.TestCase):
@@ -57,6 +57,23 @@ class BatchChecks(unittest.TestCase):
         d['graphs'][0][2][0, 0] = 4
         with self.assertRaisesRegex(ValueError, 'own node'):
             batch_graphs(d['graphs'], d['records'], [0], 'cpu', None)
+
+class SupervisionChecks(unittest.TestCase):
+    def test_training_only_joint_permutation_preserves_counts(self):
+        from collections import Counter
+        records = data_fixture()['records']
+        before = json.dumps(records)
+        train = list(range(8))
+        out, mapping = v2.training_supervision(records,train,'train-shuffle',29)
+        self.assertEqual(json.dumps(records),before)
+        self.assertEqual(out[8:],records[8:])
+        self.assertEqual(Counter((r['receptor_id'],r['family_id']) for r in out[:8]),
+                         Counter((r['receptor_id'],r['family_id']) for r in records[:8]))
+        self.assertTrue(any(out[i]['receptor_id'] != records[i]['receptor_id'] for i in train))
+        self.assertTrue(all(m['source_graph'] in train for m in mapping))
+        np.random.seed(999)
+        self.assertEqual(mapping,v2.training_supervision(records,train,'train-shuffle',29)[1])
+        self.assertEqual(records,v2.training_supervision(records,train,'true',29)[0])
 
 class InstanceChecks(unittest.TestCase):
     def test_full_only_fold_and_resume_are_equal_and_bound(self):
