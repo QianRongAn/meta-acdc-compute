@@ -1,0 +1,193 @@
+{
+  "status": "pass",
+  "n_models": 31,
+  "checks": [
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 1101,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 4242,
+      "metrics_exact_equal": true
+    },
+    {
+      "arm": "replay",
+      "fold": 0,
+      "seed": 20261021,
+      "metrics_exact_equal": true
+    }
+  ],
+  "scope": "metrics recomputed from weight-verified embeddings; no fitting or new test data"
+}

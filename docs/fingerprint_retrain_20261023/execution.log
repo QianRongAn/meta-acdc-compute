@@ -1,0 +1,1152 @@
+device: cpu
+seed 20261021 fold 0: train=272 test=59
+  seed 20261021 fold 0 epoch 0: loss 3.4248 lr 6.00e-05
+  seed 20261021 fold 0 epoch 15: loss 2.5057 lr 2.94e-04
+  seed 20261021 fold 0 epoch 30: loss 1.8111 lr 2.67e-04
+  seed 20261021 fold 0 epoch 45: loss 1.8257 lr 2.20e-04
+  seed 20261021 fold 0 epoch 60: loss 1.1977 lr 1.62e-04
+  seed 20261021 fold 0 epoch 75: loss 0.8861 lr 1.02e-04
+  seed 20261021 fold 0 epoch 90: loss 0.8644 lr 5.01e-05
+  seed 20261021 fold 0 epoch 105: loss 1.2249 lr 1.53e-05
+  seed 20261021 fold 0 epoch 119: loss 0.9159 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.23809523809523808,
+    "mrr": 0.377956384643361,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.9330371323375173,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.3050847457627119,
+    "3": 0.22033898305084745,
+    "5": 0.22033898305084745,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.3898305084745763,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.03982371464371681
+}
+seed 1101 fold 0: train=272 test=59
+  seed 1101 fold 0 epoch 0: loss 3.4578 lr 6.00e-05
+  seed 1101 fold 0 epoch 15: loss 2.5225 lr 2.94e-04
+  seed 1101 fold 0 epoch 30: loss 2.4878 lr 2.67e-04
+  seed 1101 fold 0 epoch 45: loss 1.4921 lr 2.20e-04
+  seed 1101 fold 0 epoch 60: loss 1.1804 lr 1.62e-04
+  seed 1101 fold 0 epoch 75: loss 1.4205 lr 1.02e-04
+  seed 1101 fold 0 epoch 90: loss 0.9501 lr 5.01e-05
+  seed 1101 fold 0 epoch 105: loss 1.2184 lr 1.53e-05
+  seed 1101 fold 0 epoch 119: loss 1.0671 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.21428571428571427,
+    "mrr": 0.33755668433612496,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.9401621380810731,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.3389830508474576,
+    "3": 0.3220338983050847,
+    "5": 0.2711864406779661,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.4745762711864407,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.022950490936636925
+}
+seed 4242 fold 0: train=272 test=59
+  seed 4242 fold 0 epoch 0: loss 3.0103 lr 6.00e-05
+  seed 4242 fold 0 epoch 15: loss 2.5831 lr 2.94e-04
+  seed 4242 fold 0 epoch 30: loss 1.6064 lr 2.67e-04
+  seed 4242 fold 0 epoch 45: loss 1.3293 lr 2.20e-04
+  seed 4242 fold 0 epoch 60: loss 0.8905 lr 1.62e-04
+  seed 4242 fold 0 epoch 75: loss 1.0107 lr 1.02e-04
+  seed 4242 fold 0 epoch 90: loss 1.1364 lr 5.01e-05
+  seed 4242 fold 0 epoch 105: loss 0.7252 lr 1.53e-05
+  seed 4242 fold 0 epoch 119: loss 0.8958 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.16666666666666666,
+    "mrr": 0.3562687325339301,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.9077445106590406,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.3898305084745763,
+    "3": 0.3389830508474576,
+    "5": 0.2542372881355932,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.576271186440678,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.06592980027198792
+}
+{
+  "retrieval_rank1": 0.23809523809523808,
+  "retrieval_mrr": 0.377956384643361,
+  "retrieval_chance_rank1": 0.010533910533910534,
+  "retrieval_auroc": 0.9330371323375173,
+  "family_top1_k1": 0.3050847457627119,
+  "domain_accuracy": 0.3898305084745763,
+  "median_pairwise_cosine": 0.03982371464371681
+}
+device: cpu
+seed 20261021 fold 0: train=272 test=59
+  seed 20261021 fold 0 epoch 0: loss 2.9832 lr 6.00e-05
+  seed 20261021 fold 0 epoch 15: loss 3.5268 lr 2.94e-04
+  seed 20261021 fold 0 epoch 30: loss 3.4376 lr 2.67e-04
+  seed 20261021 fold 0 epoch 45: loss 3.4677 lr 2.20e-04
+  seed 20261021 fold 0 epoch 60: loss 3.4701 lr 1.62e-04
+  seed 20261021 fold 0 epoch 75: loss 3.5170 lr 1.02e-04
+  seed 20261021 fold 0 epoch 90: loss 3.3323 lr 5.01e-05
+  seed 20261021 fold 0 epoch 105: loss 3.4818 lr 1.53e-05
+  seed 20261021 fold 0 epoch 119: loss 3.3914 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.07142857142857142,
+    "mrr": 0.18146309752036976,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.7302788770998939,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.1694915254237288,
+    "3": 0.15254237288135594,
+    "5": 0.13559322033898305,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.4915254237288136,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.9917760491371155
+}
+seed 1101 fold 0: train=272 test=59
+  seed 1101 fold 0 epoch 0: loss 3.4081 lr 6.00e-05
+  seed 1101 fold 0 epoch 15: loss 3.0343 lr 2.94e-04
+  seed 1101 fold 0 epoch 30: loss 3.4412 lr 2.67e-04
+  seed 1101 fold 0 epoch 45: loss 3.5319 lr 2.20e-04
+  seed 1101 fold 0 epoch 60: loss 3.5258 lr 1.62e-04
+  seed 1101 fold 0 epoch 75: loss 3.4608 lr 1.02e-04
+  seed 1101 fold 0 epoch 90: loss 3.4882 lr 5.01e-05
+  seed 1101 fold 0 epoch 105: loss 3.5253 lr 1.53e-05
+  seed 1101 fold 0 epoch 119: loss 2.9288 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.23809523809523808,
+    "mrr": 0.29490042316684517,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.7086094402080865,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.23728813559322035,
+    "3": 0.2033898305084746,
+    "5": 0.1694915254237288,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.6610169491525424,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.9988067150115967
+}
+seed 4242 fold 0: train=272 test=59
+  seed 4242 fold 0 epoch 0: loss 3.4773 lr 6.00e-05
+  seed 4242 fold 0 epoch 15: loss 3.4019 lr 2.94e-04
+  seed 4242 fold 0 epoch 30: loss 2.9950 lr 2.67e-04
+  seed 4242 fold 0 epoch 45: loss 3.5174 lr 2.20e-04
+  seed 4242 fold 0 epoch 60: loss 3.5506 lr 1.62e-04
+  seed 4242 fold 0 epoch 75: loss 3.4662 lr 1.02e-04
+  seed 4242 fold 0 epoch 90: loss 3.5001 lr 5.01e-05
+  seed 4242 fold 0 epoch 105: loss 3.4341 lr 1.53e-05
+  seed 4242 fold 0 epoch 119: loss 3.6309 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.11904761904761904,
+    "mrr": 0.2008118349834855,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.6743850899290995,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.1864406779661017,
+    "3": 0.1694915254237288,
+    "5": 0.0847457627118644,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.3728813559322034,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.9949991703033447
+}
+{
+  "retrieval_rank1": 0.07142857142857142,
+  "retrieval_mrr": 0.18146309752036976,
+  "retrieval_chance_rank1": 0.010533910533910534,
+  "retrieval_auroc": 0.7302788770998939,
+  "family_top1_k1": 0.1694915254237288,
+  "domain_accuracy": 0.4915254237288136,
+  "median_pairwise_cosine": 0.9917760491371155
+}
+device: cpu
+seed 20261021 fold 1: train=245 test=86
+  seed 20261021 fold 1 epoch 0: loss 3.7730 lr 6.00e-05
+  seed 20261021 fold 1 epoch 15: loss 2.4968 lr 2.94e-04
+  seed 20261021 fold 1 epoch 30: loss 1.6575 lr 2.67e-04
+  seed 20261021 fold 1 epoch 45: loss 1.5724 lr 2.20e-04
+  seed 20261021 fold 1 epoch 60: loss 0.9694 lr 1.62e-04
+  seed 20261021 fold 1 epoch 75: loss 0.9782 lr 1.02e-04
+  seed 20261021 fold 1 epoch 90: loss 0.8149 lr 5.01e-05
+  seed 20261021 fold 1 epoch 105: loss 0.6951 lr 1.53e-05
+  seed 20261021 fold 1 epoch 119: loss 0.7604 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.21666666666666667,
+    "mrr": 0.3941555965820671,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.9662689296714579,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.32558139534883723,
+    "3": 0.37209302325581395,
+    "5": 0.37209302325581395,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.686046511627907,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.03455022722482681
+}
+seed 1101 fold 1: train=245 test=86
+  seed 1101 fold 1 epoch 0: loss 3.5729 lr 6.00e-05
+  seed 1101 fold 1 epoch 15: loss 3.1014 lr 2.94e-04
+  seed 1101 fold 1 epoch 30: loss 1.7287 lr 2.67e-04
+  seed 1101 fold 1 epoch 45: loss 1.1113 lr 2.20e-04
+  seed 1101 fold 1 epoch 60: loss 0.7872 lr 1.62e-04
+  seed 1101 fold 1 epoch 75: loss 0.8483 lr 1.02e-04
+  seed 1101 fold 1 epoch 90: loss 0.7506 lr 5.01e-05
+  seed 1101 fold 1 epoch 105: loss 0.8009 lr 1.53e-05
+  seed 1101 fold 1 epoch 119: loss 0.5916 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.25,
+    "mrr": 0.4126943642059921,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.9272301719712526,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.37209302325581395,
+    "3": 0.313953488372093,
+    "5": 0.4069767441860465,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.6511627906976745,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.03003416210412979
+}
+seed 4242 fold 1: train=245 test=86
+  seed 4242 fold 1 epoch 0: loss 3.7214 lr 6.00e-05
+  seed 4242 fold 1 epoch 15: loss 2.4680 lr 2.94e-04
+  seed 4242 fold 1 epoch 30: loss 1.5400 lr 2.67e-04
+  seed 4242 fold 1 epoch 45: loss 1.5212 lr 2.20e-04
+  seed 4242 fold 1 epoch 60: loss 1.0672 lr 1.62e-04
+  seed 4242 fold 1 epoch 75: loss 0.9903 lr 1.02e-04
+  seed 4242 fold 1 epoch 90: loss 0.7954 lr 5.01e-05
+  seed 4242 fold 1 epoch 105: loss 0.6977 lr 1.53e-05
+  seed 4242 fold 1 epoch 119: loss 0.7815 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.18333333333333332,
+    "mrr": 0.3687753217075427,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.9454698729466119,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.3023255813953488,
+    "3": 0.3023255813953488,
+    "5": 0.2441860465116279,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.5813953488372093,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.02946377545595169
+}
+{
+  "retrieval_rank1": 0.22738095238095238,
+  "retrieval_mrr": 0.38605599061271406,
+  "retrieval_chance_rank1": 0.01334776334776335,
+  "retrieval_auroc": 0.9496530310044876,
+  "family_top1_k1": 0.31533307055577453,
+  "domain_accuracy": 0.5379385100512416,
+  "median_pairwise_cosine": 0.03718697093427181
+}
+device: cpu
+seed 20261021 fold 1: train=245 test=86
+  seed 20261021 fold 1 epoch 0: loss 3.6527 lr 6.00e-05
+  seed 20261021 fold 1 epoch 15: loss 3.6522 lr 2.94e-04
+  seed 20261021 fold 1 epoch 30: loss 3.6659 lr 2.67e-04
+  seed 20261021 fold 1 epoch 45: loss 3.8024 lr 2.20e-04
+  seed 20261021 fold 1 epoch 60: loss 3.7180 lr 1.62e-04
+  seed 20261021 fold 1 epoch 75: loss 3.6084 lr 1.02e-04
+  seed 20261021 fold 1 epoch 90: loss 3.6741 lr 5.01e-05
+  seed 20261021 fold 1 epoch 105: loss 3.5625 lr 1.53e-05
+  seed 20261021 fold 1 epoch 119: loss 3.5999 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.16666666666666666,
+    "mrr": 0.2569331402635452,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.7032984150410677,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.22093023255813954,
+    "3": 0.19767441860465115,
+    "5": 0.20930232558139536,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.5813953488372093,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.9854564070701599
+}
+seed 1101 fold 1: train=245 test=86
+  seed 1101 fold 1 epoch 0: loss 3.5591 lr 6.00e-05
+  seed 1101 fold 1 epoch 15: loss 3.5733 lr 2.94e-04
+  seed 1101 fold 1 epoch 30: loss 3.5893 lr 2.67e-04
+  seed 1101 fold 1 epoch 45: loss 3.6191 lr 2.20e-04
+  seed 1101 fold 1 epoch 60: loss 3.6638 lr 1.62e-04
+  seed 1101 fold 1 epoch 75: loss 3.6849 lr 1.02e-04
+  seed 1101 fold 1 epoch 90: loss 3.5947 lr 5.01e-05
+  seed 1101 fold 1 epoch 105: loss 3.6612 lr 1.53e-05
+  seed 1101 fold 1 epoch 119: loss 3.5573 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.06666666666666667,
+    "mrr": 0.159424041217996,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.6679432430698152,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.13953488372093023,
+    "3": 0.11627906976744186,
+    "5": 0.11627906976744186,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.4186046511627907,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.985107958316803
+}
+seed 4242 fold 1: train=245 test=86
+  seed 4242 fold 1 epoch 0: loss 3.5964 lr 6.00e-05
+  seed 4242 fold 1 epoch 15: loss 3.6091 lr 2.94e-04
+  seed 4242 fold 1 epoch 30: loss 3.7215 lr 2.67e-04
+  seed 4242 fold 1 epoch 45: loss 3.6580 lr 2.20e-04
+  seed 4242 fold 1 epoch 60: loss 3.6338 lr 1.62e-04
+  seed 4242 fold 1 epoch 75: loss 3.6018 lr 1.02e-04
+  seed 4242 fold 1 epoch 90: loss 3.6095 lr 5.01e-05
+  seed 4242 fold 1 epoch 105: loss 3.6611 lr 1.53e-05
+  seed 4242 fold 1 epoch 119: loss 3.7174 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.18333333333333332,
+    "mrr": 0.31806053929760164,
+    "chance_rank1": 0.016161616161616165,
+    "n_queries_with_same_receptor_in_gallery": 60,
+    "auroc": 0.6632028041581108,
+    "n_pairs": 19800
+  },
+  "family": {
+    "1": 0.3023255813953488,
+    "3": 0.29069767441860467,
+    "5": 0.26744186046511625,
+    "chance_top1": 0.07755102040816327
+  },
+  "domain": {
+    "accuracy": 0.5116279069767442,
+    "n": 86
+  },
+  "fold": 1,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.9995141625404358
+}
+{
+  "retrieval_rank1": 0.11904761904761904,
+  "retrieval_mrr": 0.21919811889195748,
+  "retrieval_chance_rank1": 0.01334776334776335,
+  "retrieval_auroc": 0.7167886460704809,
+  "family_top1_k1": 0.19521087899093417,
+  "domain_accuracy": 0.5364603862830115,
+  "median_pairwise_cosine": 0.9886162281036377
+}
+device: cpu
+seed 20261021 fold 2: train=234 test=97
+  seed 20261021 fold 2 epoch 0: loss 3.5790 lr 6.00e-05
+  seed 20261021 fold 2 epoch 15: loss 2.7488 lr 2.94e-04
+  seed 20261021 fold 2 epoch 30: loss 2.0309 lr 2.67e-04
+  seed 20261021 fold 2 epoch 45: loss 1.6619 lr 2.20e-04
+  seed 20261021 fold 2 epoch 60: loss 1.0549 lr 1.62e-04
+  seed 20261021 fold 2 epoch 75: loss 1.0359 lr 1.02e-04
+  seed 20261021 fold 2 epoch 90: loss 0.8187 lr 5.01e-05
+  seed 20261021 fold 2 epoch 105: loss 0.7990 lr 1.53e-05
+  seed 20261021 fold 2 epoch 119: loss 0.7142 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.31645569620253167,
+    "mrr": 0.4612381859160856,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.905074793295661,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.44329896907216493,
+    "3": 0.422680412371134,
+    "5": 0.4329896907216495,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.6804123711340206,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.01834731549024582
+}
+seed 1101 fold 2: train=234 test=97
+  seed 1101 fold 2 epoch 0: loss 3.7355 lr 6.00e-05
+  seed 1101 fold 2 epoch 15: loss 2.4585 lr 2.94e-04
+  seed 1101 fold 2 epoch 30: loss 1.8912 lr 2.67e-04
+  seed 1101 fold 2 epoch 45: loss 1.7797 lr 2.20e-04
+  seed 1101 fold 2 epoch 60: loss 0.9421 lr 1.62e-04
+  seed 1101 fold 2 epoch 75: loss 1.0976 lr 1.02e-04
+  seed 1101 fold 2 epoch 90: loss 0.9235 lr 5.01e-05
+  seed 1101 fold 2 epoch 105: loss 0.8667 lr 1.53e-05
+  seed 1101 fold 2 epoch 119: loss 0.6680 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.379746835443038,
+    "mrr": 0.5155013781041737,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.872066264132553,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.4948453608247423,
+    "3": 0.4639175257731959,
+    "5": 0.44329896907216493,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.6288659793814433,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.016229912638664246
+}
+seed 4242 fold 2: train=234 test=97
+  seed 4242 fold 2 epoch 0: loss 3.7260 lr 6.00e-05
+  seed 4242 fold 2 epoch 15: loss 2.7408 lr 2.94e-04
+  seed 4242 fold 2 epoch 30: loss 2.2219 lr 2.67e-04
+  seed 4242 fold 2 epoch 45: loss 1.5993 lr 2.20e-04
+  seed 4242 fold 2 epoch 60: loss 1.3892 lr 1.62e-04
+  seed 4242 fold 2 epoch 75: loss 0.8866 lr 1.02e-04
+  seed 4242 fold 2 epoch 90: loss 0.8505 lr 5.01e-05
+  seed 4242 fold 2 epoch 105: loss 0.7834 lr 1.53e-05
+  seed 4242 fold 2 epoch 119: loss 0.5132 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.4177215189873418,
+    "mrr": 0.5258152199653946,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.897413018430686,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.4742268041237113,
+    "3": 0.4639175257731959,
+    "5": 0.44329896907216493,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.4639175257731959,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.053337838500738144
+}
+{
+  "retrieval_rank1": 0.25707253365481214,
+  "retrieval_mrr": 0.41111672238050456,
+  "retrieval_chance_rank1": 0.015368269798649548,
+  "retrieval_auroc": 0.9347936184348787,
+  "family_top1_k1": 0.357988370061238,
+  "domain_accuracy": 0.5854297970788346,
+  "median_pairwise_cosine": 0.03090708578626315
+}
+device: cpu
+seed 20261021 fold 2: train=234 test=97
+  seed 20261021 fold 2 epoch 0: loss 3.7482 lr 6.00e-05
+  seed 20261021 fold 2 epoch 15: loss 3.7214 lr 2.94e-04
+  seed 20261021 fold 2 epoch 30: loss 3.5522 lr 2.67e-04
+  seed 20261021 fold 2 epoch 45: loss 3.6987 lr 2.20e-04
+  seed 20261021 fold 2 epoch 60: loss 3.6174 lr 1.62e-04
+  seed 20261021 fold 2 epoch 75: loss 3.5480 lr 1.02e-04
+  seed 20261021 fold 2 epoch 90: loss 3.4792 lr 5.01e-05
+  seed 20261021 fold 2 epoch 105: loss 3.6028 lr 1.53e-05
+  seed 20261021 fold 2 epoch 119: loss 3.5170 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.34177215189873417,
+    "mrr": 0.44844877034645947,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.6690497166531739,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.4020618556701031,
+    "3": 0.3917525773195876,
+    "5": 0.36082474226804123,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.5360824742268041,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.9649453163146973
+}
+seed 1101 fold 2: train=234 test=97
+  seed 1101 fold 2 epoch 0: loss 3.7195 lr 6.00e-05
+  seed 1101 fold 2 epoch 15: loss 3.7191 lr 2.94e-04
+  seed 1101 fold 2 epoch 30: loss 3.5840 lr 2.67e-04
+  seed 1101 fold 2 epoch 45: loss 3.6179 lr 2.20e-04
+  seed 1101 fold 2 epoch 60: loss 3.7971 lr 1.62e-04
+  seed 1101 fold 2 epoch 75: loss 3.6174 lr 1.02e-04
+  seed 1101 fold 2 epoch 90: loss 3.7740 lr 5.01e-05
+  seed 1101 fold 2 epoch 105: loss 3.7375 lr 1.53e-05
+  seed 1101 fold 2 epoch 119: loss 3.6308 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.11392405063291139,
+    "mrr": 0.24061718199948587,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.7036840962742196,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.10309278350515463,
+    "3": 0.09278350515463918,
+    "5": 0.10309278350515463,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.5360824742268041,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.9874786734580994
+}
+seed 4242 fold 2: train=234 test=97
+  seed 4242 fold 2 epoch 0: loss 3.6217 lr 6.00e-05
+  seed 4242 fold 2 epoch 15: loss 3.5993 lr 2.94e-04
+  seed 4242 fold 2 epoch 30: loss 3.6620 lr 2.67e-04
+  seed 4242 fold 2 epoch 45: loss 3.8317 lr 2.20e-04
+  seed 4242 fold 2 epoch 60: loss 3.5488 lr 1.62e-04
+  seed 4242 fold 2 epoch 75: loss 3.7075 lr 1.02e-04
+  seed 4242 fold 2 epoch 90: loss 3.5112 lr 5.01e-05
+  seed 4242 fold 2 epoch 105: loss 3.4703 lr 1.53e-05
+  seed 4242 fold 2 epoch 119: loss 3.6010 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.35443037974683544,
+    "mrr": 0.45472894748981135,
+    "chance_rank1": 0.019409282700421946,
+    "n_queries_with_same_receptor_in_gallery": 79,
+    "auroc": 0.6814352013051951,
+    "n_pairs": 26070
+  },
+  "family": {
+    "1": 0.422680412371134,
+    "3": 0.38144329896907214,
+    "5": 0.30927835051546393,
+    "chance_top1": 0.07264957264957266
+  },
+  "domain": {
+    "accuracy": 0.6185567010309279,
+    "n": 97
+  },
+  "fold": 2,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.9883356690406799
+}
+{
+  "retrieval_rank1": 0.19328912999799075,
+  "retrieval_mrr": 0.2956150027101248,
+  "retrieval_chance_rank1": 0.015368269798649548,
+  "retrieval_auroc": 0.7008756695980453,
+  "family_top1_k1": 0.26416120455065717,
+  "domain_accuracy": 0.536334415597609,
+  "median_pairwise_cosine": 0.9807259241739908
+}
+device: cpu
+seed 20261021 fold 3: train=286 test=45
+  seed 20261021 fold 3 epoch 0: loss 3.6451 lr 6.00e-05
+  seed 20261021 fold 3 epoch 15: loss 2.7493 lr 2.94e-04
+  seed 20261021 fold 3 epoch 30: loss 1.9152 lr 2.67e-04
+  seed 20261021 fold 3 epoch 45: loss 1.7155 lr 2.20e-04
+  seed 20261021 fold 3 epoch 60: loss 1.4384 lr 1.62e-04
+  seed 20261021 fold 3 epoch 75: loss 1.2980 lr 1.02e-04
+  seed 20261021 fold 3 epoch 90: loss 1.1463 lr 5.01e-05
+  seed 20261021 fold 3 epoch 105: loss 1.1068 lr 1.53e-05
+  seed 20261021 fold 3 epoch 119: loss 1.0400 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.625,
+    "mrr": 0.6929427212710948,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.9278539540816326,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.4444444444444444,
+    "3": 0.4666666666666667,
+    "5": 0.4444444444444444,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.5555555555555556,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.014908631332218647
+}
+seed 1101 fold 3: train=286 test=45
+  seed 1101 fold 3 epoch 0: loss 3.5999 lr 6.00e-05
+  seed 1101 fold 3 epoch 15: loss 2.2901 lr 2.94e-04
+  seed 1101 fold 3 epoch 30: loss 1.6137 lr 2.67e-04
+  seed 1101 fold 3 epoch 45: loss 1.6159 lr 2.20e-04
+  seed 1101 fold 3 epoch 60: loss 1.1248 lr 1.62e-04
+  seed 1101 fold 3 epoch 75: loss 1.1574 lr 1.02e-04
+  seed 1101 fold 3 epoch 90: loss 1.0290 lr 5.01e-05
+  seed 1101 fold 3 epoch 105: loss 0.9539 lr 1.53e-05
+  seed 1101 fold 3 epoch 119: loss 0.8841 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.5833333333333334,
+    "mrr": 0.682893990929705,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.9678316326530613,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.4666666666666667,
+    "3": 0.4222222222222222,
+    "5": 0.4222222222222222,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.4,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.025702405720949173
+}
+seed 4242 fold 3: train=286 test=45
+  seed 4242 fold 3 epoch 0: loss 3.5793 lr 6.00e-05
+  seed 4242 fold 3 epoch 15: loss 2.8260 lr 2.94e-04
+  seed 4242 fold 3 epoch 30: loss 1.9136 lr 2.67e-04
+  seed 4242 fold 3 epoch 45: loss 1.6890 lr 2.20e-04
+  seed 4242 fold 3 epoch 60: loss 1.4344 lr 1.62e-04
+  seed 4242 fold 3 epoch 75: loss 1.3015 lr 1.02e-04
+  seed 4242 fold 3 epoch 90: loss 1.2402 lr 5.01e-05
+  seed 4242 fold 3 epoch 105: loss 1.0673 lr 1.53e-05
+  seed 4242 fold 3 epoch 119: loss 0.9928 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.5,
+    "mrr": 0.5769195914950184,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.9132366071428571,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.4,
+    "3": 0.4,
+    "5": 0.4,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.6444444444444445,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.0823044553399086
+}
+{
+  "retrieval_rank1": 0.3490544002411091,
+  "retrieval_mrr": 0.4815732221031521,
+  "retrieval_chance_rank1": 0.014051454874239686,
+  "retrieval_auroc": 0.9330587023465672,
+  "family_top1_k1": 0.3796023886570396,
+  "domain_accuracy": 0.5779612366980149,
+  "median_pairwise_cosine": 0.026907472172752023
+}
+device: cpu
+seed 20261021 fold 3: train=286 test=45
+  seed 20261021 fold 3 epoch 0: loss 3.6003 lr 6.00e-05
+  seed 20261021 fold 3 epoch 15: loss 3.5463 lr 2.94e-04
+  seed 20261021 fold 3 epoch 30: loss 3.6143 lr 2.67e-04
+  seed 20261021 fold 3 epoch 45: loss 3.6700 lr 2.20e-04
+  seed 20261021 fold 3 epoch 60: loss 3.6441 lr 1.62e-04
+  seed 20261021 fold 3 epoch 75: loss 3.5819 lr 1.02e-04
+  seed 20261021 fold 3 epoch 90: loss 3.6703 lr 5.01e-05
+  seed 20261021 fold 3 epoch 105: loss 3.6593 lr 1.53e-05
+  seed 20261021 fold 3 epoch 119: loss 3.3875 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.20833333333333334,
+    "mrr": 0.3538463754609588,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.8399936224489796,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.2222222222222222,
+    "3": 0.24444444444444444,
+    "5": 0.2222222222222222,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.4222222222222222,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.9964772462844849
+}
+seed 1101 fold 3: train=286 test=45
+  seed 1101 fold 3 epoch 0: loss 3.6720 lr 6.00e-05
+  seed 1101 fold 3 epoch 15: loss 3.5091 lr 2.94e-04
+  seed 1101 fold 3 epoch 30: loss 3.6509 lr 2.67e-04
+  seed 1101 fold 3 epoch 45: loss 3.6712 lr 2.20e-04
+  seed 1101 fold 3 epoch 60: loss 3.6837 lr 1.62e-04
+  seed 1101 fold 3 epoch 75: loss 3.6431 lr 1.02e-04
+  seed 1101 fold 3 epoch 90: loss 3.6719 lr 5.01e-05
+  seed 1101 fold 3 epoch 105: loss 3.6577 lr 1.53e-05
+  seed 1101 fold 3 epoch 119: loss 3.6059 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.041666666666666664,
+    "mrr": 0.11017094571982738,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.7383163265306123,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.2,
+    "3": 0.2,
+    "5": 0.17777777777777778,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.4888888888888889,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.9978815913200378
+}
+seed 4242 fold 3: train=286 test=45
+  seed 4242 fold 3 epoch 0: loss 3.4816 lr 6.00e-05
+  seed 4242 fold 3 epoch 15: loss 3.5924 lr 2.94e-04
+  seed 4242 fold 3 epoch 30: loss 3.5235 lr 2.67e-04
+  seed 4242 fold 3 epoch 45: loss 3.7270 lr 2.20e-04
+  seed 4242 fold 3 epoch 60: loss 3.5886 lr 1.62e-04
+  seed 4242 fold 3 epoch 75: loss 3.6258 lr 1.02e-04
+  seed 4242 fold 3 epoch 90: loss 3.6496 lr 5.01e-05
+  seed 4242 fold 3 epoch 105: loss 3.4791 lr 1.53e-05
+  seed 4242 fold 3 epoch 119: loss 3.6452 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.041666666666666664,
+    "mrr": 0.12587005851076616,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.6678730867346939,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.06666666666666667,
+    "3": 0.06666666666666667,
+    "5": 0.08888888888888889,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.35555555555555557,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.9867030382156372
+}
+{
+  "retrieval_rank1": 0.1970501808318264,
+  "retrieval_mrr": 0.31017284589783334,
+  "retrieval_chance_rank1": 0.014051454874239686,
+  "retrieval_auroc": 0.7356551578107788,
+  "family_top1_k1": 0.2536764589685484,
+  "domain_accuracy": 0.5078063672537623,
+  "median_pairwise_cosine": 0.9846637547016144
+}
+device: cpu
+seed 20261021 fold 4: train=287 test=44
+  seed 20261021 fold 4 epoch 0: loss 3.6094 lr 6.00e-05
+  seed 20261021 fold 4 epoch 15: loss 2.5445 lr 2.94e-04
+  seed 20261021 fold 4 epoch 30: loss 1.5587 lr 2.67e-04
+  seed 20261021 fold 4 epoch 45: loss 2.0546 lr 2.20e-04
+  seed 20261021 fold 4 epoch 60: loss 1.3812 lr 1.62e-04
+  seed 20261021 fold 4 epoch 75: loss 1.2256 lr 1.02e-04
+  seed 20261021 fold 4 epoch 90: loss 0.9467 lr 5.01e-05
+  seed 20261021 fold 4 epoch 105: loss 1.0274 lr 1.53e-05
+  seed 20261021 fold 4 epoch 119: loss 0.8604 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.23809523809523808,
+    "mrr": 0.4240787408080641,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.9748678864892935,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.29545454545454547,
+    "3": 0.29545454545454547,
+    "5": 0.18181818181818182,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.6363636363636364,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.03827328607439995
+}
+seed 1101 fold 4: train=287 test=44
+  seed 1101 fold 4 epoch 0: loss 3.6996 lr 6.00e-05
+  seed 1101 fold 4 epoch 15: loss 2.1222 lr 2.94e-04
+  seed 1101 fold 4 epoch 30: loss 1.7795 lr 2.67e-04
+  seed 1101 fold 4 epoch 45: loss 1.5649 lr 2.20e-04
+  seed 1101 fold 4 epoch 60: loss 1.4019 lr 1.62e-04
+  seed 1101 fold 4 epoch 75: loss 1.0029 lr 1.02e-04
+  seed 1101 fold 4 epoch 90: loss 0.7644 lr 5.01e-05
+  seed 1101 fold 4 epoch 105: loss 0.7794 lr 1.53e-05
+  seed 1101 fold 4 epoch 119: loss 0.8996 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.42857142857142855,
+    "mrr": 0.5626468769325912,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.9677581940923115,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.45454545454545453,
+    "3": 0.3409090909090909,
+    "5": 0.22727272727272727,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.6590909090909091,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.0072522093541920185
+}
+seed 4242 fold 4: train=287 test=44
+  seed 4242 fold 4 epoch 0: loss 3.6291 lr 6.00e-05
+  seed 4242 fold 4 epoch 15: loss 2.4433 lr 2.94e-04
+  seed 4242 fold 4 epoch 30: loss 1.7257 lr 2.67e-04
+  seed 4242 fold 4 epoch 45: loss 1.6123 lr 2.20e-04
+  seed 4242 fold 4 epoch 60: loss 1.0659 lr 1.62e-04
+  seed 4242 fold 4 epoch 75: loss 1.0340 lr 1.02e-04
+  seed 4242 fold 4 epoch 90: loss 1.0103 lr 5.01e-05
+  seed 4242 fold 4 epoch 105: loss 1.0432 lr 1.53e-05
+  seed 4242 fold 4 epoch 119: loss 0.8378 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.23809523809523808,
+    "mrr": 0.39945315292891387,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.9665210617955219,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.3409090909090909,
+    "3": 0.3181818181818182,
+    "5": 0.22727272727272727,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.5681818181818182,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 4242,
+  "median_pairwise_cosine": -0.00487108388915658
+}
+{
+  "retrieval_rank1": 0.3268625678119349,
+  "retrieval_mrr": 0.4700743258441345,
+  "retrieval_chance_rank1": 0.012337844996072846,
+  "retrieval_auroc": 0.9414205391751125,
+  "family_top1_k1": 0.36277282001654076,
+  "domain_accuracy": 0.5896417166311392,
+  "median_pairwise_cosine": 0.029180634953081607
+}
+device: cpu
+seed 20261021 fold 4: train=287 test=44
+  seed 20261021 fold 4 epoch 0: loss 3.6152 lr 6.00e-05
+  seed 20261021 fold 4 epoch 15: loss 3.6209 lr 2.94e-04
+  seed 20261021 fold 4 epoch 30: loss 3.4679 lr 2.67e-04
+  seed 20261021 fold 4 epoch 45: loss 3.5878 lr 2.20e-04
+  seed 20261021 fold 4 epoch 60: loss 3.5138 lr 1.62e-04
+  seed 20261021 fold 4 epoch 75: loss 3.6969 lr 1.02e-04
+  seed 20261021 fold 4 epoch 90: loss 3.5413 lr 5.01e-05
+  seed 20261021 fold 4 epoch 105: loss 3.5307 lr 1.53e-05
+  seed 20261021 fold 4 epoch 119: loss 3.5827 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.19047619047619047,
+    "mrr": 0.24224633397680945,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.8696734581666005,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.18181818181818182,
+    "3": 0.20454545454545456,
+    "5": 0.18181818181818182,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.5454545454545454,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.9920312762260437
+}
+seed 1101 fold 4: train=287 test=44
+  seed 1101 fold 4 epoch 0: loss 3.6282 lr 6.00e-05
+  seed 1101 fold 4 epoch 15: loss 3.5515 lr 2.94e-04
+  seed 1101 fold 4 epoch 30: loss 3.5879 lr 2.67e-04
+  seed 1101 fold 4 epoch 45: loss 3.7679 lr 2.20e-04
+  seed 1101 fold 4 epoch 60: loss 3.6331 lr 1.62e-04
+  seed 1101 fold 4 epoch 75: loss 3.6618 lr 1.02e-04
+  seed 1101 fold 4 epoch 90: loss 3.4733 lr 5.01e-05
+  seed 1101 fold 4 epoch 105: loss 3.5682 lr 1.53e-05
+  seed 1101 fold 4 epoch 119: loss 3.6905 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.047619047619047616,
+    "mrr": 0.1412861136252928,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.7429475822463879,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.1590909090909091,
+    "3": 0.13636363636363635,
+    "5": 0.13636363636363635,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.6818181818181818,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 1101,
+  "median_pairwise_cosine": 0.9910094738006592
+}
+seed 4242 fold 4: train=287 test=44
+  seed 4242 fold 4 epoch 0: loss 3.6682 lr 6.00e-05
+  seed 4242 fold 4 epoch 15: loss 3.5306 lr 2.94e-04
+  seed 4242 fold 4 epoch 30: loss 3.7590 lr 2.67e-04
+  seed 4242 fold 4 epoch 45: loss 3.6599 lr 2.20e-04
+  seed 4242 fold 4 epoch 60: loss 3.6236 lr 1.62e-04
+  seed 4242 fold 4 epoch 75: loss 3.6037 lr 1.02e-04
+  seed 4242 fold 4 epoch 90: loss 3.5625 lr 5.01e-05
+  seed 4242 fold 4 epoch 105: loss 3.7075 lr 1.53e-05
+  seed 4242 fold 4 epoch 119: loss 3.5732 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.09523809523809523,
+    "mrr": 0.22880575471362766,
+    "chance_rank1": 0.005483405483405483,
+    "n_queries_with_same_receptor_in_gallery": 21,
+    "auroc": 0.832853499098879,
+    "n_pairs": 6930
+  },
+  "family": {
+    "1": 0.25,
+    "3": 0.2727272727272727,
+    "5": 0.22727272727272727,
+    "chance_top1": 0.06620209059233449
+  },
+  "domain": {
+    "accuracy": 0.6363636363636364,
+    "n": 44
+  },
+  "fold": 4,
+  "seed": 4242,
+  "median_pairwise_cosine": 0.9998607635498047
+}
+{
+  "retrieval_rank1": 0.1957353827606992,
+  "retrieval_mrr": 0.2965875435136286,
+  "retrieval_chance_rank1": 0.012337844996072846,
+  "retrieval_auroc": 0.7624588178819431,
+  "family_top1_k1": 0.2393048035384751,
+  "domain_accuracy": 0.5153360028939189,
+  "median_pairwise_cosine": 0.9861372590065003
+}
+device: cpu
+seed 20261021 fold 0: train=272 test=59
+  seed 20261021 fold 0 epoch 0: loss 3.4248 lr 6.00e-05
+  seed 20261021 fold 0 epoch 15: loss 2.5057 lr 2.94e-04
+  seed 20261021 fold 0 epoch 30: loss 1.8111 lr 2.67e-04
+  seed 20261021 fold 0 epoch 45: loss 1.8257 lr 2.20e-04
+  seed 20261021 fold 0 epoch 60: loss 1.1977 lr 1.62e-04
+  seed 20261021 fold 0 epoch 75: loss 0.8861 lr 1.02e-04
+  seed 20261021 fold 0 epoch 90: loss 0.8644 lr 5.01e-05
+  seed 20261021 fold 0 epoch 105: loss 1.2249 lr 1.53e-05
+  seed 20261021 fold 0 epoch 119: loss 0.9159 lr 3.06e-06
+{
+  "retrieval": {
+    "rank1": 0.23809523809523808,
+    "mrr": 0.377956384643361,
+    "chance_rank1": 0.010533910533910534,
+    "n_queries_with_same_receptor_in_gallery": 42,
+    "auroc": 0.9330371323375173,
+    "n_pairs": 13860
+  },
+  "family": {
+    "1": 0.3050847457627119,
+    "3": 0.22033898305084745,
+    "5": 0.22033898305084745,
+    "chance_top1": 0.06985294117647059
+  },
+  "domain": {
+    "accuracy": 0.3898305084745763,
+    "n": 59
+  },
+  "fold": 0,
+  "seed": 20261021,
+  "median_pairwise_cosine": 0.03982371464371681
+}
+{
+  "retrieval_rank1": 0.23809523809523808,
+  "retrieval_mrr": 0.377956384643361,
+  "retrieval_chance_rank1": 0.010533910533910534,
+  "retrieval_auroc": 0.9330371323375173,
+  "family_top1_k1": 0.3050847457627119,
+  "domain_accuracy": 0.3898305084745763,
+  "median_pairwise_cosine": 0.03982371464371681
+}
+{
+  "primary": {
+    "mean": -0.10894611523936786,
+    "ci95": [
+      -0.37058784234876363,
+      0.12198534182801046
+    ],
+    "n": 62,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 11,
+    "n_undefined_values": 807,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": -0.06577872084869238,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "criterion_met": false
+}

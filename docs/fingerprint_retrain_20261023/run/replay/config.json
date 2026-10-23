@@ -1,0 +1,39 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "parent_task": "STRUCT-FINGERPRINT-20261021",
+  "n_graphs": 331,
+  "execution_protocol": "isolated-fold-seed-offset-edges-label-control-v2",
+  "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+  "probe_only": false,
+  "source_sha256": {
+    "train_fingerprint_v2.py": "56a4d857e1a7999208c6910b2facbda023bde2720f7c09edfc1ac78821182477",
+    "train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+    "egnn.py": "f1d4ef0708a0ef0f221c1de7a8a33b2f932c436d4160ac7cc78e8c7a091fdc3c",
+    "train_egnn.py": "99f19022a60baccdb7d80a5e1f4df8b740f3003458301c9e1a0b56035bfb994d"
+  },
+  "torch_version": "2.9.1+cu126",
+  "recipe_v2": {
+    "batch_size": 64,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "temperature": 0.07,
+    "emb_dim": 128,
+    "family_neg_weight": 1.0,
+    "lr_base": 0.0003,
+    "lr_min": 3e-06,
+    "wd": 0.0001,
+    "grad_clip": 10.0,
+    "egnn": "6 layers hidden 128, node/edge 26/16, invariant",
+    "head": "385->256->128, no LayerNorm; unit-sphere before loss/eval",
+    "fold_assignment": "v1 family-grouped, seed 20261021"
+  },
+  "seeds": [
+    20261021
+  ],
+  "device": "cpu",
+  "cpu_threads": 2,
+  "label_mode": "true",
+  "permutation_seed": 20261023,
+  "permutation_rule": "local RNG seed = base + 1000003*fold + initialization seed; joint labels, training only",
+  "binding_labels": false
+}

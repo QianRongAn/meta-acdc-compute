@@ -1,0 +1,33 @@
+{
+  "retrieval": {
+    "rank1": 0.5,
+    "mrr": 0.5769195914950184,
+    "chance_rank1": 0.0101010101010101,
+    "n_queries_with_same_receptor_in_gallery": 24,
+    "auroc": 0.9132366071428571,
+    "n_pairs": 7920
+  },
+  "family": {
+    "1": 0.4,
+    "3": 0.4,
+    "5": 0.4,
+    "chance_top1": 0.06643356643356643
+  },
+  "domain": {
+    "accuracy": 0.6444444444444445,
+    "n": 45
+  },
+  "fold": 3,
+  "seed": 4242,
+  "n_train": 286,
+  "n_test": 45,
+  "median_pairwise_cosine": 0.0823044553399086,
+  "execution_protocol": "isolated-fold-seed-offset-edges-label-control-v2",
+  "artifact_sha256": {
+    "model_run_v2/fold3_seed4242.pt": "4ccea261a13b5657661200dd416f04b4ccda7c97517abd2bca7203d0ae1b7175",
+    "model_run_v2/emb_fold3_seed4242.npy": "63274648f3b36947ba527b302e8971ae244d1282e5866c8df93a73ded2512fce",
+    "model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "rankings_fold3_seed4242.json": "7f973dc1d0274b0e1c60e709f98bb25bacc876caacc0473dc2b81bddad4357a1",
+    "model_run_v2/labels_fold3_seed4242.json": "ab68efb687e9f82f44fd0617fab1022f0b84ad0acf35176b4a8a4e1c9606071a"
+  }
+}

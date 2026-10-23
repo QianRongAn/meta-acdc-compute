@@ -1,0 +1,2638 @@
+{
+  "mode": "train-shuffle",
+  "permutation_seed": 44522056,
+  "train_indices": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    68,
+    69,
+    70,
+    73,
+    74,
+    75,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    130,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    165,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    233,
+    234,
+    235,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330
+  ],
+  "test_indices_untouched": [
+    1,
+    7,
+    20,
+    28,
+    29,
+    42,
+    43,
+    44,
+    54,
+    67,
+    71,
+    72,
+    76,
+    83,
+    91,
+    92,
+    93,
+    94,
+    114,
+    128,
+    129,
+    131,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    164,
+    166,
+    167,
+    232,
+    236,
+    237,
+    238,
+    272,
+    273,
+    274,
+    275,
+    286,
+    287,
+    288,
+    311,
+    324
+  ],
+  "n_changed_receptor_labels": 279,
+  "mapping": [
+    {
+      "target_graph": 0,
+      "source_graph": 133,
+      "original_receptor": "cd22cc95df69a73b7f2fa81474162e110ac62ac9d66980ac10c0c90e1824adb4",
+      "training_receptor": "ca0529b29b1552a32d37ce3f5a056c98a4e75d858b45fdd049608c7f1bda7705",
+      "original_family": "Fb9d23d7d026efae5",
+      "training_family": "Fc040ff6704e33e6a"
+    },
+    {
+      "target_graph": 2,
+      "source_graph": 308,
+      "original_receptor": "1deb37724675379bc8f9bab6fa7180c21fa65c99870e1cfd6271a83946e2dada",
+      "training_receptor": "ab7f7ec8aef907df6e798a071c7c76feb590dba350ced87d14f05767def3e4d2",
+      "original_family": "Fbacaa0696a583c05",
+      "training_family": "pending:ab7f7ec8aef907df6e798a071c7c76feb590dba350ced87d14f05767def3e4d2"
+    },
+    {
+      "target_graph": 3,
+      "source_graph": 276,
+      "original_receptor": "1deb37724675379bc8f9bab6fa7180c21fa65c99870e1cfd6271a83946e2dada",
+      "training_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "original_family": "Fbacaa0696a583c05",
+      "training_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7"
+    },
+    {
+      "target_graph": 4,
+      "source_graph": 317,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "e6c85e0fe3fb60384dbee1813098998e074e779b5ac5d85546a6b867c0cfa4e6",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "pending:e6c85e0fe3fb60384dbee1813098998e074e779b5ac5d85546a6b867c0cfa4e6"
+    },
+    {
+      "target_graph": 5,
+      "source_graph": 40,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "6599ada869abbd57c7a10f0207cd2decf79c483a08019c61559ff4f17d2f6cce",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "F3a077e4f3611c73b"
+    },
+    {
+      "target_graph": 6,
+      "source_graph": 216,
+      "original_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "F9cb0954d5833a2c8",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 8,
+      "source_graph": 36,
+      "original_receptor": "21194943fc5a0810b8a599693ea581d4929edede7265f31d370f4c3f8408bb75",
+      "training_receptor": "dfd9223944adf493f87db692e4d25afbd7ccf4487dc822d81102916dac627302",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F17560cbffb9e57b9"
+    },
+    {
+      "target_graph": 9,
+      "source_graph": 152,
+      "original_receptor": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "Fb9d23d7d026efae5",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 10,
+      "source_graph": 240,
+      "original_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "training_receptor": "d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "pending:d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43"
+    },
+    {
+      "target_graph": 11,
+      "source_graph": 200,
+      "original_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 12,
+      "source_graph": 73,
+      "original_receptor": "81a320510d0ce14cfa2cfa056541683e5071ab3e697c4d3ffe89eb30e7148252",
+      "training_receptor": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "original_family": "F019d5018765a4c4a",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 13,
+      "source_graph": 39,
+      "original_receptor": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "training_receptor": "a7c88386d33bc73e41505f15aadcf00b021ff579040ca91123206c8836567ebc",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "F3a077e4f3611c73b"
+    },
+    {
+      "target_graph": 14,
+      "source_graph": 21,
+      "original_receptor": "bc84db5c56fc69cc8d19d26e37a99285f53083a672e70e76b70b385c26e19850",
+      "training_receptor": "17f850f655ac1c7110a023e5a5acde9645b12a2362d3f04e7ab6acee26e28a3a",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "Fb4ed2c94816156cb"
+    },
+    {
+      "target_graph": 15,
+      "source_graph": 183,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 16,
+      "source_graph": 106,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "cc72ae11f191be648739a81b6192350fa1f083d33586825be362dc6332467846",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "F10d7268d03c7834a"
+    },
+    {
+      "target_graph": 17,
+      "source_graph": 172,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 18,
+      "source_graph": 65,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "8da96dcf1c6ca46beead4e14399feaa7cf6b6b4ffbcca3282ec89d32235a3d5c",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 19,
+      "source_graph": 61,
+      "original_receptor": "e716e63c781c1a56ce6526a7802b8df0214f6a7fc156d5e1652a9a2224cf274b",
+      "training_receptor": "76d1d2d12f422ce035bdc698d014dc890a195b33b622d576c6332d156448fd09",
+      "original_family": "Fd28808c3ec2b79be",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 21,
+      "source_graph": 233,
+      "original_receptor": "17f850f655ac1c7110a023e5a5acde9645b12a2362d3f04e7ab6acee26e28a3a",
+      "training_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "original_family": "Fb4ed2c94816156cb",
+      "training_family": "F17560cbffb9e57b9"
+    },
+    {
+      "target_graph": 22,
+      "source_graph": 215,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "F43c9057209041af7"
+    },
+    {
+      "target_graph": 23,
+      "source_graph": 154,
+      "original_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "training_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "original_family": "F723d67f5577bd003",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 24,
+      "source_graph": 207,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 25,
+      "source_graph": 117,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "31010391038f799894416c649cbb99c1dbeaef5e6c215bf141ccf6065d111769",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "Fca68519a7f678cac"
+    },
+    {
+      "target_graph": 26,
+      "source_graph": 271,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7"
+    },
+    {
+      "target_graph": 27,
+      "source_graph": 303,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 30,
+      "source_graph": 169,
+      "original_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "F43c9057209041af7",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 31,
+      "source_graph": 66,
+      "original_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "training_receptor": "5640f3ac39ddc39321508e662f36273c5de538990210ce33cbe661ca40f2384d",
+      "original_family": "F9cb0954d5833a2c8",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 32,
+      "source_graph": 53,
+      "original_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "training_receptor": "4f96b21f9190edd24187cb1c3d4a0e0d1ce35837850e0e018e8377e0aa900add",
+      "original_family": "F9cb0954d5833a2c8",
+      "training_family": "Ff7340944195ed6b5"
+    },
+    {
+      "target_graph": 33,
+      "source_graph": 150,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "17f850f655ac1c7110a023e5a5acde9645b12a2362d3f04e7ab6acee26e28a3a",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "Fb4ed2c94816156cb"
+    },
+    {
+      "target_graph": 34,
+      "source_graph": 277,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261"
+    },
+    {
+      "target_graph": 35,
+      "source_graph": 33,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 36,
+      "source_graph": 55,
+      "original_receptor": "dfd9223944adf493f87db692e4d25afbd7ccf4487dc822d81102916dac627302",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "F17560cbffb9e57b9",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 37,
+      "source_graph": 316,
+      "original_receptor": "1c465e21ae575175bb946ce0183bd7b16526f0d523640190133ec88f3bca5afb",
+      "training_receptor": "5e6aeb8dbcef857b60120579917b8e498828c394cc888c746ce5f0813f30ecfd",
+      "original_family": "F17560cbffb9e57b9",
+      "training_family": "pending:5e6aeb8dbcef857b60120579917b8e498828c394cc888c746ce5f0813f30ecfd"
+    },
+    {
+      "target_graph": 38,
+      "source_graph": 268,
+      "original_receptor": "bcdb4d718947e4d9d9978ddc9e49781884fbfeec7a647d49a7d14fd7f786c450",
+      "training_receptor": "91306441e3a72f1edee8d39904ddb3cb01fb1664b4f06fc1b32bdd233b55e694",
+      "original_family": "F3bcc9d5e8035c6bc",
+      "training_family": "pending:91306441e3a72f1edee8d39904ddb3cb01fb1664b4f06fc1b32bdd233b55e694"
+    },
+    {
+      "target_graph": 39,
+      "source_graph": 187,
+      "original_receptor": "a7c88386d33bc73e41505f15aadcf00b021ff579040ca91123206c8836567ebc",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F3a077e4f3611c73b",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 40,
+      "source_graph": 4,
+      "original_receptor": "6599ada869abbd57c7a10f0207cd2decf79c483a08019c61559ff4f17d2f6cce",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "F3a077e4f3611c73b",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 41,
+      "source_graph": 45,
+      "original_receptor": "88873d6934b2ba1b43db72b746072615de9a195a03d1302e8179855794790487",
+      "training_receptor": "cdea32817abe19b5c2fb9e4171f71fb2c67c0d182e999f6f66d8c25d4e7f5f88",
+      "original_family": "F3a077e4f3611c73b",
+      "training_family": "F4536c03769462c36"
+    },
+    {
+      "target_graph": 45,
+      "source_graph": 260,
+      "original_receptor": "cdea32817abe19b5c2fb9e4171f71fb2c67c0d182e999f6f66d8c25d4e7f5f88",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "F4536c03769462c36",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 46,
+      "source_graph": 178,
+      "original_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "training_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7"
+    },
+    {
+      "target_graph": 47,
+      "source_graph": 26,
+      "original_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 48,
+      "source_graph": 223,
+      "original_receptor": "892400fef93a10a67dea26ee6ccb04f5d03511b9e953026cc0bb89b0749fb086",
+      "training_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "original_family": "F7caa062154f28e5a",
+      "training_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7"
+    },
+    {
+      "target_graph": 49,
+      "source_graph": 182,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 50,
+      "source_graph": 109,
+      "original_receptor": "5c8bbe2d27c439dbcf2c2d771ac7ff1d9a5ceb06f47df0451a4a09d396316b12",
+      "training_receptor": "001903b00344309619742ff117decbf74be56e935347d5f61257ba9c0a178d9e",
+      "original_family": "F22059f1c2049d9d8",
+      "training_family": "Fc831d25a8743f663"
+    },
+    {
+      "target_graph": 51,
+      "source_graph": 253,
+      "original_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "F17560cbffb9e57b9",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 52,
+      "source_graph": 81,
+      "original_receptor": "4f96b21f9190edd24187cb1c3d4a0e0d1ce35837850e0e018e8377e0aa900add",
+      "training_receptor": "d15de11dc8d868be2be6e36f7998a3e2bbcfc8dcbfb1649e52cd5503aae4793f",
+      "original_family": "Ff7340944195ed6b5",
+      "training_family": "F17dcb08ef4a12e24"
+    },
+    {
+      "target_graph": 53,
+      "source_graph": 198,
+      "original_receptor": "4f96b21f9190edd24187cb1c3d4a0e0d1ce35837850e0e018e8377e0aa900add",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "Ff7340944195ed6b5",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 55,
+      "source_graph": 16,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 56,
+      "source_graph": 228,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 57,
+      "source_graph": 329,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F43c9057209041af7"
+    },
+    {
+      "target_graph": 58,
+      "source_graph": 174,
+      "original_receptor": "b32f7689eb52d4b9336b2dddd5bc0aa6da7ea6c85abdd97aefb9b810fea61d9c",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 59,
+      "source_graph": 78,
+      "original_receptor": "e72751e13fb3c68aa10d72bd824bee6259fac8692cf10a46aba8d000a741243f",
+      "training_receptor": "f57b0363ba5f816c8746388203bb6d3eaccffa69bce5160976b8b67dadf334f5",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "Fef88d3ceb83edacb"
+    },
+    {
+      "target_graph": 60,
+      "source_graph": 279,
+      "original_receptor": "224f716f01f369873d80a5f8031d08386482b126d8d1aae2e060cba74eae1833",
+      "training_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261"
+    },
+    {
+      "target_graph": 61,
+      "source_graph": 41,
+      "original_receptor": "76d1d2d12f422ce035bdc698d014dc890a195b33b622d576c6332d156448fd09",
+      "training_receptor": "88873d6934b2ba1b43db72b746072615de9a195a03d1302e8179855794790487",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F3a077e4f3611c73b"
+    },
+    {
+      "target_graph": 62,
+      "source_graph": 56,
+      "original_receptor": "6ff8a4bb03dab9dc8dc2f6aba1293bcaf564a3fb32c6209d07b4edd63b1ed4e7",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 63,
+      "source_graph": 205,
+      "original_receptor": "1667dd4e793b31d5beb51298289bd83a5ab698e8a1f98356516e6e89858ec817",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 64,
+      "source_graph": 234,
+      "original_receptor": "ed6afc24c2e2c6d8f48c5a87f2e43b0d45f0a40e46c8bb899f0c4763e01a1ca8",
+      "training_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F17560cbffb9e57b9"
+    },
+    {
+      "target_graph": 65,
+      "source_graph": 283,
+      "original_receptor": "8da96dcf1c6ca46beead4e14399feaa7cf6b6b4ffbcca3282ec89d32235a3d5c",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 66,
+      "source_graph": 245,
+      "original_receptor": "5640f3ac39ddc39321508e662f36273c5de538990210ce33cbe661ca40f2384d",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 68,
+      "source_graph": 158,
+      "original_receptor": "406186172530daf12a937e258dced11edf4c3918d4907d54252c5f25237da372",
+      "training_receptor": "0f5fce22ad831d3052f199f4a112e887af585e125146b689c7af307aa58c9680",
+      "original_family": "F293012a14526fbc3",
+      "training_family": "F6711de3070576d99"
+    },
+    {
+      "target_graph": 69,
+      "source_graph": 285,
+      "original_receptor": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F293012a14526fbc3",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 70,
+      "source_graph": 62,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "6ff8a4bb03dab9dc8dc2f6aba1293bcaf564a3fb32c6209d07b4edd63b1ed4e7",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 73,
+      "source_graph": 31,
+      "original_receptor": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "training_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F9cb0954d5833a2c8"
+    },
+    {
+      "target_graph": 74,
+      "source_graph": 292,
+      "original_receptor": "5a3c3e52a1fd75725bbdcaafffce1a619251599f8d58555ea110c201cba5cb45",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 75,
+      "source_graph": 197,
+      "original_receptor": "faed02a5b8c55ce26c90d47f291d80621aefd44ebf703bd948ac2066b13f0b90",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "Fb7708065b8aa6134",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 77,
+      "source_graph": 17,
+      "original_receptor": "a1fa11c9f6ec3cba69054eea33e13dc67a374040983e164fb692f42dc1e7b20c",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "Fef88d3ceb83edacb",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 78,
+      "source_graph": 255,
+      "original_receptor": "f57b0363ba5f816c8746388203bb6d3eaccffa69bce5160976b8b67dadf334f5",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "Fef88d3ceb83edacb",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 79,
+      "source_graph": 306,
+      "original_receptor": "9ca1c22f92f83c5159911b8aed7705508f50c8618c2bf567b8046e4a55889938",
+      "training_receptor": "77e9ea6b0228cc254dbe1df441d46ab257c54ca5b603844e68d8bab5188f2fb2",
+      "original_family": "Fc906196eae055fa1",
+      "training_family": "pending:77e9ea6b0228cc254dbe1df441d46ab257c54ca5b603844e68d8bab5188f2fb2"
+    },
+    {
+      "target_graph": 80,
+      "source_graph": 49,
+      "original_receptor": "6be187b1d7ab328ff917b29eec254e6a95196d1613f139a5fede3060a6aff1aa",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "Fc906196eae055fa1",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 81,
+      "source_graph": 11,
+      "original_receptor": "d15de11dc8d868be2be6e36f7998a3e2bbcfc8dcbfb1649e52cd5503aae4793f",
+      "training_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "original_family": "F17dcb08ef4a12e24",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 82,
+      "source_graph": 284,
+      "original_receptor": "80563846ef8df47aca2947dd591b936b8c8e820ed8ebd00ad4fa1401d7e30fa6",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F6711de3070576d99",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 84,
+      "source_graph": 270,
+      "original_receptor": "bd990c456b75e8d32aaf7caa43d1f8fc8615e3099967a4a9785eb690ae5b3fb3",
+      "training_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "original_family": "F981224ccc1b42a26",
+      "training_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7"
+    },
+    {
+      "target_graph": 85,
+      "source_graph": 312,
+      "original_receptor": "647cc29399158704e474438c9a43831628b74eb29d5722cfaa4f6c487ac714ff",
+      "training_receptor": "4b54e3eb063d82300c8179a7f88bef7065e9f3842cd55385e3d51e7225877a56",
+      "original_family": "F2d0709934663dbae",
+      "training_family": "pending:4b54e3eb063d82300c8179a7f88bef7065e9f3842cd55385e3d51e7225877a56"
+    },
+    {
+      "target_graph": 86,
+      "source_graph": 23,
+      "original_receptor": "647cc29399158704e474438c9a43831628b74eb29d5722cfaa4f6c487ac714ff",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "F2d0709934663dbae",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 87,
+      "source_graph": 224,
+      "original_receptor": "d18b774712ca6f9c49b0da15e376d81478c16fd39cdab05d1fc4d5267eab49e7",
+      "training_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "original_family": "Fc906196eae055fa1",
+      "training_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b"
+    },
+    {
+      "target_graph": 88,
+      "source_graph": 203,
+      "original_receptor": "e67c58b47a3ce23b80730e36d3b51aeb155ef77a3a0728751398998d677a72be",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "F23494b1d9aaed74e",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 89,
+      "source_graph": 18,
+      "original_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 90,
+      "source_graph": 222,
+      "original_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "training_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b"
+    },
+    {
+      "target_graph": 95,
+      "source_graph": 194,
+      "original_receptor": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 96,
+      "source_graph": 256,
+      "original_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "F82d0ec93a01b1081",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 97,
+      "source_graph": 86,
+      "original_receptor": "95602c73d954c70c5a385413a165dc12c60f5a72b21cb80267271c896ef9eb86",
+      "training_receptor": "647cc29399158704e474438c9a43831628b74eb29d5722cfaa4f6c487ac714ff",
+      "original_family": "F87caa78dfe879ea0",
+      "training_family": "F2d0709934663dbae"
+    },
+    {
+      "target_graph": 98,
+      "source_graph": 192,
+      "original_receptor": "7a7ad2b88bb85699a8b02826c1dcc4c2d3da29b9ef32000b09d27e2049393719",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "F519a2670ec864c8c",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 99,
+      "source_graph": 10,
+      "original_receptor": "63bd2cd0c9f0271ef5bfdede216372d05c38ee0d0624292137c89b69655e0673",
+      "training_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "original_family": "F519a2670ec864c8c",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 100,
+      "source_graph": 102,
+      "original_receptor": "dff1ad4de0c3f0781de009ad4ad715cc678421431373b0d5c9ce4d19cbd35cee",
+      "training_receptor": "15c92ccb6f073e44861fe0db35385bdd7f1854856d7d6ef5f24eb2b92566ef57",
+      "original_family": "Fc1c7a08e8e37a79a",
+      "training_family": "Fa7750a85ca83db23"
+    },
+    {
+      "target_graph": 101,
+      "source_graph": 244,
+      "original_receptor": "fbb4e1b908399fc894fef9e0cbf63d89054c9038a46189ba9c386922ec8ce7f8",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "Fa7750a85ca83db23",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 102,
+      "source_graph": 214,
+      "original_receptor": "15c92ccb6f073e44861fe0db35385bdd7f1854856d7d6ef5f24eb2b92566ef57",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "Fa7750a85ca83db23",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 103,
+      "source_graph": 179,
+      "original_receptor": "7361dccb55102bb69df497b12105e517078a0992e42f138a9f39a4bc018e34ad",
+      "training_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "original_family": "Fa7750a85ca83db23",
+      "training_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7"
+    },
+    {
+      "target_graph": 104,
+      "source_graph": 6,
+      "original_receptor": "c8faa4274d2fcf6a442f8e09ef8a1fe49a25e7b678b2f47d79348c22f4d20cb9",
+      "training_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "original_family": "Fa7750a85ca83db23",
+      "training_family": "F9cb0954d5833a2c8"
+    },
+    {
+      "target_graph": 105,
+      "source_graph": 295,
+      "original_receptor": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "F82d0ec93a01b1081",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 106,
+      "source_graph": 157,
+      "original_receptor": "cc72ae11f191be648739a81b6192350fa1f083d33586825be362dc6332467846",
+      "training_receptor": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "original_family": "F10d7268d03c7834a",
+      "training_family": "F293012a14526fbc3"
+    },
+    {
+      "target_graph": 107,
+      "source_graph": 63,
+      "original_receptor": "aa3146d7a4a94dfb4a6ca1cf525ea0b713c30c7c749f67feaa83d5f1c990a316",
+      "training_receptor": "1667dd4e793b31d5beb51298289bd83a5ab698e8a1f98356516e6e89858ec817",
+      "original_family": "F10d7268d03c7834a",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 108,
+      "source_graph": 242,
+      "original_receptor": "53586c1f7bb8b06761629d24b8a1fb5e9b2f5be53a2d88f9c685925076b055dd",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "F10d7268d03c7834a",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 109,
+      "source_graph": 70,
+      "original_receptor": "001903b00344309619742ff117decbf74be56e935347d5f61257ba9c0a178d9e",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "Fc831d25a8743f663",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 110,
+      "source_graph": 193,
+      "original_receptor": "2f6f9ac89cc86e654ca09e48696efe86cca3eaa9495127b0c967ec90f1ce49b8",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "Fc831d25a8743f663",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 111,
+      "source_graph": 206,
+      "original_receptor": "7c93ef88f1a84c6f879393c663660d2709d0a964bb324637cae5d1182ce591f5",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "F11df26b7788d984b",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 112,
+      "source_graph": 159,
+      "original_receptor": "724996dec3e298278e97809a1b4fd3b20b031fb14f647a3332ccbeee73b66a04",
+      "training_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "original_family": "Fa15f594eaf9169de",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 113,
+      "source_graph": 115,
+      "original_receptor": "2ca0a36bab66ed0519a1c18feafef24afd1cf6f8a7b488d65d9133bc6dd81944",
+      "training_receptor": "9bd51d5026fc29be66d1f7228845cc74f6f036d08cb9b8b41a7687f800b6b5a7",
+      "original_family": "F3abbad4d073a5fee",
+      "training_family": "Ff486c7d237950510"
+    },
+    {
+      "target_graph": 115,
+      "source_graph": 134,
+      "original_receptor": "9bd51d5026fc29be66d1f7228845cc74f6f036d08cb9b8b41a7687f800b6b5a7",
+      "training_receptor": "cc5c1f8b1b6591c28e6febb070d8a8d1ea58408eff93f9efd09c02ee595400fd",
+      "original_family": "Ff486c7d237950510",
+      "training_family": "Fa24b7415f0be3aa2"
+    },
+    {
+      "target_graph": 116,
+      "source_graph": 136,
+      "original_receptor": "af02acf9edaff897a15ab82814f7f1821916795f070be46c81e98dfba194ad99",
+      "training_receptor": "64b63ea91d091f15e3af1d645f4873d26ac46a10cfac6833e15a753e3a7a91d3",
+      "original_family": "Fca68519a7f678cac",
+      "training_family": "F824c1491d1b856bb"
+    },
+    {
+      "target_graph": 117,
+      "source_graph": 229,
+      "original_receptor": "31010391038f799894416c649cbb99c1dbeaef5e6c215bf141ccf6065d111769",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "Fca68519a7f678cac",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 118,
+      "source_graph": 249,
+      "original_receptor": "dd7fe02885d8a812c346d3af62afea3e5608b940a866f1e30e9af798602ec40a",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "Fca68519a7f678cac",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 119,
+      "source_graph": 219,
+      "original_receptor": "c1bdbae0195803b65b07e47a86f4cdd0f4555bed97a07dee9b7518e85e1f8814",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "Fca68519a7f678cac",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 120,
+      "source_graph": 267,
+      "original_receptor": "4bca1e9b939b7d220be088e20caaee6c56f9afdde23bcc32f62d36dd62f99b9d",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "Fac217bc7b1e584a3",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 121,
+      "source_graph": 160,
+      "original_receptor": "ffd0e0a4e7a187dc388ea0949673e80a90baf257b970274fe7d648975b622244",
+      "training_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "original_family": "F775e6eb233cd5263",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 122,
+      "source_graph": 321,
+      "original_receptor": "4bf6c945e3c2ee309510a44b7a6a94629e252c922dfa0b00a35ec507ce68012b",
+      "training_receptor": "efc3c778c367487a3b0b58155230ec3680ef7841dbd703a2c7580fe12bded4ad",
+      "original_family": "F28560622395883ae",
+      "training_family": "pending:efc3c778c367487a3b0b58155230ec3680ef7841dbd703a2c7580fe12bded4ad"
+    },
+    {
+      "target_graph": 123,
+      "source_graph": 119,
+      "original_receptor": "9468b142ce161e231ad5b1b42e655da6dcfd580886bb150e1b1d76dbff749302",
+      "training_receptor": "c1bdbae0195803b65b07e47a86f4cdd0f4555bed97a07dee9b7518e85e1f8814",
+      "original_family": "F5a0a5df565e94dcb",
+      "training_family": "Fca68519a7f678cac"
+    },
+    {
+      "target_graph": 124,
+      "source_graph": 190,
+      "original_receptor": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "F5a0a5df565e94dcb",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 125,
+      "source_graph": 191,
+      "original_receptor": "2aed89486b51ae7070fd3801ac09c85bbb3d246219e5e7cf957fa808b16b648f",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "F5a0a5df565e94dcb",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 126,
+      "source_graph": 75,
+      "original_receptor": "222e6e912742bf625dde1485c6a5dd0b9382bbc595946179d60799a7451ebaff",
+      "training_receptor": "faed02a5b8c55ce26c90d47f291d80621aefd44ebf703bd948ac2066b13f0b90",
+      "original_family": "Faab05844749e9de6",
+      "training_family": "Fb7708065b8aa6134"
+    },
+    {
+      "target_graph": 127,
+      "source_graph": 290,
+      "original_receptor": "222e6e912742bf625dde1485c6a5dd0b9382bbc595946179d60799a7451ebaff",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "Faab05844749e9de6",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 130,
+      "source_graph": 309,
+      "original_receptor": "d5c5cf2a3b64499dab463a6999da724caba89d0050c461505f048e62e93eeb80",
+      "training_receptor": "c4dfde7038d64e92db37adefd5d2773bc1595ecee4cea47ca8eab9d2880b019a",
+      "original_family": "F1bb6c9151e2b7ddd",
+      "training_family": "pending:c4dfde7038d64e92db37adefd5d2773bc1595ecee4cea47ca8eab9d2880b019a"
+    },
+    {
+      "target_graph": 132,
+      "source_graph": 110,
+      "original_receptor": "ca0529b29b1552a32d37ce3f5a056c98a4e75d858b45fdd049608c7f1bda7705",
+      "training_receptor": "2f6f9ac89cc86e654ca09e48696efe86cca3eaa9495127b0c967ec90f1ce49b8",
+      "original_family": "Fc040ff6704e33e6a",
+      "training_family": "Fc831d25a8743f663"
+    },
+    {
+      "target_graph": 133,
+      "source_graph": 225,
+      "original_receptor": "ca0529b29b1552a32d37ce3f5a056c98a4e75d858b45fdd049608c7f1bda7705",
+      "training_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "original_family": "Fc040ff6704e33e6a",
+      "training_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b"
+    },
+    {
+      "target_graph": 134,
+      "source_graph": 199,
+      "original_receptor": "cc5c1f8b1b6591c28e6febb070d8a8d1ea58408eff93f9efd09c02ee595400fd",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "Fa24b7415f0be3aa2",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 135,
+      "source_graph": 125,
+      "original_receptor": "9abb2b85c0a312ef1ba86b54fc53bd85116fb03bf2e58d70cb0e9a16be8b2d78",
+      "training_receptor": "2aed89486b51ae7070fd3801ac09c85bbb3d246219e5e7cf957fa808b16b648f",
+      "original_family": "F11d247b612d65605",
+      "training_family": "F5a0a5df565e94dcb"
+    },
+    {
+      "target_graph": 136,
+      "source_graph": 145,
+      "original_receptor": "64b63ea91d091f15e3af1d645f4873d26ac46a10cfac6833e15a753e3a7a91d3",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "F824c1491d1b856bb",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 137,
+      "source_graph": 48,
+      "original_receptor": "039b825660105e98e4828cd88e2a6273a09059ddd06140616c7f1104134e08af",
+      "training_receptor": "892400fef93a10a67dea26ee6ccb04f5d03511b9e953026cc0bb89b0749fb086",
+      "original_family": "Fdb949a2a705e6ab0",
+      "training_family": "F7caa062154f28e5a"
+    },
+    {
+      "target_graph": 138,
+      "source_graph": 294,
+      "original_receptor": "039b825660105e98e4828cd88e2a6273a09059ddd06140616c7f1104134e08af",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "Fdb949a2a705e6ab0",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 145,
+      "source_graph": 108,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "53586c1f7bb8b06761629d24b8a1fb5e9b2f5be53a2d88f9c685925076b055dd",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F10d7268d03c7834a"
+    },
+    {
+      "target_graph": 146,
+      "source_graph": 25,
+      "original_receptor": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "Fb9d23d7d026efae5",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 147,
+      "source_graph": 289,
+      "original_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 148,
+      "source_graph": 297,
+      "original_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 149,
+      "source_graph": 14,
+      "original_receptor": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "training_receptor": "bc84db5c56fc69cc8d19d26e37a99285f53083a672e70e76b70b385c26e19850",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 150,
+      "source_graph": 189,
+      "original_receptor": "17f850f655ac1c7110a023e5a5acde9645b12a2362d3f04e7ab6acee26e28a3a",
+      "training_receptor": "7193987b2d1c351c32eee3f82a27f87784bae9d3f4b6ce75f58d3ce0ae3c1306",
+      "original_family": "Fb4ed2c94816156cb",
+      "training_family": "pending:7193987b2d1c351c32eee3f82a27f87784bae9d3f4b6ce75f58d3ce0ae3c1306"
+    },
+    {
+      "target_graph": 151,
+      "source_graph": 52,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "4f96b21f9190edd24187cb1c3d4a0e0d1ce35837850e0e018e8377e0aa900add",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "Ff7340944195ed6b5"
+    },
+    {
+      "target_graph": 152,
+      "source_graph": 320,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F82d0ec93a01b1081"
+    },
+    {
+      "target_graph": 153,
+      "source_graph": 126,
+      "original_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "training_receptor": "222e6e912742bf625dde1485c6a5dd0b9382bbc595946179d60799a7451ebaff",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "Faab05844749e9de6"
+    },
+    {
+      "target_graph": 154,
+      "source_graph": 298,
+      "original_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 155,
+      "source_graph": 330,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "9abb2b85c0a312ef1ba86b54fc53bd85116fb03bf2e58d70cb0e9a16be8b2d78",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F11d247b612d65605"
+    },
+    {
+      "target_graph": 156,
+      "source_graph": 79,
+      "original_receptor": "5c8bbe2d27c439dbcf2c2d771ac7ff1d9a5ceb06f47df0451a4a09d396316b12",
+      "training_receptor": "9ca1c22f92f83c5159911b8aed7705508f50c8618c2bf567b8046e4a55889938",
+      "original_family": "F22059f1c2049d9d8",
+      "training_family": "Fc906196eae055fa1"
+    },
+    {
+      "target_graph": 157,
+      "source_graph": 80,
+      "original_receptor": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "training_receptor": "6be187b1d7ab328ff917b29eec254e6a95196d1613f139a5fede3060a6aff1aa",
+      "original_family": "F293012a14526fbc3",
+      "training_family": "Fc906196eae055fa1"
+    },
+    {
+      "target_graph": 158,
+      "source_graph": 221,
+      "original_receptor": "0f5fce22ad831d3052f199f4a112e887af585e125146b689c7af307aa58c9680",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "F6711de3070576d99",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 159,
+      "source_graph": 265,
+      "original_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 160,
+      "source_graph": 60,
+      "original_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "training_receptor": "224f716f01f369873d80a5f8031d08386482b126d8d1aae2e060cba74eae1833",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 161,
+      "source_graph": 263,
+      "original_receptor": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 162,
+      "source_graph": 181,
+      "original_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F82d0ec93a01b1081",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 163,
+      "source_graph": 38,
+      "original_receptor": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "training_receptor": "bcdb4d718947e4d9d9978ddc9e49781884fbfeec7a647d49a7d14fd7f786c450",
+      "original_family": "F82d0ec93a01b1081",
+      "training_family": "F3bcc9d5e8035c6bc"
+    },
+    {
+      "target_graph": 165,
+      "source_graph": 165,
+      "original_receptor": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "training_receptor": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "original_family": "F5a0a5df565e94dcb",
+      "training_family": "F5a0a5df565e94dcb"
+    },
+    {
+      "target_graph": 168,
+      "source_graph": 239,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "f14a1be2db29f9089fb30cebdcac57af4eaba3ad02e54d85555f8d0128a9e7a6",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "pending:f14a1be2db29f9089fb30cebdcac57af4eaba3ad02e54d85555f8d0128a9e7a6"
+    },
+    {
+      "target_graph": 169,
+      "source_graph": 209,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 170,
+      "source_graph": 318,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "b80900670192da13057cb19e75d925c69c7b9beed752ec1859f8f6ab894065d6",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "pending:b80900670192da13057cb19e75d925c69c7b9beed752ec1859f8f6ab894065d6"
+    },
+    {
+      "target_graph": 171,
+      "source_graph": 37,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "1c465e21ae575175bb946ce0183bd7b16526f0d523640190133ec88f3bca5afb",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "F17560cbffb9e57b9"
+    },
+    {
+      "target_graph": 172,
+      "source_graph": 247,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 173,
+      "source_graph": 302,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 174,
+      "source_graph": 314,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "d15de11dc8d868be2be6e36f7998a3e2bbcfc8dcbfb1649e52cd5503aae4793f",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "F17dcb08ef4a12e24"
+    },
+    {
+      "target_graph": 175,
+      "source_graph": 204,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 176,
+      "source_graph": 5,
+      "original_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 177,
+      "source_graph": 74,
+      "original_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_receptor": "5a3c3e52a1fd75725bbdcaafffce1a619251599f8d58555ea110c201cba5cb45",
+      "original_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 178,
+      "source_graph": 98,
+      "original_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_receptor": "7a7ad2b88bb85699a8b02826c1dcc4c2d3da29b9ef32000b09d27e2049393719",
+      "original_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_family": "F519a2670ec864c8c"
+    },
+    {
+      "target_graph": 179,
+      "source_graph": 127,
+      "original_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_receptor": "222e6e912742bf625dde1485c6a5dd0b9382bbc595946179d60799a7451ebaff",
+      "original_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_family": "Faab05844749e9de6"
+    },
+    {
+      "target_graph": 180,
+      "source_graph": 235,
+      "original_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 181,
+      "source_graph": 291,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 182,
+      "source_graph": 97,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "95602c73d954c70c5a385413a165dc12c60f5a72b21cb80267271c896ef9eb86",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "F87caa78dfe879ea0"
+    },
+    {
+      "target_graph": 183,
+      "source_graph": 103,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "7361dccb55102bb69df497b12105e517078a0992e42f138a9f39a4bc018e34ad",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "Fa7750a85ca83db23"
+    },
+    {
+      "target_graph": 184,
+      "source_graph": 47,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 185,
+      "source_graph": 322,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 186,
+      "source_graph": 96,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "F82d0ec93a01b1081"
+    },
+    {
+      "target_graph": 187,
+      "source_graph": 130,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "d5c5cf2a3b64499dab463a6999da724caba89d0050c461505f048e62e93eeb80",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "F1bb6c9151e2b7ddd"
+    },
+    {
+      "target_graph": 188,
+      "source_graph": 104,
+      "original_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "training_receptor": "c8faa4274d2fcf6a442f8e09ef8a1fe49a25e7b678b2f47d79348c22f4d20cb9",
+      "original_family": "Fef92facf2b304718",
+      "training_family": "Fa7750a85ca83db23"
+    },
+    {
+      "target_graph": 189,
+      "source_graph": 151,
+      "original_receptor": "7193987b2d1c351c32eee3f82a27f87784bae9d3f4b6ce75f58d3ce0ae3c1306",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "pending:7193987b2d1c351c32eee3f82a27f87784bae9d3f4b6ce75f58d3ce0ae3c1306",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 190,
+      "source_graph": 188,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 191,
+      "source_graph": 208,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 192,
+      "source_graph": 146,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "Fb9d23d7d026efae5"
+    },
+    {
+      "target_graph": 193,
+      "source_graph": 8,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "21194943fc5a0810b8a599693ea581d4929edede7265f31d370f4c3f8408bb75",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 194,
+      "source_graph": 68,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "406186172530daf12a937e258dced11edf4c3918d4907d54252c5f25237da372",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "F293012a14526fbc3"
+    },
+    {
+      "target_graph": 195,
+      "source_graph": 95,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 196,
+      "source_graph": 258,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 197,
+      "source_graph": 19,
+      "original_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_receptor": "e716e63c781c1a56ce6526a7802b8df0214f6a7fc156d5e1652a9a2224cf274b",
+      "original_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "training_family": "Fd28808c3ec2b79be"
+    },
+    {
+      "target_graph": 198,
+      "source_graph": 241,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 199,
+      "source_graph": 184,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 200,
+      "source_graph": 90,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 201,
+      "source_graph": 254,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 202,
+      "source_graph": 161,
+      "original_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "training_receptor": "ac869b6191168cf81aa0072bb4756fa64485351270b2e8bcb792f2c271ed58f5",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 203,
+      "source_graph": 113,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "2ca0a36bab66ed0519a1c18feafef24afd1cf6f8a7b488d65d9133bc6dd81944",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F3abbad4d073a5fee"
+    },
+    {
+      "target_graph": 204,
+      "source_graph": 217,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 205,
+      "source_graph": 0,
+      "original_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "training_receptor": "cd22cc95df69a73b7f2fa81474162e110ac62ac9d66980ac10c0c90e1824adb4",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "Fb9d23d7d026efae5"
+    },
+    {
+      "target_graph": 206,
+      "source_graph": 213,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 207,
+      "source_graph": 211,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 208,
+      "source_graph": 315,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "bec1d882ba70bf7905dd57f8203ff2dec6b017a76ef4a37646f3111eb66c0c68",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:bec1d882ba70bf7905dd57f8203ff2dec6b017a76ef4a37646f3111eb66c0c68"
+    },
+    {
+      "target_graph": 209,
+      "source_graph": 248,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 210,
+      "source_graph": 196,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 211,
+      "source_graph": 243,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 212,
+      "source_graph": 147,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 213,
+      "source_graph": 99,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "63bd2cd0c9f0271ef5bfdede216372d05c38ee0d0624292137c89b69655e0673",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "F519a2670ec864c8c"
+    },
+    {
+      "target_graph": 214,
+      "source_graph": 313,
+      "original_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_receptor": "30f122b84963bf91e2668cfffed80faff8cba8d56e0053ed4fc6ee89038f1ad4",
+      "original_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "training_family": "pending:30f122b84963bf91e2668cfffed80faff8cba8d56e0053ed4fc6ee89038f1ad4"
+    },
+    {
+      "target_graph": 215,
+      "source_graph": 328,
+      "original_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "training_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "original_family": "F43c9057209041af7",
+      "training_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7"
+    },
+    {
+      "target_graph": 216,
+      "source_graph": 120,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "4bca1e9b939b7d220be088e20caaee6c56f9afdde23bcc32f62d36dd62f99b9d",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "Fac217bc7b1e584a3"
+    },
+    {
+      "target_graph": 217,
+      "source_graph": 3,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "1deb37724675379bc8f9bab6fa7180c21fa65c99870e1cfd6271a83946e2dada",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "Fbacaa0696a583c05"
+    },
+    {
+      "target_graph": 218,
+      "source_graph": 123,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "9468b142ce161e231ad5b1b42e655da6dcfd580886bb150e1b1d76dbff749302",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "F5a0a5df565e94dcb"
+    },
+    {
+      "target_graph": 219,
+      "source_graph": 155,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 220,
+      "source_graph": 156,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "5c8bbe2d27c439dbcf2c2d771ac7ff1d9a5ceb06f47df0451a4a09d396316b12",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "F22059f1c2049d9d8"
+    },
+    {
+      "target_graph": 221,
+      "source_graph": 138,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "039b825660105e98e4828cd88e2a6273a09059ddd06140616c7f1104134e08af",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "Fdb949a2a705e6ab0"
+    },
+    {
+      "target_graph": 222,
+      "source_graph": 202,
+      "original_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 223,
+      "source_graph": 137,
+      "original_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_receptor": "039b825660105e98e4828cd88e2a6273a09059ddd06140616c7f1104134e08af",
+      "original_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_family": "Fdb949a2a705e6ab0"
+    },
+    {
+      "target_graph": 224,
+      "source_graph": 304,
+      "original_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 225,
+      "source_graph": 135,
+      "original_receptor": "585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_receptor": "9abb2b85c0a312ef1ba86b54fc53bd85116fb03bf2e58d70cb0e9a16be8b2d78",
+      "original_family": "pending:585c23e071689e1be3e3c608a2112c5feb14380e16e10422b2263d366d8a891b",
+      "training_family": "F11d247b612d65605"
+    },
+    {
+      "target_graph": 226,
+      "source_graph": 185,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 227,
+      "source_graph": 32,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "c9d0075c9df4eb8812a0dbb7d2e8b96363971f7dc641332ac8725019c21ba9f6",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F9cb0954d5833a2c8"
+    },
+    {
+      "target_graph": 228,
+      "source_graph": 35,
+      "original_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "Fb84df172b4ed3964",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 229,
+      "source_graph": 51,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F17560cbffb9e57b9"
+    },
+    {
+      "target_graph": 230,
+      "source_graph": 64,
+      "original_receptor": "ea09258c04cfd1b8a4f5b37ff3fad0d242877c46b4d908e0f77c2f26a9423366",
+      "training_receptor": "ed6afc24c2e2c6d8f48c5a87f2e43b0d45f0a40e46c8bb899f0c4763e01a1ca8",
+      "original_family": "pending:ea09258c04cfd1b8a4f5b37ff3fad0d242877c46b4d908e0f77c2f26a9423366",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 231,
+      "source_graph": 111,
+      "original_receptor": "b868685d21f4eb45d14b5cc5d217138371da96f5e341f960415952452b614526",
+      "training_receptor": "7c93ef88f1a84c6f879393c663660d2709d0a964bb324637cae5d1182ce591f5",
+      "original_family": "pending:b868685d21f4eb45d14b5cc5d217138371da96f5e341f960415952452b614526",
+      "training_family": "F11df26b7788d984b"
+    },
+    {
+      "target_graph": 233,
+      "source_graph": 252,
+      "original_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "F17560cbffb9e57b9",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 234,
+      "source_graph": 15,
+      "original_receptor": "fdeaaa50848716926186f6109ed44cba707fb71a4d5081d5ebe80a500a18f425",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "F17560cbffb9e57b9",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 235,
+      "source_graph": 230,
+      "original_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_receptor": "ea09258c04cfd1b8a4f5b37ff3fad0d242877c46b4d908e0f77c2f26a9423366",
+      "original_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "training_family": "pending:ea09258c04cfd1b8a4f5b37ff3fad0d242877c46b4d908e0f77c2f26a9423366"
+    },
+    {
+      "target_graph": 239,
+      "source_graph": 218,
+      "original_receptor": "f14a1be2db29f9089fb30cebdcac57af4eaba3ad02e54d85555f8d0128a9e7a6",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "pending:f14a1be2db29f9089fb30cebdcac57af4eaba3ad02e54d85555f8d0128a9e7a6",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 240,
+      "source_graph": 132,
+      "original_receptor": "d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "training_receptor": "ca0529b29b1552a32d37ce3f5a056c98a4e75d858b45fdd049608c7f1bda7705",
+      "original_family": "pending:d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "training_family": "Fc040ff6704e33e6a"
+    },
+    {
+      "target_graph": 241,
+      "source_graph": 12,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "81a320510d0ce14cfa2cfa056541683e5071ab3e697c4d3ffe89eb30e7148252",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "F019d5018765a4c4a"
+    },
+    {
+      "target_graph": 242,
+      "source_graph": 177,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7"
+    },
+    {
+      "target_graph": 243,
+      "source_graph": 180,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "pending:9c9a7693dd890ab77f3c37719999d1063589b3a042576a207310cc6e5dae34b7"
+    },
+    {
+      "target_graph": 244,
+      "source_graph": 9,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "6aff8fabecf7ed8119965d1339c26cdf5a8a3c0e10c85ac602ec782558a538cc",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "Fb9d23d7d026efae5"
+    },
+    {
+      "target_graph": 245,
+      "source_graph": 148,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "c6c2c811147f37b86c23dc7a35d6c358d8e8889e586d0038e464d772f3c1333d",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 246,
+      "source_graph": 175,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 247,
+      "source_graph": 13,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 248,
+      "source_graph": 262,
+      "original_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 249,
+      "source_graph": 231,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "b868685d21f4eb45d14b5cc5d217138371da96f5e341f960415952452b614526",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "pending:b868685d21f4eb45d14b5cc5d217138371da96f5e341f960415952452b614526"
+    },
+    {
+      "target_graph": 250,
+      "source_graph": 326,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "fd17d8b6da191c6e51d69beac649729f3f1ad158801b7c7742b9b734b104467b",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "pending:fd17d8b6da191c6e51d69beac649729f3f1ad158801b7c7742b9b734b104467b"
+    },
+    {
+      "target_graph": 251,
+      "source_graph": 293,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "F9d4326c8fcd4702b"
+    },
+    {
+      "target_graph": 252,
+      "source_graph": 163,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "F82d0ec93a01b1081"
+    },
+    {
+      "target_graph": 253,
+      "source_graph": 327,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "pending:d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43"
+    },
+    {
+      "target_graph": 254,
+      "source_graph": 296,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 255,
+      "source_graph": 212,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 256,
+      "source_graph": 34,
+      "original_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 257,
+      "source_graph": 201,
+      "original_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 258,
+      "source_graph": 281,
+      "original_receptor": "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "Fde4a656c257aa9b3",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 259,
+      "source_graph": 264,
+      "original_receptor": "df894310f149bd0fcb378870909eef7ee3ddbb9885926a0fcb62808da83e064b",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "pending:df894310f149bd0fcb378870909eef7ee3ddbb9885926a0fcb62808da83e064b",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 260,
+      "source_graph": 88,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "e67c58b47a3ce23b80730e36d3b51aeb155ef77a3a0728751398998d677a72be",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "F23494b1d9aaed74e"
+    },
+    {
+      "target_graph": 261,
+      "source_graph": 2,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "1deb37724675379bc8f9bab6fa7180c21fa65c99870e1cfd6271a83946e2dada",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "Fbacaa0696a583c05"
+    },
+    {
+      "target_graph": 262,
+      "source_graph": 57,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 263,
+      "source_graph": 300,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 264,
+      "source_graph": 50,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "5c8bbe2d27c439dbcf2c2d771ac7ff1d9a5ceb06f47df0451a4a09d396316b12",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "F22059f1c2049d9d8"
+    },
+    {
+      "target_graph": 265,
+      "source_graph": 168,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 266,
+      "source_graph": 173,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 267,
+      "source_graph": 22,
+      "original_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_receptor": "c77eaff9cf1927ac17800af8aef82a2f51e2a79505e8ecabefa19f8ae3e669ea",
+      "original_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "training_family": "F723d67f5577bd003"
+    },
+    {
+      "target_graph": 268,
+      "source_graph": 307,
+      "original_receptor": "91306441e3a72f1edee8d39904ddb3cb01fb1664b4f06fc1b32bdd233b55e694",
+      "training_receptor": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "original_family": "pending:91306441e3a72f1edee8d39904ddb3cb01fb1664b4f06fc1b32bdd233b55e694",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 269,
+      "source_graph": 266,
+      "original_receptor": "892400fef93a10a67dea26ee6ccb04f5d03511b9e953026cc0bb89b0749fb086",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "F7caa062154f28e5a",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 270,
+      "source_graph": 246,
+      "original_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_receptor": "3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056",
+      "original_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_family": "pending:3a78fbffd2409294abc8298feddb134591ad0bfb50318050ba8bf8be41ca7056"
+    },
+    {
+      "target_graph": 271,
+      "source_graph": 257,
+      "original_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "original_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 276,
+      "source_graph": 46,
+      "original_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "original_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 277,
+      "source_graph": 101,
+      "original_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_receptor": "fbb4e1b908399fc894fef9e0cbf63d89054c9038a46189ba9c386922ec8ce7f8",
+      "original_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_family": "Fa7750a85ca83db23"
+    },
+    {
+      "target_graph": 278,
+      "source_graph": 118,
+      "original_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_receptor": "dd7fe02885d8a812c346d3af62afea3e5608b940a866f1e30e9af798602ec40a",
+      "original_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_family": "Fca68519a7f678cac"
+    },
+    {
+      "target_graph": 279,
+      "source_graph": 325,
+      "original_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_receptor": "818640c8756455a3de66ead2928c715100bcde4f6e942bc78cec4e704fbe30d7",
+      "original_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_family": "pending:818640c8756455a3de66ead2928c715100bcde4f6e942bc78cec4e704fbe30d7"
+    },
+    {
+      "target_graph": 280,
+      "source_graph": 24,
+      "original_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_receptor": "a3fe1cfa41bc8579cdaa22a0a7a178d1b7a311a7b35b3288f3ff23bfacf95369",
+      "original_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 281,
+      "source_graph": 226,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 282,
+      "source_graph": 319,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 283,
+      "source_graph": 278,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261"
+    },
+    {
+      "target_graph": 284,
+      "source_graph": 227,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 285,
+      "source_graph": 107,
+      "original_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "training_receptor": "aa3146d7a4a94dfb4a6ca1cf525ea0b713c30c7c749f67feaa83d5f1c990a316",
+      "original_family": "F9d3e51d79556c27c",
+      "training_family": "F10d7268d03c7834a"
+    },
+    {
+      "target_graph": 289,
+      "source_graph": 122,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "4bf6c945e3c2ee309510a44b7a6a94629e252c922dfa0b00a35ec507ce68012b",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "F28560622395883ae"
+    },
+    {
+      "target_graph": 290,
+      "source_graph": 251,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 291,
+      "source_graph": 77,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "a1fa11c9f6ec3cba69054eea33e13dc67a374040983e164fb692f42dc1e7b20c",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "Fef88d3ceb83edacb"
+    },
+    {
+      "target_graph": 292,
+      "source_graph": 282,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "3b5cc601e0592676103e67006f203310bac33ae69f75e42e6feb0f6480e7f8a7",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "F9d3e51d79556c27c"
+    },
+    {
+      "target_graph": 293,
+      "source_graph": 69,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "F293012a14526fbc3"
+    },
+    {
+      "target_graph": 294,
+      "source_graph": 84,
+      "original_receptor": "1c1d39939544609b3b9f2e17d1af6e3f0f1477a1adf710fbeab5aefd86337c2c",
+      "training_receptor": "bd990c456b75e8d32aaf7caa43d1f8fc8615e3099967a4a9785eb690ae5b3fb3",
+      "original_family": "F9d4326c8fcd4702b",
+      "training_family": "F981224ccc1b42a26"
+    },
+    {
+      "target_graph": 295,
+      "source_graph": 112,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "724996dec3e298278e97809a1b4fd3b20b031fb14f647a3332ccbeee73b66a04",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "Fa15f594eaf9169de"
+    },
+    {
+      "target_graph": 296,
+      "source_graph": 121,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "ffd0e0a4e7a187dc388ea0949673e80a90baf257b970274fe7d648975b622244",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F775e6eb233cd5263"
+    },
+    {
+      "target_graph": 297,
+      "source_graph": 299,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 298,
+      "source_graph": 89,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F333328a21e5ae331"
+    },
+    {
+      "target_graph": 299,
+      "source_graph": 259,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "df894310f149bd0fcb378870909eef7ee3ddbb9885926a0fcb62808da83e064b",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "pending:df894310f149bd0fcb378870909eef7ee3ddbb9885926a0fcb62808da83e064b"
+    },
+    {
+      "target_graph": 300,
+      "source_graph": 59,
+      "original_receptor": "26fc2b426e7c8769d3ae0884c2b849269be7bc6120477ce19e0a3ccb56e773f6",
+      "training_receptor": "e72751e13fb3c68aa10d72bd824bee6259fac8692cf10a46aba8d000a741243f",
+      "original_family": "F0465ecc03c008240",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 301,
+      "source_graph": 269,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "892400fef93a10a67dea26ee6ccb04f5d03511b9e953026cc0bb89b0749fb086",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "F7caa062154f28e5a"
+    },
+    {
+      "target_graph": 302,
+      "source_graph": 87,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "d18b774712ca6f9c49b0da15e376d81478c16fd39cdab05d1fc4d5267eab49e7",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "Fc906196eae055fa1"
+    },
+    {
+      "target_graph": 303,
+      "source_graph": 153,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "Fde4a656c257aa9b3"
+    },
+    {
+      "target_graph": 304,
+      "source_graph": 124,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "b4034f5c4ac722df52318fc184e5e1d75676b1b82e729b59ac1c017fbcd9c616",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "F5a0a5df565e94dcb"
+    },
+    {
+      "target_graph": 305,
+      "source_graph": 58,
+      "original_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "training_receptor": "b32f7689eb52d4b9336b2dddd5bc0aa6da7ea6c85abdd97aefb9b810fea61d9c",
+      "original_family": "F67e5224d77a6e331",
+      "training_family": "F0465ecc03c008240"
+    },
+    {
+      "target_graph": 306,
+      "source_graph": 186,
+      "original_receptor": "77e9ea6b0228cc254dbe1df441d46ab257c54ca5b603844e68d8bab5188f2fb2",
+      "training_receptor": "56c7ebe6b59cf596b36768dcf19d6b05ce65fd07bf12410fa76787e5557b8dd2",
+      "original_family": "pending:77e9ea6b0228cc254dbe1df441d46ab257c54ca5b603844e68d8bab5188f2fb2",
+      "training_family": "Fb84df172b4ed3964"
+    },
+    {
+      "target_graph": 307,
+      "source_graph": 82,
+      "original_receptor": "650b4842cabcc39a3d433f396537214eaa2c6753f8954b3e55c9770c24e4df29",
+      "training_receptor": "80563846ef8df47aca2947dd591b936b8c8e820ed8ebd00ad4fa1401d7e30fa6",
+      "original_family": "F19ed30cfb37ad7f2",
+      "training_family": "F6711de3070576d99"
+    },
+    {
+      "target_graph": 308,
+      "source_graph": 250,
+      "original_receptor": "ab7f7ec8aef907df6e798a071c7c76feb590dba350ced87d14f05767def3e4d2",
+      "training_receptor": "61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f",
+      "original_family": "pending:ab7f7ec8aef907df6e798a071c7c76feb590dba350ced87d14f05767def3e4d2",
+      "training_family": "pending:61372541a2a4fffbfcfa92b76893d227554ac892551f0b9605e621915fee6a6f"
+    },
+    {
+      "target_graph": 309,
+      "source_graph": 310,
+      "original_receptor": "c4dfde7038d64e92db37adefd5d2773bc1595ecee4cea47ca8eab9d2880b019a",
+      "training_receptor": "fd0276e0f53adde7ad21efc37eaade67d635222170c722e9f9952e8fbff902db",
+      "original_family": "pending:c4dfde7038d64e92db37adefd5d2773bc1595ecee4cea47ca8eab9d2880b019a",
+      "training_family": "pending:fd0276e0f53adde7ad21efc37eaade67d635222170c722e9f9952e8fbff902db"
+    },
+    {
+      "target_graph": 310,
+      "source_graph": 220,
+      "original_receptor": "fd0276e0f53adde7ad21efc37eaade67d635222170c722e9f9952e8fbff902db",
+      "training_receptor": "10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413",
+      "original_family": "pending:fd0276e0f53adde7ad21efc37eaade67d635222170c722e9f9952e8fbff902db",
+      "training_family": "pending:10d9789fe17cb5d259d60a9080259acfe053d6c1fea6e343574df1ab4d737413"
+    },
+    {
+      "target_graph": 312,
+      "source_graph": 210,
+      "original_receptor": "4b54e3eb063d82300c8179a7f88bef7065e9f3842cd55385e3d51e7225877a56",
+      "training_receptor": "1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911",
+      "original_family": "pending:4b54e3eb063d82300c8179a7f88bef7065e9f3842cd55385e3d51e7225877a56",
+      "training_family": "pending:1b84147b54a256abec842ba533618fe28f7561ac859e28f01d8c37f5503ef911"
+    },
+    {
+      "target_graph": 313,
+      "source_graph": 280,
+      "original_receptor": "30f122b84963bf91e2668cfffed80faff8cba8d56e0053ed4fc6ee89038f1ad4",
+      "training_receptor": "35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261",
+      "original_family": "pending:30f122b84963bf91e2668cfffed80faff8cba8d56e0053ed4fc6ee89038f1ad4",
+      "training_family": "pending:35aeb8a5a4670bd3f8adaf462124231b9cf17a41cb528bb7b47ecde819212261"
+    },
+    {
+      "target_graph": 314,
+      "source_graph": 100,
+      "original_receptor": "d15de11dc8d868be2be6e36f7998a3e2bbcfc8dcbfb1649e52cd5503aae4793f",
+      "training_receptor": "dff1ad4de0c3f0781de009ad4ad715cc678421431373b0d5c9ce4d19cbd35cee",
+      "original_family": "F17dcb08ef4a12e24",
+      "training_family": "Fc1c7a08e8e37a79a"
+    },
+    {
+      "target_graph": 315,
+      "source_graph": 261,
+      "original_receptor": "bec1d882ba70bf7905dd57f8203ff2dec6b017a76ef4a37646f3111eb66c0c68",
+      "training_receptor": "5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f",
+      "original_family": "pending:bec1d882ba70bf7905dd57f8203ff2dec6b017a76ef4a37646f3111eb66c0c68",
+      "training_family": "pending:5a511da0a38973fa6dfdacf762aec5e15df94db7642301b87d42896f5058831f"
+    },
+    {
+      "target_graph": 316,
+      "source_graph": 30,
+      "original_receptor": "5e6aeb8dbcef857b60120579917b8e498828c394cc888c746ce5f0813f30ecfd",
+      "training_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "original_family": "pending:5e6aeb8dbcef857b60120579917b8e498828c394cc888c746ce5f0813f30ecfd",
+      "training_family": "F43c9057209041af7"
+    },
+    {
+      "target_graph": 317,
+      "source_graph": 176,
+      "original_receptor": "e6c85e0fe3fb60384dbee1813098998e074e779b5ac5d85546a6b867c0cfa4e6",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "pending:e6c85e0fe3fb60384dbee1813098998e074e779b5ac5d85546a6b867c0cfa4e6",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 318,
+      "source_graph": 323,
+      "original_receptor": "b80900670192da13057cb19e75d925c69c7b9beed752ec1859f8f6ab894065d6",
+      "training_receptor": "fa9c42c74a02317e3f9c07d817144803396d23baea02150e1f5e5df2e6e79b50",
+      "original_family": "pending:b80900670192da13057cb19e75d925c69c7b9beed752ec1859f8f6ab894065d6",
+      "training_family": "pending:fa9c42c74a02317e3f9c07d817144803396d23baea02150e1f5e5df2e6e79b50"
+    },
+    {
+      "target_graph": 319,
+      "source_graph": 116,
+      "original_receptor": "d7b79d95bf633e4c894545dddec055e1f6e3a6747e61f9fa4ee0ef8b0175a0c9",
+      "training_receptor": "af02acf9edaff897a15ab82814f7f1821916795f070be46c81e98dfba194ad99",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "Fca68519a7f678cac"
+    },
+    {
+      "target_graph": 320,
+      "source_graph": 195,
+      "original_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "training_receptor": "c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e",
+      "original_family": "F82d0ec93a01b1081",
+      "training_family": "pending:c1d5c9a3e41e35844799cb8d9cb3e3a2e5786d4b8e816a6b04257b7061c2f45e"
+    },
+    {
+      "target_graph": 321,
+      "source_graph": 301,
+      "original_receptor": "efc3c778c367487a3b0b58155230ec3680ef7841dbd703a2c7580fe12bded4ad",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "pending:efc3c778c367487a3b0b58155230ec3680ef7841dbd703a2c7580fe12bded4ad",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 322,
+      "source_graph": 149,
+      "original_receptor": "7aa2aa7b2c214731b9753912ac0ec9fb10940d315f37f9b5ab9e66fe03e5605d",
+      "training_receptor": "863b7305b58de031bb510e330569688e8bbe7911374a5bad661aea76ed25b4a1",
+      "original_family": "F333328a21e5ae331",
+      "training_family": "Fef92facf2b304718"
+    },
+    {
+      "target_graph": 323,
+      "source_graph": 27,
+      "original_receptor": "fa9c42c74a02317e3f9c07d817144803396d23baea02150e1f5e5df2e6e79b50",
+      "training_receptor": "df503fb66dbb5e298819ad8df7a48e6a784820e2c3e7f225e4731636d0e9fca9",
+      "original_family": "pending:fa9c42c74a02317e3f9c07d817144803396d23baea02150e1f5e5df2e6e79b50",
+      "training_family": "F19ed30cfb37ad7f2"
+    },
+    {
+      "target_graph": 325,
+      "source_graph": 162,
+      "original_receptor": "818640c8756455a3de66ead2928c715100bcde4f6e942bc78cec4e704fbe30d7",
+      "training_receptor": "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+      "original_family": "pending:818640c8756455a3de66ead2928c715100bcde4f6e942bc78cec4e704fbe30d7",
+      "training_family": "F82d0ec93a01b1081"
+    },
+    {
+      "target_graph": 326,
+      "source_graph": 170,
+      "original_receptor": "fd17d8b6da191c6e51d69beac649729f3f1ad158801b7c7742b9b734b104467b",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "pending:fd17d8b6da191c6e51d69beac649729f3f1ad158801b7c7742b9b734b104467b",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 327,
+      "source_graph": 305,
+      "original_receptor": "d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "training_receptor": "bd4451e050c976abc956d394e7b279d9803eb26da90c81d935a7988c61c69b6f",
+      "original_family": "pending:d03c77cb5c7089e7d7201ded44bf9752616ff3ea45451c9be6ec8760bc716e43",
+      "training_family": "F67e5224d77a6e331"
+    },
+    {
+      "target_graph": 328,
+      "source_graph": 171,
+      "original_receptor": "90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_receptor": "8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7",
+      "original_family": "pending:90262c9b750d0597192c33262e49c5f5cf81d2d93fc16c810cfa47e2466ee5f7",
+      "training_family": "pending:8f1d5a6bd7d66c0accaeb06f81796d654869f37342da52e3f6c3b75e5b4e24b7"
+    },
+    {
+      "target_graph": 329,
+      "source_graph": 105,
+      "original_receptor": "5e63d97d33313190d3c57ee51e352b9196eb3d9a66aba701d7e3a8d55c1499bf",
+      "training_receptor": "bca49d786ebd372032a9bc3f726a999407277da9acae7778d2c248d0411928ab",
+      "original_family": "F43c9057209041af7",
+      "training_family": "F82d0ec93a01b1081"
+    },
+    {
+      "target_graph": 330,
+      "source_graph": 85,
+      "original_receptor": "9abb2b85c0a312ef1ba86b54fc53bd85116fb03bf2e58d70cb0e9a16be8b2d78",
+      "training_receptor": "647cc29399158704e474438c9a43831628b74eb29d5722cfaa4f6c487ac714ff",
+      "original_family": "F11d247b612d65605",
+      "training_family": "F2d0709934663dbae"
+    }
+  ]
+}

@@ -1,0 +1,2236 @@
+{
+  "scope": "previously exposed developmental identity-retrieval panel; no independent binding acceptance",
+  "protocol": {
+    "protocol_id": "FINGERPRINT-CORRECTED-RETRAIN-20261023-v1",
+    "frozen_before_new_training": true,
+    "scope": "developmental replication on previously exposed 331-graph identity retrieval panel; NOT independent binding validation",
+    "historical_exposure": [
+      "0.7666/0.7944 and shortcut/stratified diagnostics known before protocol"
+    ],
+    "dataset": "/home/administrator/docs/meta-acdc/data/processed/fingerprint_dataset.pt",
+    "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "fold_assignment": "docs/fingerprint_retrain_20261023/fold_assignment.json",
+    "fold_assignment_sha256": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+    "n_folds": 5,
+    "seeds": [
+      20261021,
+      1101,
+      4242
+    ],
+    "arms": {
+      "true": "true",
+      "shuffled": "train-shuffle"
+    },
+    "recipe_cli": {
+      "epochs": 120,
+      "warmup-epochs": 5,
+      "batch-size": 64,
+      "temperature": 0.07,
+      "emb-dim": 128,
+      "family-neg-weight": 1.0,
+      "lr": 0.0003,
+      "lr-min": 3e-06,
+      "wd": 0.0001,
+      "grad-clip": 10.0,
+      "folds": 5,
+      "cpu-threads": 2,
+      "permutation-seed": 20261023
+    },
+    "architecture": "6-layer hidden128 invariant EGNN; unchanged historical v2 recipe, corrected edges/seeds; head385->256->128",
+    "epoch_selection": "fixed final epoch120 only; no tuning, checkpoint selection, early stopping or best-seed selection",
+    "validation_policy": "No parameter search. Original 5 historically exposed family folds used for descriptive out-of-fold queries. Actual independent measured acceptance sets remain unopened.",
+    "baselines": [
+      "raw residue composition cosine columns4:24",
+      "scalar node-count cosine (degenerate diagnostic)",
+      "negative absolute log node-count distance",
+      "negative absolute centered mean-radius distance (secondary)"
+    ],
+    "gallery": "all331 graphs excluding query, historical transductive-gallery identity retrieval; positive identity matches may be in held-out fold",
+    "primary": {
+      "metric": "family-equal mean of per-query AUROC(model)-AUROC(composition), same-family negative restriction, seed-averaged within query",
+      "eligible": "all same-receptor positives retained, only same-family different-receptor negatives; both classes required; undefined counts reported",
+      "expected_available_from_metadata": "62 queries, 11 families; not an independent 331-sample test",
+      "evidence_rule": "conditional family-cluster CI lower>0; each of3 seed family-mean deltas>0; true-minus-shuffled same-family CI lower>0",
+      "practical_claim": "no biological or practical significance claim; no justified application-level margin exists"
+    },
+    "secondary": [
+      "all-negative query macro/family equal AUROC",
+      "per-fold pooled AUROC and rank1; no cross-fold pooled scoring",
+      "same-peptide/same-domain negatives",
+      "full and same-family ranking Spearman",
+      "collapse median cosine",
+      "per-seed effect sizes, no dropping collapsed seeds"
+    ],
+    "uncertainty": {
+      "replicates": 2000,
+      "seed": 20261023,
+      "unit": "family; equal-family estimand after seed averaging within query",
+      "scope": "conditional on cached trained models and fixed gallery; family groups do not ensure source independence; not full model-population uncertainty"
+    },
+    "shuffle": {
+      "unit": "joint(receptor_id,family_id) tuple permuted across training graph positions only; graph features and original evaluation labels unchanged",
+      "preserved": "training graph positions, fold boundaries, class counts, family counts and class-family mapping; mini-batch positive patterns may change",
+      "seed": "local NumPy RNG base20261023 +1000003*fold + initialization seed",
+      "interpretation": "3 label permutations per fold: descriptive negative control, not calibrated permutation p-value; no permutation selection"
+    },
+    "determinism": {
+      "device": "CPU",
+      "threads": 2,
+      "strict_algorithms": true,
+      "replay": "full fold0 seed20261021 repeated once; exact state tensor and embedding equality required"
+    },
+    "failure_policy": "Stop on nonfinite loss/gradient or failed binding/replay; retain logs and partial files. Any recipe/data/source changes require explicit new frozen amendment before rerun. No shortening epochs after inspecting results.",
+    "protection": "Exclusive flock prevents duplicate runner. No SPR/MIRA/clinical/reserved acceptance dataset paths are read.",
+    "environment": {
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "torch": "2.9.1+cu126",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "sklearn": "1.9.1"
+    },
+    "source_sha256": {
+      "src/meta_acdc/models/train_fingerprint_v2.py": "56a4d857e1a7999208c6910b2facbda023bde2720f7c09edfc1ac78821182477",
+      "src/meta_acdc/models/train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+      "src/meta_acdc/models/egnn.py": "f1d4ef0708a0ef0f221c1de7a8a33b2f932c436d4160ac7cc78e8c7a091fdc3c",
+      "src/meta_acdc/models/train_egnn.py": "99f19022a60baccdb7d80a5e1f4df8b740f3003458301c9e1a0b56035bfb994d",
+      "src/meta_acdc/structure/feature_schema.py": "b82a7c0b0ad6cc01a4c7ecbc175051cb4b68c9dd175cc0f6c3bc926377e60e22",
+      "scripts/run_fingerprint_retrain.py": "47b820654e66c4ab7b2a37961207d19e937eec699ceaed65c322376164e3dd3a",
+      "scripts/evaluate_fingerprint_retrain.py": "aef5365ac2dbb100c74569b85c8ced9dae161cb2615e808184399fd32ecbb80f",
+      "scripts/fingerprint_shortcut_audit.py": "9e21dca71016944f39868769caec83397fb34591a6ac17e69a4093ec84f66663",
+      "scripts/rashomon_fingerprint.py": "f91c2c940d8f1b27e0a1ab513b264499afdf61b9eddefcacde875f7a902bb80b",
+      "tests/test_fingerprint_retrain.py": "ef04fbcc3ae8d5339c518d8ff94b1802a7b5c8139c3026acb95baffe99ebbe26",
+      "tests/test_fingerprint_review.py": "c4649672ecd7b7a70c24dd5b887f510aad3e0483057887dd9943149176e34b9f"
+    }
+  },
+  "primary": {
+    "mean": -0.10894611523936786,
+    "ci95": [
+      -0.37058784234876363,
+      0.12198534182801046
+    ],
+    "n": 62,
+    "n_query_rows": 331,
+    "n_family_groups": 110,
+    "n_defined_family_groups": 11,
+    "n_undefined_values": 807,
+    "seed_pair_columns": 3,
+    "query_weighted_mean": -0.06577872084869238,
+    "scope": "family-equal, conditional on fixed cached models and gallery",
+    "status": "conditional_cluster_bootstrap"
+  },
+  "primary_per_seed_family_mean": [
+    -0.09579949798375403,
+    -0.11332356369121074,
+    -0.1177152840431387
+  ],
+  "preregistered_developmental_evidence_criterion_met": false,
+  "practical_or_biological_gain_claim_allowed": false,
+  "baselines": {
+    "composition": {
+      "all": {
+        "mean": 0.9872480343422646,
+        "ci95": [
+          0.9826727844276748,
+          0.9918872891910896
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.9806256753217423,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.9806256753217423,
+        "pooled_pair_auroc_defined_queries": 0.9778570634961257,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105
+      },
+      "same_family": {
+        "mean": 0.5474711682972928,
+        "ci95": [
+          0.36551443072258377,
+          0.7345612656998902
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5493939666437296,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5493939666437294,
+        "pooled_pair_auroc_defined_queries": 0.5387168883424611,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269
+      },
+      "same_peptide": {
+        "mean": 0.6093931260252325,
+        "ci95": [
+          0.501865670517472,
+          0.7187013138983495
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5392771457846841,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5392771457846841,
+        "pooled_pair_auroc_defined_queries": 0.642967886084348,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138
+      },
+      "same_domain": {
+        "mean": 0.9822410699635934,
+        "ci95": [
+          0.9754801351117435,
+          0.9890420219428737
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.9734202329894595,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.9734202329894595,
+        "pooled_pair_auroc_defined_queries": 0.968341964017758,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105
+      }
+    },
+    "size_cosine_constant": {
+      "all": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105
+      },
+      "same_family": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269
+      },
+      "same_peptide": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138
+      },
+      "same_domain": {
+        "mean": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5,
+        "pooled_pair_auroc_defined_queries": 0.5,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105
+      }
+    },
+    "size_log_distance": {
+      "all": {
+        "mean": 0.8112406622911089,
+        "ci95": [
+          0.76431116140239,
+          0.8485206626880396
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.8147240469034049,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.8147240469034049,
+        "pooled_pair_auroc_defined_queries": 0.8156912567521513,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105
+      },
+      "same_family": {
+        "mean": 0.4649998982178914,
+        "ci95": [
+          0.3371482683982684,
+          0.5876118326118327
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5079496418087499,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5079496418087499,
+        "pooled_pair_auroc_defined_queries": 0.5475801944785962,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269
+      },
+      "same_peptide": {
+        "mean": 0.605782046359626,
+        "ci95": [
+          0.5189110833793676,
+          0.690390791614687
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5510797809204129,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5510797809204129,
+        "pooled_pair_auroc_defined_queries": 0.6146233717626644,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138
+      },
+      "same_domain": {
+        "mean": 0.7998447083406255,
+        "ci95": [
+          0.7543969864592976,
+          0.837816316990035
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.8042282475926498,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.8042282475926498,
+        "pooled_pair_auroc_defined_queries": 0.8058878206316202,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105
+      }
+    },
+    "radius_distance": {
+      "all": {
+        "mean": 0.7636305487866636,
+        "ci95": [
+          0.7107595248876065,
+          0.8070984886722243
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.771051484798372,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.7710514847983719,
+        "pooled_pair_auroc_defined_queries": 0.7773836295520454,
+        "n_pairs_defined_queries": 74580,
+        "n_undefined_queries": 105
+      },
+      "same_family": {
+        "mean": 0.47097653403881773,
+        "ci95": [
+          0.3378409090909091,
+          0.6003055383678219
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 269,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5208332174888152,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5208332174888152,
+        "pooled_pair_auroc_defined_queries": 0.579054431653068,
+        "n_pairs_defined_queries": 619,
+        "n_undefined_queries": 269
+      },
+      "same_peptide": {
+        "mean": 0.5652383066275805,
+        "ci95": [
+          0.4856070106479392,
+          0.639468232479669
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 138,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.5228620056217196,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.5228620056217197,
+        "pooled_pair_auroc_defined_queries": 0.6277235583330025,
+        "n_pairs_defined_queries": 1878,
+        "n_undefined_queries": 138
+      },
+      "same_domain": {
+        "mean": 0.7638474906706784,
+        "ci95": [
+          0.7116895400346205,
+          0.8076291817256812
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 105,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.7684269540565517,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap",
+        "per_query_macro_auroc": 0.7684269540565518,
+        "pooled_pair_auroc_defined_queries": 0.7725087731674393,
+        "n_pairs_defined_queries": 39455,
+        "n_undefined_queries": 105
+      }
+    }
+  },
+  "models": {
+    "true": {
+      "20261021": {
+        "all": {
+          "mean": 0.9278005471271117,
+          "ci95": [
+            0.8956332393308091,
+            0.9548148112573083
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9253003583786439,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9253003583786438,
+          "pooled_pair_auroc_defined_queries": 0.9326240229900842,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.45167167031353883,
+          "ci95": [
+            0.2743971392890078,
+            0.625511639096198
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.5022641955872506,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.5022641955872507,
+          "pooled_pair_auroc_defined_queries": 0.509422152676875,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5679494801139032,
+          "ci95": [
+            0.47911914091353075,
+            0.6617277543528801
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.47779147218154594,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.47779147218154594,
+          "pooled_pair_auroc_defined_queries": 0.6274910542641813,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.9208563805146328,
+          "ci95": [
+            0.889078260549335,
+            0.9484894742300267
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9173549800904829,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9173549800904829,
+          "pooled_pair_auroc_defined_queries": 0.9253488641812049,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      },
+      "1101": {
+        "all": {
+          "mean": 0.9504403836529232,
+          "ci95": [
+            0.928772472091687,
+            0.9679345108414658
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9225872233526107,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9225872233526108,
+          "pooled_pair_auroc_defined_queries": 0.9083264027683976,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.4341476046060821,
+          "ci95": [
+            0.25672897256050375,
+            0.6228517316017316
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.476057457722543,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.4760574577225431,
+          "pooled_pair_auroc_defined_queries": 0.5250698558175925,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5875599700434386,
+          "ci95": [
+            0.49425013044170596,
+            0.6813290325930074
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.46834311456152317,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.46834311456152317,
+          "pooled_pair_auroc_defined_queries": 0.600787111335424,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.9425262015282619,
+          "ci95": [
+            0.9206196478026241,
+            0.9611864530400154
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9138713594781296,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9138713594781296,
+          "pooled_pair_auroc_defined_queries": 0.8990089638754742,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      },
+      "4242": {
+        "all": {
+          "mean": 0.9355680893356167,
+          "ci95": [
+            0.9008375789669328,
+            0.9617284937800593
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9202122590138115,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9202122590138117,
+          "pooled_pair_auroc_defined_queries": 0.9181974830252134,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.42975588425415406,
+          "ci95": [
+            0.296639001137271,
+            0.5397064159888555
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.4725240840753175,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.47252408407531743,
+          "pooled_pair_auroc_defined_queries": 0.4899295853358668,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5469878687151,
+          "ci95": [
+            0.4552321744627029,
+            0.6431203638781613
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.4881724990241529,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.48817249902415283,
+          "pooled_pair_auroc_defined_queries": 0.6586545386495484,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.9296047427051656,
+          "ci95": [
+            0.8959060127327088,
+            0.9552033957020996
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.9125831293396961,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.9125831293396962,
+          "pooled_pair_auroc_defined_queries": 0.9093726004565036,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      }
+    },
+    "shuffled": {
+      "20261021": {
+        "all": {
+          "mean": 0.7745380275286916,
+          "ci95": [
+            0.7276181068393321,
+            0.8219771241717139
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.7475867892946295,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.7475867892946296,
+          "pooled_pair_auroc_defined_queries": 0.6414297645189198,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.3493684324134152,
+          "ci95": [
+            0.1962121212121212,
+            0.5017169045391363
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.4496504102054387,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.4496504102054387,
+          "pooled_pair_auroc_defined_queries": 0.5690399016430089,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5406802235197862,
+          "ci95": [
+            0.44984200397171553,
+            0.6284662055187705
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.512980400209352,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.512980400209352,
+          "pooled_pair_auroc_defined_queries": 0.4981473395296613,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.7709991301973046,
+          "ci95": [
+            0.724306351972057,
+            0.8184264140871507
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.7455222076025837,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.7455222076025836,
+          "pooled_pair_auroc_defined_queries": 0.6422865953175498,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      },
+      "1101": {
+        "all": {
+          "mean": 0.6934860070223815,
+          "ci95": [
+            0.6384398437465055,
+            0.7465911522408791
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.6940239746045906,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.6940239746045906,
+          "pooled_pair_auroc_defined_queries": 0.6324692681148655,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.5196843381531963,
+          "ci95": [
+            0.31904698747043037,
+            0.7303171392477187
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.5223505345066066,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.5223505345066066,
+          "pooled_pair_auroc_defined_queries": 0.5798368168101039,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5322433282801724,
+          "ci95": [
+            0.44675407767096253,
+            0.6183265350889314
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.5165438606357914,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.5165438606357914,
+          "pooled_pair_auroc_defined_queries": 0.512495675991403,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.6890251086057139,
+          "ci95": [
+            0.6332727187747401,
+            0.7414466405059593
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.6921147934527315,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.6921147934527317,
+          "pooled_pair_auroc_defined_queries": 0.632795516747035,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      },
+      "4242": {
+        "all": {
+          "mean": 0.7423926880344119,
+          "ci95": [
+            0.6903079428314156,
+            0.7969833690783376
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.7139994737397187,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.7139994737397187,
+          "pooled_pair_auroc_defined_queries": 0.5833872735602796,
+          "n_pairs_defined_queries": 74580,
+          "n_undefined_queries": 105
+        },
+        "same_family": {
+          "mean": 0.41485787376790834,
+          "ci95": [
+            0.2976627886002886,
+            0.5239172624520807
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 269,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.4396513340654707,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.4396513340654707,
+          "pooled_pair_auroc_defined_queries": 0.4886107074997206,
+          "n_pairs_defined_queries": 619,
+          "n_undefined_queries": 269
+        },
+        "same_peptide": {
+          "mean": 0.5286244364104666,
+          "ci95": [
+            0.4520847720822906,
+            0.6084393731174725
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 138,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.4787601014976484,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.4787601014976483,
+          "pooled_pair_auroc_defined_queries": 0.4825797744143449,
+          "n_pairs_defined_queries": 1878,
+          "n_undefined_queries": 138
+        },
+        "same_domain": {
+          "mean": 0.7399265110666461,
+          "ci95": [
+            0.6891005531824295,
+            0.7936735314112087
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 105,
+          "seed_pair_columns": 1,
+          "query_weighted_mean": 0.7112213767587549,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap",
+          "per_query_macro_auroc": 0.711221376758755,
+          "pooled_pair_auroc_defined_queries": 0.581391283865622,
+          "n_pairs_defined_queries": 39455,
+          "n_undefined_queries": 105
+        }
+      }
+    }
+  },
+  "seed_fold_metrics": {
+    "true": {
+      "20261021": {
+        "fold_mean_pooled_auroc": 0.9414205391751125,
+        "fold_mean_rank1": 0.3268625678119349,
+        "fold_cosine_medians": [
+          0.03982371464371681,
+          0.03455022722482681,
+          0.01834731549024582,
+          0.014908631332218647,
+          0.03827328607439995
+        ]
+      },
+      "1101": {
+        "fold_mean_pooled_auroc": 0.9350096801860502,
+        "fold_mean_rank1": 0.37118746232670286,
+        "fold_cosine_medians": [
+          0.022950490936636925,
+          0.03003416210412979,
+          0.016229912638664246,
+          0.025702405720949173,
+          0.0072522093541920185
+        ]
+      },
+      "4242": {
+        "fold_mean_pooled_auroc": 0.9260770141949436,
+        "fold_mean_rank1": 0.301163351416516,
+        "fold_cosine_medians": [
+          0.06592980027198792,
+          0.02946377545595169,
+          0.053337838500738144,
+          0.0823044553399086,
+          -0.00487108388915658
+        ]
+      }
+    },
+    "shuffled": {
+      "20261021": {
+        "fold_mean_pooled_auroc": 0.7624588178819431,
+        "fold_mean_rank1": 0.1957353827606992,
+        "fold_cosine_medians": [
+          0.9917760491371155,
+          0.9854564070701599,
+          0.9649453163146973,
+          0.9964772462844849,
+          0.9920312762260437
+        ]
+      },
+      "1101": {
+        "fold_mean_pooled_auroc": 0.7123001376658242,
+        "fold_mean_rank1": 0.10159433393610609,
+        "fold_cosine_medians": [
+          0.9988067150115967,
+          0.985107958316803,
+          0.9874786734580994,
+          0.9978815913200378,
+          0.9910094738006592
+        ]
+      },
+      "4242": {
+        "fold_mean_pooled_auroc": 0.7039499362451955,
+        "fold_mean_rank1": 0.15874321880650993,
+        "fold_cosine_medians": [
+          0.9949991703033447,
+          0.9995141625404358,
+          0.9883356690406799,
+          0.9867030382156372,
+          0.9998607635498047
+        ]
+      }
+    }
+  },
+  "family_equal_seed_averaged": {
+    "true": {
+      "all": {
+        "mean": 0.9379363400385504,
+        "ci95": [
+          0.9130864866831895,
+          0.9585932048276166
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 315,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.922699946915022,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": 0.43852505305792505,
+        "ci95": [
+          0.3055548019118521,
+          0.5700220105010328
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 807,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.483615245795037,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": 0.567499106290814,
+        "ci95": [
+          0.4856842960139486,
+          0.6515930264232801
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 414,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.4781023619224074,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": 0.9309957749160201,
+        "ci95": [
+          0.9061909213656032,
+          0.9516247639521458
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 315,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.9146031563027694,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "shuffled": {
+      "all": {
+        "mean": 0.7368055741951617,
+        "ci95": [
+          0.6963385742476751,
+          0.7752751378513064
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 315,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.7185367458796463,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": 0.4279702147781732,
+        "ci95": [
+          0.3470328282828283,
+          0.5067430623010206
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 807,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.4705507595925053,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_peptide": {
+        "mean": 0.533849329403475,
+        "ci95": [
+          0.4727089358945098,
+          0.5965037372712323
+        ],
+        "n": 193,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 44,
+        "n_undefined_values": 414,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.5027614541142639,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_domain": {
+        "mean": 0.7333169166232215,
+        "ci95": [
+          0.6933952138804315,
+          0.7725799617694595
+        ],
+        "n": 226,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 48,
+        "n_undefined_values": 315,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.7162861259380233,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    }
+  },
+  "model_minus_baselines": {
+    "true": {
+      "all": {
+        "composition": {
+          "mean": -0.04931169430371384,
+          "ci95": [
+            -0.07501769653538971,
+            -0.028743841519430303
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.05792572840672019,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.4379363400385506,
+          "ci95": [
+            0.4130864866831893,
+            0.4585932048276166
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.42269994691502205,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": 0.12669567774744164,
+          "ci95": [
+            0.08635143390663429,
+            0.1759335457095036
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.1079759000116171,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": 0.17430579125188703,
+          "ci95": [
+            0.12914353178939064,
+            0.2262584071283865
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.15164846211665006,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_family": {
+        "composition": {
+          "mean": -0.10894611523936786,
+          "ci95": [
+            -0.37058784234876363,
+            0.12198534182801046
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.06577872084869238,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": -0.06147494694207496,
+          "ci95": [
+            -0.19444519808814795,
+            0.07002201050103281
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.01638475420496294,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.026474845159966287,
+          "ci95": [
+            -0.12627069801594026,
+            0.07111823705898083
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.02433439601371292,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": -0.03245148098089275,
+          "ci95": [
+            -0.19135773744229623,
+            0.12197439202953898
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.03721797169377815,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_peptide": {
+        "composition": {
+          "mean": -0.041894019734418655,
+          "ci95": [
+            -0.135395956449772,
+            0.04670971575715257
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.06117478386227686,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.06749910629081396,
+          "ci95": [
+            -0.014315703986051418,
+            0.15159302642328007
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.02189763807759264,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.038282940068811964,
+          "ci95": [
+            -0.12721074794478893,
+            0.05875803982814713
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.07297741899800554,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": 0.002260799663233533,
+          "ci95": [
+            -0.09818191569036146,
+            0.1087596082546022
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.04475964369931229,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_domain": {
+        "composition": {
+          "mean": -0.05124529504757327,
+          "ci95": [
+            -0.07645296525395437,
+            -0.030532931514720633
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.058817076686690006,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.4309957749160202,
+          "ci95": [
+            0.4061909213656032,
+            0.4516247639521459
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.4146031563027695,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": 0.1311510665753947,
+          "ci95": [
+            0.09165473109750209,
+            0.17886399539553094
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.11037490871011975,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": 0.16714828424534198,
+          "ci95": [
+            0.12327246094429922,
+            0.216629999010583
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.14617620224621786,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      }
+    },
+    "shuffled": {
+      "all": {
+        "composition": {
+          "mean": -0.2504424601471027,
+          "ci95": [
+            -0.2916273287618067,
+            -0.21192133233728228
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.2620889294420959,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.2368055741951617,
+          "ci95": [
+            0.1963385742476752,
+            0.27527513785130653
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.21853674587964633,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.07443508809594719,
+          "ci95": [
+            -0.11728306670136061,
+            -0.02664404583363637
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.09618730102375869,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": -0.026824974591501866,
+          "ci95": [
+            -0.07550680409273809,
+            0.026436357515894706
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.05251473891872571,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_family": {
+        "composition": {
+          "mean": -0.1195009535191196,
+          "ci95": [
+            -0.34513398848444266,
+            0.08202525617804597
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.07884320705122412,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": -0.07202978522182674,
+          "ci95": [
+            -0.15296717171717175,
+            0.006743062301020723
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.02944924040749468,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.037029683439718054,
+          "ci95": [
+            -0.12532930148955235,
+            0.06215543815565439
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.03739888221624466,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": -0.043006319260644514,
+          "ci95": [
+            -0.14070328448464264,
+            0.0694444350023934
+          ],
+          "n": 62,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 11,
+          "n_undefined_values": 807,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.050282457896309876,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_peptide": {
+        "composition": {
+          "mean": -0.0755437966217576,
+          "ci95": [
+            -0.19429982726119382,
+            0.037477205526011255
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.03651569167042025,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.033849329403475,
+          "ci95": [
+            -0.027291064105490183,
+            0.09650373727123226
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.0027614541142639516,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.07193271695615092,
+          "ci95": [
+            -0.1742427442247276,
+            0.029789727745517202
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.04831832680614895,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": -0.03138897722410541,
+          "ci95": [
+            -0.09737807348191169,
+            0.03463085725461676
+          ],
+          "n": 193,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 44,
+          "n_undefined_values": 414,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.020100551507455697,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      },
+      "same_domain": {
+        "composition": {
+          "mean": -0.24892415334037188,
+          "ci95": [
+            -0.2901028611690827,
+            -0.21110771200466727
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.25713410705143613,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_cosine_constant": {
+          "mean": 0.23331691662322154,
+          "ci95": [
+            0.19339521388043135,
+            0.2725799617694594
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": 0.21628612593802335,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "size_log_distance": {
+          "mean": -0.06652779171740394,
+          "ci95": [
+            -0.11041532272591752,
+            -0.019179300344364568
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.08794212165462639,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        },
+        "radius_distance": {
+          "mean": -0.030530574047456665,
+          "ci95": [
+            -0.07926864074328115,
+            0.020804561877788882
+          ],
+          "n": 226,
+          "n_query_rows": 331,
+          "n_family_groups": 110,
+          "n_defined_family_groups": 48,
+          "n_undefined_values": 315,
+          "seed_pair_columns": 3,
+          "query_weighted_mean": -0.0521408281185283,
+          "scope": "family-equal, conditional on fixed cached models and gallery",
+          "status": "conditional_cluster_bootstrap"
+        }
+      }
+    }
+  },
+  "true_minus_shuffled": {
+    "all": {
+      "mean": 0.20113076584338888,
+      "ci95": [
+        0.16578134053013216,
+        0.23884589093084588
+      ],
+      "n": 226,
+      "n_query_rows": 331,
+      "n_family_groups": 110,
+      "n_defined_family_groups": 48,
+      "n_undefined_values": 315,
+      "seed_pair_columns": 3,
+      "query_weighted_mean": 0.20416320103537577,
+      "scope": "family-equal, conditional on fixed cached models and gallery",
+      "status": "conditional_cluster_bootstrap"
+    },
+    "same_family": {
+      "mean": 0.010554838279751776,
+      "ci95": [
+        -0.09021543967694488,
+        0.10710091623262039
+      ],
+      "n": 62,
+      "n_query_rows": 331,
+      "n_family_groups": 110,
+      "n_defined_family_groups": 11,
+      "n_undefined_values": 807,
+      "seed_pair_columns": 3,
+      "query_weighted_mean": 0.013064486202531745,
+      "scope": "family-equal, conditional on fixed cached models and gallery",
+      "status": "conditional_cluster_bootstrap"
+    },
+    "same_peptide": {
+      "mean": 0.03364977688733895,
+      "ci95": [
+        -0.04239351433487382,
+        0.12492811499839068
+      ],
+      "n": 193,
+      "n_query_rows": 331,
+      "n_family_groups": 110,
+      "n_defined_family_groups": 44,
+      "n_undefined_values": 414,
+      "seed_pair_columns": 3,
+      "query_weighted_mean": -0.024659092191856594,
+      "scope": "family-equal, conditional on fixed cached models and gallery",
+      "status": "conditional_cluster_bootstrap"
+    },
+    "same_domain": {
+      "mean": 0.19767885829279863,
+      "ci95": [
+        0.16324048653799886,
+        0.23442103981682705
+      ],
+      "n": 226,
+      "n_query_rows": 331,
+      "n_family_groups": 110,
+      "n_defined_family_groups": 48,
+      "n_undefined_values": 315,
+      "seed_pair_columns": 3,
+      "query_weighted_mean": 0.19831703036474616,
+      "scope": "family-equal, conditional on fixed cached models and gallery",
+      "status": "conditional_cluster_bootstrap"
+    }
+  },
+  "ranking_stability": {
+    "true": {
+      "all": {
+        "mean": 0.4035673783547079,
+        "ci95": [
+          0.36720968745424554,
+          0.4411208283094631
+        ],
+        "n": 331,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 110,
+        "n_undefined_values": 0,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.45758528512587276,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": 0.41766314500281765,
+        "ci95": [
+          0.24124830434566172,
+          0.5935860912546838
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 807,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.4885350631480663,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    },
+    "shuffled": {
+      "all": {
+        "mean": 0.2690335822662984,
+        "ci95": [
+          0.2454331191034845,
+          0.29267352442791944
+        ],
+        "n": 331,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 110,
+        "n_undefined_values": 0,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.2510939147043637,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      },
+      "same_family": {
+        "mean": 0.10971286037634866,
+        "ci95": [
+          -0.0544735687407527,
+          0.24397200191175064
+        ],
+        "n": 62,
+        "n_query_rows": 331,
+        "n_family_groups": 110,
+        "n_defined_family_groups": 11,
+        "n_undefined_values": 807,
+        "seed_pair_columns": 3,
+        "query_weighted_mean": 0.16669012823012624,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "conditional_cluster_bootstrap"
+      }
+    }
+  },
+  "permutation_checks": [
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 20261021,
+      "n_train": 272,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 20261021,
+      "n_train": 245,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 20261021,
+      "n_train": 234,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 20261021,
+      "n_train": 286,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 20261021,
+      "n_train": 287,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 1101,
+      "n_train": 272,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 1101,
+      "n_train": 245,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 1101,
+      "n_train": 234,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 1101,
+      "n_train": 286,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 1101,
+      "n_train": 287,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 0,
+      "seed": 4242,
+      "n_train": 272,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 1,
+      "seed": 4242,
+      "n_train": 245,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 2,
+      "seed": 4242,
+      "n_train": 234,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 3,
+      "seed": 4242,
+      "n_train": 286,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "true",
+      "fold": 4,
+      "seed": 4242,
+      "n_train": 287,
+      "n_changed_receptor_labels": 0
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 20261021,
+      "n_train": 272,
+      "n_changed_receptor_labels": 269
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 20261021,
+      "n_train": 245,
+      "n_changed_receptor_labels": 241
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 20261021,
+      "n_train": 234,
+      "n_changed_receptor_labels": 230
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 20261021,
+      "n_train": 286,
+      "n_changed_receptor_labels": 284
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 20261021,
+      "n_train": 287,
+      "n_changed_receptor_labels": 279
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 1101,
+      "n_train": 272,
+      "n_changed_receptor_labels": 266
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 1101,
+      "n_train": 245,
+      "n_changed_receptor_labels": 238
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 1101,
+      "n_train": 234,
+      "n_changed_receptor_labels": 232
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 1101,
+      "n_train": 286,
+      "n_changed_receptor_labels": 285
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 1101,
+      "n_train": 287,
+      "n_changed_receptor_labels": 281
+    },
+    {
+      "arm": "shuffled",
+      "fold": 0,
+      "seed": 4242,
+      "n_train": 272,
+      "n_changed_receptor_labels": 269
+    },
+    {
+      "arm": "shuffled",
+      "fold": 1,
+      "seed": 4242,
+      "n_train": 245,
+      "n_changed_receptor_labels": 240
+    },
+    {
+      "arm": "shuffled",
+      "fold": 2,
+      "seed": 4242,
+      "n_train": 234,
+      "n_changed_receptor_labels": 226
+    },
+    {
+      "arm": "shuffled",
+      "fold": 3,
+      "seed": 4242,
+      "n_train": 286,
+      "n_changed_receptor_labels": 283
+    },
+    {
+      "arm": "shuffled",
+      "fold": 4,
+      "seed": 4242,
+      "n_train": 287,
+      "n_changed_receptor_labels": 281
+    }
+  ],
+  "artifact_sha256": {
+    "true/model_run_v2/fold0_seed20261021.pt": "8fe4c7f089eb9b0bedd4aa89213d4ddc02ee53306c200c7e2c29e0523077b323",
+    "true/model_run_v2/emb_fold0_seed20261021.npy": "762a0b95cbfc3b5263e7c15da62f5b174d7f41fc481c218b4635a22b4f821c0b",
+    "true/model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+    "true/rankings_fold0_seed20261021.json": "a8faef78d1070f76731450249a06eb9abd00a7f2dd744e8f031e6f64da3f8623",
+    "true/model_run_v2/labels_fold0_seed20261021.json": "566c78c6da026569d1549222979c3f94176d980087141284c2d0fe39663af65b",
+    "true/metrics_fold0_seed20261021.json": "a64054429b4a5080595880626928fa425465ad8608f611807471161ca3fc2010",
+    "true/model_run_v2/fold1_seed20261021.pt": "e24ce03f6be03a82350c387382eb140d9b951b47066a04a86538fc10094648d0",
+    "true/model_run_v2/emb_fold1_seed20261021.npy": "dab33c0f92ea8c8efb15aeb10d986f53b3293032290cb5b7d041b145bfd18601",
+    "true/model_run_v2/sim_fold1_seed20261021.npy": "7562dcb1dfb2e6dd015feb036773cc1b0b9f2bbe9a36b327deedc630b77c5636",
+    "true/rankings_fold1_seed20261021.json": "30cbe7ca95ae95f127f4117efbf1cf966e2779e918cf8bbc7d8144d4507e7282",
+    "true/model_run_v2/labels_fold1_seed20261021.json": "443a7d765c6f5da61c9d5e6e63a167e7154d7cfefb90f51c4e207be54956d89b",
+    "true/metrics_fold1_seed20261021.json": "831b95f523f06b6792381316928cf378fc8a16dae92cf979d6438301403f33a8",
+    "true/model_run_v2/fold2_seed20261021.pt": "fb01e5048921ebe2d43e892c8907d4fa037f182615903b8de371115c86432426",
+    "true/model_run_v2/emb_fold2_seed20261021.npy": "15d2b6d72c6a0ce03e0949919b4259aafb089dc99db5e685597f82ac577cd1c8",
+    "true/model_run_v2/sim_fold2_seed20261021.npy": "aaab42902af1060d0f2e679fe402848090a753cc17a93912dfb5e0552fca58e6",
+    "true/rankings_fold2_seed20261021.json": "efc0c86e0c6ac6457c84e30e0130a6250a7f2d0cc05926a6ce187538431c9706",
+    "true/model_run_v2/labels_fold2_seed20261021.json": "c2002848e4d3081f9271f00937ad1b8c00a82be3542bcc70e439b9aa0b83bc19",
+    "true/metrics_fold2_seed20261021.json": "6b60225874a13ce97aa4ae5ddbecdac8c66123dc4c288ec9008fd96a503d5343",
+    "true/model_run_v2/fold3_seed20261021.pt": "dc75a6f07db6a05847b2f9a48ba3b1af6640ee28f3948d73d624c05092fef27c",
+    "true/model_run_v2/emb_fold3_seed20261021.npy": "43d304a016d7563b7c1671087001fea210fefae0d52cbf3193e58e7244f2336a",
+    "true/model_run_v2/sim_fold3_seed20261021.npy": "0971c1ca70c4cb62d1839930abe25aa91923c9dcef986f58dcbb0b4f05981767",
+    "true/rankings_fold3_seed20261021.json": "0dfe162ae726655b4bc6e696ab440415bbd1cd9d998476b757e70c8149181097",
+    "true/model_run_v2/labels_fold3_seed20261021.json": "75cce4c3bfad475b0e472f641afc82fee05db1847050b38be4204a015f1187ea",
+    "true/metrics_fold3_seed20261021.json": "3094801f52c6f4171585d5e3dd80ab7e6b871488fd42935d4e28aca456463621",
+    "true/model_run_v2/fold4_seed20261021.pt": "87860eb83b80ea41a1f66420d51ba928b26af8b9d33d4fa45ac24aee60694a1d",
+    "true/model_run_v2/emb_fold4_seed20261021.npy": "1ca7840e9520b0c1c29824f5b7a31347a685eb6447028eda707b4b506c005fcd",
+    "true/model_run_v2/sim_fold4_seed20261021.npy": "b707d0dd1d732896917d24edb00a6699d6b7383ab536f7cb3508fa73c4d110c8",
+    "true/rankings_fold4_seed20261021.json": "942a299633795fdd6ca2df553680e84b53b3affa699fe2db542c09fc945317ff",
+    "true/model_run_v2/labels_fold4_seed20261021.json": "b2a571c20e7e40a9e7f552749cce7213faddcefc6f3013e3e1d9d762c4288771",
+    "true/metrics_fold4_seed20261021.json": "29a5ebad072b5feda14f79fe4a0ee6a37bc7992eea005d724079d59f39df0a8c",
+    "true/model_run_v2/fold0_seed1101.pt": "4f22e26465eebb64cdaf112cfd349508ca1655752380a00eb16ec5b139888a67",
+    "true/model_run_v2/emb_fold0_seed1101.npy": "109e9e61f9e6bea8829d06dcb5918a76ce58391ea4bafe3938b76b25b33ce6e6",
+    "true/model_run_v2/sim_fold0_seed1101.npy": "83640f5d7e25a2d3bbf29ec0d4782ba85420e7f272a08a096ec65acd0c5e3027",
+    "true/rankings_fold0_seed1101.json": "6294ebb953428aea61b53195c05bcc674802951ce48f6d2afe7d4457fed0294e",
+    "true/model_run_v2/labels_fold0_seed1101.json": "da1f7438cc344215ebe7efad98a91cc353101b51a197cfea835d451fc8e8122b",
+    "true/metrics_fold0_seed1101.json": "86ed1025349257869792a53a446855b7f49cbc45bb45f9a7d9e0556706e5fbd5",
+    "true/model_run_v2/fold1_seed1101.pt": "d0a98b23f24f1becdbe9b52fad79f3e09b6fb3350509629ed188aed56c24d2a4",
+    "true/model_run_v2/emb_fold1_seed1101.npy": "1463cb421dd7b5147b3d70fb3ef957f8c42cd7d734fe0af3d383f982e6b42da5",
+    "true/model_run_v2/sim_fold1_seed1101.npy": "c1efa90434c25c8ebd60a567900098589cccde2e5d9689cbc809b7ecbd9284c7",
+    "true/rankings_fold1_seed1101.json": "4b6679183acdf1ed0c2f18cb2a7b03aa50edae4975cd655176e24af06da50d13",
+    "true/model_run_v2/labels_fold1_seed1101.json": "7b3dd024068610c33a126e7024add44780a3849fc89bbc25d37e8eb06f862bee",
+    "true/metrics_fold1_seed1101.json": "b568afb432bb326a252f674893cdfcc4a165035505a7bb4d127a4e3242861365",
+    "true/model_run_v2/fold2_seed1101.pt": "16c5c839443a112701088b582fafdf7b356f682bff204a93fb0509a864b446e7",
+    "true/model_run_v2/emb_fold2_seed1101.npy": "10b9bded8687697ebcaef3e113450727a1759a4e5e958acb0b2c2a9475d555f2",
+    "true/model_run_v2/sim_fold2_seed1101.npy": "716486ed90303e47300a23a2745446cfed400256150cdf191b569eeeca5feb61",
+    "true/rankings_fold2_seed1101.json": "b198fa8bd98f79b317fb7e26dfc9002bd57c72b58867dfbb2273043dc8eff861",
+    "true/model_run_v2/labels_fold2_seed1101.json": "fa9bf8f95ca7f5fd2cf7624f23883755ac90332bcb27b805c065f9ff5714d1fb",
+    "true/metrics_fold2_seed1101.json": "6bda82d797ee72ceb240c3c29bfd2dc6944af89c454f0b8a6a477ada7f9e8b51",
+    "true/model_run_v2/fold3_seed1101.pt": "6025ad6891c49df084233aec83cb4094e07f60f500c52777812c4c4cb7498fc5",
+    "true/model_run_v2/emb_fold3_seed1101.npy": "3e451c3bad7941a73942b831191ce6b8ca1dae0d659219f5a0a0da3bc6859c12",
+    "true/model_run_v2/sim_fold3_seed1101.npy": "25038cef9bae02c39620a788074eb4b65f17891336567ae66cbb92650a968a08",
+    "true/rankings_fold3_seed1101.json": "25b1391333fdc4650463a24ab78daaba90223d90d24a6866145e31e898d3267c",
+    "true/model_run_v2/labels_fold3_seed1101.json": "7060ab68513dd10c6e5069a6e91ee69e1c2c9a1ccba05dbc63efd52f245101f1",
+    "true/metrics_fold3_seed1101.json": "baee5df4ecd077ec31daa5ba81a88ec36327a8c39d8f41c4af6f093836f48bd1",
+    "true/model_run_v2/fold4_seed1101.pt": "272286d2cd18d7cbf10db7c8ef48a6b335a496a96e8fbda669243a44c59a4098",
+    "true/model_run_v2/emb_fold4_seed1101.npy": "7eb5e8f78b4a2cd39fce62b081f7fa94dd9b51211202bbc476d62abe3ee114ba",
+    "true/model_run_v2/sim_fold4_seed1101.npy": "4d6b1324ac2758865841f084f95fc1514ce21ac69f38293f06dbf0626c4ace2b",
+    "true/rankings_fold4_seed1101.json": "bb042960ebc7468a15045c99b0c474b16f8897526aa921b66d5f24e5ae23323f",
+    "true/model_run_v2/labels_fold4_seed1101.json": "6bef06ef4c741e3ea26b1089b18c9021ba205680825b090777b1783218649e66",
+    "true/metrics_fold4_seed1101.json": "950d3f7aa5787f87cee9f6d9d2d107e756250dd30d0fd7788b03c9d6cc4292f4",
+    "true/model_run_v2/fold0_seed4242.pt": "1a1be9f852099bcfcc8101c868d1cbdcc8d89e321e3cce1117c390b3e0053fcc",
+    "true/model_run_v2/emb_fold0_seed4242.npy": "15813c39eb8a9631d0600358870f9b2bdca0f586b5be36f30410388fb85275f3",
+    "true/model_run_v2/sim_fold0_seed4242.npy": "799583dcbbe0a26e53aa0533439f9c699aa389847f9f88f83f5c2ec9fa3dfa7e",
+    "true/rankings_fold0_seed4242.json": "35beb07d73de8e7136dec8f840d9c07bcbd267c258fc4916b99d6dcf696cc9e1",
+    "true/model_run_v2/labels_fold0_seed4242.json": "52440804f39e3b58de7219f59d9f643fbd3c56a75a2c2eefb2b238e1831d2297",
+    "true/metrics_fold0_seed4242.json": "5a9b97e5d900eca79e5b7916f7cf6d849da92aa21c890ebba7d83d41e4a12267",
+    "true/model_run_v2/fold1_seed4242.pt": "fc121bed584ff511ded5d6e8964497fefb763208dab08493ff47b90237e45ea9",
+    "true/model_run_v2/emb_fold1_seed4242.npy": "08a4dae796eaa5d83979dc6427f8f58b468e0dd6eb1a10427cc7f18d1b576a68",
+    "true/model_run_v2/sim_fold1_seed4242.npy": "3b4243d4fef28058ccf4a3f77a96ecd94aa248fd16680b4ddfdb2b60f8b053c3",
+    "true/rankings_fold1_seed4242.json": "14bc76f8b424521e7edbf8ce65662caef21acb39773b07ad1db59c6a42bbc3af",
+    "true/model_run_v2/labels_fold1_seed4242.json": "492139193b9a77c5ef60456ae24ecdae7983b8b328b384a5e3d54f1ce5b36179",
+    "true/metrics_fold1_seed4242.json": "dd9429194eb347c329aa8a5fec94b6295bd8395390f480577eb990c2465175b8",
+    "true/model_run_v2/fold2_seed4242.pt": "81f0a04bad690fb669800087c767025ca4a0b0e8903d253e0e9700371406d438",
+    "true/model_run_v2/emb_fold2_seed4242.npy": "3963eadd0ff5e33b7e67feb6c51220982e988695cee1d7075043a31d540a2418",
+    "true/model_run_v2/sim_fold2_seed4242.npy": "a623cec307570a2a79644d059793a62175a77f82a6d0424b95eef9ea6a0c47aa",
+    "true/rankings_fold2_seed4242.json": "16f14b0cbf2150903340b796f3b4919f5d20fc7d358fb3ba4d1a051fbf3d9df8",
+    "true/model_run_v2/labels_fold2_seed4242.json": "eea6d72ea1aa352fbc688118e2dce2b3a7381d8860ed40cd5fea780e8cc0c2d7",
+    "true/metrics_fold2_seed4242.json": "d4a34c1e8d163016cc88699ad86c34a4ff5df7ca3a80031475af396b982ffca2",
+    "true/model_run_v2/fold3_seed4242.pt": "4ccea261a13b5657661200dd416f04b4ccda7c97517abd2bca7203d0ae1b7175",
+    "true/model_run_v2/emb_fold3_seed4242.npy": "63274648f3b36947ba527b302e8971ae244d1282e5866c8df93a73ded2512fce",
+    "true/model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "true/rankings_fold3_seed4242.json": "7f973dc1d0274b0e1c60e709f98bb25bacc876caacc0473dc2b81bddad4357a1",
+    "true/model_run_v2/labels_fold3_seed4242.json": "ab68efb687e9f82f44fd0617fab1022f0b84ad0acf35176b4a8a4e1c9606071a",
+    "true/metrics_fold3_seed4242.json": "5d4d44edd88964c2afeb7b698be73c676e1d0554787499c3ddfe26ba0feca6e2",
+    "true/model_run_v2/fold4_seed4242.pt": "85175f523bde92355adf5343cf11cb6fc5df47d5713a0fe097bb5c85566096c7",
+    "true/model_run_v2/emb_fold4_seed4242.npy": "46b709bdaff1f228da66b0c8603b6245117f6a793d64c63842f7c915e03026a3",
+    "true/model_run_v2/sim_fold4_seed4242.npy": "b221532defdb2ba471202c69d42094c93535f5fb6aeefb831b5f6c764a2cdcd0",
+    "true/rankings_fold4_seed4242.json": "94e4f580c5de895c465e5d3a226691228f956b83a66566f73469b5d969893ae4",
+    "true/model_run_v2/labels_fold4_seed4242.json": "8f23f182bff21e967e96ef84530d419a4bc1f4b961d47d3cc29cd9ea127aa40e",
+    "true/metrics_fold4_seed4242.json": "c9c9fdb28689d63583a337d3f8fe0e87d34af80b5bed286b249246390cb38556",
+    "shuffled/model_run_v2/fold0_seed20261021.pt": "d9e2a1e152b315d919f9d0a44725b4605faa2ce2a4ed1449b9769fb91a00fb22",
+    "shuffled/model_run_v2/emb_fold0_seed20261021.npy": "8e6ae168dd45f51a15134c6dd845a1dc373b04c6717e613e36be1a556d934984",
+    "shuffled/model_run_v2/sim_fold0_seed20261021.npy": "fccf6e589015e0a7870fed3ed3b7258571f08a9f664d2fa993ba3c08fb8b6fa2",
+    "shuffled/rankings_fold0_seed20261021.json": "61283223e014a1c3f78ed5ed3a4f63c151586a7151d6a4ebad083d0862a3fc8d",
+    "shuffled/model_run_v2/labels_fold0_seed20261021.json": "8376f8931b83423cdf3b23486c7bb91e7c31247d0b7858dfaa0aab34a2075655",
+    "shuffled/metrics_fold0_seed20261021.json": "7b168d991b61e64751bfe74ec410a7234cc5f2ac9e1c9419b93caa0ea065056b",
+    "shuffled/model_run_v2/fold1_seed20261021.pt": "bd7a32448d4f68866530d40b750673af9f55c3ed97f5588d5d03e40b78c618d6",
+    "shuffled/model_run_v2/emb_fold1_seed20261021.npy": "86c40f62745da909a3be6860698ea93dcea4c1372a358813cd679630a2e2db23",
+    "shuffled/model_run_v2/sim_fold1_seed20261021.npy": "948ccd7dbefa153583d2ece5a8a24ce246ed987aa4446a73561f002319eac03c",
+    "shuffled/rankings_fold1_seed20261021.json": "fca4ab3734289a93f22eb851e445c9344040d6e6cfe81cec88d8e71df63cbfb0",
+    "shuffled/model_run_v2/labels_fold1_seed20261021.json": "2ea96535c91b7a6ba505fd24e06da08c47ae93b9b0ea9275befcab72ca2a122b",
+    "shuffled/metrics_fold1_seed20261021.json": "3e2f1c074b069547e93648dd2455daf373e574766dcf456a887e0005384c1f36",
+    "shuffled/model_run_v2/fold2_seed20261021.pt": "1b67b9e18119e4143a9eab219df4945a832f9c9f35e6dc04017de2c10edd6be2",
+    "shuffled/model_run_v2/emb_fold2_seed20261021.npy": "56981c21c0bb35a9910937158a55baa441bb7ca538079e359df4aa76fd3daa85",
+    "shuffled/model_run_v2/sim_fold2_seed20261021.npy": "b6240b3e369b6678dff278cc7c8f9af7fdecef061826187d8e4258c9fdc34345",
+    "shuffled/rankings_fold2_seed20261021.json": "e6d7b65ed2e38f70973c5e7bd84708b2af588398f4e783e97f717471b924628e",
+    "shuffled/model_run_v2/labels_fold2_seed20261021.json": "adefe31943708dd3a94106f8887b35c32e177256ad24ef2bec8e933c953a3627",
+    "shuffled/metrics_fold2_seed20261021.json": "fcb9b995111a8fec08780b701823b04dc3b4b4ea5a62f3a365d6e4053547744f",
+    "shuffled/model_run_v2/fold3_seed20261021.pt": "822cdae98cf2a34d409fbc466aaf99cf697e79a2936952092beb10e3f8637859",
+    "shuffled/model_run_v2/emb_fold3_seed20261021.npy": "149637d64efc42b32c386dbb53f333b4113a4bb100bb4f1181de0c771f91246e",
+    "shuffled/model_run_v2/sim_fold3_seed20261021.npy": "36bc2e60a414be63c9cc3f15982fc550ca6fbd61218cce7328d7651808cbb4ad",
+    "shuffled/rankings_fold3_seed20261021.json": "f652ac28b1ead3ab0ba9294223860fcfa78aef66493b2e46b4683ce096241988",
+    "shuffled/model_run_v2/labels_fold3_seed20261021.json": "ae3151ed574a335912033960331c3f2ed09b0ad5a95fe865dffc476f86ecf9ef",
+    "shuffled/metrics_fold3_seed20261021.json": "5698171a33d66cd62b3e872d0e475181c2e2e3b111723a7bfb3074623369fdf3",
+    "shuffled/model_run_v2/fold4_seed20261021.pt": "ad00dfa8ebb0e7dc30a005759af6d0d3fe66061a878fe8534bde13de09e99c5d",
+    "shuffled/model_run_v2/emb_fold4_seed20261021.npy": "32f42f4460659232c011d262cda3826cd96bbb36665178031a0df6e5b45ad21c",
+    "shuffled/model_run_v2/sim_fold4_seed20261021.npy": "f92106db89d84bab8418abfd49e0072f15b35b72460286417d6fd0e6ca9a0687",
+    "shuffled/rankings_fold4_seed20261021.json": "855eb00aa0cfefd4b6a6c139b557d593e2a1fb5216dfdac60c1867e79ab523d0",
+    "shuffled/model_run_v2/labels_fold4_seed20261021.json": "ae7fc5a41f6634b923d88c21dd12715ac9960033228649ac014deb4a0a20ee93",
+    "shuffled/metrics_fold4_seed20261021.json": "d306c4684a394fbf3fd427cb5b894c0285c387c7edd26445ecfdc55840b49fc2",
+    "shuffled/model_run_v2/fold0_seed1101.pt": "014702d3ab706f4092f96f77db76c35f575e0420934c44f9ed3b6cb3dbf2759e",
+    "shuffled/model_run_v2/emb_fold0_seed1101.npy": "7cd0baf8b1686d857ece0647854a9d2eda99ecb9f326e5170d0c1601cef5abfe",
+    "shuffled/model_run_v2/sim_fold0_seed1101.npy": "e26b5f4ae328a39a2b8a70e25f8acb8b00b03d88f382757c58fa25f8a477a6cc",
+    "shuffled/rankings_fold0_seed1101.json": "9f7df2766816fe004ed9932000262a6d6a228f8760866cad5e788052e2d0da56",
+    "shuffled/model_run_v2/labels_fold0_seed1101.json": "c65e544297dbf7ea8985bf9d4901aa359a0a13b6bcfb1ea35f0974c8864b9031",
+    "shuffled/metrics_fold0_seed1101.json": "e654374f241be0dc70dbf7ca46f91d3e37b904a12b9febaa2fd3f47bd17f98de",
+    "shuffled/model_run_v2/fold1_seed1101.pt": "5c639b19bf44baf473aee3ac64513833082caf05ede82d3239feaaf7d53940b3",
+    "shuffled/model_run_v2/emb_fold1_seed1101.npy": "8432c2f408bee63e9b50c93b4c2ad370d910be4a92e457dda2d147ac9db769ed",
+    "shuffled/model_run_v2/sim_fold1_seed1101.npy": "8fd128ac76ad0886eef54cb99b86ce0de02ede84e7e34ad9b7cc356321304489",
+    "shuffled/rankings_fold1_seed1101.json": "c455ad4eea96c48abeb3ee8fc3fd97aaff77cf293d9e8c4ff336371b18368024",
+    "shuffled/model_run_v2/labels_fold1_seed1101.json": "fb61798bd700d44fba6b01ff909278cbd0660f25ca071f31be8460924ea71eb0",
+    "shuffled/metrics_fold1_seed1101.json": "bb8aa36ed3f52b97f52dbe7b566010d77d402e30ae208197e94f693450990760",
+    "shuffled/model_run_v2/fold2_seed1101.pt": "24ac775df2676d15ec5fd046f31d8b4552228fb9142cd3e8d01c3a9d1fbb5ce3",
+    "shuffled/model_run_v2/emb_fold2_seed1101.npy": "fdba378208f4ba99316c0dc2cd697763fa3b298cf99c3651f7b029b571fbe02f",
+    "shuffled/model_run_v2/sim_fold2_seed1101.npy": "020d3cb1a8bfd349f4fac3dee2598a25f698ed039b251109e6a56616a6e52053",
+    "shuffled/rankings_fold2_seed1101.json": "aef3079c22ebaa3a37035316c7addec66c955f5b6e3ad7872304da36cdc31e17",
+    "shuffled/model_run_v2/labels_fold2_seed1101.json": "85c2ff5943df8fff828c8714cf0c78ca994cfddc4d90795bb976e834205e6239",
+    "shuffled/metrics_fold2_seed1101.json": "b96306fbc1549d3d944d2f3a24b15fd7b9688c45a11a1da13116dbc0a20ea794",
+    "shuffled/model_run_v2/fold3_seed1101.pt": "88a3a4d9ce4802dcb066fa90449d200071f588d00c4f9ee5ff920b4a7f6b510d",
+    "shuffled/model_run_v2/emb_fold3_seed1101.npy": "389fa732877cabaf4b2efd1effa5230636ee01efa1ff094e9f8d198c002026ea",
+    "shuffled/model_run_v2/sim_fold3_seed1101.npy": "afef39b698176dcaa56941ba1286e2a65f29730c28ddee2b79cb8862e7cb2e86",
+    "shuffled/rankings_fold3_seed1101.json": "8706cd96f849eabe8bd67ce808f79af90f5e014b0a1211703b9b557e6e56d7ad",
+    "shuffled/model_run_v2/labels_fold3_seed1101.json": "a0578c62d7e1edbe09b0be7273a48c89fb8d9cebf847bd38ec1476b94682186e",
+    "shuffled/metrics_fold3_seed1101.json": "f231847ff87f7e219a0882806b02310317152e1f056797c03552ca34cf6db0fb",
+    "shuffled/model_run_v2/fold4_seed1101.pt": "af9bd67a566c89893c2722e121195ad326ef04e36b6bf312a4628057596730ef",
+    "shuffled/model_run_v2/emb_fold4_seed1101.npy": "7d6e41fb39bf75b41545edc2858fefa84b4df87513d35fff01f33404f64c6373",
+    "shuffled/model_run_v2/sim_fold4_seed1101.npy": "2068aed2255435d65494b93abbed051f1f6204e0d0a884f828c16271cde39263",
+    "shuffled/rankings_fold4_seed1101.json": "d17ac3e9b2a91885555dc11747355cfe13e0f600018c71640b17c29d5d0c193b",
+    "shuffled/model_run_v2/labels_fold4_seed1101.json": "b72ab47d1e9e6d4e0f0464783c817efc048c9107f83e29e59c37def2820618c6",
+    "shuffled/metrics_fold4_seed1101.json": "d4456a294d8171a586a09ee7ee3b43cd5e06997c2c7c286eb5dae1c9f2c1b4ff",
+    "shuffled/model_run_v2/fold0_seed4242.pt": "ac5bbe264c1a93132d41d4fe3adac37880aa43f56ea85b8787d13406ae33d2ff",
+    "shuffled/model_run_v2/emb_fold0_seed4242.npy": "df31ba0d830c21f43df68d7d68c3cc860f1d6a1a97ec50f72ab9f651ca1b881a",
+    "shuffled/model_run_v2/sim_fold0_seed4242.npy": "1910f4be8bcf9e0e517725245b3ff1ddc1508a776dca39a0f4260c0b80a710cd",
+    "shuffled/rankings_fold0_seed4242.json": "b0cf15dcfe39f635b78b4a8f0c1d767d538895428b09bd250421b03ad9d3ecea",
+    "shuffled/model_run_v2/labels_fold0_seed4242.json": "bde64dbf1c5f3797b7a4767030bb0f4a3c66dacabb033c9875cd35d858322da5",
+    "shuffled/metrics_fold0_seed4242.json": "dda51ba3470bc90735e6735d80a1510863cb927e5fd02e816ecf5be0b0c9e602",
+    "shuffled/model_run_v2/fold1_seed4242.pt": "4abe0f4b3bb0b9eb1829d4dcdc8a5f918faf26fd303870add2850349778245ae",
+    "shuffled/model_run_v2/emb_fold1_seed4242.npy": "3123167fc3ca4f85fcf3fc0527f87aac11ccd654d4465c05eb21c45b81eeda8c",
+    "shuffled/model_run_v2/sim_fold1_seed4242.npy": "a6a45d78a6e39f876c0984bd7a96543adb7e77ac93f9782e89a3327eed69d86a",
+    "shuffled/rankings_fold1_seed4242.json": "04311acc9ec95aee99e7365bd9aef7a3835343db6be64464ff8f0ff0a23e27f8",
+    "shuffled/model_run_v2/labels_fold1_seed4242.json": "7a7bc126e4a66cd2e97514d5eaf24fff60857e508e144f1d91f6dd7070d04892",
+    "shuffled/metrics_fold1_seed4242.json": "6d84cf8da17d1ca83b3672e36508971c92e1082effb817015656170360d47e22",
+    "shuffled/model_run_v2/fold2_seed4242.pt": "51f88766084eca7d26734ee632c53545d66ea795d727aebdeadea2716e32d2a5",
+    "shuffled/model_run_v2/emb_fold2_seed4242.npy": "7a4249ff42eb6a626a39d3f6c016558197b7b85796cd6b7d906c564bfa6c952c",
+    "shuffled/model_run_v2/sim_fold2_seed4242.npy": "db6e959969816b9ad8bb6492a9af1cd5a1cc50d65dd77c7c681b7ffa4ec934e7",
+    "shuffled/rankings_fold2_seed4242.json": "873d079e0405bf7c3b323aab0adc9d000813e2609ffa953bf02e4d4d09837501",
+    "shuffled/model_run_v2/labels_fold2_seed4242.json": "c79baa5cfdaf454bd1c12cdafa787af1a3102c1410299d932876f0cffa1f1bd2",
+    "shuffled/metrics_fold2_seed4242.json": "03dfb41c078ce0fd0acecd86a7bd49efa92d7179e094a6342d732cfcf0beabbf",
+    "shuffled/model_run_v2/fold3_seed4242.pt": "2b2167905494826aec555187f189a841e85349e5d2f61904c0015ac6a1519e11",
+    "shuffled/model_run_v2/emb_fold3_seed4242.npy": "7ef8e121a330378ca29dd7845445289e365ffcee7a497b86bcd0f2ae13f6c2e2",
+    "shuffled/model_run_v2/sim_fold3_seed4242.npy": "9a45d9f5d27590b2dc235d64ecffff341d03d555b995fb64e28e3fbe24490f53",
+    "shuffled/rankings_fold3_seed4242.json": "3549d0349e6df6a019adb9dac80bf3825c6bb05e9eb4f1c397fb6ea6ef115dc0",
+    "shuffled/model_run_v2/labels_fold3_seed4242.json": "130de6e4e1717e8eba112c304c9fc565249711e08fdb982c14315806f39e9e65",
+    "shuffled/metrics_fold3_seed4242.json": "e3f440770901462e408a5c239033f142b113632bf4255892ef67a3f2a3a69b75",
+    "shuffled/model_run_v2/fold4_seed4242.pt": "2a3a46527792a4721ae08d2fdc64c145138eb587919a38a984640f324f863f1c",
+    "shuffled/model_run_v2/emb_fold4_seed4242.npy": "ec5da3530640576616ae4879eca55a4f8638050fef454cb9c63f7df1a2c58735",
+    "shuffled/model_run_v2/sim_fold4_seed4242.npy": "806373b053f86d0e859b42db1cf9a1f886bce990196ab24c9de2f98b75a91c6a",
+    "shuffled/rankings_fold4_seed4242.json": "5eaf3237b6e50a8e1bd4961d3b12dea5b6121a30717c180dd84e078baf88a444",
+    "shuffled/model_run_v2/labels_fold4_seed4242.json": "caa56ca63fdb3542fef511282d9be4adfbf6607d1a4b8bfdc2d9077a9008ccd7",
+    "shuffled/metrics_fold4_seed4242.json": "e9c5797811737f4f806c691f4d06d443b538bbfa00b51e7d96cb2f9da20234ac"
+  },
+  "replay": {
+    "weights_bitwise_equal": true,
+    "embeddings_bitwise_equal": true,
+    "scope": "full fold0 first seed on same CPU/software; not cross-device guarantee"
+  },
+  "uncomputed": [
+    "same MHC/pMHC: audited metadata unavailable",
+    "new independent binding/clinical acceptance"
+  ],
+  "uncertainty": "conditional family-cluster bootstrap, seeds averaged within query; does not resample model training or sources"
+}

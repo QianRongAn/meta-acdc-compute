@@ -1,0 +1,83 @@
+{
+  "task_id": "FOLLOWUP-AUROC-RASHOMON-20261021",
+  "parent_task": "STRUCT-FINGERPRINT-20261021",
+  "n_graphs": 331,
+  "execution_protocol": "isolated-fold-seed-offset-edges-label-control-v2",
+  "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+  "probe_only": false,
+  "source_sha256": {
+    "train_fingerprint_v2.py": "56a4d857e1a7999208c6910b2facbda023bde2720f7c09edfc1ac78821182477",
+    "train_fingerprint.py": "0310630e195e91334904b9b1d557f348bbb29eb27ea7c6d165f4f25008225f45",
+    "egnn.py": "f1d4ef0708a0ef0f221c1de7a8a33b2f932c436d4160ac7cc78e8c7a091fdc3c",
+    "train_egnn.py": "99f19022a60baccdb7d80a5e1f4df8b740f3003458301c9e1a0b56035bfb994d"
+  },
+  "torch_version": "2.9.1+cu126",
+  "recipe_v2": {
+    "batch_size": 64,
+    "epochs": 120,
+    "warmup_epochs": 5,
+    "temperature": 0.07,
+    "emb_dim": 128,
+    "family_neg_weight": 1.0,
+    "lr_base": 0.0003,
+    "lr_min": 3e-06,
+    "wd": 0.0001,
+    "grad_clip": 10.0,
+    "egnn": "6 layers hidden 128, node/edge 26/16, invariant",
+    "head": "385->256->128, no LayerNorm; unit-sphere before loss/eval",
+    "fold_assignment": "v1 family-grouped, seed 20261021"
+  },
+  "seeds": [
+    20261021
+  ],
+  "device": "cpu",
+  "cpu_threads": 2,
+  "label_mode": "true",
+  "permutation_seed": 20261023,
+  "permutation_rule": "local RNG seed = base + 1000003*fold + initialization seed; joint labels, training only",
+  "binding_labels": false,
+  "fold_results": [
+    {
+      "retrieval": {
+        "rank1": 0.23809523809523808,
+        "mrr": 0.377956384643361,
+        "chance_rank1": 0.010533910533910534,
+        "n_queries_with_same_receptor_in_gallery": 42,
+        "auroc": 0.9330371323375173,
+        "n_pairs": 13860
+      },
+      "family": {
+        "1": 0.3050847457627119,
+        "3": 0.22033898305084745,
+        "5": 0.22033898305084745,
+        "chance_top1": 0.06985294117647059
+      },
+      "domain": {
+        "accuracy": 0.3898305084745763,
+        "n": 59
+      },
+      "fold": 0,
+      "seed": 20261021,
+      "n_train": 272,
+      "n_test": 59,
+      "median_pairwise_cosine": 0.03982371464371681,
+      "execution_protocol": "isolated-fold-seed-offset-edges-label-control-v2",
+      "artifact_sha256": {
+        "model_run_v2/fold0_seed20261021.pt": "b9a7ceb87328cbe32fecffb7cc2b6446c5887d810cb4d0a0f1a080ec1af8eafa",
+        "model_run_v2/emb_fold0_seed20261021.npy": "762a0b95cbfc3b5263e7c15da62f5b174d7f41fc481c218b4635a22b4f821c0b",
+        "model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+        "rankings_fold0_seed20261021.json": "a8faef78d1070f76731450249a06eb9abd00a7f2dd744e8f031e6f64da3f8623",
+        "model_run_v2/labels_fold0_seed20261021.json": "566c78c6da026569d1549222979c3f94176d980087141284c2d0fe39663af65b"
+      }
+    }
+  ],
+  "means": {
+    "retrieval_rank1": 0.23809523809523808,
+    "retrieval_mrr": 0.377956384643361,
+    "retrieval_chance_rank1": 0.010533910533910534,
+    "retrieval_auroc": 0.9330371323375173,
+    "family_top1_k1": 0.3050847457627119,
+    "domain_accuracy": 0.3898305084745763,
+    "median_pairwise_cosine": 0.03982371464371681
+  }
+}
