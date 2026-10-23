@@ -1,0 +1,1751 @@
+{
+  "scope": "post-freeze source-only explanation; labels and training protocol unchanged",
+  "counts": {
+    "reference_terminal_offset": 83,
+    "other_unresolved_boundary": 46
+  },
+  "rows": [
+    {
+      "index": 0,
+      "complex_id": "1ao7",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "KEVEQNSGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-2*01|Homo sapiens|F|V-REGION|143579..143855|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 1,
+      "complex_id": "1fo0",
+      "role": "alpha",
+      "gene": "TRAV16D/DV11*01",
+      "annotated_variable_prefix": "QKVTQTQTSISVMEK",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AC005855|TRAV16D/DV11*01|Mus musculus_129/SvJ|F|V-REGION|69913..70202|290 nt|1| | | | |290+42=332| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 1,
+      "complex_id": "1fo0",
+      "role": "beta",
+      "gene": "TRBV1*01",
+      "annotated_variable_prefix": "VTLLEQNPRWRLVPR",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 4,
+      "complex_id": "1lp9_0",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 5,
+      "complex_id": "1lp9_1",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 6,
+      "complex_id": "1mi5",
+      "role": "alpha",
+      "gene": "TRAV26-2*01",
+      "annotated_variable_prefix": "KTTQPNSMESNEEEP",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV26-2*01|Homo sapiens|F|V-REGION|207019..207294|276 nt|1| | | | |276+48=324| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 6,
+      "complex_id": "1mi5",
+      "role": "beta",
+      "gene": "TRBV7-8*01",
+      "annotated_variable_prefix": "GVSQSPRYKVAKRGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "M11953|TRBV7-8*01|Homo sapiens|F|V-REGION|215..504|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "GA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 7,
+      "complex_id": "1nam",
+      "role": "alpha",
+      "gene": "TRAV16D/DV11*01",
+      "annotated_variable_prefix": "QKVTQTQTSISVMEK",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AC005855|TRAV16D/DV11*01|Mus musculus_129/SvJ|F|V-REGION|69913..70202|290 nt|1| | | | |290+42=332| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 8,
+      "complex_id": "1oga",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "MQLLEQSPQFLSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 9,
+      "complex_id": "1qrn",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "KEVEQNSGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-2*01|Homo sapiens|F|V-REGION|143579..143855|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 9,
+      "complex_id": "1qrn",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV6-5*01|Homo sapiens|F|V-REGION|265870..266156|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 10,
+      "complex_id": "2bnq",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "QEVTQIPAALSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV21*01|Homo sapiens|F|V-REGION|57069..57347|279 nt|1| | | | |279+42=321| | |",
+          "candidate_missing_N_residues": "K",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 10,
+      "complex_id": "2bnq",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV6-5*01|Homo sapiens|F|V-REGION|265870..266156|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 11,
+      "complex_id": "2bnr",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "QEVTQIPAALSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV21*01|Homo sapiens|F|V-REGION|57069..57347|279 nt|1| | | | |279+42=321| | |",
+          "candidate_missing_N_residues": "K",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 11,
+      "complex_id": "2bnr",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV6-5*01|Homo sapiens|F|V-REGION|265870..266156|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 14,
+      "complex_id": "2f54_0",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "KQQVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 14,
+      "complex_id": "2f54_0",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV6-5*01|Homo sapiens|F|V-REGION|265870..266156|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 15,
+      "complex_id": "2j8u_0",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 16,
+      "complex_id": "2j8u_1",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 17,
+      "complex_id": "2jcc_0",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 18,
+      "complex_id": "2jcc_1",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 19,
+      "complex_id": "2nx5_1",
+      "role": "alpha",
+      "gene": "TRAV1-2*01",
+      "annotated_variable_prefix": "QNIDQPTEMTATEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000658|TRAV1-2*01|Homo sapiens|F|V-REGION|149176..149450|275 nt|1| | | | |275+48=323| | |",
+          "candidate_missing_N_residues": "G",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 20,
+      "complex_id": "2ol3",
+      "role": "alpha",
+      "gene": "TRAV16D/DV11*01",
+      "annotated_variable_prefix": "QKVTQTQTSISVMEK",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AC005855|TRAV16D/DV11*01|Mus musculus_129/SvJ|F|V-REGION|69913..70202|290 nt|1| | | | |290+42=332| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 21,
+      "complex_id": "2pye",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "MGVTQTPKFQVLKTG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 22,
+      "complex_id": "2uwe_0",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 23,
+      "complex_id": "2uwe_1",
+      "role": "alpha",
+      "gene": "TRAV12D-2*01",
+      "annotated_variable_prefix": "MDSVTQTEGLVTLTE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 24,
+      "complex_id": "2vlj",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "MQLLEQSPQFLSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 25,
+      "complex_id": "2vlk",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "MQLLEQSPQFLSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 26,
+      "complex_id": "2vlr_0",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "MQLLEQSPQFLSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 27,
+      "complex_id": "2vlr_1",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "MQLLEQSPQFLSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 28,
+      "complex_id": "2ypl",
+      "role": "alpha",
+      "gene": "TRAV5*01",
+      "annotated_variable_prefix": "DVEQSLFLSVREGDS",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV5*01|Homo sapiens|F|V-REGION|4886..5162|277 nt|1| | || |277+45=322| | |",
+          "candidate_missing_N_residues": "GE",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 28,
+      "complex_id": "2ypl",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GITQSPKYLFRKEGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DG",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 29,
+      "complex_id": "3dxa_0",
+      "role": "alpha",
+      "gene": "TRAV26-1*01",
+      "annotated_variable_prefix": "AKTTQPTSMDCAEGR",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 29,
+      "complex_id": "3dxa_0",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "TGVSQNPRHKITKRG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV7-9*01|Homo sapiens|F|V-REGION|364320..364609|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 30,
+      "complex_id": "3gsn",
+      "role": "alpha",
+      "gene": "TRAV24*01",
+      "annotated_variable_prefix": "LNVEQSPQSLHVQEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV24*01|Homo sapiens|F|V-REGION|109879..110155|277 nt|1| | | | |277+42=319| | |",
+          "candidate_missing_N_residues": "I",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 30,
+      "complex_id": "3gsn",
+      "role": "beta",
+      "gene": "TRBV6-5*01",
+      "annotated_variable_prefix": "MGVTQTPKFQVLKTG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 31,
+      "complex_id": "3kpr_0",
+      "role": "alpha",
+      "gene": "TRAV26-2*01",
+      "annotated_variable_prefix": "KTTQPNSMESNEEEP",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV26-2*01|Homo sapiens|F|V-REGION|207019..207294|276 nt|1| | | | |276+48=324| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 31,
+      "complex_id": "3kpr_0",
+      "role": "beta",
+      "gene": "TRBV7-8*01",
+      "annotated_variable_prefix": "GVSQSPRYKVAKRGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "M11953|TRBV7-8*01|Homo sapiens|F|V-REGION|215..504|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "GA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 32,
+      "complex_id": "3kpr_1",
+      "role": "alpha",
+      "gene": "TRAV26-2*01",
+      "annotated_variable_prefix": "KTTQPNSMESNEEEP",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV26-2*01|Homo sapiens|F|V-REGION|207019..207294|276 nt|1| | | | |276+48=324| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 32,
+      "complex_id": "3kpr_1",
+      "role": "beta",
+      "gene": "TRBV7-8*01",
+      "annotated_variable_prefix": "GVSQSPRYKVAKRGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "M11953|TRBV7-8*01|Homo sapiens|F|V-REGION|215..504|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "GA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 33,
+      "complex_id": "3kxf_0",
+      "role": "alpha",
+      "gene": "TRAV19*01",
+      "annotated_variable_prefix": "QKVTQAQTEISVVED",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV19*01|Homo sapiens|F|V-REGION|12163..12452|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 33,
+      "complex_id": "3kxf_0",
+      "role": "beta",
+      "gene": "TRBV6-1*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X61446|TRBV6-1*01|Homo sapiens|F|V-REGION|412..698|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 34,
+      "complex_id": "3kxf_1",
+      "role": "alpha",
+      "gene": "TRAV19*01",
+      "annotated_variable_prefix": "QKVTQAQTEISVVED",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV19*01|Homo sapiens|F|V-REGION|12163..12452|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 34,
+      "complex_id": "3kxf_1",
+      "role": "beta",
+      "gene": "TRBV6-1*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X61446|TRBV6-1*01|Homo sapiens|F|V-REGION|412..698|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 35,
+      "complex_id": "3kxf_2",
+      "role": "alpha",
+      "gene": "TRAV19*01",
+      "annotated_variable_prefix": "QKVTQAQTEISVVED",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV19*01|Homo sapiens|F|V-REGION|12163..12452|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 35,
+      "complex_id": "3kxf_2",
+      "role": "beta",
+      "gene": "TRBV6-1*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X61446|TRBV6-1*01|Homo sapiens|F|V-REGION|412..698|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 38,
+      "complex_id": "3o4l",
+      "role": "alpha",
+      "gene": "TRAV5*01",
+      "annotated_variable_prefix": "FLSVREGDSSVINCT",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV5*01|Homo sapiens|F|V-REGION|4886..5162|277 nt|1| | || |277+45=322| | |",
+          "candidate_missing_N_residues": "GEDVEQSL",
+          "n_candidate_missing": 8
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 39,
+      "complex_id": "3pqy_0",
+      "role": "alpha",
+      "gene": "TRAV21/DV12*01",
+      "annotated_variable_prefix": "KTTQPDSMESTEGET",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "M94080|TRAV21/DV12*01|Mus musculus_BALB/c|F|V-REGION|26868..27144|277 nt|1| | | | |277+54=331| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 40,
+      "complex_id": "3pqy_1",
+      "role": "alpha",
+      "gene": "TRAV21/DV12*01",
+      "annotated_variable_prefix": "KTTQPDSMESTEGET",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "M94080|TRAV21/DV12*01|Mus musculus_BALB/c|F|V-REGION|26868..27144|277 nt|1| | | | |277+54=331| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 41,
+      "complex_id": "3pqy_2",
+      "role": "alpha",
+      "gene": "TRAV21/DV12*01",
+      "annotated_variable_prefix": "KTTQPDSMESTEGET",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "M94080|TRAV21/DV12*01|Mus musculus_BALB/c|F|V-REGION|26868..27144|277 nt|1| | | | |277+54=331| | |",
+          "candidate_missing_N_residues": "DA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 48,
+      "complex_id": "4g9f",
+      "role": "alpha",
+      "gene": "TRAV14/DV4*01",
+      "annotated_variable_prefix": "KITQTQPGMFVQEKE",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "M21626|TRAV14/DV4*01|Homo sapiens|F|V-REGION|226..515|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "AQ",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 49,
+      "complex_id": "4jrx",
+      "role": "alpha",
+      "gene": "TRAV19*01",
+      "annotated_variable_prefix": "QKVTQAQTEISVVEK",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV19*01|Homo sapiens|F|V-REGION|12163..12452|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 49,
+      "complex_id": "4jrx",
+      "role": "beta",
+      "gene": "TRBV6-1*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X61446|TRBV6-1*01|Homo sapiens|F|V-REGION|412..698|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 50,
+      "complex_id": "4jry",
+      "role": "beta",
+      "gene": "TRBV5-6*01",
+      "annotated_variable_prefix": "AGVTQSPTHLIKTRG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV5-6*01|Homo sapiens|F|V-REGION|314963..315248|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 51,
+      "complex_id": "4pri",
+      "role": "alpha",
+      "gene": "TRAV20*01",
+      "annotated_variable_prefix": "EDQVTQSPEALRLQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 51,
+      "complex_id": "4pri",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "SGVTQTPKHLITATG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 52,
+      "complex_id": "4qrp_0",
+      "role": "alpha",
+      "gene": "TRAV9-2*01",
+      "annotated_variable_prefix": "GDSVTQMEGPVTLSE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 53,
+      "complex_id": "4qrp_1",
+      "role": "alpha",
+      "gene": "TRAV9-2*01",
+      "annotated_variable_prefix": "GDSVTQMEGPVTLSE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 55,
+      "complex_id": "5brz",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "AQEVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 55,
+      "complex_id": "5brz",
+      "role": "beta",
+      "gene": "TRBV5-1*01",
+      "annotated_variable_prefix": "AGVTQTPRYLIKTRG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV5-1*01|Homo sapiens|F|V-REGION|113806..114091|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "K",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 56,
+      "complex_id": "5c07_0",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "KEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 57,
+      "complex_id": "5c07_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "KEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 58,
+      "complex_id": "5c08_0",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "AEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 58,
+      "complex_id": "5c08_0",
+      "role": "beta",
+      "gene": "TRBV12-4*01",
+      "annotated_variable_prefix": "AGVIQSPRHEVTEMG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "K02546|TRBV12-4*01|Homo sapiens|F|V-REGION|158..447|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 59,
+      "complex_id": "5c08_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "AEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 59,
+      "complex_id": "5c08_1",
+      "role": "beta",
+      "gene": "TRBV12-4*01",
+      "annotated_variable_prefix": "AGVIQSPRHEVTEMG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "K02546|TRBV12-4*01|Homo sapiens|F|V-REGION|158..447|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 60,
+      "complex_id": "5c09_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "EVEQDPGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 61,
+      "complex_id": "5c0a_0",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "EVEQDPGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 62,
+      "complex_id": "5c0a_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "EVEQDPGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 63,
+      "complex_id": "5c0b_0",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "EVEQDPGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 64,
+      "complex_id": "5c0b_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "EVEQDPGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 65,
+      "complex_id": "5c0c_0",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "KEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 66,
+      "complex_id": "5c0c_1",
+      "role": "alpha",
+      "gene": "TRAV12-3*01",
+      "annotated_variable_prefix": "KEVEQDPGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 71,
+      "complex_id": "5euo_0",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GITQSPKYLFRKEGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DG",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 72,
+      "complex_id": "5euo_1",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GITQSPKYLFRKEGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DG",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 73,
+      "complex_id": "5hhm_0",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "LLEQSPQFLSIQEGE",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV27*01|Homo sapiens|F|V-REGION|152346..152619|274 nt|1| | | | |274+45=319| | |",
+          "candidate_missing_N_residues": "TQ",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 73,
+      "complex_id": "5hhm_0",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GGITQSPKYLFRKEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 74,
+      "complex_id": "5hhm_1",
+      "role": "alpha",
+      "gene": "TRAV27*01",
+      "annotated_variable_prefix": "LLEQSPQFLSIQEGE",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV27*01|Homo sapiens|F|V-REGION|152346..152619|274 nt|1| | | | |274+45=319| | |",
+          "candidate_missing_N_residues": "TQ",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 74,
+      "complex_id": "5hhm_1",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GGITQSPKYLFRKEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 75,
+      "complex_id": "5isz",
+      "role": "alpha",
+      "gene": "TRAV24*01",
+      "annotated_variable_prefix": "LNVEQSPQSLHVQEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV24*01|Homo sapiens|F|V-REGION|109879..110155|277 nt|1| | | | |277+42=319| | |",
+          "candidate_missing_N_residues": "I",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 75,
+      "complex_id": "5isz",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "IGGITQSPKYLFRKE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 76,
+      "complex_id": "5ivx",
+      "role": "alpha",
+      "gene": "TRAV14-3*01",
+      "annotated_variable_prefix": "QQVRQSPQSLTVWEG",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "L77154|TRAV14-3*01|Mus musculus_B10.A|F|V-REGION|279..558|280 nt|1| | | | |280+48=328| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 76,
+      "complex_id": "5ivx",
+      "role": "beta",
+      "gene": "TRBV29*01",
+      "annotated_variable_prefix": "MKVTQMPRYLIKRMG",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000664|TRBV29*01|Mus musculus_BALB/c|F|V-REGION|143112..143398|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 77,
+      "complex_id": "5jhd_0",
+      "role": "alpha",
+      "gene": "TRAV38-2/DV8*01",
+      "annotated_variable_prefix": "QTVTQSQPEMSVQEA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000661|TRAV38-2/DV8*01|Homo sapiens|F|V-REGION|34309..34597|289 nt|1| | | | |289+36=325| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 77,
+      "complex_id": "5jhd_0",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "IGGITQSPKYLFRKE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 78,
+      "complex_id": "5jhd_1",
+      "role": "alpha",
+      "gene": "TRAV38-2/DV8*01",
+      "annotated_variable_prefix": "QTVTQSQPEMSVQEA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000661|TRAV38-2/DV8*01|Homo sapiens|F|V-REGION|34309..34597|289 nt|1| | | | |289+36=325| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 78,
+      "complex_id": "5jhd_1",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "IGGITQSPKYLFRKE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 81,
+      "complex_id": "5nme_1",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "KEVEQNSGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-2*01|Homo sapiens|F|V-REGION|143579..143855|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 82,
+      "complex_id": "5nqk",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "MGITQSPKYLFRKEG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 84,
+      "complex_id": "5til_1",
+      "role": "beta",
+      "gene": "TRBV13-3*01",
+      "annotated_variable_prefix": "AVTQSPRSKVAVTGG",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "M15616|TRBV13-3*01|Mus musculus_C57BL/6|F|V-REGION|164..449|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "EA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 87,
+      "complex_id": "5yxn",
+      "role": "beta",
+      "gene": "TRBV25-1*01",
+      "annotated_variable_prefix": "AADIYQTPRYLVIGT",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 89,
+      "complex_id": "6am5",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "KEVEQNSGPLSVPEG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-2*01|Homo sapiens|F|V-REGION|143579..143855|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "Q",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 90,
+      "complex_id": "6amu",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "EVEQNSGPLSVPEGA",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV12-2*01|Homo sapiens|F|V-REGION|143579..143855|277 nt|1| | | | |277+45=322| | |",
+          "candidate_missing_N_residues": "QK",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 94,
+      "complex_id": "6bj8",
+      "role": "beta",
+      "gene": "TRBV6-1*01",
+      "annotated_variable_prefix": "GVTQTPKFQVLKTGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X61446|TRBV6-1*01|Homo sapiens|F|V-REGION|412..698|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "NA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 95,
+      "complex_id": "6dkp",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "MKEVEQNSGPLSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 97,
+      "complex_id": "6mtm",
+      "role": "alpha",
+      "gene": "TRAV30*01",
+      "annotated_variable_prefix": "QSPQAVILREGEDAV",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000660|TRAV30*01|Homo sapiens|F|V-REGION|172643..172916|274 nt|1| | | | |274+48=322| | |",
+          "candidate_missing_N_residues": "QQPV",
+          "n_candidate_missing": 4
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 97,
+      "complex_id": "6mtm",
+      "role": "beta",
+      "gene": "TRBV19*01",
+      "annotated_variable_prefix": "GITQSPKYLFRKEGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV19*01|Homo sapiens|F|V-REGION|453995..454281|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DG",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 105,
+      "complex_id": "6tmo",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "KQEVEQNSGPLSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 106,
+      "complex_id": "6zkw",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "AQEVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 107,
+      "complex_id": "6zky",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "AQEVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 108,
+      "complex_id": "6zkz",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "AQEVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 109,
+      "complex_id": "7dzm",
+      "role": "beta",
+      "gene": "TRBV12-3*01",
+      "annotated_variable_prefix": "AGVIQSPRHEVTEMG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "X07192|TRBV12-3*01|Homo sapiens|F|V-REGION|426..715|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "D",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 111,
+      "complex_id": "7jwi",
+      "role": "alpha",
+      "gene": "TRAV14-1*01",
+      "annotated_variable_prefix": "QQQVRQSPQSLTVWE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 113,
+      "complex_id": "7n1e",
+      "role": "alpha",
+      "gene": "TRAV16*01",
+      "annotated_variable_prefix": "QRVTQPEKLLSVFKG",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "AE000659|TRAV16*01|Homo sapiens|F|V-REGION|246079..246350|272 nt|1| | | | |272+51=323| | |",
+          "candidate_missing_N_residues": "A",
+          "n_candidate_missing": 1
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 113,
+      "complex_id": "7n1e",
+      "role": "beta",
+      "gene": "TRBV11-2*01",
+      "annotated_variable_prefix": "GVAQSPRYKIIEKRQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV11-2*01|Homo sapiens|F|V-REGION|248813..249102|290 nt|1| | | | |290+36=326| | |",
+          "candidate_missing_N_residues": "EA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 115,
+      "complex_id": "7n2n",
+      "role": "alpha",
+      "gene": "TRAV21*01",
+      "annotated_variable_prefix": "KQEVTQIPAALSVPE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 115,
+      "complex_id": "7n2n",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "GVTQTPKHLITATGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DS",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 116,
+      "complex_id": "7n2p",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "GVTQTPKHLITATGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DS",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 117,
+      "complex_id": "7n2q_0",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "VTQTPKHLITATGQR",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DSG",
+          "n_candidate_missing": 3
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 118,
+      "complex_id": "7n2q_1",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "VTQTPKHLITATGQR",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DSG",
+          "n_candidate_missing": 3
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 119,
+      "complex_id": "7n2r",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "GVTQTPKHLITATGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DS",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 120,
+      "complex_id": "7n2s",
+      "role": "beta",
+      "gene": "TRBV9*01",
+      "annotated_variable_prefix": "GVTQTPKHLITATGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV9*01|Homo sapiens|F|V-REGION|206836..207121|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "DS",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 123,
+      "complex_id": "7nme",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "TGVSQDPRHKITKRG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 124,
+      "complex_id": "7nmf",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "TGVSQDPRHKITKRG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 125,
+      "complex_id": "7nmg",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "TGVSQDPRHKITKRG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 126,
+      "complex_id": "7pbe_0",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "DTGVSQDPRHKITKR",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 127,
+      "complex_id": "7pbe_1",
+      "role": "beta",
+      "gene": "TRBV7-9*01",
+      "annotated_variable_prefix": "DTGVSQDPRHKITKR",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 128,
+      "complex_id": "7phr",
+      "role": "alpha",
+      "gene": "TRAV17*01",
+      "annotated_variable_prefix": "SQQGEEDPQALSIQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 129,
+      "complex_id": "7q9a",
+      "role": "alpha",
+      "gene": "TRAV12-2*01",
+      "annotated_variable_prefix": "QEVEQNSGPLSVPEG",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 132,
+      "complex_id": "8en8_0",
+      "role": "beta",
+      "gene": "TRBV20-1*01",
+      "annotated_variable_prefix": "VVSQHPSRVICKSGT",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 133,
+      "complex_id": "8en8_1",
+      "role": "beta",
+      "gene": "TRBV20-1*01",
+      "annotated_variable_prefix": "VVSQHPSRVICKSGT",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 135,
+      "complex_id": "8f5a",
+      "role": "beta",
+      "gene": "TRBV5-1*01",
+      "annotated_variable_prefix": "GVTQTPRYLIKTRGQ",
+      "terminal_offset_matches": [
+        {
+          "species": "human",
+          "reference_header": "L36092|TRBV5-1*01|Homo sapiens|F|V-REGION|113806..114091|286 nt|1| | | | |286+39=325| | |",
+          "candidate_missing_N_residues": "KA",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 136,
+      "complex_id": "8gon",
+      "role": "alpha",
+      "gene": "TRAV38-2/DV8*01",
+      "annotated_variable_prefix": "AQTVTQSQPEMSVQE",
+      "terminal_offset_matches": [],
+      "interpretation": "terminal offset not established; allele, terminal engineering, annotation and construct history remain unresolved"
+    },
+    {
+      "index": 139,
+      "complex_id": "8wte_0",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 140,
+      "complex_id": "8wte_1",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 141,
+      "complex_id": "8wul_0",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 142,
+      "complex_id": "8wul_1",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 143,
+      "complex_id": "8wul_2",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    },
+    {
+      "index": 144,
+      "complex_id": "8wul_3",
+      "role": "beta",
+      "gene": "TRBV2*01",
+      "annotated_variable_prefix": "KIIQKPKYLVAVTGS",
+      "terminal_offset_matches": [
+        {
+          "species": "mouse",
+          "reference_header": "AE000663|TRBV2*01|Mus musculus_BALB/c|F|V-REGION|169947..170233|287 nt|1| | | | |287+39=326| | |",
+          "candidate_missing_N_residues": "DP",
+          "n_candidate_missing": 2
+        }
+      ],
+      "interpretation": "exact terminal-offset match supports sequence truncation relative to reference, but does not establish intentional engineering or authorize adding residues"
+    }
+  ]
+}

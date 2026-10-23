@@ -1,0 +1,92 @@
+{
+  "arm": "reference",
+  "fold_id": "G2bd0547050ede643",
+  "seed": 1101,
+  "protocol_sha256": "2b54adb97ca7d7f22239e0720edf6e66e09a466464bf66dc4828dce4d0959ced",
+  "initial_tensor_sha256": "82725b5a940760b8a4f10757b8d5eb95d98560d9278cf21bf5f6b4bd3b850e1a",
+  "coverage": {
+    "anchors": 2280,
+    "positive_pairs": 1440,
+    "hard_negative_pairs": 480,
+    "anchors_with_positive": 1080,
+    "active_anchors_with_hard_negative": 240
+  },
+  "metrics": {
+    "fit": {
+      "summary": {
+        "mean": 1.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 2,
+        "n_query_rows": 19,
+        "n_family_groups": 13,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 17,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 1.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 1.0
+      },
+      "query_auc": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "validation": {
+      "summary": {
+        "mean": 0.9166666666666666,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 6,
+        "n_query_rows": 6,
+        "n_family_groups": 1,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 0,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.9166666666666666,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 0.9166666666666666
+      },
+      "query_auc": [
+        1.0,
+        1.0,
+        0.6666666666666666,
+        1.0,
+        0.8333333333333333,
+        1.0
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "model.pt": "718757f4479799d1d917ea4eb9176f0c69cb1dd20251aa01e83dbc8600cd9a99",
+    "trace.json": "531fbb927396114a28b3956324faa3d64fcd3267ecf4ef6fbc9814f3fc4021ab",
+    "training_labels.json": "a431d11e9ad2b2935c914e8baebfe7926480802999fdfa550d3b76c824e83e1d",
+    "similarities.npy": "f6faa2bc3fecb5d7ad190aba28265c27e2f278b41a95a17320c47155509360c6",
+    "embeddings.npy": "1ffc8b2565fc08122da063dc74430ae23c25f0240f7e723d94d5bcc2f2b96379"
+  }
+}

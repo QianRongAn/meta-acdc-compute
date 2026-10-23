@@ -1,0 +1,92 @@
+{
+  "arm": "identity_preserved_shuffled",
+  "fold_id": "Ga55b01fbc424ff3a",
+  "seed": 20261021,
+  "protocol_sha256": "2b54adb97ca7d7f22239e0720edf6e66e09a466464bf66dc4828dce4d0959ced",
+  "initial_tensor_sha256": "2e4541d950cd85a61c7ba1b3dee70018b68928bcf3d0053d3987a98f8ef230b6",
+  "coverage": {
+    "anchors": 2640,
+    "positive_pairs": 2880,
+    "hard_negative_pairs": 4800,
+    "anchors_with_positive": 1560,
+    "active_anchors_with_hard_negative": 720
+  },
+  "metrics": {
+    "fit": {
+      "summary": {
+        "mean": 1.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 6,
+        "n_query_rows": 22,
+        "n_family_groups": 13,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 16,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 1.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 1.0
+      },
+      "query_auc": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "validation": {
+      "summary": {
+        "mean": 0.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 2,
+        "n_query_rows": 3,
+        "n_family_groups": 1,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 1,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 0.0
+      },
+      "query_auc": [
+        0.0,
+        0.0,
+        null
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "model.pt": "9973dfa9c48445376ef4760b2058610cf4d04f722e5e43cc364cbfc85d1bc6f2",
+    "trace.json": "0dc844adef99472e6ae2649c2b0311329fe2c604d53fbbefafac11259cb95670",
+    "training_labels.json": "661f4752dd9bf9f48d23a826d0682a4e704676b58cfbf87635da7d8847d9c773",
+    "similarities.npy": "609ecd602d418f3683b65ebb350ea5f4046c56ba06a31f2bb27f1cafb6aa168e",
+    "embeddings.npy": "19497fbc3d6f58c341e157cfbe814937db1acb24b8a246c5f54c995418f0936b"
+  }
+}

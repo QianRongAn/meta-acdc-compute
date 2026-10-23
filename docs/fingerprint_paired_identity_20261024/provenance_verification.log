@@ -1,0 +1,34 @@
+{
+  "n_original": 331,
+  "n_identity_admitted": 46,
+  "n_identity_quarantined": 285,
+  "n_development": 25,
+  "counts_by_domain_status": {
+    "crystal/quarantined": 110,
+    "crystal/admitted": 35,
+    "predicted/quarantined": 175,
+    "predicted/admitted": 11
+  },
+  "n_complete_paired_variable_ids": 24,
+  "n_development_paired_variable_ids": 16,
+  "partitions": {
+    "fit": 18,
+    "quarantined_partition": 21,
+    "validation": 7
+  },
+  "quarantine_reasons": {
+    "alpha: full germline N terminus unverified; no imputation or tag trimming": 42,
+    "alpha: full germline N terminus unverified; no imputation or tag trimming; beta: complete J/FR4 C terminus unverified": 1,
+    "original chain role or SEQRES correspondence invalid": 6,
+    "alpha: full germline N terminus unverified; no imputation or tag trimming; beta: full germline N terminus unverified; no imputation or tag trimming": 25,
+    "beta: full germline N terminus unverified; no imputation or tag trimming": 27,
+    "alpha: complete J/FR4 C terminus unverified; beta: full germline N terminus unverified; no imputation or tag trimming": 2,
+    "alpha: external domain role missing; beta: external domain role missing": 2,
+    "alpha: external domain role missing; beta: full germline N terminus unverified; no imputation or tag trimming": 1,
+    "alpha: complete J/FR4 C terminus unverified": 3,
+    "alpha: FASTA/numbering mismatch; beta: FASTA/numbering mismatch": 1,
+    "complete paired variable sequence unavailable or ambiguous; no nearest match": 169,
+    "no exact explicit alpha/beta role FASTA input": 6
+  }
+}
+PROVENANCE_PASS 331 MERGES 7

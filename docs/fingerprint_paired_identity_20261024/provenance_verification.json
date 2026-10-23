@@ -1,0 +1,99 @@
+{
+  "status": "pass",
+  "curation_registry_byte_replay_exact": true,
+  "registry_sha256": "5e51921ec7aad7d9ca2df8b694d860d666c05b2f191a9725f1317d58935c394b",
+  "n_source_hashes_checked": 331,
+  "n_admitted_observed_keys": 33,
+  "n_corrected_variable_keys": 24,
+  "n_confirmed_merge_groups": 7,
+  "confirmed_merges": [
+    {
+      "corrected_receptor_id": "ce23a115492abcd03db63ddae6bd60a9d59776e24910bc9e549e2578ea714916",
+      "old_observed_ids": [
+        "9ebe713f83904337f045836ba6e16949daf56321a26adef815180044ccd2e4f7",
+        "f08092e8dc6fb2a754d1c1257020ce46c4cb84f52542aac5ee38563fd38710d4"
+      ],
+      "indices": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "corrected_receptor_id": "a02d9e7fdc9449102bac28ca298d9de86e1358ba5d69b7640d69c8ad4e24d44e",
+      "old_observed_ids": [
+        "402ef4e737f4eea54c92da0195954becd70227c7e361c3ef169b4b7bf2142fcf",
+        "b89cea61629fa85bc5ac3b56275f66bcf6a60e3503ce2a5d9277ca838d6f209b"
+      ],
+      "indices": [
+        46,
+        47
+      ]
+    },
+    {
+      "corrected_receptor_id": "64a48b7e94cd00b07c67d4dd09d13aaca2a1867f62901e5c5cc94778590b91c3",
+      "old_observed_ids": [
+        "406186172530daf12a937e258dced11edf4c3918d4907d54252c5f25237da372",
+        "ac36075d8438479cbae9d7c6d85d2aa6dbbdab442812c90c9b1f6b69abb2c665"
+      ],
+      "indices": [
+        68,
+        69
+      ]
+    },
+    {
+      "corrected_receptor_id": "a2a867d0a9cabe0c2d5285cdc012d738aed80e88954f3d2b57fb01c92fab5d7b",
+      "old_observed_ids": [
+        "6be187b1d7ab328ff917b29eec254e6a95196d1613f139a5fede3060a6aff1aa",
+        "9ca1c22f92f83c5159911b8aed7705508f50c8618c2bf567b8046e4a55889938"
+      ],
+      "indices": [
+        79,
+        80
+      ]
+    },
+    {
+      "corrected_receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+      "old_observed_ids": [
+        "9ed3eb86abc9cd7945ac84b48d7c5b9a35c94960107fa9e3e5bce630eb01f1e6",
+        "adf88ccf14f1256c7083d36cf45f50643bf34cf5a729ae219ff6b6ea6194153b"
+      ],
+      "indices": [
+        96,
+        162,
+        272,
+        273,
+        274,
+        275,
+        320
+      ]
+    },
+    {
+      "corrected_receptor_id": "66d58f9cb80fa8a11b68d946daf6d86272ef66bd93b2cfbae78134950058b1c6",
+      "old_observed_ids": [
+        "63bd2cd0c9f0271ef5bfdede216372d05c38ee0d0624292137c89b69655e0673",
+        "7a7ad2b88bb85699a8b02826c1dcc4c2d3da29b9ef32000b09d27e2049393719"
+      ],
+      "indices": [
+        98,
+        99
+      ]
+    },
+    {
+      "corrected_receptor_id": "9d00f2369ed8ee39b31738ae77decc76ffbcc3d5fccf34c961cc353ea0622997",
+      "old_observed_ids": [
+        "15c92ccb6f073e44861fe0db35385bdd7f1854856d7d6ef5f24eb2b92566ef57",
+        "7361dccb55102bb69df497b12105e517078a0992e42f138a9f39a4bc018e34ad",
+        "c8faa4274d2fcf6a442f8e09ef8a1fe49a25e7b678b2f47d79348c22f4d20cb9",
+        "fbb4e1b908399fc894fef9e0cbf63d89054c9038a46189ba9c386922ec8ce7f8"
+      ],
+      "indices": [
+        101,
+        102,
+        103,
+        104
+      ]
+    }
+  ],
+  "independent_acceptance_accessed": false
+}

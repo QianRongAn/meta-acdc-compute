@@ -1,0 +1,5 @@
+# 来源读取记录补充
+
+先按agent-reach网页流程尝试Jina，返回HTTP401（匿名访问因网络信誉被阻断）。Python urllib读取Oxford端点报告证书过期；随后Windows原生curl在正常TLS验证下取得STCRDab页面及FASTA，未使用-k或关闭验证。IMGT带www主机尝试失败，官方不带www主机HTTPS成功。没有安装新工具或更改全局网络配置。
+
+397个STCRDab请求的首轮状态、URL和文件哈希见sources/manifest.json；14个首轮失败的额外重试见sources/retry1/manifest.json，成功6个，仍失败8个。失败正文不作为FASTA或身份依据，链角色／注释不足的行隔离。IMGT V/J八个参考文件的官方URL与哈希分别见sources/imgt_manifest.json和sources/imgt_j_manifest.json。TCR3d表只辅助受体名称/CDR查询，没有凭名称覆盖完整序列身份。

@@ -1,0 +1,19 @@
+VERIFY G2bd0547050ede643/reference/20261021
+VERIFY G2bd0547050ede643/reference/1101
+VERIFY G2bd0547050ede643/reference/4242
+VERIFY G2bd0547050ede643/identity_preserved/20261021
+VERIFY G2bd0547050ede643/identity_preserved/1101
+VERIFY G2bd0547050ede643/identity_preserved/4242
+VERIFY G2bd0547050ede643/identity_preserved_shuffled/20261021
+VERIFY G2bd0547050ede643/identity_preserved_shuffled/1101
+VERIFY G2bd0547050ede643/identity_preserved_shuffled/4242
+VERIFY Ga55b01fbc424ff3a/reference/20261021
+VERIFY Ga55b01fbc424ff3a/reference/1101
+VERIFY Ga55b01fbc424ff3a/reference/4242
+VERIFY Ga55b01fbc424ff3a/identity_preserved/20261021
+VERIFY Ga55b01fbc424ff3a/identity_preserved/1101
+VERIFY Ga55b01fbc424ff3a/identity_preserved/4242
+VERIFY Ga55b01fbc424ff3a/identity_preserved_shuffled/20261021
+VERIFY Ga55b01fbc424ff3a/identity_preserved_shuffled/1101
+VERIFY Ga55b01fbc424ff3a/identity_preserved_shuffled/4242
+COMPLETE {'reference': {'mean': 0.4861111111111111, 'ci95': [0.0, 0.9722222222222222], 'n': 8, 'n_query_rows': 9, 'n_family_groups': 2, 'n_defined_family_groups': 2, 'n_undefined_values': 3, 'seed_pair_columns': 3, 'query_weighted_mean': 0.7291666666666666, 'scope': 'family-equal, conditional on fixed cached models and gallery', 'status': 'conditional_cluster_bootstrap'}, 'identity_preserved': {'mean': 0.5, 'ci95': [0.0, 1.0], 'n': 8, 'n_query_rows': 9, 'n_family_groups': 2, 'n_defined_family_groups': 2, 'n_undefined_values': 3, 'seed_pair_columns': 3, 'query_weighted_mean': 0.75, 'scope': 'family-equal, conditional on fixed cached models and gallery', 'status': 'conditional_cluster_bootstrap'}, 'identity_preserved_shuffled': {'mean': 0.6666666666666666, 'ci95': [0.3333333333333333, 1.0], 'n': 8, 'n_query_rows': 9, 'n_family_groups': 2, 'n_defined_family_groups': 2, 'n_undefined_values': 3, 'seed_pair_columns': 3, 'query_weighted_mean': 0.8333333333333333, 'scope': 'family-equal, conditional on fixed cached models and gallery', 'status': 'conditional_cluster_bootstrap'}}

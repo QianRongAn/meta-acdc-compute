@@ -1,0 +1,92 @@
+{
+  "arm": "identity_preserved_shuffled",
+  "fold_id": "Ga55b01fbc424ff3a",
+  "seed": 1101,
+  "protocol_sha256": "2b54adb97ca7d7f22239e0720edf6e66e09a466464bf66dc4828dce4d0959ced",
+  "initial_tensor_sha256": "82725b5a940760b8a4f10757b8d5eb95d98560d9278cf21bf5f6b4bd3b850e1a",
+  "coverage": {
+    "anchors": 2640,
+    "positive_pairs": 2880,
+    "hard_negative_pairs": 4560,
+    "anchors_with_positive": 1560,
+    "active_anchors_with_hard_negative": 960
+  },
+  "metrics": {
+    "fit": {
+      "summary": {
+        "mean": 0.7777777777777778,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 6,
+        "n_query_rows": 22,
+        "n_family_groups": 13,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 16,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.7777777777777778,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 0.7777777777777778
+      },
+      "query_auc": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.3333333333333333,
+        0.3333333333333333,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "validation": {
+      "summary": {
+        "mean": 0.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 2,
+        "n_query_rows": 3,
+        "n_family_groups": 1,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 1,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 0.0
+      },
+      "query_auc": [
+        0.0,
+        0.0,
+        null
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "model.pt": "6cc80a8c9f13ee1d803d668a86cca1e16b263c098f69174598f0d9d7980d8f57",
+    "trace.json": "3072a4dc5a1156634e2da06097ea20a98cc01fc3260844c60fe5fd351015c661",
+    "training_labels.json": "2e6470a81abc861631136ae74dcc032106421cb2df319daf518f8fd7e16fc9fb",
+    "similarities.npy": "f1e404d0e3c9e38b3e1b0e0cad3b714e10d7ce2a2b2b6c4f67cb8ea66c1979dc",
+    "embeddings.npy": "a629f89fa1ec2f824a8a3cfc19e8814f902060431c424e427c0349a3a429ff60"
+  }
+}

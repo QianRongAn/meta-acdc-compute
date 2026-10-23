@@ -21,3 +21,8 @@ v1为编号HTML末行空白填充未正确处理时的解析调试产物，v2为
 ## 来源
 
 [STCRDab方法](https://pmc.ncbi.nlm.nih.gov/articles/PMC5753249/)、[1AO7注释](https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=1ao7)、[IMGT参考目录](https://imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/)、[TCR3d下载](https://tcrdb.ibbr.umd.edu/downloads)。TCR3d仅辅助查受体名称和CDR，没有用名称覆盖序列身份；snapshot为来源核验用，具体链与请求地址见sources/manifest.json及重试/IMGT清单。
+
+
+## 已完成
+
+[完整结果、全部种子与放行限制](RESULTS.md)。19套模型产物重计算通过；2个困难组中阳性全是同PDB副本，负对全跨PDB，不支持生物学泛化放行。

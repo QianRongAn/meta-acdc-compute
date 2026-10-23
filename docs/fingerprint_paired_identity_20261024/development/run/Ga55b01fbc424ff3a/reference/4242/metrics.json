@@ -1,0 +1,92 @@
+{
+  "arm": "reference",
+  "fold_id": "Ga55b01fbc424ff3a",
+  "seed": 4242,
+  "protocol_sha256": "2b54adb97ca7d7f22239e0720edf6e66e09a466464bf66dc4828dce4d0959ced",
+  "initial_tensor_sha256": "5bd58e559e57d252f4a81052781098299187d64795c18f3ccc9b00d0ed44f23b",
+  "coverage": {
+    "anchors": 2640,
+    "positive_pairs": 2880,
+    "hard_negative_pairs": 1920,
+    "anchors_with_positive": 1560,
+    "active_anchors_with_hard_negative": 720
+  },
+  "metrics": {
+    "fit": {
+      "summary": {
+        "mean": 1.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 6,
+        "n_query_rows": 22,
+        "n_family_groups": 13,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 16,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 1.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 1.0
+      },
+      "query_auc": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "validation": {
+      "summary": {
+        "mean": 0.0,
+        "ci95": [
+          null,
+          null
+        ],
+        "n": 2,
+        "n_query_rows": 3,
+        "n_family_groups": 1,
+        "n_defined_family_groups": 1,
+        "n_undefined_values": 1,
+        "seed_pair_columns": 1,
+        "query_weighted_mean": 0.0,
+        "scope": "family-equal, conditional on fixed cached models and gallery",
+        "status": "insufficient_family_groups",
+        "n_excluded_known_same_negative_pairs": 0,
+        "query_macro_mean": 0.0
+      },
+      "query_auc": [
+        0.0,
+        0.0,
+        null
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "model.pt": "1117ed73536f22466632ea1c1aeb5152d70b80d5222eea42f06df36fbdc0f197",
+    "trace.json": "7c03f0a89fdf3cc32f6c5f139d82f8a5f66a7ba59011aedfffcb1a2e3d8d6789",
+    "training_labels.json": "4ca46e33d88c4412ffbe211f6b608abcad1b4d2ebe9329dd3192b9f19a2988cc",
+    "similarities.npy": "933b357ee3ff9acb72759c6d267e6aa594b93761418aee7fc9b0a6806ac651cf",
+    "embeddings.npy": "b26d7ce625323076e27445ca6979b91c30779c688dbc52a9a274d3e65205ed99"
+  }
+}

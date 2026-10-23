@@ -1,0 +1,211 @@
+{
+  "scope": "metadata diagnostic only, not a newly selected model or baseline",
+  "all_positive_pairs_same_pdb": true,
+  "all_negative_pairs_cross_pdb": true,
+  "biological_generalization_blocked": true,
+  "reason": "current positives are repeat crystal copies, so PDB origin is fully confounded with pair identity in these held-out contexts; no claim of cross-structure receptor generalization",
+  "folds": [
+    {
+      "fold_id": "G2bd0547050ede643",
+      "n_positive_directed_pairs": 14,
+      "n_negative_directed_pairs": 16,
+      "all_positive_same_pdb": true,
+      "all_negative_different_pdb": true,
+      "positive_pairs": [
+        {
+          "query": 5,
+          "gallery": 6,
+          "same_pdb": true
+        },
+        {
+          "query": 6,
+          "gallery": 5,
+          "same_pdb": true
+        },
+        {
+          "query": 16,
+          "gallery": 17,
+          "same_pdb": true
+        },
+        {
+          "query": 16,
+          "gallery": 18,
+          "same_pdb": true
+        },
+        {
+          "query": 16,
+          "gallery": 19,
+          "same_pdb": true
+        },
+        {
+          "query": 17,
+          "gallery": 16,
+          "same_pdb": true
+        },
+        {
+          "query": 17,
+          "gallery": 18,
+          "same_pdb": true
+        },
+        {
+          "query": 17,
+          "gallery": 19,
+          "same_pdb": true
+        },
+        {
+          "query": 18,
+          "gallery": 16,
+          "same_pdb": true
+        },
+        {
+          "query": 18,
+          "gallery": 17,
+          "same_pdb": true
+        },
+        {
+          "query": 18,
+          "gallery": 19,
+          "same_pdb": true
+        },
+        {
+          "query": 19,
+          "gallery": 16,
+          "same_pdb": true
+        },
+        {
+          "query": 19,
+          "gallery": 17,
+          "same_pdb": true
+        },
+        {
+          "query": 19,
+          "gallery": 18,
+          "same_pdb": true
+        }
+      ],
+      "negative_pairs": [
+        {
+          "query": 5,
+          "gallery": 16,
+          "same_pdb": false
+        },
+        {
+          "query": 5,
+          "gallery": 17,
+          "same_pdb": false
+        },
+        {
+          "query": 5,
+          "gallery": 18,
+          "same_pdb": false
+        },
+        {
+          "query": 5,
+          "gallery": 19,
+          "same_pdb": false
+        },
+        {
+          "query": 6,
+          "gallery": 16,
+          "same_pdb": false
+        },
+        {
+          "query": 6,
+          "gallery": 17,
+          "same_pdb": false
+        },
+        {
+          "query": 6,
+          "gallery": 18,
+          "same_pdb": false
+        },
+        {
+          "query": 6,
+          "gallery": 19,
+          "same_pdb": false
+        },
+        {
+          "query": 16,
+          "gallery": 5,
+          "same_pdb": false
+        },
+        {
+          "query": 16,
+          "gallery": 6,
+          "same_pdb": false
+        },
+        {
+          "query": 17,
+          "gallery": 5,
+          "same_pdb": false
+        },
+        {
+          "query": 17,
+          "gallery": 6,
+          "same_pdb": false
+        },
+        {
+          "query": 18,
+          "gallery": 5,
+          "same_pdb": false
+        },
+        {
+          "query": 18,
+          "gallery": 6,
+          "same_pdb": false
+        },
+        {
+          "query": 19,
+          "gallery": 5,
+          "same_pdb": false
+        },
+        {
+          "query": 19,
+          "gallery": 6,
+          "same_pdb": false
+        }
+      ]
+    },
+    {
+      "fold_id": "Ga55b01fbc424ff3a",
+      "n_positive_directed_pairs": 2,
+      "n_negative_directed_pairs": 4,
+      "all_positive_same_pdb": true,
+      "all_negative_different_pdb": true,
+      "positive_pairs": [
+        {
+          "query": 7,
+          "gallery": 8,
+          "same_pdb": true
+        },
+        {
+          "query": 8,
+          "gallery": 7,
+          "same_pdb": true
+        }
+      ],
+      "negative_pairs": [
+        {
+          "query": 7,
+          "gallery": 12,
+          "same_pdb": false
+        },
+        {
+          "query": 8,
+          "gallery": 12,
+          "same_pdb": false
+        },
+        {
+          "query": 12,
+          "gallery": 7,
+          "same_pdb": false
+        },
+        {
+          "query": 12,
+          "gallery": 8,
+          "same_pdb": false
+        }
+      ]
+    }
+  ]
+}
