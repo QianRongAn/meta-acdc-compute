@@ -1,0 +1,4 @@
+{
+  "url": "https://data.rcsb.org/graphql?query=%7B+entries%28entry_ids%3A%5B%225E9D%22%2C%226RPB%22%2C%225JZI%22%2C%225YXU%22%2C%226EQB%22%2C%222F53%22%5D%29+%7B+rcsb_id+struct+%7B+title+%7D+rcsb_primary_citation+%7B+title+year+pdbx_database_id_PubMed+pdbx_database_id_DOI+rcsb_authors+%7D+exptl+%7Bmethod%7D+polymer_entities+%7B+rcsb_id+entity_poly+%7Bpdbx_seq_one_letter_code_can%7D+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids+asym_ids%7D+%7D+%7D+%7D",
+  "query": "{ entries(entry_ids:[\"5E9D\",\"6RPB\",\"5JZI\",\"5YXU\",\"6EQB\",\"2F53\"]) { rcsb_id struct { title } rcsb_primary_citation { title year pdbx_database_id_PubMed pdbx_database_id_DOI rcsb_authors } exptl {method} polymer_entities { rcsb_id entity_poly {pdbx_seq_one_letter_code_can} rcsb_polymer_entity {pdbx_description} rcsb_polymer_entity_container_identifiers {auth_asym_ids asym_ids} } } }"
+}

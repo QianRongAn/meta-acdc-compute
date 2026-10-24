@@ -1,0 +1,29 @@
+{
+  "initial_attempt": {
+    "url": "https://europepmc.org/articles/PMC11087797/bin/pnas.2318003121.sapp.pdf",
+    "status": "403",
+    "sha256": "d3cd6b0cdd412182910f3f36aac8b26356e02cebdd32c2e6259db702a683161d",
+    "bytes": 5604,
+    "local_cache": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-15\\qianrongan-meta-acdc-compute-10-opencode-3\\work\\cross_source_paper_cache\\pnas.2318003121.sapp.pdf"
+  },
+  "retries": [
+    {
+      "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.2318003121/suppl_file/pnas.2318003121.sapp.pdf",
+      "status": "403",
+      "sha256": "32295d1b3aa3c9606e417aaf661570101f1a847e4a0b5e4b1bc2dd0c3edbc308",
+      "bytes": 5663,
+      "is_pdf": false,
+      "local_cache": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-15\\qianrongan-meta-acdc-compute-10-opencode-3\\work\\cross_source_paper_cache\\8qfy_si_attempt0.pdf"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/11087797/bin/pnas.2318003121.sapp.pdf",
+      "status": "200",
+      "sha256": "1a6ae28114e0bead9a30285eb966f0a92c2b4725e3efcb76a52901979a78ba61",
+      "bytes": 1817,
+      "is_pdf": false,
+      "local_cache": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-15\\qianrongan-meta-acdc-compute-10-opencode-3\\work\\cross_source_paper_cache\\8qfy_si_attempt1.pdf"
+    }
+  ],
+  "verified_pdf_obtained": false,
+  "sequence_table_content_verified": false
+}

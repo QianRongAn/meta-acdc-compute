@@ -1,0 +1,98 @@
+{
+  "n_selected_pdbs": 176,
+  "n_annotated_paired_units": 272,
+  "n_sequence_supported_units": 89,
+  "n_supported_pdbs": 44,
+  "n_complete_paired_ids": 29,
+  "n_multi_pdb_ids": 7,
+  "n_multi_study_ids": 3,
+  "quarantine_reasons": {
+    "alpha: full germline N terminus unverified; no imputation or tag trimming": 137,
+    "beta: complete J/FR4 C terminus unverified": 3,
+    "beta: full germline N terminus unverified; no imputation or tag trimming": 73,
+    "alpha: 'c'": 1,
+    "alpha: 'g'": 1,
+    "alpha: 'i'": 1,
+    "alpha: 'k'": 1,
+    "alpha: complete J/FR4 C terminus unverified": 10,
+    "alpha: 'D'": 1,
+    "beta: 'E'": 1,
+    "alpha: 'I'": 1,
+    "beta: 'J'": 1
+  },
+  "n_entry_annotation_failures": 11
+}
+MULTI_STUDY [
+  {
+    "receptor_id": "6f753ea0852aa82fbb628fced0a62d3dd3ac10a7de1ccbebb69d4bcc0c8dcb65",
+    "pdbs": [
+      "3tfk",
+      "3tjh",
+      "3tpu",
+      "4ms8",
+      "4mvb",
+      "4mxq",
+      "4n0c",
+      "4n5e"
+    ],
+    "studies": [
+      "doi:10.1016/j.immuni.2011.09.013",
+      "doi:10.1038/ni.3310"
+    ],
+    "n_studies": 2,
+    "V_context": "mouse|TRAV9D-3|TRBV13-1"
+  },
+  {
+    "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+    "pdbs": [
+      "4jfe",
+      "4jfh",
+      "6eqb"
+    ],
+    "studies": [
+      "doi:10.1002/eji.201948085",
+      "doi:10.1074/jbc.m113.464560"
+    ],
+    "n_studies": 2,
+    "V_context": "human|TRAV12-2|TRBV30"
+  },
+  {
+    "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+    "pdbs": [
+      "7n1f",
+      "7rtr"
+    ],
+    "studies": [
+      "doi:10.1038/s41467-021-27669-8",
+      "doi:10.3390/cells10102646"
+    ],
+    "n_studies": 2,
+    "V_context": "human|TRAV12-2|TRBV7-9"
+  }
+]
+{
+  "n_identity_admitted_units": 89,
+  "n_identity_admitted_pdbs": 44,
+  "n_complete_paired_ids": 29,
+  "n_cross_study_positive_ids": 3,
+  "n_author_disjoint_positive_ids": 1,
+  "n_same_V_contexts_with_distinct_ids": 3,
+  "n_source_balanced_query_blocks": 0,
+  "n_author_disjoint_balanced_blocks": 0,
+  "n_joint_components": 22,
+  "n_source_balanced_joint_components": 0
+}
+BLOCKERS ['no query has both exact complete same-receptor positive and same-V distinct-receptor negative from one common different-source gallery study', 'no author-disjoint source-balanced query block', 'fewer than three eligible disjoint joint-source/family components', 'structural atom/chain QC pending outside the explicitly checked cross-study candidates; no training release']
+{
+  "n_previous_isolated": 285,
+  "n_identity_evidence_resolved": 1,
+  "n_still_isolated": 284,
+  "n_original_source_hashes_rechecked": 285,
+  "counts_by_domain_status": {
+    "crystal/still_isolated": 109,
+    "crystal/identity_evidence_resolved_release_still_blocked": 1,
+    "predicted/still_isolated": 175
+  }
+}
+QC_PASS_GRAPHS 2 PDBS 2
+CROSS_SOURCE_VERIFICATION_PASS 2

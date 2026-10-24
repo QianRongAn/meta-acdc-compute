@@ -1,0 +1,152 @@
+[
+  {
+    "file": "ee1b81ac16cfdca80c0635cf12628334e7f155209c320c2f94d586ca22521660_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGFYNTDKLIFGTGTRLQVFP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTTYYLFWYKQPPSGELVFLIRRNSFDEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCALSGFYNTDKLIFGTGTRLQVFP",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 2,
+    "sha256": "a97846adbcf6cf66d02681702a065acac59ad98054f3f5c528424147deaca38c"
+  },
+  {
+    "file": "2ef53688b45df5d7c47d53cd5ae3768036e53a05f8091c39b00e03ef7bae7e85_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASPGLAGEYEQYFGPGTRLTVT%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASPGLAGEYEQYFGPGTRLTVT",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 2,
+    "sha256": "b500a553ff9e98de221f5ed6cd0daf2e2075b7d33ec6a7eefdcc057a144409ef"
+  },
+  {
+    "file": "5d6d0178ec7a24e23c2ff6386a74f8279f60130accc8ef4f153b541990b3da36_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSP",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 8,
+    "sha256": "93d8f6f83dc97ae86b721a0dec2c82750dd476df8b865cbff3568bb48f5098b7"
+  },
+  {
+    "file": "5d6d0178ec7a24e23c2ff6386a74f8279f60130accc8ef4f153b541990b3da36_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSP",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 20,
+    "sha256": "b9bee15ed61d0aed81d3747b57ffd7f052b0a1c5454c173fce47087e226d8472"
+  },
+  {
+    "file": "fc83b0deb3fe7d294790bd7d7134ab4a74dba2fcc89ca9c8ff4e178d7968c8fe_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22EAAVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "EAAVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVL",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 8,
+    "sha256": "a433b4076c1d61ff5dc30450d741ec950633ead52515baa55ab6e4f312271456"
+  },
+  {
+    "file": "fc83b0deb3fe7d294790bd7d7134ab4a74dba2fcc89ca9c8ff4e178d7968c8fe_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22EAAVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "EAAVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVL",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 10,
+    "sha256": "a375f26fd1b06602b167cf1a22839c04f3dd5dc7ce047d9232403642e05af432"
+  },
+  {
+    "file": "f59c5a84019a885c740496f9bf61c779dfd3879f512b6a6a692109559be6a31f_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKP",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 81,
+    "sha256": "cfe86ab2a0263ee5e35b8e6e4926781ada0d219a8c656786f81a18b353da8b59"
+  },
+  {
+    "file": "f2f58420a2be3bd6823af125c517c86adad483e405d4a6d132f91d937b5e70ab_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVL",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 12,
+    "sha256": "50e4cd839444897923688927929a0e1580d8d3fc5dfc7066664bddb4e6ba3975"
+  },
+  {
+    "file": "d91ee2e9d5a63f93d56d6a0cf72e70d42032b274726d583ceb60e8dd8c3d31fd_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22AQSVAQPEDQVNVAEGNPLTVKCTYSVSGNPYLFWYVQYPNRGLQFLLKYITGDNLVKGSYGFEAEFNKSQTSFHLKKPSALVSDSALYFCAVRDINSGAGSYQLTFGKGTKLSVIP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "AQSVAQPEDQVNVAEGNPLTVKCTYSVSGNPYLFWYVQYPNRGLQFLLKYITGDNLVKGSYGFEAEFNKSQTSFHLKKPSALVSDSALYFCAVRDINSGAGSYQLTFGKGTKLSVIP",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 1,
+    "sha256": "d8daa894e4429b7cd3b73457644f4c24bfc1a69b2843d476de8e8552cfc388d9"
+  },
+  {
+    "file": "2b7a217aee5e2df25e9b81125a1efbb067036e378ade8eb30965c361877cc5e5_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22SAVISQKPSRDIKQRGTSLTIQCQVDSQVTMMFWYRQQPGQSLTLIATANQGSEATYESGFVIDKFPISRPNLTFSTLTVSNMSPEDSSIYLCSVGGSGGADTQYFGPGTRLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "SAVISQKPSRDIKQRGTSLTIQCQVDSQVTMMFWYRQQPGQSLTLIATANQGSEATYESGFVIDKFPISRPNLTFSTLTVSNMSPEDSSIYLCSVGGSGGADTQYFGPGTRLTVL",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 1,
+    "sha256": "cba5981f5726243468a0d164fdd41d2bea146706070b672dc727f28fb5f24559"
+  },
+  {
+    "file": "1aafc3a8aee9ac40286967a705523a44af842ff7e4522c4e6ccdd5db17edeeea_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILP",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 81,
+    "sha256": "cc2ace11f7b6a206309ce9acda84fd902535bd1e708b739bc4f01b686ddf0f5c"
+  },
+  {
+    "file": "6af044a259498c1a69268d688dea4187af43add40b99691d4efcc7e1570b9c28_0.8.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A0.8%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVT%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVT",
+    "identity_cutoff": 0.8,
+    "status": "200",
+    "valid": true,
+    "n_hits": 25,
+    "sha256": "0658f111d6b1483385f3f2289f5dc9b7b397abe63947bc3d0f99c809ec7405f3"
+  },
+  {
+    "file": "d0fa55c4552031b1ed954e2c287908d201e67f3200e965cc0761e377383a9bdb_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DAKTTQPDSMESTEGETVHLPCSHATISGNEYIYWYRQVPLQGPEYVTHGLQQNTTNSMAFLAIASDRKSSTLILPHVSLRDAAVYHCILSGGCNYKLTFGKGTLLTVTP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "DAKTTQPDSMESTEGETVHLPCSHATISGNEYIYWYRQVPLQGPEYVTHGLQQNTTNSMAFLAIASDRKSSTLILPHVSLRDAAVYHCILSGGCNYKLTFGKGTLLTVTP",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 1,
+    "sha256": "c6e061878d8a47f1cf439200f9256e5f1746956ce764e6c1955bf4e077cfeb39"
+  },
+  {
+    "file": "6a9d6eb679a51a756280d1de366f92b95cc8abfb160d4413a441b108b3690058_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DMKVTQMPRYLIKRMGENVLLECGQDMSHETMYWYRQDPGLGLQLIYISYDVDSNSEGDIPKGYRVSRKKREHFSLILDSAKTNQTSVYFCASSFGREQYFGPGTRLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "DMKVTQMPRYLIKRMGENVLLECGQDMSHETMYWYRQDPGLGLQLIYISYDVDSNSEGDIPKGYRVSRKKREHFSLILDSAKTNQTSVYFCASSFGREQYFGPGTRLTVL",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 4,
+    "sha256": "7c1a04640eab9dbef581c0e501df8613f35e0b31408b874eb825d38ea1c71a59"
+  },
+  {
+    "file": "50f5ce913b001b10f05e5a5b9558c36164d9a5613f52ee8c52cb863845ca8221_1.0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DAKTTQPDSMESTEGETVHLPCSHATISGNEYIYWYRQVPLQGPEYVTHGLQQNTTNSMAFLAIASDRKSSTLILPHVSLRDAAVYHCILSGGSNYKLTFGKGTLLTVTP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "sequence": "DAKTTQPDSMESTEGETVHLPCSHATISGNEYIYWYRQVPLQGPEYVTHGLQQNTTNSMAFLAIASDRKSSTLILPHVSLRDAAVYHCILSGGSNYKLTFGKGTLLTVTP",
+    "identity_cutoff": 1.0,
+    "status": "200",
+    "valid": true,
+    "n_hits": 3,
+    "sha256": "69fb66e1f2941f2276c464cc517c3f4d3d8e1a5870320c65cc55317db32dda97"
+  }
+]

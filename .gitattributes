@@ -24,3 +24,6 @@ docs/fingerprint_hard_family_20261024/web_sources/*.txt -whitespace
 
 # Preserve raw identity annotation/source snapshots.
 docs/fingerprint_paired_identity_20261024/sources/** -whitespace
+
+# Preserve cross-study raw API, numbering, headers and coordinate snapshot bytes.
+docs/fingerprint_cross_source_20261024/sources/** -text -whitespace

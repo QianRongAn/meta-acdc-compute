@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "candidate_curation_byte_exact": true,
+  "source_balanced_gate_byte_exact": true,
+  "old_isolation_followup_byte_exact": true,
+  "n_original_sources_rechecked": 285,
+  "n_native_graphs_replayed": 2,
+  "native_arrays_exact": true,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "status": "pass"
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "status": "pass"
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "status": "pass"
+    }
+  ],
+  "training_release_created": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

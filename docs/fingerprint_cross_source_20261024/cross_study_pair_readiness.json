@@ -1,0 +1,55 @@
+{
+  "status": "blocked_before_protocol_freeze",
+  "groups": [
+    {
+      "receptor_id": "6f753ea0852aa82fbb628fced0a62d3dd3ac10a7de1ccbebb69d4bcc0c8dcb65",
+      "V_context": "mouse|TRAV9D-3|TRBV13-1",
+      "pdbs": [
+        "3tfk",
+        "3tjh",
+        "3tpu",
+        "4ms8",
+        "4mvb",
+        "4mxq",
+        "4n0c",
+        "4n5e"
+      ],
+      "has_author_disjoint_pair": false,
+      "QC_pass_pdbs": [],
+      "QC_pass_cross_study_pairs": []
+    },
+    {
+      "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+      "V_context": "human|TRAV12-2|TRBV30",
+      "pdbs": [
+        "4jfe",
+        "4jfh",
+        "6eqb"
+      ],
+      "has_author_disjoint_pair": false,
+      "QC_pass_pdbs": [
+        "6eqb"
+      ],
+      "QC_pass_cross_study_pairs": []
+    },
+    {
+      "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+      "V_context": "human|TRAV12-2|TRBV7-9",
+      "pdbs": [
+        "7n1f",
+        "7rtr"
+      ],
+      "has_author_disjoint_pair": true,
+      "QC_pass_pdbs": [
+        "7n1f"
+      ],
+      "QC_pass_cross_study_pairs": []
+    }
+  ],
+  "n_identity_level_cross_study_groups": 3,
+  "n_atomic_QC_cross_study_pairs": 0,
+  "n_source_balanced_query_blocks": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

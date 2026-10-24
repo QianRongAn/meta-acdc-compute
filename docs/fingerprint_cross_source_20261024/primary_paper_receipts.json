@@ -1,0 +1,74 @@
+{
+  "facts": [
+    {
+      "pdbs": [
+        "7n1f",
+        "7rtr"
+      ],
+      "pmids": [
+        "35013235",
+        "34685626"
+      ],
+      "conclusion": "完整配对变量链逐字相同；两篇主论文作者无重叠，Methods分别记载蛋白制备、共结晶与衍射采集；支持独立结构测定来源，不是独立临床验证。",
+      "locators": [
+        "PMC8748687: Crystallization and data collection; Data availability",
+        "PMC8534114: 2.5 Protein Refold, Purification, Crystallisation; Data Availability Statement"
+      ],
+      "evaluation_blocker": "7RTR E28界面重原子缺失；同V组合不同受体来源平衡对照仍不足"
+    },
+    {
+      "pdbs": [
+        "4jfe",
+        "4jfh",
+        "6eqb"
+      ],
+      "pmids": [
+        "23698002",
+        "31091334"
+      ],
+      "conclusion": "完整变量链序列对应工程受体alpha24beta17；2019原文明确6EQA为MEL5-A2-AAG、6EQB为alpha24beta17-A2-AAG。不能用数据库Mel5名称把两者合并。两篇论文有作者重叠。",
+      "locators": [
+        "PMC6618058: Protein crystallization and structure determination; accession-code sentence",
+        "PMC3696650: alpha24beta17 receptor discussion"
+      ],
+      "evaluation_blocker": "4JFE未过现行原子粗筛；4JFH为未结合TCR；native MEL5完整变量链准入证据仍不足"
+    },
+    {
+      "pdbs": [
+        "3tfk",
+        "3tjh",
+        "3tpu",
+        "4ms8",
+        "4mvb",
+        "4mxq",
+        "4n0c",
+        "4n5e"
+      ],
+      "pmids": [
+        "22101157",
+        "26523866"
+      ],
+      "conclusion": "完整配对变量链相同，主论文不同，存在作者重叠；不是独立团队复现。原始完整坐标保留，紧凑MHC构建缺少beta2m，超出现行完整class-I图范围。",
+      "locators": [
+        "RCSB primary-citation snapshots; primary COMPND/SEQRES"
+      ],
+      "fulltext_methods_review": "Europe PMC fullTextXML returned HTTP500; full-methods confirmation remains incomplete"
+    },
+    {
+      "pdbs": [
+        "8qfy"
+      ],
+      "pmids": [
+        "38691588"
+      ],
+      "conclusion": "原文确认a42b20为亲和力增强TCR并报告其共晶结构；当前主文和API证据未完成完整工程变量区边界核验，未按胚系改写。",
+      "locators": [
+        "PMC11087797: affinity-enhanced a42b20 paragraph; Data, Materials, and Software Availability"
+      ],
+      "evaluation_blocker": "附件未取得真实PDF；长author-chain ID注释缺失；即使序列证据补齐，不同HLA及来源仍需匹配控制"
+    }
+  ],
+  "fulltexts_preserved_locally": true,
+  "fulltext_cache_manifest": "primary_paper_fetch_manifest.json",
+  "independent_acceptance_accessed": false
+}
