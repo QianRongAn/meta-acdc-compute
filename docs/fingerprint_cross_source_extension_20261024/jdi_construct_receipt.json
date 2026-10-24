@@ -1,0 +1,50 @@
+{
+  "doi": "10.1038/s41467-022-32811-1",
+  "pmcid": "PMC9464187",
+  "primary_xml_sha256": "1590fca4e0d9f756f09be89ea4c83cc9d81365c57a1ca94ab489c990151fa81b",
+  "proof": [
+    {
+      "pdb": "7pb2",
+      "construct_name": "JDI (parent TCR)",
+      "receptor_id": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+      "CDR_substrings_match_primary_table_4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "full_variable_sequences_from_primary_SEQRES_and_numbering": true
+    },
+    {
+      "pdb": "7ow5",
+      "construct_name": "JDIa41b1 (high affinity TCR)",
+      "receptor_id": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+      "CDR_substrings_match_primary_table_4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "full_variable_sequences_from_primary_SEQRES_and_numbering": true
+    },
+    {
+      "pdb": "7ow6",
+      "construct_name": "JDIa41b1 (high affinity TCR)",
+      "receptor_id": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+      "CDR_substrings_match_primary_table_4": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "full_variable_sequences_from_primary_SEQRES_and_numbering": true
+    }
+  ],
+  "finding": "7PB2 parent JDI and 7OW5/7OW6 affinity-enhanced JDIa41b1 are one engineered lineage; 7OW6/7PB2 share deposited pMHC construct and G12D peptide; no independent-clonotype claim",
+  "source_label": "same research article, not cross-study replication",
+  "binding_numbers_not_used_for_training": true,
+  "independent_acceptance_accessed": false
+}
