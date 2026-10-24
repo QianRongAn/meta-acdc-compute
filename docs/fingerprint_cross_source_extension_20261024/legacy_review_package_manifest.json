@@ -1,0 +1,152 @@
+{
+  "zip_sha256": "4ebedff8358bcf3b6de627fd5f2cbbad8439b5850ee1bf44e9b8e421cd11fff3",
+  "bytes": 7153634,
+  "scope": "legacy exposed diagnostic matrices only; no graphs",
+  "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+  "files": {
+    "records_index_exact.json": {
+      "bytes": 271134,
+      "sha256": "30c5def0fe288d80df6afa5becd7145a4c1519982cb489ba2db6c66ea446ebca"
+    },
+    "legacy_matrix_binding.json": {
+      "bytes": 11008,
+      "sha256": "aa93bf875bb4a2925dc26a2c07a869462a08bec2259601790e24916dbae53434"
+    },
+    "cross_fold_cases.json": {
+      "bytes": 39076,
+      "sha256": "f6ba407998da1ca1ceee632cdf1b0e9f8c0b89608164824a8fa8c8138502dd70"
+    },
+    "fold_assignment.json": {
+      "bytes": 13910,
+      "sha256": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86"
+    },
+    "feature_schema.py": {
+      "bytes": 748,
+      "sha256": "b82a7c0b0ad6cc01a4c7ecbc175051cb4b68c9dd175cc0f6c3bc926377e60e22"
+    },
+    "matrices/emb_fold0_seed1101.npy": {
+      "bytes": 169600,
+      "sha256": "f4ead83ffbb02451895f0c43028c03dfdf22f52ac3f93de98ffc505ef23e87b3"
+    },
+    "matrices/emb_fold0_seed20261021.npy": {
+      "bytes": 169600,
+      "sha256": "8467fec6268a028ee14ea7753f0a2850b691ac83221d6c7de8e0412d564b3ede"
+    },
+    "matrices/emb_fold0_seed4242.npy": {
+      "bytes": 169600,
+      "sha256": "f48ec4e015b391d00ade6c3e2ad508818d41417ec26cdb5e36a7c879a45c094c"
+    },
+    "matrices/emb_fold1_seed1101.npy": {
+      "bytes": 169600,
+      "sha256": "16774498d4c3db9b397cf07d4c67597107518683d58821cdd48f3aea99f5343f"
+    },
+    "matrices/emb_fold1_seed20261021.npy": {
+      "bytes": 169600,
+      "sha256": "895d6a1f95420fc9091e28107900d16c3dbf7b6e0a8bc0e567477803db6b0a80"
+    },
+    "matrices/emb_fold1_seed4242.npy": {
+      "bytes": 169600,
+      "sha256": "331b99f158fad92fcfe273334615e62f1a18b193827046572b6b6da2de702025"
+    },
+    "matrices/emb_fold2_seed1101.npy": {
+      "bytes": 169600,
+      "sha256": "bb760087d6d7aa2a9580bb793589ffdb1a9d8016f9b6069015c98b84eda29328"
+    },
+    "matrices/emb_fold2_seed20261021.npy": {
+      "bytes": 169600,
+      "sha256": "0982db30c9feae1d2edb4375c2598972e7b6b13dd98e00f48e869acf6ed9640d"
+    },
+    "matrices/emb_fold2_seed4242.npy": {
+      "bytes": 169600,
+      "sha256": "6c81e951bcda1f0c3326063c6596cc513e69111874780ffdc3e192ad8b5f15dd"
+    },
+    "matrices/emb_fold3_seed1101.npy": {
+      "bytes": 169600,
+      "sha256": "da2142e8858eb034a46985ef311d6d0c762344b06960563972b9c6987671fbe5"
+    },
+    "matrices/emb_fold3_seed20261021.npy": {
+      "bytes": 169600,
+      "sha256": "0775a98473f491613aceea3a379e48380c0dae970214891ec3523b2b36dee939"
+    },
+    "matrices/emb_fold3_seed4242.npy": {
+      "bytes": 169600,
+      "sha256": "3335746d491b1feef33ba501049e4ffe5f1489c99c537fc2be8cb0a19f9e112c"
+    },
+    "matrices/emb_fold4_seed1101.npy": {
+      "bytes": 169600,
+      "sha256": "ccd6e93fd29177b81e1bd4f1daed4c54289f4ff9300f134ecb817a00abaa6bfa"
+    },
+    "matrices/emb_fold4_seed20261021.npy": {
+      "bytes": 169600,
+      "sha256": "65c362b78c7c5740107861dd4057a993bb02468de4d148041bcd2ad0349676ce"
+    },
+    "matrices/emb_fold4_seed4242.npy": {
+      "bytes": 169600,
+      "sha256": "bbb4b5eb494f12a0ea24323c7fcf27e97e4906f2bf3d74b09f066cdc0298c28b"
+    },
+    "matrices/sim_fold0_seed1101.npy": {
+      "bytes": 876616,
+      "sha256": "4bb9db28680c7a001da0be369ea4aaac7448a4239988bd71a97bea496775db18"
+    },
+    "matrices/sim_fold0_seed20261021.npy": {
+      "bytes": 876616,
+      "sha256": "5bee04a2aa577c660408b18c6905b46c6268a77d7381a860ee825fb2d530f5d8"
+    },
+    "matrices/sim_fold0_seed4242.npy": {
+      "bytes": 876616,
+      "sha256": "d19d41e12419b8902cc6c7bd77172a80e7c312d3d2de89231773cbd8cd8acdc2"
+    },
+    "matrices/sim_fold1_seed1101.npy": {
+      "bytes": 876616,
+      "sha256": "8645030393e954349b48f26b161afb55b3d9510780516ce3a64d60f3b90a19ed"
+    },
+    "matrices/sim_fold1_seed20261021.npy": {
+      "bytes": 876616,
+      "sha256": "80ed5d3d1822a625b5fbf2595e23de627c560c0e2e100c6a6a5dbffb247d4f64"
+    },
+    "matrices/sim_fold1_seed4242.npy": {
+      "bytes": 876616,
+      "sha256": "9ac8bff4e3735a8a902ec74e6954380ddde41a9ef303ac264f9cf165fd1aed2e"
+    },
+    "matrices/sim_fold2_seed1101.npy": {
+      "bytes": 876616,
+      "sha256": "04808dcd4ecd70ea80ad215e2dde4b5bc851880b127ad2bb1d3bb84951dcfef1"
+    },
+    "matrices/sim_fold2_seed20261021.npy": {
+      "bytes": 876616,
+      "sha256": "5475f9b606e8c4e5f107caba857e4447e0759c2d998e92c0bd1b75a45d2f0138"
+    },
+    "matrices/sim_fold2_seed4242.npy": {
+      "bytes": 876616,
+      "sha256": "d9f0faf14eab3b7a0130e9cef7a6a58355eadf680008de4755f2231fb3a73771"
+    },
+    "matrices/sim_fold3_seed1101.npy": {
+      "bytes": 876616,
+      "sha256": "dfe3582f4b687b2b30e79bdcff77a2e0c523955ddbf1676db5075d9a78fc794c"
+    },
+    "matrices/sim_fold3_seed20261021.npy": {
+      "bytes": 876616,
+      "sha256": "4f8498441f3c71b90b7fb824cb5f02da4eb39a916691f94d429fc7fa815b3e15"
+    },
+    "matrices/sim_fold3_seed4242.npy": {
+      "bytes": 876616,
+      "sha256": "79d93965cfcfb3b623163f1900b6742783b2e300bea9786600a90c9009bb374e"
+    },
+    "matrices/sim_fold4_seed1101.npy": {
+      "bytes": 876616,
+      "sha256": "780df65f7b6fe5e05e9896854fb5b4f9af8ef75d48d46b3e3c5d6dc9fd1f122e"
+    },
+    "matrices/sim_fold4_seed20261021.npy": {
+      "bytes": 876616,
+      "sha256": "f7a18a04e5e523e20984f453aee57dad2249e798aade2cc959585d7cab5d5917"
+    },
+    "matrices/sim_fold4_seed4242.npy": {
+      "bytes": 876616,
+      "sha256": "8bb2aa9c6fa1f12f59a1ba8ec994afa35b8354c4ffb8c53b96791c3ae3295928"
+    },
+    "README.md": {
+      "bytes": 995,
+      "sha256": "1c03e2e9ca3aa6a8a83f5a080cd6470dacd181bbf0ce706525f6cb69eae7bafa"
+    }
+  }
+}

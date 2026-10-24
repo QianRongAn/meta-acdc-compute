@@ -1,0 +1,29 @@
+[
+  {
+    "file": "europepmc_supplementary",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11087797/supplementaryFiles",
+    "status": "200",
+    "sha256": "06963f016540d6f5b9c8c89719bf7b09363453bdba0f950a0464dce7312badf0",
+    "bytes": 18093497,
+    "first_bytes": "b'PK\\x03\\x04\\x14\\x00\\x08\\x08\\x08\\x00\\x16{X]\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x18\\x00\\x00\\x00pnas.2318003121fig06'",
+    "error": ""
+  },
+  {
+    "file": "ncbi_oa_metadata",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC11087797",
+    "status": "404",
+    "sha256": "9c6cff3326ef4a4df30e325ba871c215c1c45c82d9911f9e8ae6d6db6b8ea831",
+    "bytes": 1588,
+    "first_bytes": "b'<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\" '",
+    "error": ""
+  },
+  {
+    "file": "jina_primary",
+    "url": "https://r.jina.ai/https://www.rcsb.org/structure/7RTR",
+    "status": "401",
+    "sha256": "6d1c408f4e37813168a41ad217978bfe66b8f3b09cc9661f838c56e1d0ef0f6a",
+    "bytes": 373,
+    "first_bytes": "b'{\"data\":null,\"code\":401,\"name\":\"AuthenticationRequ'",
+    "error": ""
+  }
+]

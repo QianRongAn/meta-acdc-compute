@@ -1,0 +1,35 @@
+{
+  "original_file": "europepmc_supplementary",
+  "original_bytes": 18093497,
+  "original_sha256": "06963f016540d6f5b9c8c89719bf7b09363453bdba0f950a0464dce7312badf0",
+  "parts": [
+    {
+      "file": "europepmc_supplementary.part01",
+      "bytes": 4000000,
+      "sha256": "225988f59bbe3194538ac17440d48af5dbd7463424a1110a8475ecd9ff5f1681"
+    },
+    {
+      "file": "europepmc_supplementary.part02",
+      "bytes": 4000000,
+      "sha256": "fa6ba2d0477ba80610893b0c16ec66c764391397bf39e39cff0e9677b82e7f69"
+    },
+    {
+      "file": "europepmc_supplementary.part03",
+      "bytes": 4000000,
+      "sha256": "ad8b9d360acd6be060f34b832a10254d2279ffb72fcb65dc53c9b2f52eb7b34b"
+    },
+    {
+      "file": "europepmc_supplementary.part04",
+      "bytes": 4000000,
+      "sha256": "219fb216ca4f04c7916f1cbab54b00c3649f0c9454d9aa3f79e4596006ac6788"
+    },
+    {
+      "file": "europepmc_supplementary.part05",
+      "bytes": 2093497,
+      "sha256": "d8d2f1dab84f471d85fa0aa6ccb06c0d3c1558985c3f22feb43edf8b727ae88c"
+    }
+  ],
+  "reason": "byte-identical segmented Git transport; complete original retained locally",
+  "original_local_commit": "11c806a6d918c15ef9d600c7109ab13ad7b3b090",
+  "original_local_branch": "investigate/fingerprint-cross-source-extension-20261024"
+}

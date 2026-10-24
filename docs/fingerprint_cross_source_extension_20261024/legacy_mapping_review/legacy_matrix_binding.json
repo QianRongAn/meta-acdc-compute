@@ -1,0 +1,188 @@
+{
+  "summary": {
+    "n_graphs": 331,
+    "n_observed_sequence_keys": 160,
+    "n_legacy_families": 110,
+    "observed_keys_with_ge2": 55,
+    "n_legacy_observed_keys_crossing_folds": 0,
+    "n_legacy_families_crossing_folds": 0,
+    "n_pdb_names_crossing_folds": 12,
+    "n_graphs_in_cross_fold_pdbs": 41,
+    "n_admitted_canonical_ids_crossing_legacy_folds": 1,
+    "n_canonical_identities_checked": 24,
+    "n_original_instances_metric_replayed": 15,
+    "seed_20261021_mean_fold_AUROC": 0.7943805448628184,
+    "dataset_sha256": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "fold_assignment_sha256": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+    "binding_scope": "retrospective index binding replayed against original metrics; no contemporaneous per-instance dataset hash in legacy metric files",
+    "independent_acceptance_accessed": false,
+    "no_graph_arrays_exported": true
+  },
+  "instances": [
+    {
+      "instance": "fold0_seed20261021",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed20261021.npy",
+      "similarity_sha256": "5bee04a2aa577c660408b18c6905b46c6268a77d7381a860ee825fb2d530f5d8",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed20261021.npy",
+      "embedding_sha256": "8467fec6268a028ee14ea7753f0a2850b691ac83221d6c7de8e0412d564b3ede",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7627489456829437,
+      "reported_original_AUROC": 0.7627489456829437,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold0_seed1101",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed1101.npy",
+      "similarity_sha256": "4bb9db28680c7a001da0be369ea4aaac7448a4239988bd71a97bea496775db18",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed1101.npy",
+      "embedding_sha256": "f4ead83ffbb02451895f0c43028c03dfdf22f52ac3f93de98ffc505ef23e87b3",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.789198768981203,
+      "reported_original_AUROC": 0.7891987689812031,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold0_seed4242",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed4242.npy",
+      "similarity_sha256": "d19d41e12419b8902cc6c7bd77172a80e7c312d3d2de89231773cbd8cd8acdc2",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed4242.npy",
+      "embedding_sha256": "f48ec4e015b391d00ade6c3e2ad508818d41417ec26cdb5e36a7c879a45c094c",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7852407099234658,
+      "reported_original_AUROC": 0.7852407099234658,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold1_seed20261021",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed20261021.npy",
+      "similarity_sha256": "80ed5d3d1822a625b5fbf2595e23de627c560c0e2e100c6a6a5dbffb247d4f64",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed20261021.npy",
+      "embedding_sha256": "895d6a1f95420fc9091e28107900d16c3dbf7b6e0a8bc0e567477803db6b0a80",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.8115809484086243,
+      "reported_original_AUROC": 0.8115809484086243,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold1_seed1101",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed1101.npy",
+      "similarity_sha256": "8645030393e954349b48f26b161afb55b3d9510780516ce3a64d60f3b90a19ed",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed1101.npy",
+      "embedding_sha256": "16774498d4c3db9b397cf07d4c67597107518683d58821cdd48f3aea99f5343f",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7734075012833675,
+      "reported_original_AUROC": 0.7734075012833675,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold1_seed4242",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed4242.npy",
+      "similarity_sha256": "9ac8bff4e3735a8a902ec74e6954380ddde41a9ef303ac264f9cf165fd1aed2e",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed4242.npy",
+      "embedding_sha256": "331b99f158fad92fcfe273334615e62f1a18b193827046572b6b6da2de702025",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7849568467659138,
+      "reported_original_AUROC": 0.7849568467659137,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold2_seed20261021",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed20261021.npy",
+      "similarity_sha256": "5475f9b606e8c4e5f107caba857e4447e0759c2d998e92c0bd1b75a45d2f0138",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed20261021.npy",
+      "embedding_sha256": "0982db30c9feae1d2edb4375c2598972e7b6b13dd98e00f48e869acf6ed9640d",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7895633403693311,
+      "reported_original_AUROC": 0.7895633403693312,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold2_seed1101",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed1101.npy",
+      "similarity_sha256": "04808dcd4ecd70ea80ad215e2dde4b5bc851880b127ad2bb1d3bb84951dcfef1",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed1101.npy",
+      "embedding_sha256": "bb760087d6d7aa2a9580bb793589ffdb1a9d8016f9b6069015c98b84eda29328",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7932801994900189,
+      "reported_original_AUROC": 0.793280199490019,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold2_seed4242",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed4242.npy",
+      "similarity_sha256": "d9f0faf14eab3b7a0130e9cef7a6a58355eadf680008de4755f2231fb3a73771",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed4242.npy",
+      "embedding_sha256": "6c81e951bcda1f0c3326063c6596cc513e69111874780ffdc3e192ad8b5f15dd",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.8170085248338975,
+      "reported_original_AUROC": 0.8170085248338975,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold3_seed20261021",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed20261021.npy",
+      "similarity_sha256": "4f8498441f3c71b90b7fb824cb5f02da4eb39a916691f94d429fc7fa815b3e15",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed20261021.npy",
+      "embedding_sha256": "0775a98473f491613aceea3a379e48380c0dae970214891ec3523b2b36dee939",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7292713647959183,
+      "reported_original_AUROC": 0.7292713647959184,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold3_seed1101",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed1101.npy",
+      "similarity_sha256": "dfe3582f4b687b2b30e79bdcff77a2e0c523955ddbf1676db5075d9a78fc794c",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed1101.npy",
+      "embedding_sha256": "da2142e8858eb034a46985ef311d6d0c762344b06960563972b9c6987671fbe5",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7814636479591837,
+      "reported_original_AUROC": 0.7814636479591837,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold3_seed4242",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed4242.npy",
+      "similarity_sha256": "79d93965cfcfb3b623163f1900b6742783b2e300bea9786600a90c9009bb374e",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed4242.npy",
+      "embedding_sha256": "3335746d491b1feef33ba501049e4ffe5f1489c99c537fc2be8cb0a19f9e112c",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.7786989795918366,
+      "reported_original_AUROC": 0.7786989795918368,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold4_seed20261021",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed20261021.npy",
+      "similarity_sha256": "f7a18a04e5e523e20984f453aee57dad2249e798aade2cc959585d7cab5d5917",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed20261021.npy",
+      "embedding_sha256": "65c362b78c7c5740107861dd4057a993bb02468de4d148041bcd2ad0349676ce",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.8787381250572747,
+      "reported_original_AUROC": 0.8787381250572747,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold4_seed1101",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed1101.npy",
+      "similarity_sha256": "780df65f7b6fe5e05e9896854fb5b4f9af8ef75d48d46b3e3c5d6dc9fd1f122e",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed1101.npy",
+      "embedding_sha256": "ccd6e93fd29177b81e1bd4f1daed4c54289f4ff9300f134ecb817a00abaa6bfa",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.8671075541436295,
+      "reported_original_AUROC": 0.8671075541436295,
+      "exact_original_metric_replay": true
+    },
+    {
+      "instance": "fold4_seed4242",
+      "similarity_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed4242.npy",
+      "similarity_sha256": "8bb2aa9c6fa1f12f59a1ba8ec994afa35b8354c4ffb8c53b96791c3ae3295928",
+      "embedding_file": "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed4242.npy",
+      "embedding_sha256": "bbb4b5eb494f12a0ea24323c7fcf27e97e4906f2bf3d74b09f066cdc0298c28b",
+      "n_graphs": 331,
+      "recomputed_original_pooled_pair_AUROC": 0.8510324709044812,
+      "reported_original_AUROC": 0.8510324709044812,
+      "exact_original_metric_replay": true
+    }
+  ]
+}

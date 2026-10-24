@@ -1,0 +1,41 @@
+{
+  "article_doi": "10.1073/pnas.2318003121",
+  "article_pmcid": "PMC11087797",
+  "authors_copyright": "Copyright 2024 the Authors; published by PNAS",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_primary_xml_sha256": "037ba04a030da2401edbfc30b2cfd2fb273a42f58f8869a22a43bdbee8bdd8cc",
+  "supplement_pdf_sha256": "6860edf56fc86f12fdeac205f53979d813b438e7d9fbada81d874615db296acc",
+  "n_pages": 23,
+  "rendered_and_visually_checked_pages": [
+    5,
+    16
+  ],
+  "facts": [
+    {
+      "pages": [
+        4,
+        5,
+        16
+      ],
+      "finding": "a42b20 affinity-engineered TCR was crystallized with HLA-E-inhA; SI Table S2 links that construct to 8QFY; no complete engineered alpha/beta variable-chain sequences were located in the 23-page supplement",
+      "admission_effect": "construct-to-PDB association strengthened; missing full engineered variable-domain evidence remains unresolved"
+    },
+    {
+      "pages": [
+        5
+      ],
+      "finding": "SPR methods describe 25 C DPBS with 0.005 percent P20 and distinct steady-state versus kinetic analysis; not a row-specific dose or complete sequence proof",
+      "admission_effect": "no automatic measured-data or clinical admission"
+    },
+    {
+      "pages": [
+        5
+      ],
+      "finding": "TCR molecular-replacement template 4WW2 is a search model, not evidence that 8QFY uses that receptor identity",
+      "admission_effect": "never label a receptor from a crystallographic search template"
+    }
+  ],
+  "status": "still_isolated",
+  "independent_acceptance_accessed": false
+}
