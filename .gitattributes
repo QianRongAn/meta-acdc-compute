@@ -27,3 +27,6 @@ docs/fingerprint_paired_identity_20261024/sources/** -whitespace
 
 # Preserve cross-study raw API, numbering, headers and coordinate snapshot bytes.
 docs/fingerprint_cross_source_20261024/sources/** -text -whitespace
+
+# Preserve extended raw structural, annotation and primary-paper receipts.
+docs/fingerprint_cross_source_extension_20261024/sources/** -text -whitespace
