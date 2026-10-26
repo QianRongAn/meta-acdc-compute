@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "n_tests": 29,
+  "test_skips": 0,
+  "n_QC_graphs_exactly_replayed": 42,
+  "n_legacy_instances_exact_metrics_replayed": 15,
+  "old_isolated_source_hashes_rechecked": 285,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    }
+  ],
+  "curation_and_readiness_byte_exact": true,
+  "legacy_metadata_byte_exact": true,
+  "n_new_training_runs": 0,
+  "independent_acceptance_accessed": false
+}

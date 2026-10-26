@@ -1,0 +1,281 @@
+{
+  "status": "PASS",
+  "protocol": "Exploratory after seeing prior results; fixed identical negatives for both positive-domain conditions; paired common-query population; seed means then equal families.",
+  "limitations": "Legacy observed-chain labels, not validated complete receptor truth; domain is observational and confounded with source/construct. Not a causal domain or leakage experiment. No cross-fold pooled scores.",
+  "results": {
+    "all_negatives": {
+      "n_common_queries": 75,
+      "n_common_groups": 13,
+      "same_only_eligible": 187,
+      "cross_only_eligible": 114,
+      "query_indices": [
+        10,
+        11,
+        24,
+        25,
+        26,
+        27,
+        33,
+        34,
+        35,
+        56,
+        57,
+        145,
+        147,
+        148,
+        151,
+        152,
+        153,
+        154,
+        155,
+        159,
+        160,
+        162,
+        167,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        215,
+        226,
+        227,
+        228,
+        229,
+        233,
+        234,
+        257,
+        258,
+        281,
+        282,
+        283,
+        284,
+        285,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303,
+        304,
+        305,
+        319,
+        320,
+        322,
+        324,
+        329
+      ],
+      "query_domains": {
+        "predicted": 64,
+        "crystal": 11
+      },
+      "composition": {
+        "same_domain": {
+          "mean": 0.9875365051276426,
+          "ci95": [
+            0.9798191286519176,
+            0.9941863465986361
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        },
+        "cross_domain": {
+          "mean": 0.9875402970993795,
+          "ci95": [
+            0.9789854332800808,
+            0.9950490820564102
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        },
+        "cross_minus_same": {
+          "mean": 3.791971736973924e-06,
+          "ci95": [
+            -0.003540561384227807,
+            0.0038293198934689758
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        }
+      },
+      "corrected_model": {
+        "same_domain": {
+          "mean": 0.9407965767780255,
+          "ci95": [
+            0.8865958872830366,
+            0.974078225943165
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        },
+        "cross_domain": {
+          "mean": 0.8849616880099471,
+          "ci95": [
+            0.7828136669326753,
+            0.9579610968259875
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        },
+        "cross_minus_same": {
+          "mean": -0.05583488876807847,
+          "ci95": [
+            -0.1493778062421185,
+            0.0035403105485065202
+          ],
+          "n_queries": 75,
+          "n_groups": 13
+        }
+      }
+    },
+    "same_family_negatives": {
+      "n_common_queries": 40,
+      "n_common_groups": 7,
+      "same_only_eligible": 42,
+      "cross_only_eligible": 60,
+      "query_indices": [
+        10,
+        11,
+        24,
+        25,
+        26,
+        27,
+        56,
+        57,
+        145,
+        147,
+        148,
+        151,
+        152,
+        153,
+        154,
+        159,
+        160,
+        162,
+        188,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        205,
+        233,
+        234,
+        257,
+        258,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        319,
+        320,
+        322
+      ],
+      "query_domains": {
+        "predicted": 32,
+        "crystal": 8
+      },
+      "composition": {
+        "same_domain": {
+          "mean": 0.5526770451770452,
+          "ci95": [
+            0.42886752136752143,
+            0.6931532356532356
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        },
+        "cross_domain": {
+          "mean": 0.5023937438223152,
+          "ci95": [
+            0.34789638932496075,
+            0.6712106372463512
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        },
+        "cross_minus_same": {
+          "mean": -0.05028330135472993,
+          "ci95": [
+            -0.18108465608465613,
+            0.09444444444444444
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        }
+      },
+      "corrected_model": {
+        "same_domain": {
+          "mean": 0.5023382173382174,
+          "ci95": [
+            0.3094810744810745,
+            0.7087400793650793
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        },
+        "cross_domain": {
+          "mean": 0.5140718452623215,
+          "ci95": [
+            0.4053979276895943,
+            0.6289471214411689
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        },
+        "cross_minus_same": {
+          "mean": 0.011733627924104126,
+          "ci95": [
+            -0.1074851251041727,
+            0.13380304087446881
+          ],
+          "n_queries": 40,
+          "n_groups": 7
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "/mnt/c/Users/Administrator/Documents/ChatGPT/meta-acdc/audit_handoff_20261024/records_index_exact.json": "30c5def0fe288d80df6afa5becd7145a4c1519982cb489ba2db6c66ea446ebca",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/input/fingerprint_dataset.pt": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed20261021.npy": "7562dcb1dfb2e6dd015feb036773cc1b0b9f2bbe9a36b327deedc630b77c5636",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed20261021.npy": "aaab42902af1060d0f2e679fe402848090a753cc17a93912dfb5e0552fca58e6",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed20261021.npy": "0971c1ca70c4cb62d1839930abe25aa91923c9dcef986f58dcbb0b4f05981767",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed20261021.npy": "b707d0dd1d732896917d24edb00a6699d6b7383ab536f7cb3508fa73c4d110c8",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed1101.npy": "83640f5d7e25a2d3bbf29ec0d4782ba85420e7f272a08a096ec65acd0c5e3027",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed1101.npy": "c1efa90434c25c8ebd60a567900098589cccde2e5d9689cbc809b7ecbd9284c7",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed1101.npy": "716486ed90303e47300a23a2745446cfed400256150cdf191b569eeeca5feb61",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed1101.npy": "25038cef9bae02c39620a788074eb4b65f17891336567ae66cbb92650a968a08",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed1101.npy": "4d6b1324ac2758865841f084f95fc1514ce21ac69f38293f06dbf0626c4ace2b",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed4242.npy": "799583dcbbe0a26e53aa0533439f9c699aa389847f9f88f83f5c2ec9fa3dfa7e",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed4242.npy": "3b4243d4fef28058ccf4a3f77a96ecd94aa248fd16680b4ddfdb2b60f8b053c3",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed4242.npy": "a623cec307570a2a79644d059793a62175a77f82a6d0424b95eef9ea6a0c47aa",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed4242.npy": "b221532defdb2ba471202c69d42094c93535f5fb6aeefb831b5f6c764a2cdcd0"
+  }
+}

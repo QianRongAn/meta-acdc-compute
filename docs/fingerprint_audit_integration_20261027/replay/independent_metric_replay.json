@@ -1,0 +1,330 @@
+{
+  "status": "PASS",
+  "n_instances": 30,
+  "n_graphs": 331,
+  "estimates": {
+    "true": {
+      "all": {
+        "auroc": {
+          "mean": 0.9379363400385504,
+          "ci95": [
+            0.9130864866831893,
+            0.9585932048276166
+          ],
+          "n_queries": 226,
+          "n_groups": 48
+        },
+        "spearman": {
+          "mean": 0.4035673783547079,
+          "ci95": [
+            0.36720968745424554,
+            0.4411208283094631
+          ],
+          "n_queries": 331,
+          "n_groups": 110
+        }
+      },
+      "same_family": {
+        "auroc": {
+          "mean": 0.43852505305792505,
+          "ci95": [
+            0.3055548019118521,
+            0.5700220105010328
+          ],
+          "n_queries": 62,
+          "n_groups": 11
+        },
+        "spearman": {
+          "mean": 0.41766314500281765,
+          "ci95": [
+            0.24124830434566172,
+            0.5935860912546838
+          ],
+          "n_queries": 62,
+          "n_groups": 11
+        }
+      }
+    },
+    "shuffled": {
+      "all": {
+        "auroc": {
+          "mean": 0.7368055741951617,
+          "ci95": [
+            0.6963385742476751,
+            0.7752751378513064
+          ],
+          "n_queries": 226,
+          "n_groups": 48
+        },
+        "spearman": {
+          "mean": 0.2690335822662984,
+          "ci95": [
+            0.2454331191034845,
+            0.29267352442791944
+          ],
+          "n_queries": 331,
+          "n_groups": 110
+        }
+      },
+      "same_family": {
+        "auroc": {
+          "mean": 0.4279702147781732,
+          "ci95": [
+            0.3470328282828283,
+            0.5067430623010206
+          ],
+          "n_queries": 62,
+          "n_groups": 11
+        },
+        "spearman": {
+          "mean": 0.10971286037634866,
+          "ci95": [
+            -0.0544735687407527,
+            0.24397200191175064
+          ],
+          "n_queries": 62,
+          "n_groups": 11
+        }
+      }
+    }
+  },
+  "contrasts": {
+    "all": {
+      "composition": {
+        "mean": 0.9872480343422646,
+        "ci95": [
+          0.9826727844276748,
+          0.9918872891910896
+        ],
+        "n_queries": 226,
+        "n_groups": 48
+      },
+      "true_minus_composition": {
+        "mean": -0.04931169430371384,
+        "ci95": [
+          -0.0750176965353897,
+          -0.02874384151943031
+        ],
+        "n_queries": 226,
+        "n_groups": 48
+      },
+      "true_minus_shuffled": {
+        "mean": 0.20113076584338888,
+        "ci95": [
+          0.16578134053013216,
+          0.23884589093084585
+        ],
+        "n_queries": 226,
+        "n_groups": 48
+      },
+      "exploratory_stability_difference": {
+        "mean": 0.13453379608840937,
+        "ci95": [
+          0.08715505781331183,
+          0.18160583332049957
+        ],
+        "n_queries": 331,
+        "n_groups": 110
+      }
+    },
+    "same_family": {
+      "composition": {
+        "mean": 0.5474711682972929,
+        "ci95": [
+          0.36551443072258377,
+          0.7345612656998902
+        ],
+        "n_queries": 62,
+        "n_groups": 11
+      },
+      "true_minus_composition": {
+        "mean": -0.10894611523936786,
+        "ci95": [
+          -0.37058784234876363,
+          0.12198534182801046
+        ],
+        "n_queries": 62,
+        "n_groups": 11
+      },
+      "true_minus_shuffled": {
+        "mean": 0.010554838279751774,
+        "ci95": [
+          -0.09021543967694488,
+          0.10710091623262039
+        ],
+        "n_queries": 62,
+        "n_groups": 11
+      },
+      "exploratory_stability_difference": {
+        "mean": 0.30795028462646906,
+        "ci95": [
+          0.10978755551380888,
+          0.5616066031312139
+        ],
+        "n_queries": 62,
+        "n_groups": 11
+      }
+    }
+  },
+  "alignment_checks": [
+    {
+      "n_train": 272,
+      "n_test": 59,
+      "disjoint": true,
+      "max_cosine_change": 2.3314683517128287e-15
+    },
+    {
+      "n_train": 245,
+      "n_test": 86,
+      "disjoint": true,
+      "max_cosine_change": 2.4424906541753444e-15
+    },
+    {
+      "n_train": 234,
+      "n_test": 97,
+      "disjoint": true,
+      "max_cosine_change": 2.886579864025407e-15
+    },
+    {
+      "n_train": 286,
+      "n_test": 45,
+      "disjoint": true,
+      "max_cosine_change": 2.9976021664879227e-15
+    },
+    {
+      "n_train": 287,
+      "n_test": 44,
+      "disjoint": true,
+      "max_cosine_change": 2.3314683517128287e-15
+    }
+  ],
+  "caveat": "Fixed models/gallery, family conditional bootstrap; exploratory stability contrast is not a validation claim.",
+  "source_sha256": {
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/fold_assignment.json": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/input/fingerprint_dataset.pt": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/evaluation.json": "704fc4debed0b915b3071663875fee1fd954699ab1c928e29b457d565bfaa0a4",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold0_seed1101.npy": "7cd0baf8b1686d857ece0647854a9d2eda99ecb9f326e5170d0c1601cef5abfe",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold0_seed20261021.npy": "8e6ae168dd45f51a15134c6dd845a1dc373b04c6717e613e36be1a556d934984",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold0_seed4242.npy": "df31ba0d830c21f43df68d7d68c3cc860f1d6a1a97ec50f72ab9f651ca1b881a",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold1_seed1101.npy": "8432c2f408bee63e9b50c93b4c2ad370d910be4a92e457dda2d147ac9db769ed",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold1_seed20261021.npy": "86c40f62745da909a3be6860698ea93dcea4c1372a358813cd679630a2e2db23",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold1_seed4242.npy": "3123167fc3ca4f85fcf3fc0527f87aac11ccd654d4465c05eb21c45b81eeda8c",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold2_seed1101.npy": "fdba378208f4ba99316c0dc2cd697763fa3b298cf99c3651f7b029b571fbe02f",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold2_seed20261021.npy": "56981c21c0bb35a9910937158a55baa441bb7ca538079e359df4aa76fd3daa85",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold2_seed4242.npy": "7a4249ff42eb6a626a39d3f6c016558197b7b85796cd6b7d906c564bfa6c952c",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold3_seed1101.npy": "389fa732877cabaf4b2efd1effa5230636ee01efa1ff094e9f8d198c002026ea",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold3_seed20261021.npy": "149637d64efc42b32c386dbb53f333b4113a4bb100bb4f1181de0c771f91246e",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold3_seed4242.npy": "7ef8e121a330378ca29dd7845445289e365ffcee7a497b86bcd0f2ae13f6c2e2",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold4_seed1101.npy": "7d6e41fb39bf75b41545edc2858fefa84b4df87513d35fff01f33404f64c6373",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold4_seed20261021.npy": "32f42f4460659232c011d262cda3826cd96bbb36665178031a0df6e5b45ad21c",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/emb_fold4_seed4242.npy": "ec5da3530640576616ae4879eca55a4f8638050fef454cb9c63f7df1a2c58735",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold0_seed1101.npy": "e26b5f4ae328a39a2b8a70e25f8acb8b00b03d88f382757c58fa25f8a477a6cc",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold0_seed20261021.npy": "fccf6e589015e0a7870fed3ed3b7258571f08a9f664d2fa993ba3c08fb8b6fa2",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold0_seed4242.npy": "1910f4be8bcf9e0e517725245b3ff1ddc1508a776dca39a0f4260c0b80a710cd",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold1_seed1101.npy": "8fd128ac76ad0886eef54cb99b86ce0de02ede84e7e34ad9b7cc356321304489",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold1_seed20261021.npy": "948ccd7dbefa153583d2ece5a8a24ce246ed987aa4446a73561f002319eac03c",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold1_seed4242.npy": "a6a45d78a6e39f876c0984bd7a96543adb7e77ac93f9782e89a3327eed69d86a",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold2_seed1101.npy": "020d3cb1a8bfd349f4fac3dee2598a25f698ed039b251109e6a56616a6e52053",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold2_seed20261021.npy": "b6240b3e369b6678dff278cc7c8f9af7fdecef061826187d8e4258c9fdc34345",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold2_seed4242.npy": "db6e959969816b9ad8bb6492a9af1cd5a1cc50d65dd77c7c681b7ffa4ec934e7",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold3_seed1101.npy": "afef39b698176dcaa56941ba1286e2a65f29730c28ddee2b79cb8862e7cb2e86",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold3_seed20261021.npy": "36bc2e60a414be63c9cc3f15982fc550ca6fbd61218cce7328d7651808cbb4ad",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold3_seed4242.npy": "9a45d9f5d27590b2dc235d64ecffff341d03d555b995fb64e28e3fbe24490f53",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold4_seed1101.npy": "2068aed2255435d65494b93abbed051f1f6204e0d0a884f828c16271cde39263",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold4_seed20261021.npy": "f92106db89d84bab8418abfd49e0072f15b35b72460286417d6fd0e6ca9a0687",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/shuffled/model_run_v2/sim_fold4_seed4242.npy": "806373b053f86d0e859b42db1cf9a1f886bce990196ab24c9de2f98b75a91c6a",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold0_seed1101.npy": "109e9e61f9e6bea8829d06dcb5918a76ce58391ea4bafe3938b76b25b33ce6e6",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold0_seed20261021.npy": "762a0b95cbfc3b5263e7c15da62f5b174d7f41fc481c218b4635a22b4f821c0b",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold0_seed4242.npy": "15813c39eb8a9631d0600358870f9b2bdca0f586b5be36f30410388fb85275f3",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold1_seed1101.npy": "1463cb421dd7b5147b3d70fb3ef957f8c42cd7d734fe0af3d383f982e6b42da5",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold1_seed20261021.npy": "dab33c0f92ea8c8efb15aeb10d986f53b3293032290cb5b7d041b145bfd18601",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold1_seed4242.npy": "08a4dae796eaa5d83979dc6427f8f58b468e0dd6eb1a10427cc7f18d1b576a68",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold2_seed1101.npy": "10b9bded8687697ebcaef3e113450727a1759a4e5e958acb0b2c2a9475d555f2",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold2_seed20261021.npy": "15d2b6d72c6a0ce03e0949919b4259aafb089dc99db5e685597f82ac577cd1c8",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold2_seed4242.npy": "3963eadd0ff5e33b7e67feb6c51220982e988695cee1d7075043a31d540a2418",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold3_seed1101.npy": "3e451c3bad7941a73942b831191ce6b8ca1dae0d659219f5a0a0da3bc6859c12",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold3_seed20261021.npy": "43d304a016d7563b7c1671087001fea210fefae0d52cbf3193e58e7244f2336a",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold3_seed4242.npy": "63274648f3b36947ba527b302e8971ae244d1282e5866c8df93a73ded2512fce",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold4_seed1101.npy": "7eb5e8f78b4a2cd39fce62b081f7fa94dd9b51211202bbc476d62abe3ee114ba",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold4_seed20261021.npy": "1ca7840e9520b0c1c29824f5b7a31347a685eb6447028eda707b4b506c005fcd",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/emb_fold4_seed4242.npy": "46b709bdaff1f228da66b0c8603b6245117f6a793d64c63842f7c915e03026a3",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed1101.npy": "83640f5d7e25a2d3bbf29ec0d4782ba85420e7f272a08a096ec65acd0c5e3027",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed20261021.npy": "ed42378c8b82875e2dbdd5aeecbf6fb76216f62d87d74c075ce8b9e9715a72df",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold0_seed4242.npy": "799583dcbbe0a26e53aa0533439f9c699aa389847f9f88f83f5c2ec9fa3dfa7e",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed1101.npy": "c1efa90434c25c8ebd60a567900098589cccde2e5d9689cbc809b7ecbd9284c7",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed20261021.npy": "7562dcb1dfb2e6dd015feb036773cc1b0b9f2bbe9a36b327deedc630b77c5636",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold1_seed4242.npy": "3b4243d4fef28058ccf4a3f77a96ecd94aa248fd16680b4ddfdb2b60f8b053c3",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed1101.npy": "716486ed90303e47300a23a2745446cfed400256150cdf191b569eeeca5feb61",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed20261021.npy": "aaab42902af1060d0f2e679fe402848090a753cc17a93912dfb5e0552fca58e6",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold2_seed4242.npy": "a623cec307570a2a79644d059793a62175a77f82a6d0424b95eef9ea6a0c47aa",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed1101.npy": "25038cef9bae02c39620a788074eb4b65f17891336567ae66cbb92650a968a08",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed20261021.npy": "0971c1ca70c4cb62d1839930abe25aa91923c9dcef986f58dcbb0b4f05981767",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold3_seed4242.npy": "745d56b9e5071cd14faa29abda516e4b3d5d5cd6707c387d4721f976b3fcee8f",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed1101.npy": "4d6b1324ac2758865841f084f95fc1514ce21ac69f38293f06dbf0626c4ace2b",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed20261021.npy": "b707d0dd1d732896917d24edb00a6699d6b7383ab536f7cb3508fa73c4d110c8",
+    "/home/administrator/docs/meta-acdc-fingerprint-review/docs/fingerprint_retrain_20261023/run/true/model_run_v2/sim_fold4_seed4242.npy": "b221532defdb2ba471202c69d42094c93535f5fb6aeefb831b5f6c764a2cdcd0",
+    "docs/fingerprint_retrain_20261023/input/fingerprint_dataset.pt": "deed7414e0714985e479267899f99d713650a09c37e0e83408139d98f66c484b",
+    "docs/fingerprint_retrieval_20261021/fold_assignment.json": "bf42f84de74e8c21e1138885b3f1bf3678f305d0b3d9536fdf6358122a729e86",
+    "docs/fingerprint_retrieval_20261021/followup/config.json": "ddd8aa748184ad09554f645218e062e69bb577d1da9cbd3dbe0d9ae389aa4f5c",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold0_seed1101.json": "886951743353e217746d49abe929e651dc8d51c4f8d05298ccfafa17785c5023",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold0_seed20261021.json": "04135c54ea8267b50d5b2708aee317422e912af918710231ed3fa97821a8eb25",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold0_seed4242.json": "0036ca35630d67d5ba5937833c0715f1b64cdca89fe350f53ba60c84e945fb5d",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold1_seed1101.json": "06cad10bef223b76b03416cd5408cd65f9b4dc3e56b5ddc5c6ea57a76fac75be",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold1_seed20261021.json": "1bb84374772a2daa8887c2fef8ca7ab1bcfc0972110c3d25270deeb4c121ee23",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold1_seed4242.json": "925d19d71b3b35e0414cb8aee9b8272a76a4ac3e70bab83de18e291fd0d7fbfd",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold2_seed1101.json": "de8c394e76e269be4b37d6126064c945b4f84a881a3f3d0bd6f14887c03da1bc",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold2_seed20261021.json": "8977322484aa875169c9bffe92af4f3715138aeac0e35c5dd328bc95110e4b4b",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold2_seed4242.json": "8ec9715a8898e2e67b4f296cc4815abef20e77cd6a5acf0df0c978425d6310ab",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold3_seed1101.json": "fcbdcf1438f9f42c17577a2e9c389c710358d308e31d361ac89d633cb9293b5f",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold3_seed20261021.json": "c4d165b8ca076f7abda3d6af200e5e96a4e14fd8e1bccaf564befbf7ef850132",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold3_seed4242.json": "9ab5a4cafe884eb209476968e147f34acd4d423c9ef5237fdceef793632508e9",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold4_seed1101.json": "9e5c57fb052d0813736bac85c4bef39538dffe4c4b8d4db5dbc2531c562244f1",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold4_seed20261021.json": "adfc4a1df4b8636d9020a16cdc8c333d638e2c95c9e7740607072b47920dac43",
+    "docs/fingerprint_retrieval_20261021/followup/metrics_fold4_seed4242.json": "0a024cb8115400cc84acaf35118247619136906d35364124108c246655cc60c6",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed1101.npy": "f4ead83ffbb02451895f0c43028c03dfdf22f52ac3f93de98ffc505ef23e87b3",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed20261021.npy": "8467fec6268a028ee14ea7753f0a2850b691ac83221d6c7de8e0412d564b3ede",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold0_seed4242.npy": "f48ec4e015b391d00ade6c3e2ad508818d41417ec26cdb5e36a7c879a45c094c",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed1101.npy": "16774498d4c3db9b397cf07d4c67597107518683d58821cdd48f3aea99f5343f",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed20261021.npy": "895d6a1f95420fc9091e28107900d16c3dbf7b6e0a8bc0e567477803db6b0a80",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold1_seed4242.npy": "331b99f158fad92fcfe273334615e62f1a18b193827046572b6b6da2de702025",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed1101.npy": "bb760087d6d7aa2a9580bb793589ffdb1a9d8016f9b6069015c98b84eda29328",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed20261021.npy": "0982db30c9feae1d2edb4375c2598972e7b6b13dd98e00f48e869acf6ed9640d",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold2_seed4242.npy": "6c81e951bcda1f0c3326063c6596cc513e69111874780ffdc3e192ad8b5f15dd",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed1101.npy": "da2142e8858eb034a46985ef311d6d0c762344b06960563972b9c6987671fbe5",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed20261021.npy": "0775a98473f491613aceea3a379e48380c0dae970214891ec3523b2b36dee939",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold3_seed4242.npy": "3335746d491b1feef33ba501049e4ffe5f1489c99c537fc2be8cb0a19f9e112c",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed1101.npy": "ccd6e93fd29177b81e1bd4f1daed4c54289f4ff9300f134ecb817a00abaa6bfa",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed20261021.npy": "65c362b78c7c5740107861dd4057a993bb02468de4d148041bcd2ad0349676ce",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/emb_fold4_seed4242.npy": "bbb4b5eb494f12a0ea24323c7fcf27e97e4906f2bf3d74b09f066cdc0298c28b",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed1101.npy": "4bb9db28680c7a001da0be369ea4aaac7448a4239988bd71a97bea496775db18",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed20261021.npy": "5bee04a2aa577c660408b18c6905b46c6268a77d7381a860ee825fb2d530f5d8",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold0_seed4242.npy": "d19d41e12419b8902cc6c7bd77172a80e7c312d3d2de89231773cbd8cd8acdc2",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed1101.npy": "8645030393e954349b48f26b161afb55b3d9510780516ce3a64d60f3b90a19ed",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed20261021.npy": "80ed5d3d1822a625b5fbf2595e23de627c560c0e2e100c6a6a5dbffb247d4f64",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold1_seed4242.npy": "9ac8bff4e3735a8a902ec74e6954380ddde41a9ef303ac264f9cf165fd1aed2e",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed1101.npy": "04808dcd4ecd70ea80ad215e2dde4b5bc851880b127ad2bb1d3bb84951dcfef1",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed20261021.npy": "5475f9b606e8c4e5f107caba857e4447e0759c2d998e92c0bd1b75a45d2f0138",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold2_seed4242.npy": "d9f0faf14eab3b7a0130e9cef7a6a58355eadf680008de4755f2231fb3a73771",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed1101.npy": "dfe3582f4b687b2b30e79bdcff77a2e0c523955ddbf1676db5075d9a78fc794c",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed20261021.npy": "4f8498441f3c71b90b7fb824cb5f02da4eb39a916691f94d429fc7fa815b3e15",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold3_seed4242.npy": "79d93965cfcfb3b623163f1900b6742783b2e300bea9786600a90c9009bb374e",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed1101.npy": "780df65f7b6fe5e05e9896854fb5b4f9af8ef75d48d46b3e3c5d6dc9fd1f122e",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed20261021.npy": "f7a18a04e5e523e20984f453aee57dad2249e798aade2cc959585d7cab5d5917",
+    "docs/fingerprint_retrieval_20261021/followup/model_run_v2/sim_fold4_seed4242.npy": "8bb2aa9c6fa1f12f59a1ba8ec994afa35b8354c4ffb8c53b96791c3ae3295928",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold0_seed1101.json": "faaa4d59cbc5aab3982b35504c9bed25e47d58f5c4e69dda9220b44784fc6619",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold0_seed20261021.json": "7e32b96aa8913998305acb915525d5af378d78f7b778cbdaa29119143de09e17",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold0_seed4242.json": "c298bf5589f230f4b0f35d336df2000e2c8282c8c3cea9128c92c6f99173acd7",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold1_seed1101.json": "5bba59e1a8071912e4877f6758028da151293a07324c0bd034884189cc5a3129",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold1_seed20261021.json": "f5f7a45d691384198636f08957fae67433f470775546432f2cbcf4484dfe56b9",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold1_seed4242.json": "fb05450174c6bbf805dbfd38291121063b4d8d2e369cbb40828a515e1ece61bb",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold2_seed1101.json": "74f3b4f0f17c79a83409701fb7433b53d66d18dae01e5bfe102829d207785277",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold2_seed20261021.json": "27cd8126c5b36cf1861ebc2e258b990770d1fc1861a42142131699cf4df3dd5d",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold2_seed4242.json": "8f6c9780c9fd237429a98b9c269f75aa663eb52c3f3c68406ab68ac383519206",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold3_seed1101.json": "b16a0311044f4f06f143084f1d4c5d774f75f957d9dd0505eea2e583f2b68ce8",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold3_seed20261021.json": "f16b2692815b1be83e4f38f4d46735af5c2baa814360ae01ecc0c334098277d8",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold3_seed4242.json": "13e91ad535b865bba143dc60fa2f08157c60bc7ea8e976d3c56aa0165386f247",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold4_seed1101.json": "ae5ac1cff5368100368a46e0a5037726913ebf3953c00d77bc1b3c8ca41199eb",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold4_seed20261021.json": "7c67f591ef097247667cb18ae6244b2b76c88e54fd89ef75f6c8676f56795081",
+    "docs/fingerprint_retrieval_20261021/followup/rankings_fold4_seed4242.json": "623af5ae3b33dce3e9f7b9c16ca4f0f04ef65843e0366e79ae3b4b3ae28c0716"
+  }
+}

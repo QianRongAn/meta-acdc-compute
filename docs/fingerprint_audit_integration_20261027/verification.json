@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "date": "2026-10-27",
+  "n_archived_source_files": 44,
+  "n_delivery_hashes_checked": 40,
+  "n_source_copies_checked": 15,
+  "n_fixed_model_instances_replayed": 30,
+  "n_graphs": 331,
+  "n_alignment_records_checked": 5,
+  "comparisons": {
+    "status": true,
+    "n_instances": true,
+    "n_graphs": true,
+    "estimates": true,
+    "contrasts": true,
+    "alignment_checks": true,
+    "paired_domain_results_exact": true
+  },
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_extension_20261024",
+      "n_files": 1548,
+      "unchanged": true
+    }
+  ],
+  "procrustes_refitted_this_turn": false,
+  "atomic_QC_replayed_this_turn": false,
+  "new_model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "notes": "Numeric results replayed exactly; output source paths differ after relocation. Draft and figures remain review material, not a submission-ready paper."
+}
