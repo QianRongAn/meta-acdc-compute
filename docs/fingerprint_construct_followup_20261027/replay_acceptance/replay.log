@@ -1,0 +1,83 @@
+{
+  "n_roles_adjudicated": 4,
+  "mutation": [
+    {
+      "variable_index0": 93,
+      "parent": "S",
+      "engineered": "C"
+    }
+  ],
+  "boundaries_changed": false
+}
+{
+  "n_graphs": 1,
+  "decisions": [
+    {
+      "pdb": "6at6",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 0
+    },
+    {
+      "pdb": "7n5c",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "7n5c",
+      "stage": null,
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "n_units": null
+    },
+    {
+      "pdb": "7n5p",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "7n5p",
+      "stage": null,
+      "status": "quarantined",
+      "reasons": [
+        "existing fixed atomic screen rejected unit"
+      ],
+      "n_units": null
+    },
+    {
+      "pdb": "8cx4",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "8cx4",
+      "stage": null,
+      "status": "quarantined",
+      "reasons": [
+        "existing fixed atomic screen rejected unit"
+      ],
+      "n_units": null
+    }
+  ]
+}
+{
+  "n_identity_admitted_pdbs": 64,
+  "n_complete_paired_ids": 44,
+  "n_QC_graphs": 43,
+  "n_QC_pdbs": 31,
+  "n_QC_complete_paired_ids": 29,
+  "n_QC_cross_study_pairs": 0,
+  "n_identity_same_study_same_V_groups": 2,
+  "n_QC_same_study_same_V_control_groups": 1,
+  "n_QC_independent_natural_control_groups": 0,
+  "n_QC_source_balanced_blocks": 0,
+  "n_QC_author_disjoint_balanced_blocks": 0,
+  "n_eligible_joint_components": 0
+}

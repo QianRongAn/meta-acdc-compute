@@ -1,0 +1,45 @@
+test_ambiguous_published_motif_is_rejected (tests.test_construct_role_adjudication.ConstructRoleEvidenceTests.test_ambiguous_published_motif_is_rejected) ... ok
+test_general_conflict_gate_remains_strict (tests.test_construct_role_adjudication.ConstructRoleEvidenceTests.test_general_conflict_gate_remains_strict) ... ok
+test_missing_sequence_anchor_rejected (tests.test_construct_role_adjudication.ConstructRoleEvidenceTests.test_missing_sequence_anchor_rejected) ... ok
+test_one_chain_cannot_supply_both_roles (tests.test_construct_role_adjudication.ConstructRoleEvidenceTests.test_one_chain_cannot_supply_both_roles) ... ok
+test_orthogonal_primary_motifs_identify_distinct_chains (tests.test_construct_role_adjudication.ConstructRoleEvidenceTests.test_orthogonal_primary_motifs_identify_distinct_chains) ... ok
+test_actual_conflicts_remain_unresolved (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_actual_conflicts_remain_unresolved) ... ok
+test_ambiguous_AS_names_remain_unresolved (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_ambiguous_AS_names_remain_unresolved) ... ok
+test_conflicting_primary_fields_are_not_resolved_by_preference (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_conflicting_primary_fields_are_not_resolved_by_preference) ... ok
+test_literal_roles (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_literal_roles) ... ok
+test_real_alfa_headers (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_real_alfa_headers) ... ok
+test_real_beta2_is_not_b2m (tests.test_primary_role_evidence.PrimaryRoleEvidenceTests.test_real_beta2_is_not_b2m) ... ok
+test_actual_confidence_mask_is_both_domains (tests.test_cross_source_extension.ExtensionChecks.test_actual_confidence_mask_is_both_domains) ... ok
+test_actual_index_mapping (tests.test_cross_source_extension.ExtensionChecks.test_actual_index_mapping) ... ok
+test_actual_jdi_control_and_blocked_release (tests.test_cross_source_extension.ExtensionChecks.test_actual_jdi_control_and_blocked_release) ... ok
+test_attachment_multipart_integrity (tests.test_cross_source_extension.ExtensionChecks.test_attachment_multipart_integrity) ... ok
+test_different_source_is_not_same_source_control (tests.test_cross_source_extension.ExtensionChecks.test_different_source_is_not_same_source_control) ... ok
+test_duplicate_key_rejected (tests.test_cross_source_extension.ExtensionChecks.test_duplicate_key_rejected) ... ok
+test_flagged_unit_excluded (tests.test_cross_source_extension.ExtensionChecks.test_flagged_unit_excluded) ... ok
+test_pmhc_match_and_lineage_not_assumed (tests.test_cross_source_extension.ExtensionChecks.test_pmhc_match_and_lineage_not_assumed) ... ok
+test_qc_identity_mismatch_rejected (tests.test_cross_source_extension.ExtensionChecks.test_qc_identity_mismatch_rejected) ... ok
+test_same_identity_is_not_negative (tests.test_cross_source_extension.ExtensionChecks.test_same_identity_is_not_negative) ... ok
+test_actual_search_gate_and_missing_atoms (tests.test_cross_source_retrieval.CrossSourceChecks.test_actual_search_gate_and_missing_atoms) ... ok
+test_author_diacritics_not_false_independence (tests.test_cross_source_retrieval.CrossSourceChecks.test_author_diacritics_not_false_independence) ... ok
+test_different_pdb_same_paper_not_independent (tests.test_cross_source_retrieval.CrossSourceChecks.test_different_pdb_same_paper_not_independent) ... ok
+test_duplicate_copies_not_new_source_units (tests.test_cross_source_retrieval.CrossSourceChecks.test_duplicate_copies_not_new_source_units) ... ok
+test_exact_entity_annotation_inheritance (tests.test_cross_source_retrieval.CrossSourceChecks.test_exact_entity_annotation_inheritance) ... ok
+test_gene_context_mismatch_excluded (tests.test_cross_source_retrieval.CrossSourceChecks.test_gene_context_mismatch_excluded) ... ok
+test_positive_negative_different_gallery_studies_rejected (tests.test_cross_source_retrieval.CrossSourceChecks.test_positive_negative_different_gallery_studies_rejected) ... ok
+test_shared_author_not_independent_team (tests.test_cross_source_retrieval.CrossSourceChecks.test_shared_author_not_independent_team) ... ok
+test_shared_chain_joint_exclusion (tests.test_cross_source_retrieval.CrossSourceChecks.test_shared_chain_joint_exclusion) ... ok
+test_source_balanced_and_author_disjoint (tests.test_cross_source_retrieval.CrossSourceChecks.test_source_balanced_and_author_disjoint) ... ok
+test_unknown_author_not_independent (tests.test_cross_source_retrieval.CrossSourceChecks.test_unknown_author_not_independent) ... ok
+test_cif_declaration_rejects_gap (tests.test_paired_variable_identity.PairedVariableTests.test_cif_declaration_rejects_gap) ... ok
+test_development_fold_isolation_and_control (tests.test_paired_variable_identity.PairedVariableTests.test_development_fold_isolation_and_control) ... ok
+test_exact_pair_order_and_mutation (tests.test_paired_variable_identity.PairedVariableTests.test_exact_pair_order_and_mutation) ... ok
+test_germline_translation (tests.test_paired_variable_identity.PairedVariableTests.test_germline_translation) ... ok
+test_missing_terminal_residue_not_imputed (tests.test_paired_variable_identity.PairedVariableTests.test_missing_terminal_residue_not_imputed) ... ok
+test_real_numbered_padding (tests.test_paired_variable_identity.PairedVariableTests.test_real_numbered_padding) ... ok
+test_same_construct_observed_split_repaired (tests.test_paired_variable_identity.PairedVariableTests.test_same_construct_observed_split_repaired) ... ok
+test_unmatched_padding_fails (tests.test_paired_variable_identity.PairedVariableTests.test_unmatched_padding_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 1.472s
+
+OK

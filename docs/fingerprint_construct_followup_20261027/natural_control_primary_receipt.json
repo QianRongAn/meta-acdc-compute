@@ -1,0 +1,34 @@
+{
+  "doi": "10.1038/s41586-022-05501-7",
+  "pmcid": "PMC10511244",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10511244/",
+  "supplement_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-022-05501-7/MediaObjects/41586_2022_5501_MOESM1_ESM.pdf",
+  "supplement_sha256": "4bd49d79c1ffa820dbe49469c9e272f2ded0b8613100c1efec14a5bbe58e7729",
+  "locator": "Supplementary Table 2, PDF page 4; structure mapping Supplementary Table 6, page 8",
+  "method": "manual transcription of factual gene/CDR3/patient fields, visually checked; no binding readouts consumed",
+  "clones": [
+    {
+      "name": "AS3.1",
+      "patient": "P",
+      "TRAV": "TRAV21",
+      "TRBV": "TRBV9",
+      "CDR3_alpha": "CAVSLGTGAGSYQLTF",
+      "CDR3_beta": "CASSVGLYSTDTQYF",
+      "structure_pdb": "7n2s"
+    },
+    {
+      "name": "AS8.4",
+      "patient": "K",
+      "TRAV": "TRAV21",
+      "TRBV": "TRBV9",
+      "CDR3_alpha": "CAVNSPGSGAGSYQLTF",
+      "CDR3_beta": "CASSVGTYSTDTQYF",
+      "structure_pdb": "8cx4"
+    }
+  ],
+  "same_source_same_V": true,
+  "independent_patient_derived_clonotypes_supported": true,
+  "qualified_structural_control": false,
+  "reason": "AS3.1 deposited structure 7N2S fails complete beta N-terminus gate; paper CDR3 evidence does not repair deposited truncation",
+  "source_distribution": "Full non-CC article/SI archived locally, excluded from Git; factual transcript plus source URLs, locators and hash published"
+}

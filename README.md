@@ -1,3 +1,7 @@
+> **2026-10-27 原文构建体与天然对照核验：** 6AT6已确认为未结合pMHC的KFJ5（Aα/Bβ）；7N5C为6218αC、7N5P为其亲本（均Dα/Eβ），不能算独立天然受体。另从原文补到患者P的AS3.1与患者K的AS8.4同来源、同TRAV21/TRBV9天然配对依据；但7N2S存在沉积端部缺口，8CX4触发固定原子筛查，尚无合格结构对。
+> 当前身份层64 PDB／44配对变量序列ID，固定原子QC通过43图／31 PDB／29 ID；跨研究合格同完整αβ正对照、独立天然受体合格对照组和来源平衡块仍均为0。**不冻结协议、不训练，独立验收集未访问。** 40项测试通过，七份既有冻结交付3622文件哈希未变。
+> [本轮原文证据、逐项原因与复现](docs/fingerprint_construct_followup_20261027/README.md) · [最终角色裁定](docs/fingerprint_construct_followup_20261027/construct_adjudication_final.json) · [最终原子QC](docs/fingerprint_construct_followup_20261027/native_qc_final/native_atomic_qc.json) · [联合准入](docs/fingerprint_construct_followup_20261027/joint_readiness_final.json) · [验证](docs/fingerprint_construct_followup_20261027/verification_final.json)。下方较早批次计数为各自历史快照，不代表当前准入量。
+
 > **2026-10-27审查归档：** 跨来源证据续传完成；新增归档10月25日复算、4图及稿件材料，重新核验30个固定实例和跨域共同查询诊断，结果一致。仍无合格跨研究正对照，不启动新训练。[本轮核验及材料入口](docs/fingerprint_audit_integration_20261027/README.md)。
 
 > **2026-10-24跨来源扩展：** 覆盖快照全部307个class-I PDB；61个身份层PDB运行原子QC，30个PDB的42个单元通过。新增同来源同V的JDI工程构建体对照，但跨研究合格正对照仍为0，未冻结新协议/重训。另补旧v2精确逐图映射与外部复核回应。[证据、限制和无图交换包](docs/fingerprint_cross_source_extension_20261024/README.md)。

@@ -64,3 +64,15 @@ data/releases/
 
 # Public experimental source snapshots; provenance and curated panels are tracked.
 data/external_evidence/
+
+# Full non-CC source archives stay local; factual receipts and hashes are published.
+docs/fingerprint_construct_followup_20261027/sources/retry/day2011_pmc.html
+docs/fingerprint_construct_followup_20261027/sources/additional/AS_nature.html
+docs/fingerprint_construct_followup_20261027/sources/natural/AS_pmc.html
+docs/fingerprint_construct_followup_20261027/sources/natural/AS_supplement.pdf
+docs/fingerprint_construct_followup_20261027/sources/natural/local_renders/
+
+# Original CC BY PDFs remain local; identical multipart bytes are tracked for reliable transport.
+docs/fingerprint_construct_followup_20261027/sources/secondary/6at6_supplement.pdf
+docs/fingerprint_construct_followup_20261027/sources/secondary/7n5_supplement.pdf
+docs/fingerprint_construct_followup_20261027/replay*/*_supplement.pdf

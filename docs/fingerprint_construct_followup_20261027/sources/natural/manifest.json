@@ -1,0 +1,32 @@
+[
+  {
+    "file": "AS_article.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10511244/fullTextXML",
+    "requested_at": "2026-10-27T15:07:55.273412+00:00",
+    "status": 500,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10511244/fullTextXML",
+    "content_type": "application/json",
+    "bytes": 151,
+    "sha256": "a877afc3a6fe022bffd3959bed8a82158912177a04f582eaca5afb9be620a10d"
+  },
+  {
+    "file": "AS_pmc.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10511244/",
+    "requested_at": "2026-10-27T15:07:55.274290+00:00",
+    "status": 200,
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10511244/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 279331,
+    "sha256": "58a2c37343a20d986fb03218ee384bac25a36119430fc3ff9ccdc2ff00009366"
+  },
+  {
+    "file": "AS_supplement.pdf",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-022-05501-7/MediaObjects/41586_2022_5501_MOESM1_ESM.pdf",
+    "requested_at": "2026-10-27T15:07:55.274587+00:00",
+    "status": 200,
+    "final_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41586-022-05501-7/MediaObjects/41586_2022_5501_MOESM1_ESM.pdf",
+    "content_type": "application/pdf",
+    "bytes": 794289,
+    "sha256": "4bd49d79c1ffa820dbe49469c9e272f2ded0b8613100c1efec14a5bbe58e7729"
+  }
+]

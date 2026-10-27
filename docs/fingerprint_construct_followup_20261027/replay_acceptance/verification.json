@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "n_graphs_exactly_replayed": 1,
+  "n_total_QC_units": 43,
+  "receipt_and_readiness_byte_exact": true,
+  "unchanged_general_role_and_boundary_and_atomic_gates": true,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_extension_20261024",
+      "n_files": 1548,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_audit_integration_20261027",
+      "n_files": 53,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_positive_controls_20261027",
+      "n_files": 59,
+      "unchanged": true
+    }
+  ],
+  "n_tests": 40,
+  "test_skips": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

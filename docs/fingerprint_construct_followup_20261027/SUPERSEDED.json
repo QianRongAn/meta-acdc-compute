@@ -1,0 +1,7 @@
+{
+  "current": ["construct_adjudication_final.json", "native_qc_final/native_atomic_qc.json", "joint_readiness_final.json", "verification_final.json"],
+  "initial_three_target_only": ["construct_adjudication.json", "native_qc/", "joint_readiness.json", "verification.json", "replay/"],
+  "superseded_natural_coordinate_iteration": ["construct_adjudication_with_natural.json", "native_qc_with_natural/", "joint_readiness_with_natural.json"],
+  "reason": "Initial AS8.4 identity evidence used the prior primary header snapshot as atomic input; it lacked protein ATOM records and produced an empty unit. Final input is a newly downloaded full 8CX4 PDBe coordinate file; one complete class-I unit is extracted and rejected by the unchanged short donor/acceptor-contact screen. Empty-unit output is not a biological or final QC conclusion.",
+  "historical_frozen_deliveries_overwritten": false
+}

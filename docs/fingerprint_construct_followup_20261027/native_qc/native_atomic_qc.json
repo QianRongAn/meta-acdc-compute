@@ -1,0 +1,131 @@
+{
+  "rows": [
+    {
+      "pdb": "6at6",
+      "stage": "unit_extraction",
+      "n_units": 0,
+      "excluded": [
+        {
+          "reason": "outside_complete_class_I_alpha_beta_scope",
+          "chain_kinds": {
+            "B": "trb",
+            "A": "tra"
+          }
+        }
+      ]
+    },
+    {
+      "pdb": "7n5c",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "7n5c",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "source_sha256": "732d26a239e89b63cd73fe314739298502b21b239e9cf3ccafee36f124abd01f",
+      "atomic_qc": {
+        "policy_id": "rigid-observed-peptide-transfer-v2",
+        "passed": true,
+        "gross_screen": {
+          "policy": "construction-screen-v1",
+          "severe_distance_A": 1.2,
+          "cross_chain_pairs_below_cutoff": 0,
+          "ca_cb_outliers": [],
+          "passed": true,
+          "validates_rotamers": false,
+          "validates_nonbinding": false
+        },
+        "vdw_overlap_pairs": 0,
+        "max_vdw_overlap_A": 1.1364728538130526,
+        "worst_pairs": [],
+        "peptide_CN_outliers": [],
+        "potential_hbond_contacts": 3,
+        "too_short_donor_acceptor_contacts": 0,
+        "heavy_atom_only": true,
+        "is_molprobity": false,
+        "validates_nonbinding": false
+      },
+      "receptor_id": "df3e3551889a9997535b4c1a17afa3c327cdb37b85d49ec877c636a643a293da",
+      "V_context": "mouse|TRAV21/DV12|TRBV29",
+      "source_study_key": "doi:10.1038/s41467-022-32692-4",
+      "n_nodes": 60,
+      "unit_metadata": {
+        "alpha_chain": "D",
+        "beta_chain": "E",
+        "peptide_chain": "C",
+        "mhc_chain": "A",
+        "b2m_chain": "B",
+        "alpha": "AKTTQPDSMESTEGETVHLPCSHATISGNEYIYWYRQVPLQGPEYVTHGLQQNTTNSMAFLAIASDRKSSTLILPHVSLRDAAVYHCILSGGCNYKLTFGKGTLLTVTPNIQNPDPAVYQLRDSKVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+        "beta": "DMKVTQMPRYLIKRMGENVLLECGQDMSHETMYWYRQDPGLGLQLIYISYDVDSNSEGDIPKGYRVSRKKREHFSLILDSAKTNQTSVYFCASSFGREQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+        "peptide": "SSLCNFRAYV",
+        "identity_basis": "PDB_COMPND+unique_contact_assignment",
+        "mhc_class": "I",
+        "pmhc_construct_key": "43d9f3701eed74a190f276687372d6429595ba6e7766c6b70728ba397148deba"
+      },
+      "graph_sha256": "8747c04600d329b8716bb669a1737290f1a74b43628f9bfc6b36d54fff256891"
+    },
+    {
+      "pdb": "7n5p",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "7n5p",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "quarantined",
+      "reasons": [
+        "existing fixed atomic screen rejected unit"
+      ],
+      "source_sha256": "3bb664637459a34294f7abce6b04a167fa6403469e4c8e8f2e89281de217a419",
+      "atomic_qc": {
+        "policy_id": "rigid-observed-peptide-transfer-v2",
+        "passed": false,
+        "gross_screen": {
+          "policy": "construction-screen-v1",
+          "severe_distance_A": 1.2,
+          "cross_chain_pairs_below_cutoff": 0,
+          "ca_cb_outliers": [],
+          "passed": true,
+          "validates_rotamers": false,
+          "validates_nonbinding": false
+        },
+        "vdw_overlap_pairs": 1,
+        "max_vdw_overlap_A": 0.6485657023451377,
+        "worst_pairs": [
+          {
+            "peptide": [
+              "C",
+              1,
+              "",
+              "OG"
+            ],
+            "environment": [
+              "A",
+              163,
+              "",
+              "OE1"
+            ],
+            "distance_A": 2.3914342976548624,
+            "overlap_A": 0.6485657023451377
+          }
+        ],
+        "peptide_CN_outliers": [],
+        "potential_hbond_contacts": 1,
+        "too_short_donor_acceptor_contacts": 1,
+        "heavy_atom_only": true,
+        "is_molprobity": false,
+        "validates_nonbinding": false
+      }
+    }
+  ],
+  "n_graphs": 1,
+  "n_pdbs_with_pass": 1,
+  "atomic_policy_sha256": "ad9849f80e6191046310d5fc6c920dd5e1d4290075e45cf2511d300d57972de1",
+  "model_training_started": false
+}

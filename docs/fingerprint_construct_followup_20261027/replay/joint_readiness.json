@@ -1,0 +1,719 @@
+{
+  "summary": {
+    "n_identity_admitted_pdbs": 63,
+    "n_complete_paired_ids": 43,
+    "n_QC_graphs": 43,
+    "n_QC_pdbs": 31,
+    "n_QC_complete_paired_ids": 29,
+    "n_QC_cross_study_pairs": 0,
+    "n_identity_same_study_same_V_groups": 2,
+    "n_QC_same_study_same_V_control_groups": 1,
+    "n_QC_independent_natural_control_groups": 0,
+    "n_QC_source_balanced_blocks": 0,
+    "n_QC_author_disjoint_balanced_blocks": 0,
+    "n_eligible_joint_components": 0
+  },
+  "status": "blocked_before_protocol_freeze",
+  "primary_role_receipts": "docs/fingerprint_construct_followup_20261027/construct_adjudication.json",
+  "admitted_pdbs": [
+    "2ak4",
+    "2f53",
+    "3sjv",
+    "3skn",
+    "3tfk",
+    "3tjh",
+    "3tpu",
+    "3tyf",
+    "3vxm",
+    "3vxq",
+    "3vxr",
+    "3vxs",
+    "3vxu",
+    "3w0w",
+    "4dzb",
+    "4ei6",
+    "4elk",
+    "4jfe",
+    "4jfh",
+    "4ms8",
+    "4mvb",
+    "4mxq",
+    "4n0c",
+    "4n5e",
+    "5d2l",
+    "5d2n",
+    "5e9d",
+    "5eu6",
+    "5jzi",
+    "5sws",
+    "5w1v",
+    "5w1w",
+    "5yxu",
+    "6at6",
+    "6avf",
+    "6avg",
+    "6cuh",
+    "6eqb",
+    "6p64",
+    "6rp9",
+    "6rpa",
+    "6rpb",
+    "6tro",
+    "6uk2",
+    "6uk4",
+    "6vrm",
+    "6vrn",
+    "7dzn",
+    "7jwj",
+    "7n1f",
+    "7n5c",
+    "7n5p",
+    "7n6e",
+    "7na5",
+    "7ow5",
+    "7ow6",
+    "7pb2",
+    "7qpj",
+    "7rk7",
+    "7rm4",
+    "7rtr",
+    "8es9",
+    "8i5c"
+  ],
+  "QC_pass_units": [
+    {
+      "pdb": "2f53",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "54bc97548c1f1b34f2a546e897c494e9769aad9770b0d0ffae5a777ff725f0af",
+      "V_context": "human|TRAV21|TRBV6-5",
+      "source_study_key": "doi:10.1110/ps.051936406",
+      "native_graph_sha256": "1d06fb05deb4ddb5109c49c1f816a8da5410cbda60747f94e3fddbff53ef0697"
+    },
+    {
+      "pdb": "3sjv",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "ce23a115492abcd03db63ddae6bd60a9d59776e24910bc9e549e2578ea714916",
+      "V_context": "human|TRAV12-1|TRBV6-2",
+      "source_study_key": "doi:10.4049/jimmunol.1102686",
+      "native_graph_sha256": "e4f3a1d02cbc4d5c6e5bd3d4bc8ca86e9ea0cc9a0962e611572adacaa42cab53"
+    },
+    {
+      "pdb": "3sjv",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "ce23a115492abcd03db63ddae6bd60a9d59776e24910bc9e549e2578ea714916",
+      "V_context": "human|TRAV12-1|TRBV6-2",
+      "source_study_key": "doi:10.4049/jimmunol.1102686",
+      "native_graph_sha256": "da1eda841da9c46b58c9da4c622d2ed349d003507975c4e95028e78d87062563"
+    },
+    {
+      "pdb": "3sjv",
+      "alpha_chain": "N",
+      "beta_chain": "O",
+      "receptor_id": "ce23a115492abcd03db63ddae6bd60a9d59776e24910bc9e549e2578ea714916",
+      "V_context": "human|TRAV12-1|TRBV6-2",
+      "source_study_key": "doi:10.4049/jimmunol.1102686",
+      "native_graph_sha256": "eb76c9ff01e94ad56e095ae45dc4f5a4f9137714bcbe82c08fc3b9d76723c824"
+    },
+    {
+      "pdb": "3vxm",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "7b5d51e22ceb27d94c997f28c03260acb233f04c3aa00368b5bcd40400583c1e",
+      "V_context": "human|TRAV8-3|TRBV4-1",
+      "source_study_key": "doi:10.1038/srep03097",
+      "native_graph_sha256": "b489e7c9dc926052c2e9850806c80d502138a3890ab638bc8b8050cd69ed8be0"
+    },
+    {
+      "pdb": "3vxr",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "a02d9e7fdc9449102bac28ca298d9de86e1358ba5d69b7640d69c8ad4e24d44e",
+      "V_context": "human|TRAV21|TRBV7-9",
+      "source_study_key": "doi:10.1038/srep03097",
+      "native_graph_sha256": "11a000dd52298ab26071cf06d82e62077ec0d7028522a38ce398021d5bbd2554"
+    },
+    {
+      "pdb": "3vxs",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "a02d9e7fdc9449102bac28ca298d9de86e1358ba5d69b7640d69c8ad4e24d44e",
+      "V_context": "human|TRAV21|TRBV7-9",
+      "source_study_key": "doi:10.1038/srep03097",
+      "native_graph_sha256": "296dfeafbfb7f35b5f1a980883c6116ec75b9c72537a79752ea8abed4c5feba2"
+    },
+    {
+      "pdb": "5d2l",
+      "alpha_chain": "O",
+      "beta_chain": "P",
+      "receptor_id": "125f68fff73a102cf257d9eb70418bb0c2333a35a4d6a53a289a8cfc6984b1ac",
+      "V_context": "human|TRAV24|TRBV7-2",
+      "source_study_key": "doi:10.1074/jbc.m115.691311",
+      "native_graph_sha256": "f3409edde4e4c30ccd10a7cdc52413ce10491cbfed360ef51c94e566523013f3"
+    },
+    {
+      "pdb": "5d2n",
+      "alpha_chain": "C",
+      "beta_chain": "F",
+      "receptor_id": "42c63afa645538bc7712887b6b7c1a3ca414e8a1a6d991ea8d9ad6677e05f332",
+      "V_context": "human|TRAV26-2|TRBV7-6",
+      "source_study_key": "doi:10.1074/jbc.m115.691311",
+      "native_graph_sha256": "d7e74941f66012def8b40f6ddc752c7b586e75c6d4172af469bbe198f6c24144"
+    },
+    {
+      "pdb": "5d2n",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "42c63afa645538bc7712887b6b7c1a3ca414e8a1a6d991ea8d9ad6677e05f332",
+      "V_context": "human|TRAV26-2|TRBV7-6",
+      "source_study_key": "doi:10.1074/jbc.m115.691311",
+      "native_graph_sha256": "1aa076a05a68dc8b1a40f7719c30aecd398c37ab3af1417ccda5a616bc3dff86"
+    },
+    {
+      "pdb": "5e9d",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "64a48b7e94cd00b07c67d4dd09d13aaca2a1867f62901e5c5cc94778590b91c3",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.1016/j.str.2016.04.011",
+      "native_graph_sha256": "79b0208bf71322874b43fd4c58019a28664c9e664f597832f255b9b1c8d39adb"
+    },
+    {
+      "pdb": "5e9d",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "64a48b7e94cd00b07c67d4dd09d13aaca2a1867f62901e5c5cc94778590b91c3",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.1016/j.str.2016.04.011",
+      "native_graph_sha256": "47c3b11c613f53b01ab986b4fe5e74e07738360e40b88bde9a4d180156eb943f"
+    },
+    {
+      "pdb": "5eu6",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "5c1f518612f2ec16a435331fe955b8542808aff8167a09153cb8f173139b7926",
+      "V_context": "human|TRAV21|TRBV7-3",
+      "source_study_key": "doi:10.1074/jbc.m115.707414",
+      "native_graph_sha256": "37c3c720bdfbc2696fe771dc4b9689a550f7d6f70643356733a7baa177b71a77"
+    },
+    {
+      "pdb": "5jzi",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "a2a867d0a9cabe0c2d5285cdc012d738aed80e88954f3d2b57fb01c92fab5d7b",
+      "V_context": "human|TRAV38-2/DV8|TRBV25-1",
+      "source_study_key": "doi:10.1073/pnas.1700459114",
+      "native_graph_sha256": "1b82b460b30042785dafd236489a30cc188968f1556c87116677049b14a8f345"
+    },
+    {
+      "pdb": "5jzi",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "a2a867d0a9cabe0c2d5285cdc012d738aed80e88954f3d2b57fb01c92fab5d7b",
+      "V_context": "human|TRAV38-2/DV8|TRBV25-1",
+      "source_study_key": "doi:10.1073/pnas.1700459114",
+      "native_graph_sha256": "9a4dbb027db2c65266b9bf307cc156d1e6dde4a0f00be1fcdcd68783b3cfa5c5"
+    },
+    {
+      "pdb": "5sws",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "48684458741bcdf9fca9b34f9f55eef84a8851f2791a58139149d5d469f9f194",
+      "V_context": "mouse|TRAV14-1|TRBV17",
+      "source_study_key": "doi:10.1016/j.immuni.2016.09.007",
+      "native_graph_sha256": "deb3fffbb0de13f9365373693c47ef68a82e964defa2c9b2fab553d1522286b5"
+    },
+    {
+      "pdb": "5w1v",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "f4f3b31a0188155d9cb7080d6046a6d109836021a854e7fc2266e6e240407670",
+      "V_context": "human|TRAV35|TRBV9",
+      "source_study_key": "doi:10.1074/jbc.m117.807719",
+      "native_graph_sha256": "a1a7df526f21026e4fc407577d84b3bf8b283c144a8aefb85d19d512eb33a538"
+    },
+    {
+      "pdb": "5w1v",
+      "alpha_chain": "S",
+      "beta_chain": "T",
+      "receptor_id": "f4f3b31a0188155d9cb7080d6046a6d109836021a854e7fc2266e6e240407670",
+      "V_context": "human|TRAV35|TRBV9",
+      "source_study_key": "doi:10.1074/jbc.m117.807719",
+      "native_graph_sha256": "de98f89ea571d38aea2995a8740707276536d04d384d54378c3f5a33d891f836"
+    },
+    {
+      "pdb": "5yxu",
+      "alpha_chain": "A",
+      "beta_chain": "B",
+      "receptor_id": "3efcc86969a06d5d213b53e92c40009b06929eb52b7a498c1ac97639107a67da",
+      "V_context": "human|TRAV38-2/DV8|TRBV25-1",
+      "source_study_key": null,
+      "native_graph_sha256": "3dc8c69c54ce4c30114365cd6397e8cd27228588e742e62e3328772e085e9eae"
+    },
+    {
+      "pdb": "6avf",
+      "alpha_chain": "A",
+      "beta_chain": "B",
+      "receptor_id": "5ab9932069e886a5934348b545e1d462f2df7d8e6c2282dfde0d08028725e4f0",
+      "V_context": "human|TRAV4|TRBV28",
+      "source_study_key": "doi:10.1038/s41467-018-03321-w",
+      "native_graph_sha256": "a520468ee8fca1051ea893fee3507726cae1ad0ac403cfd89f167afa3b675e86"
+    },
+    {
+      "pdb": "6avg",
+      "alpha_chain": "B",
+      "beta_chain": "E",
+      "receptor_id": "550b4dc3a0267b4327b640a3501fad9a6a2f6b8e402d3ca085444c0e5439864f",
+      "V_context": "human|TRAV4|TRBV9",
+      "source_study_key": "doi:10.1038/s41467-018-03321-w",
+      "native_graph_sha256": "eadea1f481d9010876b46130f9b9c963bd1d5d3544eeac9fa02192d3fb0a9a4d"
+    },
+    {
+      "pdb": "6avg",
+      "alpha_chain": "C",
+      "beta_chain": "D",
+      "receptor_id": "550b4dc3a0267b4327b640a3501fad9a6a2f6b8e402d3ca085444c0e5439864f",
+      "V_context": "human|TRAV4|TRBV9",
+      "source_study_key": "doi:10.1038/s41467-018-03321-w",
+      "native_graph_sha256": "8bd28fde63b56689be77f59b1f6036536f43bc25e93d01b33b26d1b9baf9991e"
+    },
+    {
+      "pdb": "6eqb",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+      "V_context": "human|TRAV12-2|TRBV30",
+      "source_study_key": "doi:10.1002/eji.201948085",
+      "native_graph_sha256": "c66ccec77ae7a85c94f33a7d14f30e17955983ba4ee19192edd71fd2988ea339"
+    },
+    {
+      "pdb": "6rp9",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "66d58f9cb80fa8a11b68d946daf6d86272ef66bd93b2cfbae78134950058b1c6",
+      "V_context": "human|TRAV12-2|TRBV7-6",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "5207678a3e6801b2dd0140de1a82db19462b485d4b85726489d436bf02438c84"
+    },
+    {
+      "pdb": "6rp9",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "66d58f9cb80fa8a11b68d946daf6d86272ef66bd93b2cfbae78134950058b1c6",
+      "V_context": "human|TRAV12-2|TRBV7-6",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "1fb1cd076f87537cce8a26eaed08a8489a6942194490fbb05536caf697611596"
+    },
+    {
+      "pdb": "6rpb",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "9d00f2369ed8ee39b31738ae77decc76ffbcc3d5fccf34c961cc353ea0622997",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "937228b813332e0b0db6e7dab0ad60afd11a3b4817bed962defb5587e4c8e760"
+    },
+    {
+      "pdb": "6rpb",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "9d00f2369ed8ee39b31738ae77decc76ffbcc3d5fccf34c961cc353ea0622997",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "09fbe878f95ecae601dc9f1f3a77807205d27cb456db79a61a5ca85e65464fdd"
+    },
+    {
+      "pdb": "6rpb",
+      "alpha_chain": "N",
+      "beta_chain": "O",
+      "receptor_id": "9d00f2369ed8ee39b31738ae77decc76ffbcc3d5fccf34c961cc353ea0622997",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "22bec40f2fa534ae5b191a0a4efff270209ee4d72bd2f134a0d868bd849987b7"
+    },
+    {
+      "pdb": "6rpb",
+      "alpha_chain": "S",
+      "beta_chain": "T",
+      "receptor_id": "9d00f2369ed8ee39b31738ae77decc76ffbcc3d5fccf34c961cc353ea0622997",
+      "V_context": "human|TRAV12-2|TRBV6-5",
+      "source_study_key": "doi:10.4049/jimmunol.1900915",
+      "native_graph_sha256": "ed573f8f33ec2b521f2fe7e79a94af3923525bd5b56dd23acf423cae3327791d"
+    },
+    {
+      "pdb": "7dzn",
+      "alpha_chain": "E",
+      "beta_chain": "D",
+      "receptor_id": "bbcee1631768dfeed118d5296bb7f2c6be72373fb8d889a290458289e703c88b",
+      "V_context": "human|TRAV26-1|TRBV12-3",
+      "source_study_key": "doi:10.1101/2021.06.06.447276",
+      "native_graph_sha256": "100671eb2451a5173b89dd58dc2b0435d171177b941d87b13d3d7a72517f759b"
+    },
+    {
+      "pdb": "7jwj",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "0c7fc24da835ee71f90ad8092eeb8dbdac331af0579573e3c80450da085cd51c",
+      "V_context": "mouse|TRAV4-4/DV10|TRBV17",
+      "source_study_key": "doi:10.1126/science.abe9124",
+      "native_graph_sha256": "de1c2d5c3044e2c90fd0df164cd04317fa8de28d0eaae704f524d8834dd46d6c"
+    },
+    {
+      "pdb": "7n1f",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+      "V_context": "human|TRAV12-2|TRBV7-9",
+      "source_study_key": "doi:10.1038/s41467-021-27669-8",
+      "native_graph_sha256": "1c9e6ad9a4bfcb56bb98f76b27bf4e49a451cbfd0f33da7c1e42b65b5371a6d3"
+    },
+    {
+      "pdb": "7n6e",
+      "alpha_chain": "I",
+      "beta_chain": "J",
+      "receptor_id": "9701243a2ba5b71d5b5184d1065fa7619533396f84f18b5db60e0b92c941e87c",
+      "V_context": "human|TRAV12-1|TRBV19",
+      "source_study_key": "doi:10.1016/j.jbc.2021.101065",
+      "native_graph_sha256": "558ffc58001f64bff13be71bf41048569ec1eb9757c01fe6815ff32f2136426e"
+    },
+    {
+      "pdb": "7na5",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "7d6dc4aa67d35c03bd0f627cbfdbedcb32cef81f5081f2342009461a8d0afd1c",
+      "V_context": "mouse|TRAV7-1|TRBV2",
+      "source_study_key": null,
+      "native_graph_sha256": "32aab4dd4573691b8b0f55ec6cb349bbd2defab83c77fe9878e025cf9a852529"
+    },
+    {
+      "pdb": "7ow5",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "source_study_key": "doi:10.1038/s41467-022-32811-1",
+      "native_graph_sha256": "f55ecf43eaee24acc006047bc116052c8666f25ad02e3521697e0ef23785cc47"
+    },
+    {
+      "pdb": "7ow6",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "source_study_key": "doi:10.1038/s41467-022-32811-1",
+      "native_graph_sha256": "ffcf256ebbab560e1a7333b441d39dd118514a331799ab9e33a390c2496d4254"
+    },
+    {
+      "pdb": "7pb2",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "source_study_key": "doi:10.1038/s41467-022-32811-1",
+      "native_graph_sha256": "edbe9993606c79469a1cfc955cc08a1feec2444711646459f09d80de627e3a17"
+    },
+    {
+      "pdb": "7rk7",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "efcc204e2543fa80a2b11e184a8c965fba4d548764071cad9df29ddc95e118a4",
+      "V_context": "human|TRAV4|TRBV10-3",
+      "source_study_key": "doi:10.1038/s41467-022-34896-0",
+      "native_graph_sha256": "dd8a5dea1bd374f3a363148d46498535b33a324c9c59f9835c91c8a40c4e6c7e"
+    },
+    {
+      "pdb": "7rm4",
+      "alpha_chain": "J",
+      "beta_chain": "I",
+      "receptor_id": "88236a99d7c7240ff865669732e5e53542e00c8ac253f36eaa2cbad4043a0c84",
+      "V_context": "human|TRAV6|TRBV11-2",
+      "source_study_key": "doi:10.1016/j.jbc.2022.101684",
+      "native_graph_sha256": "cf0a3d5c39548a771fd67fd9d58fcbf06f7e6dce18acd32061321072ed551c69"
+    },
+    {
+      "pdb": "8i5c",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "f73345b4277f3c961dad4d034901265fe6160418ac23a02370dcd3223e276210",
+      "V_context": "mouse|TRAV7D-2|TRBV13-2",
+      "source_study_key": null,
+      "native_graph_sha256": "70104dd8aafe2ca1ad5c427d3c9e3f383a3d1451cf06623ccfd4eedf40e8aee6"
+    },
+    {
+      "pdb": "8i5c",
+      "alpha_chain": "r",
+      "beta_chain": "s",
+      "receptor_id": "f73345b4277f3c961dad4d034901265fe6160418ac23a02370dcd3223e276210",
+      "V_context": "mouse|TRAV7D-2|TRBV13-2",
+      "source_study_key": null,
+      "native_graph_sha256": "887ccf974a673651a36f3a4b84c901706eb6b72443de71102ad99450956135de"
+    },
+    {
+      "pdb": "6vrm",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "199861d41dd1db66a69d4f9dac2a28401a83e88b4a480f67883c1cc1f7f86953",
+      "V_context": "human|TRAV12-1|TRBV6-1",
+      "source_study_key": "doi:10.1038/s41467-020-16755-y",
+      "native_graph_sha256": "59f7c8f563217868a44c569d6774a846f0119fa58c51f664409af668e44e6167"
+    },
+    {
+      "pdb": "7n5c",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "receptor_id": "df3e3551889a9997535b4c1a17afa3c327cdb37b85d49ec877c636a643a293da",
+      "V_context": "mouse|TRAV21/DV12|TRBV29",
+      "source_study_key": "doi:10.1038/s41467-022-32692-4",
+      "native_graph_sha256": "8747c04600d329b8716bb669a1737290f1a74b43628f9bfc6b36d54fff256891"
+    }
+  ],
+  "same_source_same_V_identity_groups": [
+    {
+      "study": "doi:10.1038/s41467-022-32692-4",
+      "V_context": "mouse|TRAV21/DV12|TRBV29",
+      "pdbs": [
+        "7n5c",
+        "7n5p"
+      ],
+      "independent_natural_clonotypes": false,
+      "reason": "6218 parent and S110C derivative"
+    },
+    {
+      "study": "doi:10.1038/s41467-022-32811-1",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "pdbs": [
+        "7ow5",
+        "7ow6",
+        "7pb2"
+      ],
+      "independent_natural_clonotypes": false,
+      "reason": "JDI parent and affinity-engineered derivative"
+    }
+  ],
+  "QC_same_source_same_V_groups": [
+    {
+      "study": "doi:10.1038/s41467-022-32811-1",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "receptor_ids": [
+        "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+        "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0"
+      ],
+      "pdbs": [
+        "7ow5",
+        "7ow6",
+        "7pb2"
+      ],
+      "pairs": [
+        {
+          "pdb_a": "7ow5",
+          "pdb_b": "7pb2",
+          "receptor_a": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+          "receptor_b": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+          "same_complete_pmhc_construct": false,
+          "peptide_a": "VVVGAGGVGK",
+          "peptide_b": "VVVGADGVGK"
+        },
+        {
+          "pdb_a": "7ow6",
+          "pdb_b": "7pb2",
+          "receptor_a": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+          "receptor_b": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+          "same_complete_pmhc_construct": true,
+          "peptide_a": "VVVGADGVGK",
+          "peptide_b": "VVVGADGVGK"
+        }
+      ],
+      "independent_clonotypes_proven": false,
+      "meaning": "different complete engineered variable sequences; not experimental nonbinding"
+    }
+  ],
+  "sequence_search_refresh": [
+    {
+      "query_pdb": "6avf",
+      "roles": {
+        "alpha": {
+          "identifiers": [
+            "6AT6_2",
+            "6AVF_2"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/additional/6avf_alpha.json",
+          "sha256": "a7f17df8110d8d9e939afe66726606f652315b1ce1953636a72986db8093c21b",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        },
+        "beta": {
+          "identifiers": [
+            "6AT6_1",
+            "6AVF_3"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/6avf_beta.json",
+          "sha256": "00dfed35d29c5b210bdb040b1816b29acdf0c0dd6b5079da7235a25a7f000ea8",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        }
+      },
+      "same_pdb_chain_hit_intersection": [
+        "6at6",
+        "6avf"
+      ]
+    },
+    {
+      "query_pdb": "6vrm",
+      "roles": {
+        "alpha": {
+          "identifiers": [
+            "6VRM_3",
+            "6VTH_1"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/6vrm_alpha.json",
+          "sha256": "073e3d63e2870acff6cbe30e578d61d11eaf6e21093547ae1b659ac2c4a272a9",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        },
+        "beta": {
+          "identifiers": [
+            "6VRM_4",
+            "6VTH_2"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/6vrm_beta.json",
+          "sha256": "53a3f894b081fd6bc258600eb12f63d57928f94e861bf4f8f956931cf5b9c4b8",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        }
+      },
+      "same_pdb_chain_hit_intersection": [
+        "6vrm",
+        "6vth"
+      ]
+    },
+    {
+      "query_pdb": "7n1f",
+      "roles": {
+        "alpha": {
+          "identifiers": [
+            "7N1D_1",
+            "7N1F_1",
+            "7RTR_4"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/7n1f_alpha.json",
+          "sha256": "859f3f51d36cb39a4b2bb44106b27809b506635c1ec7785c5d38a695ebbe5a39",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        },
+        "beta": {
+          "identifiers": [
+            "7N1F_2",
+            "7RTR_5",
+            "7N1D_2"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/additional/7n1f_beta.json",
+          "sha256": "c72b9666fa2ae8e59be99347b0e532b6b9823e0360a7e70e5197aea358525e88",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        }
+      },
+      "same_pdb_chain_hit_intersection": [
+        "7n1d",
+        "7n1f",
+        "7rtr"
+      ]
+    },
+    {
+      "query_pdb": "7n5c",
+      "roles": {
+        "alpha": {
+          "identifiers": [
+            "7N5C_4"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/7n5c_alpha.json",
+          "sha256": "39c673f25557e26de0689f4f3d37654f2234b80660d15a9dfee65cf80ff6edd2",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        },
+        "beta": {
+          "identifiers": [
+            "3PQY_5",
+            "7N4K_5",
+            "7N5C_5",
+            "7N5P_5"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/7n5c_beta.json",
+          "sha256": "3ec5199501c434f19ba1fc5b8581402ffaa964ecc6f5e7426eb0fb22f26d37cb",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        }
+      },
+      "same_pdb_chain_hit_intersection": [
+        "7n5c"
+      ]
+    },
+    {
+      "query_pdb": "7n5p",
+      "roles": {
+        "alpha": {
+          "identifiers": [
+            "7N5P_4",
+            "3PQY_4",
+            "7N4K_4"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/7n5p_alpha.json",
+          "sha256": "dafe36a509ce1de52237c5d54d982d81781ffbbc65e3a6bbac8fe17f15df4020",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        },
+        "beta": {
+          "identifiers": [
+            "3PQY_5",
+            "7N4K_5",
+            "7N5C_5",
+            "7N5P_5"
+          ],
+          "path": "docs/fingerprint_construct_followup_20261027/sources/exact_search/7n5p_beta.json",
+          "sha256": "1682d47fff87ab970b41a69e0cbc0daf31a14ab7828a0f9837afd2284df35519",
+          "interpretation": "discovery at 100% local alignment identity; complete paired sequences still required"
+        }
+      },
+      "same_pdb_chain_hit_intersection": [
+        "3pqy",
+        "7n4k",
+        "7n5p"
+      ]
+    }
+  ],
+  "deposited_6218_comparisons": [
+    {
+      "pdb": "3pqy",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "actual_alpha_start": "KTTQPDSMESTEGETVHL",
+      "complete_parent_alpha_start": "DAKTTQPDSMESTEGETV",
+      "complete_parent_variable_is_exact_substring": false,
+      "complete_parent_beta_is_exact_substring": true,
+      "original_quarantine_reasons": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "sha256": "4cbfcddef4f2a0b62883678417d7d6181705ec750e8cdda213d349e40bfbc0c4",
+      "conclusion": "same biological lineage is not complete deposited paired-variable equality; no N-terminal residue is prepended"
+    },
+    {
+      "pdb": "7n4k",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "actual_alpha_start": "KTTQPDSMESTEGETVHL",
+      "complete_parent_alpha_start": "DAKTTQPDSMESTEGETV",
+      "complete_parent_variable_is_exact_substring": false,
+      "complete_parent_beta_is_exact_substring": true,
+      "original_quarantine_reasons": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "sha256": "2e062160f05979d42bc1097e23b2b040bf1a76cc7fa8fd2cfaba99f0065729a2",
+      "conclusion": "same biological lineage is not complete deposited paired-variable equality; no N-terminal residue is prepended"
+    }
+  ],
+  "cross_study_pairs": [],
+  "source_balanced_blocks": [],
+  "author_disjoint_blocks": [],
+  "blockers": [
+    "no fixed-QC passing cross-study complete alpha/beta positive pair",
+    "no qualified source-balanced query block or independent natural same-source same-V structural control",
+    "fewer than three eligible disjoint source/family components"
+  ],
+  "protocol_frozen": false,
+  "training_release_created": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "scope": "sequence-supported structural-development candidates only; not experimental nonbinding labels"
+}
