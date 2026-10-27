@@ -33,3 +33,6 @@ docs/fingerprint_cross_source_extension_20261024/sources/** -text -whitespace
 
 # Preserve imported audit snapshots and exact copied source bytes.
 docs/fingerprint_audit_integration_20261027/** -text -whitespace
+
+# Preserve positive-control source snapshots and failed-response receipts.
+docs/fingerprint_positive_controls_20261027/sources/** -text -whitespace

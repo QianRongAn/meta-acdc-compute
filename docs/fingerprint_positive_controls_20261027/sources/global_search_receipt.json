@@ -1,0 +1,35 @@
+{
+  "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell+receptor%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_entry_info.polymer_entity_count_protein%22%2C%22operator%22%3A%22greater_or_equal%22%2C%22value%22%3A5%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+  "query": {
+    "query": {
+      "type": "group",
+      "logical_operator": "and",
+      "nodes": [
+        {
+          "type": "terminal",
+          "service": "full_text",
+          "parameters": {
+            "value": "T-cell receptor"
+          }
+        },
+        {
+          "type": "terminal",
+          "service": "text",
+          "parameters": {
+            "attribute": "rcsb_entry_info.polymer_entity_count_protein",
+            "operator": "greater_or_equal",
+            "value": 5
+          }
+        }
+      ]
+    },
+    "return_type": "entry",
+    "request_options": {
+      "return_all_hits": true
+    }
+  },
+  "status": "000",
+  "bytes": 0,
+  "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "error": "curl: (35) Recv failure: Connection was reset\n"
+}

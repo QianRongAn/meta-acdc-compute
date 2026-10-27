@@ -1,0 +1,268 @@
+[
+  {
+    "pdb": "6vrm",
+    "role": "alpha",
+    "receptor_id": "199861d41dd1db66a69d4f9dac2a28401a83e88b4a480f67883c1cc1f7f86953",
+    "sequence": "RKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQVIP",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "RKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQVIP"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22RKEVEQDPGPFNVPEGATVAFNCTYSNSASQSFFWYRQDCRKEPKLLMSVYSSGNEDGRFTAQLNRASQYISLLIRDSKLSDSATYLCVVQPGGYQKVTFGTGTKLQVIP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6vrm_alpha.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 2,
+    "hit_entities": [
+      "6VRM_3",
+      "6VTH_1"
+    ],
+    "bytes": 243,
+    "sha256": "78212700c3be984f4dc0c9ba4a48693d0ca50e95ae18be4bef6bc3323a39833a",
+    "error": ""
+  },
+  {
+    "pdb": "6vrm",
+    "role": "beta",
+    "receptor_id": "199861d41dd1db66a69d4f9dac2a28401a83e88b4a480f67883c1cc1f7f86953",
+    "sequence": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLTVT",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLTVT"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22NAGVTQTPKFQVLKTGQSMTLQCAQDMNHNSMYWYRQDPGMGLRLIYYSASEGTTDKGEVPNGYNVSRLNKREFSLRLESAAPSQTSVYFCASSEGLWQVGDEQYFGPGTRLTVT%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6vrm_beta.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 2,
+    "hit_entities": [
+      "6VRM_4",
+      "6VTH_2"
+    ],
+    "bytes": 243,
+    "sha256": "e8e000ff304aa022dd3a3198dbab0169e00baded082bf2305dbd32566c9960c6",
+    "error": ""
+  },
+  {
+    "pdb": "6vrn",
+    "role": "alpha",
+    "receptor_id": "f1782462c6d2e7f6fb897d86fccf10d7ce5a160c1404ee52ab805a65b96e73ee",
+    "sequence": "AQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLSVIP",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "AQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLSVIP"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22AQTVTQSQPEMSVQEAETVTLSCTYDTSENNYYLFWYKQPPSRQMILVIRQEAYKQQNATENRFSVNFQKAAKSFSLKISDSQLGDTAMYFCAFMGYSGAGSYQLTFGKGTKLSVIP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6vrn_alpha.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 1,
+    "hit_entities": [
+      "6VRN_3"
+    ],
+    "bytes": 189,
+    "sha256": "839c9f1d4e441c412ab16394fa15863815b757dc036ba90c34e1b8f634125f97",
+    "error": ""
+  },
+  {
+    "pdb": "6vrn",
+    "role": "beta",
+    "receptor_id": "f1782462c6d2e7f6fb897d86fccf10d7ce5a160c1404ee52ab805a65b96e73ee",
+    "sequence": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLTVT",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLTVT"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DAGITQSPRHKVTETGTPVTLRCHQTENHRYMYWYRQDPGHGLRLIHYSYGVKDTDKGEVSDGYSVSRSKTEDFLLTLESATSSQTSVYFCAISELVTGDSPLHFGNGTRLTVT%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6vrn_beta.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 1,
+    "hit_entities": [
+      "6VRN_4"
+    ],
+    "bytes": 189,
+    "sha256": "b1a7c891146cdad8c31cf1da47caacc64cae72209c121eb94ab930aec46af1c9",
+    "error": ""
+  },
+  {
+    "pdb": "7n1f",
+    "role": "alpha",
+    "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+    "sequence": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILP",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILP"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "7n1f_alpha.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 3,
+    "hit_entities": [
+      "7N1D_1",
+      "7N1F_1",
+      "7RTR_4"
+    ],
+    "bytes": 297,
+    "sha256": "c308e724e289e481c71e462a5096480c924b85a7be7e07a0572f3a05d430107c",
+    "error": ""
+  },
+  {
+    "pdb": "7n1f",
+    "role": "beta",
+    "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+    "sequence": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVT",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVT"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22DTGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVT%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "7n1f_beta.json",
+    "status": "000",
+    "valid": false,
+    "n_hits": 0,
+    "hit_entities": [],
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "curl: (35) Recv failure: Connection was reset\n"
+  },
+  {
+    "pdb": "6eqb",
+    "role": "alpha",
+    "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+    "sequence": "QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKP",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKP"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKP%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6eqb_alpha.json",
+    "status": "200",
+    "valid": true,
+    "n_hits": 3,
+    "hit_entities": [
+      "4JFE_4",
+      "4JFH_1",
+      "6EQB_4"
+    ],
+    "bytes": 297,
+    "sha256": "5a4dab14f67347fe64016692d3c8c5c035a4e54acaa50e169e126307832e8551",
+    "error": ""
+  },
+  {
+    "pdb": "6eqb",
+    "role": "beta",
+    "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+    "sequence": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVL",
+    "query": {
+      "query": {
+        "type": "terminal",
+        "service": "sequence",
+        "parameters": {
+          "evalue_cutoff": 0.1,
+          "identity_cutoff": 1.0,
+          "sequence_type": "protein",
+          "value": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVL"
+        }
+      },
+      "return_type": "polymer_entity",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.1%2C%22identity_cutoff%22%3A1.0%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVL%22%7D%7D%2C%22return_type%22%3A%22polymer_entity%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "file": "6eqb_beta.json",
+    "status": "000",
+    "valid": false,
+    "n_hits": 0,
+    "hit_entities": [],
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "curl: (35) Recv failure: Connection was reset\n"
+  }
+]

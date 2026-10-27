@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-27",
+  "scope": "public structural development candidates only; unchanged complete-variable and atomic gates",
+  "searches": [
+    {
+      "route": "fresh TCR3d chain table",
+      "result": "byte-identical to previous 799-entry snapshot"
+    },
+    {
+      "route": "RCSB description phrases plus >=5 protein entities",
+      "hits": 360,
+      "new_ids": [
+        "9CI8",
+        "9CIA",
+        "9JY2",
+        "9JY3"
+      ],
+      "decision": "all four are gamma-delta complexes; exclude from alpha-beta scope"
+    },
+    {
+      "route": "broad full-text search",
+      "hits": 6968,
+      "decision": "overinclusive discovery only; not an exhaustive 6968-entry full identity audit"
+    },
+    {
+      "route": "alpha constant-domain similarity discovery",
+      "hits_each": 667,
+      "new_id": "6U07",
+      "decision": "constant domains only, two protein entities, no complete variable receptor/pMHC; exclude"
+    },
+    {
+      "route": "beta constant-domain searches",
+      "decision": "server timeout; not evidence of absent candidates"
+    },
+    {
+      "route": "full variable exact-identity candidate refresh",
+      "queries": 8,
+      "decisions": [
+        "6VRM paired hits: 6VRM and 6VTH; 6VTH is unbound and same paper, not a cross-study positive",
+        "6VRN paired hits: only 6VRN",
+        "6EQB paired hits after beta retry: 4JFE,4JFH,6EQB; already adjudicated",
+        "7N1F beta request and retry unavailable; do not interpret as no hits"
+      ]
+    }
+  ],
+  "admissions": [
+    {
+      "pdb": "6VRM",
+      "decision": "identity and native atomic QC pass",
+      "basis": "literal ALFA spelling alias; unchanged full-variable evidence; deposited SEQRES/observed-atom consistency",
+      "V": "human|TRAV12-1|TRBV6-1",
+      "cross_study_partner_admitted": false
+    },
+    {
+      "pdb": "6VRN",
+      "decision": "quarantined: incomplete interface heavy atoms",
+      "missing": {
+        "D52_GLU": [
+          "CD",
+          "CG",
+          "OE1",
+          "OE2"
+        ],
+        "D55_LYS": [
+          "CD",
+          "CE",
+          "CG",
+          "NZ"
+        ]
+      },
+      "V": "human|TRAV38-1|TRBV10-3"
+    }
+  ],
+  "metadata_holds": [
+    {
+      "pdb": "6AT6",
+      "reason": "primary molecule and synonym disagree on alpha/beta; no name-based resolution",
+      "needed": "sequence-linked primary construct/chain adjudication"
+    },
+    {
+      "pdb": "7N5C",
+      "reason": "primary molecule and synonym disagree on alpha/beta; no name-based resolution",
+      "needed": "sequence-linked primary construct/chain adjudication"
+    },
+    {
+      "pdb": "7N5P",
+      "reason": "primary molecule and synonym disagree on alpha/beta; no name-based resolution",
+      "needed": "sequence-linked primary construct/chain adjudication"
+    }
+  ],
+  "remaining": [
+    {
+      "ids": [
+        "5E6I"
+      ],
+      "reason": "BETA-2 TCR is not beta2m (parser corrected), but alpha/synonym conflict and missing primary citation remain"
+    },
+    {
+      "ids": [
+        "8CX4"
+      ],
+      "reason": "complete sequence support but AS8.4A/B depositor names lack explicit alpha/beta role; no admission by letter/name"
+    },
+    {
+      "ids": [
+        "7N2N",
+        "7N2O",
+        "7N2P",
+        "7N2Q",
+        "7N2R",
+        "7N2S"
+      ],
+      "reason": "actual deposited N-terminal beta truncations; some also fail alpha FR4; no residue filling"
+    },
+    {
+      "ids": [
+        "2CKB",
+        "1G6R",
+        "1MWA",
+        "1AO7",
+        "3MV7"
+      ],
+      "reason": "deposited N-terminal sequence does not satisfy unchanged functional IMGT boundary anchors; no prepending residues"
+    },
+    {
+      "ids": [
+        "1LP9",
+        "2J8U",
+        "2JCC",
+        "2UWE"
+      ],
+      "reason": "literal N-terminal substitution against functional V reference; engineering attribution unresolved, not repaired"
+    },
+    {
+      "ids": [
+        "7N1F",
+        "7RTR"
+      ],
+      "reason": "same complete receptor and distinct sources, but 7RTR lacks E28 GLU interface side-chain atoms"
+    },
+    {
+      "ids": [
+        "4JFE",
+        "4JFH",
+        "6EQB"
+      ],
+      "reason": "4JFE fails unchanged coarse short-contact screen; 4JFH unbound; only 6EQB passes current graph scope"
+    },
+    {
+      "ids": [
+        "3TFK",
+        "3TJH",
+        "3TPU",
+        "4MS8",
+        "4MVB",
+        "4MXQ",
+        "4N0C",
+        "4N5E"
+      ],
+      "reason": "compact MHC without separate beta2m; outside unchanged complete class-I graph scope"
+    },
+    {
+      "ids": [
+        "4EI6",
+        "4ELK"
+      ],
+      "reason": "unbound/CD1 background outside current class-I graph scope"
+    }
+  ],
+  "same_source_same_V": {
+    "qualified_groups": 1,
+    "pdbs": [
+      "7PB2",
+      "7OW5",
+      "7OW6"
+    ],
+    "description": "JDI parent versus engineered JDIa41b1; same lineage, not independent natural clones and not biological nonbinding evidence"
+  },
+  "primary_paper_limits": "Primary articles could be read on the web but full machine-readable supplement/construct retrieval was unsuccessful this round. Failed requests retained; no new complete construct adjudication claimed from absent tables.",
+  "conclusion": "blocked_before_protocol_freeze",
+  "independent_acceptance_accessed": false,
+  "training_started": false
+}

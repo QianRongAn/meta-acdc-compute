@@ -1,0 +1,26 @@
+{
+  "n_identity_admitted_units": 112,
+  "n_identity_admitted_pdbs": 60,
+  "n_complete_paired_ids": 41,
+  "n_cross_study_positive_ids": 4,
+  "n_author_disjoint_positive_ids": 2,
+  "n_same_V_contexts_with_distinct_ids": 3,
+  "n_source_balanced_query_blocks": 0,
+  "n_author_disjoint_balanced_blocks": 0,
+  "n_joint_components": 31,
+  "n_source_balanced_joint_components": 0
+}
+BLOCKERS ['no query has both exact complete same-receptor positive and same-V distinct-receptor negative from one common different-source gallery study', 'no author-disjoint source-balanced query block', 'fewer than three eligible disjoint joint-source/family components', 'structural atom/chain QC pending outside the explicitly checked cross-study candidates; no training release']
+QC_PASS_GRAPHS 42 PDBS 30
+{
+  "n_identity_admitted_pdbs": 60,
+  "n_complete_paired_ids": 41,
+  "n_identity_cross_study_groups": 4,
+  "n_QC_graphs": 42,
+  "n_QC_pdbs": 30,
+  "n_QC_complete_paired_ids": 28,
+  "n_QC_cross_study_pairs": 0,
+  "n_QC_same_study_same_V_control_groups": 1,
+  "n_QC_source_balanced_blocks": 0,
+  "n_QC_author_disjoint_balanced_blocks": 0
+}

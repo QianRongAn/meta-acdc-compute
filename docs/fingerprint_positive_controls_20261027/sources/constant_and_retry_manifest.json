@@ -1,0 +1,92 @@
+[
+  {
+    "file": "constant_alpha_discovery.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.01%2C%22identity_cutoff%22%3A0.6%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22NIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_entry_info.polymer_entity_count_protein%22%2C%22operator%22%3A%22greater_or_equal%22%2C%22value%22%3A5%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "status": "500",
+    "sha256": "1882905a3601eccd7dec2713e8eff95c1a9a2882b57ea034f94c1f1c972996ff",
+    "bytes": 276,
+    "error": "",
+    "query": {
+      "query": {
+        "type": "group",
+        "logical_operator": "and",
+        "nodes": [
+          {
+            "type": "terminal",
+            "service": "sequence",
+            "parameters": {
+              "evalue_cutoff": 0.01,
+              "identity_cutoff": 0.6,
+              "sequence_type": "protein",
+              "value": "NIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS"
+            }
+          },
+          {
+            "type": "terminal",
+            "service": "text",
+            "parameters": {
+              "attribute": "rcsb_entry_info.polymer_entity_count_protein",
+              "operator": "greater_or_equal",
+              "value": 5
+            }
+          }
+        ]
+      },
+      "return_type": "entry",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "discovery_only": true,
+    "identity_threshold_not_an_admission_rule": true
+  },
+  {
+    "file": "constant_beta_discovery.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22sequence%22%2C%22parameters%22%3A%7B%22evalue_cutoff%22%3A0.01%2C%22identity_cutoff%22%3A0.6%2C%22sequence_type%22%3A%22protein%22%2C%22value%22%3A%22EDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_entry_info.polymer_entity_count_protein%22%2C%22operator%22%3A%22greater_or_equal%22%2C%22value%22%3A5%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "status": "500",
+    "sha256": "d9caf4b4bc99fee4b568a8695fd3b5b0e93e898e575305364a5270554fe12bd2",
+    "bytes": 276,
+    "error": "",
+    "query": {
+      "query": {
+        "type": "group",
+        "logical_operator": "and",
+        "nodes": [
+          {
+            "type": "terminal",
+            "service": "sequence",
+            "parameters": {
+              "evalue_cutoff": 0.01,
+              "identity_cutoff": 0.6,
+              "sequence_type": "protein",
+              "value": "EDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD"
+            }
+          },
+          {
+            "type": "terminal",
+            "service": "text",
+            "parameters": {
+              "attribute": "rcsb_entry_info.polymer_entity_count_protein",
+              "operator": "greater_or_equal",
+              "value": 5
+            }
+          }
+        ]
+      },
+      "return_type": "entry",
+      "request_options": {
+        "return_all_hits": true
+      }
+    },
+    "discovery_only": true,
+    "identity_threshold_not_an_admission_rule": true
+  },
+  {
+    "file": "rcsb_new_retry.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%229CI8%22%2C+%229CIA%22%2C+%229JY2%22%2C+%229JY3%22%5D%29%7Brcsb_id+struct+%7Btitle%7D+rcsb_primary_citation+%7Btitle+year+pdbx_database_id_PubMed+pdbx_database_id_DOI+rcsb_authors%7D+exptl+%7Bmethod%7D+rcsb_entry_info+%7Bresolution_combined%7D+polymer_entities+%7Brcsb_id+entity_poly+%7Bpdbx_seq_one_letter_code_can%7D+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids+asym_ids%7D%7D%7D%7D",
+    "status": "200",
+    "sha256": "f15881c2048f45488064e646f9b320714997d7b952b845711820288c4c41082e",
+    "bytes": 12911,
+    "error": ""
+  }
+]

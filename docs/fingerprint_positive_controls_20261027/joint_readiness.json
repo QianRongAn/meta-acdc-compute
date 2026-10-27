@@ -1,0 +1,121 @@
+{
+  "summary": {
+    "n_identity_admitted_pdbs": 60,
+    "n_complete_paired_ids": 41,
+    "n_identity_cross_study_groups": 4,
+    "n_QC_graphs": 42,
+    "n_QC_pdbs": 30,
+    "n_QC_complete_paired_ids": 28,
+    "n_QC_cross_study_pairs": 0,
+    "n_QC_same_study_same_V_control_groups": 1,
+    "n_QC_source_balanced_blocks": 0,
+    "n_QC_author_disjoint_balanced_blocks": 0
+  },
+  "cross_study_groups": [
+    {
+      "receptor_id": "6f753ea0852aa82fbb628fced0a62d3dd3ac10a7de1ccbebb69d4bcc0c8dcb65",
+      "V_context": "mouse|TRAV9D-3|TRBV13-1",
+      "identity_supported_pdbs": [
+        "3tfk",
+        "3tjh",
+        "3tpu",
+        "4ms8",
+        "4mvb",
+        "4mxq",
+        "4n0c",
+        "4n5e"
+      ],
+      "identity_author_disjoint": false,
+      "QC_pass_pdbs": [],
+      "QC_cross_study_pairs": []
+    },
+    {
+      "receptor_id": "a0acdc522b46f99b0ed3bda55c80b82e2923871521e4e43da23f7997a4fe1d8c",
+      "V_context": "mouse|TRAV7D-4|TRBV3",
+      "identity_supported_pdbs": [
+        "4ei6",
+        "4elk"
+      ],
+      "identity_author_disjoint": true,
+      "QC_pass_pdbs": [],
+      "QC_cross_study_pairs": []
+    },
+    {
+      "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+      "V_context": "human|TRAV12-2|TRBV30",
+      "identity_supported_pdbs": [
+        "4jfe",
+        "4jfh",
+        "6eqb"
+      ],
+      "identity_author_disjoint": false,
+      "QC_pass_pdbs": [
+        "6eqb"
+      ],
+      "QC_cross_study_pairs": []
+    },
+    {
+      "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+      "V_context": "human|TRAV12-2|TRBV7-9",
+      "identity_supported_pdbs": [
+        "7n1f",
+        "7rtr"
+      ],
+      "identity_author_disjoint": true,
+      "QC_pass_pdbs": [
+        "7n1f"
+      ],
+      "QC_cross_study_pairs": []
+    }
+  ],
+  "same_study_same_V_controls": [
+    {
+      "study": "doi:10.1038/s41467-022-32811-1",
+      "V_context": "human|TRAV19|TRBV6-2",
+      "receptor_ids": [
+        "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+        "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0"
+      ],
+      "pdbs": [
+        "7ow5",
+        "7ow6",
+        "7pb2"
+      ],
+      "pairs": [
+        {
+          "pdb_a": "7ow5",
+          "pdb_b": "7pb2",
+          "receptor_a": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+          "receptor_b": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+          "same_complete_pmhc_construct": false,
+          "peptide_a": "VVVGAGGVGK",
+          "peptide_b": "VVVGADGVGK"
+        },
+        {
+          "pdb_a": "7ow6",
+          "pdb_b": "7pb2",
+          "receptor_a": "0708bd3aaf97835c81d902157569bc23a388ecfb5e24e263a929d302619f4f33",
+          "receptor_b": "5259e4dc298ff7f5aa1c2980fc3f0ed6340be7d9b6eb8774549db9735090cba0",
+          "same_complete_pmhc_construct": true,
+          "peptide_a": "VVVGADGVGK",
+          "peptide_b": "VVVGADGVGK"
+        }
+      ],
+      "independent_clonotypes_proven": false,
+      "meaning": "different complete engineered variable sequences; not experimental nonbinding"
+    }
+  ],
+  "source_balanced_blocks": [],
+  "author_disjoint_balanced_blocks": [],
+  "status": "blocked_before_protocol_freeze",
+  "blockers": [
+    "no atomic-QC-passing cross-study same-complete-variable pair",
+    "no source-balanced query block; same-V controls do not repair missing cross-study positives",
+    "fewer than three eligible disjoint source/family components; minimum computability is not statistical power"
+  ],
+  "protocol_frozen": false,
+  "training_release_created": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "scope": "identity retrieval construction evidence; no experimental negative labels"
+}

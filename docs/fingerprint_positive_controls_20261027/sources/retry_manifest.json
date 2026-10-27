@@ -1,0 +1,29 @@
+[
+  {
+    "file": "global_search_retry.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell+receptor%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_entry_info.polymer_entity_count_protein%22%2C%22operator%22%3A%22greater_or_equal%22%2C%22value%22%3A5%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "status": "200",
+    "bytes": 466074,
+    "sha256": "78dec18b5155a7b00bbb5ba284998f4aee71dc3ea7c5d92a0c718a2793fc6a8d",
+    "error": "",
+    "route": "existing configured HTTPS proxy"
+  },
+  {
+    "file": "tcr_chain_data_fresh.tsv",
+    "url": "https://tcr3d.ibbr.umd.edu/downloads/tcr_chain_data.tsv",
+    "status": "404",
+    "bytes": 207,
+    "sha256": "e9639e3c4681ce85f852fbac48e2eeee5ba51296dbfec57c200d59b76237ab80",
+    "error": "",
+    "route": "existing configured HTTPS proxy"
+  },
+  {
+    "file": "jina_route_probe.txt",
+    "url": "https://r.jina.ai/https://www.rcsb.org/structure/7RTR",
+    "status": "401",
+    "bytes": 373,
+    "sha256": "6d1c408f4e37813168a41ad217978bfe66b8f3b09cc9661f838c56e1d0ef0f6a",
+    "error": "",
+    "route": "existing configured HTTPS proxy"
+  }
+]

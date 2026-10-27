@@ -1,0 +1,18 @@
+[
+  {
+    "file": "tcr_chain_data_current.tsv",
+    "url": "https://tcrdb.ibbr.umd.edu/static/download/tcr_chain_data.tsv",
+    "status": "200",
+    "bytes": 141510,
+    "sha256": "8ae7f039811506650d718e1956fc0ad73e13b9f2bf9609a3dcf88a699bdb33a9",
+    "error": ""
+  },
+  {
+    "file": "rcsb_new_00.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%229CI8%22%2C+%229CIA%22%2C+%229JY2%22%2C+%229JY3%22%5D%29%7Brcsb_id+struct+%7Btitle%7D+rcsb_primary_citation+%7Btitle+year+pdbx_database_id_PubMed+pdbx_database_id_DOI+rcsb_authors%7D+exptl+%7Bmethod%7D+rcsb_entry_info+%7Bresolution_combined%7D+polymer_entities+%7Brcsb_id+entity_poly+%7Bpdbx_seq_one_letter_code_can%7D+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids+asym_ids%7D%7D%7D%7D",
+    "status": "000",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "curl: (35) Recv failure: Connection was reset\n"
+  }
+]
