@@ -1,0 +1,62 @@
+[
+  {
+    "file": "day2011_pmc.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3111262/",
+    "requested_at": "2026-10-27T15:02:56.807397+00:00",
+    "status": 200,
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3111262/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 191965,
+    "sha256": "796a683d661fb4098981ff8af89ffa3a7215ecb94d80cb9947cbb7a1dc8834fd"
+  },
+  {
+    "file": "day2011_bioc.xml",
+    "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC3111262/unicode",
+    "requested_at": "2026-10-27T15:02:56.809905+00:00",
+    "status": 200,
+    "final_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC3111262/unicode",
+    "content_type": "text/html",
+    "bytes": 6140,
+    "sha256": "478f38e0765ee9c406831bb2fc27e8019ac5227c20c6b28ca0de582d8449354a"
+  },
+  {
+    "file": "day2011_retry.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3111262/fullTextXML?format=xml",
+    "requested_at": "2026-10-27T15:02:56.809240+00:00",
+    "status": 500,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3111262/fullTextXML?format=xml",
+    "content_type": "application/json",
+    "bytes": 150,
+    "sha256": "ab3df3fd719bb9f58da13f78027b12c4f0f9cd612bd1466d39b0f747fb00155c"
+  },
+  {
+    "file": "3pqy.pdb",
+    "url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb3pqy.ent",
+    "requested_at": "2026-10-27T15:02:56.809787+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb3pqy.ent",
+    "content_type": "application/octet-stream",
+    "bytes": 2208951,
+    "sha256": "4cbfcddef4f2a0b62883678417d7d6181705ec750e8cdda213d349e40bfbc0c4"
+  },
+  {
+    "file": "day2011_epmc.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:21606376%20AND%20SRC:MED&format=json&resultType=core",
+    "requested_at": "2026-10-27T15:02:58.435035+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:21606376%20AND%20SRC:MED&format=json&resultType=core",
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 8804,
+    "sha256": "c20fc6b25408d7d15cbdd63615454c549c5399051e552e37dc4bbccc44342c2a"
+  },
+  {
+    "file": "7n5_figure1.jpg",
+    "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_Fig1_HTML.png",
+    "requested_at": "2026-10-27T15:02:58.622156+00:00",
+    "status": 200,
+    "final_url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_Fig1_HTML.png",
+    "content_type": "image/png",
+    "bytes": 437156,
+    "sha256": "c58307e2e4778fe1bcd52577f3ad8478c592671b6df65273ef69bf09975d2e9f"
+  }
+]

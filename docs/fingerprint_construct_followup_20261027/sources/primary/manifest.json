@@ -1,0 +1,56 @@
+[
+  {
+    "file": "6at6_nature.html",
+    "url": "https://www.nature.com/articles/s41467-018-03321-w",
+    "requested_at": "2026-10-27T09:41:13.240632+00:00",
+    "status": 200,
+    "final_url": "https://www.nature.com/articles/s41467-018-03321-w",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 545898,
+    "sha256": "68a47138e0e7eb7d81cb709e17ca56f8f658a2f416cc67fd4f4c2171a68deb70"
+  },
+  {
+    "file": "7n5_nature.html",
+    "url": "https://www.nature.com/articles/s41467-022-32692-4",
+    "requested_at": "2026-10-27T09:41:13.239846+00:00",
+    "status": 200,
+    "final_url": "https://www.nature.com/articles/s41467-022-32692-4",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 566072,
+    "sha256": "fa8f4bc9572e662e1036937d5a2a3fa23d0318ff3c10ba49eb71cbaf474e2261"
+  },
+  {
+    "file": "6at6_epmc.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29531227%20AND%20SRC:MED&format=json&resultType=core",
+    "requested_at": "2026-10-27T09:41:13.240544+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:29531227%20AND%20SRC:MED&format=json&resultType=core",
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 10780,
+    "sha256": "f16650fac1159ad6772cb19dbe08956c661927781136cca90ddb20f556824211"
+  },
+  {
+    "file": "7n5_epmc.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:35999236%20AND%20SRC:MED&format=json&resultType=core",
+    "requested_at": "2026-10-27T09:41:13.240890+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:35999236%20AND%20SRC:MED&format=json&resultType=core",
+    "content_type": "application/json;charset=UTF-8",
+    "bytes": 10866,
+    "sha256": "7b7cb97883cdf587d698850da4219844d35c05f739d2b00df6e475c02b90b91c"
+  },
+  {
+    "file": "jina_6at6.txt",
+    "url": "https://r.jina.ai/https://www.nature.com/articles/s41467-018-03321-w",
+    "requested_at": "2026-10-27T09:41:14.171647+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='r.jina.ai', port=443): Max retries exceeded with url: /https://www.nature.com/articles/s41467-018-03321-w (Caused by ConnectTimeoutError(<HTTPSConnection(host='r.jina.ai', port=443) at 0x7b1b2dc07c50>, 'Connection to r.jina.ai timed out. (connect timeout=70)'))"
+  },
+  {
+    "file": "jina_7n5.txt",
+    "url": "https://r.jina.ai/https://www.nature.com/articles/s41467-022-32692-4",
+    "requested_at": "2026-10-27T09:41:14.335438+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='r.jina.ai', port=443): Max retries exceeded with url: /https://www.nature.com/articles/s41467-022-32692-4 (Caused by ConnectTimeoutError(<HTTPSConnection(host='r.jina.ai', port=443) at 0x7b1b2d7942d0>, 'Connection to r.jina.ai timed out. (connect timeout=70)'))"
+  }
+]

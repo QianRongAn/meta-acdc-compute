@@ -1,0 +1,73 @@
+[
+  {
+    "file": "6at6_article.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5847591/fullTextXML",
+    "requested_at": "2026-10-27T14:58:15.182006+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5847591/fullTextXML",
+    "content_type": "application/xml",
+    "bytes": 154801,
+    "sha256": "2b7a4d539b745683a17f7a8359b328bc533d31fe84f8e06c85a2c4a8a8b336b4"
+  },
+  {
+    "file": "7n5_article.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9399087/fullTextXML",
+    "requested_at": "2026-10-27T14:58:15.182267+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9399087/fullTextXML",
+    "content_type": "application/xml",
+    "bytes": 161459,
+    "sha256": "1457b78e80fe65bff156d753c5cd16961e717b2218f25788290fe8086cefe9a8"
+  },
+  {
+    "file": "6at6_supplement.pdf",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-018-03321-w/MediaObjects/41467_2018_3321_MOESM1_ESM.pdf",
+    "requested_at": "2026-10-27T14:58:15.182501+00:00",
+    "status": 200,
+    "final_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-018-03321-w/MediaObjects/41467_2018_3321_MOESM1_ESM.pdf",
+    "content_type": "application/pdf",
+    "bytes": 8274945,
+    "sha256": "55c1799f788b8a53d649fab95efb7b3119eaa1562d360483f6cbc514b25cbc9f"
+  },
+  {
+    "file": "7n5_supplement.pdf",
+    "url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_MOESM1_ESM.pdf",
+    "requested_at": "2026-10-27T14:58:15.182741+00:00",
+    "status": 200,
+    "final_url": "https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_MOESM1_ESM.pdf",
+    "content_type": "application/pdf",
+    "bytes": 3517440,
+    "sha256": "8105c8976f43fb4f222a1fdea333699f264ea511a195a2caae8a045d7629eb5c"
+  },
+  {
+    "file": "6at6.pdb",
+    "url": "https://files.rcsb.org/download/6AT6.pdb",
+    "requested_at": "2026-10-27T14:58:18.682048+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='files.rcsb.org', port=443): Read timed out. (read timeout=70)"
+  },
+  {
+    "file": "7n5c.pdb",
+    "url": "https://files.rcsb.org/download/7N5C.pdb",
+    "requested_at": "2026-10-27T14:58:20.038064+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='files.rcsb.org', port=443): Read timed out."
+  },
+  {
+    "file": "7n5p.pdb",
+    "url": "https://files.rcsb.org/download/7N5P.pdb",
+    "requested_at": "2026-10-27T14:58:20.325710+00:00",
+    "status": 200,
+    "final_url": "https://files.rcsb.org/download/7N5P.pdb",
+    "content_type": "text/plain",
+    "bytes": 602802,
+    "sha256": "3bb664637459a34294f7abce6b04a167fa6403469e4c8e8f2e89281de217a419"
+  },
+  {
+    "file": "7n4k.pdb",
+    "url": "https://files.rcsb.org/download/7N4K.pdb",
+    "requested_at": "2026-10-27T14:58:24.867847+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='files.rcsb.org', port=443): Read timed out. (read timeout=70)"
+  }
+]

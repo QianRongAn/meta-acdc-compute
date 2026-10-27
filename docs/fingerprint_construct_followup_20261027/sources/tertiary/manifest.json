@@ -1,0 +1,59 @@
+[
+  {
+    "file": "day2011_article.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3111262/fullTextXML",
+    "requested_at": "2026-10-27T14:59:36.367456+00:00",
+    "status": 500,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3111262/fullTextXML",
+    "content_type": "application/json",
+    "bytes": 150,
+    "sha256": "c8e099b3e74604dbe6fcc134919473dcef9b9b8ab9b51c8760c8c20753fa1582"
+  },
+  {
+    "file": "7n5_figure1.jpg",
+    "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_Fig1_HTML.jpg",
+    "requested_at": "2026-10-27T14:59:36.368083+00:00",
+    "status": 404,
+    "final_url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41467-022-32692-4/MediaObjects/41467_2022_32692_Fig1_HTML.jpg",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 4059,
+    "sha256": "0831a9ed0fe4811e46128f9e078679d8fab24995427c4f99feb501f0538b4638"
+  },
+  {
+    "file": "3pqy.pdb",
+    "url": "https://files.wwpdb.org/pub/pdb/data/structures/divided/pdb/pq/pdb3pqy.ent.gz",
+    "requested_at": "2026-10-27T14:59:36.368418+00:00",
+    "status": "request_failed",
+    "error": "HTTPSConnectionPool(host='files.wwpdb.org', port=443): Read timed out. (read timeout=70)"
+  },
+  {
+    "file": "6at6.pdb",
+    "url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb6at6.ent",
+    "requested_at": "2026-10-27T14:59:36.368660+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb6at6.ent",
+    "content_type": "application/octet-stream",
+    "bytes": 372843,
+    "sha256": "50c187d62582d350d6be526ad0f8323bfe543904d592196c9ee4e268adaa0d2d"
+  },
+  {
+    "file": "7n5c.pdb",
+    "url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb7n5c.ent",
+    "requested_at": "2026-10-27T14:59:37.708385+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb7n5c.ent",
+    "content_type": "application/octet-stream",
+    "bytes": 607419,
+    "sha256": "732d26a239e89b63cd73fe314739298502b21b239e9cf3ccafee36f124abd01f"
+  },
+  {
+    "file": "7n4k.pdb",
+    "url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb7n4k.ent",
+    "requested_at": "2026-10-27T14:59:38.903970+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/pdbe/entry-files/pdb7n4k.ent",
+    "content_type": "application/octet-stream",
+    "bytes": 623862,
+    "sha256": "2e062160f05979d42bc1097e23b2b040bf1a76cc7fa8fd2cfaba99f0065729a2"
+  }
+]
