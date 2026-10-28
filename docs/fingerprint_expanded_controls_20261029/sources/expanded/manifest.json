@@ -1,0 +1,32 @@
+[
+  {
+    "file": "rcsb_phrase_0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T%20cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-28T17:54:26.910634+00:00",
+    "status": 200,
+    "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T%20cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "content_type": "application/json",
+    "bytes": 24420,
+    "sha256": "ffee004388e890d86e2e62038122a79f96b837bfa1dbc4683343c0617f40a08e"
+  },
+  {
+    "file": "rcsb_phrase_1.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T-cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-28T17:54:26.911269+00:00",
+    "status": 200,
+    "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T-cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "content_type": "application/json",
+    "bytes": 24420,
+    "sha256": "147f3d6912458377dc95c089b3ec04f48533a2f92f62e87a11e3247ff310c835"
+  },
+  {
+    "file": "memory_supplement.zip",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12637697/supplementaryFiles",
+    "requested_at": "2026-10-28T17:54:26.912727+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12637697/supplementaryFiles",
+    "content_type": "application/zip",
+    "bytes": 28569315,
+    "sha256": "9eeac6278c1ce24826ef412225c63198319fc041b603b29a26289a327647dc3c"
+  }
+]

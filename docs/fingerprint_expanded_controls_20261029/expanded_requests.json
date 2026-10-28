@@ -1,0 +1,14 @@
+[
+  [
+    "rcsb_phrase_0.json",
+    "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T%20cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D"
+  ],
+  [
+    "rcsb_phrase_1.json",
+    "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_phrase%22%2C%22value%22%3A%22T-cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D"
+  ],
+  [
+    "memory_supplement.zip",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12637697/supplementaryFiles"
+  ]
+]

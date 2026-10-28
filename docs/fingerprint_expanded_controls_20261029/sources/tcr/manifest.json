@@ -1,0 +1,22 @@
+[
+  {
+    "file": "rcsb_tcr.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_words%22%2C%22value%22%3A%22TCR%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-28T18:00:33.545240+00:00",
+    "status": 200,
+    "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_words%22%2C%22value%22%3A%22TCR%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "content_type": "application/json",
+    "bytes": 25497,
+    "sha256": "52824e763fff36a01272b7b58fee72d4696fcd36cdcfeaef80631378fe1744b8"
+  },
+  {
+    "file": "memory_published_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1016/j.celrep.2026.117908&format=json",
+    "requested_at": "2026-10-28T18:00:33.544506+00:00",
+    "status": 503,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1016/j.celrep.2026.117908&format=json",
+    "content_type": "application/json",
+    "bytes": 89,
+    "sha256": "833ed50ae1b83e54eaef2c87d84dbf84bcc1242cdb1c14d995405fb1f0924030"
+  }
+]

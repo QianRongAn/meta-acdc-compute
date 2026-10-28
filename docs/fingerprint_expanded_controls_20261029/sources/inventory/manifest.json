@@ -1,0 +1,52 @@
+[
+  {
+    "file": "memory.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12637697/fullTextXML",
+    "requested_at": "2026-10-28T17:53:59.227329+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12637697/fullTextXML",
+    "content_type": "application/xml",
+    "bytes": 245078,
+    "sha256": "c657ccf1b3a3aea1b2558f4844643e74edc4fafc5be8015181be93fe05d906fc"
+  },
+  {
+    "file": "tcrdb_class1.html",
+    "url": "https://tcrdb.ibbr.umd.edu/class1",
+    "requested_at": "2026-10-28T17:53:59.228068+00:00",
+    "status": 200,
+    "final_url": "https://tcrdb.ibbr.umd.edu/class1",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 122402,
+    "sha256": "b11d42253d64298fa82efe27e5e64d44164b939297c4d60b756d150c597be1fc"
+  },
+  {
+    "file": "tcrdb_recent.html",
+    "url": "https://tcrdb.ibbr.umd.edu/recent_releases",
+    "requested_at": "2026-10-28T17:53:59.228338+00:00",
+    "status": 200,
+    "final_url": "https://tcrdb.ibbr.umd.edu/recent_releases",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 17811,
+    "sha256": "4df8ec9d27c5fffb6a3b215a922c40378f989a6e07a3013cb7da8e14428185ce"
+  },
+  {
+    "file": "rcsb_text_0.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T%20cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-28T17:53:59.228557+00:00",
+    "status": 200,
+    "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T%20cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "content_type": "application/json",
+    "bytes": 4793756,
+    "sha256": "6c4b58714b4aa8a1b828261d57b21ffa477b483ef516c26cf69589a1d0feddf3"
+  },
+  {
+    "file": "rcsb_text_1.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-28T17:54:01.031501+00:00",
+    "status": 200,
+    "final_url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell%20receptor%22%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "content_type": "application/json",
+    "bytes": 4793532,
+    "sha256": "a9b71560569f38a6975f498a49c1272a27001afb4c6a6b09a47a5130976a6e71"
+  }
+]

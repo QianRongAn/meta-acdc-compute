@@ -1,0 +1,7 @@
+{
+  "superseded": [
+    "primary_validation_final.json"
+  ],
+  "authoritative": "primary_validation_both_ends.json",
+  "reason": "The initial generic discovery report checks partner QC only. With non-QC anchors this is insufficient. Final report requires unchanged fixed QC at both ends; candidate-only pass is never a pair."
+}

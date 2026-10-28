@@ -1,0 +1,217 @@
+{
+  "n_queries": 11,
+  "n_successful_queries": 11,
+  "failed_query_files": [],
+  "n_targets": 6,
+  "targets": [
+    {
+      "target_id": "NP202-primary-discovery",
+      "anchor": "9nu7",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9ntl",
+        "9nu7"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    },
+    {
+      "target_id": "NP101-primary-discovery",
+      "anchor": "9nv6",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9nv6"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    },
+    {
+      "target_id": "NP207-primary-discovery",
+      "anchor": "9nv2",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9nua",
+        "9nv2"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    },
+    {
+      "target_id": "NP203-primary-discovery",
+      "anchor": "9nve",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9nve"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    },
+    {
+      "target_id": "NP204-primary-discovery",
+      "anchor": "9nw2",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9nw2"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    },
+    {
+      "target_id": "NP105-primary-discovery",
+      "anchor": "9nva",
+      "full_boundary_validated": false,
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "candidate_pdbs": [
+        "9nva"
+      ],
+      "status": "requires_primary_pair_boundary_source_and_atomic_validation"
+    }
+  ],
+  "queries": [
+    {
+      "file": "q000.json",
+      "role": "alpha",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q000.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NTL_1",
+        "9NU7_1",
+        "9NUA_1",
+        "9NV2_1",
+        "9NV6_1"
+      ],
+      "n_entities": 5
+    },
+    {
+      "file": "q001.json",
+      "role": "alpha",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q001.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NTL_1",
+        "9NU7_1",
+        "9NUA_1",
+        "9NV2_1",
+        "9NV6_1"
+      ],
+      "n_entities": 5
+    },
+    {
+      "file": "q002.json",
+      "role": "alpha",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q002.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NVE_1"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q003.json",
+      "role": "alpha",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q003.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NVA_1"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q004.json",
+      "role": "alpha",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q004.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NW2_1"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q005.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q005.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NVA_2"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q006.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q006.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NVE_2"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q007.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q007.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NV6_2"
+      ],
+      "n_entities": 1
+    },
+    {
+      "file": "q008.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q008.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NUA_2",
+        "9NV2_2"
+      ],
+      "n_entities": 2
+    },
+    {
+      "file": "q009.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q009.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NTL_2",
+        "9NU7_2"
+      ],
+      "n_entities": 2
+    },
+    {
+      "file": "q010.json",
+      "role": "beta",
+      "source": "docs/fingerprint_expanded_controls_20261029/natural_search/sources/search/q010.json",
+      "http_status": 200,
+      "status": "search_completed",
+      "hits": [
+        "9NW2_2"
+      ],
+      "n_entities": 1
+    }
+  ],
+  "discovery_pdbs": [
+    "9ntl",
+    "9nu7",
+    "9nua",
+    "9nv2",
+    "9nv6",
+    "9nva",
+    "9nve",
+    "9nw2"
+  ],
+  "interpretation": "Per-PDB intersection only discovers leads; neither 100% local match nor different PDB establishes complete paired receptor or source independence.",
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "3ri4.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%223RI4%22%5D%29%7Brcsb_id%20struct%7Btitle%7D%20rcsb_primary_citation%7Btitle%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%7D%20polymer_entities%7Brcsb_id%20entity_poly%7Bpdbx_seq_one_letter_code_can%7D%20rcsb_polymer_entity%7Bpdbx_description%7D%20rcsb_polymer_entity_container_identifiers%7Bauth_asym_ids%7D%7D%7D%7D",
+    "requested_at": "2026-10-28T18:00:53.563414+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%223RI4%22%5D%29%7Brcsb_id%20struct%7Btitle%7D%20rcsb_primary_citation%7Btitle%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%7D%20polymer_entities%7Brcsb_id%20entity_poly%7Bpdbx_seq_one_letter_code_can%7D%20rcsb_polymer_entity%7Bpdbx_description%7D%20rcsb_polymer_entity_container_identifiers%7Bauth_asym_ids%7D%7D%7D%7D",
+    "content_type": "application/json",
+    "bytes": 1288,
+    "sha256": "db9554c85f1777101422638ba72f61f9fdfa4ce63f65821572e12ff6ff58077b"
+  },
+  {
+    "file": "7k0z.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=7k0z",
+    "requested_at": "2026-10-28T18:00:53.564361+00:00",
+    "status": 500,
+    "final_url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=7k0z",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 265,
+    "sha256": "ae5163256b944013e27cbef0d2bcd33a6dacbb92463509f91d5f3df782142910"
+  },
+  {
+    "file": "published_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42709546&format=json",
+    "requested_at": "2026-10-28T18:00:53.564242+00:00",
+    "status": 503,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42709546&format=json",
+    "content_type": "application/json",
+    "bytes": 89,
+    "sha256": "833ed50ae1b83e54eaef2c87d84dbf84bcc1242cdb1c14d995405fb1f0924030"
+  }
+]

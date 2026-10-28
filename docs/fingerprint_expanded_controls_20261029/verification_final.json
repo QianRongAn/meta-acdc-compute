@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "n_tests": 51,
+  "test_skips": 0,
+  "n_public_raw_response_payloads_verified": 144,
+  "n_local_only_primary_payloads_hash_checked": 3,
+  "primary_workbook_check": "local_original_hash_and_all_recorded_cells_exact",
+  "plan_search_primary_and_summary_byte_exact": true,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_extension_20261024",
+      "n_files": 1548,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_audit_integration_20261027",
+      "n_files": 53,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_positive_controls_20261027",
+      "n_files": 59,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_construct_followup_20261027",
+      "n_files": 109,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_native_search_20261029",
+      "n_files": 83,
+      "unchanged": true
+    }
+  ],
+  "n_frozen_files": 3814,
+  "role_boundary_atomic_gate_code_unchanged": true,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

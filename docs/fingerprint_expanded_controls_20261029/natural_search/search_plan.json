@@ -1,0 +1,298 @@
+{
+  "targets": [
+    {
+      "target_id": "NP202-primary-discovery",
+      "anchor": "9nu7",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTP",
+        "beta": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQELGGRYEQYFGPGTRLTVL"
+      }
+    },
+    {
+      "target_id": "NP101-primary-discovery",
+      "anchor": "9nv6",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN",
+        "beta": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGRYEQYFGPGTRLTVL"
+      }
+    },
+    {
+      "target_id": "NP207-primary-discovery",
+      "anchor": "9nv2",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN",
+        "beta": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGVYEQYFGPGTRLTVL"
+      }
+    },
+    {
+      "target_id": "NP203-primary-discovery",
+      "anchor": "9nve",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGRGGGSNYKLTFGKGTLLTVTPN",
+        "beta": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGLYEQYFGPGTRLTVL"
+      }
+    },
+    {
+      "target_id": "NP204-primary-discovery",
+      "anchor": "9nw2",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "QQKVQQSPESLSVPEGGMASLNCTSSDRNFQYFWWYRQHSGEGPKALMSIFSDGDKKEGRFTAHLNKASLHVSLHIRDSQPSDSALYFCAAILATGGNNKLTFGQGTVLSVIPD",
+        "beta": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRRNSYNSPLYFAAGTRLTVT"
+      }
+    },
+    {
+      "target_id": "NP105-primary-discovery",
+      "anchor": "9nva",
+      "anchor_study": "doi:10.1016/j.celrep.2026.117908",
+      "full_boundary_validated": false,
+      "sequences": {
+        "alpha": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKPN",
+        "beta": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "file": "q000.json",
+      "role": "alpha",
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q001.json",
+      "role": "alpha",
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q002.json",
+      "role": "alpha",
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGRGGGSNYKLTFGKGTLLTVTPN",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGRGGGSNYKLTFGKGTLLTVTPN"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q003.json",
+      "role": "alpha",
+      "sequence": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKPN",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKPN"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q004.json",
+      "role": "alpha",
+      "sequence": "QQKVQQSPESLSVPEGGMASLNCTSSDRNFQYFWWYRQHSGEGPKALMSIFSDGDKKEGRFTAHLNKASLHVSLHIRDSQPSDSALYFCAAILATGGNNKLTFGQGTVLSVIPD",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "QQKVQQSPESLSVPEGGMASLNCTSSDRNFQYFWWYRQHSGEGPKALMSIFSDGDKKEGRFTAHLNKASLHVSLHIRDSQPSDSALYFCAAILATGGNNKLTFGQGTVLSVIPD"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q005.json",
+      "role": "beta",
+      "sequence": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q006.json",
+      "role": "beta",
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGLYEQYFGPGTRLTVL",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGLYEQYFGPGTRLTVL"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q007.json",
+      "role": "beta",
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGRYEQYFGPGTRLTVL",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGRYEQYFGPGTRLTVL"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q008.json",
+      "role": "beta",
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGVYEQYFGPGTRLTVL",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGVYEQYFGPGTRLTVL"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q009.json",
+      "role": "beta",
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQELGGRYEQYFGPGTRLTVL",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQELGGRYEQYFGPGTRLTVL"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "q010.json",
+      "role": "beta",
+      "sequence": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRRNSYNSPLYFAAGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRRNSYNSPLYFAAGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    }
+  ],
+  "scope": "primary-labeled variable fragments for discovery only; not numbered or admitted"
+}

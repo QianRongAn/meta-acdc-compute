@@ -1,0 +1,1009 @@
+{
+  "description_search_query_counts": {
+    "sources/expanded/rcsb_phrase_0.json": 363,
+    "sources/expanded/rcsb_phrase_1.json": 363,
+    "sources/tcr/rcsb_tcr.json": 380
+  },
+  "n_description_union": 693,
+  "n_previous_archive": 799,
+  "n_outside_previous_archive": 14,
+  "new_description_leads": [
+    {
+      "pdb": "1tce",
+      "title": "SOLUTION NMR STRUCTURE OF THE SHC SH2 DOMAIN COMPLEXED WITH A TYROSINE-PHOSPHORYLATED PEPTIDE FROM THE T-CELL RECEPTOR, MINIMIZED AVERAGE STRUCTURE",
+      "primary_citation": {
+        "title": "Solution structure of the Shc SH2 domain complexed with a tyrosine-phosphorylated peptide from the T-cell receptor.",
+        "year": 1995,
+        "pdbx_database_id_DOI": "10.1073/pnas.92.17.7784",
+        "pdbx_database_id_PubMed": 7544002,
+        "rcsb_authors": [
+          "Zhou, M.M.",
+          "Meadows, R.P.",
+          "Logan, T.M.",
+          "Yoon, H.S.",
+          "Wade, W.S.",
+          "Ravichandran, K.S.",
+          "Burakoff, S.J.",
+          "Fesik, S.W."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "1TCE_2",
+          "description": "PHOSPHOPEPTIDE OF THE ZETA CHAIN OF T CELL RECEPTOR"
+        },
+        {
+          "entity": "1TCE_1",
+          "description": "SHC"
+        }
+      ],
+      "reason": "SHC plus CD3 zeta phosphopeptide; no paired alpha/beta variable domains",
+      "admitted": false
+    },
+    {
+      "pdb": "1ygr",
+      "title": "Crystal structure of the tandem phosphatase domain of RPTP CD45",
+      "primary_citation": {
+        "title": "Structural basis for the function and regulation of the receptor protein tyrosine phosphatase CD45.",
+        "year": 2005,
+        "pdbx_database_id_DOI": "10.1084/jem.20041890",
+        "pdbx_database_id_PubMed": 15684325,
+        "rcsb_authors": [
+          "Nam, H.J.",
+          "Poy, F.",
+          "Saito, H.",
+          "Frederick, C.A."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "1YGR_2",
+          "description": "T-cell Receptor CD3 zeta ITAM-1"
+        },
+        {
+          "entity": "1YGR_1",
+          "description": "CD45 Protein Tyrosine Phosphatase"
+        }
+      ],
+      "reason": "CD45 phosphatase plus CD3 zeta ITAM; no paired alpha/beta variable domains",
+      "admitted": false
+    },
+    {
+      "pdb": "2e5k",
+      "title": "Solution structure of SH3 domain in Suppressor of T-cell receptor signaling 1",
+      "primary_citation": {
+        "title": "Solution structure of SH3 domain in Suppressor of T-cell receptor signaling 1",
+        "year": null,
+        "pdbx_database_id_DOI": null,
+        "pdbx_database_id_PubMed": null,
+        "rcsb_authors": [
+          "Sukegawa, S.",
+          "Tsuda, K.",
+          "Muto, Y.",
+          "Inoue, M.",
+          "Kigawa, T.",
+          "Terada, T.",
+          "Shirouzu, M.",
+          "Yokoyama, S."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "2E5K_1",
+          "description": "Suppressor of T-cell receptor signaling 1"
+        }
+      ],
+      "reason": "Sts-1 signaling suppressor SH3 domain; not a paired TCR",
+      "admitted": false
+    },
+    {
+      "pdb": "2h0q",
+      "title": "Crystal Structure of the PGM domain of the Suppressor of T-Cell receptor (Sts-1)",
+      "primary_citation": {
+        "title": "A phosphatase activity of Sts-1 contributes to the suppression of TCR signaling.",
+        "year": 2007,
+        "pdbx_database_id_DOI": "10.1016/j.molcel.2007.06.015",
+        "pdbx_database_id_PubMed": 17679096,
+        "rcsb_authors": [
+          "Mikhailik, A.",
+          "Ford, B.",
+          "Keller, J.",
+          "Chen, Y.",
+          "Nassar, N.",
+          "Carpino, N."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "2H0Q_1",
+          "description": "Suppressor of T-cell receptor signaling 1"
+        }
+      ],
+      "reason": "Sts-1 signaling suppressor PGM domain; not a paired TCR",
+      "admitted": false
+    },
+    {
+      "pdb": "2ikq",
+      "title": "Crystal structure of mouse Sts-1 PGM domain in complex with phosphate",
+      "primary_citation": {
+        "title": "A Phosphatase Activity of Sts-1 Contributes to the Suppression of TCR Signaling",
+        "year": 2007,
+        "pdbx_database_id_DOI": "10.1016/j.molcel.2007.06.015",
+        "pdbx_database_id_PubMed": 17679096,
+        "rcsb_authors": [
+          "Mikhailik, A.",
+          "Ford, B.",
+          "Keller, J.",
+          "Chen, Y.",
+          "Nassar, N.",
+          "Carpino, N."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "2IKQ_1",
+          "description": "Suppressor of T-cell receptor signaling 1"
+        }
+      ],
+      "reason": "Sts-1 signaling suppressor PGM domain; not a paired TCR",
+      "admitted": false
+    },
+    {
+      "pdb": "3ri4",
+      "title": "Ets1 cooperative binding to widely separated sites on promoter DNA",
+      "primary_citation": {
+        "title": "Structural basis of ets1 cooperative binding to widely separated sites on promoter DNA.",
+        "year": 2012,
+        "pdbx_database_id_DOI": "10.1371/journal.pone.0033698",
+        "pdbx_database_id_PubMed": 22432043,
+        "rcsb_authors": [
+          "Babayeva, N.D.",
+          "Baranovskaya, O.I.",
+          "Tahirov, T.H."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "3RI4_3",
+          "description": "TCR alpha promoter DNA"
+        },
+        {
+          "entity": "3RI4_2",
+          "description": "TCR alpha promoter DNA"
+        },
+        {
+          "entity": "3RI4_1",
+          "description": "Isoform Ets-1 p27 of Protein C-ets-1"
+        }
+      ],
+      "reason": "Ets1 plus TCR alpha promoter DNA; not a paired receptor protein",
+      "admitted": false
+    },
+    {
+      "pdb": "6mf8",
+      "title": "TCR alpha transmembrane domain",
+      "primary_citation": {
+        "title": "The T Cell Antigen Receptor alpha Transmembrane Domain Coordinates Triggering through Regulation of Bilayer Immersion and CD3 Subunit Associations.",
+        "year": 2018,
+        "pdbx_database_id_DOI": "10.1016/j.immuni.2018.09.007",
+        "pdbx_database_id_PubMed": 30389415,
+        "rcsb_authors": [
+          "Brazin, K.N.",
+          "Mallis, R.J.",
+          "Boeszoermenyi, A.",
+          "Feng, Y.",
+          "Yoshizawa, A.",
+          "Reche, P.A.",
+          "Kaur, P.",
+          "Bi, K.",
+          "Hussey, R.E.",
+          "Duke-Cohan, J.S.",
+          "Song, L.",
+          "Wagner, G.",
+          "Arthanari, H.",
+          "Lang, M.J.",
+          "Reinherz, E.L."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "6MF8_1",
+          "description": "T-cell receptor alpha chain C region"
+        }
+      ],
+      "reason": "TCR alpha transmembrane fragment; no complete paired variable domains",
+      "admitted": false
+    },
+    {
+      "pdb": "6u07",
+      "title": "Computational Stabilization of T Cell Receptor Constant Domains",
+      "primary_citation": {
+        "title": "Computational stabilization of T cell receptors allows pairing with antibodies to form bispecifics.",
+        "year": 2020,
+        "pdbx_database_id_DOI": "10.1038/s41467-020-16231-7",
+        "pdbx_database_id_PubMed": 32393818,
+        "rcsb_authors": [
+          "Froning, K.",
+          "Maguire, J.",
+          "Sereno, A.",
+          "Huang, F.",
+          "Chang, S.",
+          "Weichert, K.",
+          "Frommelt, A.J.",
+          "Dong, J.",
+          "Wu, X.",
+          "Austin, H.",
+          "Conner, E.M.",
+          "Fitchett, J.R.",
+          "Heng, A.R.",
+          "Balasubramaniam, D.",
+          "Hilgers, M.T.",
+          "Kuhlman, B.",
+          "Demarest, S.J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "6U07_2",
+          "description": "Stabilized T cell receptor constant domain (Cbeta)"
+        },
+        {
+          "entity": "6U07_1",
+          "description": "Stabilized T cell receptor constant domain (Calpha)"
+        }
+      ],
+      "reason": "engineered alpha/beta constant domains only; no paired variable domains",
+      "admitted": false
+    },
+    {
+      "pdb": "7k0z",
+      "title": "Marsupial T cell receptor Spl_157",
+      "primary_citation": {
+        "title": "The molecular assembly of the marsupial gamma mu T cell receptor defines a third T cell lineage.",
+        "year": 2021,
+        "pdbx_database_id_DOI": "10.1126/science.abe7070",
+        "pdbx_database_id_PubMed": 33766885,
+        "rcsb_authors": [
+          "Morrissey, K.A.",
+          "Wegrecki, M.",
+          "Praveena, T.",
+          "Hansen, V.L.",
+          "Bu, L.",
+          "Sivaraman, K.K.",
+          "Darko, S.",
+          "Douek, D.C.",
+          "Rossjohn, J.",
+          "Miller, R.D.",
+          "Le Nours, J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "7K0Z_1",
+          "description": "T cell receptor mu chain"
+        },
+        {
+          "entity": "7K0Z_2",
+          "description": "T cell receptor gamma chain"
+        }
+      ],
+      "reason": "marsupial mu/gamma TCR; outside alpha/beta class-I scope",
+      "admitted": false
+    },
+    {
+      "pdb": "9ci8",
+      "title": "T cell receptor complex",
+      "primary_citation": {
+        "title": "Structure of a fully assembled gamma delta T cell antigen receptor.",
+        "year": 2024,
+        "pdbx_database_id_DOI": "10.1038/s41586-024-07920-0",
+        "pdbx_database_id_PubMed": 39146975,
+        "rcsb_authors": [
+          "Gully, B.S.",
+          "Ferreira Fernandes, J.",
+          "Gunasinghe, S.D.",
+          "Vuong, M.T.",
+          "Lui, Y.",
+          "Rice, M.T.",
+          "Rashleigh, L.",
+          "Lay, C.S.",
+          "Littler, D.R.",
+          "Sharma, S.",
+          "Santos, A.M.",
+          "Venugopal, H.",
+          "Rossjohn, J.",
+          "Davis, S.J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "9CI8_8",
+          "description": "T cell receptor gamma constant 1"
+        },
+        {
+          "entity": "9CI8_7",
+          "description": "T cell receptor delta constant"
+        },
+        {
+          "entity": "9CI8_6",
+          "description": "T-cell surface glycoprotein CD3 gamma chain"
+        },
+        {
+          "entity": "9CI8_5",
+          "description": "T-cell surface glycoprotein CD3 epsilon chain"
+        },
+        {
+          "entity": "9CI8_4",
+          "description": "T-cell surface glycoprotein CD3 delta chain"
+        },
+        {
+          "entity": "9CI8_3",
+          "description": "T-cell surface glycoprotein CD3 zeta chain"
+        },
+        {
+          "entity": "9CI8_2",
+          "description": "UCHT1 Fab chain 2"
+        },
+        {
+          "entity": "9CI8_1",
+          "description": "UCHT1 Fab"
+        }
+      ],
+      "reason": "gamma/delta-CD3 complex; outside alpha/beta class-I scope",
+      "admitted": false
+    },
+    {
+      "pdb": "9cia",
+      "title": "T cell receptor complex",
+      "primary_citation": {
+        "title": "Structure of a fully assembled gamma delta T cell antigen receptor.",
+        "year": 2024,
+        "pdbx_database_id_DOI": "10.1038/s41586-024-07920-0",
+        "pdbx_database_id_PubMed": 39146975,
+        "rcsb_authors": [
+          "Gully, B.S.",
+          "Ferreira Fernandes, J.",
+          "Gunasinghe, S.D.",
+          "Vuong, M.T.",
+          "Lui, Y.",
+          "Rice, M.T.",
+          "Rashleigh, L.",
+          "Lay, C.S.",
+          "Littler, D.R.",
+          "Sharma, S.",
+          "Santos, A.M.",
+          "Venugopal, H.",
+          "Rossjohn, J.",
+          "Davis, S.J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "9CIA_8",
+          "description": "T-cell surface glycoprotein CD3 gamma chain"
+        },
+        {
+          "entity": "9CIA_7",
+          "description": "T-cell surface glycoprotein CD3 delta chain"
+        },
+        {
+          "entity": "9CIA_6",
+          "description": "T cell receptor gamma constant 1"
+        },
+        {
+          "entity": "9CIA_5",
+          "description": "T cell receptor delta constant"
+        },
+        {
+          "entity": "9CIA_4",
+          "description": "T-cell surface glycoprotein CD3 epsilon chain"
+        },
+        {
+          "entity": "9CIA_3",
+          "description": "T-cell surface glycoprotein CD3 zeta chain"
+        },
+        {
+          "entity": "9CIA_2",
+          "description": "UCHT1 Fab chain"
+        },
+        {
+          "entity": "9CIA_1",
+          "description": "UCHT1 Fab 2"
+        }
+      ],
+      "reason": "gamma/delta-CD3 complex; outside alpha/beta class-I scope",
+      "admitted": false
+    },
+    {
+      "pdb": "9jy2",
+      "title": "Fab-CD3-delta epsilon-TCR complex",
+      "primary_citation": {
+        "title": "Structures of the apo and agonist-crosslinked human gamma delta T-cell receptor",
+        "year": null,
+        "pdbx_database_id_DOI": null,
+        "pdbx_database_id_PubMed": null,
+        "rcsb_authors": [
+          "Wang, L.",
+          "Li, Z.",
+          "Fan, Y.",
+          "Li, J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "9JY2_8",
+          "description": "Fab heavy chain"
+        },
+        {
+          "entity": "9JY2_7",
+          "description": "Fab light chain"
+        },
+        {
+          "entity": "9JY2_6",
+          "description": "T cell receptor gamma constant 1"
+        },
+        {
+          "entity": "9JY2_5",
+          "description": "T cell receptor delta constant"
+        },
+        {
+          "entity": "9JY2_4",
+          "description": "T-cell surface glycoprotein CD3 gamma chain"
+        },
+        {
+          "entity": "9JY2_3",
+          "description": "T-cell surface glycoprotein CD3 epsilon chain"
+        },
+        {
+          "entity": "9JY2_2",
+          "description": "T-cell surface glycoprotein CD3 delta chain"
+        },
+        {
+          "entity": "9JY2_1",
+          "description": "T-cell surface glycoprotein CD3 zeta chain"
+        }
+      ],
+      "reason": "gamma/delta-CD3-Fab complex; outside alpha/beta class-I scope",
+      "admitted": false
+    },
+    {
+      "pdb": "9jy3",
+      "title": "delta epsilon/gamma epsilon Fab-TCR tetramer",
+      "primary_citation": {
+        "title": "Structures of the apo and agonist-crosslinked human gamma delta T-cell receptor",
+        "year": null,
+        "pdbx_database_id_DOI": null,
+        "pdbx_database_id_PubMed": null,
+        "rcsb_authors": [
+          "Wang, L.",
+          "Li, Z.",
+          "Fan, Y.",
+          "Li, J."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "9JY3_8",
+          "description": "Fab heavy chain"
+        },
+        {
+          "entity": "9JY3_7",
+          "description": "Fab light chain"
+        },
+        {
+          "entity": "9JY3_6",
+          "description": "T cell receptor gamma constant 1"
+        },
+        {
+          "entity": "9JY3_5",
+          "description": "T cell receptor delta constant"
+        },
+        {
+          "entity": "9JY3_4",
+          "description": "T-cell surface glycoprotein CD3 gamma chain"
+        },
+        {
+          "entity": "9JY3_3",
+          "description": "T-cell surface glycoprotein CD3 epsilon chain"
+        },
+        {
+          "entity": "9JY3_2",
+          "description": "T-cell surface glycoprotein CD3 delta chain"
+        },
+        {
+          "entity": "9JY3_1",
+          "description": "T-cell surface glycoprotein CD3 zeta chain"
+        }
+      ],
+      "reason": "gamma/delta-CD3-Fab complex; outside alpha/beta class-I scope",
+      "admitted": false
+    },
+    {
+      "pdb": "9zzv",
+      "title": "Human T-cell receptor (TCR) with computationally designed orthogonal interface",
+      "primary_citation": {
+        "title": "Computational design of orthogonal TCR alpha beta interfaces for dual TCR therapeutics",
+        "year": null,
+        "pdbx_database_id_DOI": null,
+        "pdbx_database_id_PubMed": null,
+        "rcsb_authors": [
+          "Kinjo, T.",
+          "Yu, S.",
+          "Nicely, N.I.",
+          "Leaver-Fay, A.",
+          "Kim, W.Y.",
+          "Kuhlman, B."
+        ]
+      },
+      "entities": [
+        {
+          "entity": "9ZZV_2",
+          "description": "Orthogonal T-cell receptor beta constant domain (combiC26b)"
+        },
+        {
+          "entity": "9ZZV_1",
+          "description": "Orthogonal T-cell receptor alpha constant domain (combiC26a)"
+        }
+      ],
+      "reason": "engineered orthogonal alpha/beta constant domains only; no variable domains",
+      "admitted": false
+    }
+  ],
+  "n_complete_paired_targets": 44,
+  "n_complete_chain_queries": 87,
+  "n_complete_queries_successful": 87,
+  "n_complete_search_pdbs": 77,
+  "n_full_cross_study_discovery_leads": 11,
+  "n_new_qualified_cross_study_pairs": 0,
+  "natural_source": {
+    "primary_preprint_doi": "10.1101/2025.11.05.686789",
+    "publication_doi": "10.1016/j.celrep.2026.117908",
+    "source_status": "preprint version 1; not the final Cell Reports text",
+    "workbook_sha256": "c1fc151cdbcc0c48363dd2f66fb6fc12e1096e8a622a7332aa43f865b347679f",
+    "evidence": "distinct naturally observed paired clonotypes in a pooled mouse repertoire; not independent donor assignments or independent studies",
+    "same_V_label_quartet": [
+      "NP202",
+      "NP101",
+      "NP207",
+      "NP203"
+    ],
+    "V_label_caveat": "primary TRAV16 label and TCR3d TRAV16D/DV11 nomenclature are not normalized into an allele identity without numbered/germline evidence",
+    "rows": [
+      {
+        "name": "NP202",
+        "pdb": "9nu7",
+        "primary_TRAV_TRAJ": "TRAV16/TRAJ53",
+        "primary_TRBV_TRBJ": "TRBV5/TRBJ2-7",
+        "constant_domain": "Mouse",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP202a Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTP"
+            },
+            "entity": "9NU7_1",
+            "author_chains": [
+              "A",
+              "S"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAMREGKGGGSNYKLTF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV16*01",
+              "TRAV16*02",
+              "TRAV16*03",
+              "TRAV16*04",
+              "TRAV16*06",
+              "TRAV16D/DV11*01",
+              "TRAV16D/DV11*02",
+              "TRAV16D/DV11*03",
+              "TRAV16N*01"
+            ],
+            "functional_mouse_J_suffix_matches": [
+              "TRAJ53*01"
+            ]
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP202b Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQELGGRYEQYFGPGTRLTVL"
+            },
+            "entity": "9NU7_2",
+            "author_chains": [
+              "B",
+              "T"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CASSQELGGRYEQYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV5*01",
+              "TRBV5*02",
+              "TRBV5*03",
+              "TRBV5*04",
+              "TRBV5*05"
+            ],
+            "functional_mouse_J_suffix_matches": [
+              "TRBJ2-1*01",
+              "TRBJ2-7*01",
+              "TRBJ2-7*02"
+            ]
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      },
+      {
+        "name": "NP101",
+        "pdb": "9nv6",
+        "primary_TRAV_TRAJ": "TRAV16/TRAJ53",
+        "primary_TRBV_TRBJ": "TRBV5/TRBJ2-7",
+        "constant_domain": "Human",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP101a Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN"
+            },
+            "entity": "9NV6_1",
+            "author_chains": [
+              "A"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAMREGKGGGSNYKLTF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV16*01",
+              "TRAV16*02",
+              "TRAV16*03",
+              "TRAV16*04",
+              "TRAV16*06",
+              "TRAV16D/DV11*01",
+              "TRAV16D/DV11*02",
+              "TRAV16D/DV11*03",
+              "TRAV16N*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP101b Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGRYEQYFGPGTRLTVL"
+            },
+            "entity": "9NV6_2",
+            "author_chains": [
+              "B"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CASSQDLGGRYEQYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV5*01",
+              "TRBV5*02",
+              "TRBV5*03",
+              "TRBV5*04",
+              "TRBV5*05"
+            ],
+            "functional_mouse_J_suffix_matches": [
+              "TRBJ2-1*01",
+              "TRBJ2-7*01",
+              "TRBJ2-7*02"
+            ]
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      },
+      {
+        "name": "NP207",
+        "pdb": "9nv2",
+        "primary_TRAV_TRAJ": "TRAV16/TRAJ53",
+        "primary_TRBV_TRBJ": "TRBV5/TRBJ2-7",
+        "constant_domain": "Mouse and Human",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP207a Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPN"
+            },
+            "entity": "9NV2_1",
+            "author_chains": [
+              "A"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAMREGKGGGSNYKLTF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV16*01",
+              "TRAV16*02",
+              "TRAV16*03",
+              "TRAV16*04",
+              "TRAV16*06",
+              "TRAV16D/DV11*01",
+              "TRAV16D/DV11*02",
+              "TRAV16D/DV11*03",
+              "TRAV16N*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP207b Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGVYEQYFGPGTRLTVL"
+            },
+            "entity": "9NV2_2",
+            "author_chains": [
+              "B"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CASSQDLGGVYEQYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV5*01",
+              "TRBV5*02",
+              "TRBV5*03",
+              "TRBV5*04",
+              "TRBV5*05"
+            ],
+            "functional_mouse_J_suffix_matches": [
+              "TRBJ2-1*01",
+              "TRBJ2-7*01",
+              "TRBJ2-7*02"
+            ]
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      },
+      {
+        "name": "NP203",
+        "pdb": "9nve",
+        "primary_TRAV_TRAJ": "TRAV16/TRAJ53",
+        "primary_TRBV_TRBJ": "TRBV5/TRBJ2-7",
+        "constant_domain": "Human",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP203a Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGRGGGSNYKLTFGKGTLLTVTPN"
+            },
+            "entity": "9NVE_1",
+            "author_chains": [
+              "A"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAMREGRGGGSNYKLTF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV16*01",
+              "TRAV16*02",
+              "TRAV16*03",
+              "TRAV16*04",
+              "TRAV16*06",
+              "TRAV16D/DV11*01",
+              "TRAV16D/DV11*02",
+              "TRAV16D/DV11*03",
+              "TRAV16N*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP203b Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGLYEQYFGPGTRLTVL"
+            },
+            "entity": "9NVE_2",
+            "author_chains": [
+              "B"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CASSQDLGGLYEQYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV5*01",
+              "TRBV5*02",
+              "TRBV5*03",
+              "TRBV5*04",
+              "TRBV5*05"
+            ],
+            "functional_mouse_J_suffix_matches": [
+              "TRBJ2-1*01",
+              "TRBJ2-7*01",
+              "TRBJ2-7*02"
+            ]
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      },
+      {
+        "name": "NP204",
+        "pdb": "9nw2",
+        "primary_TRAV_TRAJ": "TRAV7-4/TRAJ56",
+        "primary_TRBV_TRBJ": "TRBV1/TRBJ1-6",
+        "constant_domain": "Mouse",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP204a Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "QQKVQQSPESLSVPEGGMASLNCTSSDRNFQYFWWYRQHSGEGPKALMSIFSDGDKKEGRFTAHLNKASLHVSLHIRDSQPSDSALYFCAAILATGGNNKLTFGQGTVLSVIPD"
+            },
+            "entity": "9NW2_1",
+            "author_chains": [
+              "A",
+              "F"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAAILATGGNNKLTF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV7-1*01",
+              "TRAV7-1*02",
+              "TRAV7-2*01",
+              "TRAV7-2*02",
+              "TRAV7-3*04",
+              "TRAV7-4*01",
+              "TRAV7-4*02",
+              "TRAV7-5*01",
+              "TRAV7-5*03",
+              "TRAV7D-2*01",
+              "TRAV7D-2*02",
+              "TRAV7D-3*01",
+              "TRAV7D-3*03",
+              "TRAV7D-4*01",
+              "TRAV7D-4*02",
+              "TRAV7D-4*03",
+              "TRAV7D-5*01",
+              "TRAV7D-5*02",
+              "TRAV7N-4*01",
+              "TRAV7N-5*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP204b Mouse Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRRNSYNSPLYFAAGTRLTVT"
+            },
+            "entity": "9NW2_2",
+            "author_chains": [
+              "B",
+              "G"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CTCSADRRNSYNSPLYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV1*01",
+              "TRBV1*02"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      },
+      {
+        "name": "NP105",
+        "pdb": "9nva",
+        "primary_TRAV_TRAJ": "TRAV7D-3/TRAJ23",
+        "primary_TRBV_TRBJ": "TRBV2/TRBJ1-6",
+        "constant_domain": "Human",
+        "chain_checks": {
+          "alpha": {
+            "primary_cell": {
+              "sheet": "NP105a Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKPN"
+            },
+            "entity": "9NVA_1",
+            "author_chains": [
+              "A"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CAVMNYNQGKLIF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRAV7-1*01",
+              "TRAV7-1*02",
+              "TRAV7-2*01",
+              "TRAV7-2*02",
+              "TRAV7-3*04",
+              "TRAV7-4*01",
+              "TRAV7-4*02",
+              "TRAV7-5*01",
+              "TRAV7-5*03",
+              "TRAV7D-2*01",
+              "TRAV7D-2*02",
+              "TRAV7D-3*01",
+              "TRAV7D-3*03",
+              "TRAV7D-4*01",
+              "TRAV7D-4*02",
+              "TRAV7D-4*03",
+              "TRAV7D-5*01",
+              "TRAV7D-5*02",
+              "TRAV7N-4*01",
+              "TRAV7N-5*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          },
+          "beta": {
+            "primary_cell": {
+              "sheet": "NP105b Chimera Protein Sequence",
+              "cell": "A5",
+              "primary_labeled_variable": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT"
+            },
+            "entity": "9NVA_2",
+            "author_chains": [
+              "B"
+            ],
+            "exact_primary_variable_in_deposition": true,
+            "CDR3": "CASSQDRRSSYNSPLYF",
+            "CDR3_unique": true,
+            "functional_mouse_V_prefix_matches": [
+              "TRBV2*01"
+            ],
+            "functional_mouse_J_suffix_matches": []
+          }
+        },
+        "external_numbered_pairs": [],
+        "numbered_domain_count": 0,
+        "fixed_identity_admitted": false,
+        "atomic_QC_run": false,
+        "reason": "primary sequence/role evidence restored, but no valid external numbered full-domain pairing; fixed identity gate remains unresolved"
+      }
+    ]
+  },
+  "n_natural_discovery_queries": 11,
+  "n_natural_successful_queries": 11,
+  "natural_search_pdbs": [
+    "9ntl",
+    "9nu7",
+    "9nua",
+    "9nv2",
+    "9nv6",
+    "9nva",
+    "9nve",
+    "9nw2"
+  ],
+  "current_qualified_inventory": {
+    "identity_PDBs": 64,
+    "paired_variable_IDs": 44,
+    "QC_graphs": 43,
+    "QC_PDBs": 31,
+    "QC_IDs": 29,
+    "cross_study_positive_pairs": 0,
+    "independent_natural_control_groups": 0,
+    "source_balanced_blocks": 0
+  },
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "limits": "Finite description and exact-sequence discovery is not exhaustive public-database coverage. HTTP failures are unresolved access, never negative evidence. No atomic QC is claimed for identity-blocked candidates."
+}
