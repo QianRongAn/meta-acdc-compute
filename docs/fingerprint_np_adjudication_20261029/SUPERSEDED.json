@@ -1,0 +1,7 @@
+{
+  "superseded": [
+    "adjudication_final.json"
+  ],
+  "authoritative": "adjudication_source_tiers.json",
+  "reason": "The first diagnostic counted only pairs with both constant-gene calls. Final report separates that unchanged strict tier from TRAJ/TRAC plus paired TRB/TRBJ evidence for biological chain role. Missing beta constant calls remain missing; no admission gate changed."
+}

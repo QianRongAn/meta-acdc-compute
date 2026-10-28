@@ -48,3 +48,6 @@ docs/fingerprint_expanded_controls_20261029/**/sources/** -text -whitespace
 
 # Preserve NP source, numbering receipts and broad-search response bytes.
 docs/fingerprint_np_boundaries_20261029/**/sources/** -text -whitespace
+
+# Preserve GEO, IMGT and native coordinate payloads for NP adjudication.
+docs/fingerprint_np_adjudication_20261029/**/sources/** -text -whitespace

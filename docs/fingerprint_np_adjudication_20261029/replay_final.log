@@ -1,0 +1,75 @@
+SOURCE_SUPPORTED_ROLES 12 FR1_ADJUDICATED 4
+NP105 [('NP1', 0, 0), ('NP2', 0, 0), ('D4', 98, 92)]
+{
+  "n_graphs": 2,
+  "decisions": [
+    {
+      "pdb": "4jfe",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "4jfe",
+      "stage": null,
+      "status": "quarantined",
+      "reasons": [
+        "existing fixed atomic screen rejected unit"
+      ],
+      "n_units": null
+    },
+    {
+      "pdb": "4jfh",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 0
+    },
+    {
+      "pdb": "6eqb",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "6eqb",
+      "stage": null,
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "n_units": null
+    },
+    {
+      "pdb": "7n1f",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "7n1f",
+      "stage": null,
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "n_units": null
+    },
+    {
+      "pdb": "7rtr",
+      "stage": "unit_extraction",
+      "status": null,
+      "reasons": null,
+      "n_units": 1
+    },
+    {
+      "pdb": "7rtr",
+      "stage": null,
+      "status": "quarantined",
+      "reasons": [
+        "incomplete interface heavy atoms: [('E', 28, ['CD', 'CG', 'OE1', 'OE2'])]"
+      ],
+      "n_units": null
+    }
+  ]
+}
+[{'anchor': '7n1f', 'partner': '7rtr', 'both_ends_fixed_QC_pass': False}, {'anchor': '6eqb', 'partner': '4jfe', 'both_ends_fixed_QC_pass': False}, {'anchor': '6eqb', 'partner': '4jfh', 'both_ends_fixed_QC_pass': False}]

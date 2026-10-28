@@ -1,0 +1,201 @@
+{
+  "rows": [
+    {
+      "pdb": "4jfe",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "4jfe",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "quarantined",
+      "reasons": [
+        "existing fixed atomic screen rejected unit"
+      ],
+      "source_sha256": "5543ed92a55f61493bdcd499316535e1b955c09fdda54a9ef345c6860381201d",
+      "atomic_qc": {
+        "policy_id": "rigid-observed-peptide-transfer-v2",
+        "passed": false,
+        "gross_screen": {
+          "policy": "construction-screen-v1",
+          "severe_distance_A": 1.2,
+          "cross_chain_pairs_below_cutoff": 0,
+          "ca_cb_outliers": [],
+          "passed": true,
+          "validates_rotamers": false,
+          "validates_nonbinding": false
+        },
+        "vdw_overlap_pairs": 1,
+        "max_vdw_overlap_A": 0.8388458143821595,
+        "worst_pairs": [
+          {
+            "peptide": [
+              "C",
+              1,
+              "",
+              "N"
+            ],
+            "environment": [
+              "A",
+              7,
+              "",
+              "OH"
+            ],
+            "distance_A": 2.2311541856178407,
+            "overlap_A": 0.8388458143821595
+          }
+        ],
+        "peptide_CN_outliers": [],
+        "potential_hbond_contacts": 1,
+        "too_short_donor_acceptor_contacts": 1,
+        "heavy_atom_only": true,
+        "is_molprobity": false,
+        "validates_nonbinding": false
+      }
+    },
+    {
+      "pdb": "4jfh",
+      "stage": "unit_extraction",
+      "n_units": 0,
+      "excluded": [
+        {
+          "reason": "outside_complete_class_I_alpha_beta_scope",
+          "chain_kinds": {
+            "D": "tra",
+            "E": "trb"
+          }
+        }
+      ]
+    },
+    {
+      "pdb": "6eqb",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "6eqb",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "source_sha256": "b614ef536d0e51692fa7ba5b4ace33a9c034a7555f114d946036fcdee7f89bff",
+      "atomic_qc": {
+        "policy_id": "rigid-observed-peptide-transfer-v2",
+        "passed": true,
+        "gross_screen": {
+          "policy": "construction-screen-v1",
+          "severe_distance_A": 1.2,
+          "cross_chain_pairs_below_cutoff": 0,
+          "ca_cb_outliers": [],
+          "passed": true,
+          "validates_rotamers": false,
+          "validates_nonbinding": false
+        },
+        "vdw_overlap_pairs": 0,
+        "max_vdw_overlap_A": 0.473548960600259,
+        "worst_pairs": [],
+        "peptide_CN_outliers": [],
+        "potential_hbond_contacts": 4,
+        "too_short_donor_acceptor_contacts": 0,
+        "heavy_atom_only": true,
+        "is_molprobity": false,
+        "validates_nonbinding": false
+      },
+      "receptor_id": "f4d1d35975bd537a3593a3c6ef252a4e9540feb74e8ed5ae5101694019fcfdee",
+      "V_context": "human|TRAV12-2|TRBV30",
+      "source_study_key": "doi:10.1002/eji.201948085",
+      "n_nodes": 88,
+      "unit_metadata": {
+        "alpha_chain": "D",
+        "beta_chain": "E",
+        "peptide_chain": "C",
+        "mhc_chain": "A",
+        "b2m_chain": "B",
+        "alpha": "QKEVEQNSGPLSVPEGAIASLNCTYSFLGSQSFFWYRQYSGKSPELIMFTYREGDKEDGRFTAQLNKASQHVSLLIRDSQPSDSATYLCAVNDGGRLTFGDGTTLTVKPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTF",
+        "beta": "SQTIHQWPATLVQPVGSPLSLECTVEGTSNPNLYWYRQAAGRGPQLLFYWGPFGQISSEVPQNLSASRPQDRQFILSSKKLLLSDSGFYLCAWSETGLGMGGWQFGEGSRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+        "peptide": "AAGIGILTV",
+        "identity_basis": "PDB_COMPND+unique_contact_assignment",
+        "mhc_class": "I",
+        "pmhc_construct_key": "47135600080006e6e258a6e3d6106d7016395100c79686b642b35fbbf6ed324c"
+      },
+      "graph_sha256": "c66ccec77ae7a85c94f33a7d14f30e17955983ba4ee19192edd71fd2988ea339"
+    },
+    {
+      "pdb": "7n1f",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "7n1f",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "native_graph_QC_pass",
+      "reasons": [],
+      "source_sha256": "03b4b835001cd751e254e9d3366847b3da1819eaa6068fa3c38896d8713eac14",
+      "atomic_qc": {
+        "policy_id": "rigid-observed-peptide-transfer-v2",
+        "passed": true,
+        "gross_screen": {
+          "policy": "construction-screen-v1",
+          "severe_distance_A": 1.2,
+          "cross_chain_pairs_below_cutoff": 0,
+          "ca_cb_outliers": [],
+          "passed": true,
+          "validates_rotamers": false,
+          "validates_nonbinding": false
+        },
+        "vdw_overlap_pairs": 0,
+        "max_vdw_overlap_A": 0.619867554600364,
+        "worst_pairs": [],
+        "peptide_CN_outliers": [],
+        "potential_hbond_contacts": 4,
+        "too_short_donor_acceptor_contacts": 0,
+        "heavy_atom_only": true,
+        "is_molprobity": false,
+        "validates_nonbinding": false
+      },
+      "receptor_id": "2eb86384299ed888dda79f478f0958cdf46fa5ce9ace6a563a20f96fd0e17573",
+      "V_context": "human|TRAV12-2|TRBV7-9",
+      "source_study_key": "doi:10.1038/s41467-021-27669-8",
+      "n_nodes": 68,
+      "unit_metadata": {
+        "alpha_chain": "D",
+        "beta_chain": "E",
+        "peptide_chain": "C",
+        "mhc_chain": "A",
+        "b2m_chain": "B",
+        "alpha": "KEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMFIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVNRDDKIIFGKGTRLHILPNIQNPDPAVYQLRDSKSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+        "beta": "TGVSQNPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSPDIEQYFGPGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+        "peptide": "YLQPRTFLL",
+        "identity_basis": "PDB_COMPND+unique_contact_assignment",
+        "mhc_class": "I",
+        "pmhc_construct_key": "34647fd6f204f25c1012849e56a8061c01dbe98d5477c1b86fcd951afd17f868"
+      },
+      "graph_sha256": "1c9e6ad9a4bfcb56bb98f76b27bf4e49a451cbfd0f33da7c1e42b65b5371a6d3"
+    },
+    {
+      "pdb": "7rtr",
+      "stage": "unit_extraction",
+      "n_units": 1,
+      "excluded": []
+    },
+    {
+      "pdb": "7rtr",
+      "alpha_chain": "D",
+      "beta_chain": "E",
+      "status": "quarantined",
+      "reasons": [
+        "incomplete interface heavy atoms: [('E', 28, ['CD', 'CG', 'OE1', 'OE2'])]"
+      ],
+      "source_sha256": "0070d83d0f1884064ef13a0858f6b9d9d4d7b0dfd9e73baad33b77b8eaed60a4"
+    }
+  ],
+  "n_graphs": 2,
+  "n_pdbs_with_pass": 2,
+  "atomic_policy_sha256": "ad9849f80e6191046310d5fc6c920dd5e1d4290075e45cf2511d300d57972de1",
+  "model_training_started": false
+}

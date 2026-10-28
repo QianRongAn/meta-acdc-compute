@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "n_tests": 67,
+  "test_skips": 0,
+  "n_public_source_payloads_hash_checked": 30,
+  "n_NP105_strict_same_cell_pair_barcodes": 92,
+  "n_FR1_gap_conflicts_source_adjudicated": 4,
+  "n_current_coordinate_PDBs_replayed": 5,
+  "n_existing_graphs_array_exactly_replayed": 2,
+  "adjudication_and_QC_and_summary_byte_exact": true,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_extension_20261024",
+      "n_files": 1548,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_audit_integration_20261027",
+      "n_files": 53,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_positive_controls_20261027",
+      "n_files": 59,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_construct_followup_20261027",
+      "n_files": 109,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_native_search_20261029",
+      "n_files": 83,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_expanded_controls_20261029",
+      "n_files": 178,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_np_boundaries_20261029",
+      "n_files": 482,
+      "unchanged": true
+    }
+  ],
+  "n_frozen_files": 4474,
+  "role_boundary_atomic_gate_code_unchanged": true,
+  "n_new_complete_identity_admissions": 0,
+  "n_new_cross_study_qualified_pairs": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}
