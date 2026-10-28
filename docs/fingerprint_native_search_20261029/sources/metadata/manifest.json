@@ -1,0 +1,52 @@
+[
+  {
+    "file": "batch00.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%222F53%22%2C%20%223SJV%22%2C%20%223SKN%22%2C%20%223VXM%22%2C%20%223VXQ%22%2C%20%223VXR%22%2C%20%223VXS%22%2C%20%224JFE%22%2C%20%224JFH%22%2C%20%225D2L%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "requested_at": "2026-10-28T16:40:15.099486+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%222F53%22%2C%20%223SJV%22%2C%20%223SKN%22%2C%20%223VXM%22%2C%20%223VXQ%22%2C%20%223VXR%22%2C%20%223VXS%22%2C%20%224JFE%22%2C%20%224JFH%22%2C%20%225D2L%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "content_type": "application/json",
+    "bytes": 21904,
+    "sha256": "ac341fe36efec0e52fcfa28d413f7b544bea6056c36bcb70445cdbcd9b32b6e0"
+  },
+  {
+    "file": "batch01.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%225D2N%22%2C%20%225E9D%22%2C%20%225EU6%22%2C%20%225JZI%22%2C%20%225SWS%22%2C%20%225W1V%22%2C%20%225W1W%22%2C%20%225YXN%22%2C%20%225YXU%22%2C%20%226AT6%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "requested_at": "2026-10-28T16:40:15.098409+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%225D2N%22%2C%20%225E9D%22%2C%20%225EU6%22%2C%20%225JZI%22%2C%20%225SWS%22%2C%20%225W1V%22%2C%20%225W1W%22%2C%20%225YXN%22%2C%20%225YXU%22%2C%20%226AT6%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "content_type": "application/json",
+    "bytes": 23137,
+    "sha256": "9f216155aa03b3d4ac8439988be81d0ddd5328b53058bc2f4966f08dea1e2e0a"
+  },
+  {
+    "file": "batch02.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%226AVF%22%2C%20%226AVG%22%2C%20%226EQB%22%2C%20%226RP9%22%2C%20%226RPB%22%2C%20%226VRM%22%2C%20%226VTH%22%2C%20%227DZM%22%2C%20%227DZN%22%2C%20%227JWJ%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "requested_at": "2026-10-28T16:40:15.099195+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%226AVF%22%2C%20%226AVG%22%2C%20%226EQB%22%2C%20%226RP9%22%2C%20%226RPB%22%2C%20%226VRM%22%2C%20%226VTH%22%2C%20%227DZM%22%2C%20%227DZN%22%2C%20%227JWJ%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "content_type": "application/json",
+    "bytes": 23975,
+    "sha256": "ebe08659b9e20d5fcf64e72f88fa596c412f182f7a377566f093dad6d9d99d1a"
+  },
+  {
+    "file": "batch03.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%227N1D%22%2C%20%227N1F%22%2C%20%227N2N%22%2C%20%227N2O%22%2C%20%227N2P%22%2C%20%227N2Q%22%2C%20%227N2R%22%2C%20%227N2S%22%2C%20%227N5C%22%2C%20%227N6E%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "requested_at": "2026-10-28T16:40:15.099410+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%227N1D%22%2C%20%227N1F%22%2C%20%227N2N%22%2C%20%227N2O%22%2C%20%227N2P%22%2C%20%227N2Q%22%2C%20%227N2R%22%2C%20%227N2S%22%2C%20%227N5C%22%2C%20%227N6E%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "content_type": "application/json",
+    "bytes": 23836,
+    "sha256": "bb8d3c07119034553913ca96173261055cdb3ddf986555fc0550699fb9a274bc"
+  },
+  {
+    "file": "batch04.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%227NA5%22%2C%20%227OW5%22%2C%20%227OW6%22%2C%20%227PB2%22%2C%20%227RK7%22%2C%20%227RM4%22%2C%20%227RTR%22%2C%20%228CX4%22%2C%20%228I5C%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "requested_at": "2026-10-28T16:40:16.355319+00:00",
+    "status": 200,
+    "final_url": "https://data.rcsb.org/graphql?query=%7B%20entries%28entry_ids%3A%5B%227NA5%22%2C%20%227OW5%22%2C%20%227OW6%22%2C%20%227PB2%22%2C%20%227RK7%22%2C%20%227RM4%22%2C%20%227RTR%22%2C%20%228CX4%22%2C%20%228I5C%22%5D%29%20%7B%20rcsb_id%20struct%20%7B%20title%20%7D%20rcsb_primary_citation%20%7B%20title%20year%20pdbx_database_id_DOI%20pdbx_database_id_PubMed%20rcsb_authors%20%7D%20polymer_entities%20%7B%20rcsb_id%20entity_poly%20%7B%20pdbx_seq_one_letter_code_can%20%7D%20rcsb_polymer_entity_container_identifiers%20%7B%20auth_asym_ids%20%7D%20rcsb_polymer_entity%20%7B%20pdbx_description%20%7D%20%7D%20%7D%20%7D",
+    "content_type": "application/json",
+    "bytes": 22560,
+    "sha256": "4fd18281e6fb56ed35c38f584896be1f381ece90d1d16de5dac7abe9ad42b8d7"
+  }
+]

@@ -1,3 +1,5 @@
+> **2026-10-29 完整双链与天然对照续查：** 33个目标、66条链查询全部成功，刷新49个PDB的完整构建体与论文来源。没有新增合格对照；7RTR、4JFE、4JFH仍受原固定QC阻断，AS系列端部/原子缺口未解决。当前固定QC仍43图／31 PDB／29 ID；合格跨研究正对照、独立天然受体对照组、来源平衡块均为0。**不降低标准、不冻结协议、不训练，独立验收集未访问。** 47项测试通过，八份既有冻结交付3731文件未变。[查询、逐项排除原因与复验](docs/fingerprint_native_search_20261029/README.md)。
+
 > **2026-10-27 原文构建体与天然对照核验：** 6AT6已确认为未结合pMHC的KFJ5（Aα/Bβ）；7N5C为6218αC、7N5P为其亲本（均Dα/Eβ），不能算独立天然受体。另从原文补到患者P的AS3.1与患者K的AS8.4同来源、同TRAV21/TRBV9天然配对依据；但7N2S存在沉积端部缺口，8CX4触发固定原子筛查，尚无合格结构对。
 > 当前身份层64 PDB／44配对变量序列ID，固定原子QC通过43图／31 PDB／29 ID；跨研究合格同完整αβ正对照、独立天然受体合格对照组和来源平衡块仍均为0。**不冻结协议、不训练，独立验收集未访问。** 40项测试通过，七份既有冻结交付3622文件哈希未变。
 > [本轮原文证据、逐项原因与复现](docs/fingerprint_construct_followup_20261027/README.md) · [最终角色裁定](docs/fingerprint_construct_followup_20261027/construct_adjudication_final.json) · [最终原子QC](docs/fingerprint_construct_followup_20261027/native_qc_final/native_atomic_qc.json) · [联合准入](docs/fingerprint_construct_followup_20261027/joint_readiness_final.json) · [验证](docs/fingerprint_construct_followup_20261027/verification_final.json)。下方较早批次计数为各自历史快照，不代表当前准入量。
