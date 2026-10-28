@@ -1,0 +1,298 @@
+{
+  "n_targets": 282,
+  "n_previously_complete_identity_targets": 44,
+  "n_discovery_only_targets": 238,
+  "n_chain_queries": 385,
+  "n_successful_queries": 385,
+  "n_fresh_metadata_PDBs": 377,
+  "PDBs_outside_old_799_archive": [],
+  "n_discovery_only_cross_study_leads": 197,
+  "n_discovery_only_variable_pair_hypotheses": 27,
+  "n_anchor_PDB_clusters": 11,
+  "discovery_only_clusters": [
+    {
+      "anchor": "1kb5",
+      "n_discovery_variable_pair_hypotheses": 2,
+      "target_ids": [
+        "54b8d3515397445ffebb4051dd3354cc29df4a190f9fb6a2874c5f83bf53948f",
+        "8d5f9298097f7b0b5552de4633b6a3ebf8f10b36475f43a6387d8032ad38e8cc"
+      ],
+      "partner_pdbs": [
+        "1kj2"
+      ],
+      "n_target_partner_leads": 2,
+      "scope_or_unresolved_identity_reason": "existing alpha N-terminus quarantine and single-chain fusion context; no paired-chain admission",
+      "existing_annotation_quarantine_reasons": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "2ckb",
+      "n_discovery_variable_pair_hypotheses": 6,
+      "target_ids": [
+        "1c3acbc86bfafd729547b9049975a565a62e62b7581f73c3cb6d7984e7519162",
+        "364b7faa0e6dddf4bedd237508912ecd132a2886602278c0630a7da28dfb9768",
+        "373619c747320297df7da4dcab8a029aa2d77397fbdd8149f66f5c4cd8657110",
+        "64e7146fb88f6e0b152e805b798ddddd7811cb4dcb2dffa4016cd810641e2d14",
+        "6535720d46b42ac6de7fb81e2b390f49c5b16ddc9360198bd3ceab9c3b65284e",
+        "92bf5f6f9adf2d92b5c39327699ec9cbb1dd1c1290c5f1a2283bedd2ac5d7a36"
+      ],
+      "partner_pdbs": [
+        "1g6r",
+        "1mwa",
+        "1tcr"
+      ],
+      "n_target_partner_leads": 18,
+      "scope_or_unresolved_identity_reason": "existing full numbered alpha N-terminus quarantine; endpoint-only substring variants cannot repair it",
+      "existing_annotation_quarantine_reasons": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "2uwe",
+      "n_discovery_variable_pair_hypotheses": 4,
+      "target_ids": [
+        "60738a3524b0347fcc680b841ec53e7a94fb222e18932f98a1642212f0b373f5",
+        "6d38df73bd75b481bab6f2f0ae08d309b827cf2afcbe1d45063a34b5405156cf",
+        "708ceb91bdb7172c67b98765f7c5575726d45b85c1ebfa4e1436802c2ea33d7e",
+        "c70df5b2610e5224758c0ae5ca5c5f3be79e93003194e66ab19277dfb2381f8a"
+      ],
+      "partner_pdbs": [
+        "1lp9"
+      ],
+      "n_target_partner_leads": 4,
+      "scope_or_unresolved_identity_reason": "existing full numbered alpha N-terminus quarantine; endpoint-only substring variants cannot repair it",
+      "existing_annotation_quarantine_reasons": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "3huj",
+      "n_discovery_variable_pair_hypotheses": 1,
+      "target_ids": [
+        "0aca20ebb351f30fc98543fd365cd33b8e1ebe271824fc374612c8ce116c2ea9"
+      ],
+      "partner_pdbs": [
+        "3vwj",
+        "3vwk"
+      ],
+      "n_target_partner_leads": 2,
+      "scope_or_unresolved_identity_reason": "CD1d/NKT complex; outside complete classical class-I peptide scope",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "3tfk",
+      "n_discovery_variable_pair_hypotheses": 5,
+      "target_ids": [
+        "14e6e2c4448b0eced746b92d15ac25dac3e2555c82f7157551fe8843283e5245",
+        "69758787174f358f2a5152763fe8fa2ce648efa6e40fc4b8ef654b24207264c7",
+        "89d58888514ee2f9eec0eee9b9954cabfc60e56a94866e9b6eb0805db50fb301",
+        "9164cc30f579bdaf7ab874e126e9a1a87307585ea0344bc48cef46fd4b00b89b",
+        "ca48f716f7a6bccf90b94e907989df1723f611eb979e00b61b606d43a381aec5"
+      ],
+      "partner_pdbs": [
+        "4ms8",
+        "4mvb",
+        "4mxq",
+        "4n0c",
+        "4n5e"
+      ],
+      "n_target_partner_leads": 25,
+      "scope_or_unresolved_identity_reason": "42F3 compact MHC without beta2m; outside complete class-I scope",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "5fka",
+      "n_discovery_variable_pair_hypotheses": 2,
+      "target_ids": [
+        "5da7af1f3c54442897c9df985e7996707d9afd94e27275caa512f338988bf4b6",
+        "7c362611ca6f1b3e43d7d2f5e1f4d2c45c4f0943eb55fc3e4dbd11d6a013fc57"
+      ],
+      "partner_pdbs": [
+        "4udt",
+        "4udu"
+      ],
+      "n_target_partner_leads": 4,
+      "scope_or_unresolved_identity_reason": "existing alpha complete J/FR4 terminal quarantine; endpoint-only alternative boundary is not verified numbering",
+      "existing_annotation_quarantine_reasons": [
+        "alpha: complete J/FR4 C terminus unverified"
+      ],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "5l2k",
+      "n_discovery_variable_pair_hypotheses": 1,
+      "target_ids": [
+        "761b1849abf47ae16509e1379fe04382c1c6ff97fc2ad47fd54caba44fcc8807"
+      ],
+      "partner_pdbs": [
+        "4g8f"
+      ],
+      "n_target_partner_leads": 1,
+      "scope_or_unresolved_identity_reason": "GEM42 CD1b/apo context; outside complete classical class-I peptide scope",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "5vcj",
+      "n_discovery_variable_pair_hypotheses": 3,
+      "target_ids": [
+        "9c365da4927ac9346f465ae11953c9171bb23322960bd83d054ef44340110983",
+        "d873aaeadadafdbc9d38d29ef7d7e180427994a8e1383d38ffbe46e46516f8c5",
+        "f63b3636eaec31d2eec42d00abd40ea4dd2d419e28a0202520473a4918526460"
+      ],
+      "partner_pdbs": [
+        "3o8x",
+        "3o9w",
+        "3qux",
+        "3quy",
+        "3quz",
+        "3rtq",
+        "3rzc",
+        "3ta3",
+        "3tvm",
+        "4irj",
+        "4irs",
+        "4y16",
+        "4zak",
+        "6cw6",
+        "6cwb",
+        "6cx5",
+        "6cx7",
+        "6cx9",
+        "6cxa",
+        "6cxe",
+        "6cxf",
+        "6miv",
+        "6miy",
+        "6mj4",
+        "6mj6",
+        "6mja",
+        "6mji",
+        "6mjj",
+        "6mjq"
+      ],
+      "n_target_partner_leads": 87,
+      "scope_or_unresolved_identity_reason": "CD1d/iNKT context; outside complete classical class-I peptide scope",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "6pvc",
+      "n_discovery_variable_pair_hypotheses": 1,
+      "target_ids": [
+        "16ff928cf1c87a6ef3566c5c55809f9d018878796189d7a0ef7c552f014d39b3"
+      ],
+      "partner_pdbs": [
+        "26sj",
+        "26sk",
+        "26sl",
+        "4iiq",
+        "4l4t",
+        "4l4v",
+        "4lcc",
+        "4lcw",
+        "4nqc",
+        "4nqd",
+        "4nqe",
+        "4pj5",
+        "5u16",
+        "5u17",
+        "5u1r",
+        "5u2v",
+        "5u6q",
+        "5u72",
+        "6puc",
+        "6pud",
+        "6pue",
+        "6puf",
+        "6pug",
+        "6puh",
+        "6pui",
+        "6puj",
+        "6puk",
+        "6pul",
+        "6pum",
+        "6w9u",
+        "6w9v",
+        "7ufj",
+        "8y6x",
+        "9btx",
+        "9bty",
+        "9btz",
+        "9bu0",
+        "9c42",
+        "9cgr",
+        "9cgs",
+        "9ek6",
+        "9ek7",
+        "9o05",
+        "9o06",
+        "9o07",
+        "9o08",
+        "9y0t",
+        "9y0u",
+        "9y0v",
+        "9y0w",
+        "9z4r"
+      ],
+      "n_target_partner_leads": 51,
+      "scope_or_unresolved_identity_reason": "MR1/MAIT ligand context; outside classical class-I peptide scope",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "7n1d",
+      "n_discovery_variable_pair_hypotheses": 1,
+      "target_ids": [
+        "36f9e04a05337e3a3e619b2fb867d301fcf1bbaf84c18a500cfdf1d19ec1d972"
+      ],
+      "partner_pdbs": [
+        "7rtr"
+      ],
+      "n_target_partner_leads": 1,
+      "scope_or_unresolved_identity_reason": "existing full numbered beta N-terminus quarantine; 7RTR also lacks interface heavy atoms",
+      "existing_annotation_quarantine_reasons": [
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    },
+    {
+      "anchor": "9bbc",
+      "n_discovery_variable_pair_hypotheses": 1,
+      "target_ids": [
+        "4843e478baa4ea21258268edcbd8a778fe60cadbcea84125f341844565d2d707"
+      ],
+      "partner_pdbs": [
+        "8tw4",
+        "8tw6"
+      ],
+      "n_target_partner_leads": 2,
+      "scope_or_unresolved_identity_reason": "TCR-CD3 detergent/nanodisc complexes without required pMHC; no qualifying paired class-I unit",
+      "existing_annotation_quarantine_reasons": [],
+      "admitted": false,
+      "atomic_QC_newly_run": false
+    }
+  ],
+  "n_previously_complete_cross_study_leads": 11,
+  "n_new_qualified_cross_study_pairs": 0,
+  "interpretation": "Hypotheses can differ only by candidate boundaries and can share an anchor. 197 leads/27 hypotheses/11 anchor PDB clusters are not independent receptors, accepted labels or positives.",
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

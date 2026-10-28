@@ -1,0 +1,258 @@
+{
+  "source_url": "https://ars.els-cdn.com/content/image/1-s2.0-S2211124726009861-mmc3.xlsx",
+  "workbook_sha256": "c3cdb29a150c23035e955c39247c04c360cbbb4fcb55ed5a43a85cbfe2b42c9f",
+  "sheet": "Data S2. Clonotype list",
+  "n_published_clonotypes": 242,
+  "rows": [
+    {
+      "name": "NP202",
+      "target": {
+        "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+        "CDR3_beta": "CASSQELGGRYEQYF",
+        "V_alpha": "TRAV16",
+        "J_alpha": "TRAJ53",
+        "V_beta": "TRBV5",
+        "J_beta": "TRBJ2-7"
+      },
+      "paired_CDR3_and_VJ_matches": [
+        {
+          "clonotype": "CT_20",
+          "source_row": 15,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQELGGRYEQYF"
+        }
+      ],
+      "rejected_beta_only_or_context_mismatch": [],
+      "n_matching_paired_rows": 1,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    },
+    {
+      "name": "NP101",
+      "target": {
+        "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+        "CDR3_beta": "CASSQDLGGRYEQYF",
+        "V_alpha": "TRAV16",
+        "J_alpha": "TRAJ53",
+        "V_beta": "TRBV5",
+        "J_beta": "TRBJ2-7"
+      },
+      "paired_CDR3_and_VJ_matches": [
+        {
+          "clonotype": "CT_5",
+          "source_row": 6,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGRYEQYF"
+        },
+        {
+          "clonotype": "CT_56",
+          "source_row": 35,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGRYEQYF"
+        }
+      ],
+      "rejected_beta_only_or_context_mismatch": [
+        {
+          "clonotype": "CT_30",
+          "source_row": 22,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGRGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGRYEQYF"
+        },
+        {
+          "clonotype": "CT_46",
+          "source_row": 28,
+          "V_alpha": "TRAV12D-1",
+          "J_alpha": "TRAJ45",
+          "CDR3_alpha": "CALSERTEGADRLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGRYEQYF"
+        }
+      ],
+      "n_matching_paired_rows": 2,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    },
+    {
+      "name": "NP207",
+      "target": {
+        "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+        "CDR3_beta": "CASSQDLGGVYEQYF",
+        "V_alpha": "TRAV16",
+        "J_alpha": "TRAJ53",
+        "V_beta": "TRBV5",
+        "J_beta": "TRBJ2-7"
+      },
+      "paired_CDR3_and_VJ_matches": [
+        {
+          "clonotype": "CT_7",
+          "source_row": 8,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGVYEQYF"
+        }
+      ],
+      "rejected_beta_only_or_context_mismatch": [],
+      "n_matching_paired_rows": 1,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    },
+    {
+      "name": "NP203",
+      "target": {
+        "CDR3_alpha": "CAMREGRGGGSNYKLTF",
+        "CDR3_beta": "CASSQDLGGLYEQYF",
+        "V_alpha": "TRAV16",
+        "J_alpha": "TRAJ53",
+        "V_beta": "TRBV5",
+        "J_beta": "TRBJ2-7"
+      },
+      "paired_CDR3_and_VJ_matches": [
+        {
+          "clonotype": "CT_11",
+          "source_row": 11,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGRGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGLYEQYF"
+        },
+        {
+          "clonotype": "CT_28",
+          "source_row": 20,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGRGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGLYEQYF"
+        },
+        {
+          "clonotype": "CT_127",
+          "source_row": 65,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGRGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGLYEQYF"
+        }
+      ],
+      "rejected_beta_only_or_context_mismatch": [
+        {
+          "clonotype": "CT_343",
+          "source_row": 186,
+          "V_alpha": "TRAV16",
+          "J_alpha": "TRAJ53",
+          "CDR3_alpha": "CAMREGKGGGSNYKLTF",
+          "V_beta": "TRBV5",
+          "J_beta": "TRBJ2-7",
+          "CDR3_beta": "CASSQDLGGLYEQYF"
+        }
+      ],
+      "n_matching_paired_rows": 3,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    },
+    {
+      "name": "NP204",
+      "target": {
+        "CDR3_alpha": "CAAILATGGNNKLTF",
+        "CDR3_beta": "CTCSADRRNSYNSPLYF",
+        "V_alpha": "TRAV7-4",
+        "J_alpha": "TRAJ56",
+        "V_beta": "TRBV1",
+        "J_beta": "TRBJ1-6"
+      },
+      "paired_CDR3_and_VJ_matches": [
+        {
+          "clonotype": "CT_12",
+          "source_row": 12,
+          "V_alpha": "TRAV7-4",
+          "J_alpha": "TRAJ56",
+          "CDR3_alpha": "CAAILATGGNNKLTF",
+          "V_beta": "TRBV1",
+          "J_beta": "TRBJ1-6",
+          "CDR3_beta": "CTCSADRRNSYNSPLYF"
+        }
+      ],
+      "rejected_beta_only_or_context_mismatch": [
+        {
+          "clonotype": "CT_173",
+          "source_row": 96,
+          "V_alpha": "TRAV7-4",
+          "J_alpha": "TRAJ56",
+          "CDR3_alpha": "CAASPATGGNNKLTF",
+          "V_beta": "TRBV1",
+          "J_beta": "TRBJ1-6",
+          "CDR3_beta": "CTCSADRRNSYNSPLYF"
+        },
+        {
+          "clonotype": "CT_417",
+          "source_row": 240,
+          "V_alpha": "TRAV7-6",
+          "J_alpha": "TRAJ56",
+          "CDR3_alpha": "CAVSMSPTGGNNKLTF",
+          "V_beta": "TRBV1",
+          "J_beta": "TRBJ1-6",
+          "CDR3_beta": "CTCSADRRNSYNSPLYF"
+        }
+      ],
+      "n_matching_paired_rows": 1,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    },
+    {
+      "name": "NP105",
+      "target": {
+        "CDR3_alpha": "CAVMNYNQGKLIF",
+        "CDR3_beta": "CASSQDRRSSYNSPLYF",
+        "V_alpha": "TRAV7D-3",
+        "J_alpha": "TRAJ23",
+        "V_beta": "TRBV2",
+        "J_beta": "TRBJ1-6"
+      },
+      "paired_CDR3_and_VJ_matches": [],
+      "rejected_beta_only_or_context_mismatch": [
+        {
+          "clonotype": "CT_119",
+          "source_row": 62,
+          "V_alpha": "TRAV7N-4",
+          "J_alpha": "TRAJ22",
+          "CDR3_alpha": "CAVRVASSGSWQLIF",
+          "V_beta": "TRBV2",
+          "J_beta": "TRBJ1-6",
+          "CDR3_beta": "CASSQDRRSSYNSPLYF"
+        },
+        {
+          "clonotype": "CT_353",
+          "source_row": 194,
+          "V_alpha": "TRAV7-3",
+          "J_alpha": "TRAJ32",
+          "CDR3_alpha": "CAENYGSSGNKLIF",
+          "V_beta": "TRBV2",
+          "J_beta": "TRBJ1-6",
+          "CDR3_beta": "CASSQDRRSSYNSPLYF"
+        }
+      ],
+      "n_matching_paired_rows": 0,
+      "interpretation": "Paired CDR3/VJ supports primary lineage provenance only; multiple nucleotide clonotypes do not increase amino-acid receptor count; no independent donor identity inferred."
+    }
+  ],
+  "independent_acceptance_accessed": false
+}

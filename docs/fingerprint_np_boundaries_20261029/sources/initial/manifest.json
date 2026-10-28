@@ -1,0 +1,72 @@
+[
+  {
+    "file": "final_pubmed.html",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42709546/",
+    "requested_at": "2026-10-28T18:16:07.252019+00:00",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/42709546/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 162854,
+    "sha256": "443e79c6bf4be80c8d9e49102b16115b6c5703f27035f9d912818c5f9f52a2b2"
+  },
+  {
+    "file": "final_idconv.json",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=42709546&format=json",
+    "requested_at": "2026-10-28T18:16:07.252748+00:00",
+    "status": 200,
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/tools/idconv/api/v1/articles/?ids=42709546&format=json",
+    "content_type": "application/json",
+    "bytes": 374,
+    "sha256": "e79bb68de9de22ca23f2ebe5ee2075f6875d284804aaee821c12390e8cc784e9"
+  },
+  {
+    "file": "final_europepmc.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A42709546&format=json&resultType=core",
+    "requested_at": "2026-10-28T18:16:07.253101+00:00",
+    "status": 503,
+    "final_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A42709546&format=json&resultType=core",
+    "content_type": "application/json",
+    "bytes": 89,
+    "sha256": "833ed50ae1b83e54eaef2c87d84dbf84bcc1242cdb1c14d995405fb1f0924030"
+  },
+  {
+    "file": "publisher.html",
+    "url": "https://www.cell.com/cell-reports/fulltext/S2211-1247(26)00986-1",
+    "requested_at": "2026-10-28T18:16:07.253766+00:00",
+    "status": 403,
+    "final_url": "https://www.cell.com/cell-reports/fulltext/S2211-1247(26)00986-1",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 5606,
+    "sha256": "b9f9e23ad20f616f851f80483261d966da46a81f67b70a149b9b738bfd7ad201"
+  },
+  {
+    "file": "publisher_xml.xml",
+    "url": "https://api.elsevier.com/content/article/pii/S2211124726009861?httpAccept=text/xml",
+    "requested_at": "2026-10-28T18:16:08.987269+00:00",
+    "status": 200,
+    "final_url": "https://api.elsevier.com/content/article/pii/S2211124726009861?httpAccept=text/xml",
+    "content_type": "text/xml;charset=UTF-8",
+    "bytes": 1961,
+    "sha256": "33eb5f7b6abbc99999144210ae7a088dcbd439e4d06ddd5604d6a60c42299465"
+  },
+  {
+    "file": "anarcii_pypi.json",
+    "url": "https://pypi.org/pypi/anarcii/json",
+    "requested_at": "2026-10-28T18:16:09.204018+00:00",
+    "status": 200,
+    "final_url": "https://pypi.org/pypi/anarcii/json",
+    "content_type": "application/json",
+    "bytes": 18438,
+    "sha256": "d71b3417dde1c2fb38dbc8480298ad44c15c1d2d36a246c211c4464cb89fe8cf"
+  },
+  {
+    "file": "anarci_pypi.json",
+    "url": "https://pypi.org/pypi/anarci/json",
+    "requested_at": "2026-10-28T18:16:09.840731+00:00",
+    "status": 200,
+    "final_url": "https://pypi.org/pypi/anarci/json",
+    "content_type": "application/json",
+    "bytes": 20135,
+    "sha256": "950127fec7114796ce9a076fad6f1ea83218293792cadc740b32a45a3abe9cfb"
+  }
+]

@@ -45,3 +45,6 @@ docs/fingerprint_native_search_20261029/sources/** -text -whitespace
 
 # Preserve expanded-search source response bytes.
 docs/fingerprint_expanded_controls_20261029/**/sources/** -text -whitespace
+
+# Preserve NP source, numbering receipts and broad-search response bytes.
+docs/fingerprint_np_boundaries_20261029/**/sources/** -text -whitespace

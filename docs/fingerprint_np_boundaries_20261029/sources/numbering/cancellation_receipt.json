@@ -1,0 +1,23 @@
+{
+  "cancelled": false,
+  "process_already_completed": true,
+  "authoritative_status": "manifest.json",
+  "note": "The duplicate wheel request completed with a read timeout before a stop was attempted; no cancellation or HTTP success is inferred.",
+  "actual_statuses": [
+    {
+      "file": "anarcii_whl.whl",
+      "status": "request_failed",
+      "error": "HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out."
+    },
+    {
+      "file": "tcr3d_alpha.html",
+      "status": 404,
+      "error": null
+    },
+    {
+      "file": "anarcii_usage.md",
+      "status": 200,
+      "error": null
+    }
+  ]
+}

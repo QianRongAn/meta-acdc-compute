@@ -83,3 +83,11 @@ docs/fingerprint_expanded_controls_20261029/sources/expanded/memory_supplement.z
 docs/fingerprint_expanded_controls_20261029/sources/expanded/media-5.xlsx
 docs/fingerprint_expanded_controls_20261029/sources/inventory/rcsb_text_0.json
 docs/fingerprint_expanded_controls_20261029/sources/inventory/rcsb_text_1.json
+
+# NP final-source audit: keep licensed full supplements and temporary tool originals local.
+docs/fingerprint_np_boundaries_20261029/sources/final/*.pdf
+docs/fingerprint_np_boundaries_20261029/sources/final/*.xlsx
+docs/fingerprint_np_boundaries_20261029/sources/tools/*.deb
+docs/fingerprint_np_boundaries_20261029/sources/numbering/*.whl
+docs/fingerprint_np_boundaries_20261029/sources/final/sciencedirect.html
+docs/fingerprint_np_boundaries_20261029/broad_search/primary_validation_final.json

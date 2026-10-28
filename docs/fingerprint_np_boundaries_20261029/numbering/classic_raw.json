@@ -1,0 +1,7942 @@
+{
+  "inputs": [
+    {
+      "name": "NP202_alpha",
+      "pdb": "9nu7",
+      "role": "alpha",
+      "entity": "9NU7_1",
+      "author_chains": [
+        "A",
+        "S"
+      ],
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPNIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNGAIAWSNQTSFTCQDIFKETNATYPSSDVPCSSADLEVLFQ",
+      "sequence_sha256": "4838ee4036bf582c8989087ad991cf2e512be087db118a9592f545c2cf8cf2b9"
+    },
+    {
+      "name": "NP202_beta",
+      "pdb": "9nu7",
+      "role": "beta",
+      "entity": "9NU7_2",
+      "author_chains": [
+        "B",
+        "T"
+      ],
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQELGGRYEQYFGPGTRLTVLEDLRNVTPPKVSLFEPSKAEIANKQKATLVCLARGFFPDHVELSWWVNGKEVHSGVSTDPQAYKESNYSYSLSSRLRVSATFWHNPRNHFRCQVQFHGLSEEDKWPEGSPKPVTQNISAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "11890aef08eceb6f7e2e79db2cf13a32fbc2f4a148a2037aa56afe2a7cf37d54"
+    },
+    {
+      "name": "NP101_alpha",
+      "pdb": "9nv6",
+      "role": "alpha",
+      "entity": "9NV6_1",
+      "author_chains": [
+        "A"
+      ],
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCSSADLEVLFQ",
+      "sequence_sha256": "95bcc43e638309dcccc394fff4545a2414ecec57ef7c450f30d69eea73c28324"
+    },
+    {
+      "name": "NP101_beta",
+      "pdb": "9nv6",
+      "role": "beta",
+      "entity": "9NV6_2",
+      "author_chains": [
+        "B"
+      ],
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGRYEQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "ae30336951f9a9d724b70144640b1bc661545b3b3ad1eb11a81f1ae25c746f5f"
+    },
+    {
+      "name": "NP207_alpha",
+      "pdb": "9nv2",
+      "role": "alpha",
+      "entity": "9NV2_1",
+      "author_chains": [
+        "A"
+      ],
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGKGGGSNYKLTFGKGTLLTVTPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCSSADLEVLFQ",
+      "sequence_sha256": "95bcc43e638309dcccc394fff4545a2414ecec57ef7c450f30d69eea73c28324"
+    },
+    {
+      "name": "NP207_beta",
+      "pdb": "9nv2",
+      "role": "beta",
+      "entity": "9NV2_2",
+      "author_chains": [
+        "B"
+      ],
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGVYEQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "b84568e652cc6fd03a8dc549f3e3c6773d07af713d9c72d96f414a090449d81a"
+    },
+    {
+      "name": "NP203_alpha",
+      "pdb": "9nve",
+      "role": "alpha",
+      "entity": "9NVE_1",
+      "author_chains": [
+        "A"
+      ],
+      "sequence": "AQKVTQTQTSISVMEKTTVTMDCVYETRDSSYFLFWYKQTASGEIVFLIRQDSYKKENATEGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMREGRGGGSNYKLTFGKGTLLTVTPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCSSADLEVLFQ",
+      "sequence_sha256": "1bcdaa029b5f2d9bb5015ade3993317f1dc5b87e9710c378959aa5f144be37f0"
+    },
+    {
+      "name": "NP203_beta",
+      "pdb": "9nve",
+      "role": "beta",
+      "entity": "9NVE_2",
+      "author_chains": [
+        "B"
+      ],
+      "sequence": "NTKITQSPRYLILGRANKSLECEQHLGHNAMYWYKQSAEKPPELMFLYNLKQLIRNETVPSRFIPECPDSSKLLLHISAVDPEDSAVYFCASSQDLGGLYEQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "f8323c41a1beb471882c4897e2961586607424036e28038fd90e82fa074f68c7"
+    },
+    {
+      "name": "NP204_alpha",
+      "pdb": "9nw2",
+      "role": "alpha",
+      "entity": "9NW2_1",
+      "author_chains": [
+        "A",
+        "F"
+      ],
+      "sequence": "QQKVQQSPESLSVPEGGMASLNCTSSDRNFQYFWWYRQHSGEGPKALMSIFSDGDKKEGRFTAHLNKASLHVSLHIRDSQPSDSALYFCAAILATGGNNKLTFGQGTVLSVIPDIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKTVLDMKAMDSKSNGAIAWSNQTSFTCQDIFKETNATYPSSDVPCSSADLEVLFQ",
+      "sequence_sha256": "6cfed3dcea58a979c4b0ff3ea7a9a721f707961f7e34d6f457cb34eff7768cb4"
+    },
+    {
+      "name": "NP204_beta",
+      "pdb": "9nw2",
+      "role": "beta",
+      "entity": "9NW2_2",
+      "author_chains": [
+        "B",
+        "G"
+      ],
+      "sequence": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRRNSYNSPLYFAAGTRLTVTEDLRNVTPPKVSLFEPSKAEIANKQKATLVCLARGFFPDHVELSWWVNGKEVHSGVSTDPQAYKESNYSYSLSSRLRVSATFWHNPRNHFRCQVQFHGLSEEDKWPEGSPKPVTQNISAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "0d896bab391dffff098401cc540b3ae8360421861d01a6452bc6c3ece438443f"
+    },
+    {
+      "name": "NP105_alpha",
+      "pdb": "9nva",
+      "role": "alpha",
+      "entity": "9NVA_1",
+      "author_chains": [
+        "A"
+      ],
+      "sequence": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESSCSSADLEVLFQ",
+      "sequence_sha256": "fd68c0a5863f1adb2b22dcffc45d25c43e25d90fe0a0ed60d21355d07a6c477d"
+    },
+    {
+      "name": "NP105_beta",
+      "pdb": "9nva",
+      "role": "beta",
+      "entity": "9NVA_2",
+      "author_chains": [
+        "B"
+      ],
+      "sequence": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVTEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRADCSSADLEVLFQ",
+      "sequence_sha256": "48bf2980869d3883231566086e83e8a3679cee0a6b2873ef78fb4e4fa907b993"
+    }
+  ],
+  "numbered": [
+    null,
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "L"
+          ]
+        ],
+        0,
+        112
+      ]
+    ],
+    null,
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "L"
+          ]
+        ],
+        0,
+        112
+      ]
+    ],
+    null,
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "L"
+          ]
+        ],
+        0,
+        112
+      ]
+    ],
+    null,
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "L"
+          ]
+        ],
+        0,
+        112
+      ]
+    ],
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              128,
+              " "
+            ],
+            "P"
+          ]
+        ],
+        0,
+        112
+      ]
+    ],
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              111,
+              "A"
+            ],
+            "N"
+          ],
+          [
+            [
+              112,
+              "A"
+            ],
+            "S"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "T"
+          ]
+        ],
+        0,
+        115
+      ]
+    ],
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              128,
+              " "
+            ],
+            "P"
+          ]
+        ],
+        0,
+        110
+      ]
+    ],
+    [
+      [
+        [
+          [
+            [
+              1,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              2,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              3,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              4,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              5,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              6,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              7,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              8,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              9,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              10,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              11,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              12,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              13,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              14,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              15,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              16,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              17,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              18,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              19,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              20,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              21,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              22,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              23,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              24,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              25,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              26,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              27,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              28,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              29,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              30,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              31,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              32,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              33,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              34,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              35,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              36,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              37,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              38,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              39,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              40,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              41,
+              " "
+            ],
+            "W"
+          ],
+          [
+            [
+              42,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              43,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              44,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              45,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              46,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              47,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              48,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              49,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              50,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              51,
+              " "
+            ],
+            "E"
+          ],
+          [
+            [
+              52,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              53,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              54,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              55,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              56,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              57,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              58,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              59,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              60,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              61,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              62,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              63,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              64,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              65,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              66,
+              " "
+            ],
+            "M"
+          ],
+          [
+            [
+              67,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              68,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              69,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              70,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              71,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              72,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              73,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              74,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              75,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              76,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              77,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              78,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              79,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              80,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              81,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              82,
+              " "
+            ],
+            "-"
+          ],
+          [
+            [
+              83,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              84,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              85,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              86,
+              " "
+            ],
+            "H"
+          ],
+          [
+            [
+              87,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              88,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              89,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              90,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              91,
+              " "
+            ],
+            "I"
+          ],
+          [
+            [
+              92,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              93,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              94,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              95,
+              " "
+            ],
+            "K"
+          ],
+          [
+            [
+              96,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              97,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              98,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              99,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              100,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              101,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              102,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              103,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              104,
+              " "
+            ],
+            "C"
+          ],
+          [
+            [
+              105,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              106,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              107,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              108,
+              " "
+            ],
+            "Q"
+          ],
+          [
+            [
+              109,
+              " "
+            ],
+            "D"
+          ],
+          [
+            [
+              110,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              111,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              111,
+              "A"
+            ],
+            "S"
+          ],
+          [
+            [
+              112,
+              "A"
+            ],
+            "S"
+          ],
+          [
+            [
+              112,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              113,
+              " "
+            ],
+            "N"
+          ],
+          [
+            [
+              114,
+              " "
+            ],
+            "S"
+          ],
+          [
+            [
+              115,
+              " "
+            ],
+            "P"
+          ],
+          [
+            [
+              116,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              117,
+              " "
+            ],
+            "Y"
+          ],
+          [
+            [
+              118,
+              " "
+            ],
+            "F"
+          ],
+          [
+            [
+              119,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              120,
+              " "
+            ],
+            "A"
+          ],
+          [
+            [
+              121,
+              " "
+            ],
+            "G"
+          ],
+          [
+            [
+              122,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              123,
+              " "
+            ],
+            "R"
+          ],
+          [
+            [
+              124,
+              " "
+            ],
+            "L"
+          ],
+          [
+            [
+              125,
+              " "
+            ],
+            "T"
+          ],
+          [
+            [
+              126,
+              " "
+            ],
+            "V"
+          ],
+          [
+            [
+              127,
+              " "
+            ],
+            "T"
+          ]
+        ],
+        0,
+        115
+      ]
+    ]
+  ],
+  "details": [
+    null,
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 2.1e-39,
+        "bitscore": 125.6,
+        "bias": 0.0,
+        "query_start": 0,
+        "query_end": 113,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP202_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV5*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-7*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    null,
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 1.9e-39,
+        "bitscore": 125.7,
+        "bias": 0.0,
+        "query_start": 0,
+        "query_end": 113,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP101_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV5*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-7*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    null,
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 1.6e-39,
+        "bitscore": 125.9,
+        "bias": 0.0,
+        "query_start": 0,
+        "query_end": 113,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP207_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV5*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-7*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    null,
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 1.9e-39,
+        "bitscore": 125.7,
+        "bias": 0.0,
+        "query_start": 0,
+        "query_end": 113,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP203_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV5*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-7*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "id": "mouse_A",
+        "description": "",
+        "evalue": 2.6e-43,
+        "bitscore": 138.0,
+        "bias": 0.0,
+        "query_start": 0,
+        "query_end": 113,
+        "species": "mouse",
+        "chain_type": "A",
+        "scheme": "imgt",
+        "query_name": "NP204_alpha",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRAV7-4*02"
+            ],
+            0.967741935483871
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRAJ56*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 6.8e-30,
+        "bitscore": 94.8,
+        "bias": 0.2,
+        "query_start": 0,
+        "query_end": 115,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP204_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV1*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-4*01"
+            ],
+            0.6923076923076923
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "id": "mouse_A",
+        "description": "",
+        "evalue": 2.6e-44,
+        "bitscore": 141.2,
+        "bias": 0.1,
+        "query_start": 0,
+        "query_end": 111,
+        "species": "mouse",
+        "chain_type": "A",
+        "scheme": "imgt",
+        "query_name": "NP105_alpha",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRAV7-3*04"
+            ],
+            0.9891304347826086
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRAJ23*01"
+            ],
+            1.0
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "id": "mouse_B",
+        "description": "",
+        "evalue": 7.8e-37,
+        "bitscore": 117.3,
+        "bias": 0.4,
+        "query_start": 0,
+        "query_end": 115,
+        "species": "mouse",
+        "chain_type": "B",
+        "scheme": "imgt",
+        "query_name": "NP105_beta",
+        "germlines": {
+          "v_gene": [
+            [
+              "mouse",
+              "TRBV2*01"
+            ],
+            1.0
+          ],
+          "j_gene": [
+            [
+              "mouse",
+              "TRBJ2-4*01"
+            ],
+            0.6923076923076923
+          ]
+        }
+      }
+    ]
+  ],
+  "hits": [
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_D",
+        "",
+        5.2e-40,
+        127.8,
+        1.0,
+        0,
+        118
+      ],
+      [
+        "mouse_A",
+        "",
+        1.5e-39,
+        125.8,
+        0.8,
+        0,
+        118
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        2.1e-39,
+        125.6,
+        0.0,
+        0,
+        113
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_D",
+        "",
+        5.5e-40,
+        127.7,
+        1.0,
+        0,
+        118
+      ],
+      [
+        "mouse_A",
+        "",
+        1.6e-39,
+        125.7,
+        0.8,
+        0,
+        118
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        1.9e-39,
+        125.7,
+        0.0,
+        0,
+        113
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_D",
+        "",
+        5.5e-40,
+        127.7,
+        1.0,
+        0,
+        118
+      ],
+      [
+        "mouse_A",
+        "",
+        1.6e-39,
+        125.7,
+        0.8,
+        0,
+        118
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        1.6e-39,
+        125.9,
+        0.0,
+        0,
+        113
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_D",
+        "",
+        4.8e-40,
+        127.9,
+        0.8,
+        0,
+        118
+      ],
+      [
+        "mouse_A",
+        "",
+        1.5e-39,
+        125.8,
+        0.7,
+        0,
+        118
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        1.9e-39,
+        125.7,
+        0.0,
+        0,
+        113
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_A",
+        "",
+        2.6e-43,
+        138.0,
+        0.0,
+        0,
+        113
+      ],
+      [
+        "mouse_D",
+        "",
+        2.2e-27,
+        87.0,
+        0.0,
+        0,
+        113
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        6.8e-30,
+        94.8,
+        0.2,
+        1,
+        115
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_A",
+        "",
+        2.6e-44,
+        141.2,
+        0.1,
+        0,
+        111
+      ],
+      [
+        "mouse_D",
+        "",
+        3.3e-28,
+        89.6,
+        0.0,
+        0,
+        111
+      ]
+    ],
+    [
+      [
+        "id",
+        "description",
+        "evalue",
+        "bitscore",
+        "bias",
+        "query_start",
+        "query_end"
+      ],
+      [
+        "mouse_B",
+        "",
+        7.8e-37,
+        117.3,
+        0.4,
+        1,
+        115
+      ]
+    ]
+  ],
+  "provenance": {
+    "package_version": "2026.2.13.2",
+    "biopython": "1.88",
+    "scheme": "imgt",
+    "bit_score_threshold": 80,
+    "assign_germline": true,
+    "allowed_species": [
+      "mouse"
+    ],
+    "hmmer_version": "3.4",
+    "package_files": {
+      "__init__.py": "2b3033bfadabd97d4843bee2a8befc624373893490884741d707ce3c35f4ec31",
+      "anarci.py": "f42311674d73ae45a4553aa13dbe618a3efad527ef9d8bd6135d57dff1eb4b45",
+      "dat/HMMs/ALL.hmm": "60051f5a838704eb97fe39488f23894aa335ddadd24ad72b241f6e1cea6829ee",
+      "dat/HMMs/ALL.hmm.h3f": "ae7b65199339c633096b2106448a29b35cafd3cbfb9868550d103049a43ad7a8",
+      "dat/HMMs/ALL.hmm.h3i": "bfd9b15a083a5e7af186e7f5be28b6fab6b8ccf123b62043d26086d9d4ae1be8",
+      "dat/HMMs/ALL.hmm.h3m": "51635b8c6bae5f7a43effbb943ef29c1fefb7641c766ce95cf281ad18bc65ab0",
+      "dat/HMMs/ALL.hmm.h3p": "4f66bde5bdd1766ae0d880ca5aa1b50b5c09c58a3b6c34a6a9ca8f0ddea63c07",
+      "dat/HMMs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dat/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "germlines.py": "95a13463e2620b8037bf7ea67ecdf9ec6f8a8f973c5658f3c54126e9e36f3452",
+      "schemes.py": "856f4c942c226cbeabfabb69f8bfd4004f00f9b0aa6ce1e296636d2ce88f4b4b"
+    }
+  },
+  "identity_admitted": false,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}
