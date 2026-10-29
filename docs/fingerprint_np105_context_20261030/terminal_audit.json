@@ -1,0 +1,3073 @@
+{
+  "summary": {
+    "paired_cells": 60,
+    "original_canonical_Q30_pairs": 54,
+    "both_terminal_targets_supported": 37,
+    "original_canonical_Q30_pairs_both_terminals_supported": 35,
+    "by_role": {
+      "TRA": 48,
+      "TRB": 45
+    }
+  },
+  "targets": {
+    "TRA": {
+      "start": 274,
+      "end": 336,
+      "observed_sequence": "TGAATTATAACCAGGGGAAGCTTATCTTTGGACAGGGAACCAAGTTATCTATCAAGCCCAAC",
+      "offset": 96,
+      "cdr3_start": 360
+    },
+    "TRB": {
+      "start": 296,
+      "end": 349,
+      "observed_sequence": "TTCCTATAATTCGCCCCTCTACTTTGCGGCAGGCACCCGGCTCACTGTGACAG",
+      "offset": 168,
+      "cdr3_start": 438
+    }
+  },
+  "cells": [
+    {
+      "barcode": "ACACCCTAGTGAACGC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACACCCTAGTGAACGC_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_7",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_8",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 10,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACACCCTAGTGAACGC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACACCCTAGTGAACGC_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ACAGCCGAGAAAGTGG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACAGCCGAGAAAGTGG_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACAGCCGAGAAAGTGG_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 10,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACAGCCGAGAAAGTGG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACAGCCGAGAAAGTGG_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ACGAGGAGTCTCCATC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACGAGGAGTCTCCATC_1",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACGAGGAGTCTCCATC_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "ACTTACTAGAGACTTA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGAGACTTA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACTTACTAGAGACTTA_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGAGACTTA_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ACTTACTAGGTAGCCA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGGTAGCCA_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 12,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGGTAGCCA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACTTACTAGGTAGCCA_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ACTTACTAGTGTCCAT",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGTGTCCAT_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ACTTACTAGTGTCCAT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACTTACTAGTGTCCAT_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ACTTACTAGTGTCCAT_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "AGGCCACGTATAGTAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGGCCACGTATAGTAG_9",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_10",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 10,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGGCCACGTATAGTAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_4",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_5",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_6",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_7",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCACGTATAGTAG_8",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "AGGCCGTCATGCGCAC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGGCCGTCATGCGCAC_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCGTCATGCGCAC_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGGCCGTCATGCGCAC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCGTCATGCGCAC_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCGTCATGCGCAC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGGCCGTCATGCGCAC_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "AGTAGTCAGGTAGCTG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGTAGTCAGGTAGCTG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGTAGTCAGGTAGCTG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTAGTCAGGTAGCTG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTAGTCAGGTAGCTG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTAGTCAGGTAGCTG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "AGTGTCACACCAGCAC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGTGTCACACCAGCAC_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTGTCACACCAGCAC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTGTCACACCAGCAC_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "AGTGTCACACCAGCAC_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "AGTGTCACACCAGCAC_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 5,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ATAGACCTCCGTCATC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ATAGACCTCCGTCATC_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATAGACCTCCGTCATC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATAGACCTCCGTCATC_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 10,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ATAGACCTCCGTCATC_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "ATTCTACCAGGGCATA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ATTCTACCAGGGCATA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTCTACCAGGGCATA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTCTACCAGGGCATA_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": false,
+          "assembly_observations": [
+            {
+              "name": "ATTCTACCAGGGCATA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTCTACCAGGGCATA_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTCTACCAGGGCATA_5",
+              "length": 52,
+              "exact_observed_target": false
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "ATTGGACCAGTATGCT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ATTGGACCAGTATGCT_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTGGACCAGTATGCT_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "ATTGGACCAGTATGCT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTGGACCAGTATGCT_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "ATTGGACCAGTATGCT_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CAACCTCAGCCAGTAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAACCTCAGCCAGTAG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAACCTCAGCCAGTAG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAACCTCAGCCAGTAG_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 11,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAACCTCAGCCAGTAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAACCTCAGCCAGTAG_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CAAGTTGAGGCGACAT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAAGTTGAGGCGACAT_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAAGTTGAGGCGACAT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAAGTTGAGGCGACAT_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CAGCAGCTCAGCTGGC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAGCAGCTCAGCTGGC_6",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CAGCAGCTCAGCTGGC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAGCAGCTCAGCTGGC_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAGCAGCTCAGCTGGC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAGCAGCTCAGCTGGC_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAGCAGCTCAGCTGGC_4",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CAGCAGCTCAGCTGGC_5",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CATATGGAGCTGCGAA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CATATGGAGCTGCGAA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_7",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 12,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": false,
+          "assembly_observations": [
+            {
+              "name": "CATATGGAGCTGCGAA_0",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_2",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_3",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "CATATGGAGCTGCGAA_4",
+              "length": 52,
+              "exact_observed_target": false
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CCACCTATCGGCTACG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCACCTATCGGCTACG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCACCTATCGGCTACG_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCACCTATCGGCTACG_6",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCACCTATCGGCTACG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCACCTATCGGCTACG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCACCTATCGGCTACG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCACCTATCGGCTACG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CCATTCGCACGGTTTA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCATTCGCACGGTTTA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCATTCGCACGGTTTA_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCATTCGCACGGTTTA_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCATTCGCACGGTTTA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCATTCGCACGGTTTA_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CCATTCGTCTGTTTGT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCATTCGTCTGTTTGT_1",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCATTCGTCTGTTTGT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCATTCGTCTGTTTGT_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CCTATTAGTCAATGTC",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCTATTAGTCAATGTC_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CCTATTAGTCAATGTC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CCTATTAGTCAATGTC_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CGAGAAGAGTCGAGTG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGAGAAGAGTCGAGTG_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGAGAAGAGTCGAGTG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGAGAAGAGTCGAGTG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGAGAAGAGTCGAGTG_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 10,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGAGAAGAGTCGAGTG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGAGAAGAGTCGAGTG_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CGCCAAGGTCACTGGC",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGCCAAGGTCACTGGC_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGCCAAGGTCACTGGC_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGCCAAGGTCACTGGC_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CGGACTGGTTGGTTTG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": false,
+          "assembly_observations": [
+            {
+              "name": "CGGACTGGTTGGTTTG_1",
+              "length": 62,
+              "exact_observed_target": false
+            },
+            {
+              "name": "CGGACTGGTTGGTTTG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGACTGGTTGGTTTG_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGGACTGGTTGGTTTG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGACTGGTTGGTTTG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGACTGGTTGGTTTG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CGGGTCAAGACTCGGA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGGGTCAAGACTCGGA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGGTCAAGACTCGGA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGGTCAAGACTCGGA_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 8,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGGGTCAAGACTCGGA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGGGTCAAGACTCGGA_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CGGGTCAGTAGGACAC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGGGTCAGTAGGACAC_1",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGGGTCAGTAGGACAC_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CGTTCTGCACATCCGG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGTTCTGCACATCCGG_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGTTCTGCACATCCGG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGTTCTGCACATCCGG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CGTTCTGCACATCCGG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CGTTCTGCACATCCGG_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CTCGAAACACCAGTTA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTCGAAACACCAGTTA_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTCGAAACACCAGTTA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTCGAAACACCAGTTA_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTCGAAACACCAGTTA_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "CTGATAGCAGGGAGAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTGATAGCAGGGAGAG_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTGATAGCAGGGAGAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTGATAGCAGGGAGAG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTGATAGCAGGGAGAG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "CTGCGGATCGTACGGC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTGCGGATCGTACGGC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTGCGGATCGTACGGC_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 7,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "CTGCGGATCGTACGGC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "CTGCGGATCGTACGGC_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GAACCTACACCTGGTG",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAACCTACACCTGGTG_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACCTACACCTGGTG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAACCTACACCTGGTG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACCTACACCTGGTG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACCTACACCTGGTG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GAACGGAAGTACGCCC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAACGGAAGTACGCCC_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACGGAAGTACGCCC_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACGGAAGTACGCCC_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAACGGAAGTACGCCC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACGGAAGTACGCCC_4",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACGGAAGTACGCCC_5",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAACGGAAGTACGCCC_6",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GAATAAGGTAGCACGA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAATAAGGTAGCACGA_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GAATAAGGTAGCACGA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GAATAAGGTAGCACGA_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GACCTGGAGGACGAAA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GACCTGGAGGACGAAA_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GACCTGGAGGACGAAA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GACCTGGAGGACGAAA_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GCAGCCAAGACCGGAT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCAGCCAAGACCGGAT_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCAGCCAAGACCGGAT_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCAGCCAAGACCGGAT_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCAGCCAAGACCGGAT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCAGCCAAGACCGGAT_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GCGCAGTAGCTGCAAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCGCAGTAGCTGCAAG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_7",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_8",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_9",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_10",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCGCAGTAGCTGCAAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGCAGTAGCTGCAAG_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "GCGGGTTTCAGATAAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCGGGTTTCAGATAAG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_7",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCGGGTTTCAGATAAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCGGGTTTCAGATAAG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GCTGCAGTCTAACGGT",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCTGCAGTCTAACGGT_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GCTGCAGTCTAACGGT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GCTGCAGTCTAACGGT_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GGCAATTCAGGGAGAG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGCAATTCAGGGAGAG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCAATTCAGGGAGAG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGCAATTCAGGGAGAG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCAATTCAGGGAGAG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCAATTCAGGGAGAG_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GGCCGATGTAAATACG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGCCGATGTAAATACG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_7",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 11,
+          "also_exact_CDR3_linked_UMIs": 8,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGCCGATGTAAATACG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGCCGATGTAAATACG_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GGTGTTAGTCTTGATG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGTGTTAGTCTTGATG_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_7",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GGTGTTAGTCTTGATG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GGTGTTAGTCTTGATG_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 15,
+          "also_exact_CDR3_linked_UMIs": 8,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GTCACAATCTACTATC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GTCACAATCTACTATC_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTCACAATCTACTATC_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTCACAATCTACTATC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTCACAATCTACTATC_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTCACAATCTACTATC_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GTCACAATCTACTATC_6",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTCACAATCTACTATC_7",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "GTGGGTCAGCCCTAAT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GTGGGTCAGCCCTAAT_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTGGGTCAGCCCTAAT_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "GTGGGTCAGCCCTAAT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTGGGTCAGCCCTAAT_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTGGGTCAGCCCTAAT_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "GTGGGTCAGCCCTAAT_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TAAACCGAGGGAAACA",
+      "original_canonical_Q30_pair": false,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TAAACCGAGGGAAACA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_7",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_9",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_10",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 17,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": false,
+          "assembly_observations": [
+            {
+              "name": "TAAACCGAGGGAAACA_0",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_4",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_5",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_6",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_8",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TAAACCGAGGGAAACA_11",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 11,
+          "also_exact_CDR3_linked_UMIs": 5,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "TAAGCGTCAGATCCAT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TAAGCGTCAGATCCAT_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAGCGTCAGATCCAT_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TAAGCGTCAGATCCAT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TAAGCGTCAGATCCAT_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "TACCTTAGTTTGCATG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TACCTTAGTTTGCATG_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACCTTAGTTTGCATG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACCTTAGTTTGCATG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TACCTTAGTTTGCATG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACCTTAGTTTGCATG_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TACTCATAGTCGTTTG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TACTCATAGTCGTTTG_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_5",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TACTCATAGTCGTTTG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_6",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_7",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TACTCATAGTCGTTTG_8",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 12,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TATGCCCGTAGCTGCC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TATGCCCGTAGCTGCC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TATGCCCGTAGCTGCC_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TATGCCCGTAGCTGCC_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 8,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": false,
+          "assembly_observations": [
+            {
+              "name": "TATGCCCGTAGCTGCC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TATGCCCGTAGCTGCC_1",
+              "length": 52,
+              "exact_observed_target": false
+            },
+            {
+              "name": "TATGCCCGTAGCTGCC_5",
+              "length": 52,
+              "exact_observed_target": false
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "TCATTACAGATCTGAA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCATTACAGATCTGAA_1",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCATTACAGATCTGAA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTACAGATCTGAA_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTACAGATCTGAA_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 5,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TCATTTGTCTGGGCCA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCATTTGTCTGGGCCA_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTTGTCTGGGCCA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTTGTCTGGGCCA_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTTGTCTGGGCCA_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCATTTGTCTGGGCCA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTTGTCTGGGCCA_5",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCATTTGTCTGGGCCA_6",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TCGGGACAGATGGGTC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGGACAGATGGGTC_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGGACAGATGGGTC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGGACAGATGGGTC_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 0,
+          "also_exact_CDR3_linked_UMIs": 0,
+          "terminal_supported": false
+        }
+      },
+      "both_terminal_targets_supported": false
+    },
+    {
+      "barcode": "TCGGGACTCGTGGGAA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGGACTCGTGGGAA_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGGACTCGTGGGAA_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGGACTCGTGGGAA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGGACTCGTGGGAA_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGGACTCGTGGGAA_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TCGGTAATCTGCGACG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGTAATCTGCGACG_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGTAATCTGCGACG_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGTAATCTGCGACG_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TCGGTAATCTGCGACG_4",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TCGGTAATCTGCGACG_2",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TGAGAGGCAACGCACC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGAGGCAACGCACC_0",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGAGGCAACGCACC_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGAGGCAACGCACC_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 2,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGAGGCAACGCACC_1",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 1,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TGAGCATCAAGACACG",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGCATCAAGACACG_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGCATCAAGACACG_2",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 4,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGCATCAAGACACG_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGCATCAAGACACG_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TGAGCCGGTTTGTTTC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGCCGGTTTGTTTC_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGCCGGTTTGTTTC_3",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 8,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGAGCCGGTTTGTTTC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGCCGGTTTGTTTC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGAGCCGGTTTGTTTC_4",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TGATTTCCAAGGACAC",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGATTTCCAAGGACAC_7",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_8",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_9",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 16,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGATTTCCAAGGACAC_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_2",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_3",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_4",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_5",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGATTTCCAAGGACAC_6",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 6,
+          "also_exact_CDR3_linked_UMIs": 3,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TGTGGTAGTCGTGGCT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGTGGTAGTCGTGGCT_1",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_3",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_7",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_8",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_9",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_10",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_11",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 11,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TGTGGTAGTCGTGGCT_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TGTGGTAGTCGTGGCT_5",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 9,
+          "also_exact_CDR3_linked_UMIs": 7,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TTGGCAACATCGGTTA",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TTGGCAACATCGGTTA_2",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_4",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_5",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_6",
+              "length": 62,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_7",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 12,
+          "also_exact_CDR3_linked_UMIs": 6,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TTGGCAACATCGGTTA_0",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_1",
+              "length": 53,
+              "exact_observed_target": true
+            },
+            {
+              "name": "TTGGCAACATCGGTTA_3",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 3,
+          "also_exact_CDR3_linked_UMIs": 1,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    },
+    {
+      "barcode": "TTGTAGGAGAAGGTTT",
+      "original_canonical_Q30_pair": true,
+      "roles": {
+        "TRA": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TTGTAGGAGAAGGTTT_1",
+              "length": 62,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 7,
+          "also_exact_CDR3_linked_UMIs": 4,
+          "terminal_supported": true
+        },
+        "TRB": {
+          "independently_assembled_all_complete_ORFs_have_exact_target": true,
+          "assembly_observations": [
+            {
+              "name": "TTGTAGGAGAAGGTTT_0",
+              "length": 53,
+              "exact_observed_target": true
+            }
+          ],
+          "unambiguous_Q30_UMIs_cover_all_positions": 5,
+          "also_exact_CDR3_linked_UMIs": 2,
+          "terminal_supported": true
+        }
+      },
+      "both_terminal_targets_supported": true
+    }
+  ],
+  "SAM_bytes": 1485919203,
+  "SAM_SHA256": "5d43a12619973ea01d74336c3fb52b00af4119af4b9e672a7ba39d7b88885417",
+  "source_whole_MD5_verified": true,
+  "reference_bases_added": 0,
+  "new_identity_admissions": 0,
+  "protocol_frozen": false,
+  "independent_acceptance_accessed": false,
+  "interpretation": "Observed terminal support only; UMI linkage is not genomic phase or proof against barcode/UMI collisions; original54/26/55 gates unchanged"
+}

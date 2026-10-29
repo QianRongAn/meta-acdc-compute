@@ -1,0 +1,25 @@
+{
+  "created_UTC": "2026-10-29T17:12:47.218200+00:00",
+  "type": "diagnostic-only; no new admissions or threshold changes",
+  "input_SHA256": {
+    "whole_classic_numbering.json.gz": "c7370c8165a63894be4273f7ad01f6e86c1164294f29e2f3cf2d47cf541efcf6",
+    "whole_neural_numbering.json.gz": "bde7ded36cf6fe44e966a7336ec68410664d742d93c105765dd60c68d457665a"
+  },
+  "scope": "all 394 original classic-complete ORFs; compare unmodified whole-ORF predictions within exact observed domain+role groups",
+  "predeclared_checks": [
+    "exact unique domain substring at archived original offsets",
+    "same-role exact domain amino acids, differing flanks, compare original neural outputs",
+    "identify same-full-ORF inconsistent predictions if any",
+    "record all groups and failures; do not select a best context",
+    "preserve original 54 Q30 pairs, 26 joint-numbered pairs and 55 disputed ORFs"
+  ],
+  "prohibited": [
+    "no cropped re-numbering",
+    "no synthetic flanks",
+    "no reference bases",
+    "no admission updates",
+    "no independent acceptance access"
+  ],
+  "new_identity_admissions": 0,
+  "protocol_frozen": false
+}

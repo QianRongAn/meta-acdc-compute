@@ -1,0 +1,127 @@
+{
+  "parent_commit": "2467f29cf3fc6992d7c4f4fe90562ae7e7c84465",
+  "files": {
+    "J_ORF_reason.json": {
+      "bytes": 981,
+      "sha256": "ab6167391336edbeb22c10bc5fa9179e74f316998eb243b7d52ac39da0956a77"
+    },
+    "README.md": {
+      "bytes": 9038,
+      "sha256": "40d56117e295724ad7109eb5b739dde959abf2edec4520d8bf928b6e3f71ac9b"
+    },
+    "context_audit.json": {
+      "bytes": 251851,
+      "sha256": "e55d2f524ae7177caac3b3223eeaf17d7444c16c63ee1c0389dddcd632e24243"
+    },
+    "diagnostic_plan.json": {
+      "bytes": 1135,
+      "sha256": "d9418b82096810eb6e460c20dcfa37c844be13f1a6b3e0ddcb5266459042d633"
+    },
+    "joint_diagnostic_summary.json": {
+      "bytes": 704,
+      "sha256": "29140f10cdca6698096d25a3e3e68f37fdadf145ba3c4f0501509ab4474902bb"
+    },
+    "new_tests.log": {
+      "bytes": 760,
+      "sha256": "549da9cb97c30248426a0edc0a2ed996802165851fdc365564fd7680dcbf0e07"
+    },
+    "patent_sequence_transcription.json": {
+      "bytes": 3022,
+      "sha256": "4cce4358c12c032b39b1881d53f78ce3c0d3933db69f399963a85f3244db0837"
+    },
+    "patent_source_audit.json": {
+      "bytes": 3731,
+      "sha256": "c335732c4dbcaba96beb7e8b78d5302cc76f84dd45e070cfb3bad9fb886873ab"
+    },
+    "search_scope.json": {
+      "bytes": 977,
+      "sha256": "2e96b078c2cfb398970d24e3f474c5a5ee1c90f5532318b2fc97e2dfadd0b3b7"
+    },
+    "sources/curl_retry_manifest.json": {
+      "bytes": 591,
+      "sha256": "944e3c58837c0c0931994e1e8319bc0d5f390742aaf22d8ec7daaa17b4909fce"
+    },
+    "sources/manifest.json": {
+      "bytes": 1064,
+      "sha256": "5213fb6042d8f3c963e1215272562513c0eb19dccb63a96af3f3eff4acbb7675"
+    },
+    "sources/rcsb_9X85.json": {
+      "bytes": 8525,
+      "sha256": "1fd928abc219a213c82b6843bbd39102b9838f37b8bac3d5fd9075093c2530a9"
+    },
+    "sources/rcsb_9X87.json": {
+      "bytes": 8501,
+      "sha256": "75f6d8935c66f3a07311ba8f6c23e19c861d6c7c8a98b7912284d76fc44ac0d5"
+    },
+    "sources/rcsb_9X9I.json": {
+      "bytes": 8741,
+      "sha256": "b68b4741d0bd1432d22c33ff648df63abdda8b6ff218736076d8921784d28b4a"
+    },
+    "sources/rcsb_9XC3.json": {
+      "bytes": 8851,
+      "sha256": "9844af3b7f61ad0344cf1ee930c6cee72afa71aa3174523222cdbef32e2d5d26"
+    },
+    "sources/rcsb_manifest.json": {
+      "bytes": 903,
+      "sha256": "a2bf1964efb86d73fae708ed2c7babe5aafd14267dc7ef9c823bbfee63c512e0"
+    },
+    "sources/retry_manifest.json": {
+      "bytes": 884,
+      "sha256": "4ca6f1ef1b8f0c832f7ccf17a2c1909a8e97e90ab65205fc5ad4a783a67f2410"
+    },
+    "terminal_audit.json": {
+      "bytes": 94324,
+      "sha256": "98a5f69a7454d050f18dca96b5b7b5e28532dd074009b84c2708c866211a64e4"
+    },
+    "terminal_plan.json": {
+      "bytes": 870,
+      "sha256": "99a99d8afb13b0760ae5cbac3096b87b649151dc5f3a06be92efa41c79facf1d"
+    },
+    "verification_final.json": {
+      "bytes": 754,
+      "sha256": "bbcef889f9fb8feae7dc9124ea5f30915a68fe0d87dfc018618033ae78620f80"
+    }
+  },
+  "code_files": {
+    "scripts/audit_np105_context.py": {
+      "bytes": 4557,
+      "sha256": "a71f2c71519ecb1e216bc04b1cd7117369f6072c20d1b590c04426b374642d41"
+    },
+    "scripts/audit_np105_terminal.py": {
+      "bytes": 4856,
+      "sha256": "8a3ef53088be697d717f8d9f6cec512d2a23c04d742cf2c18781ac40db10e519"
+    },
+    "scripts/audit_np105_primary_context.py": {
+      "bytes": 5029,
+      "sha256": "7fca5594279ed5642995e7fae0e7375c89512f3982bdc128409f592fcf763d26"
+    },
+    "scripts/verify_np105_context.py": {
+      "bytes": 6118,
+      "sha256": "a130eb7a03a9c7b6dc6013dd6e1b55c838797c58264e0ec80734d3a3a7dce704"
+    },
+    "tests/test_np105_context.py": {
+      "bytes": 1257,
+      "sha256": "0cec8ab219eb1eafdb62ad596fe6140bf15e869cf366f325799162d101f2d3bf"
+    }
+  },
+  "root_files": {
+    "README.md": {
+      "bytes": 48810,
+      "sha256": "805c511e7764f7d05ebaeb3373777af4e10015f9893ea4872cdb880305412d95"
+    },
+    ".gitignore": {
+      "bytes": 5184,
+      "sha256": "61ddac7b077682ad935dec9a4e41a975a333d8965f80dc723e5d7fc5a0dbe1a7"
+    }
+  },
+  "tests_passed": 104,
+  "previous_deliveries_unchanged": 15,
+  "previous_files_unchanged": 4666,
+  "previous_code_files_unchanged": 28,
+  "new_identity_admissions": 0,
+  "new_qualified_cross_study_pairs": 0,
+  "new_qualified_native_control_groups": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

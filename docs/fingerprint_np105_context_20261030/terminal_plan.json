@@ -1,0 +1,15 @@
+{
+  "created_UTC": "2026-10-29T17:18:37.591838+00:00",
+  "scope": "all 60 original whole-run paired cells, all same-run aligned reads; report the original 54 separately without changing membership",
+  "expected_targets": "observed prefix ORF intervals TRA[274,336) includes complete observed TRAJ23 and AAC after numbered128P; TRB[296,349) includes complete observed53nt J",
+  "requirements": [
+    "original unmodified whole-run BWA SAM",
+    "primary alignment MAPQ>=30 and baseQ>=30",
+    "same-cell UMI unambiguous at every target position",
+    "same UMI linked to full exact observed CDR3 with each baseQ>=30",
+    "independent de novo full-ORF target exact substring at original numbering coordinates",
+    "record missing extensions and conflicts, never substitute reference bases"
+  ],
+  "admission_changes": false,
+  "independent_acceptance_accessed": false
+}

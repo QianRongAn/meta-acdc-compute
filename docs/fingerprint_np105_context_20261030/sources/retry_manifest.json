@@ -1,0 +1,19 @@
+[
+  {
+    "file": "imgt_TRBJ_alignment.html",
+    "url": "https://www.imgt.org/IMGTrepertoire/Proteins/alleles/index.php?gene=TRBJ1-6&group=TRBJ&species=Mus+musculus",
+    "status": 200,
+    "bytes": 11024,
+    "sha256": "48814ddf55008aa34f022919a52b25eac92f8d9064a816bccf01505a5d7a11ef"
+  },
+  {
+    "file": "imgt_gene_retry.html",
+    "url": "https://www.imgt.org/IMGTrepertoire/LocusGenes/genetable/autotable.php?group=TRBJ&species=Mus+musculus",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "file": "epo_EP4223782A1.pdf",
+    "url": "https://data.epo.org/publication-server/rest/v1.0/publication-dates/20230809/patents/EP4223782NWA1/document.pdf",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  }
+]

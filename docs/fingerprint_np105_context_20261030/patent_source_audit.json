@@ -1,0 +1,134 @@
+{
+  "patent": "EP4223782A1",
+  "official_pdf_URL": "https://data.epo.org/publication-server/rest/v1.0/publication-dates/20230809/patents/EP4223782NWA1/document.pdf",
+  "official_pdf_SHA256": "abe9aa7708099cc1b122a538d8494b4551e4a096ae35436e385976fc2645d7df",
+  "official_and_mirror_byte_exact": true,
+  "source_page": 18,
+  "source_table": 1,
+  "embedded_images_manually_reviewed": true,
+  "full_page_visually_reviewed": true,
+  "sequence_bridges": [
+    {
+      "SEQ_ID": "12",
+      "PDB_entity": "9XC3_4",
+      "observed_reported_length": 132,
+      "domain_length": 113,
+      "reported_domain_offset0": 19,
+      "exact_full_numbered_domain_match": true
+    },
+    {
+      "SEQ_ID": "14",
+      "PDB_entity": "9XC3_5",
+      "observed_reported_length": 131,
+      "domain_length": 112,
+      "reported_domain_offset0": 19,
+      "exact_full_numbered_domain_match": true
+    },
+    {
+      "SEQ_ID": "16",
+      "PDB_entity": "9X9I_4",
+      "observed_reported_length": 128,
+      "domain_length": 108,
+      "reported_domain_offset0": 20,
+      "exact_full_numbered_domain_match": true
+    },
+    {
+      "SEQ_ID": "18",
+      "PDB_entity": "9X9I_5",
+      "observed_reported_length": 131,
+      "domain_length": 112,
+      "reported_domain_offset0": 19,
+      "exact_full_numbered_domain_match": true
+    }
+  ],
+  "structure_citations": [
+    {
+      "pdb": "9XC3",
+      "title": "Structural basis for CD4+ T cell receptor recognition of HLA-DR4-presented frameshift neoantigen derived from TGFbetaR2(-1).",
+      "authors": [
+        "Shi, J.L.",
+        "Wu, D.C."
+      ],
+      "publication_status": "To Be Published",
+      "DOI": null,
+      "PubMed": null,
+      "polymer_entity_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "pdb": "9X9I",
+      "title": "Structural basis for CD4+ T cell receptor recognition of HLA-DR4-presented frameshift neoantigen derived from TGFbetaR2(-1)",
+      "authors": [
+        "Shi, J.L.",
+        "Wu, D.C."
+      ],
+      "publication_status": "To Be Published",
+      "DOI": null,
+      "PubMed": null,
+      "polymer_entity_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "pdb": "9X87",
+      "title": "Structural basis for CD4+ T cell receptor recognition of HLA-DR4-presented frameshift neoantigen derived from TGFbetaR2(-1)",
+      "authors": [
+        "Shi, J.L.",
+        "Wu, D.C."
+      ],
+      "publication_status": "To Be Published",
+      "DOI": null,
+      "PubMed": null,
+      "polymer_entity_ids": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "pdb": "9X85",
+      "title": "Structural basis for CD4+ T cell receptor recognition of HLA-DR4-presented frameshift neoantigen derived from TGFbetaR2(-1).",
+      "authors": [
+        "Shi, J.L.",
+        "Wu, D.C."
+      ],
+      "publication_status": "To Be Published",
+      "DOI": null,
+      "PubMed": null,
+      "polymer_entity_ids": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "prior_exact_pair_hits_unchanged": {
+    "TCR1414_1": [
+      "9X87",
+      "9XC3"
+    ],
+    "TCR1414_2": [
+      "9X9I"
+    ]
+  },
+  "patent_to_PDB_full_domain_sequence_bridge_established": true,
+  "paper_to_PDB_complete_sequence_not_established_by_CDR3_alone": true,
+  "native_pair_proof_missing": true,
+  "independent_structural_study_pair_missing": true,
+  "patent_not_counted_as_independent_structural_study": true,
+  "structural_DOI_not_imputed_from_generation_paper": true,
+  "new_identity_admissions": 0,
+  "new_qualified_cross_study_pairs": 0,
+  "new_qualified_native_control_groups": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

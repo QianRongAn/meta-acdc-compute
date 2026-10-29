@@ -114,3 +114,10 @@ docs/fingerprint_np105_recovery_20261029/whole_assemblies.json
 docs/fingerprint_np105_recovery_20261029/whole_classic_numbering.json
 docs/fingerprint_np105_recovery_20261029/whole_neural_numbering.json
 docs/fingerprint_np105_recovery_20261029/whole_base_support.json
+
+# Context audit: retain full primary documents/rendered pages locally.
+docs/fingerprint_np105_context_20261030/sources/*.html
+docs/fingerprint_np105_context_20261030/sources/*.pdf
+docs/fingerprint_np105_context_20261030/sources/*.txt
+docs/fingerprint_np105_context_20261030/sources/*.png
+docs/fingerprint_np105_context_20261030/sources/*.tiff
