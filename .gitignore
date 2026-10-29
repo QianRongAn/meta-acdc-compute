@@ -103,3 +103,14 @@ docs/fingerprint_np105_raw_20261029/sources/bwa/*.deb
 # Exact full all-cell reports are archived as gzip; keep originals locally.
 docs/fingerprint_np105_validation_20261029/all92_assemblies.json
 docs/fingerprint_np105_validation_20261029/all92_numbering.json
+
+# TCR1414 full CC BY-NC source originals stay local; factual receipts are versioned.
+docs/fingerprint_np105_recovery_20261029/sources/primary/tcr1414_primary.xml
+docs/fingerprint_np105_recovery_20261029/sources/retry/primary_page.html
+docs/fingerprint_np105_recovery_20261029/sources/figure/figure3.jpg
+
+# Whole-run exact report originals retained locally; publish gzip snapshots.
+docs/fingerprint_np105_recovery_20261029/whole_assemblies.json
+docs/fingerprint_np105_recovery_20261029/whole_classic_numbering.json
+docs/fingerprint_np105_recovery_20261029/whole_neural_numbering.json
+docs/fingerprint_np105_recovery_20261029/whole_base_support.json

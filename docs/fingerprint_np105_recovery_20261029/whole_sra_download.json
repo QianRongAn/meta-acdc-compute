@@ -1,0 +1,31 @@
+{
+  "source": "https://sra-pub-run-odp.s3.us-east-1.amazonaws.com/sra/SRR34543498/SRR34543498",
+  "expected_bytes": 6040866339,
+  "expected_md5": "bb8d681b918233fada8e0dbe875e4887",
+  "preserved_prefix": {
+    "bytes": 579862528,
+    "md5": "26174b02303e1bb790f7231e93735ea1",
+    "sha256": "38885dc016087d37bb1416b99b50220d69ace0541a445729a114b7e289b8e112"
+  },
+  "system_proxy_used": true,
+  "complete": true,
+  "process_running": false,
+  "bytes_received": 6040866339,
+  "seconds": 794.95,
+  "curl_pid": 52824,
+  "curl_returncode": 0,
+  "assessment": {
+    "actual_bytes": 6040866339,
+    "expected_bytes": 6040866339,
+    "expected_md5": "bb8d681b918233fada8e0dbe875e4887",
+    "complete": true,
+    "prefix_unchanged": true,
+    "bytes": 6040866339,
+    "md5": "bb8d681b918233fada8e0dbe875e4887",
+    "sha256": "b7dc3b09865eb381d102f7be3c7ff3e129a0297897e42cfc98e8ca4935628bbb"
+  },
+  "response_range": "bytes 579862528-6040866338/6040866339",
+  "response_ETag": "\"a02f10aa61040532a4fdb6806df6039c-721\"",
+  "response_range_valid": true,
+  "response_ETag_valid": true
+}

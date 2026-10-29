@@ -1,0 +1,185 @@
+{
+  "primary_article": {
+    "DOI": "10.1136/jitc-2022-006001",
+    "PMCID": "PMC9950979",
+    "PMID": "36822673",
+    "source_sha256": "b5249279777bc302a5d9d1a912217524c287eb643f45cccd62b9184ba6a08c8a",
+    "license": "CC BY-NC 4.0; original retained locally"
+  },
+  "methods_evidence": {
+    "separate_chain_RACE": {
+      "matching_paragraph_count": 1,
+      "paragraph_sha256": [
+        "7e5432613e797386e2434d93b1ba37c6ed040bc71892f4c0e36d852139ae0551"
+      ]
+    },
+    "combinatorial_recovery": {
+      "matching_paragraph_count": 1,
+      "paragraph_sha256": [
+        "8e16e53f358e6d24e7a36d8ce989b83a0ebe0f8c6bfdedd99bbe4926d19b190f"
+      ]
+    },
+    "pair_naming": {
+      "matching_paragraph_count": 1,
+      "paragraph_sha256": [
+        "8e16e53f358e6d24e7a36d8ce989b83a0ebe0f8c6bfdedd99bbe4926d19b190f"
+      ]
+    },
+    "humanized_mouse_origin": {
+      "matching_paragraph_count": 11,
+      "paragraph_sha256": [
+        "1d5e74b55f1b3363e2fab59abf2a76ab67147897a5821ed23e1b959e34100527",
+        "242649bd4ddd1f286f39e9c54fd2afa5863dfe7b8dcbf002a12d1238ff284bb1",
+        "35852f4ae7a4d2638ca00720eba99df7fb48fe4990b39df68a823aed6b4ad4b7",
+        "05368124671b075885f5df92de056da805223fbff9d0a0bfff5ae54e0aa325db",
+        "17762fc605925ba2bc5809b40086c7c43cdadd4377c305e0bf7e1cc1098af301",
+        "0d97e9d38874d5d84d95bdb5d81459acd3bd83c6751fb20519ccd95528fb2a5e",
+        "191515e3b4086b2aeb5868455b8551be1d7fc16a950c55d4bc510c73bf34df23",
+        "a83bbf881b153ec5905a7f931ca4afb1517de3390734d264c1fcddfcbb8ac542",
+        "27e21ebdddb4055719216e7d3a4b96c4209032553f8ed3f61ccfd4c4ffb80f28",
+        "bc9a18a7a2b58250f4ab6678d54e7dbcf06417714d48497b921acb7bf930bb04",
+        "de106b70bd36bc1233311a5079410e761119b3b955a058edb247450745616fb6"
+      ]
+    }
+  },
+  "reported_chain_candidates": {
+    "alpha": 3,
+    "beta": 5,
+    "tested_combinations": 15
+  },
+  "figure3_facts": {
+    "1A": {
+      "role": "alpha",
+      "V": "TRAV21",
+      "J": "TRAJ28",
+      "CDR3": "CAVKSGAGSYQLTF"
+    },
+    "2A": {
+      "role": "alpha",
+      "V": "TRAV22",
+      "J": "TRAJ29",
+      "CDR3": "CAAPSGNTPLVF"
+    },
+    "1B": {
+      "role": "beta",
+      "V": "TRBV18",
+      "J": "TRBJ2-5",
+      "CDR3": "CASSPFQETQYF"
+    },
+    "3B": {
+      "role": "beta",
+      "V": "TRBV28",
+      "J": "TRBJ2-6",
+      "CDR3": "CASRVSGANVLTF"
+    }
+  },
+  "figure_transcription_manually_visually_reviewed": true,
+  "figure_sha256": "4a4edb35c948ca4c7202e28c2b097063d5acf629b0e56b745fc3fce3d1cc0e5d",
+  "receptors": [
+    {
+      "pdb": "9XC3",
+      "receptor_generation_DOI": "10.1136/jitc-2022-006001",
+      "structure_publication_DOI": null,
+      "chains": [
+        {
+          "figure_chain": "1A",
+          "role": "alpha",
+          "V": "TRAV21",
+          "J": "TRAJ28",
+          "CDR3": "CAVKSGAGSYQLTF",
+          "entity": "9XC3_4",
+          "CDR3_exact_unique_entity_substring": true
+        },
+        {
+          "figure_chain": "1B",
+          "role": "beta",
+          "V": "TRBV18",
+          "J": "TRBJ2-5",
+          "CDR3": "CASSPFQETQYF",
+          "entity": "9XC3_5",
+          "CDR3_exact_unique_entity_substring": true
+        }
+      ],
+      "native_single_cell_pairing_established_by_reported_method": false,
+      "decision": "not admitted as a verified independent native paired receptor; functional combinatorial recovery is not same-cell pairing evidence",
+      "full_variable_sequence_identity_across_papers_established": false
+    },
+    {
+      "pdb": "9X9I",
+      "receptor_generation_DOI": "10.1136/jitc-2022-006001",
+      "structure_publication_DOI": null,
+      "chains": [
+        {
+          "figure_chain": "2A",
+          "role": "alpha",
+          "V": "TRAV22",
+          "J": "TRAJ29",
+          "CDR3": "CAAPSGNTPLVF",
+          "entity": "9X9I_4",
+          "CDR3_exact_unique_entity_substring": true
+        },
+        {
+          "figure_chain": "3B",
+          "role": "beta",
+          "V": "TRBV28",
+          "J": "TRBJ2-6",
+          "CDR3": "CASRVSGANVLTF",
+          "entity": "9X9I_5",
+          "CDR3_exact_unique_entity_substring": true
+        }
+      ],
+      "native_single_cell_pairing_established_by_reported_method": false,
+      "decision": "not admitted as a verified independent native paired receptor; functional combinatorial recovery is not same-cell pairing evidence",
+      "full_variable_sequence_identity_across_papers_established": false
+    }
+  ],
+  "all_four_chain_queries_successful": true,
+  "checked_queries": [
+    {
+      "query": "9XC3_5",
+      "entities": [
+        "9X87_2",
+        "9XC3_5"
+      ],
+      "full_interval_exact_substrings": true
+    },
+    {
+      "query": "9XC3_4",
+      "entities": [
+        "9X87_1",
+        "9XC3_4"
+      ],
+      "full_interval_exact_substrings": true
+    },
+    {
+      "query": "9X9I_4",
+      "entities": [
+        "9X9I_4"
+      ],
+      "full_interval_exact_substrings": true
+    },
+    {
+      "query": "9X9I_5",
+      "entities": [
+        "9X9I_5"
+      ],
+      "full_interval_exact_substrings": true
+    }
+  ],
+  "paired_PDB_hits": {
+    "TCR1414_1": [
+      "9X87",
+      "9XC3"
+    ],
+    "TCR1414_2": [
+      "9X9I"
+    ]
+  },
+  "receptor_generation_DOI_not_imputed_as_structure_DOI": true,
+  "n_new_complete_identity_admissions": 0,
+  "n_new_qualified_cross_study_pairs": 0,
+  "n_new_verified_same_source_same_V_native_groups": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

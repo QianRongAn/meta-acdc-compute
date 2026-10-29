@@ -1,0 +1,42 @@
+{
+  "classic_restored_archive_sha256": [
+    "8f88d49857abc2c5427c6cc903ebdac7b35e6636635eaa9d60bd8f0d4e7d14b7",
+    "99144485e7723842fe6c6bb0c13f323a550fc30817d3e0814126987f9b06855a"
+  ],
+  "classic_package_files_exact": 11,
+  "neural_restored_archives": [
+    {
+      "file": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+      "bytes": 155560,
+      "source": "previous task pip HTTP cache; exact original PyPI archive digest"
+    },
+    {
+      "file": "anarcii-2.0.8-py3-none-any.whl",
+      "sha256": "6ac81caef04a9cad1af1ea320b35bdced620fe2bfdd0b8b17b98131495b584ca",
+      "bytes": 17560083,
+      "source": "previous task pip HTTP cache; exact original PyPI archive digest"
+    },
+    {
+      "file": "sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0",
+      "bytes": 29575,
+      "source": "previous task pip HTTP cache; exact original PyPI archive digest"
+    },
+    {
+      "file": "gemmi-0.7.5-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "bdc67ad4a7fc420974ab3102f7f6ad1517fa0c3d9f2f7561e42e5f7017635242",
+      "bytes": 2984907,
+      "source": "previous task pip HTTP cache; exact original PyPI archive digest"
+    },
+    {
+      "file": "msgpack-1.2.4-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "5d65b791ce4283e02b6267742ad540899155e1b32887b9cbdda47f38f5a076b5",
+      "bytes": 465078,
+      "source": "previous task pip HTTP cache; exact original PyPI archive digest"
+    }
+  ],
+  "neural_package_files_exact": 37,
+  "dependencies_stored_on_D": true,
+  "original_method_versions_preserved": true
+}

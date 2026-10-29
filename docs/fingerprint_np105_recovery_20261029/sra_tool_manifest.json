@@ -1,0 +1,69 @@
+{
+  "toolkit_version": "3.2.1",
+  "installation": "private extraction outside repository; no system package installed",
+  "packages": [
+    {
+      "package": "libmbedcrypto16",
+      "version": "3.6.5-0.1ubuntu2",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/m/mbedtls/libmbedcrypto16_3.6.5-0.1ubuntu2_amd64.deb",
+      "bytes": 258752,
+      "sha256": "dd320215c1bd6e954d5aea07e640f7063865af9ef55bd64c5d9cd3cbd1bf7555",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "libmbedtls21",
+      "version": "3.6.5-0.1ubuntu2",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/m/mbedtls/libmbedtls21_3.6.5-0.1ubuntu2_amd64.deb",
+      "bytes": 130250,
+      "sha256": "5b3ec9e23f8fc475160c15714f268634fabdbad8b3df32cc8dd2e634bdacea5e",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "libmbedx509-7",
+      "version": "3.6.5-0.1ubuntu2",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/m/mbedtls/libmbedx509-7_3.6.5-0.1ubuntu2_amd64.deb",
+      "bytes": 35368,
+      "sha256": "ed69a413d170094d6d6a91bb538c16c91d3f664b7166a1740245bbbbefd4540f",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "libncbi-vdb3",
+      "version": "3.2.1+dfsg-2build1",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/n/ncbi-vdb/libncbi-vdb3_3.2.1+dfsg-2build1_amd64.deb",
+      "bytes": 1242092,
+      "sha256": "366d7c90e25f1fb1c9dd4ae0c83dc269c7fe40f793937fd2ec2c8f3b51655bf4",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "libncbi-wvdb3",
+      "version": "3.2.1+dfsg-2build1",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/n/ncbi-vdb/libncbi-wvdb3_3.2.1+dfsg-2build1_amd64.deb",
+      "bytes": 1245440,
+      "sha256": "6090c1cef3e3acd1661f87a5553c97c7c2aea58b0d5a7383e80d0b7da2af7989",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "ncbi-vdb-data",
+      "version": "3.2.1+dfsg-2build1",
+      "architecture": "all",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/n/ncbi-vdb/ncbi-vdb-data_3.2.1+dfsg-2build1_all.deb",
+      "bytes": 81434,
+      "sha256": "faee62e57e33a2db7179e8d796005059ff91afb556395f771cb10125d57f525a",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    },
+    {
+      "package": "sra-toolkit",
+      "version": "3.2.1+dfsg-6ubuntu1",
+      "architecture": "amd64",
+      "official_URI": "http://archive.ubuntu.com/ubuntu/pool/universe/s/sra-sdk/sra-toolkit_3.2.1+dfsg-6ubuntu1_amd64.deb",
+      "bytes": 7530190,
+      "sha256": "ee326187e86efcf60dd347f747f6bb5210ab539ce6f20b2f9e417375af61b172",
+      "downloaded_bytes_and_sha256_match_package_metadata": true
+    }
+  ]
+}

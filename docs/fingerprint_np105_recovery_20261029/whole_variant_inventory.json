@@ -1,0 +1,193 @@
+{
+  "variants": [
+    {
+      "barcode": "ACTTACTAGTGTCCAT",
+      "role": "TRA",
+      "transcript": "NODE_11_length_534_cov_1725.966173_g6_i0",
+      "length_aa": 111,
+      "aa_differences": [],
+      "nt_differences": [
+        {
+          "position_nt1": 39,
+          "old": "C",
+          "new": "T"
+        },
+        {
+          "position_nt1": 132,
+          "old": "C",
+          "new": "A"
+        }
+      ]
+    },
+    {
+      "barcode": "GCTGCAGTCTAACGGT",
+      "role": "TRB",
+      "transcript": "NODE_3_length_874_cov_881.207872_g2_i0",
+      "length_aa": 116,
+      "aa_differences": [],
+      "nt_differences": [
+        {
+          "position_nt1": 39,
+          "old": "A",
+          "new": "G"
+        }
+      ]
+    },
+    {
+      "barcode": "GCTGCAGTCTAACGGT",
+      "role": "TRB",
+      "transcript": "NODE_4_length_768_cov_269.783593_g2_i1",
+      "length_aa": 116,
+      "aa_differences": [],
+      "nt_differences": [
+        {
+          "position_nt1": 39,
+          "old": "A",
+          "new": "G"
+        }
+      ]
+    },
+    {
+      "barcode": "TAAACCGAGGGAAACA",
+      "role": "TRA",
+      "transcript": "NODE_16_length_546_cov_2454.882474_g11_i0",
+      "length_aa": 111,
+      "aa_differences": [
+        {
+          "kind": "replace",
+          "old_interval0": [
+            1,
+            2
+          ],
+          "new_interval0": [
+            1,
+            2
+          ],
+          "old": "Q",
+          "new": "E"
+        },
+        {
+          "kind": "replace",
+          "old_interval0": [
+            18,
+            19
+          ],
+          "new_interval0": [
+            18,
+            19
+          ],
+          "old": "T",
+          "new": "V"
+        },
+        {
+          "kind": "replace",
+          "old_interval0": [
+            23,
+            24
+          ],
+          "new_interval0": [
+            23,
+            24
+          ],
+          "old": "T",
+          "new": "S"
+        }
+      ],
+      "nt_differences": [
+        {
+          "position_nt1": 4,
+          "old": "C",
+          "new": "G"
+        },
+        {
+          "position_nt1": 12,
+          "old": "G",
+          "new": "A"
+        },
+        {
+          "position_nt1": 55,
+          "old": "A",
+          "new": "G"
+        },
+        {
+          "position_nt1": 56,
+          "old": "C",
+          "new": "T"
+        },
+        {
+          "position_nt1": 60,
+          "old": "T",
+          "new": "C"
+        },
+        {
+          "position_nt1": 71,
+          "old": "C",
+          "new": "G"
+        }
+      ]
+    }
+  ],
+  "state_transitions": [
+    {
+      "before": "alpha_only_complete",
+      "whole": "alpha_only_complete",
+      "n": 5
+    },
+    {
+      "before": "alpha_only_complete",
+      "whole": "beta_only_complete",
+      "n": 5
+    },
+    {
+      "before": "alpha_only_complete",
+      "whole": "both_complete",
+      "n": 27
+    },
+    {
+      "before": "alpha_only_complete",
+      "whole": "neither_complete",
+      "n": 2
+    },
+    {
+      "before": "beta_only_complete",
+      "whole": "beta_only_complete",
+      "n": 1
+    },
+    {
+      "before": "beta_only_complete",
+      "whole": "neither_complete",
+      "n": 1
+    },
+    {
+      "before": "both_complete",
+      "whole": "beta_only_complete",
+      "n": 9
+    },
+    {
+      "before": "both_complete",
+      "whole": "both_complete",
+      "n": 23
+    },
+    {
+      "before": "both_complete",
+      "whole": "neither_complete",
+      "n": 5
+    },
+    {
+      "before": "neither_complete",
+      "whole": "alpha_only_complete",
+      "n": 2
+    },
+    {
+      "before": "neither_complete",
+      "whole": "beta_only_complete",
+      "n": 2
+    },
+    {
+      "before": "neither_complete",
+      "whole": "both_complete",
+      "n": 10
+    }
+  ],
+  "no_best_depth_per_cell_selection": true
+}

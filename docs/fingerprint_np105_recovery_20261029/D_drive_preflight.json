@@ -1,0 +1,19 @@
+{
+  "returncode": 0,
+  "command": [
+    "/home/administrator/docs/np105-raw-20261029/sra-tools/usr/bin/fasterq-dump",
+    "/home/administrator/docs/np105-raw-20261029/whole_ncbi_native/SRR34543498.sra",
+    "--split-spot",
+    "--skip-technical",
+    "--stdout",
+    "--threads",
+    "2",
+    "--temp",
+    "/mnt/d/ChatGPT/meta-acdc-storage-20261029/full_run_preflight/sdk_temp",
+    "--size-check",
+    "only"
+  ],
+  "destination_free_bytes": 119549145088,
+  "stdout": "",
+  "stderr": ""
+}

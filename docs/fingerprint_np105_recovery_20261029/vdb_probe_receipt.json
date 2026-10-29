@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/home/administrator/docs/np105-raw-20261029/sra-tools/usr/bin/vdb-dump",
+    "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR34543498/SRR34543498",
+    "-T",
+    "SEQUENCE",
+    "-R",
+    "1-3",
+    "-C",
+    "READ_LEN,READ_TYPE,READ,QUALITY",
+    "-f",
+    "json"
+  ],
+  "source_url": "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR34543498/SRR34543498",
+  "source_is_full_quality_sra": true,
+  "requested_spot_rows": "1-3",
+  "whole_run_verified": false,
+  "returncode": 0,
+  "stdout_bytes": 5102,
+  "stdout_sha256": "7b46375e2da29ff10e15a4ca7047829a57cb7a2909abab3ee4811ee220e2a0a5",
+  "stderr_bytes": 0,
+  "stderr": "",
+  "seconds": 82.75
+}

@@ -1,0 +1,46 @@
+{
+  "scope": "all 50653512 source spots from MD5-verified complete SRR34543498; all 92 predeclared whitelist cells",
+  "raw_assembly_report_legacy_scope_field": "The unchanged prefix-era driver emits same bounded prefix; this is a stale descriptive field, not actual input scope. Whole-selection receipt, commands, all186 input hashes and archive establish whole-run inputs.",
+  "assemblies_exit_zero": 92,
+  "nonempty_transcript_fastas": 88,
+  "cells_without_transcript_output": [
+    {
+      "barcode": "ACTGAACCAGCTGTGC",
+      "exit_code": 0,
+      "transcripts_fasta_exists": false,
+      "reason": "assembler completed without transcripts.fasta; no sequence inferred",
+      "log_archived": true
+    },
+    {
+      "barcode": "AGACGTTCACAACTGT",
+      "exit_code": 0,
+      "transcripts_fasta_exists": false,
+      "reason": "assembler completed without transcripts.fasta; no sequence inferred",
+      "log_archived": true
+    },
+    {
+      "barcode": "CACACAAGTCGTGGCT",
+      "exit_code": 0,
+      "transcripts_fasta_exists": false,
+      "reason": "assembler completed without transcripts.fasta; no sequence inferred",
+      "log_archived": true
+    },
+    {
+      "barcode": "TGTATTCGTGCGAAAC",
+      "exit_code": 0,
+      "transcripts_fasta_exists": false,
+      "reason": "assembler completed without transcripts.fasta; no sequence inferred",
+      "log_archived": true
+    }
+  ],
+  "reference_used_for_assembly": false,
+  "read_correction": false,
+  "bases_substituted": 0,
+  "independent_receptor_sources": 1,
+  "new_identity_admissions": 0,
+  "qualified_cross_study_pairs": 0,
+  "qualified_same_source_same_V_native_groups": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false
+}

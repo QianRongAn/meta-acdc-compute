@@ -1,0 +1,187 @@
+{
+  "scope": "all selected reads from checksum-verified complete SRR34543498",
+  "targets": [
+    {
+      "barcode": "ACTTACTAGTGTCCAT",
+      "role": "TRA",
+      "candidate_nt_sha256": "97e6e2512e0016515847cb03cbd2b32022c52d3e3779dc2864f60273ae241fb2",
+      "positions": [
+        38,
+        131
+      ],
+      "scope": "whole-run de novo assembly candidate",
+      "equal_length_snv_audit_supported": true,
+      "positions_nt1": [
+        39,
+        132
+      ],
+      "support": {
+        "candidate": {
+          "haplotype": "TA",
+          "Q30_unambiguous_UMIs_covering_all_differences": 0,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 0,
+          "Q30_same_read_phased_UMIs": 0
+        },
+        "canonical": {
+          "haplotype": "CC",
+          "Q30_unambiguous_UMIs_covering_all_differences": 18,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 14,
+          "Q30_same_read_phased_UMIs": 23
+        }
+      },
+      "all_quality_same_read_haplotype_read_counts": {
+        "CC": 650,
+        "TC": 3,
+        "AC": 1
+      },
+      "Q30_same_read_haplotype_UMI_counts": {
+        "CC": 23,
+        "TC": 2
+      },
+      "interpretation": "raw support audit only; does not establish an independent native receptor, genomic phase, or mutation mechanism"
+    },
+    {
+      "barcode": "GCTGCAGTCTAACGGT",
+      "role": "TRB",
+      "candidate_nt_sha256": "d5e45d38b34ae106c65a8358bc1d033194cd6cedf6de6bdc993014da1193746c",
+      "positions": [
+        38
+      ],
+      "scope": "whole-run de novo assembly candidate",
+      "equal_length_snv_audit_supported": true,
+      "positions_nt1": [
+        39
+      ],
+      "support": {
+        "candidate": {
+          "haplotype": "G",
+          "Q30_unambiguous_UMIs_covering_all_differences": 0,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 0,
+          "Q30_same_read_phased_UMIs": 1
+        },
+        "canonical": {
+          "haplotype": "A",
+          "Q30_unambiguous_UMIs_covering_all_differences": 11,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 9,
+          "Q30_same_read_phased_UMIs": 12
+        }
+      },
+      "all_quality_same_read_haplotype_read_counts": {
+        "A": 492,
+        "G": 1,
+        "C": 1
+      },
+      "Q30_same_read_haplotype_UMI_counts": {
+        "A": 12,
+        "G": 1
+      },
+      "interpretation": "raw support audit only; does not establish an independent native receptor, genomic phase, or mutation mechanism"
+    },
+    {
+      "barcode": "TAAACCGAGGGAAACA",
+      "role": "TRA",
+      "candidate_nt_sha256": "ec83eb0dbc41b64b627407aecdf1fbbf3ca12d93b3145cc3fe342ba4419db05f",
+      "positions": [
+        3,
+        11,
+        54,
+        55,
+        59,
+        70
+      ],
+      "scope": "whole-run de novo assembly candidate",
+      "equal_length_snv_audit_supported": true,
+      "positions_nt1": [
+        4,
+        12,
+        55,
+        56,
+        60,
+        71
+      ],
+      "support": {
+        "candidate": {
+          "haplotype": "GAGTCG",
+          "Q30_unambiguous_UMIs_covering_all_differences": 1,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 0,
+          "Q30_same_read_phased_UMIs": 1
+        },
+        "canonical": {
+          "haplotype": "CGACTC",
+          "Q30_unambiguous_UMIs_covering_all_differences": 14,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 6,
+          "Q30_same_read_phased_UMIs": 44
+        }
+      },
+      "all_quality_same_read_haplotype_read_counts": {
+        "CGACTC": 2192,
+        "CGGCTC": 48,
+        "CATCCC": 1,
+        "GATCCC": 1,
+        "CGACCC": 4,
+        "CGCCTC": 3,
+        "GAGTCG": 1,
+        "TGACTC": 3,
+        "AGACTC": 2,
+        "CAACTC": 2,
+        "CGGTCG": 1,
+        "CCACTC": 1,
+        "CGTCCC": 4
+      },
+      "Q30_same_read_haplotype_UMI_counts": {
+        "CGACTC": 44,
+        "CGGCTC": 16,
+        "CATCCC": 1,
+        "GATCCC": 1,
+        "CGACCC": 3,
+        "GAGTCG": 1,
+        "TGACTC": 2,
+        "CGGTCG": 1,
+        "CAACTC": 1,
+        "CGTCCC": 1
+      },
+      "interpretation": "raw support audit only; does not establish an independent native receptor, genomic phase, or mutation mechanism"
+    },
+    {
+      "barcode": "TCGGGACTCGTGGGAA",
+      "role": "TRA",
+      "candidate_nt_sha256": "45aea37cb882ba40c8cd7002c2e77d7714886c27a30099c2b56ed06685b96371",
+      "positions": [
+        200
+      ],
+      "scope": "predeclared prefix K82N candidate; check against whole run",
+      "equal_length_snv_audit_supported": true,
+      "positions_nt1": [
+        201
+      ],
+      "support": {
+        "candidate": {
+          "haplotype": "C",
+          "Q30_unambiguous_UMIs_covering_all_differences": 0,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 0,
+          "Q30_same_read_phased_UMIs": 0
+        },
+        "canonical": {
+          "haplotype": "A",
+          "Q30_unambiguous_UMIs_covering_all_differences": 5,
+          "Q30_exact_CDR3_linked_unambiguous_UMIs": 5,
+          "Q30_same_read_phased_UMIs": 7
+        }
+      },
+      "all_quality_same_read_haplotype_read_counts": {
+        "C": 6,
+        "A": 359,
+        "G": 2
+      },
+      "Q30_same_read_haplotype_UMI_counts": {
+        "A": 7,
+        "G": 2
+      },
+      "interpretation": "raw support audit only; does not establish an independent native receptor, genomic phase, or mutation mechanism"
+    }
+  ],
+  "reference_is_observed_prefix_candidate_only": true,
+  "biological_reference_used_for_assembly": false,
+  "bases_substituted": 0,
+  "identity_admitted": false
+}

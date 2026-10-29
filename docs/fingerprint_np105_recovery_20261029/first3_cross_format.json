@@ -1,0 +1,99 @@
+{
+  "spot_rows": [
+    {
+      "spot": 1,
+      "lengths": [
+        8,
+        150,
+        150
+      ],
+      "read_types": [
+        "SRA_READ_TYPE_TECHNICAL",
+        "SRA_READ_TYPE_BIOLOGICAL",
+        "SRA_READ_TYPE_BIOLOGICAL"
+      ],
+      "mates": [
+        {
+          "ENA_file_mate": 1,
+          "SRA_read_index1": 2,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "e54419b3861e70a83ff327295a8d652c289f3e6a6f7f9686fb36cf7d78360d8c",
+          "quality_sha256": "8b3ded0709634ef8bdebe85bb6f1e6054a327079349da3ecf37d61a24e530aae"
+        },
+        {
+          "ENA_file_mate": 2,
+          "SRA_read_index1": 3,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "41f2ae334ade576cd84736e856ef1e46721a4469611f026a2e8cfc1bda31b4e2",
+          "quality_sha256": "ed5df24c08f1cf0715b05f12ecb795ab86854cc34aa7e1e685ee6f36a35eef1d"
+        }
+      ]
+    },
+    {
+      "spot": 2,
+      "lengths": [
+        8,
+        150,
+        150
+      ],
+      "read_types": [
+        "SRA_READ_TYPE_TECHNICAL",
+        "SRA_READ_TYPE_BIOLOGICAL",
+        "SRA_READ_TYPE_BIOLOGICAL"
+      ],
+      "mates": [
+        {
+          "ENA_file_mate": 1,
+          "SRA_read_index1": 2,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "495681cb3b0b00dd290e7a98d42a7217edd93c7e3765bdc7b86525f36ae4e3ef",
+          "quality_sha256": "e7446af9ac6c912f68e994e1de931a1830898a41e93883c96588c8409c5b9a75"
+        },
+        {
+          "ENA_file_mate": 2,
+          "SRA_read_index1": 3,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "db347144d984bea08667702306d6db10a6af245e980cb123dd73ff8a8de7fb8b",
+          "quality_sha256": "216eed2b2724fc9b116bede4033c6d732fae71bf30a6d95398b9de76f213b7fe"
+        }
+      ]
+    },
+    {
+      "spot": 3,
+      "lengths": [
+        8,
+        150,
+        150
+      ],
+      "read_types": [
+        "SRA_READ_TYPE_TECHNICAL",
+        "SRA_READ_TYPE_BIOLOGICAL",
+        "SRA_READ_TYPE_BIOLOGICAL"
+      ],
+      "mates": [
+        {
+          "ENA_file_mate": 1,
+          "SRA_read_index1": 2,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "bf085b3edabd67b46416df71b465d3bf8373806f710ef547f2b32aeaa86f72b4",
+          "quality_sha256": "14756a5b9bdd4fb5c1c0e86bdb3647045f2d5c4be14c1f18563dd073d52ba699"
+        },
+        {
+          "ENA_file_mate": 2,
+          "SRA_read_index1": 3,
+          "sequence_and_quality_byte_exact": true,
+          "sequence_sha256": "22abaa9027f13427d1daa43725af251095a6d8d7f5185d5e5ec3468dc9a99767",
+          "quality_sha256": "0400efd402373698939cdb7a3331654200203b6422062a5aa58e39aff0f45fee"
+        }
+      ]
+    }
+  ],
+  "all_six_sequence_and_quality_records_exact": true,
+  "technical_read_index1": 1,
+  "technical_read_length": 8,
+  "ENA_file1_matches_SRA_read2": true,
+  "ENA_file2_matches_SRA_read3": true,
+  "biological_bases_substituted": 0,
+  "whole_run_verified": false,
+  "purpose": "format check only; not full-run checksum or receptor identity admission"
+}
