@@ -1,0 +1,71 @@
+[
+  {
+    "barcode": "TAAACCGAGGGAAACA",
+    "preassembly_pairs": 413,
+    "command": [
+      "/home/administrator/docs/meta-acdc/.venv/bin/python",
+      "scripts/run_np105_spades.py",
+      "--rna",
+      "--only-assembler",
+      "-t",
+      "2",
+      "-m",
+      "4",
+      "-1",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/TAAACCGAGGGAAACA_R1.fastq",
+      "-2",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/TAAACCGAGGGAAACA_R2.fastq",
+      "-o",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_cell_TAAACCGAGGGAAACA"
+    ],
+    "returncode": 0,
+    "log": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_TAAACCGAGGGAAACA.console.log",
+    "output": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_TAAACCGAGGGAAACA"
+  },
+  {
+    "barcode": "CACACAATCTAACCGA",
+    "preassembly_pairs": 409,
+    "command": [
+      "/home/administrator/docs/meta-acdc/.venv/bin/python",
+      "scripts/run_np105_spades.py",
+      "--rna",
+      "--only-assembler",
+      "-t",
+      "2",
+      "-m",
+      "4",
+      "-1",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R1.fastq",
+      "-2",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R2.fastq",
+      "-o",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA"
+    ],
+    "returncode": 0,
+    "log": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA.console.log",
+    "output": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA"
+  },
+  {
+    "barcode": "AGGCCACGTATAGTAG",
+    "preassembly_pairs": 396,
+    "command": [
+      "/home/administrator/docs/meta-acdc/.venv/bin/python",
+      "scripts/run_np105_spades.py",
+      "--rna",
+      "--only-assembler",
+      "-t",
+      "2",
+      "-m",
+      "4",
+      "-1",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/AGGCCACGTATAGTAG_R1.fastq",
+      "-2",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_selected/AGGCCACGTATAGTAG_R2.fastq",
+      "-o",
+      "/home/administrator/docs/np105-raw-20261029/pilot32_cell_AGGCCACGTATAGTAG"
+    ],
+    "returncode": 0,
+    "log": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_AGGCCACGTATAGTAG.console.log",
+    "output": "/home/administrator/docs/np105-raw-20261029/pilot32_cell_AGGCCACGTATAGTAG"
+  }
+]

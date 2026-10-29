@@ -1,0 +1,31 @@
+Command line: /home/administrator/docs/np105-raw-20261029/spades-tools/usr/libexec/spades/spades.py	--rna	--only-assembler	-t	2	-m	4	-1	/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R1.fastq	-2	/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R2.fastq	-o	/home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 3.14.4
+  OS: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43
+
+Output dir: /home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA
+Debug mode is turned OFF
+
+Dataset parameters:
+  RNA-seq mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R1.fastq']
+      right reads: ['/home/administrator/docs/np105-raw-20261029/pilot32_selected/CACACAATCTAACCGA_R2.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/administrator/docs/np105-raw-20261029/pilot32_cell_CACACAATCTAACCGA/tmp
+  Threads: 2
+  Memory limit (in Gb): 4
+

@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "role": "TRA",
+      "entity": "9NVA_1",
+      "exact_unique_substring": true,
+      "query_interval0": [
+        0,
+        111
+      ]
+    },
+    {
+      "role": "TRB",
+      "entity": "9NVA_2",
+      "exact_unique_substring": true,
+      "query_interval0": [
+        0,
+        116
+      ]
+    }
+  ],
+  "same_study_only": true,
+  "DOI": "10.1016/j.celrep.2026.117908",
+  "new_qualified_cross_study_pairs": 0
+}

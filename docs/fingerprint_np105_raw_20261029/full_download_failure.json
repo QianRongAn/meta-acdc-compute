@@ -1,0 +1,16 @@
+{
+  "run": "SRR34543498",
+  "finished": false,
+  "files": [
+    {
+      "mate": 1,
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR345/098/SRR34543498/SRR34543498_1.fastq.gz",
+      "expected_bytes": 3122244336,
+      "expected_md5": "16c9ef1a2f171c247eef4b8254d6d6eb",
+      "bytes_received": 0,
+      "complete": false,
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='ftp.sra.ebi.ac.uk', port=443): Max retries exceeded with url: /vol1/fastq/SRR345/098/SRR34543498/SRR34543498_1.fastq.gz (Caused by ConnectTimeoutError(<HTTPSConnection(host='ftp.sra.ebi.ac.uk', port=443) at 0x7d0832ce1d30>, 'Connection to ftp.sra.ebi.ac.uk timed out. (connect timeout=30)'))",
+      "seconds": 30.25
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "queries": [
+    {
+      "role": "TRB",
+      "sequence": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "role": "TRA",
+      "sequence": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    }
+  ],
+  "scope": "raw-derived full numbered intervals; discovery only; both-end fixed QC required",
+  "identity_admitted": false
+}

@@ -1,0 +1,81 @@
+{
+  "source_run": "SRR34543498",
+  "sample": "GSM9108725",
+  "scope": "bounded paired FASTQ prefix; sequence reconstruction evidence, not whole-run completion or model performance",
+  "raw_prefix_bytes_per_mate": 33554432,
+  "n_common_complete_read_pairs": 546555,
+  "n_selected_pairs": 20031,
+  "n_source_barcodes": 92,
+  "n_independent_cell_assemblies": 3,
+  "numbered_domains": {
+    "TRB": {
+      "amino_acids": "DPKIIQKPKYLVAVTGSEKILICEQYLGHNAMYWYRQSAKKPLEFMFSYSYQKLMDNQTASSRFQPQSSKKNHLDLQITALKPDDSATYFCASSQDRRSSYNSPLYFAAGTRLTVT",
+      "nucleotides": "GACCCGAAAATTATCCAGAAACCAAAATATCTGGTGGCAGTCACAGGGAGCGAAAAAATCCTGATATGCGAACAGTATCTAGGCCACAATGCTATGTATTGGTATAGACAAAGTGCTAAGAAGCCTCTAGAGTTCATGTTTTCCTACAGCTATCAAAAACTTATGGACAATCAGACTGCCTCAAGTCGCTTCCAACCTCAAAGTTCAAAGAAAAACCATTTAGACCTTCAGATCACAGCTCTAAAGCCTGATGACTCGGCCACATACTTCTGTGCCAGCAGCCAAGATAGACGGTCTTCCTATAATTCGCCCCTCTACTTTGCGGCAGGCACCCGGCTCACTGTGACA",
+      "length_aa": 116,
+      "same_nt_in_three_cells": true,
+      "minimum_Q30_molecules": 221,
+      "minimum_Q30_cells": 76,
+      "exact_V_framework_nucleotide_matches": [
+        "TRBV2*01"
+      ],
+      "longest_exact_J_suffix_matches": [
+        {
+          "gene": "TRBJ1-6*01",
+          "function": "ORF",
+          "exact_suffix_aa": 17,
+          "reference": "SYNSPLYFAAGTRLTVT"
+        }
+      ],
+      "non_gap_numbering_identical": true,
+      "post_numbered_source_residues": ""
+    },
+    "TRA": {
+      "amino_acids": "QQKVQQSPESLIVPEGAMTSLNCTFSDSASQYFAWYRQHSGKAPKALMSIFSNGEKEEGRFTIHLNKASLHFSLHIRDSQPSDSALYLCAVMNYNQGKLIFGQGTKLSIKP",
+      "nucleotides": "CAGCAGAAGGTGCAGCAGAGCCCAGAATCCCTCATTGTCCCAGAGGGAGCCATGACCTCTCTCAACTGCACTTTCAGCGACAGTGCTTCTCAGTATTTTGCATGGTACAGACAGCATTCTGGGAAAGCCCCCAAGGCACTGATGTCCATCTTCTCCAATGGTGAAAAAGAAGAAGGCAGATTCACAATTCACCTCAATAAAGCCAGTCTGCATTTCTCGCTACACATCAGAGACTCCCAGCCCAGTGACTCTGCTCTCTACCTCTGTGCAGTCATGAATTATAACCAGGGGAAGCTTATCTTTGGACAGGGAACCAAGTTATCTATCAAGCCC",
+      "length_aa": 111,
+      "same_nt_in_three_cells": true,
+      "minimum_Q30_molecules": 575,
+      "minimum_Q30_cells": 88,
+      "exact_V_framework_nucleotide_matches": [
+        "TRAV7D-3*03"
+      ],
+      "longest_exact_J_suffix_matches": [
+        {
+          "gene": "TRAJ23*01",
+          "function": "F",
+          "exact_suffix_aa": 19,
+          "reference": "NYNQGKLIFGQGTKLSIKP"
+        }
+      ],
+      "non_gap_numbering_identical": true,
+      "post_numbered_source_residues": "N"
+    }
+  },
+  "cross_study_search": {
+    "TRA_entities": [
+      "9NVA_1"
+    ],
+    "TRB_entities": [
+      "9NVA_2"
+    ],
+    "pair_PDBs": [
+      "9NVA"
+    ],
+    "only_study_DOI": "10.1016/j.celrep.2026.117908",
+    "new_cross_study_pairs": 0
+  },
+  "remaining_blockers": [
+    "Whole-run download did not connect; paired prefixes do not verify ENA whole-file MD5 or full-run heterogeneity.",
+    "Raw-derived paired identity is not an unchanged STCRDab complete-identity admission; no authoritative record rewritten.",
+    "TRBJ1-6*01 remains annotated ORF in the fixed reference; F/(F)-only J gate retained.",
+    "TRA raw nucleotide V match is unique only within the pinned reference snapshot; no genomic locus phasing is claimed.",
+    "Exact observed V/J match intervals do not uniquely determine biological V(D)J deletion or N/D recombination cuts.",
+    "Alpha primary label includes observed terminal N after numbered 128P; beta has an explicit IMGT128 gap. Neither is padded or forcibly renumbered.",
+    "Fresh paired-chain search yields only same-study 9NVA; fixed both-end QC cross-study positives and independent natural same-V structural control groups remain zero."
+  ],
+  "new_complete_identity_admissions": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "model_positive_result": false
+}

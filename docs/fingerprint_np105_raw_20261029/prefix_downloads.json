@@ -1,0 +1,30 @@
+[
+  {
+    "mate": 1,
+    "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR345/098/SRR34543498/SRR34543498_1.fastq.gz",
+    "attempt": 1,
+    "requested_range": "bytes=0-33554431",
+    "http_status": 206,
+    "content_range": "bytes 0-33554431/3122244336",
+    "bytes": 33554432,
+    "sha256": "708ce77146ae98ced3b8a7ca8667111e5fe53096714258eefe2fa018fbd309b4",
+    "decompressed_bytes": 199701254,
+    "gzip_stream_complete": false,
+    "whole_file_md5_verified": false,
+    "seconds": 67.47
+  },
+  {
+    "mate": 2,
+    "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR345/098/SRR34543498/SRR34543498_2.fastq.gz",
+    "attempt": 1,
+    "requested_range": "bytes=0-33554431",
+    "http_status": 206,
+    "content_range": "bytes 0-33554431/3154927322",
+    "bytes": 33554432,
+    "sha256": "64a727795189bd7308db23d8264d1414714c6b58bd0c76900e16167be48701df",
+    "decompressed_bytes": 201318600,
+    "gzip_stream_complete": false,
+    "whole_file_md5_verified": false,
+    "seconds": 62.24
+  }
+]

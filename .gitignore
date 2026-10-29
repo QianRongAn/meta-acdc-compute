@@ -94,3 +94,8 @@ docs/fingerprint_np_boundaries_20261029/broad_search/primary_validation_final.js
 
 # Preserve adjudication coordinates as exact gzip snapshots.
 docs/fingerprint_np_adjudication_20261029/sources/followup/*.pdb
+
+# NP105: tool installation archives stay local; publish version and hash receipts.
+docs/fingerprint_np105_raw_20261029/sources/tools/*.deb
+docs/fingerprint_np105_raw_20261029/sources/bwa/*.deb
+!docs/fingerprint_np105_raw_20261029/evidence/*.fastq.gz
