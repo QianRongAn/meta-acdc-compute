@@ -1,0 +1,10 @@
+[
+  [
+    "ena_all_locations.tsv",
+    "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR34543498&result=read_run&fields=run_accession,fastq_ftp,fastq_aspera,sra_ftp,submitted_ftp,submitted_format,submitted_md5,submitted_bytes&format=tsv"
+  ],
+  [
+    "ncbi_locations.json",
+    "https://locate.ncbi.nlm.nih.gov/sdl/2/retrieve?acc=SRR34543498&accept-alternate-locations=yes"
+  ]
+]

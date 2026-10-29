@@ -1,0 +1,152 @@
+{
+  "n_weekly_text_hits": 41,
+  "n_metadata_entries_validated": 41,
+  "n_TCR_entries_found_by_explicit_titles_and_entity_labels": 3,
+  "TCR_entry_ids": [
+    "9XC3",
+    "9X9I",
+    "9X87"
+  ],
+  "n_existing_282_target_exact_pairs_found": 0,
+  "n_new_discovery_pair_leads": 2,
+  "leads": [
+    {
+      "anchor": "9XC3",
+      "description": "TCR1414_1",
+      "numbered_intervals": {
+        "beta": {
+          "sequence": "NAGVMQNPRHLVRRRGQEARLRCSPMKGHSHVYWYRQLPEEGLKFMVYLQKENIIDESGMPKERFSAEFPKEGPSILRIQQVVRGDSAAYFCASSPFQETQYFGPGTRLLVL",
+          "length": 112,
+          "inferred_V": [
+            [
+              "human",
+              "TRBV18*01"
+            ],
+            1.0
+          ],
+          "inferred_J": [
+            [
+              "human",
+              "TRBJ2-5*01"
+            ],
+            1.0
+          ]
+        },
+        "alpha": {
+          "sequence": "KQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVKSGAGSYQLTFGKGTKLSVIP",
+          "length": 113,
+          "inferred_V": [
+            [
+              "human",
+              "TRAV21*01"
+            ],
+            0.989247311827957
+          ],
+          "inferred_J": [
+            [
+              "human",
+              "TRAJ28*01"
+            ],
+            1.0
+          ]
+        }
+      },
+      "full_identity_admitted": false,
+      "primary_natural_source_verified": false
+    },
+    {
+      "anchor": "9X9I",
+      "description": "TCR1414_2",
+      "numbered_intervals": {
+        "alpha": {
+          "sequence": "GIQVEQSPPDLILQEGANSTLRCNFSDSVNNLQWFHQNPWGQLINLFYIPSGTKQNGRLSATTVATERYSLLYISSSQTTDSGVYFCAAPSGNTPLVFGKGTRLSVIA",
+          "length": 108,
+          "inferred_V": [
+            [
+              "human",
+              "TRAV22*01"
+            ],
+            0.9777777777777777
+          ],
+          "inferred_J": [
+            [
+              "human",
+              "TRAJ29*01"
+            ],
+            1.0
+          ]
+        },
+        "beta": {
+          "sequence": "DVKVTQSSRYLVKRTGEKVFLECVQDMDHENMFWYRQDPGLGLRLIYFSYDVKMKEKGDIPEGYSVSREKKERFSLILESASTNQTSMYLCASRVSGANVLTFGAGSRLTVL",
+          "length": 112,
+          "inferred_V": [
+            [
+              "human",
+              "TRBV28*01"
+            ],
+            0.9789473684210527
+          ],
+          "inferred_J": [
+            [
+              "human",
+              "TRBJ2-6*01"
+            ],
+            1.0
+          ]
+        }
+      },
+      "full_identity_admitted": false,
+      "primary_natural_source_verified": false
+    }
+  ],
+  "chain_query_statuses": [
+    {
+      "query": "9XC3_5.json",
+      "initial_status": 500,
+      "retry_status": 200,
+      "total_hits": 2,
+      "entities": [
+        "9X87_2",
+        "9XC3_5"
+      ],
+      "unresolved_reason": null
+    },
+    {
+      "query": "9XC3_4.json",
+      "initial_status": 500,
+      "retry_status": 500,
+      "total_hits": null,
+      "entities": null,
+      "unresolved_reason": "Sequence search server at 'http://production-rcsb-seqsearch-a' did not complete ticketId 'eQi5HOd8GcAMXrDn8xBwZe9Yvx2jUJpZVXRP5A' within 30000 ms (polled 18 times). Giving up polling."
+    },
+    {
+      "query": "9X9I_4.json",
+      "initial_status": 500,
+      "retry_status": 500,
+      "total_hits": null,
+      "entities": null,
+      "unresolved_reason": "Sequence search server at 'http://production-rcsb-seqsearch-a' did not complete ticketId 'TFG0olpgSP5DhBFo62K-NF9C0CwkzoZrhoPszA' within 30000 ms (polled 18 times). Giving up polling."
+    },
+    {
+      "query": "9X9I_5.json",
+      "initial_status": 500,
+      "retry_status": 500,
+      "total_hits": null,
+      "entities": null,
+      "unresolved_reason": "Sequence search server at 'http://production-rcsb-seqsearch-a' did not complete ticketId 'XxW2mJm7QxARoYAi8Z-fH9Hmol3hIro68a7itQ' within 30000 ms (polled 18 times). Giving up polling."
+    }
+  ],
+  "n_chain_queries_successful": 1,
+  "n_chain_queries_unresolved": 3,
+  "same_deposited_full_alpha_beta_constructs": [
+    "9XC3",
+    "9X87"
+  ],
+  "same_citation_title_but_DOI_and_PubMed_missing": true,
+  "EuropePMC_title_query_hit_count": 0,
+  "absence_of_publication_not_proven": true,
+  "new_complete_identity_admissions": 0,
+  "new_qualified_cross_study_pairs": 0,
+  "protocol_frozen": false,
+  "independent_acceptance_accessed": false
+}

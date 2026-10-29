@@ -1,0 +1,28 @@
+{
+  "query": {
+    "type": "group",
+    "logical_operator": "and",
+    "nodes": [
+      {
+        "type": "terminal",
+        "service": "full_text",
+        "parameters": {
+          "value": "T cell receptor"
+        }
+      },
+      {
+        "type": "terminal",
+        "service": "text",
+        "parameters": {
+          "attribute": "rcsb_accession_info.initial_release_date",
+          "operator": "greater_or_equal",
+          "value": "2026-10-22T00:00:00Z"
+        }
+      }
+    ]
+  },
+  "return_type": "entry",
+  "request_options": {
+    "return_all_hits": true
+  }
+}

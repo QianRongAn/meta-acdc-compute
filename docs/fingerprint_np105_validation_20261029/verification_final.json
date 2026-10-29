@@ -1,0 +1,88 @@
+{
+  "status": "pass",
+  "tests": 83,
+  "test_skips": 0,
+  "all92_transcript_outputs_and_absences_reproduced": true,
+  "n_transcript_FASTAs": 79,
+  "all92_numbering_evidence_replayed": true,
+  "variant_codon_evidence_replayed": true,
+  "original_selected_read_hashes_all_reconstructed": true,
+  "previous_deliveries": [
+    {
+      "folder": "fingerprint_audit_integration_20261027",
+      "n_files": 53,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_construct_followup_20261027",
+      "n_files": 109,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_20261024",
+      "n_files": 926,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_cross_source_extension_20261024",
+      "n_files": 1548,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_expanded_controls_20261029",
+      "n_files": 178,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_hard_family_20261024",
+      "n_files": 233,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_native_search_20261029",
+      "n_files": 83,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_np105_raw_20261029",
+      "n_files": 60,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_np_adjudication_20261029",
+      "n_files": 50,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_np_boundaries_20261029",
+      "n_files": 482,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_paired_identity_20261024",
+      "n_files": 592,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_positive_controls_20261027",
+      "n_files": 59,
+      "unchanged": true
+    },
+    {
+      "folder": "fingerprint_retrain_20261023",
+      "n_files": 211,
+      "unchanged": true
+    }
+  ],
+  "n_previous_deliveries": 13,
+  "n_frozen_files": 4584,
+  "previous_raw_code_files_unchanged": 11,
+  "fixed_gates_unchanged": true,
+  "whole_run_MD5_verified": false,
+  "new_complete_identity_admissions": 0,
+  "new_qualified_cross_study_pairs": 0,
+  "protocol_frozen": false,
+  "model_training_started": false,
+  "independent_acceptance_accessed": false,
+  "per_cell_every_base_Q30_support_replayed": true
+}

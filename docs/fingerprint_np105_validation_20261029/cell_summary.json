@@ -1,0 +1,1078 @@
+{
+  "n_cells": 92,
+  "n_complete_paired_cells": 37,
+  "n_complete_paired_cells_exact_prior_nt": 37,
+  "cell_counts": {
+    "both_complete": 37,
+    "beta_only_complete": 2,
+    "neither_complete": 14,
+    "alpha_only_complete": 39
+  },
+  "n_numbered_complete_ORFs": 119,
+  "n_CDR3_bearing_ORFs": 126,
+  "n_quarantined_nonidentical_complete_ORFs": 1,
+  "n_independent_receptors_added": 0,
+  "all_cells_are_one_receptor_source": true,
+  "identity_admitted": false,
+  "whole_run_verified": false,
+  "cells": [
+    {
+      "barcode": "AAAGCAATCCCAAGAT",
+      "read_pairs": 229,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AACCGCGTCTGATACG",
+      "read_pairs": 370,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AACTCAGGTTGACGTT",
+      "read_pairs": 241,
+      "state": "beta_only_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": true,
+      "unresolved": [
+        {
+          "role": "TRA",
+          "transcript": "NODE_2_length_613_cov_7.143116_g1_i0",
+          "reason": "terminal numbering incomplete"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACACCCTAGTGAACGC",
+      "read_pairs": 220,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACAGCCGAGAAAGTGG",
+      "read_pairs": 383,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACGAGGAGTCTCCATC",
+      "read_pairs": 36,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "ACTGAACCAGCTGTGC",
+      "read_pairs": 372,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACTTACTAGAGACTTA",
+      "read_pairs": 181,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACTTACTAGGTAGCCA",
+      "read_pairs": 206,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ACTTACTAGTGTCCAT",
+      "read_pairs": 243,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGACGTTCACAACTGT",
+      "read_pairs": 329,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGCAGCCTCCGTTGTC",
+      "read_pairs": 293,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGCTTGATCTGCCAGG",
+      "read_pairs": 240,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGGCCACGTATAGTAG",
+      "read_pairs": 396,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGGCCGTCATGCGCAC",
+      "read_pairs": 76,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "AGGTCATTCGCCTGTT",
+      "read_pairs": 118,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGTAGTCAGGTAGCTG",
+      "read_pairs": 377,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGTAGTCGTTCGTCTC",
+      "read_pairs": 183,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRB",
+          "transcript": "NODE_3_length_604_cov_2.235727_g2_i0",
+          "reason": "terminal numbering incomplete"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "AGTGTCACACCAGCAC",
+      "read_pairs": 315,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ATAGACCTCCGTCATC",
+      "read_pairs": 186,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ATTCTACCAGGGCATA",
+      "read_pairs": 225,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "ATTGGACCAGTATGCT",
+      "read_pairs": 96,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRB",
+          "transcript": "NODE_1_length_634_cov_4.230366_g0_i0",
+          "reason": "terminal numbering incomplete"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CAACCTCAGCCAGTAG",
+      "read_pairs": 367,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CAAGTTGAGGCGACAT",
+      "read_pairs": 27,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "CACACAAGTCGTGGCT",
+      "read_pairs": 262,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CACACAATCTAACCGA",
+      "read_pairs": 409,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CACATAGAGCTTTGGT",
+      "read_pairs": 221,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CAGCAGCTCAGCTGGC",
+      "read_pairs": 234,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CAGCTGGTCACGCGGT",
+      "read_pairs": 246,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRB",
+          "transcript": "NODE_3_length_387_cov_21.993865_g2_i0",
+          "reason": "terminal numbering incomplete"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CAGGTGCAGCGATTCT",
+      "read_pairs": 183,
+      "state": "beta_only_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CATATGGAGCTGCGAA",
+      "read_pairs": 245,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CATATTCAGGTCGGAT",
+      "read_pairs": 253,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "CCACCTATCGGCTACG",
+      "read_pairs": 281,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CCATTCGCACGGTTTA",
+      "read_pairs": 253,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CCATTCGTCTGTTTGT",
+      "read_pairs": 51,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "CCGTACTAGTTATCGC",
+      "read_pairs": 226,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CCTATTAGTCAATGTC",
+      "read_pairs": 17,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "CCTCTGAAGCAGATCG",
+      "read_pairs": 266,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CCTCTGACATATACGC",
+      "read_pairs": 200,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGAGAAGAGTCGAGTG",
+      "read_pairs": 242,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGCCAAGGTCACTGGC",
+      "read_pairs": 79,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRA",
+          "transcript": "NODE_1_length_607_cov_3.214286_g0_i0",
+          "reason": "strict full interval endpoints not observed"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGGACTGGTTGGTTTG",
+      "read_pairs": 312,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGGGTCAAGACTCGGA",
+      "read_pairs": 269,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGGGTCAGTAGGACAC",
+      "read_pairs": 105,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CGTTCTGCACATCCGG",
+      "read_pairs": 268,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CTCGAAACACCAGTTA",
+      "read_pairs": 252,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CTCGTCAGTTTGACAC",
+      "read_pairs": 181,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CTGATAGCAGGGAGAG",
+      "read_pairs": 117,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "CTGATAGCATTCCTGC",
+      "read_pairs": 323,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRB",
+          "transcript": "NODE_1_length_742_cov_13.932452_g0_i0",
+          "reason": "missing or multiple numbered domains"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "CTGCGGATCGTACGGC",
+      "read_pairs": 238,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GAACCTACACCTGGTG",
+      "read_pairs": 64,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "GAACGGAAGTACGCCC",
+      "read_pairs": 189,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GAATAAGGTAGCACGA",
+      "read_pairs": 44,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GAATAAGTCTAAGCCA",
+      "read_pairs": 31,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "GACCTGGAGAGTACCG",
+      "read_pairs": 292,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GACCTGGAGGACGAAA",
+      "read_pairs": 216,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GATCTAGCAATTCCTT",
+      "read_pairs": 124,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCACATACAGACGCTC",
+      "read_pairs": 178,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCAGCCAAGACCGGAT",
+      "read_pairs": 176,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCGCAACGTACAGTGG",
+      "read_pairs": 331,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCGCAGTAGCTGCAAG",
+      "read_pairs": 113,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCGGGTTTCAGATAAG",
+      "read_pairs": 214,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GCTGCAGTCTAACGGT",
+      "read_pairs": 242,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GGCAATTCAGGGAGAG",
+      "read_pairs": 157,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GGCCGATGTAAATACG",
+      "read_pairs": 334,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GGTGTTAGTCTTGATG",
+      "read_pairs": 364,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GTCACAATCTACTATC",
+      "read_pairs": 100,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "GTCGTAATCCGCATCT",
+      "read_pairs": 159,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "GTGCAGCCATGAGCGA",
+      "read_pairs": 261,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GTGGGTCAGCCCTAAT",
+      "read_pairs": 210,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GTGGGTCGTTACGCGC",
+      "read_pairs": 267,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "GTTCTCGTCCTCCTAG",
+      "read_pairs": 231,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TAAACCGAGGGAAACA",
+      "read_pairs": 413,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TAAGCGTCAGATCCAT",
+      "read_pairs": 49,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "TACCTTAGTTTGCATG",
+      "read_pairs": 258,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TACTCATAGTCGTTTG",
+      "read_pairs": 269,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TATGCCCGTAGCTGCC",
+      "read_pairs": 268,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TCATTACAGATCTGAA",
+      "read_pairs": 328,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TCATTTGTCTGGGCCA",
+      "read_pairs": 250,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TCGGGACAGATGGGTC",
+      "read_pairs": 100,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [
+        {
+          "role": "TRB",
+          "transcript": "NODE_2_length_343_cov_7.776596_g1_i0",
+          "reason": "missing or multiple numbered domains"
+        }
+      ],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TCGGGACTCGTGGGAA",
+      "read_pairs": 144,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": false,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TCGGTAATCTGCGACG",
+      "read_pairs": 219,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGAGAGGCAACGCACC",
+      "read_pairs": 76,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGAGCATCAAGACACG",
+      "read_pairs": 225,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGAGCCGGTTTGTTTC",
+      "read_pairs": 193,
+      "state": "both_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 1,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": true,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGATTTCCAAGGACAC",
+      "read_pairs": 283,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGTATTCGTGCGAAAC",
+      "read_pairs": 276,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TGTGGTAGTCGTGGCT",
+      "read_pairs": 275,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TTATGCTAGAATCTCC",
+      "read_pairs": 9,
+      "state": "neither_complete",
+      "alpha_complete_unique_nt": 0,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": null,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": "assembly_failed_or_no_transcripts"
+    },
+    {
+      "barcode": "TTCTTAGAGTCCGGTC",
+      "read_pairs": 309,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TTGGCAACATCGGTTA",
+      "read_pairs": 199,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    },
+    {
+      "barcode": "TTGTAGGAGAAGGTTT",
+      "read_pairs": 149,
+      "state": "alpha_only_complete",
+      "alpha_complete_unique_nt": 1,
+      "beta_complete_unique_nt": 0,
+      "complete_alpha_matches_prior": true,
+      "complete_beta_matches_prior": null,
+      "unresolved": [],
+      "assembly_output_reason": null
+    }
+  ],
+  "n_cells_with_transcript_FASTA": 79,
+  "n_cells_without_transcript_FASTA": 13,
+  "n_complete_pairs_with_Q30_support_at_every_base": 33,
+  "n_complete_assembled_pairs_failing_per_cell_Q30_coverage": 4
+}

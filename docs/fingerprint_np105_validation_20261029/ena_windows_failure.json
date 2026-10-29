@@ -1,0 +1,16 @@
+{
+  "run": "SRR34543498",
+  "complete": false,
+  "files": [
+    {
+      "mate": 1,
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR345/098/SRR34543498/SRR34543498_1.fastq.gz",
+      "expected_bytes": 3122244336,
+      "expected_md5": "16c9ef1a2f171c247eef4b8254d6d6eb",
+      "bytes_received": 0,
+      "complete": false,
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "seconds": 3.77
+    }
+  ]
+}

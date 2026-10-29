@@ -1,0 +1,22 @@
+[
+  {
+    "file": "ena_all_locations.tsv",
+    "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR34543498&result=read_run&fields=run_accession,fastq_ftp,fastq_aspera,sra_ftp,submitted_ftp,submitted_format,submitted_md5,submitted_bytes&format=tsv",
+    "requested_at": "2026-10-29T09:58:34.158279+00:00",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRR34543498&result=read_run&fields=run_accession,fastq_ftp,fastq_aspera,sra_ftp,submitted_ftp,submitted_format,submitted_md5,submitted_bytes&format=tsv",
+    "content_type": "text/plain",
+    "bytes": 427,
+    "sha256": "f4130233ff5d7f907b2966a187a7a6926f21ab238cd4f5b19c3f7e646c247fad"
+  },
+  {
+    "file": "ncbi_locations.json",
+    "url": "https://locate.ncbi.nlm.nih.gov/sdl/2/retrieve?acc=SRR34543498&accept-alternate-locations=yes",
+    "requested_at": "2026-10-29T09:58:34.157706+00:00",
+    "status": 200,
+    "final_url": "https://locate.ncbi.nlm.nih.gov/sdl/2/retrieve?acc=SRR34543498&accept-alternate-locations=yes",
+    "content_type": "application/json",
+    "bytes": 2133,
+    "sha256": "0ceaa2e2e6b199dca8dac49edaa40af720fb2d2f40855d49b0021984a72f5c2c"
+  }
+]

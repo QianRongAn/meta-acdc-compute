@@ -1,0 +1,74 @@
+{
+  "scope": "bounded prefix; post-assembly candidate-aligned raw observed codons, MAPQ>=30 and Q>=30 on all three bases",
+  "targets": [
+    {
+      "barcode": "TCGGGACTCGTGGGAA",
+      "role": "TRA",
+      "position_domain_nt1": 201,
+      "codon_start_domain_nt0": 198,
+      "position_IMGT": [
+        82,
+        " "
+      ],
+      "reference_nt": "A",
+      "variant_nt": "C",
+      "reference_codon": "AAA",
+      "variant_codon": "AAC",
+      "reference_aa": "K",
+      "variant_aa": "N",
+      "ORF_codon_start_nt0": 294,
+      "target_cell_all_quality_read_codon_counts": {
+        "AAC": 1,
+        "AAA": 1
+      },
+      "variant_codon_target_read_qualities": [
+        {
+          "spot": "SRR34543498.127410",
+          "UMI": "AGCACCCAAG",
+          "mate": 2,
+          "codon": "AAC",
+          "qualities": [
+            37,
+            32,
+            12
+          ]
+        }
+      ],
+      "Q30_same_read_exact_CDR3_linked_molecules": {
+        "AAA": 100
+      },
+      "target_cell_Q30_read_codon_counts": {
+        "AAA": 1
+      },
+      "target_cell_unambiguous_UMI_codon_counts": {
+        "AAA": 1
+      },
+      "target_cell_conflicting_UMIs": 0,
+      "all_whitelist_unambiguous_barcode_UMI_codon_counts": {
+        "AAA": 582,
+        "AAG": 27,
+        "GAA": 1,
+        "AGA": 1
+      },
+      "all_whitelist_cells_by_codon": {
+        "AAA": 90,
+        "AAG": 22,
+        "GAA": 1,
+        "AGA": 1
+      },
+      "target_cell_observations_by_UMI": {
+        "CTTCACAGTC": [
+          {
+            "spot": "SRR34543498.264456",
+            "mate": 2,
+            "codon": "AAA",
+            "min_codon_Q": 37,
+            "MAPQ": 60
+          }
+        ]
+      },
+      "decision": "quarantine assembly variant; do not replace consensus or infer an independent natural receptor"
+    }
+  ],
+  "biological_reference_used_for_assembly": false
+}

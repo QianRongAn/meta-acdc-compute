@@ -1,0 +1,30 @@
+{
+  "snapshot_UTC": "2026-10-29T10:20:17.181044+00:00",
+  "receipt": {
+    "run": "SRR34543498",
+    "source": "ncbi-sra",
+    "complete": false,
+    "files": [
+      {
+        "mate": "sra",
+        "url": "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR34543498/SRR34543498",
+        "expected_bytes": 6040866339,
+        "expected_md5": "bb8d681b918233fada8e0dbe875e4887",
+        "bytes_received": 268435456,
+        "complete": false,
+        "http_status": 206,
+        "content_length": "6040866339",
+        "content_range": "bytes 0-6040866338/6040866339",
+        "seconds": 1176.75
+      }
+    ]
+  },
+  "observed_file_bytes": 278921216,
+  "active_matching_process_ids": [
+    38006
+  ],
+  "download_running_at_snapshot": true,
+  "whole_run_verified": false,
+  "scope": "progress snapshot only; ongoing transfer is not checksum verification; SRA container is not ENA gzip FASTQ",
+  "raw_output_directory": "/home/administrator/docs/np105-raw-20261029/whole_ncbi"
+}

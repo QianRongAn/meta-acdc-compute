@@ -99,3 +99,7 @@ docs/fingerprint_np_adjudication_20261029/sources/followup/*.pdb
 docs/fingerprint_np105_raw_20261029/sources/tools/*.deb
 docs/fingerprint_np105_raw_20261029/sources/bwa/*.deb
 !docs/fingerprint_np105_raw_20261029/evidence/*.fastq.gz
+
+# Exact full all-cell reports are archived as gzip; keep originals locally.
+docs/fingerprint_np105_validation_20261029/all92_assemblies.json
+docs/fingerprint_np105_validation_20261029/all92_numbering.json
