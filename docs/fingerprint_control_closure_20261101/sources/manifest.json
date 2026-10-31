@@ -1,0 +1,132 @@
+[
+  {
+    "file": "new_release_search.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T+cell+receptor%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_accession_info.initial_release_date%22%2C%22operator%22%3A%22greater_or_equal%22%2C%22value%22%3A%222026-10-29T00%3A00%3A00Z%22%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-31T16:01:20.457873+00:00",
+    "status": "204",
+    "returncode": 0,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": ""
+  },
+  {
+    "file": "9nu7_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nu7",
+    "requested_at": "2026-10-31T16:01:20.458873+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "b8ec5a3f1dafca7f768e1daa1259baa4ffaeb3b99046cf0be77c9287f8b38909",
+    "error": ""
+  },
+  {
+    "file": "9nv6_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nv6",
+    "requested_at": "2026-10-31T16:01:20.458873+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "141b38eea1375826ca4df36337d094e07cb33a85d9178df775751c59f1c57a00",
+    "error": ""
+  },
+  {
+    "file": "9nv2_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nv2",
+    "requested_at": "2026-10-31T16:01:20.459875+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "1469beb47cdf96a0a876cbd774c821dc0adf05527d296e1b1b0e3bc8dd36906f",
+    "error": ""
+  },
+  {
+    "file": "9nve_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nve",
+    "requested_at": "2026-10-31T16:01:22.376233+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "f70b029a0bd35e5f9c6ce78d9fc2c8bcf28a9489487682bee417952c2fa42e02",
+    "error": ""
+  },
+  {
+    "file": "9nw2_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nw2",
+    "requested_at": "2026-10-31T16:01:22.412574+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "4e072b12afe35fd1fd0616380f7d14048a5bc4abf33d527e1f7ad803ff6f31bb",
+    "error": ""
+  },
+  {
+    "file": "9nva_stcrdab.html",
+    "url": "https://opig.stats.ox.ac.uk/webapps/stcrdab-stcrpred/StrViewer?pdb=9nva",
+    "requested_at": "2026-10-31T16:01:22.613719+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 22192,
+    "sha256": "c543b6babfc8b576b441265823e739115d925f9e378153bbd4b5b0d77ac1393a",
+    "error": ""
+  },
+  {
+    "file": "rcsb_7RTR.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/7RTR",
+    "requested_at": "2026-10-31T16:01:22.692884+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 14603,
+    "sha256": "6f6f97964837ea06fb8fd17f421d7671790cfb2733d86483284cfc53125208a7",
+    "error": ""
+  },
+  {
+    "file": "rcsb_4JFE.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/4JFE",
+    "requested_at": "2026-10-31T16:01:23.839778+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 20941,
+    "sha256": "ac87e953adc8fcbddc08ca317333da319e1ccb988f1bcb386abcf8a03d85d08c",
+    "error": ""
+  },
+  {
+    "file": "rcsb_9XC3.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9XC3",
+    "requested_at": "2026-10-31T16:01:23.874470+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 8851,
+    "sha256": "9844af3b7f61ad0344cf1ee930c6cee72afa71aa3174523222cdbef32e2d5d26",
+    "error": ""
+  },
+  {
+    "file": "rcsb_9X9I.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9X9I",
+    "requested_at": "2026-10-31T16:01:24.109714+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 8741,
+    "sha256": "b68b4741d0bd1432d22c33ff648df63abdda8b6ff218736076d8921784d28b4a",
+    "error": ""
+  },
+  {
+    "file": "rcsb_9X87.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9X87",
+    "requested_at": "2026-10-31T16:01:24.493077+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 8501,
+    "sha256": "75f6d8935c66f3a07311ba8f6c23e19c861d6c7c8a98b7912284d76fc44ac0d5",
+    "error": ""
+  },
+  {
+    "file": "rcsb_9X85.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9X85",
+    "requested_at": "2026-10-31T16:01:24.800778+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 8525,
+    "sha256": "1fd928abc219a213c82b6843bbd39102b9838f37b8bac3d5fd9075093c2530a9",
+    "error": ""
+  }
+]

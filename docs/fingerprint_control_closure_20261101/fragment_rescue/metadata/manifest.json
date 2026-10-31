@@ -1,0 +1,22 @@
+[
+  {
+    "file": "metadata_00.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%221AO7%22%2C+%221BD2%22%2C+%221KGC%22%2C+%221MI5%22%2C+%221QRN%22%2C+%221QSE%22%2C+%221QSF%22%2C+%222GJ6%22%2C+%223D39%22%2C+%223D3V%22%2C+%223H9S%22%2C+%223KPR%22%2C+%223KPS%22%2C+%223MV7%22%2C+%223PWP%22%2C+%223QFJ%22%2C+%223QH3%22%2C+%224PRH%22%2C+%224PRI%22%2C+%224PRP%22%5D%29%7Brcsb_id+struct+%7Btitle%7D+rcsb_primary_citation+%7Btitle+year+pdbx_database_id_DOI+pdbx_database_id_PubMed+rcsb_authors%7D+rcsb_accession_info+%7Binitial_release_date+revision_date%7D+polymer_entities+%7Brcsb_id+entity_poly+%7Bpdbx_seq_one_letter_code_can%7D+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids%7D%7D%7D%7D",
+    "requested_at": "2026-10-31T16:04:21.340665+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 48300,
+    "sha256": "8753fd1ed266cba7f80a74e33ae98f4cc8a39f68d5f10e1ace36dabe31a6ff71",
+    "error": ""
+  },
+  {
+    "file": "metadata_01.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%227AMP%22%2C+%227AMQ%22%2C+%227AMR%22%2C+%227AMS%22%5D%29%7Brcsb_id+struct+%7Btitle%7D+rcsb_primary_citation+%7Btitle+year+pdbx_database_id_DOI+pdbx_database_id_PubMed+rcsb_authors%7D+rcsb_accession_info+%7Binitial_release_date+revision_date%7D+polymer_entities+%7Brcsb_id+entity_poly+%7Bpdbx_seq_one_letter_code_can%7D+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids%7D%7D%7D%7D",
+    "requested_at": "2026-10-31T16:04:21.340665+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 10563,
+    "sha256": "802e138f4cc65ad6ece639fcd00bb84d31782f8978c327b1fd85e0d914c0837e",
+    "error": ""
+  }
+]

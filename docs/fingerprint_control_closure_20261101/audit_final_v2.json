@@ -1,0 +1,2458 @@
+{
+  "date": "2026-11-01",
+  "n_fragment_targets": 4,
+  "n_queries": 8,
+  "n_novel_exact_role_sequences": 7,
+  "n_fresh_metadata_PDBs": 24,
+  "n_exact_fragment_pair_leads": 20,
+  "n_local_alignment_false_pair_leads": 4,
+  "unreviewed_PDBs": [
+    "1KGC",
+    "3QH3",
+    "4PRH",
+    "7AMP",
+    "7AMQ",
+    "7AMR",
+    "7AMS"
+  ],
+  "new_external_sequence_gate_pass_PDBs": [
+    "7AMP",
+    "7AMR"
+  ],
+  "records": [
+    {
+      "anchor": "1ao7",
+      "pdb": "1AO7",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1038/384134a0",
+      "different_paper": false,
+      "title": "COMPLEX BETWEEN HUMAN T-CELL RECEPTOR, VIRAL PEPTIDE (TAX), AND HLA-A 0201",
+      "molecules": [
+        {
+          "entity": "1AO7_5",
+          "description": "T CELL RECEPTOR BETA"
+        },
+        {
+          "entity": "1AO7_4",
+          "description": "T CELL RECEPTOR ALPHA"
+        },
+        {
+          "entity": "1AO7_3",
+          "description": "TAX PEPTIDE"
+        },
+        {
+          "entity": "1AO7_2",
+          "description": "BETA-2 MICROGLOBULIN"
+        },
+        {
+          "entity": "1AO7_1",
+          "description": "HLA-A 0201"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "1AO7_4",
+          "beta": "1AO7_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "1QRN",
+      "exact_distinct_entity_fragment_pair": false,
+      "local_alignment_only": true,
+      "study": "doi:10.1016/s1074-7613(00)80080-1",
+      "different_paper": true,
+      "title": "CRYSTAL STRUCTURE OF HUMAN A6 TCR COMPLEXED WITH HLA-A2 BOUND TO ALTERED HTLV-1 TAX PEPTIDE P6A",
+      "molecules": [
+        {
+          "entity": "1QRN_1",
+          "description": "HLA CLASS I HISTOCOMPATIBILITY ANTIGEN, A-2 ALPHA CHAIN"
+        },
+        {
+          "entity": "1QRN_2",
+          "description": "BETA-2 MICROGLOBULIN"
+        },
+        {
+          "entity": "1QRN_3",
+          "description": "TAX PEPTIDE P6A"
+        },
+        {
+          "entity": "1QRN_4",
+          "description": "T-CELL RECEPTOR, ALPHA CHAIN"
+        },
+        {
+          "entity": "1QRN_5",
+          "description": "T-CELL RECEPTOR, BETA CHAIN"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": []
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "1QSE",
+      "exact_distinct_entity_fragment_pair": false,
+      "local_alignment_only": true,
+      "study": "doi:10.1016/s1074-7613(00)80080-1",
+      "different_paper": true,
+      "title": "STRUCTURE OF HUMAN A6-TCR BOUND TO HLA-A2 COMPLEXED WITH ALTERED HTLV-1 TAX PEPTIDE V7R",
+      "molecules": [
+        {
+          "entity": "1QSE_5",
+          "description": "PROTEIN (human T-Cell receptor)"
+        },
+        {
+          "entity": "1QSE_4",
+          "description": "PROTEIN (human T-Cell receptor)"
+        },
+        {
+          "entity": "1QSE_3",
+          "description": "Tax Peptide V7R"
+        },
+        {
+          "entity": "1QSE_2",
+          "description": "PROTEIN (beta-2 microglobulin)"
+        },
+        {
+          "entity": "1QSE_1",
+          "description": "PROTEIN (MHC class I HLA-A)"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": []
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "1QSF",
+      "exact_distinct_entity_fragment_pair": false,
+      "local_alignment_only": true,
+      "study": "doi:10.1016/s1074-7613(00)80080-1",
+      "different_paper": true,
+      "title": "STRUCTURE OF A6-TCR BOUND TO HLA-A2 COMPLEXED WITH ALTERED HTLV-1 TAX PEPTIDE Y8A",
+      "molecules": [
+        {
+          "entity": "1QSF_5",
+          "description": "HUMAN T-CELL RECEPTOR"
+        },
+        {
+          "entity": "1QSF_4",
+          "description": "HUMAN T-CELL RECEPTOR"
+        },
+        {
+          "entity": "1QSF_3",
+          "description": "TAX PEPTIDE Y8A"
+        },
+        {
+          "entity": "1QSF_2",
+          "description": "BETA-2 MICROGLOBULIN"
+        },
+        {
+          "entity": "1QSF_1",
+          "description": "MHC CLASS I HLA-A"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": []
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "2GJ6",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.jmb.2006.08.045",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the modified HTLV-1 TAX (Y5K-4-[3-Indolyl]-butyric acid) peptide",
+      "molecules": [
+        {
+          "entity": "2GJ6_5",
+          "description": "A6-Tcr"
+        },
+        {
+          "entity": "2GJ6_4",
+          "description": "A6-Tcr"
+        },
+        {
+          "entity": "2GJ6_3",
+          "description": "Modified HTLV-1 TAX (Y5K-IBA) peptide, chain C"
+        },
+        {
+          "entity": "2GJ6_2",
+          "description": "Beta-2-microglobulin, Contains: Beta-2-microglobulin variant pI 5.3"
+        },
+        {
+          "entity": "2GJ6_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "2GJ6_4",
+          "beta": "2GJ6_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3D39",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1042/bj20090732",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the modified HTLV-1 TAX (Y5(4-fluoroPhenylalanine)) peptide",
+      "molecules": [
+        {
+          "entity": "3D39_5",
+          "description": "A6 TCR beta chain"
+        },
+        {
+          "entity": "3D39_4",
+          "description": "A6 TCR alpha chain"
+        },
+        {
+          "entity": "3D39_3",
+          "description": "Modified HTLV-1 TAX (Y5(4fluoro)F) peptide"
+        },
+        {
+          "entity": "3D39_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3D39_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3D39_4",
+          "beta": "3D39_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3D3V",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1042/bj20090732",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the modified HTLV-1 TAX (Y5(3,4-difluoroPhenylalanine)) peptide",
+      "molecules": [
+        {
+          "entity": "3D3V_5",
+          "description": "A6 TCR beta chain"
+        },
+        {
+          "entity": "3D3V_4",
+          "description": "A6 TCR alpha chain"
+        },
+        {
+          "entity": "3D3V_3",
+          "description": "Modified HTLV-1 TAX (Y5(3,4-difluoro)F) peptide"
+        },
+        {
+          "entity": "3D3V_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3D3V_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3D3V_4",
+          "beta": "3D3V_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3H9S",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.immuni.2009.11.003",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the bound Tel1p peptide",
+      "molecules": [
+        {
+          "entity": "3H9S_5",
+          "description": "TRBV6-5 protein"
+        },
+        {
+          "entity": "3H9S_4",
+          "description": "A6 TCR alpha chain"
+        },
+        {
+          "entity": "3H9S_3",
+          "description": "Tel1p peptide"
+        },
+        {
+          "entity": "3H9S_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3H9S_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3H9S_4",
+          "beta": "3H9S_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3PWP",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.4049/jimmunol.1003150",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the bound HuD peptide",
+      "molecules": [
+        {
+          "entity": "3PWP_5",
+          "description": "A6 TCR beta chain"
+        },
+        {
+          "entity": "3PWP_4",
+          "description": "A6 TCR alpha chain"
+        },
+        {
+          "entity": "3PWP_3",
+          "description": "HuD peptide"
+        },
+        {
+          "entity": "3PWP_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3PWP_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3PWP_4",
+          "beta": "3PWP_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3QFJ",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.jmb.2011.10.006",
+      "different_paper": true,
+      "title": "The complex between TCR A6 and human Class I MHC HLA-A2 with the modified TAX (Y5F) peptide",
+      "molecules": [
+        {
+          "entity": "3QFJ_5",
+          "description": "A6 beta chain"
+        },
+        {
+          "entity": "3QFJ_4",
+          "description": "A6 alpha chain"
+        },
+        {
+          "entity": "3QFJ_3",
+          "description": "TAX(Y5F) peptide"
+        },
+        {
+          "entity": "3QFJ_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3QFJ_1",
+          "description": "HLA class I histocompatibility antigen, A-2 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3QFJ_4",
+          "beta": "3QFJ_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "3QH3",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.jmb.2011.10.006",
+      "different_paper": true,
+      "title": "The crystal structure of TCR A6",
+      "molecules": [
+        {
+          "entity": "3QH3_2",
+          "description": "A6 beta chain"
+        },
+        {
+          "entity": "3QH3_1",
+          "description": "A6 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": false,
+        "n_entities": 2
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3QH3_1",
+          "beta": "3QH3_2",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ],
+      "external_annotation": {
+        "domains": 4,
+        "explicit_pairs": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "C",
+            "D"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "A",
+          "beta_chain": "B",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 0,
+              "variable_end0": 115,
+              "n_terminal_extension": "",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": false,
+          "identity_admitted": false
+        },
+        {
+          "alpha_chain": "C",
+          "beta_chain": "D",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 0,
+              "variable_end0": 115,
+              "n_terminal_extension": "",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": false,
+          "identity_admitted": false
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "7AMP",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.21203/rs.3.rs-1475171/v1",
+      "different_paper": true,
+      "title": "Crystal structure of the complex of HuJovi-1 Fab with the human A6 T-cell receptor TRBC1",
+      "molecules": [
+        {
+          "entity": "7AMP_4",
+          "description": "HuJovi-1 Fab light chain"
+        },
+        {
+          "entity": "7AMP_3",
+          "description": "HuJovi-1 Fab heavy chain"
+        },
+        {
+          "entity": "7AMP_2",
+          "description": "Beta chain 1 of A6 T-cell receptor TRBC1"
+        },
+        {
+          "entity": "7AMP_1",
+          "description": "Alpha chain of A6 T-cell receptor"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": true,
+        "n_entities": 4
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "7AMP_1",
+          "beta": "7AMP_2",
+          "prefix_before_alpha_fragment": "MQ",
+          "prefix_before_beta_fragment": "M"
+        }
+      ],
+      "external_annotation": {
+        "domains": 2,
+        "explicit_pairs": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "A",
+          "beta_chain": "B",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": true,
+              "variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVTTDSWGKLQFGAGTQVVVTP",
+              "v_allele": "TRAV12-2*01",
+              "variable_start0": 1,
+              "variable_end0": 112,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "A7",
+                "A8",
+                "A9",
+                "A10",
+                "A11",
+                "A12",
+                "A13",
+                "A14",
+                "A15",
+                "A16",
+                "A17",
+                "A18",
+                "A19",
+                "A20",
+                "A21",
+                "A22",
+                "A23",
+                "A24",
+                "A25",
+                "A26",
+                "A27",
+                "A28",
+                "A29",
+                "A36",
+                "A37",
+                "A38",
+                "A39",
+                "A40",
+                "A41",
+                "A42",
+                "A43",
+                "A44",
+                "A45",
+                "A46",
+                "A47",
+                "A48",
+                "A49",
+                "A50",
+                "A51",
+                "A52",
+                "A53",
+                "A54",
+                "A55",
+                "A56",
+                "A57",
+                "A58",
+                "A63",
+                "A64",
+                "A65",
+                "A66",
+                "A67",
+                "A68",
+                "A74",
+                "A75",
+                "A76",
+                "A77",
+                "A78",
+                "A79",
+                "A80",
+                "A81",
+                "A82",
+                "A83",
+                "A84",
+                "A85",
+                "A86",
+                "A87",
+                "A88",
+                "A89",
+                "A90",
+                "A91",
+                "A92",
+                "A93",
+                "A94",
+                "A95",
+                "A96",
+                "A97",
+                "A98",
+                "A99",
+                "A100",
+                "A101",
+                "A102",
+                "A103",
+                "A104",
+                "A105",
+                "A106",
+                "A107",
+                "A108",
+                "A109",
+                "A110",
+                "A113",
+                "A114",
+                "A115",
+                "A116",
+                "A117",
+                "A118",
+                "A119",
+                "A120",
+                "A121",
+                "A122",
+                "A123",
+                "A124",
+                "A125",
+                "A126",
+                "A127",
+                "A128"
+              ]
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 1,
+              "variable_end0": 116,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": true,
+          "identity_admitted": false,
+          "paired_variable_sequence_key": "ac352f9a31b037ed7ae3536e5ee1b7a18895556f1b0ba334e84f9468b1177e55"
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "7AMQ",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.21203/rs.3.rs-1475171/v1",
+      "different_paper": true,
+      "title": "Crystal structure of the complex of HuJovi-1 Fab with the human TRBC2",
+      "molecules": [
+        {
+          "entity": "7AMQ_4",
+          "description": "Human Jovi-1 Fab light chain"
+        },
+        {
+          "entity": "7AMQ_3",
+          "description": "Human Jovi-1 Fab heavy chain"
+        },
+        {
+          "entity": "7AMQ_2",
+          "description": "Human A6 T-cell receptor beta chain TRBC1"
+        },
+        {
+          "entity": "7AMQ_1",
+          "description": "Human A6 T-cell receptor alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": true,
+        "n_entities": 4
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "7AMQ_1",
+          "beta": "7AMQ_2",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": "M"
+        }
+      ],
+      "external_annotation": {
+        "domains": 2,
+        "explicit_pairs": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "A",
+          "beta_chain": "B",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 1,
+              "variable_end0": 116,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": false,
+          "identity_admitted": false
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "7AMR",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.21203/rs.3.rs-1475171/v1",
+      "different_paper": true,
+      "title": "Crystal structure of the complex of the KFN mutant of Jovi-1 Fab with human TRBC1",
+      "molecules": [
+        {
+          "entity": "7AMR_4",
+          "description": "Human Jovi-1 Fab fragment, KFN mutant, light chain"
+        },
+        {
+          "entity": "7AMR_3",
+          "description": "Human Jovi-1 Fab fragment, KFN mutant, heavy chain"
+        },
+        {
+          "entity": "7AMR_2",
+          "description": "Human T-cell receptor beta chain TRBC2"
+        },
+        {
+          "entity": "7AMR_1",
+          "description": "Human T-cell receptor alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": true,
+        "n_entities": 4
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "7AMR_1",
+          "beta": "7AMR_2",
+          "prefix_before_alpha_fragment": "MQ",
+          "prefix_before_beta_fragment": "M"
+        }
+      ],
+      "external_annotation": {
+        "domains": 2,
+        "explicit_pairs": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "A",
+          "beta_chain": "B",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": true,
+              "variable": "QKEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVTTDSWGKLQFGAGTQVVVTP",
+              "v_allele": "TRAV12-2*01",
+              "variable_start0": 1,
+              "variable_end0": 112,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "A6",
+                "A7",
+                "A8",
+                "A9",
+                "A10",
+                "A11",
+                "A12",
+                "A13",
+                "A14",
+                "A15",
+                "A16",
+                "A17",
+                "A18",
+                "A19",
+                "A20",
+                "A21",
+                "A22",
+                "A23",
+                "A24",
+                "A25",
+                "A26",
+                "A27",
+                "A28",
+                "A29",
+                "A36",
+                "A37",
+                "A38",
+                "A39",
+                "A40",
+                "A41",
+                "A42",
+                "A43",
+                "A44",
+                "A45",
+                "A46",
+                "A47",
+                "A48",
+                "A49",
+                "A50",
+                "A51",
+                "A52",
+                "A53",
+                "A54",
+                "A55",
+                "A56",
+                "A57",
+                "A58",
+                "A63",
+                "A64",
+                "A65",
+                "A66",
+                "A67",
+                "A68",
+                "A74",
+                "A75",
+                "A76",
+                "A77",
+                "A78",
+                "A79",
+                "A80",
+                "A81",
+                "A82",
+                "A83",
+                "A84",
+                "A85",
+                "A86",
+                "A87",
+                "A88",
+                "A89",
+                "A90",
+                "A91",
+                "A92",
+                "A93",
+                "A94",
+                "A95",
+                "A96",
+                "A97",
+                "A98",
+                "A99",
+                "A100",
+                "A101",
+                "A102",
+                "A103",
+                "A104",
+                "A105",
+                "A106",
+                "A107",
+                "A108",
+                "A109",
+                "A110",
+                "A113",
+                "A114",
+                "A115",
+                "A116",
+                "A117",
+                "A118",
+                "A119",
+                "A120",
+                "A121",
+                "A122",
+                "A123",
+                "A124",
+                "A125",
+                "A126",
+                "A127",
+                "A128"
+              ]
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 1,
+              "variable_end0": 116,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": true,
+          "identity_admitted": false,
+          "paired_variable_sequence_key": "ac352f9a31b037ed7ae3536e5ee1b7a18895556f1b0ba334e84f9468b1177e55"
+        }
+      ]
+    },
+    {
+      "anchor": "1ao7",
+      "pdb": "7AMS",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.21203/rs.3.rs-1475171/v1",
+      "different_paper": true,
+      "title": "Crystal structure of the complex of the KFN mutant of HuJovi-1 Fab with human TRBC2",
+      "molecules": [
+        {
+          "entity": "7AMS_4",
+          "description": "Human Jovi-1 Fab, KFN mutant, light chain"
+        },
+        {
+          "entity": "7AMS_3",
+          "description": "Human Jovi-1 Fab, KFN mutant, heavy chain"
+        },
+        {
+          "entity": "7AMS_2",
+          "description": "Human A6 T-cell receptor beta chain TRBC2"
+        },
+        {
+          "entity": "7AMS_1",
+          "description": "Human A6 T-cell receptor alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": true,
+        "n_entities": 4
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "7AMS_1",
+          "beta": "7AMS_2",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": "M"
+        }
+      ],
+      "external_annotation": {
+        "domains": 2,
+        "explicit_pairs": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "A",
+          "beta_chain": "B",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "sequence_gate_pass": true,
+              "variable": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+              "v_allele": "TRBV6-5*01",
+              "variable_start0": 1,
+              "variable_end0": 116,
+              "n_terminal_extension": "M",
+              "numbered_positions": [
+                "B1",
+                "B2",
+                "B3",
+                "B4",
+                "B5",
+                "B6",
+                "B7",
+                "B8",
+                "B9",
+                "B10",
+                "B11",
+                "B12",
+                "B13",
+                "B14",
+                "B15",
+                "B16",
+                "B17",
+                "B18",
+                "B19",
+                "B20",
+                "B21",
+                "B22",
+                "B23",
+                "B24",
+                "B25",
+                "B26",
+                "B27",
+                "B28",
+                "B29",
+                "B37",
+                "B38",
+                "B39",
+                "B40",
+                "B41",
+                "B42",
+                "B43",
+                "B44",
+                "B45",
+                "B46",
+                "B47",
+                "B48",
+                "B49",
+                "B50",
+                "B51",
+                "B52",
+                "B53",
+                "B54",
+                "B55",
+                "B56",
+                "B57",
+                "B58",
+                "B63",
+                "B64",
+                "B65",
+                "B66",
+                "B67",
+                "B68",
+                "B69",
+                "B70",
+                "B71",
+                "B72",
+                "B74",
+                "B75",
+                "B76",
+                "B77",
+                "B78",
+                "B79",
+                "B80",
+                "B81",
+                "B83",
+                "B84",
+                "B85",
+                "B86",
+                "B87",
+                "B88",
+                "B89",
+                "B90",
+                "B91",
+                "B92",
+                "B93",
+                "B94",
+                "B95",
+                "B96",
+                "B97",
+                "B98",
+                "B99",
+                "B100",
+                "B101",
+                "B102",
+                "B103",
+                "B104",
+                "B105",
+                "B106",
+                "B107",
+                "B108",
+                "B109",
+                "B110",
+                "B111",
+                "B112A",
+                "B112",
+                "B113",
+                "B114",
+                "B115",
+                "B116",
+                "B117",
+                "B118",
+                "B119",
+                "B120",
+                "B121",
+                "B122",
+                "B123",
+                "B124",
+                "B125",
+                "B126",
+                "B127"
+              ]
+            }
+          },
+          "complete_external_sequence_gate_pass": false,
+          "identity_admitted": false
+        }
+      ]
+    },
+    {
+      "anchor": "3mv7",
+      "pdb": "3MV7",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1084/jem.20100603",
+      "different_paper": false,
+      "title": "Crystal Structure of the TK3 TCR in complex with HLA-B*3501/HPVG",
+      "molecules": [
+        {
+          "entity": "3MV7_5",
+          "description": "beta chain of the TK3 TCR"
+        },
+        {
+          "entity": "3MV7_4",
+          "description": "alpha chain of the TK3 TCR"
+        },
+        {
+          "entity": "3MV7_3",
+          "description": "HPVG peptide from Epstein-Barr nuclear antigen 1"
+        },
+        {
+          "entity": "3MV7_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3MV7_1",
+          "description": "HLA class I histocompatibility antigen, B-35 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3MV7_4",
+          "beta": "3MV7_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "3mv7",
+      "pdb": "4PRH",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1074/jbc.m114.563502",
+      "different_paper": true,
+      "title": "Crystal structure of TK3 TCR-HLA-B*35:08-HPVG-D5 complex",
+      "molecules": [
+        {
+          "entity": "4PRH_5",
+          "description": "TK3 TCR beta chain"
+        },
+        {
+          "entity": "4PRH_4",
+          "description": "TK3 TCR alpha chain"
+        },
+        {
+          "entity": "4PRH_3",
+          "description": "Epstein-Barr nuclear antigen 1"
+        },
+        {
+          "entity": "4PRH_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "4PRH_1",
+          "description": "MHC class I antigen"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "4PRH_4",
+          "beta": "4PRH_5",
+          "prefix_before_alpha_fragment": "HMED",
+          "prefix_before_beta_fragment": "HM"
+        }
+      ],
+      "external_annotation": {
+        "domains": 0,
+        "explicit_pairs": [],
+        "explicit_missing_entry": true
+      },
+      "external_sequence_checks": []
+    },
+    {
+      "anchor": "3mv7",
+      "pdb": "4PRI",
+      "exact_distinct_entity_fragment_pair": false,
+      "local_alignment_only": true,
+      "study": "doi:10.1074/jbc.m114.563502",
+      "different_paper": true,
+      "title": "Crystal structure of TK3 TCR-HLA-B*35:08-HPVG complex",
+      "molecules": [
+        {
+          "entity": "4PRI_5",
+          "description": "TK3 TCR beta chain"
+        },
+        {
+          "entity": "4PRI_4",
+          "description": "TK3 TCR alpha chain"
+        },
+        {
+          "entity": "4PRI_3",
+          "description": "Epstein-Barr nuclear antigen 1"
+        },
+        {
+          "entity": "4PRI_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "4PRI_1",
+          "description": "MHC class I antigen"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: complete J/FR4 C terminus unverified",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": []
+    },
+    {
+      "anchor": "3mv7",
+      "pdb": "4PRP",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1074/jbc.m114.563502",
+      "different_paper": true,
+      "title": "Crystal structure of TK3 TCR-HLA-B*35:01-HPVG-Q5 complex",
+      "molecules": [
+        {
+          "entity": "4PRP_5",
+          "description": "TK3 TCR beta chain"
+        },
+        {
+          "entity": "4PRP_4",
+          "description": "TK3 TCR alpha chain"
+        },
+        {
+          "entity": "4PRP_3",
+          "description": "Epstein-Barr nuclear antigen 1"
+        },
+        {
+          "entity": "4PRP_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "4PRP_1",
+          "description": "MHC class I antigen"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "4PRP_4",
+          "beta": "4PRP_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1bd2",
+      "pdb": "1BD2",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/s1074-7613(00)80546-4",
+      "different_paper": false,
+      "title": "COMPLEX BETWEEN HUMAN T-CELL RECEPTOR B7, VIRAL PEPTIDE (TAX) AND MHC CLASS I MOLECULE HLA-A 0201",
+      "molecules": [
+        {
+          "entity": "1BD2_5",
+          "description": "T CELL RECEPTOR BETA"
+        },
+        {
+          "entity": "1BD2_4",
+          "description": "T CELL RECEPTOR ALPHA"
+        },
+        {
+          "entity": "1BD2_3",
+          "description": "TAX PEPTIDE"
+        },
+        {
+          "entity": "1BD2_2",
+          "description": "BETA-2 MICROGLOBULIN"
+        },
+        {
+          "entity": "1BD2_1",
+          "description": "HLA-A 0201"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "1BD2_4",
+          "beta": "1BD2_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1mi5",
+      "pdb": "1KGC",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/s0969-2126(02)00878-x",
+      "different_paper": true,
+      "title": "Immune Receptor",
+      "molecules": [
+        {
+          "entity": "1KGC_2",
+          "description": "T-cell receptor beta chain"
+        },
+        {
+          "entity": "1KGC_1",
+          "description": "T-cell receptor alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [],
+      "not_in_existing_candidate_identity_rows": true,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": false,
+        "Fab": false,
+        "n_entities": 2
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "1KGC_1",
+          "beta": "1KGC_2",
+          "prefix_before_alpha_fragment": "M",
+          "prefix_before_beta_fragment": "M"
+        }
+      ],
+      "external_annotation": {
+        "domains": 2,
+        "explicit_pairs": [
+          [
+            "D",
+            "E"
+          ]
+        ],
+        "explicit_missing_entry": false
+      },
+      "external_sequence_checks": [
+        {
+          "alpha_chain": "D",
+          "beta_chain": "E",
+          "roles": {
+            "alpha": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "sequence_gate_pass": false,
+              "reason": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          },
+          "complete_external_sequence_gate_pass": false,
+          "identity_admitted": false
+        }
+      ]
+    },
+    {
+      "anchor": "1mi5",
+      "pdb": "1MI5",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/s1074-7613(02)00513-7",
+      "different_paper": false,
+      "title": "The crystal structure of LC13 TcR in complex with HLAB8-EBV peptide complex",
+      "molecules": [
+        {
+          "entity": "1MI5_5",
+          "description": "TcR beta chain"
+        },
+        {
+          "entity": "1MI5_4",
+          "description": "TcR alpha chain"
+        },
+        {
+          "entity": "1MI5_3",
+          "description": "Epstein Barr Virus peptide"
+        },
+        {
+          "entity": "1MI5_2",
+          "description": "beta 2 microglobulin"
+        },
+        {
+          "entity": "1MI5_1",
+          "description": "MHC heavy chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": false,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "1MI5_4",
+          "beta": "1MI5_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1mi5",
+      "pdb": "3KPR",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.immuni.2009.09.025",
+      "different_paper": true,
+      "title": "Crystal Structure of the LC13 TCR in complex with HLA B*4405 bound to EEYLKAWTF a mimotope",
+      "molecules": [
+        {
+          "entity": "3KPR_5",
+          "description": "LC13 TCR beta chain"
+        },
+        {
+          "entity": "3KPR_4",
+          "description": "LC13 TCR alpha chain"
+        },
+        {
+          "entity": "3KPR_3",
+          "description": "EEYLKAWTF, mimotope peptide"
+        },
+        {
+          "entity": "3KPR_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3KPR_1",
+          "description": "HLA class I histocompatibility antigen, B-44 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3KPR_4",
+          "beta": "3KPR_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    },
+    {
+      "anchor": "1mi5",
+      "pdb": "3KPS",
+      "exact_distinct_entity_fragment_pair": true,
+      "local_alignment_only": false,
+      "study": "doi:10.1016/j.immuni.2009.09.025",
+      "different_paper": true,
+      "title": "Crystal Structure of the LC13 TCR in complex with HLA B*4405 bound to EEYLQAFTY a self peptide from the ABCD3 protein",
+      "molecules": [
+        {
+          "entity": "3KPS_5",
+          "description": "LC13 TCR beta chain"
+        },
+        {
+          "entity": "3KPS_4",
+          "description": "LC13 TCR alpha chain"
+        },
+        {
+          "entity": "3KPS_3",
+          "description": "EEYLQAFTY, self peptide from the ATP binding cassette protein ABCD3"
+        },
+        {
+          "entity": "3KPS_2",
+          "description": "Beta-2-microglobulin"
+        },
+        {
+          "entity": "3KPS_1",
+          "description": "HLA class I histocompatibility antigen, B-44 alpha chain"
+        }
+      ],
+      "previous_identity_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "not_in_existing_candidate_identity_rows": false,
+      "complete_identity_claimed": false,
+      "identity_admitted": false,
+      "component_inventory": {
+        "explicit_class_I": true,
+        "explicit_class_II": false,
+        "beta2m": true,
+        "Fab": false,
+        "n_entities": 5
+      },
+      "fragment_entity_pairs": [
+        {
+          "alpha": "3KPS_4",
+          "beta": "3KPS_5",
+          "prefix_before_alpha_fragment": "",
+          "prefix_before_beta_fragment": ""
+        }
+      ]
+    }
+  ],
+  "np_external_numbering": {
+    "9nu7": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    },
+    "9nv6": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    },
+    "9nv2": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    },
+    "9nve": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    },
+    "9nw2": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    },
+    "9nva": {
+      "domains": 0,
+      "explicit_pairs": [],
+      "explicit_missing_entry": true
+    }
+  },
+  "tcr1414_scope": [
+    {
+      "pdb": "9XC3",
+      "molecules": [
+        "TCR1414_1 beta",
+        "TCR1414_1 alpha",
+        "mutant human TGFbetaR2",
+        "HLA class II histocompatibility antigen DR beta chain",
+        "HLA class II histocompatibility antigen, DR alpha chain"
+      ],
+      "n_explicit_class_II_entities": 2,
+      "scope": "class_II_outside_current_class_I",
+      "qualifies_current_class_I": false
+    },
+    {
+      "pdb": "9X85",
+      "molecules": [
+        "mutant human TGFbetaR2",
+        "HLA class II histocompatibility antigen DR beta chain",
+        "HLA class II histocompatibility antigen, DR alpha chain"
+      ],
+      "n_explicit_class_II_entities": 2,
+      "scope": "class_II_outside_current_class_I",
+      "qualifies_current_class_I": false
+    },
+    {
+      "pdb": "9X9I",
+      "molecules": [
+        "HLA class II histocompatibility antigen, DR alpha chain",
+        "HLA class II histocompatibility antigen DR beta chain",
+        "mutant human TGFbetaR2",
+        "TCR1414_2 alpha",
+        "TCR1414_2 beta"
+      ],
+      "n_explicit_class_II_entities": 2,
+      "scope": "class_II_outside_current_class_I",
+      "qualifies_current_class_I": false
+    },
+    {
+      "pdb": "9X87",
+      "molecules": [
+        "TCR1414-1 beta",
+        "TCR1414_1 alpha"
+      ],
+      "n_explicit_class_II_entities": 0,
+      "scope": "unbound_TCR_outside_current_complete_pMHC_scope",
+      "qualifies_current_class_I": false
+    }
+  ],
+  "scope_entities_source": "docs/fingerprint_np105_validation_20261029/sources/weekly_metadata/weekly_entities.json",
+  "scope_entities_source_sha256": "ef933eabbf4c78aaac0cd4d45715f18e809a8ee8bf33c87830111cf2ec95e31e",
+  "coordinate_revision_recheck": [
+    {
+      "pdb": "7RTR",
+      "latest_revision": "2024-10-16T00:00:00.000+00:00",
+      "changed_since_previous_coordinate_recheck": false,
+      "coordinate_download_repeated": false
+    },
+    {
+      "pdb": "4JFE",
+      "latest_revision": "2024-11-20T00:00:00.000+00:00",
+      "changed_since_previous_coordinate_recheck": false,
+      "coordinate_download_repeated": false
+    }
+  ],
+  "new_release_query_status": "204",
+  "new_release_search_interpretation": "No hits for recorded T-cell-receptor full-text plus initial_release>=2026-10-29 query; not a database-wide proof of absence.",
+  "new_identity_admissions": 0,
+  "new_QC_cross_study_pairs": 0,
+  "new_native_same_source_same_V_groups": 0,
+  "protocol_frozen": false,
+  "training_started": false,
+  "independent_acceptance_accessed": false
+}

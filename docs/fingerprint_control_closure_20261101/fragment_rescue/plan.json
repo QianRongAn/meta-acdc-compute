@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-01",
+  "targets": [
+    {
+      "anchor": "1ao7",
+      "sequences": {
+        "alpha": "KEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVTTDSWGKLQFGAGTQVVVTP",
+        "beta": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT"
+      },
+      "annotation_file": "docs/fingerprint_cross_source_extension_20261024/sources/stcrdab_all/1ao7.html",
+      "annotation_sha256": "30e863c8ae9f620bdddf2f97832e39cad7209bdad7b6a87a9adabc5d9508f2b3",
+      "unchanged_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "anchor_study": "doi:10.1038/384134a0",
+      "complete_identity_claimed": false,
+      "previous_exact_queries": {
+        "alpha": false,
+        "beta": true
+      }
+    },
+    {
+      "anchor": "3mv7",
+      "sequences": {
+        "alpha": "QVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVQDLGTSGSRLTFGEGTQLTVNP",
+        "beta": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSARSGELFFGEGSRLTVL"
+      },
+      "annotation_file": "docs/fingerprint_cross_source_extension_20261024/sources/stcrdab_all/3mv7.html",
+      "annotation_sha256": "15ffe2b7be5551f7f92fa4b3a022c16dec8f989b1336ce5cd3c4179757b2a240",
+      "unchanged_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "anchor_study": "doi:10.1084/jem.20100603",
+      "complete_identity_claimed": false,
+      "previous_exact_queries": {
+        "alpha": false,
+        "beta": false
+      }
+    },
+    {
+      "anchor": "1bd2",
+      "sequences": {
+        "alpha": "QQVKQNSPSLSVQEGRISILNCDYTNSMFDYFLWYKKYPAEGPTFLISISSIKDKNADGRFTVFLNKSAKHLSLHIVPSQPGDSAVYFCAAMEGAQKLVFGQGTRLTINP",
+        "beta": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSYPGGGFYEQYFGPGTRLTVT"
+      },
+      "annotation_file": "docs/fingerprint_cross_source_extension_20261024/sources/stcrdab_all/1bd2.html",
+      "annotation_sha256": "82bc896ce53e5c60a34914d0d90034cf8f2378c8b50d9423f78c2309057353a4",
+      "unchanged_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "anchor_study": "doi:10.1016/s1074-7613(00)80546-4",
+      "complete_identity_claimed": false,
+      "previous_exact_queries": {
+        "alpha": false,
+        "beta": false
+      }
+    },
+    {
+      "anchor": "1mi5",
+      "sequences": {
+        "alpha": "KTTQPNSMESNEEEPVHLPCNHSTISGTDYIHWYRQLPSQGPEYVIHGLTSNVNNRMASLAIAEDRKSSTLILHRATLRDAAVYYCILPLAGGTSYGKLTFGQGTILTVHP",
+        "beta": "GVSQSPRYKVAKRGQDVALRCDPISGHVSLFWYQQALGQGPEFLTYFQNEAQLDKSGLPSDRFFAERPEGSVSTLKIQRTQQEDSAVYLCASSLGQAYEQYFGPGTRLTVT"
+      },
+      "annotation_file": "docs/fingerprint_cross_source_extension_20261024/sources/stcrdab_all/1mi5.html",
+      "annotation_sha256": "c3f4f30d39dc63b7ad65bb3f264872543a5f2fac4f941796e4833549a2548387",
+      "unchanged_quarantine": [
+        "alpha: full germline N terminus unverified; no imputation or tag trimming",
+        "beta: full germline N terminus unverified; no imputation or tag trimming"
+      ],
+      "anchor_study": "doi:10.1016/s1074-7613(02)00513-7",
+      "complete_identity_claimed": false,
+      "previous_exact_queries": {
+        "alpha": false,
+        "beta": false
+      }
+    }
+  ],
+  "queries": [
+    {
+      "file": "fragment_00.json",
+      "role": "alpha",
+      "sequence": "KEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVTTDSWGKLQFGAGTQVVVTP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "KEVEQNSGPLSVPEGAIASLNCTYSDRGSQSFFWYRQYSGKSPELIMSIYSNGDKEDGRFTAQLNKASQYVSLLIRDSQPSDSATYLCAVTTDSWGKLQFGAGTQVVVTP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_01.json",
+      "role": "alpha",
+      "sequence": "KTTQPNSMESNEEEPVHLPCNHSTISGTDYIHWYRQLPSQGPEYVIHGLTSNVNNRMASLAIAEDRKSSTLILHRATLRDAAVYYCILPLAGGTSYGKLTFGQGTILTVHP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "KTTQPNSMESNEEEPVHLPCNHSTISGTDYIHWYRQLPSQGPEYVIHGLTSNVNNRMASLAIAEDRKSSTLILHRATLRDAAVYYCILPLAGGTSYGKLTFGQGTILTVHP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_02.json",
+      "role": "alpha",
+      "sequence": "QQVKQNSPSLSVQEGRISILNCDYTNSMFDYFLWYKKYPAEGPTFLISISSIKDKNADGRFTVFLNKSAKHLSLHIVPSQPGDSAVYFCAAMEGAQKLVFGQGTRLTINP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "QQVKQNSPSLSVQEGRISILNCDYTNSMFDYFLWYKKYPAEGPTFLISISSIKDKNADGRFTVFLNKSAKHLSLHIVPSQPGDSAVYFCAAMEGAQKLVFGQGTRLTINP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_03.json",
+      "role": "alpha",
+      "sequence": "QVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVQDLGTSGSRLTFGEGTQLTVNP",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "QVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVQDLGTSGSRLTFGEGTQLTVNP"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_04.json",
+      "role": "beta",
+      "sequence": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSARSGELFFGEGSRLTVL",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSARSGELFFGEGSRLTVL"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_05.json",
+      "role": "beta",
+      "sequence": "GVSQSPRYKVAKRGQDVALRCDPISGHVSLFWYQQALGQGPEFLTYFQNEAQLDKSGLPSDRFFAERPEGSVSTLKIQRTQQEDSAVYLCASSLGQAYEQYFGPGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "GVSQSPRYKVAKRGQDVALRCDPISGHVSLFWYQQALGQGPEFLTYFQNEAQLDKSGLPSDRFFAERPEGSVSTLKIQRTQQEDSAVYLCASSLGQAYEQYFGPGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_06.json",
+      "role": "beta",
+      "sequence": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASRPGLAGGRPEQYFGPGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    },
+    {
+      "file": "fragment_07.json",
+      "role": "beta",
+      "sequence": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSYPGGGFYEQYFGPGTRLTVT",
+      "query": {
+        "query": {
+          "type": "terminal",
+          "service": "sequence",
+          "parameters": {
+            "evalue_cutoff": 0.1,
+            "identity_cutoff": 1.0,
+            "sequence_type": "protein",
+            "value": "NAGVTQTPKFQVLKTGQSMTLQCAQDMNHEYMSWYRQDPGMGLRLIHYSVGAGITDQGEVPNGYNVSRSTTEDFPLRLLSAAPSQTSVYFCASSYPGGGFYEQYFGPGTRLTVT"
+          }
+        },
+        "return_type": "polymer_entity",
+        "request_options": {
+          "return_all_hits": true
+        }
+      }
+    }
+  ],
+  "interpretation": "Existing exact deposited fragments only; sequence search identity 1 is local alignment, not full variable identity. New full-construct ends, explicit pairing, source and both-end atomic gates remain mandatory.",
+  "independent_acceptance_accessed": false,
+  "protocol_frozen": false
+}

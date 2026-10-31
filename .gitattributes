@@ -51,3 +51,10 @@ docs/fingerprint_np_boundaries_20261029/**/sources/** -text -whitespace
 
 # Preserve GEO, IMGT and native coordinate payloads for NP adjudication.
 docs/fingerprint_np_adjudication_20261029/**/sources/** -text -whitespace
+
+# Preserve raw source and FASTA response bytes for targeted rescue follow-up.
+docs/fingerprint_control_closure_20261101/sources/** -text -whitespace
+docs/fingerprint_control_closure_20261101/fragment_rescue/sources/** -text -whitespace
+docs/fingerprint_control_closure_20261101/fragment_rescue/metadata/** -text -whitespace
+docs/fingerprint_control_closure_20261101/fragment_rescue/annotation/** -text -whitespace
+docs/fingerprint_control_closure_20261101/fragment_rescue/fasta/** -text -whitespace

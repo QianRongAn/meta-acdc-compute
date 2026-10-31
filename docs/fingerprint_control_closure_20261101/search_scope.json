@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-01",
+  "route": "agent-reach web/search references; configured CLI and mcporter absent; built-in primary-source search and official API downloads reused",
+  "web_queries": [
+    "TCR1414 structure sequence",
+    "EP4223782 sequence listing",
+    "NP105 TCR structure"
+  ],
+  "official_requests": [
+    "Recorded requests.json and fragment_rescue/*requests.json"
+  ],
+  "new_release_search": "TCR full text plus initial_release >=2026-10-29; 204 no content for this bounded query only",
+  "fragment_anchors": [
+    "1AO7",
+    "3MV7",
+    "1BD2",
+    "1MI5"
+  ],
+  "new_unique_role_sequences_relative_to_previous_broad_plan": 7,
+  "repeated_role_sequence_queries": 1,
+  "scope_limit": "Targeted rescue of observed quarantined fragments; no exhaustive global absence claim",
+  "independent_acceptance_accessed": false
+}

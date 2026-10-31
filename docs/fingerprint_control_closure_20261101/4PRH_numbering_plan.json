@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-01",
+  "scope": "Independent complete-construct numbering diagnosis for 4PRH only; STCRDab admission still unavailable",
+  "inputs": [
+    {
+      "name": "4PRH_5",
+      "role": "beta",
+      "sequence": "HMDSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSARSGELFFGEGSRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+      "description": "TK3 TCR beta chain"
+    },
+    {
+      "name": "4PRH_4",
+      "role": "alpha",
+      "sequence": "HMEDQVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVQDLGTSGSRLTFGEGTQLTVNPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPSPESS",
+      "description": "TK3 TCR alpha chain"
+    }
+  ],
+  "parameters": {
+    "classic_scheme": "imgt",
+    "classic_bit_score_threshold": 80,
+    "classic_allowed_species": [
+      "human"
+    ],
+    "classic_allow": [
+      "A",
+      "B"
+    ],
+    "neural_seq_type": "tcr",
+    "neural_mode": "accuracy",
+    "cpu": true
+  },
+  "prohibited": [
+    "No trimming, residue filling, sequence editing, gate changes, identity admission, model training or independent acceptance access"
+  ],
+  "protocol_frozen": false,
+  "training_started": false
+}

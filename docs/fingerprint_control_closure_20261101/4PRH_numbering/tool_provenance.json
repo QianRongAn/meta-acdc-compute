@@ -1,0 +1,65 @@
+{
+  "packages": {
+    "anarci": {
+      "version": "2026.2.13.2",
+      "package_files": {
+        "__init__.py": "2b3033bfadabd97d4843bee2a8befc624373893490884741d707ce3c35f4ec31",
+        "anarci.py": "f42311674d73ae45a4553aa13dbe618a3efad527ef9d8bd6135d57dff1eb4b45",
+        "dat/HMMs/ALL.hmm": "60051f5a838704eb97fe39488f23894aa335ddadd24ad72b241f6e1cea6829ee",
+        "dat/HMMs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dat/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "germlines.py": "95a13463e2620b8037bf7ea67ecdf9ec6f8a8f973c5658f3c54126e9e36f3452",
+        "schemes.py": "856f4c942c226cbeabfabb69f8bfd4004f00f9b0aa6ce1e296636d2ce88f4b4b"
+      }
+    },
+    "anarcii": {
+      "version": "2.0.8",
+      "package_files": {
+        "__init__.py": "0144744c0a402594d3bdf271cbf39cdf7d95e30f2828caeffadfd4e69347d4fa",
+        "classifii/__init__.py": "1c382731c8695b97dce52aebf5cfcdefb54a108828a60002533eb982ed9b5467",
+        "classifii/classifii.pt": "951944bf41f2715fdf7f4006c4c907adcb62b342b4831896ca01c4535bb9138e",
+        "classifii/model.py": "ad9c002cd5cc5349e614f16a23e580c143a5c8b55a1d855e66d59a3b8ef183b5",
+        "classifii/params.json": "4ab8cc3e0e8749bd4fa962cb0195ec60a85cf66d4c791c2ebd33f06ad6f1c8f0",
+        "cli.py": "a884e6e69a852e8c7c64edb4155eefda7e77aa29872f0fe9ffe3f17df0c5dbd5",
+        "inference/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "inference/model.py": "b014498c7b8dd9e52d44914745137455108bfae4988e3f132bc9260a73aeb893",
+        "inference/model_loader.py": "20e8e874e130f96ec7d503d74fdc5b36aa3726222f0f1b36170f2b0f1abfec15",
+        "inference/model_runner.py": "1d393676406e6f3c625b2c88d51b95249579d62b08d11b965a739155c9a7dd39",
+        "inference/utils.py": "e75a806b1703b936933dd7c4f1e966fc32b453b1c2d5069017647dea64a5d456",
+        "inference/window_selector.py": "304561abfd5f36c96e2c64befd451b9a225cc9c12480eba7a0059507a190f9c4",
+        "input_data_processing/__init__.py": "0255df5ddc62b9cf9e84bc1b73bac72d6f3560a780655ea08a521f56fde2932c",
+        "input_data_processing/sequences.py": "96b8115a0de9add6ff591a8cf510b107a22a3e9086b66686a6750e6ac448d0f8",
+        "input_data_processing/tokeniser.py": "ee34eea811d5e246b03fcbdc9e3a0df81b8912392969dccd614cf9541864dc3d",
+        "input_data_processing/utils.py": "976bcb8c67f9541abc75b082fd5196ba98f75d742924f88d100bca0c155bf57b",
+        "models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "models/antibody/antibody_4_1_128_512.json": "2393a64f3207cd95f90a5794df00315c30e647cae9fc9225422328207472da65",
+        "models/antibody/antibody_4_1_128_512.pt": "bc5d34fb37b634902903f1db0f28c3ce01745f1e2d99ca0ecf8b54ab5b19cd5b",
+        "models/antibody/antibody_4_2_128_512.json": "4d8e5fc9d8580f5e26a190a21853dd3f3770fbf83ce45a46a53d92b083063c39",
+        "models/antibody/antibody_4_2_128_512.pt": "03e9d07d13a3ec98a9d9fe57a0b2ff0853218aa2d7bdd50a25b6d83ff2bea2e0",
+        "models/shark/shark_4_2_128_512.json": "4d8e5fc9d8580f5e26a190a21853dd3f3770fbf83ce45a46a53d92b083063c39",
+        "models/shark/shark_4_2_128_512.pt": "45130f42b2b3f93ef3de449639195f2275a9dd43a4466514b6f78d78db554034",
+        "models/tcr/tcr_4_1_128_512.json": "d56b14ad0ac34507b812e210ba492980365f0b122772092f6d803e4d67965b77",
+        "models/tcr/tcr_4_1_128_512.pt": "837d02499d32e35384a5acace6c46909453846779bb694477ca9b98acd66cc38",
+        "models/tcr/tcr_4_2_128_512.json": "f29b29759e695b6a79edf3d8a344c1b1762999641b67aa1f50a1ee1e04e46cfa",
+        "models/tcr/tcr_4_2_128_512.pt": "f06bc6f114737d37ec56a6aa840d58623afd49ed78e9fd8ac5069cfc53ac2d4f",
+        "output_data_processing/__init__.py": "609800604c82f73a432110a71fad71694d28b38ddfc29d1727c4c53454936c6f",
+        "output_data_processing/convert_to_legacy_format.py": "b6de9510251b50945d34391e3e81c3e8b2ef86d558469bdd44642aecd2cf6346",
+        "output_data_processing/scheme_specific_function.py": "ae03a468876a19d2376921fcb4b5f4898e72ae28845c6709b90a45c3b53423fd",
+        "output_data_processing/schemes.py": "a1083141a2bb76e2cd742bfb9804557e44da1ec24bb435deda4a0efffd017d38",
+        "output_data_processing/schemes_constants.py": "ac1a43b0a63310624d082f4375c0371413577a02438c30030792c5315b9c18f2",
+        "output_data_processing/schemes_utils.py": "f317a8fe25ff72613861a5ac93277d995bca3f92240dc0ef8878e03f69f394fe",
+        "pipeline/__init__.py": "4e995f9021ddf27aa2b6b02bdcac03e17ba968c284fa4ee1c3c43aece703ef99",
+        "pipeline/configuration.py": "1b3147d2d8d9668625dbf05b52499e4313d940ebdba025cd815cfdde8623e419",
+        "pipeline/constants.py": "c69093feff260905574b6afb6bb67f827a4fb2487359bc8c613678e419bfe79d",
+        "utils/__init__.py": "116edd8772f6b9cc225e0f5099d8fd265c668434702d4794d28b77f87ea02b3f"
+      }
+    }
+  },
+  "HMMER_executable_sha256": {
+    "/tmp/np-hmmer-bin-20261029/usr/bin/hmmscan": "2402b5377532ee53e33e83aebca226a5abe43f65c4274af3ee78bb5c4982107e",
+    "/tmp/np-hmmer-bin-20261029/usr/bin/hmmalign": "afc2430a6d72305bc64d394176299f0960e50fea4ad1e205d5eaa29687425230"
+  },
+  "ANARCII_same_package_and_models_as_previous_frozen_run": true,
+  "network_installations": 0,
+  "parameters_source": "4PRH_numbering_plan.json"
+}
