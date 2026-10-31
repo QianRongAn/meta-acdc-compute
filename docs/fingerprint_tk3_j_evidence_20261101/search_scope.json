@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-01",
+  "scope": "Targeted primary-source and unfiltered J-reference follow-up, not a new exhaustive structure search",
+  "route": "agent-reach web/search reference workflow; configured CLIs unavailable, primary web and official API downloads reused",
+  "primary_sources": [
+    "PMC2901058",
+    "PMC4059114",
+    "IMGT TRAJ58 and TRAJ57 official annotations",
+    "IMGT human TRAJ FASTA",
+    "IEDB assay 2107002 receptor metadata"
+  ],
+  "natural_clone_names": [
+    "MW1",
+    "CS1"
+  ],
+  "recorded_failures": [
+    "2014 fullTextXML HTTP 500",
+    "2014 PMC HTML connection failure",
+    "initial clone-description attribute path HTTP 400, corrected requests retained",
+    "2006-origin PDB API connection failures and retry failures, not treated as absence"
+  ],
+  "model_or_annotation_inference_started": false,
+  "training_started": false,
+  "independent_acceptance_accessed": false
+}

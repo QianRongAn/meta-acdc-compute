@@ -1,0 +1,25 @@
+{
+  "status": "proposal_not_active",
+  "scope": "Future evidence-based assessment of productive rearranged J regions on public development data only",
+  "rationale": "A germline F/ORF/P label is not equivalent to expression and productive rearrangement of a mature receptor. Current policy remains frozen; no candidate is automatically admitted by this plan.",
+  "requirements": [
+    "Keep original IMGT F/ORF/P annotation and raw reference stops; never rewrite ORF as F.",
+    "Obtain directly observed complete paired mature variable sequences and construct linkage; no germline filling, inferred N/J bases or merging by CDR3/name alone.",
+    "For an upstream-stop reference, require primary observed rearranged nucleotide evidence to determine whether the stop is absent from the mature CDS; protein suffix compatibility alone is insufficient to infer a historical deletion or unique allele.",
+    "Require independent whole-input numbering, explicit alpha/beta pairing and source validation; unresolved gene/chain conflicts stay quarantined.",
+    "Keep endpoint-specific functional and affinity evidence separate; a functional assay negative is not a binding negative.",
+    "Apply the same atomic completeness and geometry QC after identity admission; do not use imputed atoms to make a pair eligible.",
+    "Maintain source/receptor separation, source-balanced hard controls and untouched independent acceptance; publish any protocol amendment before model fitting or evaluation."
+  ],
+  "current_missing": [
+    "complete primary mature TK3 rearranged nucleotide construct not recovered",
+    "4PRH valid external paired numbering still absent",
+    "new pair with both endpoints passing unchanged complete class-I atomic gates not available",
+    "natural clone name leads lack complete qualifying structure evidence"
+  ],
+  "activation": false,
+  "model_metrics_used_to_choose_policy": false,
+  "admission_gates_changed": false,
+  "protocol_frozen": false,
+  "independent_acceptance_accessed": false
+}

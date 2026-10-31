@@ -1,0 +1,22 @@
+[
+  {
+    "file": "MW1_search.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_words%22%2C%22value%22%3A%22MW1%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell+receptor%22%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-31T18:18:05.434326+00:00",
+    "status": "400",
+    "returncode": 0,
+    "bytes": 229,
+    "sha256": "0afbcdbb05e705d60b4a4fd18e0db22383d937bae3f3fe4dbd69ccd16c9fefbc",
+    "error": ""
+  },
+  {
+    "file": "CS1_search.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22group%22%2C%22logical_operator%22%3A%22and%22%2C%22nodes%22%3A%5B%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_polymer_entity.rcsb_polymer_entity.pdbx_description%22%2C%22operator%22%3A%22contains_words%22%2C%22value%22%3A%22CS1%22%7D%7D%2C%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22full_text%22%2C%22parameters%22%3A%7B%22value%22%3A%22T-cell+receptor%22%7D%7D%5D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "requested_at": "2026-10-31T18:18:05.435325+00:00",
+    "status": "400",
+    "returncode": 0,
+    "bytes": 229,
+    "sha256": "0afbcdbb05e705d60b4a4fd18e0db22383d937bae3f3fe4dbd69ccd16c9fefbc",
+    "error": ""
+  }
+]

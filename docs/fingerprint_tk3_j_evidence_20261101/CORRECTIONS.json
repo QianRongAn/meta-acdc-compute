@@ -1,0 +1,36 @@
+{
+  "parent_commit": "7838b8b1182bfc3d37004c85480e062eb6c6aa15",
+  "reason": "The historical any-status J helper removed entire references containing stop or ambiguous residues. Absence in that filtered list was incorrectly described as absence across all functionality states.",
+  "unchanged": [
+    "historical frozen evidence bytes",
+    "F/(F) admission gate",
+    "old graph and atom policies",
+    "independent acceptance set"
+  ],
+  "affected_claims": [
+    {
+      "file": "docs/fingerprint_control_closure_20261101/audit_final_v3.json",
+      "field": "independent_4PRH_numbering.rows[alpha].all_function_status_human_or_mouse_J_exact_matches",
+      "previous": [],
+      "correction": "TRAJ58*01 ORF reference has an upstream stop and an 18-aa exact downstream suffix match to TK3 alpha; use reference_audit.json"
+    },
+    {
+      "file": "docs/fingerprint_control_closure_20261101/README.md",
+      "section": "4PRH J-end discussion",
+      "correction": "No functional F/(F) match remains true; no match in all functionality states is withdrawn. A germline ORF annotation is not proof that mature TK3 is erroneous or nonfunctional."
+    },
+    {
+      "file": "scripts/audit_np_boundaries.py",
+      "field": "raw_j_references",
+      "correction": "Legacy helper is stop-free-any-status, not unfiltered. Retained only for exact replay. New audit callers use meta_acdc.structure.j_reference_evidence."
+    },
+    {
+      "file": "scripts/audit_np_adjudication.py; scripts/validate_np105_raw.py",
+      "field": "historical raw_j_references callers",
+      "correction": "Preserve frozen results; do not generalize this filtered reference list to all germline records. This correction does not rewrite NP105 read support or reference functionality."
+    }
+  ],
+  "new_reference_source": "src/meta_acdc/structure/j_reference_evidence.py",
+  "new_primary_facts": "primary_source_audit_final.json",
+  "new_identity_admissions": 0
+}

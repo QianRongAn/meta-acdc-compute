@@ -1,0 +1,15 @@
+{
+  "full_primary_pages_local_only": [
+    "sources/paper2010.xml",
+    "sources/paper2014.xml",
+    "sources/imgt_gene.html",
+    "sources/imgt_TRAJ58.html",
+    "sources/imgt_TRAJ57.html",
+    "sources/iedb_TK3.html",
+    "retry_sources/paper2014.html"
+  ],
+  "receipts": "sources/manifest.json and retry_sources/manifest.json",
+  "FASTA_public_and_byte_exact_to_previous": true,
+  "primary_2014_failed_requests_not_evidence_of_absence": true,
+  "independent_acceptance_accessed": false
+}

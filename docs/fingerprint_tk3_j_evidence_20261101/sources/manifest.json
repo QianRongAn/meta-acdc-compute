@@ -1,0 +1,72 @@
+[
+  {
+    "file": "paper2010.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2901058/fullTextXML",
+    "requested_at": "2026-10-31T18:13:02.448078+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 147852,
+    "sha256": "5d11c27b1fcaceff852397b9ee3128e6b7a68ae003b5a816aae38064c9705e41",
+    "error": ""
+  },
+  {
+    "file": "paper2014.xml",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4059114/fullTextXML",
+    "requested_at": "2026-10-31T18:13:02.449078+00:00",
+    "status": "500",
+    "returncode": 0,
+    "bytes": 150,
+    "sha256": "029943d9b65f6910c8fc0b9a78a95287e50cb0e5c2fe5dfb79853b519fa76f08",
+    "error": ""
+  },
+  {
+    "file": "IMGT_Homo_sapiens_TRAJ.fasta",
+    "url": "https://imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/TR/TRAJ.fasta",
+    "requested_at": "2026-10-31T18:13:02.449078+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 10689,
+    "sha256": "b48e8adbcb5c73b4f52ac5879575e82d6924d15c6f2aeb81d99163b2f95b20db",
+    "error": ""
+  },
+  {
+    "file": "imgt_gene.html",
+    "url": "https://www.imgt.org/IMGTrepertoire/LocusGenes/genetable/autotable.php?group=TRAJ&species=Homo+sapiens",
+    "requested_at": "2026-10-31T18:13:04.566853+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 1044488,
+    "sha256": "3ea34daf90b69d038e747d2f7ce2d21865cfca1a3406771e9d039d5aebbe7a52",
+    "error": ""
+  },
+  {
+    "file": "imgt_TRAJ58.html",
+    "url": "https://www.imgt.org/IMGTrepertoire/Proteins/alleles/index.php?gene=TRAJ58&group=TRAJ&species=Homo+sapiens",
+    "requested_at": "2026-10-31T18:13:04.858839+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 15876,
+    "sha256": "6561476b0f7be12d69596ef63ae06131fcefaf9f39bb63b3651ccfde358ef30f",
+    "error": ""
+  },
+  {
+    "file": "imgt_TRAJ57.html",
+    "url": "https://www.imgt.org/IMGTrepertoire/Proteins/alleles/index.php?gene=TRAJ57&group=TRAJ&species=Homo+sapiens",
+    "requested_at": "2026-10-31T18:13:05.611430+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 15588,
+    "sha256": "141658d310b75e41eb25a90bec16ee0de813320cd3c106fa3fb55db206514db3",
+    "error": ""
+  },
+  {
+    "file": "iedb_TK3.html",
+    "url": "https://www.iedb.org/details_v3.php?id=2107002&type=assay",
+    "requested_at": "2026-10-31T18:13:06.878775+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 63764,
+    "sha256": "626c30a476b050036ca6b2cb2951faac3288217b66894c447819d6394819b78a",
+    "error": ""
+  }
+]

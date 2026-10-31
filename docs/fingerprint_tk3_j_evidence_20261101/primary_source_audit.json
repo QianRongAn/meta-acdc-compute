@@ -1,0 +1,123 @@
+{
+  "primary_paper": {
+    "DOI": "10.1084/jem.20100603",
+    "PMCID": "PMC2901058",
+    "source_sha256": "5d11c27b1fcaceff852397b9ee3128e6b7a68ae003b5a816aae38064c9705e41",
+    "locations": [
+      "RESULTS / Allelic variation in the TRBV9 gene",
+      "Figure 1a caption",
+      "METHODS / TCR cloning, protein expression, and purification"
+    ],
+    "reported_V_J": {
+      "alpha": [
+        "TRAV20",
+        "TRAJ58"
+      ],
+      "beta": [
+        "TRBV9",
+        "TRBJ2-2"
+      ]
+    },
+    "natural_clone_leads": [
+      "TK3",
+      "MW1",
+      "CS1"
+    ],
+    "three_unrelated_individuals_reported": true,
+    "TK3_cDNA_from_T_cell_RNA_reported": true,
+    "constant_domain_disulfide_engineering_reported": true,
+    "complete_engineered_DNA_not_recovered": true
+  },
+  "IMGT": {
+    "source_URL": "https://www.imgt.org/IMGTrepertoire/LocusGenes/genetable/autotable.php?group=TRAJ&species=Homo+sapiens",
+    "source_sha256": "3ea34daf90b69d038e747d2f7ce2d21865cfca1a3406771e9d039d5aebbe7a52",
+    "gene": "TRAJ58*01",
+    "functionality": "ORF",
+    "note_locator": "notes-11",
+    "meaning": "The germline first-codon stop can disappear on rearrangement; germline ORF annotation is not a mature-receptor nonfunctionality verdict."
+  },
+  "IEDB_conflict": {
+    "source_URL": "https://www.iedb.org/details_v3.php?id=2107002&type=assay",
+    "source_sha256": "626c30a476b050036ca6b2cb2951faac3288217b66894c447819d6394819b78a",
+    "receptor_id": "25462",
+    "receptor_name": "TK3",
+    "curated_alpha_J": "TCRAJ57*01",
+    "calculated_alpha_J": "TRAJ57*01",
+    "observed_alpha_variable": "QVTQSPEALRLQEGESSSLNCSYTVSGLRGLFWYRQDPGKGPEFLFTLYSAGEEKEKERLKATLTKKESFLHITAPKPEDSATYLCAVQDLGTSGSRLTFGEGTQLTVNP",
+    "primary_paper_alpha_J": "TRAJ58",
+    "sequence_suffix_supports_TRAJ58": true,
+    "annotation_status": "source_conflict_quarantined",
+    "external_record_edited": false,
+    "assay_page_development_exposed": true,
+    "source_not_added_to_independent_acceptance": true,
+    "assay_endpoint_not_converted_to_binding_negative": true
+  },
+  "natural_clone_search": {
+    "MW1_named_query_no_hits": true,
+    "CS1_name_hits": [
+      "4JEG",
+      "9E7K"
+    ],
+    "excluded_homonyms": [
+      {
+        "pdb": "9E7K",
+        "title": "Crystal structure of the UCH37 RPN13 DEUBAD complex bound to an inhibitory nanobody in the canonical ubiquitin binding site",
+        "molecules": [
+          "Proteasomal ubiquitin receptor ADRM1",
+          "Nb-cS1",
+          "Isoform 3 of Ubiquitin carboxyl-terminal hydrolase isozyme L5"
+        ],
+        "citation": {
+          "title": "Site-Specific Nanobody Inhibitors of the Proteasomal Deubiquitinase UCH37.",
+          "year": 2025,
+          "pdbx_database_id_DOI": "10.1101/2025.08.11.669711",
+          "pdbx_database_id_PubMed": 40832226,
+          "rcsb_authors": [
+            "Li, Y.",
+            "Chang, L.H.",
+            "Patel, R.",
+            "Shestoperova, E.I.",
+            "Du, J.",
+            "Das, C.",
+            "Strieter, E.R."
+          ]
+        },
+        "decision": "name_homonym_without_paired_TCR_entities",
+        "identity_admitted": false
+      },
+      {
+        "pdb": "4JEG",
+        "title": "Crystal Structure of Monobody CS1/SHP2 C-SH2 Domain Complex",
+        "molecules": [
+          "Monobody CS1",
+          "Tyrosine-protein phosphatase non-receptor type 11"
+        ],
+        "citation": {
+          "title": "Dissection of the BCR-ABL signaling network using highly specific monobody inhibitors to the SHP2 SH2 domains.",
+          "year": 2013,
+          "pdbx_database_id_DOI": "10.1073/pnas.1303640110",
+          "pdbx_database_id_PubMed": 23980151,
+          "rcsb_authors": [
+            "Sha, F.",
+            "Gencer, E.B.",
+            "Georgeon, S.",
+            "Koide, A.",
+            "Yasui, N.",
+            "Koide, S.",
+            "Hantschel, O."
+          ]
+        },
+        "decision": "name_homonym_without_paired_TCR_entities",
+        "identity_admitted": false
+      }
+    ],
+    "scope_limit": "Named clone-description plus TCR full-text queries only; not a sequence-wide exclusion of unnamed structures."
+  },
+  "sources_republished": false,
+  "new_identity_admissions": 0,
+  "new_QC_cross_study_pairs": 0,
+  "new_natural_control_groups": 0,
+  "protocol_frozen": false,
+  "training_started": false,
+  "independent_acceptance_accessed": false
+}

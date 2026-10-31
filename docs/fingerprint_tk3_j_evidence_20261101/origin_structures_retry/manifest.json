@@ -1,0 +1,12 @@
+[
+  {
+    "file": "origin_structures.json",
+    "url": "https://data.rcsb.org/graphql?query=%7Bentries%28entry_ids%3A%5B%222FYY%22%2C%222FZ3%22%5D%29%7Brcsb_id+struct+%7Btitle%7D+rcsb_primary_citation+%7Btitle+year+pdbx_database_id_DOI+pdbx_database_id_PubMed%7D+polymer_entities+%7Brcsb_id+rcsb_polymer_entity+%7Bpdbx_description%7D+rcsb_polymer_entity_container_identifiers+%7Bauth_asym_ids%7D%7D%7D%7D",
+    "requested_at": "2026-10-31T18:28:56.270429+00:00",
+    "status": "000",
+    "returncode": 35,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "curl: (35) Recv failure: Connection was reset\n"
+  }
+]

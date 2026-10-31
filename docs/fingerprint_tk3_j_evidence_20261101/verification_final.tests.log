@@ -1,0 +1,15 @@
+test_TK3_tail_matches_downstream_of_stop (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_TK3_tail_matches_downstream_of_stop) ... ok
+test_ambiguous_codon_retained_only_as_evidence (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_ambiguous_codon_retained_only_as_evidence) ... ok
+test_bulk_impact_does_not_mean_admission (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_bulk_impact_does_not_mean_admission) ... ok
+test_clone_name_homonyms_do_not_count_as_TCR_controls (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_clone_name_homonyms_do_not_count_as_TCR_controls) ... ok
+test_existing_F_gate_is_not_relaxed (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_existing_F_gate_is_not_relaxed) ... ok
+test_germline_stop_is_retained (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_germline_stop_is_retained) ... ok
+test_malformed_header_and_nucleotides_fail (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_malformed_header_and_nucleotides_fail) ... ok
+test_primary_database_conflict_stays_explicit (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_primary_database_conflict_stays_explicit) ... ok
+test_short_fragment_is_not_tail_evidence (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_short_fragment_is_not_tail_evidence) ... ok
+test_stop_in_observed_variable_is_rejected (tests.test_j_reference_evidence.JReferenceEvidenceTests.test_stop_in_observed_variable_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.188s
+
+OK
