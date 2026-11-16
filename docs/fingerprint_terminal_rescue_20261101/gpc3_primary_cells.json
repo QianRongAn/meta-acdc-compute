@@ -1,0 +1,12 @@
+{
+  "cloning_paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12266797/",
+  "structure_preprint": "https://doi.org/10.64898/2026.09.15.750028",
+  "cell_source": "Antigen-stimulated CD8 splenocytes from immunized HHD-DR1 mice, isolated by single-cell sorting in two experiments",
+  "sequence_evidence": "Supplementary Tables 3 and 4, page 3 of publisher supplementary file s2.pdf",
+  "local_original_manifest": "sources/gpc3_supp/manifest.json",
+  "clones": {
+    "9tmm": {"label":"TCR-A","clone":"1H4","experiment":1,"species":"Mus musculus","V":["TRAV9-2","TRBV1"],"J":["TRAJ43","TRBJ2-1"],"beta_D":"TRBD2","alpha_cdr3":"CVLNNNNAPRF","beta_cdr3":"CTCSAGTGGGAEQFF","beta_cdr3_nt":"TGCACCTGCAGTGCCGGGACTGGGGGGGGTGCTGAGCAGTTCTTC"},
+    "9tml": {"label":"TCR-B","clone":"3E9","experiment":2,"species":"Mus musculus","V":["TRAV9-2","TRBV1"],"J":["TRAJ26","TRBJ2-1"],"beta_D":"TRBD1","alpha_cdr3":"CVLSALAQGLTF","beta_cdr3":"CTCSAGTGGGAEQFF","beta_cdr3_nt":"TGCACCTGCAGTGCAGGGACAGGGGGCGGGGCTGAGCAGTTCTTC"}
+  },
+  "scope": "Table 3 provides V/J and CDR3, Table 4 provides beta junction nucleotide evidence, neither supplies complete variable-domain sequence or IMGT numbering."
+}

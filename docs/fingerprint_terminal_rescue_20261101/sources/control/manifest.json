@@ -1,0 +1,32 @@
+[
+  {
+    "file": "tcr3d_class1.html",
+    "url": "https://tcr3d.ibbr.umd.edu/class1",
+    "requested_at": "2026-11-16T11:34:04.053327+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 125790,
+    "sha256": "7b9c56c83ff6b4608de0d24de2e1f09bbce1cf7e0103c320b86f39769a90be30",
+    "error": ""
+  },
+  {
+    "file": "kr_mimic_group.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B+entries%28entry_ids%3A+%5B%228I5C%22%2C+%228I5D%22%2C+%229WFS%22%2C+%229WFT%22%5D%29+%7B+rcsb_id+struct+%7B+title+%7D+rcsb_primary_citation+%7B+title+pdbx_database_id_DOI+pdbx_database_id_PubMed+rcsb_authors+%7D+polymer_entities+%7B+rcsb_id+rcsb_polymer_entity+%7B+pdbx_description+%7D+entity_poly+%7B+pdbx_seq_one_letter_code_can+%7D+rcsb_polymer_entity_container_identifiers+%7B+auth_asym_ids+%7D+%7D+%7D+%7D",
+    "requested_at": "2026-11-16T11:34:02.935342+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 9864,
+    "sha256": "2d876e257b7f0ee3a0c007eb3adbd57640f551859402f79e73bcbf94815ba455",
+    "error": ""
+  },
+  {
+    "file": "sn45_group.json",
+    "url": "https://data.rcsb.org/graphql?query=%7B+entries%28entry_ids%3A+%5B%227BYD%22%2C%229WNT%22%2C%229WJ2%22%2C%229WJ4%22%2C%229WJ5%22%2C%229WJB%22%2C%229WJC%22%2C%229WJD%22%5D%29+%7B+rcsb_id+struct+%7B+title+%7D+rcsb_primary_citation+%7B+title+pdbx_database_id_DOI+pdbx_database_id_PubMed+rcsb_authors+%7D+polymer_entities+%7B+rcsb_id+rcsb_polymer_entity+%7B+pdbx_description+%7D+entity_poly+%7B+pdbx_seq_one_letter_code_can+%7D+rcsb_polymer_entity_container_identifiers+%7B+auth_asym_ids+%7D+%7D+%7D+%7D",
+    "requested_at": "2026-11-16T11:34:02.986324+00:00",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 13824,
+    "sha256": "7efd78fe36abc663fd639b6bc870f3f42fc0bfe3e3ef36cd1e043ae2bd7c196c",
+    "error": ""
+  }
+]
