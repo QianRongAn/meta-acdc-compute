@@ -1,0 +1,142 @@
+[
+  {
+    "file": "class1.html",
+    "url": "https://tcr3d.ibbr.umd.edu/class1",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 125790,
+    "sha256": "7b9c56c83ff6b4608de0d24de2e1f09bbce1cf7e0103c320b86f39769a90be30",
+    "observed_at": "2026-11-16T11:50:10.047376+00:00",
+    "error": ""
+  },
+  {
+    "file": "recent.html",
+    "url": "https://tcr3d.ibbr.umd.edu/recent_releases",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 17811,
+    "sha256": "cd4da526d0290fcffbeca0b93e6702bd754283ab4b0a4f24912e1393af87ac7e",
+    "observed_at": "2026-11-16T11:50:09.666740+00:00",
+    "error": ""
+  },
+  {
+    "file": "release.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_accession_info.initial_release_date%22%2C%22operator%22%3A%22range%22%2C%22value%22%3A%7B%22from%22%3A%222026-11-05%22%2C%22to%22%3A%222026-11-16%22%2C%22include_lower%22%3Atrue%2C%22include_upper%22%3Atrue%7D%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 14376,
+    "sha256": "2d32787f4aa621280379cca13e64e81acfdc3f303fe0d21b040ceb9c06a2787f",
+    "observed_at": "2026-11-16T11:50:08.436782+00:00",
+    "error": ""
+  },
+  {
+    "file": "revision.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_accession_info.revision_date%22%2C%22operator%22%3A%22range%22%2C%22value%22%3A%7B%22from%22%3A%222026-11-05%22%2C%22to%22%3A%222026-11-16%22%2C%22include_lower%22%3Atrue%2C%22include_upper%22%3Atrue%7D%7D%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22return_all_hits%22%3Atrue%7D%7D",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 30652,
+    "sha256": "3cf79cad454fe78238e73f6ee57f958cf5ddb86973720f92a61343a3dc197115",
+    "observed_at": "2026-11-16T11:50:09.275046+00:00",
+    "error": ""
+  },
+  {
+    "file": "9tml.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9TML",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 10061,
+    "sha256": "284cb91be09016acf13d3a9ccb2a231e703d17872f0d4e9e4c27e17614155bf1",
+    "observed_at": "2026-11-16T11:50:09.442159+00:00",
+    "error": ""
+  },
+  {
+    "file": "9tmm.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9TMM",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 9787,
+    "sha256": "7bbed882048309ee8a5f8cf4c2b1760e0c63fd1178c83f26810c624d81942bcf",
+    "observed_at": "2026-11-16T11:50:09.424228+00:00",
+    "error": ""
+  },
+  {
+    "file": "7rtr.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/7RTR",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 14603,
+    "sha256": "6f6f97964837ea06fb8fd17f421d7671790cfb2733d86483284cfc53125208a7",
+    "observed_at": "2026-11-16T11:50:09.454153+00:00",
+    "error": ""
+  },
+  {
+    "file": "7n1f.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/7N1F",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 13731,
+    "sha256": "831daa4101739c00e447d7672baba7fcdab82360092981ee2e7c7a9968b1ef98",
+    "observed_at": "2026-11-16T11:50:12.230772+00:00",
+    "error": ""
+  },
+  {
+    "file": "4jfe.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/4JFE",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 20941,
+    "sha256": "ac87e953adc8fcbddc08ca317333da319e1ccb988f1bcb386abcf8a03d85d08c",
+    "observed_at": "2026-11-16T11:50:12.296752+00:00",
+    "error": ""
+  },
+  {
+    "file": "6eqb.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/6EQB",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 20425,
+    "sha256": "07d9f590d5b27f431f19c9b49b8c9922966c69c2f914cae3fb028099398cbb84",
+    "observed_at": "2026-11-16T11:50:12.296957+00:00",
+    "error": ""
+  },
+  {
+    "file": "9nu7.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9NU7",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 12016,
+    "sha256": "5d5da88cce3f3c499c2871c1575eb83349638a4d20322e3a9929f93fc7f6e0d1",
+    "observed_at": "2026-11-16T11:50:10.342904+00:00",
+    "error": ""
+  },
+  {
+    "file": "9nv2.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9NV2",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 12725,
+    "sha256": "9af3e132dcaa16de29e8ac7af4f3999882bce2b4ac65ed00148c6cfe052be779",
+    "observed_at": "2026-11-16T11:50:12.859119+00:00",
+    "error": ""
+  },
+  {
+    "file": "9nv6.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9NV6",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 12647,
+    "sha256": "ac230c909db619a177b0ff548f83071c4be74b5b9d7087713c7581e4fced0fc9",
+    "observed_at": "2026-11-16T11:50:12.855592+00:00",
+    "error": ""
+  },
+  {
+    "file": "9nve.json",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/9NVE",
+    "status": "200",
+    "returncode": 0,
+    "bytes": 12941,
+    "sha256": "1b2fbd63ea7f350039e24fa1dc2ed2726b227af36758d5ca1e171dd603020af6",
+    "observed_at": "2026-11-16T11:50:11.473245+00:00",
+    "error": ""
+  }
+]

@@ -1,0 +1,2230 @@
+{
+  "KRAS_N_terminal_evidence": {
+    "6uln": {
+      "alpha": {
+        "allele": "TRAV4*01",
+        "deposited_start": "MAGLAKTTQPISV",
+        "domain_offset0": 3,
+        "observed_start": "LAKTTQPISV",
+        "reference_starts": [
+          "LAKTTQPISM"
+        ]
+      },
+      "beta": {
+        "allele": "TRBV5-6*01",
+        "deposited_start": "MAGVTQSPTHLIK",
+        "domain_offset0": 0,
+        "observed_start": "MAGVTQSPTH",
+        "reference_starts": [
+          "DAGVTQSPTH"
+        ]
+      }
+    },
+    "6ulr": {
+      "alpha": {
+        "allele": "TRAV4*01",
+        "deposited_start": "MAGLAKTTQPISV",
+        "domain_offset0": 3,
+        "observed_start": "LAKTTQPISV",
+        "reference_starts": [
+          "LAKTTQPISM"
+        ]
+      },
+      "beta": {
+        "allele": "TRBV5-6*01",
+        "deposited_start": "MAGVTQSPTHLIK",
+        "domain_offset0": 0,
+        "observed_start": "MAGVTQSPTH",
+        "reference_starts": [
+          "DAGVTQSPTH"
+        ]
+      }
+    },
+    "7su9": {
+      "alpha": {
+        "allele": "TRAV4*01",
+        "deposited_start": "MAGLAKTTQPISV",
+        "domain_offset0": 3,
+        "observed_start": "LAKTTQPISV",
+        "reference_starts": [
+          "LAKTTQPISM"
+        ]
+      },
+      "beta": {
+        "allele": "TRBV5-6*01",
+        "deposited_start": "MAGVTQSPTHLIK",
+        "domain_offset0": 0,
+        "observed_start": "MAGVTQSPTH",
+        "reference_starts": [
+          "DAGVTQSPTH"
+        ]
+      }
+    }
+  },
+  "RCSB_sequence_pair_hits": {
+    "5sws": [
+      "5sws"
+    ],
+    "5swz": [
+      "5swz",
+      "7jwi"
+    ],
+    "6uln": [
+      "6uln"
+    ],
+    "6ulr": [
+      "6ulr",
+      "7su9"
+    ],
+    "7jwi": [
+      "5swz",
+      "7jwi"
+    ],
+    "7jwj": [
+      "7jwj"
+    ],
+    "7su9": [
+      "6ulr",
+      "7su9"
+    ],
+    "8gvb": [
+      "8gvb",
+      "8gvg"
+    ],
+    "8gvi": [
+      "8gvi"
+    ],
+    "9pbg": [
+      "9pbg",
+      "9pbh"
+    ]
+  },
+  "additional_scope_26JD": [
+    "Beta-2-microglobulin",
+    "MPM7 T cell receptor alpha chain",
+    "MPM7 T cell receptor beta chain",
+    "T-cell surface glycoprotein CD1c"
+  ],
+  "catalog_count": 317,
+  "class1_catalog_revisions": [
+    "9yir",
+    "9z50",
+    "9z51"
+  ],
+  "coordinate_checks": {
+    "5sws": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "V_allele": "TRAV14-1*01",
+              "sequence": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASEGSGSWQLIFGSGTQLTVMP"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSAGLDAEQYFGPGTRLLVL"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.3472330215928552,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASEGSGSWQLIFGSGTQLTVMPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMKSNSAVAWSNKSDFACANAFNNSIIPEDTF",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSAGLDAEQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 66,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "5swz": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVL"
+            }
+          }
+        },
+        {
+          "alpha": "I",
+          "beta": "J",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVL"
+            }
+          }
+        },
+        {
+          "alpha": "N",
+          "beta": "O",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVL"
+            }
+          }
+        },
+        {
+          "alpha": "S",
+          "beta": "T",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVL"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen_error": "incomplete donor/receiver peptide",
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASETSGSWQLIFGSGTTVSVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKCANAFNNSIIPEDTFFP",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 67,
+          "observed_TCR_atoms_match_SEQRES": true,
+          "peptide_missing_atoms": [
+            [
+              "C",
+              1,
+              "",
+              [
+                "N"
+              ]
+            ]
+          ]
+        },
+        {
+          "atomic_screen_error": "incomplete donor/receiver peptide",
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASETSGSWQLIFGSGTTVSVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDFKSNSAVAWSNKSDFACANAFN",
+            "alpha_chain": "I",
+            "b2m_chain": "G",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "J",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "F",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "H"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 65,
+          "observed_TCR_atoms_match_SEQRES": true,
+          "peptide_missing_atoms": [
+            [
+              "H",
+              1,
+              "",
+              [
+                "N"
+              ]
+            ]
+          ]
+        },
+        {
+          "atomic_screen_error": "incomplete donor/receiver peptide",
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASETSGSWQLIFGSGTTVSVSPNIQNPDPAVYQLRDSKDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+            "alpha_chain": "N",
+            "b2m_chain": "L",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+            "beta_chain": "O",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "K",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "M"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 62,
+          "observed_TCR_atoms_match_SEQRES": true,
+          "peptide_missing_atoms": [
+            [
+              "M",
+              1,
+              "",
+              [
+                "N"
+              ]
+            ]
+          ]
+        },
+        {
+          "atomic_screen_error": "incomplete donor/receiver peptide",
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASETSGSWQLIFGSGTTVSVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+            "alpha_chain": "S",
+            "b2m_chain": "Q",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGR",
+            "beta_chain": "T",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "P",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "R"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 65,
+          "observed_TCR_atoms_match_SEQRES": true,
+          "peptide_missing_atoms": [
+            [
+              "R",
+              1,
+              "",
+              [
+                "N"
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    "6uln": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "reason": "ambiguous_or_missing_pmhc_assignment"
+        }
+      ],
+      "seqres_matches_api": true,
+      "units": []
+    },
+    "6ulr": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "reason": "ambiguous_or_missing_pmhc_assignment"
+        }
+      ],
+      "seqres_matches_api": true,
+      "units": []
+    },
+    "7jwi": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVL"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.33750541166129056,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "QQQVRQSPQSLTVWEGETAILNCSYEDSTFNYFPWYQQFPGEGPALLISIRSVSDKKEDGRFTIFFNKREKKLSLHITDSQPGDSATYFCAASETSGSWQLIFGSGTTVSVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "TVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRDLGRDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 65,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "7jwj": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "V_allele": "TRAV4-4/DV10*01",
+              "sequence": "GDQVEQSPSALSLHEGTDSALRCNFTTTMRSVQWFRQNSRGSLISLFYLASGTKENGRLKSAFDSKERRYSTLHIRDAQLEDSGTYFCAAVTGNTGKLIFGLGTTLQVQP"
+            },
+            "beta": {
+              "V_allele": "TRBV17*01",
+              "sequence": "DTTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRGTIHSNTEVFFGKGTRLTVV"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.6304249337279391,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 1,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "QVEQSPSALSLHEGTDSALRCNFTTTMRSVQWFRQNSRGSLISLFYLASGTKENGRLKSAFDSKERRYSTLHIRDAQLEDSGTYFCAAVTGNTGKLIFGLGTTLQVQPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFF",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "TTVKQNPRYKLARVGKPVNLICSQTMNHDTMYWYQKKPNQAPKLLLFYYDKILNREADTFEKFQSSRPNNSFCSLYIGSAGLEYSAMYLCASSRGTIHSNTEVFFGKGTRLTVVEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "ASNENMETM",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 57,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "7su9": {
+      "identity_checks": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "roles": {
+            "alpha": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "reason": "ambiguous_or_missing_pmhc_assignment"
+        }
+      ],
+      "seqres_matches_api": true,
+      "units": []
+    },
+    "8gvb": {
+      "identity_checks": [
+        {
+          "alpha": "A",
+          "beta": "B",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.6726461244136464,
+            "passed": false,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 6,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 3,
+            "worst_pairs": [
+              {
+                "distance_A": 2.5773538755863536,
+                "environment": [
+                  "A",
+                  101,
+                  "",
+                  "ND2"
+                ],
+                "overlap_A": 0.6726461244136464,
+                "peptide": [
+                  "P",
+                  4,
+                  "",
+                  "CD2"
+                ]
+              },
+              {
+                "distance_A": 2.6220501520756634,
+                "environment": [
+                  "H",
+                  70,
+                  "",
+                  "CD2"
+                ],
+                "overlap_A": 0.5979498479243364,
+                "peptide": [
+                  "P",
+                  2,
+                  "",
+                  "OH"
+                ]
+              },
+              {
+                "distance_A": 2.8356285017611174,
+                "environment": [
+                  "H",
+                  70,
+                  "",
+                  "ND1"
+                ],
+                "overlap_A": 0.41437149823888264,
+                "peptide": [
+                  "P",
+                  5,
+                  "",
+                  "CG2"
+                ]
+              }
+            ]
+          },
+          "chains": {
+            "alpha": "QSVTQPDIHITVSEGASLELRCNYSYGATPYLFWYVQSPGQGLQLLLKYFSGDTLVQGIKGFEAEFKRSQSSFNLRKPSVHWSDAAEYFCAVGFTGGGNKLTFGTGTQLKVELNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSDSYITDKCVLDMRSMDFKSNSAVANAFNNSIIPED",
+            "alpha_chain": "A",
+            "b2m_chain": "L",
+            "beta": "GVSQDPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSDRDRVPETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPSRYALSSRLRVSATFWQNPRNHFRCQVQFYENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "B",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "H",
+            "mhc_class": "I",
+            "peptide": "RYPLTFGW",
+            "peptide_chain": "P"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 81,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "8gvg": {
+      "identity_checks": [
+        {
+          "alpha": "A",
+          "beta": "B",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 1.0493530738894519,
+            "passed": false,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 3,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 3,
+            "worst_pairs": [
+              {
+                "distance_A": 2.0206469261105484,
+                "environment": [
+                  "H",
+                  146,
+                  "",
+                  "NZ"
+                ],
+                "overlap_A": 1.0493530738894519,
+                "peptide": [
+                  "P",
+                  8,
+                  "",
+                  "OXT"
+                ]
+              },
+              {
+                "distance_A": 2.3170170478440566,
+                "environment": [
+                  "A",
+                  98,
+                  "",
+                  "O"
+                ],
+                "overlap_A": 0.7529829521559437,
+                "peptide": [
+                  "P",
+                  1,
+                  "",
+                  "NH1"
+                ]
+              },
+              {
+                "distance_A": 2.374718088531775,
+                "environment": [
+                  "H",
+                  62,
+                  "",
+                  "OE2"
+                ],
+                "overlap_A": 0.6952819114682254,
+                "peptide": [
+                  "P",
+                  1,
+                  "",
+                  "NH2"
+                ]
+              }
+            ]
+          },
+          "chains": {
+            "alpha": "QSVTQPDIHITVSEGASLELRCNYSYGATPYLFWYVQSPGQGLQLLLKYFSGDTLVQGIKGFEAEFKRSQSSFNLRKPSVHWSDAAEYFCAVGFTGGGNKLTFGTGTQLKVELNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+            "alpha_chain": "A",
+            "b2m_chain": "L",
+            "beta": "GVSQDPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSDRDRVPETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "B",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "H",
+            "mhc_class": "I",
+            "peptide": "RFPLTFGW",
+            "peptide_chain": "P"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 79,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "8gvi": {
+      "identity_checks": [
+        {
+          "alpha": "A",
+          "beta": "B",
+          "roles": {
+            "alpha": {
+              "blocked": "complete J/FR4 C terminus unverified"
+            },
+            "beta": {
+              "blocked": "full germline N terminus unverified; no imputation or tag trimming"
+            }
+          }
+        }
+      ],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.948147271840007,
+            "passed": false,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 2,
+            "too_short_donor_acceptor_contacts": 1,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 1,
+            "worst_pairs": [
+              {
+                "distance_A": 2.1218527281599933,
+                "environment": [
+                  "H",
+                  66,
+                  "",
+                  "NZ"
+                ],
+                "overlap_A": 0.948147271840007,
+                "peptide": [
+                  "P",
+                  2,
+                  "",
+                  "O"
+                ]
+              }
+            ]
+          },
+          "chains": {
+            "alpha": "QSVTQPDIHITVSEGASLELRCNYSYGATPYLFWYVQSPGQGLQLLLKYFSGDTLVQGIKGFEAEFKRSQSSFNLRKPSVHWSDAAEYFCAVVFTGGGNKLTFGTGTQLKVELNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+            "alpha_chain": "A",
+            "b2m_chain": "L",
+            "beta": "TGVSQDPRHKITKRGQNVTFRCDPISEHNRLYWYRQTLGQGPEFLTYFQNEAQLEKSRLLSDRFSAERPKGSFSTLEIQRTEQGDSAMYLCASSLRDRVPETQYFGPGTRLLVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "B",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "H",
+            "mhc_class": "I",
+            "peptide": "RYPLTFGW",
+            "peptide_chain": "P"
+          },
+          "coordinate_pass": false,
+          "graph_nodes": 79,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "9pbg": {
+      "identity_checks": [],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.38701488884690516,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "KQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCGIALIGSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPED",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "SGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPATYSTDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGR",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "LRVMMLAPF",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 74,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "9pbh": {
+      "identity_checks": [],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.3455345478424565,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "KQEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCGIALIGSGAGSYQLTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFP",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSPATYSTDTQYFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "GRLPLLNPI",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 75,
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "9yir": {
+      "identity_checks": [],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.7932512378995309,
+            "passed": false,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 3,
+            "too_short_donor_acceptor_contacts": 2,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 2,
+            "worst_pairs": [
+              {
+                "distance_A": 2.246748762100469,
+                "environment": [
+                  "C",
+                  116,
+                  "",
+                  "OD2"
+                ],
+                "overlap_A": 0.7932512378995309,
+                "peptide": [
+                  "P",
+                  9,
+                  "",
+                  "OH"
+                ]
+              },
+              {
+                "distance_A": 2.2976986312395273,
+                "environment": [
+                  "C",
+                  143,
+                  "",
+                  "OG1"
+                ],
+                "overlap_A": 0.7423013687604727,
+                "peptide": [
+                  "P",
+                  9,
+                  "",
+                  "OXT"
+                ]
+              }
+            ]
+          },
+          "chains": {
+            "alpha": "QEVTQIPAALSVPEGENLVLNCSFTDSAIYNLQWFRQDPGKGLTSLLLIQSSQREQTSGRLNASLDKSSGRSTLYIAASQPGDSATYLCAVDTGGFKTIFGAGTRLFVKAYIQNPDPAVYQLRDSKSSDKFVCLFTDFDSQIQVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSQKSDFTCANAFQNSIIPEDTFFPS",
+            "alpha_chain": "A",
+            "b2m_chain": "D",
+            "beta": "QVTQNPRYLITVTGKKLTVTCSQNMNHEYMSWYRQDPGLGLRQIYYSMNVEVTDKGDVPEGYKVSRKEKRNFPLILESPSPNQTSLYFCASSSGDGNYGYTFGSGTRLTVVEDLKNVFPPEVAVFEPSKAEISRTQKATLVCLATGFYPPHVELSWWVNGKEVHDGVCTDPQPLKEQPALQDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "B",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "C",
+            "mhc_class": "I",
+            "peptide": "QVDYYGLYY",
+            "peptide_chain": "P"
+          },
+          "coordinate_pass": false,
+          "graph_error": "incomplete interface heavy atoms: [('A', 67, ['CD', 'CE', 'CG', 'NZ']), ('A', 97, ['CD', 'CE', 'CG', 'NZ']), ('C', 43, ['CD', 'CG', 'NE2', 'OE1']), ('C', 154, ['CD', 'CG', 'OE1', 'OE2'])]",
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    },
+    "9z50": {
+      "identity_checks": [],
+      "scope_exclusions": [
+        {
+          "chain_kinds": {
+            "A": "unknown",
+            "B": "unknown",
+            "C": "mhc_i",
+            "D": "b2m",
+            "E": "peptide",
+            "F": "mhc_i",
+            "G": "b2m",
+            "H": "unknown",
+            "I": "unknown",
+            "P": "peptide"
+          },
+          "reason": "outside_complete_class_I_alpha_beta_scope"
+        }
+      ],
+      "seqres_matches_api": true,
+      "units": []
+    },
+    "9z51": {
+      "identity_checks": [],
+      "scope_exclusions": [],
+      "seqres_matches_api": true,
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.3957518813692702,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "PTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIPYIQNPDPAVYQLRDSKSSDKFVCLFTDFDSQIQVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSQKSDFTCANAFQNSIIPEDTFFPSPE",
+            "alpha_chain": "A",
+            "b2m_chain": "D",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVLEDLKNVFPPEVAVFEPSKAEISRTQKATLVCLATGFYPPHVELSWWVNGKEVHDGVCTDPQPLKEQPALQDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "B",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "C",
+            "mhc_class": "I",
+            "peptide": "YMLDLQPET",
+            "peptide_chain": "P"
+          },
+          "coordinate_pass": false,
+          "graph_error": "incomplete interface heavy atoms: [('C', 59, ['CD', 'CG', 'OE1', 'OE2'])]",
+          "observed_TCR_atoms_match_SEQRES": true
+        },
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.5535783342213891,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 1,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "PTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIPYIQNPDPAVYQLRDSKSSDKFVCLFTDFDSQIQVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSQKSDFTCANAFQNSIIPEDTFFPSPE",
+            "alpha_chain": "E",
+            "b2m_chain": "H",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVLEDLKNVFPPEVAVFEPSKAEISRTQKATLVCLATGFYPPHVELSWWVNGKEVHDGVCTDPQPLKEQPALQDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "F",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "G",
+            "mhc_class": "I",
+            "peptide": "YMLDLQPET",
+            "peptide_chain": "I"
+          },
+          "coordinate_pass": false,
+          "graph_error": "incomplete interface heavy atoms: [('G', 59, ['CD', 'CG', 'OE1', 'OE2'])]",
+          "observed_TCR_atoms_match_SEQRES": true
+        },
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.39101399779692825,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 0,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "PTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIPYIQNPDPAVYQLRDSKSSDKFVCLFTDFDSQIQVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSQKSDFTCANAFQNSIIPEDTFFPS",
+            "alpha_chain": "J",
+            "b2m_chain": "M",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVLEDLKNVFPPEVAVFEPSKAEISRTQKATLVCLATGFYPPHVELSWWVNGKEVHDGVCTDPQPLKEQPALQDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "K",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "L",
+            "mhc_class": "I",
+            "peptide": "YMLDLQPET",
+            "peptide_chain": "N"
+          },
+          "coordinate_pass": false,
+          "graph_error": "incomplete interface heavy atoms: [('L', 59, ['CD', 'CG', 'OE1', 'OE2'])]",
+          "observed_TCR_atoms_match_SEQRES": true
+        },
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.6099993902439738,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 2,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "PTEMTATEGAIVQINCTYQTSGFNGLFWYQQHAGEAPTFLSYNVLDGLEEKGRFSSFLSRSKGYSYLLLKELQMKDSASYLCASVDGNNRLAFGKGNQVVVIPYIQNPDPAVYQLRDSKSSDKFVCLFTDFDSQIQVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSQKSDFTCANAFQNSIIPEDTFFPSP",
+            "alpha_chain": "Q",
+            "b2m_chain": "T",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGWRGGRYNEQFFGPGTRLTVLEDLKNVFPPEVAVFEPSKAEISRTQKATLVCLATGFYPPHVELSWWVNGKEVHDGVCTDPQPLKEQPALQDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "R",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "S",
+            "mhc_class": "I",
+            "peptide": "YMLDLQPET",
+            "peptide_chain": "U"
+          },
+          "coordinate_pass": false,
+          "graph_error": "incomplete interface heavy atoms: [('S', 59, ['CD', 'CG', 'OE1', 'OE2'])]",
+          "observed_TCR_atoms_match_SEQRES": true
+        }
+      ]
+    }
+  },
+  "fixed_policy_sha256": "ad9849f80e6191046310d5fc6c920dd5e1d4290075e45cf2511d300d57972de1",
+  "independent_acceptance_accessed": false,
+  "known_fragment_PDBs_revised": [],
+  "new_qualified_cross_study_pairs": 0,
+  "new_qualified_natural_control_groups": 0,
+  "observed_sequence_matches": {
+    "5sws": [
+      "5sws"
+    ],
+    "5swz": [
+      "5swz",
+      "7jwi"
+    ],
+    "6uln": [
+      "6uln"
+    ],
+    "6ulr": [
+      "6ulr",
+      "7su9"
+    ],
+    "7jwi": [
+      "5swz",
+      "7jwi"
+    ],
+    "7jwj": [
+      "7jwj"
+    ],
+    "7su9": [
+      "6ulr",
+      "7su9"
+    ],
+    "8gvb": [
+      "8gvb",
+      "8gvg"
+    ],
+    "8gvg": [
+      "8gvb",
+      "8gvg"
+    ],
+    "8gvi": [
+      "8gvi"
+    ],
+    "9pbg": [
+      "9pbg",
+      "9pbh"
+    ]
+  },
+  "official_assembly_checks": {
+    "6uln": {
+      "atom_identities_equal": true,
+      "atoms": 6972,
+      "exclusions": [],
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.5003301768515072,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 3,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "AKTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSSDIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFN",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGQTNYGYTFGSGTRLTVVEDLRNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "GADGVGKSA",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 63
+        }
+      ]
+    },
+    "6ulr": {
+      "atom_identities_equal": true,
+      "atoms": 6510,
+      "exclusions": [],
+      "units": [
+        {
+          "atomic_screen": {
+            "gross_screen": {
+              "ca_cb_outliers": [],
+              "cross_chain_pairs_below_cutoff": 0,
+              "passed": true,
+              "policy": "construction-screen-v1",
+              "severe_distance_A": 1.2,
+              "validates_nonbinding": false,
+              "validates_rotamers": false
+            },
+            "heavy_atom_only": true,
+            "is_molprobity": false,
+            "max_vdw_overlap_A": 0.489187580397179,
+            "passed": true,
+            "peptide_CN_outliers": [],
+            "policy_id": "rigid-observed-peptide-transfer-v2",
+            "potential_hbond_contacts": 5,
+            "too_short_donor_acceptor_contacts": 0,
+            "validates_nonbinding": false,
+            "vdw_overlap_pairs": 0,
+            "worst_pairs": []
+          },
+          "chains": {
+            "alpha": "KTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSSDIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFN",
+            "alpha_chain": "D",
+            "b2m_chain": "B",
+            "beta": "GVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGEGRVDGYTFGSGTRLTVVEDLRNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "beta_chain": "E",
+            "identity_basis": "PDB_COMPND+unique_contact_assignment",
+            "mhc_chain": "A",
+            "mhc_class": "I",
+            "peptide": "GADGVGKSA",
+            "peptide_chain": "C"
+          },
+          "coordinate_pass": true,
+          "graph_nodes": 64
+        }
+      ]
+    },
+    "7su9": {
+      "atom_identities_equal": true,
+      "atoms": 6973,
+      "exclusions": [
+        {
+          "alpha": "D",
+          "beta": "E",
+          "reason": "ambiguous_or_missing_pmhc_assignment"
+        }
+      ],
+      "units": []
+    }
+  },
+  "potential_same_study_same_V_name_groups": [
+    {
+      "V": [
+        "TRAV12-2",
+        "TRBV6-3"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "7PBC",
+          "TRAV_gene": "TRAV12-2",
+          "TRBV_gene": "TRBV6-3",
+          "release_date": "2022-08-03",
+          "tcr_name": "c796"
+        },
+        {
+          "PDB_ID": "7PDW",
+          "TRAV_gene": "TRAV12-2",
+          "TRBV_gene": "TRBV6-3",
+          "release_date": "2022-08-03",
+          "tcr_name": "c728"
+        }
+      ],
+      "source": "doi:10.1136/jitc-2022-004600"
+    },
+    {
+      "V": [
+        "TRAV14N-1",
+        "TRBV17"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "5SWS",
+          "TRAV_gene": "TRAV14N-1",
+          "TRBV_gene": "TRBV17",
+          "release_date": "2016-10-05",
+          "tcr_name": "NP2-B17"
+        },
+        {
+          "PDB_ID": "5SWZ",
+          "TRAV_gene": "TRAV14N-1",
+          "TRBV_gene": "TRBV17",
+          "release_date": "2016-10-05",
+          "tcr_name": "NP1-B17"
+        }
+      ],
+      "source": "doi:10.1016/j.immuni.2016.09.007"
+    },
+    {
+      "V": [
+        "TRAV16D/DV11",
+        "TRBV5"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "9NU7",
+          "TRAV_gene": "TRAV16D/DV11",
+          "TRBV_gene": "TRBV5",
+          "release_date": "2026-07-29",
+          "tcr_name": "NP202"
+        },
+        {
+          "PDB_ID": "9NV2",
+          "TRAV_gene": "TRAV16D/DV11",
+          "TRBV_gene": "TRBV5",
+          "release_date": "2026-07-29",
+          "tcr_name": "NP207"
+        },
+        {
+          "PDB_ID": "9NV6",
+          "TRAV_gene": "TRAV16D/DV11",
+          "TRBV_gene": "TRBV5",
+          "release_date": "2026-07-29",
+          "tcr_name": "NP101"
+        },
+        {
+          "PDB_ID": "9NVE",
+          "TRAV_gene": "TRAV16D/DV11",
+          "TRBV_gene": "TRBV5",
+          "release_date": "2026-07-29",
+          "tcr_name": "NP203"
+        }
+      ],
+      "source": "doi:10.1016/j.celrep.2026.117908"
+    },
+    {
+      "V": [
+        "TRAV19",
+        "TRBV6-3"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "7OW5",
+          "TRAV_gene": "TRAV19",
+          "TRBV_gene": "TRBV6-3",
+          "release_date": "2022-07-20",
+          "tcr_name": "JDIa41b1"
+        },
+        {
+          "PDB_ID": "7OW6",
+          "TRAV_gene": "TRAV19",
+          "TRBV_gene": "TRBV6-3",
+          "release_date": "2022-07-20",
+          "tcr_name": "JDIa41b1"
+        },
+        {
+          "PDB_ID": "7PB2",
+          "TRAV_gene": "TRAV19",
+          "TRBV_gene": "TRBV6-3",
+          "release_date": "2022-07-20",
+          "tcr_name": "JDI"
+        }
+      ],
+      "source": "doi:10.1038/s41467-022-32811-1"
+    },
+    {
+      "V": [
+        "TRAV20",
+        "TRBV9"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "3MV7",
+          "TRAV_gene": "TRAV20",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2010-06-09",
+          "tcr_name": "TK3"
+        },
+        {
+          "PDB_ID": "3MV8",
+          "TRAV_gene": "TRAV20",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2010-06-09",
+          "tcr_name": "TK3*"
+        },
+        {
+          "PDB_ID": "3MV9",
+          "TRAV_gene": "TRAV20",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2010-06-09",
+          "tcr_name": "TK3*"
+        }
+      ],
+      "source": "doi:10.1084/jem.20100603"
+    },
+    {
+      "V": [
+        "TRAV21",
+        "TRBV6-6"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "8RYM",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV6-6",
+          "release_date": "2024-09-04",
+          "tcr_name": "S2"
+        },
+        {
+          "PDB_ID": "8RYN",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV6-6",
+          "release_date": "2024-09-04",
+          "tcr_name": "S2"
+        },
+        {
+          "PDB_ID": "8RYO",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV6-6",
+          "release_date": "2024-09-04",
+          "tcr_name": "S2-198"
+        }
+      ],
+      "source": "doi:10.1038/s41598-024-75140-7"
+    },
+    {
+      "V": [
+        "TRAV21",
+        "TRBV9"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "7N2N",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS4.2"
+        },
+        {
+          "PDB_ID": "7N2O",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS4.2"
+        },
+        {
+          "PDB_ID": "7N2P",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS4.3"
+        },
+        {
+          "PDB_ID": "7N2Q",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS4.3"
+        },
+        {
+          "PDB_ID": "7N2R",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS4.3"
+        },
+        {
+          "PDB_ID": "7N2S",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS3.1"
+        },
+        {
+          "PDB_ID": "8CX4",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2022-12-07",
+          "tcr_name": "AS8.4"
+        }
+      ],
+      "source": "doi:10.1038/s41586-022-05501-7"
+    },
+    {
+      "V": [
+        "TRAV21",
+        "TRBV9"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "9PBG",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2026-03-18",
+          "tcr_name": "19.2"
+        },
+        {
+          "PDB_ID": "9PBH",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2026-03-18",
+          "tcr_name": "AS19.2"
+        }
+      ],
+      "source": "doi:10.1038/s41587-026-03128-x"
+    },
+    {
+      "V": [
+        "TRAV21",
+        "TRBV9"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "8RYP",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2024-09-04",
+          "tcr_name": "S8"
+        },
+        {
+          "PDB_ID": "8RYQ",
+          "TRAV_gene": "TRAV21",
+          "TRBV_gene": "TRBV9",
+          "release_date": "2024-09-04",
+          "tcr_name": "S8-9F3"
+        }
+      ],
+      "source": "doi:10.1038/s41598-024-75140-7"
+    },
+    {
+      "V": [
+        "TRAV27",
+        "TRBV19"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "2VLJ",
+          "TRAV_gene": "TRAV27",
+          "TRBV_gene": "TRBV19",
+          "release_date": "2008-01-22",
+          "tcr_name": "JM22"
+        },
+        {
+          "PDB_ID": "2VLK",
+          "TRAV_gene": "TRAV27",
+          "TRBV_gene": "TRBV19",
+          "release_date": "2008-01-22",
+          "tcr_name": "JM22"
+        },
+        {
+          "PDB_ID": "2VLR",
+          "TRAV_gene": "TRAV27",
+          "TRBV_gene": "TRBV19",
+          "release_date": "2008-01-22",
+          "tcr_name": "JM22*"
+        }
+      ],
+      "source": "doi:10.1016/j.immuni.2007.12.018"
+    },
+    {
+      "V": [
+        "TRAV4",
+        "TRBV5-6"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "6ULN",
+          "TRAV_gene": "TRAV4",
+          "TRBV_gene": "TRBV5-6",
+          "release_date": "2020-05-27",
+          "tcr_name": "9d"
+        },
+        {
+          "PDB_ID": "6ULR",
+          "TRAV_gene": "TRAV4",
+          "TRBV_gene": "TRBV5-6",
+          "release_date": "2020-05-27",
+          "tcr_name": "9a"
+        }
+      ],
+      "source": "doi:10.1073/pnas.1921964117"
+    },
+    {
+      "V": [
+        "TRAV7D-2",
+        "TRBV2"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "8WTE",
+          "TRAV_gene": "TRAV7D-2",
+          "TRBV_gene": "TRBV2",
+          "release_date": "2024-05-01",
+          "tcr_name": "4TCR2"
+        },
+        {
+          "PDB_ID": "8WUL",
+          "TRAV_gene": "TRAV7D-2",
+          "TRBV_gene": "TRBV2",
+          "release_date": "2024-05-01",
+          "tcr_name": "4TCR2*"
+        }
+      ],
+      "source": "doi:10.1038/s42003-024-06209-2"
+    },
+    {
+      "V": [
+        "TRAV8-3",
+        "TRBV7-9"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "8GVB",
+          "TRAV_gene": "TRAV8-3",
+          "TRBV_gene": "TRBV7-9",
+          "release_date": "2022-10-19",
+          "tcr_name": "TD08"
+        },
+        {
+          "PDB_ID": "8GVG",
+          "TRAV_gene": "TRAV8-3",
+          "TRBV_gene": "TRBV7-9",
+          "release_date": "2022-10-19",
+          "tcr_name": "TD08"
+        },
+        {
+          "PDB_ID": "8GVI",
+          "TRAV_gene": "TRAV8-3",
+          "TRBV_gene": "TRBV7-9",
+          "release_date": "2022-10-19",
+          "tcr_name": "H25-11"
+        }
+      ],
+      "source": "doi:10.4049/jimmunol.2200191"
+    },
+    {
+      "V": [
+        "TRAV9-4",
+        "TRBV13-2"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "2E7L",
+          "TRAV_gene": "TRAV9-4",
+          "TRBV_gene": "TRBV13-2",
+          "release_date": "2007-04-24",
+          "tcr_name": "2C*"
+        },
+        {
+          "PDB_ID": "2OI9",
+          "TRAV_gene": "TRAV9-4",
+          "TRBV_gene": "TRBV13-2",
+          "release_date": "2007-04-24",
+          "tcr_name": "2C"
+        }
+      ],
+      "source": "doi:10.1016/j.cell.2007.01.048"
+    },
+    {
+      "V": [
+        "TRAV9D-4",
+        "TRBV1"
+      ],
+      "entries": [
+        {
+          "PDB_ID": "9TML",
+          "TRAV_gene": "TRAV9D-4",
+          "TRBV_gene": "TRBV1",
+          "release_date": "2026-11-04",
+          "tcr_name": "TCR-B"
+        },
+        {
+          "PDB_ID": "9TMM",
+          "TRAV_gene": "TRAV9D-4",
+          "TRBV_gene": "TRBV1",
+          "release_date": "2026-11-04",
+          "tcr_name": "TCR-A"
+        }
+      ],
+      "source": "Structure-function profiling identifies determinants of TCR-T cell therapeutic efficacy"
+    }
+  ],
+  "priority_versions": {
+    "4jfe": {
+      "deposit_date": "2013-02-28T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2013-05-29T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 5,
+      "revision_date": "2024-11-20T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "6eqb": {
+      "deposit_date": "2017-10-12T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2018-10-10T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 3,
+      "revision_date": "2024-11-20T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "7n1f": {
+      "deposit_date": "2021-05-27T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2021-07-28T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 4,
+      "revision_date": "2024-10-23T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "7rtr": {
+      "deposit_date": "2021-08-14T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2021-10-13T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 3,
+      "revision_date": "2024-10-16T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9nu7": {
+      "deposit_date": "2025-03-19T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-07-29T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 1,
+      "revision_date": "2026-09-23T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9nv2": {
+      "deposit_date": "2025-03-20T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-07-29T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 1,
+      "revision_date": "2026-09-23T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9nv6": {
+      "deposit_date": "2025-03-20T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-07-29T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 1,
+      "revision_date": "2026-09-23T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9nve": {
+      "deposit_date": "2025-03-20T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-07-29T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 1,
+      "revision_date": "2026-09-23T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9tml": {
+      "deposit_date": "2025-12-15T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-11-04T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 0,
+      "revision_date": "2026-11-04T00:00:00.000+00:00",
+      "status_code": "REL"
+    },
+    "9tmm": {
+      "deposit_date": "2025-12-15T00:00:00.000+00:00",
+      "has_released_experimental_data": "Y",
+      "initial_release_date": "2026-11-04T00:00:00.000+00:00",
+      "major_revision": 1,
+      "minor_revision": 0,
+      "revision_date": "2026-11-04T00:00:00.000+00:00",
+      "status_code": "REL"
+    }
+  },
+  "protocol_frozen": false,
+  "recent_catalog": [
+    {
+      "pdbid": "11OE",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "26JD",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9TML",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9TMM",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZEP",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZEQ",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZER",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZES",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZET",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZEU",
+      "release_date": "2026-11-04"
+    },
+    {
+      "pdbid": "9ZEV",
+      "release_date": "2026-11-04"
+    }
+  ],
+  "release_entries": 274,
+  "release_metadata_complete": true,
+  "release_target_like_entities": {
+    "27eu": {
+      "entities": [
+        "PB1(413-421) peptide",
+        "Beta-2-microglobulin",
+        "MHC class I antigen"
+      ],
+      "tcr_marker": false,
+      "title": "Human Leucocyte Antigen HLA-A2 with bound PB1(413-421) peptide"
+    },
+    "27ev": {
+      "entities": [
+        "BHA(543-551) peptide",
+        "Beta-2-microglobulin",
+        "MHC class I antigen"
+      ],
+      "tcr_marker": false,
+      "title": "Human Leucocyte Antigen HLA-A2 with bound BHA(543-551) peptide"
+    },
+    "44iv": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS4",
+        "P2-AW peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS4 bound to HLA-C*05:01 presenting the P2-AW peptide"
+    },
+    "44iw": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS4",
+        "Protein RecA",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS4 bound to HLA-C*05:01 presenting the RecA peptide"
+    },
+    "44ix": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS4",
+        "TM9SF4 peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS4 bound to HLA-C*05:01 presenting the TM9SF4 peptide"
+    },
+    "44iy": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS4",
+        "HECTD1 peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS4 bound to HLA-C*05:01 presenting the HECTD1 peptide"
+    },
+    "44iz": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS1",
+        "RecA peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS1 bound to HLA-C*05:01 presenting the RecA peptide"
+    },
+    "44ja": {
+      "entities": [
+        "P2-AV peptide",
+        "Killer cell immunoglobulin-like receptor 2DS1",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS1 bound to HLA-C*05:01 presenting the P2-AV peptide"
+    },
+    "44jb": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS2",
+        "RecA peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS2 bound to HLA-C*05:01 presenting the RecA peptide"
+    },
+    "44jc": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS2",
+        "Peptide P2-AV",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS2 bound to HLA-C*05:01 presenting the P2-AV peptide"
+    },
+    "44jd": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS1",
+        "SV9 peptide",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS1 bound to HLA-C*06:02 presenting the SV9 peptide"
+    },
+    "44je": {
+      "entities": [
+        "Killer cell immunoglobulin-like receptor 2DS2",
+        "Peptide RL9",
+        "Beta-2-microglobulin",
+        "HLA class I histocompatibility antigen, C alpha chain"
+      ],
+      "tcr_marker": false,
+      "title": "KIR2DS2 bound to HLA-C*07:02 presenting the RL9 peptide"
+    }
+  },
+  "revision_entries": 587,
+  "same_receptor_checks": [
+    {
+      "entire_deposited_chain_equal": {
+        "alpha": true,
+        "beta": true
+      },
+      "other_entry_contains_both_query_sequences": true,
+      "pdbs": [
+        "5swz",
+        "7jwi"
+      ],
+      "shared_authors": [
+        "farencc",
+        "grass",
+        "lagrutanl",
+        "rossjohnj"
+      ],
+      "study_keys": [
+        "doi:10.1016/j.immuni.2016.09.007",
+        "doi:10.1126/science.abe9124"
+      ]
+    },
+    {
+      "entire_deposited_chain_equal": {
+        "alpha": true,
+        "beta": true
+      },
+      "other_entry_contains_both_query_sequences": true,
+      "pdbs": [
+        "6ulr",
+        "7su9"
+      ],
+      "shared_authors": [
+        "longeo",
+        "luj",
+        "simmjw",
+        "sunpd"
+      ],
+      "study_keys": [
+        "doi:10.1073/pnas.1921964117",
+        "doi:10.7554/elife.75670"
+      ]
+    },
+    {
+      "entire_deposited_chain_equal": {
+        "alpha": true,
+        "beta": true
+      },
+      "other_entry_contains_both_query_sequences": true,
+      "pdbs": [
+        "9pbg",
+        "9pbh"
+      ],
+      "shared_authors": [
+        "chenx",
+        "garciakc",
+        "judekm",
+        "khanaa",
+        "laib",
+        "liuld",
+        "paleyma",
+        "pereraj",
+        "rischi",
+        "umj",
+        "wangc",
+        "wangn",
+        "xiangx",
+        "yangx",
+        "yehh"
+      ],
+      "study_keys": [
+        "doi:10.1038/s41587-026-03128-x",
+        "doi:10.1038/s41587-026-03128-x"
+      ]
+    }
+  ],
+  "sequence_query_count": 15,
+  "source_hashes": {
+    "sources/annotation/7su9_D.fasta": "3e6063fb0e453dbab6db01722c7d24bf2bb00db21ad831745d64e5b441dd3c60",
+    "sources/annotation/7su9_E.fasta": "e4d604a310fe91aaaba63913097fa2f5a1d9fe0f342ec55d4ad44163b8bdc4ea",
+    "sources/assemblies/6uln.pdb1.gz": "329de848dd46066449c8c52116655a1f7bbb26c6d375b12becf99e7f3b3ce272",
+    "sources/assemblies/6ulr.pdb1.gz": "dcaa478fed5717f5489e40d58eae1ef16f3550e43265328fc885d41100450b11",
+    "sources/assemblies/7su9.pdb1.gz": "50720bcf90d6303248a28c1883362dca613d7755c76ac008e8c1189368d75f76",
+    "sources/coordinates/5sws.html": "525dc202056d342902efbaa998964530c6cd27429d8d549786f14da009c31578",
+    "sources/coordinates/5sws.pdb": "4715d34d7357c8661fb0f7eeccf4156e9f55a335dccc77e8595e0bb1f7dd6200",
+    "sources/coordinates/5swz.html": "bc69c5ca532fe147407b9670e6fd398afd17afbb0b4174d1bdeac45c9ad954a1",
+    "sources/coordinates/5swz.pdb": "a79cc9a070b0c3da247d99886d17e0232b9400ac1226c57929a85ea2d606fdf1",
+    "sources/coordinates/6uln.html": "cff54c9d9d00c2ae90173406736b68144a8997dbf98468631e3052e6bfc02342",
+    "sources/coordinates/6uln.pdb": "6d9affd6f80d90819ba697a817c2139ddb36b8e00e41ab89ffac2243bf59284f",
+    "sources/coordinates/6ulr.html": "c0ece19335973cd11d846f69007df214d11a3cfd1b13615ec006d2ed336f105b",
+    "sources/coordinates/6ulr.pdb": "2f3d9fc7a9fae21bd0d2d2d93ffae8c05a5a20b32fe3bf8c1c914b92961c8f0d",
+    "sources/coordinates/8gvb.html": "758cdd8e51238ca0cdf50db67753f157a99cc431a39940c8c1a92de1d345e805",
+    "sources/coordinates/8gvb.pdb": "961235338f2a8febf4a821007418512e36f04bf1777d38a9e8a46ab4f50042e6",
+    "sources/coordinates/8gvg.html": "aadd735e7752cb9c97dcf7050181c7e205a4ee5e6491b9db579b68a664ecc2cc",
+    "sources/coordinates/8gvg.pdb": "87c268161127caf23496f0cbdd539e5bd8a38e8de08a0aa527b3089f5709f651",
+    "sources/coordinates/8gvi.html": "29171d55f4fff4f2f28e387ca07a82b9235b4500c887ac82830089413bed80c4",
+    "sources/coordinates/8gvi.pdb": "223268bd556ffe97146a6ffe327251df186c56d6bb8bf0e56ac811046e6ca9a5",
+    "sources/coordinates/9pbg.html": "e74ee89abe0e90e6c475493fc80bf536eb30a4b26af6a7b31d4317434d21b01d",
+    "sources/coordinates/9pbg.pdb": "ac206348aca1f125fe1ad99bea3f0a970dc757a48041f60313612162356c294f",
+    "sources/coordinates/9pbh.html": "3d1032e2e70e37995c87e5e7367997da3711e75ad06f779e205139041249e3c2",
+    "sources/coordinates/9pbh.pdb": "fd92b72554fc7eff6afafedba27104e1a5f0dfc34e18e9da3a3b9f689e7880dc",
+    "sources/coordinates/9yir.html": "7c6f45ac205acbf5434ccde53917cb311250bfa125ead05175c01586d284d9b6",
+    "sources/coordinates/9yir.pdb": "ecb3e6359013a28606a6ceae27eb35a709f558ab42f1d9b0480d62f82df46f8f",
+    "sources/coordinates/9z50.html": "b182a287efe374373f44886479f96834c28e3a47e208e9e7dfbb81e454295b0f",
+    "sources/coordinates/9z50.pdb": "9a53ad364b5852e5790f756dd47d5d50abef123096ebd01f8ce76402a311e331",
+    "sources/coordinates/9z51.html": "a7ef4437be240babffd92105b0d43da8511da11c0d414b69c014ec6c0534b9d6",
+    "sources/coordinates/9z51.pdb": "57092b8b65c7a167c874f0b1a57e5c0355ed0c3a846e19be73a732fb7c34204b",
+    "sources/cross/7jwi_D.fasta": "b657683d5d266ffcd8045e8c726dbef86bf0d4e2e127bcb12e9291d3b3936088",
+    "sources/cross/7jwi_E.fasta": "37d907f5110f001a9986956b5e8f167c6604db9e5d54b91bdfb33a2171b86e45",
+    "sources/cross/7jwj_D.fasta": "61a8cecc377096431a46f5e7167b9a273d66a1653adfe311c11a58bdab90393a",
+    "sources/cross/7jwj_E.fasta": "ac2dc723f7aacf879d4656cd19532f5480946d349947f8d5014addd628c09135",
+    "sources/cross/7su9.html": "fbcfbb923bc57d661ceade238e87ed4cdd06a95f20c93b13a58c9163c46e481a",
+    "sources/cross/7su9.pdb": "c64c448d12c5715ae444b969232da986f8ed2608944d8def0450c686b0fc2342",
+    "sources/discovery/4jfe.json": "ac87e953adc8fcbddc08ca317333da319e1ccb988f1bcb386abcf8a03d85d08c",
+    "sources/discovery/6eqb.json": "07d9f590d5b27f431f19c9b49b8c9922966c69c2f914cae3fb028099398cbb84",
+    "sources/discovery/7n1f.json": "831daa4101739c00e447d7672baba7fcdab82360092981ee2e7c7a9968b1ef98",
+    "sources/discovery/7rtr.json": "6f6f97964837ea06fb8fd17f421d7671790cfb2733d86483284cfc53125208a7",
+    "sources/discovery/9nu7.json": "5d5da88cce3f3c499c2871c1575eb83349638a4d20322e3a9929f93fc7f6e0d1",
+    "sources/discovery/9nv2.json": "9af3e132dcaa16de29e8ac7af4f3999882bce2b4ac65ed00148c6cfe052be779",
+    "sources/discovery/9nv6.json": "ac230c909db619a177b0ff548f83071c4be74b5b9d7087713c7581e4fced0fc9",
+    "sources/discovery/9nve.json": "1b2fbd63ea7f350039e24fa1dc2ed2726b227af36758d5ca1e171dd603020af6",
+    "sources/discovery/9tml.json": "284cb91be09016acf13d3a9ccb2a231e703d17872f0d4e9e4c27e17614155bf1",
+    "sources/discovery/9tmm.json": "7bbed882048309ee8a5f8cf4c2b1760e0c63fd1178c83f26810c624d81942bcf",
+    "sources/discovery/class1.html": "7b9c56c83ff6b4608de0d24de2e1f09bbce1cf7e0103c320b86f39769a90be30",
+    "sources/discovery/recent.html": "cd4da526d0290fcffbeca0b93e6702bd754283ab4b0a4f24912e1393af87ac7e",
+    "sources/discovery/release.json": "2d32787f4aa621280379cca13e64e81acfdc3f303fe0d21b040ceb9c06a2787f",
+    "sources/discovery/revision.json": "3cf79cad454fe78238e73f6ee57f958cf5ddb86973720f92a61343a3dc197115",
+    "sources/followup/5sws_D.fasta": "4d6809eedef8f3750a5451539a15101437d48f39e43fa2752ebf809a46036518",
+    "sources/followup/5sws_E.fasta": "14b46cac47f79d9c058921a0b7f6093972f3a5d443abf9ae2b8ad11e13461746",
+    "sources/followup/5swz_D.fasta": "c47ccb466d25d98a45a520bdb971f537d2584f648429f7668af4ef22229a7402",
+    "sources/followup/5swz_E.fasta": "09df86c41b2ccf0e6ff0bdea306a6bdfe6c2569403fd646a6f2660563b1f9465",
+    "sources/followup/5swz_I.fasta": "72d00930a9fd7ec11f568570225dd157a5f16fbb2d7abeb84554e716779ebbbc",
+    "sources/followup/5swz_J.fasta": "a4eb1d153a05579372ca27f5428a4af949963ec40ea9953b7df4ded038ac5c81",
+    "sources/followup/5swz_N.fasta": "32591269e69dcc51d6491877583420f8f3dbd9739bce9d84f82b0ddc6ba09159",
+    "sources/followup/5swz_O.fasta": "ee97341adc3599cad83c2f482f5ab25b1c09ddba04e3238a94c95467f3b70209",
+    "sources/followup/5swz_S.fasta": "c7df815468080835ed770a32f9c38df684dd3e9e1288618e51eb3e027b2bbee0",
+    "sources/followup/5swz_T.fasta": "785cf0a62b007fd28681679c6840595896ddb9a67ebb487329bc00873fb3a43b",
+    "sources/followup/6uln_D.fasta": "33a2a4138fd337de0e20ff711dafd98e868fdb2a0480440e77198204eb0629c1",
+    "sources/followup/6uln_E.fasta": "e0a40d764127eb6d032486d8e05f63ea8a19d4ff9adc844c9dd2cd65c7c767a0",
+    "sources/followup/6ulr_D.fasta": "dc9f9fc7b192e756ed54fb3766bd86e6864e0d7085935ce0ad2af6881bfc2244",
+    "sources/followup/6ulr_E.fasta": "497adf056384cfcf789f113064836699b22362915322119d48849092428a27ed",
+    "sources/followup/7jwi.html": "eb5bb28bc2e72230f99a4eb90114075c9b9d5a4c1e6955d89fa799b264ce56cd",
+    "sources/followup/7jwi.pdb": "78934c35b2b4397767e5dacab01d65b8d60674a9442d9ca9c2c05a5e7b7be924",
+    "sources/followup/7jwj.html": "77a3e7ed980926b888dc0f0eb84da9f1b172aef7fd91f5c75a7f68b9c482e8ad",
+    "sources/followup/7jwj.pdb": "859c2d1a38a6b793461dd0d41b57b1ddfd8326a0339e854a288fbc4af5e695f4",
+    "sources/followup/8gvb_A.fasta": "6c01f4ca17ece44d84c97b49e584317ab75ba3257cb4f1600833f3deb6bc8f01",
+    "sources/followup/8gvb_B.fasta": "dcdaec64b01da2c30966e3ba1cd0f235126e2d92a1e5934219c9906d2e391f05",
+    "sources/followup/8gvg_A.fasta": "aae1c90b9f611602cba0827ed92521df4f0a0742bf58d7843ddad3a92fff9d17",
+    "sources/followup/8gvg_B.fasta": "a3da0d4e6c656357138e619f65e2527af594dbec4c5f18f1c54682d09626ba0e",
+    "sources/followup/8gvi_A.fasta": "694d82b2c7d8f96bd759a01f4c5e6ba52389b9c3c287a6411eea99f05b82140f",
+    "sources/followup/8gvi_B.fasta": "2e8d0126798d5030c5e3c84fe7d8b6cc49b558b79ae8175ba393bd836579f478",
+    "sources/followup/batch_00.json": "8b7b40adbee67b116e2adb9f54fd6326856df9177b6597339ed1dfcd5fb059cd",
+    "sources/metadata/batch_00.json": "4a9f94aaad5ac8efb861ebd3210f8c62d6915d15535de0efb6825011bed7c494",
+    "sources/metadata/batch_01.json": "863d9d0ddef1ec6219343eb8209077b49aa8ad44c9f7d9c1278eb7a555f0dde8",
+    "sources/metadata/batch_02.json": "75369189a94893a4d86c8d6c7dd95f0b8cb319d8c60ecac8176589d818324d86",
+    "sources/metadata/batch_03.json": "e49bf539b9d2e00d0922062253491f902847f2181b6b4da03830323e39b4d7d1",
+    "sources/metadata/batch_04.json": "5f435e5e53c45d42daf1db2618c056f0608e4157b76a2f998426d4fe81d81062",
+    "sources/metadata/batch_05.json": "ae986ec429c9b7a9323e22528b3c9f9ee496345bcf95b802f0765203b02c72bb",
+    "sources/metadata/batch_06.json": "02646a1af93e5abb8a7d44d62ea260ffa039e4dfd162f77de62d9665e3d2a3c4",
+    "sources/metadata/batch_07.json": "fe2116607de962f8a3a0621dce550e2c9f1fbfd7ea71ed1f801e44f57f52265c",
+    "sources/metadata/batch_08.json": "8eed3a28e515fceabeff67f5d7e55db52c24ee9e4aa00be069ebad2edf7413e6",
+    "sources/metadata/batch_09.json": "7a4224d53f52203ce7e8a8ba7a0c1f8f924605db85dbd7c42624bd188a78877f",
+    "sources/metadata/batch_10.json": "9d9ed33e140413ceb017369fefa85c1a01b4b81cc084a7a6b3d586c2eef016db",
+    "sources/metadata/batch_11.json": "e67ae43d5dd7de80751df33180dbe919d8bd23056c73dd9d9ce178d4e9c8dc78",
+    "sources/metadata/batch_12.json": "7db9bb39642855c6fc5ea7186995a5d571ba4ded97adfd36475165c4bc028ff8",
+    "sources/metadata/batch_13.json": "a12056af7ee49274d7f767c5a03c02aee7896033a48b22883544031d81802153",
+    "sources/metadata/batch_14.json": "9adf8b62ae57731112b1d18233a8d2e4f4dcb8573f51fe2e94b85949f063e149",
+    "sources/metadata/batch_15.json": "2ba9e113363d4a5138101f6b659a68ef4d27518941b15e01306a331111449a49",
+    "sources/metadata/batch_16.json": "e17a1f0c497eaa547ec506bd4d01d20612c21825921356382b07c6b20d994d6a",
+    "sources/metadata/batch_17.json": "451ab2863888bf24730cd13eaa9da355b3b3d54011e9efd36021ae1a83a41f12",
+    "sources/metadata/batch_18.json": "933f3c6dc68c284caf32a45769db9b7edee76d7671b53ae7a1de3730b34e7b6d",
+    "sources/metadata/batch_19.json": "b5180954ccd65f1c613ce3eb457a592ff67d474514dbf897cada2dbf2e21f322",
+    "sources/metadata/batch_20.json": "2ddd6714ed168a2c7459a193fa8da9a36028649800f58506183a93e8049eb9e7",
+    "sources/metadata/batch_21.json": "c11187bd24e986af466118da850745b801770ce4586b070b047c8ccaa1d0b0ef",
+    "sources/metadata/batch_22.json": "e2a34f46acfb783b71491ab22e93608ae077d8c0e0bef98de3825257877eb980",
+    "sources/metadata/batch_23.json": "e048166da615a210c8577e4cca6902af568b75954974bf81a51e839c802cb972",
+    "sources/sequence/q00.json": "02c03c33e628b84062bc2b39e318db4d30e3182506c54a9fc2f5af5f2d0abdc4",
+    "sources/sequence/q01.json": "181478cbdc4e88590dd6e6259369c4cc8308f2870fb433de5fb4f0ec77d78e3a",
+    "sources/sequence/q02.json": "491ea63c56f385a0b25f701f435649f41b99b5b41eaf27a1c25b1111b48e122f",
+    "sources/sequence/q03.json": "c1f753f2cc80b4c6d4c78f0b366418da8b103647e87ad75b9855524d3458a90c",
+    "sources/sequence/q04.json": "e93a0b581e538a3af2b5bd86444265a3be7cf75150795e5dd060ceedf1c98f72",
+    "sources/sequence/q05.json": "6a62c2f8e45f4e3c1c7978964609838d5783151d4330f46418417cf96f2725fc",
+    "sources/sequence/q06.json": "5d9c2d167f128cf9f9cfa5ccae966574eaab48fc7e32f16488241bc6070cf48a",
+    "sources/sequence/q07.json": "ac2221fbab9e76731909027d0da2d94eab5dff305d7280d7cfa93937b4c3c3a9",
+    "sources/sequence/q08.json": "56f4f1aaecd7d1576d20ecf9490dd7d2ec4e99bf0864c43bc30701c98df3926e",
+    "sources/sequence/q09.json": "a4cc5630ab6f6a5c332d1b4bb85c68ce1dec7bafe8a8f73a63d851f454500793",
+    "sources/sequence/q10.json": "d1d521844ccf5b9b6092c0b4fd99ee7eef6d9829027e1b1f4745ef00f2f9389a",
+    "sources/sequence/q11.json": "2590ee23d77b1b03024fd3d7a7b31343cb7a7b093a2a9ec68fbf7f6f76c65fc9",
+    "sources/sequence/q12.json": "39479fa15e173ad65805f2c46827fd4dd4a5be37a00f2bb9128d1e61607e6327",
+    "sources/sequence/q13.json": "ffe1a091d1d3de20393ab9b2fd7bfd0f704a810cfa8b806c3528f4df2d769763",
+    "sources/sequence/q14.json": "cc4bac90ccecb5b4e8d4276edad766a22d01d340d6c9c2169db4151fefc5c5f7"
+  },
+  "training_started": false
+}
