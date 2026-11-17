@@ -1,0 +1,352 @@
+{
+  "crystallography": {
+    "followup_PDB": "7su9",
+    "identical_6ulr_7su9_TCR_SEQRES": {
+      "D": true,
+      "E": true
+    },
+    "molecular_replacement_model": "6ulr",
+    "reagents": {
+      "TCR9a alpha chain": {
+        "identifier": null,
+        "source": "Sim et al., 2020; PMID:32461371"
+      },
+      "TCR9a beta chain": {
+        "identifier": null,
+        "source": "Sim et al., 2020; PMID:32461371"
+      }
+    },
+    "supplementary_file_character_count": 651,
+    "supplementary_listed_construct_keywords": [],
+    "upstream_release_keys": [
+      "structure_search"
+    ],
+    "upstream_release_search_reused_from": "fingerprint_kras_clones_20261117/audit_final.json"
+  },
+  "independent_acceptance_accessed": false,
+  "model_training_started": false,
+  "protocol_frozen": false,
+  "sequence_listing": {
+    "chains": {
+      "alpha": {
+        "crystal_author_position": 13,
+        "crystal_delta": [
+          {
+            "clone": "M",
+            "pdb": "V",
+            "position1": 10
+          }
+        ],
+        "crystal_modeled_residue_names": [
+          "VAL"
+        ],
+        "dna": "ATGAGGCAAGTGGCGAGAGTGATCGTGTTCCTGACCCTGAGTACTTTGAGCCTTGCTAAGACCACCCAGCCCATCTCCATGGACTCATATGAAGGACAAGAAGTGAACATAACCTGTAGCCACAACAACATTGCTACAAATGATTATATCACGTGGTACCAACAGTTTCCCAGCCAAGGACCACGATTTATTATTCAAGGATACAAGACAAAAGTTACAAACGAAGTGGCCTCCCTGTTTATCCCTGCCGACAGAAAGTCCAGCACTCTGAGCCTGCCCCGGGTTTCCCTGAGCGACACTGCTGTGTACTACTGCCTCGTGGGTGACATGGACCAGGCAGGAACTGCTCTGATCTTTGGGAAGGGAACCACCTTATCAGTGAGTTCC",
+        "entire_nucleotide_prefix_matches_9a": true,
+        "length": 387,
+        "mature_N_terminal_checked_codon": "ATG",
+        "protein_seq_id": 9,
+        "seq_id": 28,
+        "translations": [
+          {
+            "affected_codons": [],
+            "choices": {},
+            "complete_protein_exact": true
+          }
+        ],
+        "unresolved_positions1": []
+      },
+      "beta": {
+        "crystal_author_position": 1,
+        "crystal_delta": [
+          {
+            "clone": "D",
+            "pdb": "M",
+            "position1": 1
+          }
+        ],
+        "crystal_modeled_residue_names": [],
+        "dna": "ATGGGCCCCGGGCTCCTCTGCTGGGCACTGCTTTGTCTCCTGGGAGCAGGCTTAGTGGACGCTGGAGTCACCCAAAGTCCCACACACCTGATCAAAACGAGAGGACAGCAAGTGACTCTGAGATGCTCTCCTAAGTCTGGGCATGACACTGTGTCCTGGTACCAACAGGCCCTGGGTCAGGGGCCCCAGTTTATCTTTCAGTATTATGAGGAGGAAGAGAGACAGAGAGGCAACTTCCCTGATCGATTCTCAGGTCACCAGTTCCCTAACTATAGCTCTGAGCTGAATGTGAACGCCTTGTTGCTGGGGGACTCGGCCCTCTATCTCTGTGCCAGCAGCTTGGGACAGACCAACTATGGCTACACCTTCGGTTCGGGGACCAGGNTAACCGTTGTA",
+        "entire_nucleotide_prefix_matches_9a": false,
+        "length": 396,
+        "mature_N_terminal_checked_codon": "GAC",
+        "protein_seq_id": 10,
+        "seq_id": 29,
+        "translations": [
+          {
+            "affected_codons": [
+              {
+                "amino_acid": "I",
+                "nucleotides": "ATA",
+                "protein_position1": 129,
+                "reference_amino_acid": "L"
+              }
+            ],
+            "choices": {
+              "385": "A"
+            },
+            "complete_protein_exact": false
+          },
+          {
+            "affected_codons": [
+              {
+                "amino_acid": "L",
+                "nucleotides": "CTA",
+                "protein_position1": 129,
+                "reference_amino_acid": "L"
+              }
+            ],
+            "choices": {
+              "385": "C"
+            },
+            "complete_protein_exact": true
+          },
+          {
+            "affected_codons": [
+              {
+                "amino_acid": "V",
+                "nucleotides": "GTA",
+                "protein_position1": 129,
+                "reference_amino_acid": "L"
+              }
+            ],
+            "choices": {
+              "385": "G"
+            },
+            "complete_protein_exact": false
+          },
+          {
+            "affected_codons": [
+              {
+                "amino_acid": "L",
+                "nucleotides": "TTA",
+                "protein_position1": 129,
+                "reference_amino_acid": "L"
+              }
+            ],
+            "choices": {
+              "385": "T"
+            },
+            "complete_protein_exact": true
+          }
+        ],
+        "unresolved_positions1": [
+          385
+        ]
+      }
+    },
+    "listing_labels": "Artificial Sequence; Synthetic",
+    "original_paired_reads_recovered": false,
+    "patent_pdf_sha256": "c345ad5ff130af345d0f919f4183b5a831530c79e47b6706bf2611c779810f52",
+    "pdf_page1": 82
+  },
+  "structure_scan": {
+    "anchor_count": 44,
+    "classifications": {
+      "different_study_disjoint_authors_requires_coordinate_and_identity_gates": 1,
+      "different_study_overlapping_authors": 6,
+      "same_study": 8,
+      "unknown_study": 2
+    },
+    "fixed_atomic_policy_sha256": "ad9849f80e6191046310d5fc6c920dd5e1d4290075e45cf2511d300d57972de1",
+    "metadata_entries": 592,
+    "n_new_qualified_cross_study_pairs": 0,
+    "non_same_study_leads": [
+      {
+        "anchor": "7n1f",
+        "anchor_study": "doi:10.1038/s41467-021-27669-8",
+        "entity_pairs": [
+          [
+            "7RTR_4",
+            "7RTR_5"
+          ]
+        ],
+        "official_assembly_QC": {
+          "7n1f": {
+            "atom_count": 6654,
+            "atom_identities_match_prior": true,
+            "fixed_QC_pass": true,
+            "graph_failures": [],
+            "unit_exclusions": []
+          },
+          "7rtr": {
+            "atom_count": 6644,
+            "atom_identities_match_prior": true,
+            "fixed_QC_pass": false,
+            "graph_failures": [
+              "incomplete interface heavy atoms: [('E', 28, ['CD', 'CG', 'OE1', 'OE2'])]"
+            ],
+            "unit_exclusions": []
+          }
+        },
+        "pdb": "7rtr",
+        "shared_author_keys": [],
+        "status": "different_study_disjoint_authors_requires_coordinate_and_identity_gates",
+        "study": "doi:10.3390/cells10102646"
+      },
+      {
+        "anchor": "3tfk",
+        "anchor_study": "doi:10.1016/j.immuni.2011.09.013",
+        "entity_pairs": [
+          [
+            "4MS8_1",
+            "4MS8_2"
+          ]
+        ],
+        "pdb": "4ms8",
+        "shared_author_keys": [
+          "adamsjj",
+          "birnbaumme",
+          "garciakc",
+          "kranzdm",
+          "narayanans"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1038/ni.3310"
+      },
+      {
+        "anchor": "3tfk",
+        "anchor_study": "doi:10.1016/j.immuni.2011.09.013",
+        "entity_pairs": [
+          [
+            "4MVB_1",
+            "4MVB_2"
+          ]
+        ],
+        "pdb": "4mvb",
+        "shared_author_keys": [
+          "adamsjj",
+          "birnbaumme",
+          "garciakc",
+          "kranzdm",
+          "narayanans"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1038/ni.3310"
+      },
+      {
+        "anchor": "3tfk",
+        "anchor_study": "doi:10.1016/j.immuni.2011.09.013",
+        "entity_pairs": [
+          [
+            "4MXQ_1",
+            "4MXQ_2"
+          ]
+        ],
+        "pdb": "4mxq",
+        "shared_author_keys": [
+          "adamsjj",
+          "birnbaumme",
+          "garciakc",
+          "kranzdm",
+          "narayanans"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1038/ni.3310"
+      },
+      {
+        "anchor": "3tfk",
+        "anchor_study": "doi:10.1016/j.immuni.2011.09.013",
+        "entity_pairs": [
+          [
+            "4N0C_3",
+            "4N0C_4"
+          ]
+        ],
+        "pdb": "4n0c",
+        "shared_author_keys": [
+          "adamsjj",
+          "birnbaumme",
+          "garciakc",
+          "kranzdm",
+          "narayanans"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1038/ni.3310"
+      },
+      {
+        "anchor": "3tfk",
+        "anchor_study": "doi:10.1016/j.immuni.2011.09.013",
+        "entity_pairs": [
+          [
+            "4N5E_1",
+            "4N5E_2"
+          ]
+        ],
+        "pdb": "4n5e",
+        "shared_author_keys": [
+          "adamsjj",
+          "birnbaumme",
+          "garciakc",
+          "kranzdm",
+          "narayanans"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1038/ni.3310"
+      },
+      {
+        "anchor": "4jfe",
+        "anchor_study": "doi:10.1074/jbc.m113.464560",
+        "entity_pairs": [
+          [
+            "6EQB_4",
+            "6EQB_5"
+          ]
+        ],
+        "pdb": "6eqb",
+        "shared_author_keys": [
+          "coledk",
+          "fullera",
+          "hollandcj",
+          "jakobsenbk",
+          "liddyn",
+          "liy",
+          "maduraf",
+          "milesjj",
+          "rizkallahpj",
+          "samim",
+          "schauenburgaj",
+          "sewellak"
+        ],
+        "status": "different_study_overlapping_authors",
+        "study": "doi:10.1002/eji.201948085"
+      },
+      {
+        "anchor": "6p64",
+        "anchor_study": null,
+        "entity_pairs": [
+          [
+            "6UK2_4",
+            "6UK2_5"
+          ]
+        ],
+        "pdb": "6uk2",
+        "shared_author_keys": [
+          "bakerbm",
+          "devlinjr",
+          "hararia"
+        ],
+        "status": "unknown_study",
+        "study": "doi:10.1038/s41589-020-0610-1"
+      },
+      {
+        "anchor": "6p64",
+        "anchor_study": null,
+        "entity_pairs": [
+          [
+            "6UK4_4",
+            "6UK4_5"
+          ]
+        ],
+        "pdb": "6uk4",
+        "shared_author_keys": [
+          "bakerbm",
+          "devlinjr",
+          "hararia"
+        ],
+        "status": "unknown_study",
+        "study": "doi:10.1038/s41589-020-0610-1"
+      }
+    ],
+    "screen_is_not_identity_or_atom_QC": true
+  }
+}

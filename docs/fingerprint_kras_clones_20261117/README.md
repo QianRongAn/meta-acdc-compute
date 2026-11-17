@@ -1,5 +1,7 @@
 # KRAS 9a／9d 原始克隆与晶体构建体审计（2026-11-17）
 
+后续追查已找到 9d 的专利配对核苷酸序列表，β 链一个碱基仍有歧义。见[晶体构建体续查](../fingerprint_kras_crystal_constructs_20261117/README.md)；以下保留本轮原始记录。
+
 两个原始配对克隆在 α 变量区第 10 位均为 Met，β 变量区首位均为 Asp。6ULR／6ULN 沉积对应位置分别为 Val 和 Met。差异已经定位在原始克隆与晶体构建体之间，具体引入步骤仍缺直接记录。[9a 专利，EP3494133B1 表 1、表 5 和序列表](https://patentimages.storage.googleapis.com/a6/63/45/76d90e3a55d9a0/EP3494133B1.pdf) · [9d 专利，AU2016323017B2 实例 2、3 及序列表](https://patentimages.storage.googleapis.com/db/74/cd/810734a40ea5c1/AU2016323017B2.pdf)
 
 | 原始克隆 | α 原始／沉积成熟段起始 | β 原始／沉积成熟段起始 | 构建体对应 |

@@ -1,0 +1,181 @@
+[
+  {
+    "file": "elife_supp.docx",
+    "url": "https://cdn.elifesciences.org/articles/75670/elife-75670-supp1-v2.docx",
+    "status": "200",
+    "bytes": 14617,
+    "sha256": "2b9138b35b1f657fc76e1816ff7ea554d09683c28eeaba194d9f1be397008fe5",
+    "exit": 0,
+    "payload_type": "zip",
+    "retained_path": "sources/elife_supp.docx"
+  },
+  {
+    "file": "elife.xml",
+    "url": "https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-75670-v2.xml",
+    "status": "200",
+    "bytes": 182845,
+    "sha256": "5e51589ec1f3eb66aeb44b941074a06e31064490c932636a5364dd4d3eb2bc34",
+    "exit": 0,
+    "payload_type": "xml",
+    "retained_path": "sources/elife.xml"
+  },
+  {
+    "file": "sim_supp_legacy.pdf",
+    "url": "https://www.pnas.org/content/pnas/suppl/2020/05/26/1921964117.DCSupplemental/pnas.1921964117.sapp.pdf",
+    "status": "403",
+    "bytes": 5696,
+    "sha256": "948eae6dde01b3b5c7c8f9dce5f90d48062a112ea4c517385a7486c7e227d7f0",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "sim_supp_archive.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7293613/bin/pnas.1921964117.sapp.pdf",
+    "status": "200",
+    "bytes": 21385,
+    "sha256": "1f7ae114d0c732adbb941cbf6ef1f3b69d29aecf9e695fa910c42a87a7b0d85b",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "tran_supp_nejm.pdf",
+    "url": "https://www.nejm.org/doi/suppl/10.1056/NEJMoa1609279/suppl_file/nejmoa1609279_appendix.pdf",
+    "status": "403",
+    "bytes": 5642,
+    "sha256": "483cf5f1705299b514ddd1db97ea585c76fd83498dd448d98719104b16f96747",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "tran_supp_pmc.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/5178827/bin/NIHMS836415-supplement-Supplement1.pdf",
+    "status": "200",
+    "bytes": 21437,
+    "sha256": "8fe121f6c83a83eabfd42ee47441d983024e950bd93e0d4380a1df62b5e57753",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "addgene_9a.html",
+    "url": "https://www.addgene.org/search/catalog/plasmids/?q=TCR9a",
+    "status": "200",
+    "bytes": 202021,
+    "sha256": "8c3f8b044d4564183bba339d5462936890d5610c59183ae4d71991e50ecedc2f",
+    "exit": 0,
+    "payload_type": "html",
+    "catalog_displayed_result_count": 0
+  },
+  {
+    "file": "addgene_9d.html",
+    "url": "https://www.addgene.org/search/catalog/plasmids/?q=TCR9d",
+    "status": "200",
+    "bytes": 202020,
+    "sha256": "a67bdb8ac42bd26ed971ea7ba99603d6261e3341dd443974a82535668971edc2",
+    "exit": 0,
+    "payload_type": "html",
+    "catalog_displayed_result_count": 0
+  },
+  {
+    "file": "7su9.cif",
+    "url": "https://files.rcsb.org/download/7SU9.cif",
+    "status": "200",
+    "bytes": 1378302,
+    "sha256": "42f4c9c8877c0d220e0a46d59dc15e401bd4c5f40e230371641a27579840cb8e",
+    "exit": 0,
+    "payload_type": "cif"
+  },
+  {
+    "file": "pmc_sim_inventory.xml",
+    "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC7293613",
+    "status": "200",
+    "bytes": 256,
+    "sha256": "8e1ddc8802f5dcd0a6f3f62f7b2261b3b0a70e8f7aff8f929ee1ebbb46c5bd14",
+    "exit": 0,
+    "payload_type": "xml",
+    "retained_path": "retry/pmc_sim_inventory.xml"
+  },
+  {
+    "file": "pmc_tran_inventory.xml",
+    "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC5178827",
+    "status": "200",
+    "bytes": 1185,
+    "sha256": "bcbecf374eb1861381650f47236ceaf49fa787856e46f40f7a673ac4b7a66aa1",
+    "exit": 0,
+    "payload_type": "xml",
+    "retained_path": "retry/pmc_tran_inventory.xml"
+  },
+  {
+    "file": "sim_supp_publisher_current.pdf",
+    "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.1921964117/suppl_file/pnas.1921964117.sapp.pdf",
+    "status": "403",
+    "bytes": 5642,
+    "sha256": "b464f09be94b3185456e4c02df62a2eea5cb010741c6b698fad3abdfb7241958",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "sim_supp_pmc_instance.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/7293613/bin/pnas.1921964117.sapp.pdf",
+    "status": "200",
+    "bytes": 21400,
+    "sha256": "629d37350e24408601b0ff0cf2c68b24a8b582bcc765ee58b4317de4b131cfe1",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "6uln.cif",
+    "url": "https://files.rcsb.org/download/6ULN.cif",
+    "status": "200",
+    "bytes": 1493032,
+    "sha256": "682a4de2e6d3c51b760888575b637d3172a46b4db8734cfd6009a6e1449f587f",
+    "exit": 0,
+    "payload_type": "cif"
+  },
+  {
+    "file": "6ulr.cif",
+    "url": "https://files.rcsb.org/download/6ULR.cif",
+    "status": "200",
+    "bytes": 1365756,
+    "sha256": "2e4ce6bc77ec576a610112b54ff3c60bb3d2214453ae5871ede3187a4bc9c0b1",
+    "exit": 0,
+    "payload_type": "cif"
+  },
+  {
+    "file": "tran.xml",
+    "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC5178827.1/PMC5178827.1.xml",
+    "status": "200",
+    "bytes": 56523,
+    "sha256": "addd91fcced41a78b39efcc4b746966d14f2939e11896d723e0dd707585743be",
+    "exit": 0,
+    "payload_type": "other"
+  },
+  {
+    "file": "tran_supp_cdn.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5178827/bin/NIHMS836415-supplement-Supplement1.pdf",
+    "status": "200",
+    "bytes": 21423,
+    "sha256": "c23ef7f27d60a0c1d0b2ffb80a762764614b945d77629804c753d8f54fbe3ac0",
+    "exit": 0,
+    "payload_type": "html"
+  },
+  {
+    "file": "7n1f.pdb1.gz",
+    "url": "https://files.rcsb.org/download/7n1f.pdb1.gz",
+    "status": "200",
+    "bytes": 137230,
+    "sha256": "6e6ca75529287b707dad91507f39138cf95f0f074da7a814386958d6bc37d96a",
+    "exit": 0,
+    "payload_type": "gzip",
+    "retained_path": "assemblies/7n1f.pdb1.gz"
+  },
+  {
+    "file": "7rtr.pdb1.gz",
+    "url": "https://files.rcsb.org/download/7rtr.pdb1.gz",
+    "status": "200",
+    "bytes": 138322,
+    "sha256": "7494a2802bb00e190b3596cace40a06b197a25e023c54faf5fcbc8f98754ab64",
+    "exit": 0,
+    "payload_type": "gzip",
+    "retained_path": "assemblies/7rtr.pdb1.gz"
+  }
+]

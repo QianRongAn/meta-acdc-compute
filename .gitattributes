@@ -72,3 +72,8 @@ docs/fingerprint_weekly_controls_20261116/sources/** -text -whitespace
 
 # Keep source receipts and archived API payloads byte-identical.
 docs/fingerprint_kras_clones_20261117/** -text
+
+# Preserve journal and PDB source payload bytes for crystal construct follow-up.
+docs/fingerprint_kras_crystal_constructs_20261117/sources/** -text -whitespace
+docs/fingerprint_kras_crystal_constructs_20261117/retry/*.xml -text -whitespace
+docs/fingerprint_kras_crystal_constructs_20261117/assemblies/*.gz -text
