@@ -77,3 +77,17 @@ docs/fingerprint_kras_clones_20261117/** -text
 docs/fingerprint_kras_crystal_constructs_20261117/sources/** -text -whitespace
 docs/fingerprint_kras_crystal_constructs_20261117/retry/*.xml -text -whitespace
 docs/fingerprint_kras_crystal_constructs_20261117/assemblies/*.gz -text
+
+# Preserve public provenance, metadata and coordinates for the November follow-up.
+docs/fingerprint_public_evidence_20261118/broad/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/broad_metadata/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/metadata_retry/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/candidate_assemblies/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/candidate_raw/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/samples/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/versions/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/history/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/additional/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/provenance/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/retry/** -text -whitespace
+docs/fingerprint_public_evidence_20261118/sources/** -text -whitespace

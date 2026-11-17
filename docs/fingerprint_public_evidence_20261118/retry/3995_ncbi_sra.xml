@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD esearch 20060628//EN" "https://eutils.ncbi.nlm.nih.gov/eutils/dtd/20060628/esearch.dtd">
+<eSearchResult><Count>3</Count><RetMax>3</RetMax><RetStart>0</RetStart><IdList>
+<Id>10580903</Id>
+<Id>1896928</Id>
+<Id>7713013</Id>
+</IdList><TranslationSet/><TranslationStack>   <TermSet>    <Term>3995[All Fields]</Term>    <Field>All Fields</Field>    <Count>607</Count>    <Explode>N</Explode>   </TermSet>   <TermSet>    <Term>Tran[All Fields]</Term>    <Field>All Fields</Field>    <Count>98494</Count>    <Explode>N</Explode>   </TermSet>   <TermSet>    <Term>Rosenberg[All Fields]</Term>    <Field>All Fields</Field>    <Count>4607</Count>    <Explode>N</Explode>   </TermSet>   <OP>OR</OP>   <TermSet>    <Term>KRAS[All Fields]</Term>    <Field>All Fields</Field>    <Count>21148</Count>    <Explode>N</Explode>   </TermSet>   <OP>OR</OP>   <OP>GROUP</OP>   <OP>AND</OP>  </TranslationStack><QueryTranslation>3995[All Fields] AND (Tran[All Fields] OR Rosenberg[All Fields] OR KRAS[All Fields])</QueryTranslation></eSearchResult>

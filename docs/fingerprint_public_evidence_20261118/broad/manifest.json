@@ -1,0 +1,11 @@
+[
+  {
+    "file": "rcsb_broad_hits.json",
+    "url": "https://search.rcsb.org/rcsbsearch/v2/query?json=%7B%22query%22%3A+%7B%22type%22%3A+%22group%22%2C+%22logical_operator%22%3A+%22or%22%2C+%22nodes%22%3A+%5B%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22rcsb_polymer_entity.pdbx_description%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22T+cell+receptor%22%7D%7D%2C+%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22rcsb_polymer_entity.pdbx_description%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22T-cell+receptor%22%7D%7D%2C+%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22rcsb_polymer_entity.pdbx_description%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22TCR%22%7D%7D%2C+%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22struct.title%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22T+cell+receptor%22%7D%7D%2C+%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22struct.title%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22T-cell+receptor%22%7D%7D%2C+%7B%22type%22%3A+%22terminal%22%2C+%22service%22%3A+%22text%22%2C+%22parameters%22%3A+%7B%22attribute%22%3A+%22struct.title%22%2C+%22operator%22%3A+%22contains_phrase%22%2C+%22value%22%3A+%22TCR%22%7D%7D%5D%7D%2C+%22return_type%22%3A+%22entry%22%2C+%22request_options%22%3A+%7B%22return_all_hits%22%3A+true%7D%7D",
+    "status": "200",
+    "bytes": 56618,
+    "sha256": "278fa385bb181a8d1bd32ade0c65e52dba248f8d72f68c96aa332028208de997",
+    "exit": 0,
+    "observed_at": "2026-11-17T17:33:19.235993+00:00"
+  }
+]
