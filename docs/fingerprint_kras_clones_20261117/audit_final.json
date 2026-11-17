@@ -1,0 +1,539 @@
+{
+  "clone_alignments": {
+    "9a_alpha": {
+      "cdr3": "CLVGDMDQAGTALIF",
+      "chain": "D",
+      "clone_mature_segment": "LAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSS",
+      "clone_protein_length": 129,
+      "deposited_equal_length_segment_edits": [
+        {
+          "clone": "M",
+          "pdb": "V",
+          "position1": 10
+        }
+      ],
+      "deposited_prefix_outside_numbered": "MAG",
+      "deposited_segment": "LAKTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSS",
+      "difference_author_residue": 13,
+      "difference_modeled_residue_names": [
+        "VAL"
+      ],
+      "leader_length_in_disclosure": 17,
+      "numbered_segment": "LAKTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVS",
+      "numbered_segment_edits": [
+        {
+          "clone": "M",
+          "clone_bounds0": [
+            9,
+            10
+          ],
+          "operation": "replace",
+          "pdb": "V",
+          "pdb_bounds0": [
+            9,
+            10
+          ]
+        },
+        {
+          "clone": "S",
+          "clone_bounds0": [
+            111,
+            112
+          ],
+          "operation": "delete",
+          "pdb": "",
+          "pdb_bounds0": [
+            111,
+            111
+          ]
+        }
+      ],
+      "pdb": "6ulr",
+      "seq_id": "9a_alpha_EP3494133B1_SEQ63_DNA"
+    },
+    "9a_beta": {
+      "cdr3": "CASSLGEGRVDGYTF",
+      "chain": "E",
+      "clone_mature_segment": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGEGRVDGYTFGSGTRLTVV",
+      "clone_protein_length": 133,
+      "deposited_equal_length_segment_edits": [
+        {
+          "clone": "D",
+          "pdb": "M",
+          "position1": 1
+        }
+      ],
+      "deposited_prefix_outside_numbered": "",
+      "deposited_segment": "MAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGEGRVDGYTFGSGTRLTVV",
+      "difference_author_residue": 1,
+      "difference_modeled_residue_names": [],
+      "leader_length_in_disclosure": 19,
+      "numbered_segment": "MAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGEGRVDGYTFGSGTRLTVV",
+      "numbered_segment_edits": [
+        {
+          "clone": "D",
+          "clone_bounds0": [
+            0,
+            1
+          ],
+          "operation": "replace",
+          "pdb": "M",
+          "pdb_bounds0": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pdb": "6ulr",
+      "seq_id": "9a_beta_EP3494133B1_SEQ64_DNA"
+    },
+    "9d_alpha": {
+      "cdr3": "CLVGDMDQAGTALIF",
+      "chain": "D",
+      "clone_mature_segment": "LAKTTQPISMDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSS",
+      "clone_protein_length": 129,
+      "deposited_equal_length_segment_edits": [
+        {
+          "clone": "M",
+          "pdb": "V",
+          "position1": 10
+        }
+      ],
+      "deposited_prefix_outside_numbered": "MAG",
+      "deposited_segment": "LAKTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVSS",
+      "difference_author_residue": 13,
+      "difference_modeled_residue_names": [
+        "VAL"
+      ],
+      "leader_length_in_disclosure": 17,
+      "numbered_segment": "LAKTTQPISVDSYEGQEVNITCSHNNIATNDYITWYQQFPSQGPRFIIQGYKTKVTNEVASLFIPADRKSSTLSLPRVSLSDTAVYYCLVGDMDQAGTALIFGKGTTLSVS",
+      "numbered_segment_edits": [
+        {
+          "clone": "M",
+          "clone_bounds0": [
+            9,
+            10
+          ],
+          "operation": "replace",
+          "pdb": "V",
+          "pdb_bounds0": [
+            9,
+            10
+          ]
+        },
+        {
+          "clone": "S",
+          "clone_bounds0": [
+            111,
+            112
+          ],
+          "operation": "delete",
+          "pdb": "",
+          "pdb_bounds0": [
+            111,
+            111
+          ]
+        }
+      ],
+      "pdb": "6uln",
+      "seq_id": "9d_alpha_AU2016323017B2_SEQ9_PRT"
+    },
+    "9d_beta": {
+      "cdr3": "CASSLGQTNYGYTF",
+      "chain": "E",
+      "clone_mature_segment": "DAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGQTNYGYTFGSGTRLTVV",
+      "clone_protein_length": 132,
+      "deposited_equal_length_segment_edits": [
+        {
+          "clone": "D",
+          "pdb": "M",
+          "position1": 1
+        }
+      ],
+      "deposited_prefix_outside_numbered": "",
+      "deposited_segment": "MAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGQTNYGYTFGSGTRLTVV",
+      "difference_author_residue": 1,
+      "difference_modeled_residue_names": [],
+      "leader_length_in_disclosure": 19,
+      "numbered_segment": "MAGVTQSPTHLIKTRGQQVTLRCSPKSGHDTVSWYQQALGQGPQFIFQYYEEEERQRGNFPDRFSGHQFPNYSSELNVNALLLGDSALYLCASSLGQTNYGYTFGSGTRLTVV",
+      "numbered_segment_edits": [
+        {
+          "clone": "D",
+          "clone_bounds0": [
+            0,
+            1
+          ],
+          "operation": "replace",
+          "pdb": "M",
+          "pdb_bounds0": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pdb": "6uln",
+      "seq_id": "9d_beta_AU2016323017B2_SEQ10_PRT"
+    }
+  },
+  "independent_acceptance_accessed": false,
+  "protocol_frozen": false,
+  "public_projects": {
+    "GSE136394": {
+      "runs": 128,
+      "titled_3995": 0,
+      "titled_4095": 96
+    },
+    "PRJNA342632": {
+      "runs": 49,
+      "titled_3995": 0,
+      "titled_4095": 5
+    }
+  },
+  "single_cell_evidence": {
+    "counts": {
+      "Q20_barcode_UMI": 343246,
+      "alpha_cdr3": 564,
+      "alpha_start:ACG": 1,
+      "alpha_start:ATA": 1,
+      "alpha_start:ATG": 4794,
+      "alpha_start:ATT": 2,
+      "alpha_start:GTG": 2,
+      "alpha_start:TTG": 3,
+      "beta_cdr3": 243,
+      "beta_start:AAC": 1,
+      "beta_start:GAA": 1,
+      "beta_start:GAC": 12521,
+      "beta_start:GAT": 3,
+      "beta_start:GGC": 4,
+      "beta_start:GTC": 1,
+      "beta_start:TAC": 1
+    },
+    "paired_barcode_observations": [
+      {
+        "barcode_sha256": "0bbf482d36e8a5316508ee09fa617c3e95e4dbb46127a8b49dc776939dd05c17",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 6
+        },
+        "first_spot": {
+          "alpha_cdr3": 40662,
+          "beta_cdr3": 168814,
+          "beta_start:GAC": 129934
+        }
+      },
+      {
+        "barcode_sha256": "ce414d231cfb67fed479b9f7965e015140e4a6b73bb73ae9056ea4aced91f640",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 2,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 4
+        },
+        "first_spot": {
+          "alpha_cdr3": 392189,
+          "alpha_start:ATG": 41771,
+          "beta_cdr3": 134232,
+          "beta_start:GAC": 38811
+        }
+      },
+      {
+        "barcode_sha256": "3a24518dbd55258f341e2eb34ed7932837f224116cff213383dad4b81a23ab78",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 3
+        },
+        "first_spot": {
+          "alpha_cdr3": 124400,
+          "alpha_start:ATG": 242714,
+          "beta_cdr3": 25738,
+          "beta_start:GAC": 103182
+        }
+      },
+      {
+        "barcode_sha256": "f0cd9df09adcd1b381670bfb55c79da8ee110958224da11126763e9bc9fc864a",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 451128,
+          "beta_cdr3": 263613,
+          "beta_start:GAC": 27705
+        }
+      },
+      {
+        "barcode_sha256": "7888c35cac5339cdea722dfe9402432ee7bbbb31d959aee6a1df71e2301ac1d0",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 1,
+          "beta_cdr3": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 378540,
+          "alpha_start:ATG": 165649,
+          "beta_cdr3": 198796
+        }
+      },
+      {
+        "barcode_sha256": "28c9771bc9f68c40f3e3aa5bcd0eab09b3e6846e934b0ac6c4b846072cda9211",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 3,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 5
+        },
+        "first_spot": {
+          "alpha_cdr3": 140771,
+          "alpha_start:ATG": 80384,
+          "beta_cdr3": 267313,
+          "beta_start:GAC": 179178
+        }
+      },
+      {
+        "barcode_sha256": "b130d5d15bc3e80f8be3fcbc96cf4b74a2b3c4e3b8bcae13aade393ff140873b",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 3
+        },
+        "first_spot": {
+          "alpha_cdr3": 220832,
+          "beta_cdr3": 391264,
+          "beta_start:GAC": 149354
+        }
+      },
+      {
+        "barcode_sha256": "efcc0686c49d523bb76f35ddff6526ee7a37aa006a8458ca9fa4784d7942c1b3",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 3,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 8
+        },
+        "first_spot": {
+          "alpha_cdr3": 230605,
+          "alpha_start:ATG": 362185,
+          "beta_cdr3": 75564,
+          "beta_start:GAC": 56665
+        }
+      },
+      {
+        "barcode_sha256": "9f001d0271ffd8e1524a22bba021c1f918b36fd62f62a545a6d93736b9e580c2",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 19844,
+          "beta_cdr3": 165387,
+          "beta_start:GAC": 454219
+        }
+      },
+      {
+        "barcode_sha256": "9542d721a7390bbf41f81f87d524041d173197516b1a63bef39f0a1016ecbe63",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 3,
+          "beta_cdr3": 2,
+          "beta_start:GAC": 3
+        },
+        "first_spot": {
+          "alpha_cdr3": 106870,
+          "alpha_start:ATG": 112755,
+          "beta_cdr3": 350820,
+          "beta_start:GAC": 235481
+        }
+      },
+      {
+        "barcode_sha256": "7f998c374d21a40148960bd2b29cffe664d7b0d99b8ca66728646e41d3b7cbbf",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 4,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 2
+        },
+        "first_spot": {
+          "alpha_cdr3": 136927,
+          "alpha_start:ATG": 43369,
+          "beta_cdr3": 282818,
+          "beta_start:GAC": 26544
+        }
+      },
+      {
+        "barcode_sha256": "63d58ff6005b474750c79f8009720353cf78ad1fc60688a37d017eb38647f5c1",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 177096,
+          "beta_cdr3": 284864
+        }
+      },
+      {
+        "barcode_sha256": "41189328f0e99a95d06882a062c67497917e0113915235afdb4a2b1e57fb5fd3",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 336756,
+          "alpha_start:ATG": 47152,
+          "beta_cdr3": 324517,
+          "beta_start:GAC": 242493
+        }
+      },
+      {
+        "barcode_sha256": "828e7a18fd7b9d894c5d88573261e3bcbe42f57e61c917a35fe5613c28124cab",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 4
+        },
+        "first_spot": {
+          "alpha_cdr3": 368489,
+          "beta_cdr3": 127100,
+          "beta_start:GAC": 139739
+        }
+      },
+      {
+        "barcode_sha256": "9e2c3ff0130f4a2f9aea04a033e23b97b09a63b256cdee68478cd2fc735d948c",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 2,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 2
+        },
+        "first_spot": {
+          "alpha_cdr3": 71232,
+          "alpha_start:ATG": 82403,
+          "beta_cdr3": 60254,
+          "beta_start:GAC": 36142
+        }
+      },
+      {
+        "barcode_sha256": "674d61cc836a70036d51f2f2e656699a23cef1e08e020fea1b67f2d2e98a77e8",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 4
+        },
+        "first_spot": {
+          "alpha_cdr3": 309051,
+          "alpha_start:ATG": 103332,
+          "beta_cdr3": 200449,
+          "beta_start:GAC": 48232
+        }
+      },
+      {
+        "barcode_sha256": "cb0738e3a74213a6703d71e9f2079f62dffd0b78327ddd2f1fa394fe7e4b05e4",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 5,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 2
+        },
+        "first_spot": {
+          "alpha_cdr3": 170968,
+          "alpha_start:ATG": 46990,
+          "beta_cdr3": 35654,
+          "beta_start:GAC": 84400
+        }
+      },
+      {
+        "barcode_sha256": "dd11a24afcb731ec129785a3435f8a13ec4a3fc500052d55ff6582b4960d3973",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 2,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 40221,
+          "alpha_start:ATG": 205058,
+          "beta_cdr3": 119851,
+          "beta_start:GAC": 352449
+        }
+      },
+      {
+        "barcode_sha256": "c18d90816e30d36f4c0bfe1af18f5085750e470fa7426a0be03a938dca4ca287",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 1,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 1
+        },
+        "first_spot": {
+          "alpha_cdr3": 400178,
+          "alpha_start:ATG": 37784,
+          "beta_cdr3": 455788,
+          "beta_start:GAC": 394469
+        }
+      },
+      {
+        "barcode_sha256": "3664cacda3ecdb0a7fc254a0ce6e5ddd45b096d7392ed2d2a41ad76e651ddc09",
+        "distinct_umis": {
+          "alpha_cdr3": 1,
+          "alpha_start:ATG": 2,
+          "beta_cdr3": 1,
+          "beta_start:GAC": 6
+        },
+        "first_spot": {
+          "alpha_cdr3": 205222,
+          "alpha_start:ATG": 148194,
+          "beta_cdr3": 3485,
+          "beta_start:GAC": 4328
+        }
+      }
+    ],
+    "scope": "Exact raw barcode co-occurrence and targeted codons, without whole transcript assembly.",
+    "targets": {
+      "alpha_cdr3": [
+        "TGCCTCGTGGGTGACATGGACCAGGCAGGAACTGCTCTGATCTTT",
+        null
+      ],
+      "alpha_start": [
+        "CAGCCCATCTCCATGGACTCATATGAAGGACAA",
+        12
+      ],
+      "beta_cdr3": [
+        "TGTGCCAGCAGCTTGGGTGAGGGAAGAGTGGACGGCTACACCTTC",
+        null
+      ],
+      "beta_start": [
+        "GCAGGCTTAGTGGACGCTGGAGTCACCCAAAGT",
+        12
+      ]
+    },
+    "total_spots": 480000
+  },
+  "structure_search": {
+    "author_disjoint_distinct_study_pairs": [],
+    "catalog_entries": 317,
+    "date_hits": {
+      "new_release": [],
+      "new_revision": []
+    },
+    "exact_full_deposited_pair_groups": 227,
+    "natural_variable_sequence_local_search_hits": {
+      "9a_alpha": [],
+      "9a_beta": [
+        "6ULR_5",
+        "7SU9_2"
+      ],
+      "9d_alpha": [],
+      "9d_beta": [
+        "6ULN_5"
+      ]
+    },
+    "scope": "Description-based full deposited chain screen. Changed constant domains can hide variable-sequence matches."
+  }
+}

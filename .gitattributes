@@ -69,3 +69,6 @@ docs/fingerprint_terminal_rescue_20261101/sources/** -text -whitespace
 
 # Preserve raw RCSB, STCRDab and TCR3d evidence for the November release audit.
 docs/fingerprint_weekly_controls_20261116/sources/** -text -whitespace
+
+# Keep source receipts and archived API payloads byte-identical.
+docs/fingerprint_kras_clones_20261117/** -text

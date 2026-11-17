@@ -1,0 +1,50 @@
+[
+  {
+    "file": "tran_project_runs.txt",
+    "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJNA342632&result=read_run&fields=run_accession,sample_alias,experiment_title,library_strategy,sample_title&format=tsv&download=true",
+    "status": "200",
+    "bytes": 4463,
+    "sha256": "c7b72f0b4b5e57d2527775f7861a3456cb779563539af2bd476dcfead7146004",
+    "exit": 0
+  },
+  {
+    "file": "sim_pubmed.xml",
+    "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=32461371&retmode=xml",
+    "status": "200",
+    "bytes": 34367,
+    "sha256": "7c93343430cff273582edc7a0d974b7c093d69bc584c0559da0abdeade242676",
+    "exit": 0
+  },
+  {
+    "file": "9a_au.html",
+    "url": "https://patents.google.com/patent/AU2023233125B2/en",
+    "status": "200",
+    "bytes": 503405,
+    "sha256": "c3232b54094a9f1ee98a7ff23c874fe96b01ef64ec22af13e964b26899d558e2",
+    "exit": 0
+  },
+  {
+    "file": "tran_fastq_project.html",
+    "url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA342632",
+    "status": "200",
+    "bytes": 56185,
+    "sha256": "80f8b2f339f01cdeb8d3764a15f9b3bd82b99f8f7a382ae601df8478b6408b06",
+    "exit": 0
+  },
+  {
+    "file": "run_xml",
+    "url": "https://trace.ncbi.nlm.nih.gov/Traces/sra-db-be/run_new?acc=SRR10039337",
+    "status": "200",
+    "bytes": 9061,
+    "sha256": "121dd336df3f0ad80933de0865474edee9bdd972db27499f79adb3e2fa666275",
+    "exit": 0
+  },
+  {
+    "file": "sim_supp_static.pdf",
+    "url": "https://www.pnas.org/doi/suppl/10.1073/pnas.1921964117/suppl_file/sapp.pdf",
+    "status": "403",
+    "bytes": 5572,
+    "sha256": "77badf28f9c470d6f1c459b6852832f51630216d90bb37fe17541814a183564c",
+    "exit": 0
+  }
+]

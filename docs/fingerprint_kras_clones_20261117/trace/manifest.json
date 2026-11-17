@@ -1,0 +1,58 @@
+[
+  {
+    "file": "psips.html",
+    "url": "https://seqdata.uspto.gov/",
+    "status": "200",
+    "bytes": 5497,
+    "sha256": "7fc04c0c1b5018c14edaea5d4faa559b404d072a1c3aefc545940faf4f064533",
+    "exit": 0
+  },
+  {
+    "file": "epo.html",
+    "url": "https://register.epo.org/application?documentId=E4Z4A34U4301DSU&appnumber=EP21183332&showPdfPage=all",
+    "status": "403",
+    "bytes": 5755,
+    "sha256": "b0b8b7bd57b1152380e51881d9d574f345d75b14abf24d879e89e1d74f5e798b",
+    "exit": 0
+  },
+  {
+    "file": "epo_search.html",
+    "url": "https://register.epo.org/smartSearch?query=EP3901169",
+    "status": "403",
+    "bytes": 5517,
+    "sha256": "56f54eb28a6bfd137affd6ef120e2f2cf13f3df13970c0748365a51c557a753c",
+    "exit": 0
+  },
+  {
+    "file": "pmc_oa.xml",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC7293613",
+    "status": "404",
+    "bytes": 1584,
+    "sha256": "488c9acdf1d08674670846c6fb9000685c7e5f3525302e629cdf532e8c462f6f",
+    "exit": 0
+  },
+  {
+    "file": "sim_bioc.json",
+    "url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC7293613/ascii",
+    "status": "200",
+    "bytes": 6140,
+    "sha256": "478f38e0765ee9c406831bb2fc27e8019ac5227c20c6b28ca0de582d8449354a",
+    "exit": 0
+  },
+  {
+    "file": "sim_supp_legacy.pdf",
+    "url": "https://www.pnas.org/lookup/suppl/doi:10.1073/pnas.1921964117/-/DCSupplemental",
+    "status": "403",
+    "bytes": 5606,
+    "sha256": "af42ba4eec55cb81d561a6f5de876c4aaf63f334a4a1a43316ac00bf23d049ea",
+    "exit": 0
+  },
+  {
+    "file": "patentscope.html",
+    "url": "https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2017048593&tab=PCTDOCUMENTS",
+    "status": "403",
+    "bytes": 8020,
+    "sha256": "762663a421dd59415d1003cc736201f674f9fb386d56d9d28b8a0c641729d91e",
+    "exit": 0
+  }
+]

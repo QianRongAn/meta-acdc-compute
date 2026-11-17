@@ -1,0 +1,47 @@
+{
+  "accession": "SRR10039337",
+  "sample": "GSM4047960",
+  "source": "https://sra-pub-run-odp.s3.amazonaws.com/sra/SRR10039337/SRR10039337",
+  "source_verified_range": [
+    1,
+    480000
+  ],
+  "tool": "vdb-dump 3.2.1",
+  "table": "SEQUENCE",
+  "columns": [
+    "READ",
+    "READ_LEN",
+    "QUALITY"
+  ],
+  "format": "tab",
+  "raw_layout": "150 technical R1, 150 biological R2, 8 technical index",
+  "parts": [
+    [
+      1,
+      160000
+    ],
+    [
+      160001,
+      480000
+    ]
+  ],
+  "whole_SRA_MD5_verified": false,
+  "local_originals": {
+    "fastq/vdb_160k.tsv.gz": {
+      "bytes": 42158113,
+      "sha256": "61ae394715ef1fb18d40a8085f19d7f9bbb9fd5c925cb1edf7487e250fc84dcc"
+    },
+    "fastq/vdb_160001_480000.tsv.gz": {
+      "bytes": 85116246,
+      "sha256": "6b6a63a9795d5511057cc7f902d61e0e35740900f6f07ed16539b6d86cd0303f"
+    },
+    "fastq/vdb_480k.tsv.gz": {
+      "bytes": 127274359,
+      "sha256": "e195f74aa3a69a8fdd0a5e2031e2c851fafe7c7671882626708cd53db76fac59"
+    },
+    "followup/patent_9d_au.pdf": {
+      "bytes": 3806712,
+      "sha256": "c345ad5ff130af345d0f919f4183b5a831530c79e47b6706bf2611c779810f52"
+    }
+  }
+}
